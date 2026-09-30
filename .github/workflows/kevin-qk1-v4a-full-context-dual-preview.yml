@@ -1,0 +1,226 @@
+name: Kevin Q-K1 V4A Full Context Dual Preview
+
+on:
+  push:
+    branches: [kevin-qk1-v4a-full-context-dual-preview]
+    paths:
+      - ".github/workflows/kevin-qk1-v4a-full-context-dual-preview.yml"
+      - "routes/KEVIN_QK1_FULL_CONTEXT_DUAL_PREVIEW_STARTED.txt"
+      - "blender/scene_v4a.py"
+      - "blender/v4a_variant_a.patch"
+      - "blender/v4a_variant_c.patch"
+      - "blender/v4a_ac_integration_map.txt"
+      - "blender/v4a_ac_static_verification.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  BLENDER_VERSION: "4.5.14"
+  BLENDER_DIR: ${{ github.workspace }}/.tools/blender-4.5.14-linux-x64
+
+jobs:
+  full-context-dual-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout exact branch head
+        uses: actions/checkout@v4
+
+      - name: Cache Blender 4.5.14 LTS
+        id: cache-blender
+        uses: actions/cache@v4
+        with:
+          path: .tools/blender-4.5.14-linux-x64
+          key: blender-4.5.14-linux-x64
+
+      - name: Install Blender 4.5.14 LTS
+        if: steps.cache-blender.outputs.cache-hit != 'true'
+        run: |
+          set -euo pipefail
+          mkdir -p .tools
+          cd .tools
+          FILE="blender-${BLENDER_VERSION}-linux-x64.tar.xz"
+          curl --fail --location --retry 3 --output "$FILE" "https://download.blender.org/release/Blender4.5/$FILE"
+          curl --fail --location --retry 3 --output "blender-${BLENDER_VERSION}.sha256" "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}.sha256"
+          grep " $FILE$" "blender-${BLENDER_VERSION}.sha256" | sha256sum --check --strict -
+          tar -xf "$FILE"
+          rm -f "$FILE" "blender-${BLENDER_VERSION}.sha256"
+
+      - name: Install headless render dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg libegl1 libgl1 libx11-6 libxext6 libxrender1 libxi6 libxkbcommon0
+
+      - name: Verify queue source and exact Bob integration base
+        run: |
+          set -euo pipefail
+          "$BLENDER_DIR/blender" --version | head -n 2
+          ffmpeg -version | head -n 1
+          test "$(git hash-object blender/scene_v4a.py)" = "cb87739e3f254222e9e336eb0db5b25164f59bb8"
+          test "$(git hash-object blender/v4a_variant_a.patch)" = "458af43daddb0a6e266365d9511e038701fafb00"
+          test "$(git hash-object blender/v4a_variant_c.patch)" = "c010ea6f61a64544474502b7eee5bc16122ce97a"
+          mkdir -p output-qk1/common runtime-qk1
+          cp blender/scene_v4a.py runtime-qk1/scene_v4a_base.py
+          cp blender/v4a_ac_integration_map.txt output-qk1/common/
+          cp blender/v4a_ac_static_verification.json output-qk1/common/
+          {
+            echo "repository=Nathan6376/studygrid-motion-lab"
+            echo "branch=${GITHUB_REF_NAME}"
+            echo "head_sha=${GITHUB_SHA}"
+            echo "bob_integration_head=09b8d26a8969a809d60c47a9e7dbbaca9adcbd27"
+            echo "base_scene_blob=$(git hash-object blender/scene_v4a.py)"
+            echo "variant_a_patch_blob=$(git hash-object blender/v4a_variant_a.patch)"
+            echo "variant_c_patch_blob=$(git hash-object blender/v4a_variant_c.patch)"
+            sha256sum blender/scene_v4a.py blender/v4a_variant_a.patch blender/v4a_variant_c.patch blender/v4a_ac_integration_map.txt blender/v4a_ac_static_verification.json
+          } | tee output-qk1/common/source_identity.txt
+
+      - name: Build exact Candidate A source
+        run: |
+          set -euo pipefail
+          git checkout -- blender/scene_v4a.py
+          git apply --check blender/v4a_variant_a.patch
+          git apply blender/v4a_variant_a.patch
+          test "$(sha256sum blender/scene_v4a.py | awk '{print $1}')" = "23472766ba37907a0f12a66bd50f9aa4cfb7029afb09d974fc8f53818ebc3989"
+          python3 -m py_compile blender/scene_v4a.py
+          mkdir -p output-qk1/A
+          cp blender/scene_v4a.py output-qk1/A/scene_v4a_candidate_A_exact.py
+          cp blender/scene_v4a.py runtime-qk1/scene_v4a_candidate_A_render.py
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('runtime-qk1/scene_v4a_candidate_A_render.py')
+          s=p.read_text()
+          marker='scene.render.engine = "BLENDER_EEVEE_NEXT"'
+          if marker not in s: raise SystemExit('EEVEE marker missing')
+          s=s.replace(marker, marker+'\nscene.eevee.taa_render_samples = 8  # Q-K1 render-only bound; mechanics unchanged', 1)
+          p.write_text(s)
+          PY
+          {
+            echo "candidate=A"
+            echo "exact_source_sha256=$(sha256sum output-qk1/A/scene_v4a_candidate_A_exact.py | awk '{print $1}')"
+            echo "runtime_source_sha256=$(sha256sum runtime-qk1/scene_v4a_candidate_A_render.py | awk '{print $1}')"
+            echo "runtime_change=EEVEE preview samples 8 only"
+          } | tee output-qk1/A/source_identity.txt
+
+      - name: Render Candidate A full V4A preview
+        run: |
+          set -euo pipefail
+          "$BLENDER_DIR/blender" --background --factory-startup --python-exit-code 1 \
+            --python runtime-qk1/scene_v4a_candidate_A_render.py -- \
+            --output-dir "$GITHUB_WORKSPACE/output-qk1/A" --quality preview
+          cp runtime-qk1/scene_v4a_candidate_A_render.py output-qk1/A/
+          cp output-qk1/A/frames/frame_0106.png output-qk1/A/stills/10_2c_start.png
+          cp output-qk1/A/frames/frame_0110.png output-qk1/A/stills/11_2c_hold.png
+          cp output-qk1/A/frames/frame_0126.png output-qk1/A/stills/12_2c_stage_boundary.png
+          cp output-qk1/A/frames/frame_0142.png output-qk1/A/stills/13_2c_final.png
+          ffmpeg -y -framerate 12 -start_number 1 -i output-qk1/A/frames/frame_%04d.png \
+            -c:v libx264 -pix_fmt yuv420p -crf 18 -movflags +faststart \
+            output-qk1/A/studygrid-v4a-full-context-candidate-A.mp4
+          ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,pix_fmt,width,height,r_frame_rate,nb_frames -show_entries format=duration -of default=noprint_wrappers=1 \
+            output-qk1/A/studygrid-v4a-full-context-candidate-A.mp4 | tee output-qk1/A/mp4_probe.txt
+          ffmpeg -v error -i output-qk1/A/studygrid-v4a-full-context-candidate-A.mp4 -f null -
+
+      - name: Build exact Candidate C source
+        run: |
+          set -euo pipefail
+          git checkout -- blender/scene_v4a.py
+          git apply --check blender/v4a_variant_c.patch
+          git apply blender/v4a_variant_c.patch
+          test "$(sha256sum blender/scene_v4a.py | awk '{print $1}')" = "931214a722814a90d41a3fa68ce5c35dca06f3bf61f8b59bd30371310ebd3360"
+          python3 -m py_compile blender/scene_v4a.py
+          mkdir -p output-qk1/C
+          cp blender/scene_v4a.py output-qk1/C/scene_v4a_candidate_C_exact.py
+          cp blender/scene_v4a.py runtime-qk1/scene_v4a_candidate_C_render.py
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('runtime-qk1/scene_v4a_candidate_C_render.py')
+          s=p.read_text()
+          marker='scene.render.engine = "BLENDER_EEVEE_NEXT"'
+          if marker not in s: raise SystemExit('EEVEE marker missing')
+          s=s.replace(marker, marker+'\nscene.eevee.taa_render_samples = 8  # Q-K1 render-only bound; mechanics unchanged', 1)
+          p.write_text(s)
+          PY
+          {
+            echo "candidate=C"
+            echo "exact_source_sha256=$(sha256sum output-qk1/C/scene_v4a_candidate_C_exact.py | awk '{print $1}')"
+            echo "runtime_source_sha256=$(sha256sum runtime-qk1/scene_v4a_candidate_C_render.py | awk '{print $1}')"
+            echo "runtime_change=EEVEE preview samples 8 only"
+          } | tee output-qk1/C/source_identity.txt
+
+      - name: Render Candidate C full V4A preview
+        run: |
+          set -euo pipefail
+          "$BLENDER_DIR/blender" --background --factory-startup --python-exit-code 1 \
+            --python runtime-qk1/scene_v4a_candidate_C_render.py -- \
+            --output-dir "$GITHUB_WORKSPACE/output-qk1/C" --quality preview
+          cp runtime-qk1/scene_v4a_candidate_C_render.py output-qk1/C/
+          cp output-qk1/C/frames/frame_0106.png output-qk1/C/stills/10_2c_start.png
+          cp output-qk1/C/frames/frame_0110.png output-qk1/C/stills/11_2c_hold.png
+          cp output-qk1/C/frames/frame_0126.png output-qk1/C/stills/12_2c_stage_boundary.png
+          cp output-qk1/C/frames/frame_0142.png output-qk1/C/stills/13_2c_final.png
+          ffmpeg -y -framerate 12 -start_number 1 -i output-qk1/C/frames/frame_%04d.png \
+            -c:v libx264 -pix_fmt yuv420p -crf 18 -movflags +faststart \
+            output-qk1/C/studygrid-v4a-full-context-candidate-C.mp4
+          ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,pix_fmt,width,height,r_frame_rate,nb_frames -show_entries format=duration -of default=noprint_wrappers=1 \
+            output-qk1/C/studygrid-v4a-full-context-candidate-C.mp4 | tee output-qk1/C/mp4_probe.txt
+          ffmpeg -v error -i output-qk1/C/studygrid-v4a-full-context-candidate-C.mp4 -f null -
+
+      - name: Verify full-context isolation and media integrity
+        run: |
+          set -euo pipefail
+          for c in A C; do
+            test -f output-qk1/$c/studygrid-v4a.blend
+            test -f output-qk1/$c/qa_manifest.txt
+            test -f output-qk1/$c/studygrid-v4a-full-context-candidate-$c.mp4
+            test -f output-qk1/$c/stills/10_2c_start.png
+            test -f output-qk1/$c/stills/13_2c_final.png
+            for f in output-qk1/$c/stills/*.png; do ffmpeg -v error -i "$f" -frames:v 1 -f null -; done
+          done
+          {
+            echo "unrelated_still_byte_parity=PASS"
+            for n in 01_g_full 02_g_halfstroke 03_seed 04_hinge_a_mid 07_chain 08_doorway_start 09_doorway_near; do
+              cmp "output-qk1/A/stills/$n.png" "output-qk1/C/stills/$n.png"
+              echo "$n=identical"
+            done
+            if cmp -s output-qk1/A/stills/10_2c_start.png output-qk1/C/stills/10_2c_start.png; then
+              echo "2c_start_candidate_specific_difference=FAIL"
+              exit 1
+            else
+              echo "2c_start_candidate_specific_difference=PASS"
+            fi
+            echo "source_contract=Bob exact reversible patches; no redesign or winner selection"
+          } | tee output-qk1/common/parity_report.txt
+
+      - name: Hash proof package
+        run: |
+          set -euo pipefail
+          find output-qk1 -type f ! -path '*/frames/*' ! -name artifact_sha256.txt -print0 | sort -z | xargs -0 sha256sum > output-qk1/artifact_sha256.txt
+          cat output-qk1/artifact_sha256.txt
+
+      - name: Upload Q-K1 dual full-context proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: studygrid-qk1-v4a-full-context-dual-preview
+          path: |
+            output-qk1/A/studygrid-v4a-full-context-candidate-A.mp4
+            output-qk1/A/stills/*.png
+            output-qk1/A/studygrid-v4a.blend
+            output-qk1/A/qa_manifest.txt
+            output-qk1/A/source_identity.txt
+            output-qk1/A/scene_v4a_candidate_A_exact.py
+            output-qk1/A/scene_v4a_candidate_A_render.py
+            output-qk1/A/mp4_probe.txt
+            output-qk1/C/studygrid-v4a-full-context-candidate-C.mp4
+            output-qk1/C/stills/*.png
+            output-qk1/C/studygrid-v4a.blend
+            output-qk1/C/qa_manifest.txt
+            output-qk1/C/source_identity.txt
+            output-qk1/C/scene_v4a_candidate_C_exact.py
+            output-qk1/C/scene_v4a_candidate_C_render.py
+            output-qk1/C/mp4_probe.txt
+            output-qk1/common/*
+            output-qk1/artifact_sha256.txt
+          retention-days: 3
+          if-no-files-found: error
