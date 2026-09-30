@@ -27,6 +27,7 @@ concurrency:
 env:
   BLENDER_VERSION: "4.5.14"
   BLENDER_DIR: ${{ github.workspace }}/.tools/blender-4.5.14-linux-x64
+  SG_QUALITY: ${{ inputs.quality || 'preview' }}
 
 jobs:
   render:
@@ -74,8 +75,6 @@ jobs:
           ldconfig -p | grep 'libEGL.so.1' | head -n 1
 
       - name: Build and render V4A
-        env:
-          SG_QUALITY: ${{ inputs.quality || 'preview' }}
         run: |
           set -euo pipefail
           mkdir -p output
@@ -89,8 +88,10 @@ jobs:
       - name: Encode preview MP4
         run: |
           set -euo pipefail
+          FPS=12
+          if [ "$SG_QUALITY" = "review" ]; then FPS=30; fi
           ffmpeg -y \
-            -framerate 30 \
+            -framerate "$FPS" \
             -start_number 1 \
             -i output/frames/frame_%04d.png \
             -c:v libx264 -pix_fmt yuv420p -crf 20 \
