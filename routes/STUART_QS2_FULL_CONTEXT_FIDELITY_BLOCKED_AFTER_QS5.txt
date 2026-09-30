@@ -1,0 +1,38 @@
+STUDYGRID V4A — STUART Q-S2 FULL-CONTEXT VARIANT FIDELITY — BLOCKED / NOT STARTED
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 12:10 ET
+Queue item: Q-S2 — FULL-CONTEXT VARIANT FIDELITY AUDIT
+Status: BLOCKED — dependency failed before durable preview artifact; item not started
+
+ORDERED QUEUE STATE
+- Q-S4 acceptance-validator path repair: DONE.
+- Q-S5 independent QA of Bob Q-B4/Q-B5/Q-B6: DONE; all three fixtures PASS independent QA.
+- Q-S2 is next in queue and was freshly re-evaluated for eligibility.
+
+DEPENDENCY REFRESH
+Kevin branch: kevin-qk1-v4a-full-context-dual-preview
+Kevin head: a14459b1bd3f8b353eaa8e4f78aae3341b96cfef
+Workflow: Kevin Q-K1 V4A Full Context Dual Preview
+Run: 36734968949
+Run conclusion: FAILURE
+Artifact list: empty — no durable Q-K1 A/C full-context preview artifact exists.
+
+EXACT FAILURE BOUNDARY
+The workflow failed in step `Verify queue source and exact Bob integration base` before Candidate A or Candidate C source-build/render steps ran.
+The failing guard was:
+  test "$(git hash-object blender/scene_v4a.py)" = "cb87739e3f254222e9e336eb0db5b25164f59bb8"
+The shell exited code 1, establishing that the checked-out `blender/scene_v4a.py` did not match the Bob integration base blob expected by Kevin's workflow. The workflow did not print the unexpected hash before exit, so this return does not invent it.
+All candidate build/render, manifest and artifact-upload steps were skipped after the guard failure.
+
+BLOCKER
+Q-S2 requires durable Kevin full-context Candidate A and Candidate C preview renders. They do not exist from this run. Stuart therefore does not start Q-S2, does not substitute incomplete evidence, and does not repair Kevin's source/render lane.
+
+NEXT
+General/Kevin owns reconciliation of the Q-K1 source-base mismatch and any retry. When a durable full-context A+C artifact exists and Bob's reversible variants remain authoritative, Q-S2 becomes eligible again on the next Stuart queue pull.
+Q-S3 remains dependency-blocked until Kevin produces the candidate GLB export-smoke/runtime artifacts required by the queue.
+
+BOUNDARY
+No main/product/workflow/mechanics/R5/R6/backend/auth/Supabase/deployment mutation. No Kevin branch repair. No owner hinge winner selected.
+
+Nathan is not the technical courier.
