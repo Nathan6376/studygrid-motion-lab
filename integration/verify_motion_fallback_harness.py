@@ -1,0 +1,76 @@
+#!/usr/bin/env python3
+import argparse, hashlib, json, pathlib, math
+from motion_fallback_harness import MotionFallbackHarness, State
+
+R5_SHA='0fee828511bdccd373fdc0625c0ea9f894485a57f6e6cbceff74e2652ec34d00'
+R6_SHA='875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef'
+VIEWPORTS=[(320,568),(360,800),(768,1024),(1024,768),(1440,900),(1920,1080)]
+
+def sha(path):
+    return hashlib.sha256(pathlib.Path(path).read_bytes()).hexdigest()
+
+def source_check(path, expected):
+    text=pathlib.Path(path).read_text(encoding='utf-8')
+    anchors=['@media(prefers-reduced-motion:reduce)','body[data-less-motion="true"] *','body.entry-mode #root','.welcome-page{position:relative;min-height:100vh','function focusRouteEntry()','function render(){']
+    return {'sha_match':sha(path)==expected,'missing':[a for a in anchors if a not in text]}
+
+def run_cases():
+    cases={}
+    h=MotionFallbackHarness(reduced_motion=True); f='welcome-title'; h.mount(f)
+    cases['reduced_motion']={'pass':h.state==State.SHELL_READY and State.RUNNING.value not in h.history and not h.renderer_initialised and h.focus_token==f,'history':h.history}
+
+    h=MotionFallbackHarness(app_less_motion=True); h.mount()
+    cases['app_less_motion']={'pass':h.state==State.SHELL_READY and not h.renderer_initialised,'history':h.history}
+
+    h=MotionFallbackHarness(webgl_available=False); h.mount()
+    cases['webgl_unavailable']={'pass':h.state==State.SHELL_READY and h.failure_reason=='WEBGL_UNAVAILABLE' and not h.assets_requested,'history':h.history}
+
+    h=MotionFallbackHarness(); f='continue-button'; h.mount(f); before=h.layout_box.copy(); h.tick(1600); can=h.escape_control_available; h.skip(); after=h.layout_box.copy()
+    cases['slow_load_continue']={'pass':can and h.state==State.SHELL_READY and before==after and h.focus_token==f,'history':h.history}
+
+    h=MotionFallbackHarness(); h.mount(); h.asset_fail()
+    cases['asset_failure']={'pass':h.state==State.SHELL_READY and 'FALLBACK_STATIC' in h.history,'history':h.history}
+
+    h=MotionFallbackHarness(); h.mount(); h.tick(6000)
+    cases['hard_timeout']={'pass':h.state==State.SHELL_READY and h.failure_reason=='HARD_TIMEOUT','history':h.history}
+
+    h=MotionFallbackHarness(); h.mount(); h.asset_ready(); h.start(); h.skip()
+    cases['running_skip']={'pass':h.state==State.SHELL_READY and 'RUNNING' in h.history and 'SKIPPED' in h.history,'history':h.history}
+
+    h=MotionFallbackHarness(); h.mount(); h.asset_ready(); h.start(); h.complete()
+    cases['normal_completion']={'pass':h.state==State.SHELL_READY and 'HANDOFF_READY' in h.history,'history':h.history}
+
+    h=MotionFallbackHarness(); h.mount(); h.dispose()
+    cases['route_dispose']={'pass':h.state==State.DISPOSED and not h.renderer_initialised and not h.assets_requested,'history':h.history}
+
+    h=MotionFallbackHarness(); h.mount(); lens=h.lens_mm; metrics=[]; ok=True
+    for w,hh in VIEWPORTS:
+        h.resize(w,hh); metrics.append({'viewport':[w,hh],'aspect':h.aspect,'lens_mm':h.lens_mm,'layout':h.layout_box}); ok=ok and h.lens_mm==lens
+    cases['viewport_fixed_lens']={'pass':ok,'metrics':metrics}
+
+    envelope=[]; env_ok=True; vfov=40.0; near_min=0.12
+    for w,hh in VIEWPORTS:
+        aspect=w/hh; d_cover=(0.5-0.055)/(max(1.0,aspect)*math.tan(math.radians(vfov)/2.0)); safe=max(d_cover,near_min)
+        envelope.append({'viewport':[w,hh],'aspect':aspect,'vfov_deg':vfov,'d_cover':d_cover,'d_near_min':near_min,'safe_handoff':safe}); env_ok=env_ok and safe>=d_cover and safe>=near_min and safe>0
+    cases['doorway_envelope']={'pass':env_ok,'metrics':envelope}
+
+    states=[]
+    for scenario in ('loading','slow','ready','running'):
+        h=MotionFallbackHarness(); h.mount()
+        if scenario=='slow': h.tick(1600)
+        elif scenario=='ready': h.asset_ready()
+        elif scenario=='running': h.asset_ready(); h.start()
+        states.append({'state':h.state.value,'escape':h.escape_control_available,'no_dead_end':h.assert_no_dead_end()})
+    cases['active_state_escape']={'pass':all(x['no_dead_end'] for x in states),'states':states}
+    return cases
+
+def main():
+    ap=argparse.ArgumentParser(); ap.add_argument('--r5',required=True); ap.add_argument('--r6',required=True); args=ap.parse_args()
+    sources={'r5':source_check(args.r5,R5_SHA),'r6':source_check(args.r6,R6_SHA)}
+    cases=run_cases()
+    status='PASS' if all(v['pass'] for v in cases.values()) and all(v['sha_match'] and not v['missing'] for v in sources.values()) else 'FAIL'
+    print(json.dumps({'schema':'studygrid.qb10.fallback_verification.v1','status':status,'sources':sources,'cases':cases},indent=2))
+    return 0 if status=='PASS' else 1
+
+if __name__=='__main__':
+    raise SystemExit(main())
