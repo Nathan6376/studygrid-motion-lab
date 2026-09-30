@@ -1,0 +1,51 @@
+{
+  "schema": "studygrid.qb11.state_alignment_verification.v1",
+  "executed_at_et": "2026-09-30 13:18",
+  "status": "PASS",
+  "exact_sources": {
+    "R5": {"sha256": "0fee828511bdccd373fdc0625c0ea9f894485a57f6e6cbceff74e2652ec34d00", "anchors": "PASS"},
+    "R6": {"sha256": "875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef", "anchors": "PASS"}
+  },
+  "original_qb10_acceptance": {
+    "pass": 12,
+    "total": 12,
+    "groups": {
+      "reduced_motion": "PASS",
+      "app_less_motion": "PASS",
+      "webgl_unavailable": "PASS",
+      "slow_load_continue": "PASS",
+      "asset_failure": "PASS",
+      "hard_timeout": "PASS",
+      "running_skip": "PASS",
+      "normal_completion": "PASS",
+      "route_dispose": "PASS",
+      "viewport_fixed_lens": "PASS_6_OF_6",
+      "doorway_envelope": "PASS_6_OF_6",
+      "active_state_escape": "PASS_4_OF_4"
+    }
+  },
+  "expanded_qb11_regression": {
+    "pass": 6,
+    "total": 6,
+    "groups": {
+      "canonical_contract_alignment": "PASS_33_TRANSITIONS",
+      "all_allowed_skip_paths": "PASS_4_OF_4",
+      "dispose_every_mounted_state": "PASS_11_OF_11",
+      "ready_running_failure": "PASS_2_OF_2",
+      "invalid_new_transitions": "PASS_2_OF_2_REJECTED",
+      "all_state_viewport_layout": "PASS_78_OF_78"
+    }
+  },
+  "canonical_states": ["NEW","MOUNTED","REDUCED_MOTION","LOADING","SLOW_LOAD","READY","RUNNING","FAILED","FALLBACK_STATIC","SKIPPED","HANDOFF_READY","SHELL_READY","DISPOSED"],
+  "canonical_events": ["MOUNT","REDUCED_MOTION_SELECTED","CAPABILITY_FAILURE","LOAD_BEGIN","SLOW_LOAD_THRESHOLD","ASSETS_READY","FAILURE","START","SKIP","COMPLETE","FALLBACK","SHELL_HANDOFF","DISPOSE"],
+  "viewports": [[320,568],[360,800],[768,1024],[1024,768],[1440,900],[1920,1080]],
+  "limitations": [
+    "synthetic state/layout/focus evidence does not prove browser DOM/keyboard/assistive-technology behaviour",
+    "synthetic harness does not prove real GPU/WebGL failure or recovery",
+    "rendered visual/device acceptance remains later integration QA"
+  ],
+  "candidate_selection": "NONE",
+  "html_mutation": false,
+  "motion_mechanics_mutation": false,
+  "promotion": "NONE"
+}
