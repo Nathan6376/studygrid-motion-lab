@@ -1,0 +1,73 @@
+STUDYGRID Q-B9 — MOTION→HTML ADAPTER / INTERFACE CONTRACT
+Status: preparation-only; no product mutation.
+
+1. SHELL OWNERSHIP
+- The HTML shell owns routing, semantic content, keyboard/focus behaviour and the existing Welcome actions.
+- The motion package owns only visual 3D playback inside an explicit host supplied by the shell.
+- Candidate A/C is opaque to the HTML shell. The shell receives one approved motionProfileId later.
+- Motion completion MUST NOT auto-navigate. The handoff returns control to the existing Welcome shell.
+
+2. MOUNT SEAM
+Future insertion point:
+  #root > .welcome-page > [data-sg-motion-host]
+The host is a sibling layer, not a child of .welcome-shell or .r6-welcome-grid.
+Required layer behaviour:
+- absolute inset:0 inside .welcome-page;
+- z-index 0 or 1, below existing .welcome-shell z-index 2;
+- visual canvas pointer-events:none;
+- no global overlay z-index bands;
+- no body/root overflow mutation;
+- preserve the existing full-viewport entry reservation so load/fail/skip cannot cause a layout jump.
+
+3. LIFECYCLE
+One common future sync hook belongs after route-specific rendering in render():
+  syncMotionEntry(route)
+It mounts only on /welcome and disposes on every other route. This avoids coupling to
+R5's single renderWelcome or R6's late renderWelcome override.
+
+Adapter surface:
+  mount()
+  start()
+  skip(reason)
+  dispose()
+  replaceAssetManifest(manifest)
+  getState()
+
+States/events:
+  MOUNTED -> LOADING -> READY -> RUNNING -> HANDOFF_READY
+  Any active state -> SKIPPED
+  Any load/runtime state -> FAILED
+  reduced-motion path -> REDUCED_MOTION -> HANDOFF_READY
+  route exit -> DISPOSED
+
+4. FOCUS / INPUT
+- Mount/start/completion do not move focus.
+- Canvas is non-focusable and aria-hidden unless a later approved semantic requirement says otherwise.
+- Skip/continue is ordinary HTML control, not a canvas hit target.
+- Existing focusRouteEntry() remains route-transition authority.
+- Existing Welcome buttons/links remain reachable even if animation is loading or has failed.
+- No global keydown interception except an explicitly scoped future control handler.
+
+5. VIEWPORT / CAMERA
+- Renderer consumes the motion-host CSS-pixel box and updates projection aspect on resize.
+- Fixed-lens/fixed-FOV motion remains fixed; viewport aspect change is not focal-length animation.
+- CSS scaling, object scale or camera FOV must not be used to fake approach/depth.
+- Device-pixel-ratio may be capped as a render-quality decision only.
+- Host geometry is independent of R5/R6 Welcome content width.
+
+6. ASSET SWAP
+MotionAssetManifest carries approved asset/version pointers:
+  version, gAssetUri, gridAssetUri, motionClips, handoffMarker, integrity, metadata.
+Canonical G/final 3x3 replacement is a manifest swap. It must not require rewriting the
+Welcome page, route dispatcher, focus logic or product state.
+
+7. R5 ↔ R6 DIFFERENCE THAT GENERAL MUST RESOLVE
+R5 is the accepted baseline. R6 is verified but unpromoted.
+R5 Welcome is a single centred shell. R6 widens Welcome and adds a two-column
+.r6-welcome-grid plus instructor demo panel, then collapses at <=900px.
+The motion seam therefore anchors to .welcome-page, never to R5/R6 content columns.
+General must later name the authorized integration baseline; Bob does not choose one here.
+
+8. BOUNDARIES
+No R5/R6/main-motion/backend/auth/Supabase/deploy write. No Candidate A/C selection.
+No final choreography or canonical-G invention.
