@@ -1,6 +1,6 @@
 STUDYGRID — BOB WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 12:49 ET
+Updated: 2026-09-30 13:15 ET
 Queue owner: General
 Worker: Bob / CF-0042
 
@@ -8,18 +8,27 @@ PULL RULE
 When Nathan directly tells Bob to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item. Do not pull another worker's queue and do not create owner-routing prompts; return durable technical results to General.
 
 CURRENT CONTEXT
-- Q-B1 G→seed continuity scaffold: DONE on bob-cf0042-qb1-g-seed-continuity @ d60b45e...
-- Q-B2 doorway camera handoff safety fixture: DONE on bob-cf0042-qb2-doorway-camera-fixture @ 1ac0ce6...
-- Q-B4 doorway cube-selection policy fixture: DONE @ 7c94bd8765d11398181d799a1fc9d9d53bb95ef5.
-- Q-B5 nine-cube invariant/slot validator: DONE @ 8cddfeb71b1b70c7d62aec8ba663e257242deb0c.
-- Q-B6 study visibility/cut isolation fixture: DONE @ fa4cbb1d95a396d2cd9dfdb6020bd574e1383b56.
-- Q-B7 dual-variant final-integration preflight: DONE @ 5b139cb0c98721b5c343b8c35c4a46ad293cd9ab. Candidate A PASS; Candidate C PASS with bounded requirements.
-- Q-B8 global motion-invariant scanner: DONE @ 98a96da79c58b3037c00797bc6cfef555f6919af; synthetic test suite PASS.
-- Q-B9 motion→HTML integration seam map: DONE @ ce988963...; accepted R5/unpromoted R6 remained read-only, stable .welcome-page seam identified, candidate-neutral adapter/asset-manifest seam verified.
-- Q-B10 reduced-motion/loading/failure fallback harness: DONE @ 06ca7b65...; 12 acceptance groups PASS and product/motion boundaries preserved.
-- Stuart Q-S1 independently passed both Candidate A and Candidate C on the frozen technical acceptance matrix.
-- Kevin Q-K1 full-context dual-preview latest workflow attempt rendered both Candidate A and Candidate C successfully, then failed at post-render isolation/media-integrity verification before proof hashing/upload. Kevin recovery owns that lane.
-- StudyGrid product HTML remains intentionally unmutated during the V4A motion gate. Accepted R5 and unpromoted R6 are read-only references only.
+- Q-B1/B2/B4/B5/B6/B7/B8 are DONE.
+- Q-B9 motion→HTML integration seam map: DONE @ ce9889635ce18e66d7548fe2b57b6e080b42fb86.
+- Q-B10 reduced-motion/loading/failure fallback harness: DONE @ 06ca7b6557b1cc2160873bd26ac42d51f457a01a.
+- Stuart Q-S6 independent QA is DONE @ 9dd9b22fe7b52cde1f8fa0650a8a11a7ed25bd6c. The core Q-B9 common seam PASSed, but Q-B9 overall and Q-B10 are HOLD due bounded prep-contract/state-machine drift. This is preparation-only, not a StudyGrid product/runtime failure.
+- Kevin Q-K1 recovery remains active and separate. Do not overlap Kevin render/verifier work.
+- StudyGrid product HTML remains intentionally unmutated; accepted R5 and unpromoted R6 remain read-only.
+
+Q-B11 — ALIGN Q-B9/Q-B10 INTEGRATION-PREP STATE CONTRACT
+Eligibility: AVAILABLE NOW if no newer Bob task is STARTED.
+Purpose: make the smallest integration-prep-only amendment required by Stuart Q-S6 so the motion→HTML adapter contract, fallback state graph and harness use one enforceable state/event model before later product integration.
+Authoritative QA input: stuart-qs6-qb9-qb10-independent-qa @ 9dd9b22fe7b52cde1f8fa0650a8a11a7ed25bd6c, report docs/V4A_QS6_BOB_QB9_QB10_INDEPENDENT_QA.md.
+Requirements:
+- Preserve Q-B9's verified common `#root > .welcome-page` seam, read-only R5/R6 treatment, candidate-neutral A/C adapter boundary and all no-product-mutation constraints.
+- Define one canonical Q-B9/Q-B10 adapter state/event enum including SLOW_LOAD, FALLBACK_STATIC and SHELL_READY.
+- Align runtime failure semantics across prose contract, JSON/state graph and harness. Explicitly support READY/RUNNING -> FAILED if that is the retained behavior; otherwise narrow all three consistently. Do not leave contradictory semantics.
+- Make skip() and failure methods enforce the canonical transition graph. Invalid NEW -> SKIPPED and NEW -> FAILED must reject/guard rather than silently succeed.
+- Extend the verifier to cover all allowed skip paths, dispose from every active state, READY/RUNNING failure, invalid-transition negative tests, and all-state × six-viewport layout reservation.
+- Re-run the original 12 Q-B10 acceptance groups plus the expanded regression set and report exact PASS/FAIL.
+- Keep browser/device/assistive-technology focus and GPU/WebGL recovery as later integration QA; do not promote synthetic evidence into runtime acceptance.
+- Isolated Bob branch/package only. No product/main/R5/R6/motion-scene/workflow/backend/auth/Supabase/deploy/canonical-G/final-3x3/A-C-selection mutation.
+Return: exact branch/head, amended contract/state graph/harness, verifier/regression results, before/after explanation, and any remaining HOLD item directly to General.
 
 Q-B3 — APPLY OWNER-SELECTED HINGE VARIANT
 Eligibility: BLOCKED until Nathan selects A or C after General confirms owner-decision readiness and publishes the exact selected-candidate pointer.
@@ -31,4 +40,4 @@ Requirements:
 Return: exact selected-variant integration commit, diff, static checks, render-ready pointer for Kevin/Stuart.
 
 STOP CONDITION
-No other Bob item is currently eligible. Do not invent filler work or overlap Kevin's Q-K1 recovery or Stuart's independent QA. Wait for General to replenish this queue or for Q-B3's owner-decision dependency to be released.
+Execute Q-B11 if eligible, then stop unless General has published a newer distinct eligible Bob item. Q-B3 remains blocked on the owner-decision gate. Do not invent filler or overlap Kevin/Stuart.
