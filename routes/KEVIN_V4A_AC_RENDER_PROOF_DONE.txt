@@ -1,0 +1,84 @@
+STUDYGRID V4A — KEVIN A/C BLENDER RENDER PROOF — DONE
+From: StudyGrid Worker Kevin
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 10:21 ET
+Status: DONE
+
+ACTIVATED ROUTE
+- routes/KEVIN_V4A_AC_RENDER_PROOF.txt @ blob 27378d6e4f75b250608fe5676d29d8dd6858f67b
+- STARTED persisted at routes/KEVIN_V4A_AC_RENDER_PROOF_STARTED.txt.
+
+ISOLATION / SOURCE IDENTITY
+- Bob source branch consumed: bob-v4a-hidden-mechanics-prototypes
+- Exact Bob source commit used: b1a7843fcc05a825c1043d1fa060004a29e730b8
+- Kevin execution branch: kevin-v4a-ac-render-proof
+- Successful render run head: 73738d53c1f6fab4153e24155603b9e3e048b0b7
+- Bob comparison source blob: db9813aed09fc815b94d1693ea270db21ab0642c
+- Bob comparison source SHA-256: fbf4b72e4d4680ceb0eac0023a6612236b362733aeb357ec9d55e225a422b428
+- Bob verifier blob: 65b39e13b051dbff9c1012fdb9df9447325cf25a
+- Bob verifier SHA-256: 76eb6ebde25a24987a9a387e1c4c850d6d4d11bf30060042c21efafe74f68f97
+- Bob committed geometry-report blob: 19414f061e815e256a89eeb2f5d3e9af95056b00
+- Bob committed geometry-report SHA-256: 531e8575e378ea074e08033a89452dbe334edd62c6709e09894f3b26754f8934
+- Compare Bob source commit -> successful Kevin render head contains only branch-local workflow support plus STARTED route/status. Bob Blender source, verifier and geometry report are unchanged.
+- Main was not modified by this Kevin branch package. Main was independently refreshed before terminal return and is on unrelated coordinator/Bob route-state commits, not Kevin render-proof commits.
+
+RENDER-ONLY COMPATIBILITY DELTA
+- Bob mechanics source was copied at runtime and only EEVEE preview samples were bounded to 8 for render completion.
+- Runtime-copy SHA-256: 05628ad529b7a7b15c92c91200d3d0f47b4afd33c6f477921cbf1d2d6948ec93
+- No geometry, timing, material, camera, visibility, gap, hinge axis, hierarchy or choreography value was altered.
+
+GITHUB ACTIONS
+- Workflow: Kevin V4A A-C Render Proof
+- Successful run number: #2
+- Run ID: 36726558912
+- Job ID: 109924951185
+- Run head SHA: 73738d53c1f6fab4153e24155603b9e3e048b0b7
+- Result: COMPLETED / SUCCESS
+- Blender: 4.5.14 LTS
+- The first attempt, run 36723900430, was superseded/cancelled after the branch-local 8-sample render-only bounding change; it produced no promoted proof artifact and is not the verified result.
+- Three EGL_BAD_MATCH startup warnings were non-fatal; rendering, encode, decode checks and upload completed.
+
+ANALYTIC VERIFICATION
+- blender/verify_v4a_hidden_mechanics.py was re-run on the successful run.
+- Runtime JSON matched Bob's committed v4a_hidden_geometry_report.json exactly.
+- Report pass=true.
+- A: 0 colliding samples / 721, ~0.10L minimum positive SAT separation, 0.10L final rest gap, 0.75L minimum floor clearance.
+- C stage 1: 0 colliding samples / 721, ~0.10L minimum positive SAT separation, 0.75L minimum floor clearance.
+- C stage 2: 0 colliding samples / 721, ~0.10L minimum positive SAT separation, ~0.335786L minimum floor clearance.
+- C final rest gap=0.10L; visibility toggle=none; exact-front start fully occluded=true.
+
+OWNER-QA PROOF ARTIFACT
+- Artifact name: studygrid-v4a-ac-render-proof
+- Artifact ID: 11103902103
+- GitHub compressed size: 4,549,371 bytes
+- GitHub ZIP digest: sha256:0b71adc48c9d47f395e204e0a4ba8f5fae19f2a5afb8a97180a9af8be947ae14
+- Independent downloaded ZIP SHA-256: 0b71adc48c9d47f395e204e0a4ba8f5fae19f2a5afb8a97180a9af8be947ae14 — exact match.
+- ZIP integrity test: PASS.
+- Artifact contains 20 files. Its embedded per-file hash manifest covers 19 payload files excluding itself; independently recomputed result: 19/19 match.
+
+ARTIFACT INVENTORY / DECODE
+- Slow exact-front motion: studygrid-v4a-ac-front-compare.mp4 — H.264/yuv420p, 960x540, 12 fps, 78 frames, 6.500 s; full decode PASS; SHA-256 8fab3318bd7d3c5e5716a22abcd4242d59c8b7172a538683be6cc5cb8cd8f7e6.
+- Exact-front checkpoints: front_00_start_stowed.png, front_01_stage1_mid.png, front_02_stage1_landed.png, front_03_stage2_mid.png, front_04_final.png.
+- Oblique diagnostic checkpoints: diag_00_start_stowed.png, diag_01_stage1_mid.png, diag_02_stage1_landed.png, diag_03_stage2_mid.png, diag_04_final.png.
+- All 10 PNGs independently decode as 960x540 RGB.
+- Blender scene: studygrid-v4a-hidden-mechanics-compare.blend — valid BLENDER-v405 file signature; SHA-256 50fbf0a76fd6b9f5c8acdf2c7b7a258781603d76a99c4aa31c72b69726d3837b.
+- Also included: qa_manifest_hidden_mechanics.txt, v4a_hidden_geometry_report_runtime.json, source_identity.txt, scene_v4a_2c_compare_runtime.py, runtime_source_identity.txt, mp4_probe.txt, render_proof_inventory.txt, artifact_sha256.txt.
+
+BOUNDED VISUAL PROOF
+- Exact-front start renders Candidate A in its raised hinge-start state while Candidate C presents a single front silhouette because its continuously present child is physically rear-stowed and occluded.
+- The oblique C start diagnostic exposes that rear child behind the parent, providing the requested hidden-behind proof without a visibility toggle.
+- Exact-front A progresses through its single hinge to adjacent rest; C progresses through its two distinct stages to adjacent rest.
+- Sampled MP4 inspection found no gross visibility pop or teleport; this is render/mechanics evidence, not aesthetic adjudication.
+
+READINESS
+READY FOR STUART INDEPENDENT ACCEPTANCE: YES.
+READY FOR NATHAN OWNER QA: YES.
+This means the proof package is technically complete enough to inspect. It does NOT mean Stuart has accepted it, Nathan has approved it, or either A or C has been selected.
+
+BOUNDARIES PRESERVED
+- No merge to main and no deployment.
+- No mechanics reinterpretation and no hinge-winner selection.
+- No StudyGrid production code, R5/R6, backend, auth, Supabase, canonical G or final 3x3 choreography changes.
+
+OWNER_WAKE: NO
+General CF-0040 can consume this terminal return directly; Nathan is not the technical courier.
