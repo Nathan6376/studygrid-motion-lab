@@ -1,0 +1,27 @@
+STUDYGRID V4A — KEVIN PARALLEL ROUTE
+Owner: Nathan
+Coordinator/integration owner: General ChatGPT
+Repository: Nathan6376/studygrid-motion-lab
+Scope: GitHub Actions / render-pipeline reliability only
+
+CURRENT VERIFIED STATE
+- Current main commit when this packet was prepared: 637729ed5932b4c8d727269753db22bc89213e6c.
+- Current workflow: .github/workflows/render-v4a.yml.
+- Run #7 was cancelled by the 25-minute job timeout during Blender frame 29; MP4 encode and artifact upload were skipped.
+- Run #8 increased the job timeout to 60 minutes but remained an expensive full-frame render.
+- Run #9 is the current bounded-preview attempt. At packet creation it had completed setup, tool verification, and runtime-source preparation; Blender rendering was in progress.
+- Run #9 uses a copied runtime source in output/scene_v4a_runtime.py, preview FPS 8, preview EEVEE samples intended as 8, MP4 +faststart, and uploads runtime source plus SHA-256 with the owner-QA artifact.
+
+YOUR TASK
+1. Re-read current main and current/latest workflow-run state before acting; do not assume this packet is still latest.
+2. Diagnose render-pipeline reliability and cost from actual Actions jobs/logs/artifacts.
+3. Verify Blender 4.5.14 headless compatibility of the preview-sample override and any runtime source mutation.
+4. Make only pipeline/runtime reliability changes needed to produce a complete owner-QA artifact quickly and reproducibly.
+5. Do not change the motion contract, hinge choreography, camera intent, StudyGrid production code, R5/R6, Supabase, or final 3x3 choreography.
+6. Do not merge or overwrite concurrent Blender/mechanics work. Keep changes confined to .github/workflows/render-v4a.yml and pipeline-only helper files unless a broader change is strictly necessary; if so, stop and report the dependency.
+7. Preserve source identity: the artifact must identify exactly what Blender source was executed.
+8. Preserve iPad-review deliverables: H.264/yuv420p MP4 with faststart, stills, .blend, QA manifest, runtime source, and runtime source hash.
+9. After any change, verify the resulting run state and artifact list. Do not call it complete until the workflow succeeds and the owner-QA artifact exists.
+
+HANDOFF BACK
+Return STARTED, then DONE/PARTIAL/BLOCKED to General with: exact commit(s), workflow/run ID, whether encode/upload completed, artifact name/id if present, and any remaining risk. Keep the owner-facing explanation short.
