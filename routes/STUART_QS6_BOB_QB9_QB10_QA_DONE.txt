@@ -1,0 +1,61 @@
+STUDYGRID V4A — STUART Q-S6 INDEPENDENT QA OF BOB Q-B9/Q-B10 — DONE
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 13:12 ET
+Status: DONE WITH Q-B9/Q-B10 HOLD FINDINGS
+
+BRANCH
+stuart-qs6-qb9-qb10-independent-qa
+Base: main @ 56feeb46ad0a9d0fcca64c1a843691153be4e512
+
+EXACT INPUTS
+- R5 accepted read-only baseline: SHA-256 0fee828511bdccd373fdc0625c0ea9f894485a57f6e6cbceff74e2652ec34d00 / 874986 bytes.
+- R6 verified unpromoted read-only candidate: SHA-256 875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef / 954208 bytes.
+- Q-B9 head ce9889635ce18e66d7548fe2b57b6e080b42fb86.
+- Q-B10 head 06ca7b6557b1cc2160873bd26ac42d51f457a01a.
+
+DISPOSITION
+Q-B9: HOLD. Core seam PASS, shared adapter-state contract amendment required.
+Q-B10: HOLD. Bob's 12 reported verification groups independently re-run PASS, but formal state-machine enforcement/coverage amendment required before General relies on the prep package.
+
+Q-B9 CORE PASS EVIDENCE
+- Exact R5/R6 identities independently verified.
+- `#root > .welcome-page` is common/stable across exact R5/R6; R6's `.r6-welcome-grid` is content geometry below that seam.
+- Common render/route/focus seams exist in both.
+- Candidate A/C remains opaque; no A/C winner, HTML baseline, canonical G or final 3x3 identity selected.
+- No auto-navigation or product-state ownership introduced.
+
+MATERIAL HOLD FINDINGS
+1. Q-B9 adapter events omit `SLOW_LOAD`, `FALLBACK_STATIC`, `SHELL_READY`, while Q-B10 uses them as canonical states. There is no single shared adapter state/event vocabulary.
+2. Q-B10 formal JSON has no READY->FAILED or RUNNING->FAILED transition even though Q-B9 says load/runtime states may fail and the Q-B10 harness itself accepts READY/RUNNING failure paths.
+3. Q-B10 harness does not enforce its formal graph: `skip()` from NEW silently reaches SKIPPED->SHELL_READY; `asset_fail()` from NEW silently reaches FAILED->FALLBACK_STATIC->SHELL_READY.
+4. Synthetic focus-token evidence is not browser DOM/keyboard/assistive-technology focus proof; GPU/WebGL recovery and visual acceptance remain later integration QA.
+
+EXTENDED POSITIVE QA
+- Bob verifier: 12/12 reported groups independently re-run PASS.
+- Valid skip paths: LOADING/SLOW_LOAD/READY/RUNNING PASS.
+- Dispose paths from tested active states PASS.
+- Layout reservation: 4 active states x 6 viewports = 24/24 PASS.
+- Fixed lens/aspect update: 6/6 PASS.
+- Q-B2 doorway formula independently reproduced across all six Q-B10 viewports; all remain outside 0.12L near boundary.
+- Reduced motion/app less-motion/WebGL unavailable/no-dead-end positive paths PASS.
+
+SMALLEST CORRECTIVE ROUTE FOR GENERAL
+Return Q-B9/Q-B10 integration prep to Bob only for a bounded amendment:
+- one canonical Q-B9/Q-B10 state/event enum including SLOW_LOAD/FALLBACK_STATIC/SHELL_READY;
+- align READY/RUNNING failure semantics across contract/JSON/harness;
+- enforce canonical transition guards so invalid NEW->SKIPPED / NEW->FAILED reject;
+- extend verifier for every allowed skip/dispose path, READY/RUNNING failure, invalid-transition negatives and all-state x six-viewport layout reservation;
+- leave browser/device/AT/GPU verification for later real integration QA.
+No product/main/R5/R6/motion-scene/workflow/backend/auth/Supabase/deploy mutation is needed for this correction.
+
+REPORT
+`docs/V4A_QS6_BOB_QB9_QB10_INDEPENDENT_QA.md`
+
+NEXT QUEUE CHECK
+Q-S2 refreshed after Q-S6: BLOCKED / NOT STARTED. Kevin Q-K1 run 36734968949 remains FAILURE and its artifact listing is empty; no durable valid full-context A+C proof exists in the checked current scope. Q-S3 remains later dependency-blocked.
+
+BOUNDARIES
+No Kevin recovery overlap. No A/C selection. No StudyGrid product/main/R5/R6/backend/auth/Supabase/deployment mutation.
+
+Nathan is not the technical courier.
