@@ -1,28 +1,35 @@
 STUDYGRID — KEVIN WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 ET
+Updated: 2026-09-30 13:10 ET
 Queue owner: General
 Worker: Kevin
 
 PULL RULE
 When Nathan directly tells Kevin to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item. Do not pull another worker's queue and do not create owner-routing prompts; return durable technical results to General.
 
-CURRENT ACTIVE PACKAGE
-- routes/KEVIN_V4A_AC_RENDER_PROOF.txt is the current critical-path render package. Finish it before pulling queue work.
+CURRENT CONTEXT
+- Earlier A/C hidden-mechanics render proof is DONE and independently accepted by Stuart: Candidate A PASS and Candidate C PASS on the frozen technical matrix; no owner winner selected.
+- Q-K1 full-context branch: kevin-qk1-v4a-full-context-dual-preview.
+- Q-K1 workflow run 36734968949 reached successful Candidate A and Candidate C full-context renders, then FAILED in the post-render verifier before proof hashing/upload.
+- Fresh General inspection of job 109954161030 isolates the failure to verifier/tooling logic: .github/tools/verify_v4a_qk1_full_context.py raises KeyError: 'expected' after inconsistent schema/key access involving expect/expected. This failure is not evidence that either rendered candidate media is defective.
+- Because the failed GitHub-hosted runner is terminal and the proof package was never uploaded, do not assume its ephemeral render bytes are durably recoverable. Reuse them only if provider-visible durable evidence proves they remain available; otherwise rerendering the exact unchanged candidates is permitted.
+- No durable Q-K1 recovery return or valid full-context proof artifact is currently present on the shared surfaces checked by General.
 
-Q-K1 — FULL-CONTEXT DUAL-CANDIDATE PREVIEW RENDERS
-Eligibility: AVAILABLE after current A/C render-proof package is DONE/PARTIAL with valid render source identity AND Bob's reversible A/C integration variants have a durable branch/pointer.
-Purpose: Render Candidate A and Candidate C as two separate full-V4A isolated previews so Nathan can compare the real mechanism in context before selecting a winner.
+Q-K1R — Q-K1 VERIFIER RECOVERY + DURABLE FULL-CONTEXT PROOF
+Eligibility: AVAILABLE NOW if no newer Kevin recovery package is STARTED.
+Purpose: repair only the Q-K1 post-render verification/tooling defect and produce the durable valid A+C full-context proof that Q-K1 was intended to deliver.
 Requirements:
-- Use Bob's reversible variants faithfully; do not redesign or select a winner.
-- Same camera/material/cube-size/gap/pacing contract wherever comparison requires parity.
-- Preserve accepted Study1, cross-study isolation, Study3 causal chain, doorway and other unrelated behavior.
-- Produce slow inspectable MP4s plus key stills and source/run/artifact identity.
-- Isolated branches only; no main/product/R5/R6/Supabase/backend/auth/deploy/canonical-G/final-choreography mutation.
-Return: A and C full-context artifacts, integrity/source evidence, any candidate-specific integration/render conflict.
+- Start from the exact Q-K1 candidate/source identities already used by run 36734968949. Preserve Candidate A/C mechanics and all unrelated accepted V4A behaviour; do not redesign or select a winner.
+- Diagnose and correct the verifier schema/key mismatch that produced KeyError: 'expected'. Normalize the verifier to one explicit manifest/schema contract and add a regression that fails if expect/expected handling drifts again.
+- Keep the fix verifier/tooling-only unless new evidence demonstrates a real media defect. If a real media defect is discovered, stop and return PARTIAL/BLOCKED with exact evidence instead of silently changing mechanics.
+- Reuse prior A/C render outputs only if they are durably recoverable and source-identical. If the GitHub runner discarded them, rerender A and C from the exact unchanged Q-K1 sources; rerendering due ephemeral-runner loss is not a mechanics change.
+- Complete post-render isolation/media-integrity verification, proof hashes/manifest, and artifact upload.
+- Independently verify the uploaded artifact identity, expected inventory, media decode, source identity and payload hashes before DONE.
+- Return exact recovery commit, workflow run ID, artifact name/ID/digest, A/C source identities, verifier regression result, inventory/hash/decode result and any residual limitation directly to General.
+- No main product/R5/R6/backend/auth/Supabase/deploy/canonical-G/final-choreography mutation and no owner winner selection.
 
 Q-K2 — DUAL-CANDIDATE GLB EXPORT SMOKE
-Eligibility: AVAILABLE after Q-K1 produces source-stable A/C full-context variants; does NOT require owner winner if both can be exported independently without changing mechanics.
+Eligibility: BLOCKED until Q-K1R produces a durable valid source-stable A+C full-context proof artifact and General/Stuart can consume that evidence.
 Purpose: Prove that the two candidate hinge structures can survive the Blender→GLB boundary with transform hierarchy intact before the owner choice.
 Requirements:
 - Export only the minimum hinge fixture(s), not the whole product.
@@ -32,7 +39,7 @@ Requirements:
 Return: GLB artifacts/manifests, export logs, structural verification and differences.
 
 Q-K3 — SELECTED-CANDIDATE FINAL RENDER / ROUND-TRIP
-Eligibility: BLOCKED until Nathan selects A or C after independent acceptance and General publishes the selected integration source.
+Eligibility: BLOCKED until Nathan selects A or C after independent full-context acceptance and General publishes the selected integration source.
 Purpose: Render and, if separately routed, run the smallest chosen-candidate GLB→Three.js round-trip including the doorway camera handoff.
 Requirements:
 - Use only owner-selected accepted mechanics.
@@ -40,4 +47,4 @@ Requirements:
 Return: final chosen-candidate QA artifact and runtime handoff evidence.
 
 STOP CONDITION
-If no queue item is eligible, return BLOCKED/WAITING with the exact dependency and stop. Do not invent filler work.
+If Q-K1R is already STARTED in a newer durable lifecycle record, do not duplicate it. Otherwise Q-K1R is the first eligible Kevin item. Q-K2 and Q-K3 remain blocked as stated. Do not invent filler work.
