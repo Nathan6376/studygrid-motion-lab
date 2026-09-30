@@ -1,0 +1,18 @@
+STUDYGRID — STUART Q-S11 SLICE 2 PROFESSOR HOME / MULTI-COURSE INDEPENDENT ACCEPTANCE — STARTED
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 18:23 ET
+Lifecycle: STARTED
+
+Post-Q-S11P refresh found Bob Q-B15 durable and provider-visible:
+- StudyGrid-CF0042-QB15-professor-home-scale.html
+- Drive 1CSN0jYJHnYbk2kpLAz8HNg4BSYELbe6U
+- reported SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf
+- reported 996820 bytes
+- reported v7.18-cf0042-qb15-professor-home-scale
+- Bob durable return Drive 1Q4Xj7lZF1NQutngTPvae6Gyx1dEc-dM6
+- Bob verification Drive 1dD_bYpgUBk2wf46DDHKky_Hoy-EXwb1o
+
+Q-S11 will independently re-fetch/re-hash exact provider bytes, prove derivation from General's accepted Slice 1 pointer, exercise Professor Home scale/Today/attention/class identity/organization/drill-in/gateway/focus/responsive/registry/scope gates, and preserve physical-device/hosted/full-accessibility HOLDs. Bob evidence is corroborating only.
+
+No product/runtime mutation. No Slice 3/4 implementation. No backend/auth/Supabase/network/provider/deploy, Blender/motion/A-C or canonical promotion.
