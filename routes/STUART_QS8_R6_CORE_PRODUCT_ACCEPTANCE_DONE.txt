@@ -1,0 +1,63 @@
+STUDYGRID — STUART Q-S8 INDEPENDENT R6 CORE PRODUCT ACCEPTANCE — DONE
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 14:40 ET
+Status: DONE — OVERALL FAIL (BOUNDED KEYBOARD/FOCUS FAMILY); OTHER TESTED OWNER-RELEASE FAMILIES PASS; REAL-DEVICE/HOSTED ACCESSIBILITY HOLD
+
+EXACT R6
+StudyGrid-CF0032-integrated-batch4-8-cf0039-r6.html
+Drive: 1pxKsdqM6dhKE6ihN5k4UgO-0usgNBmjD
+954208 bytes
+SHA-256: 875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef
+APP_VERSION: v7.16-cf0032-integrated-batch4-8-cf0039-r6
+Identity: PASS — provider bytes independently rehashed.
+
+ACCEPTANCE BASIS
+Only Nathan's owner-approved instructor-first release slice from the 15:22 ET owner QA release/amendment was used as failure authority. Later professor-scale, brand, architecture, teaching-mode and motion ideas were explicitly excluded from retroactive failure criteria.
+
+FAMILY RESULTS
+PASS — Exact identity/static integrity.
+PASS — Registry integrity: rev 11 / 237 entries / 237 unique.
+PASS — Instructor shell + Clear Desk unresolved-only attention lifecycle/history/caught-up state.
+PASS — Assessment Desk/source proof/distinct timing/approval-vs-release semantics.
+PASS — AI source policy exact revision inspection + Sources safe-rebase truth boundaries.
+PASS — Repeated-question answer-once flow with originals, NOT SENT draft, exact support and unresolved exception handling.
+PASS — Student preview/timeline/Fact-Recommendation-Unknown + answered/still-help feedback + transparent Students sorting.
+PASS — Responsive/local runtime: 30/30 Paper+Dusk × five widths × Overview/Students/Sources; zero page overflow failures, bounded console/page errors or external HTTP(S) requests; reduced-motion/coarse-pointer smoke functional.
+PASS — R5-preserved regression: deterministic fixtures 6/6; representative runtime duplicate-ID sweep 6/6; static executable JS parse PASS.
+FAIL — Keyboard/focus basics: QS8-F1 and QS8-F2 below.
+HOLD — physical iPad/Safari/WebKit, VoiceOver, Apple Pencil/physical interaction, physical keyboard, true 200% zoom, full WCAG, hosted-origin storage/cross-tab behaviour.
+
+DEFECT QS8-F1
+Instructor > Students: focus #r6StudentSort and change sort. The change handler repaints/replaces the Students pane and does not restore focus. document.activeElement falls to BODY/no meaningful id. This violates the owner-release rule that in-place controls preserve focus/scroll/context.
+
+DEFECT QS8-F2
+Overview > Assessment Desk: focus/click #r6ConfirmAssessment. ScrollY is preserved, but refresh attempts to focus #r6AttentionTitle, a non-focusable h4, so focus falls to BODY/no meaningful id after resolution. This violates the same release-scope focus requirement.
+
+POSITIVE KEYBOARD EVIDENCE
+- Selected-class tabs: ArrowRight moves roving focus and selection correctly.
+- Source-policy dialog: focus moves into dialog; Escape closes; focus returns to #r6InspectPolicy.
+
+RUNTIME METHOD LIMIT
+Direct file:// Chromium navigation is blocked by the environment with ERR_BLOCKED_BY_ADMINISTRATOR. Exact provider-downloaded HTML bytes were therefore exercised with Chromium page.set_content for bounded local/in-memory runtime. No hosted-origin/device/AT claim is made from this method.
+
+PRIOR EVIDENCE INTEGRITY
+Bob static QA digest: match.
+Bob targeted QA digest: match.
+Bob regression QA digest: match.
+These were integrity-checked but were not the sole basis for Stuart acceptance.
+
+SMALLEST CORRECTIVE ROUTE
+Bob-only bounded R6 focus repair: restore the initiating Students sort/filter control after repaint; after attention resolution move focus to a deliberately focusable persistent target without scroll jump. Produce new exact non-canonical bytes; Stuart reruns focused keyboard/focus checks plus compact regression smoke. No product redesign is required.
+
+ARTIFACTS
+- docs/STUART_QS8_R6_CORE_PRODUCT_ACCEPTANCE.md
+- tests/stuart_qs8_r6_core_acceptance_results.json
+- routes/STUART_QS8_R6_CORE_PRODUCT_ACCEPTANCE_STARTED.txt
+- routes/STUART_QS8_R6_CORE_PRODUCT_ACCEPTANCE_DONE.txt
+Branch: stuart-qs8-r6-core-product-acceptance
+
+BOUNDARIES
+No R5/R6 mutation. No StudyGrid backend/auth/Supabase/deployment mutation. No canonical promotion. Animation/A-C lane untouched. Later post-R6 ideas not treated as R6 failures.
+
+Nathan is not the technical courier.
