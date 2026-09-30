@@ -1,0 +1,84 @@
+{
+  "schema": "studygrid.qb7.dual_variant_preflight.v1",
+  "executed_at_et": "2026-09-30 11:51",
+  "selection": "NONE",
+  "current_main": "d3c96c4b66fb3d057f3d3717a2e66fad19054013",
+  "current_scene": {
+    "path": "blender/scene_v4a.py",
+    "git_blob": "cb87739e3f254222e9e336eb0db5b25164f59bb8",
+    "sha256": "fa72445d4438b9e057285c749f5bd77776ed7f2590427b02b3184b2dd23193fd",
+    "identity_vs_original_patch_base": "EXACT_MATCH"
+  },
+  "integration_source": {
+    "branch": "bob-v4a-ac-integration-variants",
+    "head": "09b8d26a8969a809d60c47a9e7dbbaca9adcbd27",
+    "variant_a_patch_blob": "458af43daddb0a6e266365d9511e038701fafb00",
+    "variant_c_patch_blob": "c010ea6f61a64544474502b7eee5bc16122ce97a",
+    "prior_static_verification_blob": "5433955978fe3bdb3a81767dbe5209ddf2de8d5c"
+  },
+  "fixture_bindings": {
+    "g_seed_continuity": {
+      "head": "d60b45e59518b74751dd788cfd30d96611d6dc94",
+      "source_blob": "d05080730e2927af6d99c1476d1217b5a3483932",
+      "verifier_blob": "bc5606f5a398936e67a169359f229cd9a64f3346",
+      "binding": "BOTH_CANDIDATES_UNCHANGED_SOURCE_REGION"
+    },
+    "doorway_camera_handoff": {
+      "head": "1ac0ce6b703fd38dae99984227e7230eb582f0ca",
+      "source_blob": "48d55134ef5f4d4f2abe4c76d22c71955c10720d",
+      "verifier_blob": "4e5f125f1311f0f4dfffce04961e2f60bf329ff4",
+      "binding_A": "PASS_DOORWAY_CAMERA_UNCHANGED",
+      "binding_C": "PASS_DOORWAY_PATH_UNCHANGED_2C_EXACT_FRONT_CUT_ONLY"
+    },
+    "doorway_selection_policy": {
+      "head": "7c94bd8765d11398181d799a1fc9d9d53bb95ef5",
+      "source_blob": "9df4370b8be6be2917c1aeb12f236e0e2f4ea784",
+      "verifier_blob": "bfd4ffe258eeab829c6d3f98cba59bd1c9b0777f",
+      "binding": "BOTH_CANDIDATES_EXTERNAL_NO_PATCH_OVERLAP"
+    },
+    "nine_cube_grid": {
+      "head": "8cddfeb71b1b70c7d62aec8ba663e257242deb0c",
+      "source_blob": "0bf0dcfa8cd05397f0f2f0367c35431893235092",
+      "verifier_blob": "cc422b12a61985274488e8aa232ed590aabd1705",
+      "binding": "BOTH_CANDIDATES_EXTERNAL_FINAL_GRID_NOT_YET_PRESENT"
+    },
+    "study_visibility_cut": {
+      "head": "fa4cbb1d95a396d2cd9dfdb6020bd574e1383b56",
+      "source_blob": "4c6cc02f014fd68ea9861f6ffe580d3d2a24890e",
+      "verifier_blob": "e99b1fec6bea411731dc88cc41197f968ee316f5",
+      "binding_A": "PASS_2C_WINDOW_COMPATIBLE",
+      "binding_C": "PASS_WITH_2C_FLOOR_ENVIRONMENT_ISOLATION"
+    }
+  },
+  "candidate_A": {
+    "status": "PASS",
+    "patch_applies_to_current_scene": true,
+    "source_drift": false,
+    "prior_applied_source_compile": "PASS",
+    "animated_object_scale_added": false,
+    "camera_lens_or_fov_animation_added": false,
+    "camera_change": false,
+    "floor_change": false,
+    "smallest_conflict_needing_repair_after_selection": null
+  },
+  "candidate_C": {
+    "status": "PASS_WITH_BOUNDED_C_REQUIREMENTS_ALREADY_IN_PATCH",
+    "patch_applies_to_current_scene": true,
+    "source_drift": false,
+    "prior_applied_source_compile": "PASS",
+    "animated_object_scale_added": false,
+    "camera_lens_or_fov_animation_added": false,
+    "camera_change": "2C-only exact-front fixed-50mm cut",
+    "floor_change": "2C-only floor visibility isolation with restoration before later studies",
+    "smallest_conflict_needing_repair_after_selection": null
+  },
+  "common_holds_not_candidate_failures": [
+    "canonical StudyGrid G remains externally supplied/frozen later",
+    "final 3x3 choreography remains intentionally undecided",
+    "doorway runtime selection/history integration remains separate",
+    "render/fidelity acceptance remains Kevin/Stuart work"
+  ],
+  "winner_or_preference": "NONE",
+  "promotion": "NONE",
+  "main_mutation": false
+}
