@@ -10,44 +10,38 @@ When Nathan directly tells Bob to do his queued work, refresh current lifecycle 
 CURRENT CONTEXT
 - Q-B1 G→seed continuity scaffold: DONE on bob-cf0042-qb1-g-seed-continuity @ d60b45e...
 - Q-B2 doorway camera handoff safety fixture: DONE on bob-cf0042-qb2-doorway-camera-fixture @ 1ac0ce6...
-- Candidate A/C owner selection remains held pending Stuart independent acceptance and General owner-decision surface.
-- Kevin and Stuart own render/acceptance lanes; Bob must not duplicate their active work.
+- Q-B4 doorway cube-selection policy fixture: DONE @ 7c94bd8765d11398181d799a1fc9d9d53bb95ef5.
+- Q-B5 nine-cube invariant/slot validator: DONE @ 8cddfeb71b1b70c7d62aec8ba663e257242deb0c.
+- Q-B6 study visibility/cut isolation fixture: DONE @ fa4cbb1d95a396d2cd9dfdb6020bd574e1383b56.
+- Stuart Q-S1 independently passed both Candidate A and Candidate C on the frozen technical acceptance matrix. Owner preference remains held until General's owner-decision readiness gate is satisfied.
+- Kevin Q-K1 full-context dual preview is currently active; Bob must not duplicate Kevin render work or Stuart fidelity acceptance.
 
-Q-B4 — DOORWAY CUBE-SELECTION POLICY FIXTURE
+Q-B7 — DUAL-VARIANT FINAL-INTEGRATION PREFLIGHT
 Eligibility: AVAILABLE NOW if no newer Bob task is STARTED.
-Purpose: Build an isolated source/test fixture for the locked requirement that the doorway cube may vary per run with no immediate repeat, without integrating it into product or changing camera mechanics.
+Purpose: prove the already-prepared reversible Candidate A and Candidate C patches still apply cleanly against the latest V4A source context and the newly completed Bob fixtures, without selecting a winner or rendering.
 Requirements:
-- Define a small deterministic selection-policy interface that can accept a seed/history for testability while supporting random selection at runtime later.
-- Enforce no immediate repeat when more than one eligible cube exists.
-- Keep selection logically separate from camera movement, object scale, hinge mechanics and tutorial handoff.
-- Include edge cases: first run/no history, one eligible cube, two+ cubes, invalid prior selection, deterministic replay.
-- Isolated branch/package only; no main/workflow/product/R5/R6/Supabase/backend/auth/deploy/canonical-G/final-choreography mutation.
-Return: fixture/source, tests, behavioural contract and any assumptions that must wait for product integration.
+- Treat A and C symmetrically; no ranking or owner preference.
+- Verify patch/source identity and detect drift/conflicts.
+- Run or bind the existing G→seed scaffold, doorway handoff fixture, doorway-selection policy, nine-cube invariant validator, and visibility/cut checker against each candidate where applicable.
+- Verify no animated object-scale cheat and no focal-length/FOV animation is introduced by either candidate.
+- No redesign of mechanics, no main/product/workflow/R5/R6/Supabase/backend/auth/deploy/canonical-G/final-choreography mutation.
+Return: per-candidate preflight PASS/FAIL/HOLD, exact source/patch pointers, machine-readable report, and any smallest conflict that would need repair after owner selection.
 
-Q-B5 — NINE-CUBE GRID INVARIANT / SLOT VALIDATOR
-Eligibility: AVAILABLE AFTER Q-B4 DONE/PARTIAL with no blocker that makes Q-B5 unsafe.
-Purpose: Build a generic isolated validator/scaffold for the final nine-cube structural invariants without deciding the final choreography or hinge winner.
+Q-B8 — GLOBAL MOTION-INVARIANT SCANNER
+Eligibility: AVAILABLE AFTER Q-B7 DONE/PARTIAL if no Q-B7 blocker makes this unsafe.
+Purpose: build a reusable isolated scanner for final selected-candidate QA so later integration can automatically catch prohibited motion cheats and camera drift before render.
 Requirements:
-- Verify exactly nine independent equal cubes, deliberate air gaps, fixed cube dimensions, no fused-slab representation, and no animated object-scale cheat.
-- Represent 3x3 target slots and adjacency/parent-child attachment metadata generically; do NOT decide the final reveal order/choreography.
-- Provide static/analytic checks for slot spacing/gaps, duplicate occupancy, missing/extra cubes, dimension drift and invalid parent references.
-- Make the tool reusable against later A or C selected integration.
-- Isolated branch/package only; no main/product/workflow/R5/R6/Supabase/backend/auth/deploy/canonical-G/final-choreography mutation.
-Return: validator/scaffold, tests, invariant report format and unresolved dependencies.
-
-Q-B6 — STUDY VISIBILITY / CUT ISOLATION FIXTURE
-Eligibility: AVAILABLE AFTER Q-B5 DONE/PARTIAL with no unsafe blocker.
-Purpose: Turn the previously observed cross-study visibility contamination into a reusable isolated QA fixture so future V4A renders can prove only intended study objects are visible in each diagnostic window.
-Requirements:
-- Define expected visible object groups per study/window and reject cross-study bleed.
-- Treat diagnostic camera cuts separately from motion easing; do not redesign cameras or mechanics.
-- Include boundary-frame checks immediately before/at/after cuts.
-- No product/main/workflow mutation.
-Return: fixture/checker, test cases, expected visibility schedule format and any source assumptions.
+- Detect animated object scale on governed cubes/G seed objects.
+- Detect animated camera focal length/FOV where fixed-lens physical dolly is required.
+- Detect dimension drift among final cube objects, invalid gap collapse, and prohibited visibility/opacity animation in the hidden-mechanics proof path.
+- Produce frame/time findings with object/camera identifiers.
+- Be choreography-neutral and candidate-neutral; do not decide reveal order or A/C winner.
+- Isolated branch/package only; no main/product/workflow mutation.
+Return: scanner, synthetic positive/negative tests, report schema and known limitations.
 
 Q-B3 — APPLY OWNER-SELECTED HINGE VARIANT
-Eligibility: BLOCKED until Nathan selects A or C after Stuart independent acceptance and General publishes the exact selected-candidate pointer.
-Purpose: Apply the already-prepared reversible integration variant to an isolated final-integration branch without redesigning mechanics.
+Eligibility: BLOCKED until Nathan selects A or C after General confirms owner-decision readiness and publishes the exact selected-candidate pointer.
+Purpose: apply the already-prepared reversible integration variant to an isolated final-integration branch without redesigning mechanics.
 Requirements:
 - Use only the selected accepted candidate.
 - Preserve all unrelated accepted V4A behaviour.
