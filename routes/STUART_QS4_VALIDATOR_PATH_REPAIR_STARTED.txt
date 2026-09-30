@@ -1,0 +1,12 @@
+STUDYGRID V4A — STUART Q-S4 VALIDATOR PATH-NORMALIZATION REPAIR — STARTED
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 ET
+Queue item: Q-S4 — ACCEPTANCE VALIDATOR PATH-NORMALIZATION REPAIR
+Status: STARTED
+
+Scope: tooling repair only. Preserve frozen acceptance criteria and prior Q-S1 verdict/history. Repair only unambiguous receipt-path resolution for flattened GitHub artifact roots; keep strict failures for unsafe paths, ambiguous/colliding normalized targets, missing files and hash mismatches. Re-run against Kevin run-2 artifact and synthetic positive/negative fixtures.
+
+Branch: stuart-qs4-validator-path-repair
+Base: stuart-v4a-ac-acceptance-harness-prep @ 5fca8d5868e7b20ec5e41614fce0cfa6a58ed5a1
+No main/product/workflow/mechanics/R5/R6/Supabase/backend/auth/deploy mutation.
