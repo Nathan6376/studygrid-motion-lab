@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "studygrid.motion_invariant_scan.v1",
+  "title": "StudyGrid Motion Invariant Scan Report",
+  "type": "object",
+  "required": ["schema", "status", "candidate", "choreography", "fps", "summary", "findings", "limitations"],
+  "properties": {
+    "schema": {"const": "studygrid.motion_invariant_scan.v1"},
+    "status": {"enum": ["PASS", "FAIL", "HOLD"]},
+    "candidate": {"type": "string"},
+    "choreography": {"type": "string"},
+    "fps": {"type": "number", "exclusiveMinimum": 0},
+    "summary": {
+      "type": "object",
+      "required": ["error_count", "hold_count", "finding_count"],
+      "properties": {
+        "error_count": {"type": "integer", "minimum": 0},
+        "hold_count": {"type": "integer", "minimum": 0},
+        "finding_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "subject", "line", "frame", "time_seconds", "detail"],
+        "properties": {
+          "code": {"type": "string"},
+          "severity": {"enum": ["ERROR", "HOLD", "WARN"]},
+          "subject": {"type": "string"},
+          "line": {"type": ["integer", "null"]},
+          "frame": {"type": ["number", "null"]},
+          "time_seconds": {"type": ["number", "null"]},
+          "detail": {"type": "string"}
+        }
+      }
+    },
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}
