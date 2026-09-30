@@ -1,0 +1,127 @@
+STUDYGRID V4A — STUART Q-S1 A/C INDEPENDENT ACCEPTANCE — DONE
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 11:12 ET
+Queue item: Q-S1 — RUN A/C INDEPENDENT ACCEPTANCE
+Status: DONE
+
+BOUNDARY
+Independent acceptance only. No main, Kevin/Bob branch, workflow, mechanics, StudyGrid production/R5/R6/backend/auth/Supabase, canonical G, final 3x3 choreography or deployment mutation. No owner hinge preference or winner selected.
+
+LIFECYCLE / EXACT EVIDENCE BIND
+- Stuart queue: queues/STUART_QUEUE.txt @ blob b7d7b36c33047eb72352ae8dad3b1bc973d98b1f.
+- General post-render route: routes/STUART_V4A_AC_INDEPENDENT_ACCEPTANCE_RUN2.txt @ blob 786ed4a6584e99343639f05bca976a06032b025d.
+- Frozen harness: docs/V4A_AC_ACCEPTANCE_HARNESS.md + tools/v4a_ac_artifact_validator.py on branch stuart-v4a-ac-acceptance-harness-prep.
+- Frozen validator blob independently reconstructed locally and verified exactly: 6d802822cc202bc59c5a2acfced9f5b3b38eb21.
+- Fresh Kevin workflow listing: only run #1 cancelled + run #2 success; no newer superseding A/C render-proof run found.
+- Kevin run #2: 36726558912 / SUCCESS / head 73738d53c1f6fab4153e24155603b9e3e048b0b7.
+- Artifact: studygrid-v4a-ac-render-proof / ID 11103902103 / unexpired.
+- Provider artifact digest: sha256:0b71adc48c9d47f395e204e0a4ba8f5fae19f2a5afb8a97180a9af8be947ae14.
+- Independently downloaded ZIP SHA-256: 0b71adc48c9d47f395e204e0a4ba8f5fae19f2a5afb8a97180a9af8be947ae14 — exact provider match.
+
+FROZEN VALIDATOR EXECUTION
+Exact prepared validator was executed unmodified against the downloaded ZIP.
+Raw result: PASS 17 / FAIL 19 / HOLD 2 / INFO 2; exit 1; artifact_ready_for_manual_acceptance=false.
+The 19 FAIL entries are all the same packaging-path issue, not missing/corrupt payloads: artifact_sha256.txt records paths with prefix output-v4a-hidden/, while GitHub artifact packaging places those exact files at ZIP root. The frozen validator does not strip that prefix and therefore reports every receipt target as missing.
+
+Independent receipt reconciliation, without changing validator criteria or artifact bytes:
+- stripped only the receipt's documented output-v4a-hidden/ packaging prefix when resolving target paths;
+- 19 receipt entries checked;
+- 19/19 target files present;
+- 19/19 SHA-256 values exact match;
+- 0 mismatches.
+Therefore the frozen integrity CONDITION is satisfied, while the validator implementation has a path-resolution false negative. Do not treat the 19 machine FAILs as Candidate A/C mechanics failures.
+
+ARTIFACT / SOURCE IDENTITY — PASS
+- ZIP CRC/path safety: PASS.
+- Artifact files: 20.
+- Required six still roles: all present, valid PNG, 960x540.
+- MP4: studygrid-v4a-ac-front-compare.mp4 / SHA-256 8fab3318bd7d3c5e5716a22abcd4242d59c8b7172a538683be6cc5cb8cd8f7e6.
+- ffprobe: H.264 / yuv420p / 960x540 / 12 fps / 6.5 s / 78 frames.
+- Full ffmpeg decode: PASS, no errors.
+- Artifact text self-binds Bob source commit b1a7843fcc05a825c1043d1fa060004a29e730b8 and comparison blob db9813aed09fc815b94d1693ea270db21ab0642c.
+- Runtime source SHA-256: 05628ad529b7a7b15c92c91200d3d0f47b4afd33c6f477921cbf1d2d6948ec93.
+- Runtime-source delta is exactly one branch-local render-only EEVEE samples=8 line. Removing that one line and re-hashing as a Git blob reconstructs db9813aed09fc815b94d1693ea270db21ab0642c exactly. No geometry/timing/material/camera/visibility mechanic delta found.
+- Runtime geometry report SHA-256 fca8a326f7287f425fc93c0ad57dad7da91063c02399b3fd1abd5573aa34001a.
+
+SOURCE / ANALYTIC FINDINGS
+Candidate A:
+- one world-Y face-plane hinge through parent edge; -90°→0°;
+- zero reported sampled collisions;
+- positive floor clearance 0.75L;
+- final rest gap 0.10000000000000009L.
+Candidate C:
+- child starts physically rear-stowed at parent-relative (0,+1.10,0);
+- no hide/opacity keyframes and no scale animation in runtime source;
+- H1 world Z 0°→-90°, then H2 local Y / world X 0°→-90° after H1;
+- zero reported collisions in stage 1 and stage 2;
+- positive floor clearances 0.75L / 0.3357864376269051L;
+- final rest gap 0.10000000000000009L;
+- analytic exact-front start occlusion=true.
+Shared: L=1.0; gap=0.10L; bevel=0.055L; same material; exact-front camera fixed 50mm; diagnostic camera fixed 50mm; floor=-1.25L.
+
+VISUALLY VERIFIED FINDINGS
+Evidence inspected:
+- stills/front_00_start_stowed.png
+- stills/diag_00_start_stowed.png
+- stills/front_01_stage1_mid.png
+- stills/diag_01_stage1_mid.png
+- stills/front_02_stage1_landed.png
+- stills/diag_02_stage1_landed.png
+- stills/front_03_stage2_mid.png
+- stills/diag_03_stage2_mid.png
+- stills/front_04_final.png
+- stills/diag_04_final.png
+- full front-comparison MP4 plus sampled contact sheet across the 6.5 s sequence.
+
+Candidate A visual:
+- start matches fixed raised-child state;
+- motion reads as one compact local quarter-turn into the adjacent east-side rest;
+- no visible orbit/slide/teleport substitute, penetration, floor clip, scale change or transform reversal;
+- final cubes are separated and aligned in the fixed adjacent rest.
+
+Candidate C visual:
+- exact-front stowed start shows only the parent silhouette; no exposed second cube is visible;
+- same-state oblique diagnostic clearly shows the second cube physically behind the parent;
+- stage 1 visibly brings the rear child toward rear-right/east while retaining distinct depth;
+- stage 2 visibly changes plane and settles the child into the same east-side adjacent rest;
+- no visible hide/show, opacity fade, scale cheat, parent/child penetration, floor clip, reversal or wrong final state;
+- final cubes are separated and aligned in the fixed adjacent rest.
+
+FROZEN MATRIX OUTCOME
+1. Exact-front start-state truthfulness — A PASS / C PASS.
+2. C rear-stow exact-front occlusion — C PASS.
+3. C oblique same-state physical-existence proof — C PASS.
+4. No visibility/opacity/scale cheat — C PASS; A no scale cheat PASS.
+5. A world-Y face-plane hinge correctness — A PASS.
+6. C world-Z then local-Y/world-X causal sequence — C PASS.
+7. No cube interpenetration — A PASS / C PASS (analytic + no visual contradiction).
+8. No floor/environment intersection — A PASS / C PASS (analytic + no visual contradiction).
+9. 0.10L resting-gap contract — A PASS / C PASS.
+10. Fixed cube dimensions / no scale animation — A PASS / C PASS.
+11. Same material/cube-size/camera comparison conditions — A PASS / C PASS.
+12. Motion readability/easing / inspectable pacing — A PASS / C PASS. 6.5 s / 12 fps sequence is slow enough to inspect; no material overshoot/reversal observed.
+13. Final rest correctness — A PASS / C PASS.
+14. Artifact/source identity — PASS after exact provider digest match + exact Bob-source reconstruction.
+15. Required inventory / media decode integrity — PASS; validator's receipt path false-negative is reconciled 19/19 and does not reflect missing/corrupt media.
+
+CANDIDATE DISPOSITION
+Candidate A: PASS against the frozen independent mechanics/render acceptance contract.
+Candidate C: PASS against the frozen independent mechanics/render acceptance contract.
+Owner hinge choice: HOLD — both are acceptable mechanics; Stuart does not rank or choose them.
+
+SMALLEST CLEAN OWNER DECISION SURFACE GENERAL MAY PRESENT
+Both candidates now pass the same frozen technical test.
+- A: one visible quarter-turn from the raised position into the adjacent cube position.
+- C: starts genuinely hidden behind the parent, then emerges through two distinct hinge stages into the same adjacent cube position.
+- Both use the same cube/material/comparison conditions and end with the accepted 0.10L gap; no collision, floor intersection, scale/opacity cheat or render-integrity defect was found.
+Clean owner-view assets: front_00_start_stowed.png, diag_00_start_stowed.png, front_01_stage1_mid.png, front_03_stage2_mid.png, front_04_final.png, and studygrid-v4a-ac-front-compare.mp4. Nathan does not need validator/debug plumbing.
+General may now ask only the visual owner choice between accepted A and accepted C. Stuart makes no preference recommendation.
+
+HARNESS TOOLING NOTE
+The frozen validator has a path-resolution bug for GitHub's flattened artifact root versus receipt paths prefixed output-v4a-hidden/. Do not rewrite the frozen acceptance criteria retroactively. If General wants the utility repaired for later reuse, route a separate tooling-only fix after preserving this raw run result.
+
+NEXT QUEUE CHECK
+Q-S2 requires Kevin full-context A+C preview renders AND durable Bob reversible source variants. Bob variants are durable, but at this terminal check Kevin's new Q-K1 branch exists and has only just begun its full-context render workflow; no durable Q-K1 terminal artifact/result is yet available. Q-S2 is therefore dependency-blocked. Q-S3 is later still and requires Kevin GLB export-smoke/runtime artifacts.
+
+Nathan is not the technical courier.
