@@ -1,0 +1,53 @@
+--- a/blender/scene_v4a.py
++++ b/blender/scene_v4a.py
+@@ -291,25 +291,27 @@
+ key_rot(hinge_a, F(8.0), 0, "Y")
+ damped_interp(hinge_a)
+ 
+ # -----------------------
+-# Study 2C — hidden-behind 90 + 90 hybrid
+-# -----------------------
++# Study 2C integration variant A — strict single ~90° face-plane hinge
++# -----------------------
++# Reuses the proven Candidate A mechanics in the Study 2C time slot.
++# Parent centre remains at the current Study 2C scene anchor (0.4, 0, 0).
++# The hinge is a world-Y face-plane axis through x=+0.50L,z=+0.50L
++# relative to the parent. Child local centre is (+0.60L,0,-0.50L).
++# No scale/opacity reveal is used; the study-level visibility window only
++# isolates this diagnostic from adjacent studies.
+ parent_c = add_cube("C_Parent", loc=(0.4, 0, 0))
+ child_c = add_cube("C_Child", loc=(0, 0, 0))
+-hinge_c1 = add_empty("C_Hinge_Rise", (0.4 + (L + GAP) / 2, 0, -L / 2))
+-hinge_c2 = add_empty("C_Hinge_Settle", (0, 0, 0))
+-hinge_c2.parent = hinge_c1
+-child_c.parent = hinge_c2
+-child_c.location = (-0.55, 0, -0.5)
++hinge_c1 = add_empty("C_A_Hinge_FacePlane_Y", (0.4 + L / 2, 0, +L / 2))
++child_c.parent = hinge_c1
++child_c.location = (L / 2 + GAP, 0, -L / 2)
+ set_linear_visibility(parent_c, F(8.8), F(12.0))
+-set_linear_visibility(child_c, F(9.1), F(12.0))
++set_linear_visibility(child_c, F(8.8), F(12.0))
++key_rot(hinge_c1, F(8.8), -90, "Y")
+ key_rot(hinge_c1, F(9.2), -90, "Y")
+-key_rot(hinge_c1, F(10.5), 0, "Y")
+-key_rot(hinge_c2, F(10.5), -90, "Y")
+-key_rot(hinge_c2, F(11.8), 0, "Y")
++key_rot(hinge_c1, F(11.8), 0, "Y")
+ damped_interp(hinge_c1)
+-damped_interp(hinge_c2)
+ 
+ # -----------------------
+ # Study 3 — three-cube causal chain
+ # -----------------------
+@@ -427,9 +429,9 @@
+ - Study 3 uses a true nested C -> E -> SE parent/child hinge chain
+ Important limitation:
+ - G is PROVISIONAL geometric proxy. Canonical StudyGrid G vector is not frozen in this packet.
+ - Study 1 seed closure uses a temporary scale-up proxy and is NOT production-approved G->seed topology.
+-- Study 2C remains a provisional hidden-chain diagnostic; its exact hidden-behind arrangement still requires coordinator reconciliation and visual proof.
++- Study 2C is non-canonical integration Variant A using the proven strict single face-plane hinge; owner selection is still open.
+ - Final 3x3 choreography intentionally not included.
+ """
+ (OUT / "qa_manifest.txt").write_text(manifest, encoding="utf-8")
+ print(manifest)
