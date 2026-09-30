@@ -1,6 +1,6 @@
 STUDYGRID — STUART WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 ET
+Updated: 2026-09-30 12:49 ET
 Queue owner: General
 Worker: Stuart
 
@@ -9,31 +9,24 @@ When Nathan directly tells Stuart to do his queued work, refresh current lifecyc
 
 CURRENT CONTEXT
 - Q-S1 A/C independent acceptance: DONE. Candidate A PASS and Candidate C PASS on the frozen 15-point technical matrix; no owner winner selected.
-- The raw validator produced false FAIL rows because Kevin's artifact paths had an output-v4a-hidden/ receipt prefix while the ZIP root was flattened; independent reconciliation proved 19/19 files present and 19/19 SHA matches.
-- Kevin Q-K1 full-context dual-preview run 36734968949 is currently IN_PROGRESS, so Q-S2 remains dependency-blocked.
-- Bob Q-B4, Q-B5 and Q-B6 are now durable and available for independent QA; Bob's next work is separate.
+- Q-S4 validator path-normalization repair: DONE. Exact Kevin run-2 artifact now passes 19/19 receipt hashes while negative fixtures still hard-fail.
+- Q-S5 independent QA of Bob Q-B4/Q-B5/Q-B6: DONE. 18 assertion groups PASS / 0 FAIL.
+- Bob Q-B9 motion→HTML integration seam map and Q-B10 reduced-motion/loading/failure fallback harness are now durable and available for independent QA.
+- Kevin Q-K1 full-context dual-preview latest workflow attempt rendered both Candidate A and Candidate C successfully, then failed at post-render isolation/media-integrity verification before proof hashing/upload. Kevin recovery owns that lane.
+- Q-S2 remains dependency-blocked until Kevin produces a durable valid full-context A+C proof artifact.
+- Q-S3 remains blocked until candidate GLB export-smoke or later selected-candidate runtime artifacts exist.
 
-Q-S4 — ACCEPTANCE VALIDATOR PATH-NORMALIZATION REPAIR
+Q-S6 — INDEPENDENT QA OF BOB Q-B9/Q-B10 INTEGRATION PREP
 Eligibility: AVAILABLE NOW if no newer Stuart task is STARTED.
-Purpose: repair only the frozen harness artifact-path handling so a safe known packaging prefix/flattened-root case cannot create false FAIL rows while preserving strict integrity checks.
+Purpose: independently verify Bob's motion→HTML seam map and reduced-motion/loading/failure fallback harness before General relies on them during later product integration.
 Requirements:
-- Preserve the existing frozen acceptance criteria and prior Q-S1 verdict; this is tooling repair only, not retroactive criteria movement.
-- Normalize only unambiguous expected root-prefix/flattened-root layouts; reject collisions, duplicate normalized paths, traversal/unsafe ZIP names, missing files and SHA mismatches.
-- Re-run against Kevin run-2 artifact plus synthetic positive/negative fixtures.
-- Preserve raw prior Q-S1 evidence; do not rewrite history.
-- Isolated branch/package only; no product/main/workflow/mechanics mutation.
-Return: repaired validator, regression set, before/after explanation and provider-verifiable test result.
-
-Q-S5 — INDEPENDENT QA OF BOB Q-B4/Q-B5/Q-B6 FIXTURES
-Eligibility: AVAILABLE AFTER Q-S4 DONE/PARTIAL with no blocker that makes Q-S5 unsafe.
-Purpose: independently verify Bob's doorway selection policy, nine-cube invariant validator and visibility/cut isolation fixture before those utilities are relied on during final integration.
-Requirements:
-- Q-B4: test first-run, one-cube, two+ cube, invalid-prior and deterministic replay; verify no-immediate-repeat when possible.
-- Q-B5: adversarially test missing/extra cube, unequal dimensions, collapsed gaps, duplicate slots and invalid parent references.
-- Q-B6: test cross-study bleed and boundary frames at representative 8/12/30 fps; verify checker does not conflate camera cuts with motion easing.
-- Report PASS/FAIL/HOLD per fixture and exact evidence; do not redesign Bob's implementation unless a later General repair route asks for it.
-- No product/main/workflow/R5/R6/Supabase/backend/auth/deploy mutation.
-Return: independent QA report and smallest corrective route if any fixture fails.
+- Verify the exact accepted R5 and unpromoted R6 were treated read-only and that the proposed integration seam is genuinely common/stable rather than relying on candidate-specific content geometry.
+- Verify Candidate A/C remain abstract behind the adapter contract and no winner, canonical G, final 3x3 identity or HTML baseline was silently selected.
+- Adversarially test the fallback state machine for prefers-reduced-motion, slow-load, asset failure, WebGL unavailable, skip/continue, keyboard/focus continuity and no layout/focus dead-end.
+- Verify the 12 reported Q-B10 acceptance groups and any viewport/fixed-lens/doorway-envelope assumptions against Bob's durable evidence.
+- Distinguish static/harness verification from browser/device/AT verification; do not overclaim runtime accessibility or visual acceptance.
+- No product/main/motion-scene/workflow/R5/R6/backend/auth/Supabase/deploy mutation.
+Return: PASS/FAIL/HOLD for Q-B9 and Q-B10, exact evidence, and the smallest corrective route only if a material defect is found.
 
 Q-S2 — FULL-CONTEXT VARIANT FIDELITY AUDIT
 Eligibility: AVAILABLE after Kevin produces durable full-context A and C preview renders and Bob's corresponding reversible source variants remain durable.
