@@ -1,6 +1,39 @@
 {
-  "schema": "studygrid.motion_fallback_state_machine.v1",
+  "schema": "studygrid.motion_fallback_state_machine.v2",
   "status": "PREPARATION_ONLY",
+  "authority": "Q-B11 canonical Q-B9/Q-B10 state/event model",
+  "canonical": {
+    "states": [
+      "NEW",
+      "MOUNTED",
+      "REDUCED_MOTION",
+      "LOADING",
+      "SLOW_LOAD",
+      "READY",
+      "RUNNING",
+      "FAILED",
+      "FALLBACK_STATIC",
+      "SKIPPED",
+      "HANDOFF_READY",
+      "SHELL_READY",
+      "DISPOSED"
+    ],
+    "events": [
+      "MOUNT",
+      "REDUCED_MOTION_SELECTED",
+      "CAPABILITY_FAILURE",
+      "LOAD_BEGIN",
+      "SLOW_LOAD_THRESHOLD",
+      "ASSETS_READY",
+      "FAILURE",
+      "START",
+      "SKIP",
+      "COMPLETE",
+      "FALLBACK",
+      "SHELL_HANDOFF",
+      "DISPOSE"
+    ]
+  },
   "inputs": {
     "prefersReducedMotion": "browser media query",
     "appLessMotion": "existing body[data-less-motion=true] preference",
@@ -12,54 +45,66 @@
     "routeAlive": "welcome route still mounted"
   },
   "states": {
-    "MOUNTED": {"escape":"continue/skip available before any 3D dependency"},
-    "REDUCED_MOTION": {"effect":"do not initialise WebGL or run 3D; use approved static brand frame or existing Welcome shell"},
-    "LOADING": {"effect":"layout reserved; semantic shell/continue path remains available"},
-    "SLOW_LOAD": {"effect":"loading may continue in background, but Continue is explicit and immediate"},
-    "READY": {"effect":"assets ready; animation may start if full motion path remains allowed"},
-    "RUNNING": {"effect":"full sequence; Skip remains available"},
-    "FAILED": {"effect":"capture bounded failure reason; no error dead-end"},
-    "FALLBACK_STATIC": {"effect":"static brand/orientation surface; normal shell can continue"},
-    "SKIPPED": {"effect":"stop/cancel motion work and hand off immediately"},
-    "HANDOFF_READY": {"effect":"motion ended or fallback resolved; HTML shell is authoritative"},
-    "SHELL_READY": {"effect":"existing Welcome shell/actions are interactive; no auto-navigation"},
-    "DISPOSED": {"effect":"route exited; assets/RAF/listeners released"}
+    "NEW": {"effect": "pre-mount internal state; no skip/failure transition"},
+    "MOUNTED": {"effect": "host mounted; synchronously resolves reduced-motion/capability/full-motion path"},
+    "REDUCED_MOTION": {"effect": "do not initialise WebGL or run 3D; choose static/existing Welcome fallback"},
+    "LOADING": {"effect": "layout reserved; semantic shell/continue path remains available"},
+    "SLOW_LOAD": {"effect": "loading may continue in background, but Continue is explicit and immediate"},
+    "READY": {"effect": "assets ready; animation may start; runtime failure remains recoverable"},
+    "RUNNING": {"effect": "full sequence; Skip remains available; runtime failure remains recoverable"},
+    "FAILED": {"effect": "capture bounded failure reason; no error dead-end"},
+    "FALLBACK_STATIC": {"effect": "static brand/orientation surface; normal shell can continue"},
+    "SKIPPED": {"effect": "stop/cancel motion work and hand off immediately"},
+    "HANDOFF_READY": {"effect": "motion ended; HTML shell is authoritative"},
+    "SHELL_READY": {"effect": "existing Welcome shell/actions are interactive; no auto-navigation"},
+    "DISPOSED": {"effect": "route exited; assets/RAF/listeners released"}
   },
   "transitions": [
-    ["MOUNTED","REDUCED_MOTION","prefersReducedMotion || appLessMotion"],
-    ["MOUNTED","FAILED","!webglAvailable"],
-    ["MOUNTED","LOADING","full motion allowed"],
-    ["LOADING","SLOW_LOAD","slow threshold reached"],
-    ["LOADING|SLOW_LOAD","READY","assets ready"],
-    ["LOADING|SLOW_LOAD","FAILED","asset failure or hard timeout"],
-    ["READY","RUNNING","start full motion"],
-    ["LOADING|SLOW_LOAD|READY|RUNNING","SKIPPED","user skip/continue"],
-    ["RUNNING","HANDOFF_READY","approved handoff marker/sequence completion"],
-    ["REDUCED_MOTION|FAILED","FALLBACK_STATIC","fallback chosen"],
-    ["FALLBACK_STATIC|SKIPPED|HANDOFF_READY","SHELL_READY","immediate shell handoff"],
-    ["ANY","DISPOSED","route exits / adapter dispose"]
+    {"from": ["NEW"], "event": "MOUNT", "to": "MOUNTED"},
+    {"from": ["MOUNTED"], "event": "REDUCED_MOTION_SELECTED", "to": "REDUCED_MOTION"},
+    {"from": ["MOUNTED"], "event": "CAPABILITY_FAILURE", "to": "FAILED"},
+    {"from": ["MOUNTED"], "event": "LOAD_BEGIN", "to": "LOADING"},
+    {"from": ["LOADING"], "event": "SLOW_LOAD_THRESHOLD", "to": "SLOW_LOAD"},
+    {"from": ["LOADING", "SLOW_LOAD"], "event": "ASSETS_READY", "to": "READY"},
+    {"from": ["LOADING", "SLOW_LOAD", "READY", "RUNNING"], "event": "FAILURE", "to": "FAILED"},
+    {"from": ["READY"], "event": "START", "to": "RUNNING"},
+    {"from": ["LOADING", "SLOW_LOAD", "READY", "RUNNING"], "event": "SKIP", "to": "SKIPPED"},
+    {"from": ["RUNNING"], "event": "COMPLETE", "to": "HANDOFF_READY"},
+    {"from": ["REDUCED_MOTION", "FAILED"], "event": "FALLBACK", "to": "FALLBACK_STATIC"},
+    {"from": ["FALLBACK_STATIC", "SKIPPED", "HANDOFF_READY"], "event": "SHELL_HANDOFF", "to": "SHELL_READY"},
+    {"from": ["MOUNTED", "REDUCED_MOTION", "LOADING", "SLOW_LOAD", "READY", "RUNNING", "FAILED", "FALLBACK_STATIC", "SKIPPED", "HANDOFF_READY", "SHELL_READY"], "event": "DISPOSE", "to": "DISPOSED"}
   ],
-  "copy_placeholders": {"loading":"Loading…","continue":"Continue","skip":"Skip"},
+  "invalid_examples": [
+    {"from": "NEW", "event": "SKIP", "to": "SKIPPED", "required": "REJECT"},
+    {"from": "NEW", "event": "FAILURE", "to": "FAILED", "required": "REJECT"}
+  ],
+  "copy_placeholders": {"loading": "Loading…", "continue": "Continue", "skip": "Skip"},
   "accessibility": {
-    "canvas":"aria-hidden=true; not focusable",
-    "control":"ordinary DOM button/link; no canvas-only hit target",
-    "focus":"mount/load/run/complete do not steal focus; existing route focus logic remains authority",
-    "entry_gate":"animation completion is never required to reach normal product entry",
-    "status":"optional polite status; failure detail need not be exposed as technical error"
+    "canvas": "aria-hidden=true; not focusable",
+    "control": "ordinary DOM button/link; no canvas-only hit target",
+    "focus": "mount/load/run/complete do not steal focus; existing route focus logic remains authority",
+    "entry_gate": "animation completion is never required to reach normal product entry",
+    "status": "optional polite status; failure detail need not be exposed as technical error",
+    "verification_limit": "synthetic focus token is not browser DOM/keyboard/assistive-technology proof"
   },
   "layout": {
-    "host":"absolute inset:0 in .welcome-page",
-    "reservation":"entry page stays full viewport in all states",
-    "pointer":"visual host pointer-events:none",
-    "camera":"host resize updates aspect only; lens/FOV fixed",
-    "viewport_envelope":[[320,568],[360,800],[768,1024],[1024,768],[1440,900],[1920,1080]]
+    "host": "absolute inset:0 in .welcome-page",
+    "reservation": "entry page stays full viewport for every canonical state in the synthetic contract",
+    "pointer": "visual host pointer-events:none",
+    "camera": "host resize updates aspect only; lens/FOV fixed",
+    "viewport_envelope": [[320,568],[360,800],[768,1024],[1024,768],[1440,900],[1920,1080]]
   },
   "source_evidence": {
-    "R5_reduced_motion_line":470,
-    "R5_less_motion_line":471,
-    "R6_reduced_motion_line":470,
-    "R6_less_motion_line":471,
-    "entry_mode_line_both":633,
-    "welcome_page_line_both":635
-  }
+    "R5_reduced_motion_line": 470,
+    "R5_less_motion_line": 471,
+    "R6_reduced_motion_line": 470,
+    "R6_less_motion_line": 471,
+    "entry_mode_line_both": 633,
+    "welcome_page_line_both": 635
+  },
+  "runtime_holds": [
+    "browser DOM/keyboard/assistive-technology focus",
+    "real GPU/WebGL failure and recovery",
+    "rendered visual acceptance"
+  ]
 }
