@@ -1,5 +1,6 @@
-STUDYGRID Q-B9 — MOTION→HTML ADAPTER / INTERFACE CONTRACT
+STUDYGRID Q-B11 — MOTION→HTML ADAPTER / INTERFACE CONTRACT
 Status: preparation-only; no product mutation.
+Supersedes the Q-B9 adapter state/event vocabulary only; the verified Q-B9 shell seam remains unchanged.
 
 1. SHELL OWNERSHIP
 - The HTML shell owns routing, semantic content, keyboard/focus behaviour and the existing Welcome actions.
@@ -19,7 +20,7 @@ Required layer behaviour:
 - no body/root overflow mutation;
 - preserve the existing full-viewport entry reservation so load/fail/skip cannot cause a layout jump.
 
-3. LIFECYCLE
+3. LIFECYCLE — CANONICAL Q-B9/Q-B10 STATE/EVENT MODEL
 One common future sync hook belongs after route-specific rendering in render():
   syncMotionEntry(route)
 It mounts only on /welcome and disposes on every other route. This avoids coupling to
@@ -29,16 +30,39 @@ Adapter surface:
   mount()
   start()
   skip(reason)
+  fail(reason)
   dispose()
   replaceAssetManifest(manifest)
   getState()
 
-States/events:
-  MOUNTED -> LOADING -> READY -> RUNNING -> HANDOFF_READY
-  Any active state -> SKIPPED
-  Any load/runtime state -> FAILED
-  reduced-motion path -> REDUCED_MOTION -> HANDOFF_READY
-  route exit -> DISPOSED
+Canonical states:
+  NEW, MOUNTED, REDUCED_MOTION, LOADING, SLOW_LOAD, READY, RUNNING,
+  FAILED, FALLBACK_STATIC, SKIPPED, HANDOFF_READY, SHELL_READY, DISPOSED
+
+Canonical events:
+  MOUNT, REDUCED_MOTION_SELECTED, CAPABILITY_FAILURE, LOAD_BEGIN,
+  SLOW_LOAD_THRESHOLD, ASSETS_READY, FAILURE, START, SKIP, COMPLETE,
+  FALLBACK, SHELL_HANDOFF, DISPOSE
+
+Required graph:
+  NEW --MOUNT--> MOUNTED
+  MOUNTED --REDUCED_MOTION_SELECTED--> REDUCED_MOTION
+  MOUNTED --CAPABILITY_FAILURE--> FAILED
+  MOUNTED --LOAD_BEGIN--> LOADING
+  LOADING --SLOW_LOAD_THRESHOLD--> SLOW_LOAD
+  LOADING|SLOW_LOAD --ASSETS_READY--> READY
+  LOADING|SLOW_LOAD|READY|RUNNING --FAILURE--> FAILED
+  READY --START--> RUNNING
+  LOADING|SLOW_LOAD|READY|RUNNING --SKIP--> SKIPPED
+  RUNNING --COMPLETE--> HANDOFF_READY
+  REDUCED_MOTION|FAILED --FALLBACK--> FALLBACK_STATIC
+  FALLBACK_STATIC|SKIPPED|HANDOFF_READY --SHELL_HANDOFF--> SHELL_READY
+  every mounted/non-NEW state --DISPOSE--> DISPOSED
+
+The adapter/harness must reject transitions outside this graph. In particular:
+- NEW -> SKIPPED is invalid;
+- NEW -> FAILED is invalid;
+- READY -> FAILED and RUNNING -> FAILED are valid runtime-failure paths.
 
 4. FOCUS / INPUT
 - Mount/start/completion do not move focus.
@@ -47,6 +71,7 @@ States/events:
 - Existing focusRouteEntry() remains route-transition authority.
 - Existing Welcome buttons/links remain reachable even if animation is loading or has failed.
 - No global keydown interception except an explicitly scoped future control handler.
+- Synthetic focus-token checks are preparation evidence only; browser DOM/keyboard/assistive-technology focus remains later integration QA.
 
 5. VIEWPORT / CAMERA
 - Renderer consumes the motion-host CSS-pixel box and updates projection aspect on resize.
@@ -71,3 +96,4 @@ General must later name the authorized integration baseline; Bob does not choose
 8. BOUNDARIES
 No R5/R6/main-motion/backend/auth/Supabase/deploy write. No Candidate A/C selection.
 No final choreography or canonical-G invention.
+GPU/WebGL recovery and rendered/device acceptance remain later integration QA.
