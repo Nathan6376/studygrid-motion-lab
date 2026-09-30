@@ -1,0 +1,47 @@
+STUDYGRID BOB Q-B8 — GLOBAL MOTION-INVARIANT SCANNER
+
+PURPOSE
+Reusable candidate-neutral/choreography-neutral QA scanner for the final selected-candidate integration before render. It reports prohibited motion cheats and camera drift without choosing A/C or deciding reveal order.
+
+CHECKS
+1. Governed object scale
+- rejects keyframed/driven scale on configured cube/G-seed object variables;
+- optional strict mode can also reject direct scale assignment after object construction.
+
+2. Fixed-lens camera
+- rejects keyframed/driven lens, angle, angle_x or angle_y on configured fixed-lens camera variables;
+- rejects multiple/nonconstant direct focal assignments that imply focal drift.
+
+3. Hidden-mechanics visibility/opacity
+- recognizes set_linear_visibility(...) windows for configured hidden-path objects;
+- rejects undeclared visibility windows and undeclared hide/opacity keyframes;
+- includes a conservative lexical alpha-keyframe fallback.
+
+4. Final cube structure
+- optional final-state manifest validates expected cube count, equal dimensions and declared adjacency air gaps;
+- rejects dimension drift, invalid adjacency references, overlap and configured minimum-gap collapse.
+
+REPORT
+Schema: studygrid.motion_invariant_scan.v1
+Each finding includes code, severity, subject, source line where available, frame/time where recoverable, and detail. Overall status is FAIL on errors, HOLD when required final-state evidence is absent, otherwise PASS.
+
+SYNTHETIC VERIFICATION
+The companion verifier covers:
+- clean positive case;
+- animated-scale negative;
+- animated-lens/FOV negative;
+- hidden-visibility-window negative;
+- dimension-drift negative;
+- gap-collapse negative;
+- missing-state HOLD case.
+All seven cases passed in Bob's Q-B8 execution environment.
+
+KNOWN LIMITATIONS
+- Static AST analysis cannot prove rendered appearance, collision-free motion, occlusion quality, or browser/WebGL parity.
+- Final cube dimension/gap validation requires a caller-supplied final-state manifest; absence produces HOLD rather than fabricated evidence.
+- Dynamic exec/eval, generated code, custom handlers or drivers hidden behind unrecognised helper layers can require Blender-runtime instrumentation.
+- Visibility exceptions must be explicitly declared in config; otherwise hidden-path visibility animation is rejected.
+- Axis-gap validation assumes axis-aligned final-state cube dimensions/centres supplied in the manifest. Rotated intermediate OBB collision remains a separate mechanics/render QA concern.
+
+BOUNDARIES
+Isolated tool only. No main/product/workflow/R5/R6/Supabase/backend/auth/deploy/canonical-G/final-choreography mutation. No candidate winner or preference is encoded.
