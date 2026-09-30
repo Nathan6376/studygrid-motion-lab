@@ -1,6 +1,6 @@
 STUDYGRID — STUART WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 18:36 ET
+Updated: 2026-09-30 19:17 ET
 Queue owner: General
 Worker: Stuart
 
@@ -9,32 +9,21 @@ When Nathan directly tells Stuart to do his queued work, refresh current lifecyc
 
 CURRENT CONTEXT
 - Q-S10 Slice 1 independent acceptance: DONE / PASS; General accepted Slice 1 pointer at routes/GENERAL_ACCEPTED_SLICE1_QB14.txt.
-- Bob Q-B15 Slice 2 Professor Home / Multi-Course Scale: DONE. Exact provider-visible candidate: StudyGrid-CF0042-QB15-professor-home-scale.html / Drive 1CSN0jYJHnYbk2kpLAz8HNg4BSYELbe6U / SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf / 996820 bytes / APP_VERSION v7.18-cf0042-qb15-professor-home-scale. Bob return Drive 1Q4Xj7lZF1NQutngTPvae6Gyx1dEc-dM6; verification Drive 1dD_bYpgUBk2wf46DDHKky_Hoy-EXwb1o; Bob reports 133/133 PASS.
-- Bob Q-B16P Slice 3 feeder prep: DONE; human prep Drive 17d14zH6BPs1bJIVsvGi0KupQiyfd_Zbi; ZIP Drive 1RmVscYlBs3v3d2AeCgJKHzj8jzkIrDFY; return Drive 1Ppar-sfGffouxQ5-ealjoXFwoN8m_gld. It is prep only and cannot validate Q-B15.
-- Q-S11P acceptance prep: DONE / PASS. 46-gate matrix; synthetic scaffold 39/39; prep anchors 7/7. Prep is not candidate evidence.
-- Claude acceleration C-A..C-D is DONE. For Q-S11, relevant correctness checks include: Q-B14 fixture section_id previously represented a document heading and must not be mistaken for class-section privacy identity; weekdays must be computed rather than hard-coded. Do not turn backend implementation advice into a retroactive Slice 2 failure unless Q-B15 actually violates its released frontend contract.
+- Q-S11 Slice 2 Professor Home / Multi-Course independent acceptance: DONE / PASS on branch stuart-qs11-slice2-acceptance @ 1ede785b5a38061b6bb975b1246ae81645e44249; 145/145 PASS within tested scope.
+- Exact accepted Slice 2 candidate: StudyGrid-CF0042-QB15-professor-home-scale.html / Drive 1CSN0jYJHnYbk2kpLAz8HNg4BSYELbe6U / SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf / 996820 bytes / APP_VERSION v7.18-cf0042-qb15-professor-home-scale.
+- General accepted Slice 2 working pointer: routes/GENERAL_ACCEPTED_SLICE2_QB15.txt.
+- OWNER REVIEW CHECKPOINT: Nathan explicitly wants to inspect the actual product before substantial additional visible product/UI work compounds in a direction he may not want. Bob Q-B17 product mutation is held until Nathan reviews exact accepted Slice 2 and General reconciles feedback.
 - Physical-device/hosted/full-accessibility remain HOLD for later real-origin/device acceptance.
-- Kevin/Blender/intro remains separate and does not gate Q-S11.
-
-Q-S11 — SLICE 2 PROFESSOR HOME / MULTI-COURSE INDEPENDENT ACCEPTANCE
-Eligibility: AVAILABLE NOW if no newer Stuart task is STARTED.
-Purpose: independently accept/reject exact Q-B15 Professor Home / multi-course slice.
-Requirements:
-- Fetch exact provider candidate Drive 1CSN0jYJHnYbk2kpLAz8HNg4BSYELbe6U and independently verify SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf, 996820 bytes and APP_VERSION v7.18-cf0042-qb15-professor-home-scale before testing.
-- Verify exact derivation from General's accepted Slice 1 pointer, not another candidate.
-- Use the Q-S11P matrix/oracles as preparation only; independently observe candidate behaviour.
-- Verify approximately six-course/hundreds-student deterministic scale, Today / Now & next from confirmed schedule with no auto-navigation/context theft, unresolved-only cross-course attention with resolved history retention, explicit class name/code/section, transparent organization controls, colour never sole identifier, and selected-class R6 workspace preserved as drill-in.
-- Verify authoritative state remains behind the accepted Slice 1 gateway/read-model/command boundary; explicit section/source/revision identity and shared assessment revision remain intact.
-- Re-run compact gateway/command/state/focus/registry/responsive regression and representative desktop/tablet/phone Professor Home checks.
-- Add a correctness check that any displayed weekday/date pairing is computed/valid; do not accept a hard-coded mismatched weekday.
-- Distinguish document-heading identity from class-section privacy identity. If Q-B15 introduces/propagates ambiguity that would make the later real adapter unsafe, report it precisely; do not fail unrelated behaviour merely because the backend is not yet present.
-- Confirm no Slice 3 setup/autofill/human-timing, Slice 4 enrolment, backend/auth/Supabase/network/provider/deploy, Blender/motion/A-C or canonical promotion slipped into Slice 2.
-- Preserve physical-device/hosted/full-accessibility items as HOLD unless direct evidence exists.
-Return: PASS/FAIL/HOLD with exact provider identity, independent evidence, bounded-diff conclusion and smallest correction if needed directly to General.
+- Claude C-A..C-D remain reusable; Claude C-E is interrupted/partial by owner report and held for credit reset.
+- Kevin/Blender/intro remains separate.
 
 Q-S12 — BACKEND ACCEPTANCE PREP
-Eligibility: AVAILABLE only after Q-S11 is terminal and while Claude/backend staging implementation has not yet produced a target, if General has not released a higher-priority acceptance task.
-Purpose: consume Claude C-A implementation-readiness contract to build a table-driven RLS/leakage/concurrency acceptance plan for future real Supabase staging. Prep only; no Supabase mutation and no claim of backend acceptance.
+Eligibility: AVAILABLE NOW if no higher-priority exact candidate is released and no newer Stuart task is STARTED.
+Purpose: consume Claude C-A implementation-readiness contract to build a table-driven RLS/leakage/concurrency acceptance plan for future real Supabase staging. Prep only; no Supabase mutation and no claim of backend acceptance. This work must have a named downstream consumer and must not alter product/runtime or owner-visible UI.
+
+Q-S13 — SLICE 3 INDEPENDENT ACCEPTANCE
+Eligibility: BLOCKED until Nathan completes the owner review checkpoint, General releases Bob Q-B17, and Bob produces a durable exact Slice 3 candidate.
+Purpose once released: independently accept/reject the exact Slice 3 candidate against the released contract, inherited Slice 2 behavior, gateway/command/state seams, keyboard/focus/responsive behavior, and any explicit owner feedback incorporated into the build.
 
 Q-S2 — FULL-CONTEXT A/C VARIANT FIDELITY AUDIT
 Eligibility: BLOCKED until Kevin produces a durable valid full-context A+C proof artifact.
@@ -43,4 +32,4 @@ Q-S3 — EXPORT/RUNTIME ACCEPTANCE
 Eligibility: BLOCKED until Kevin produces candidate GLB export-smoke or later selected-candidate runtime artifacts.
 
 STOP CONDITION
-Execute Q-S11 now. After terminal Q-S11, refresh. If a higher-priority exact candidate is eligible, consume it; otherwise Q-S12 may be used as named-consumer backend acceptance prep. No filler and no product/runtime mutation.
+Do not validate or pre-approve unreleased Slice 3 UI. Until Nathan finishes the current owner review checkpoint, only bounded non-mutating backend acceptance prep may run if it remains the highest-value non-overlapping Stuart work. No filler and no product/runtime mutation.
