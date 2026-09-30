@@ -1,0 +1,58 @@
+STUDYGRID — STUART Q-S10 SLICE 1 INDEPENDENT ACCEPTANCE — DONE
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 17:40 ET
+Lifecycle: DONE
+Disposition: PASS within tested scope; physical-device / hosted-origin / full-accessibility items remain HOLD.
+
+EXACT Q-B14 CANDIDATE
+- StudyGrid-CF0042-QB14-local-product-gateway.html
+- Drive 1S4eIU6VT2pnNQ4h5SHEGhJ3sWb7BLU6W
+- SHA-256 fcf89e5a31063746272a10bbfba72d605f745d01f797c75fa33697923dde6bb1
+- 965519 bytes
+- APP_VERSION / SG_R6_BUILD / registry build v7.17-cf0042-qb14-local-product-gateway
+- Provider metadata and independently recomputed local hash matched.
+
+ACCEPTED DERIVATION POINT
+- General accepted Q-B13 pointer consumed before test.
+- Exact baseline Drive 10ISHnuiaZTIispYlRSkO81h__J63x-ND / SHA 9cd7b6dd37caac46dcab8f049bd4f0e218e0b027d60bd89cccbc9b547b43e8fe / 954307 bytes / v7.16-cf0042-qb13-r6-focusfix independently reverified.
+- Exact source comparison: 12 bounded Q-B13→Q-B14 hunks total, all within Slice 1 identity/source-identity/gateway/read-model/command/state wiring + registry identity. Registry rev 11 / 237 entries / 237 unique IDs and no new component IDs.
+
+INDEPENDENT RESULT
+- 152/152 checks PASS.
+- Typed/frozen frontend StudyGridProductGateway + deterministic local fixture/read-model boundary PASS.
+- Explicit section_id/source_revision_id/source_block_id/display_locator PASS for all 3 local sources and assessment truth.
+- Shared assessment revision PASS: r1 aligned across editor/Overview summary/student timeline/reminder-announcement; authorized Save advanced all to r2; authorized Confirm advanced all to r3.
+- Bounded command allowlist PASS; extra/unowned fields did not persist.
+- Stale command PASS: STALE_REVISION / stale_revision and no mutation.
+- Unauthorized command PASS: UNAUTHORIZED / unauthorized and no mutation.
+- ready/loading/empty/error/stale_revision/unauthorized deterministic state replay PASS; command-error mapping deterministic; five non-ready states render correctly on Assessment Desk and Student Preview.
+- Q-B13 focus preservation PASS: sort→r6StudentSort; filter→r6StudentFilter; confirm→r6TaskCanvas; settled scroll 700→700; roving Overview→Students; source-policy Escape→r6InspectPolicy.
+- Exact source of sgR6RefreshOverview, sgR6PaintStudents, sgR6OpenDialog and sgR6CloseDialog unchanged from Q-B13.
+- Built-in deterministic fixtures 6/6 PASS.
+- Responsive matrix 18/18 PASS: Paper+Dusk × desktop/tablet/phone × Overview/Students/Sources; no overflow/duplicate-ID failures.
+- Runtime page errors 0; console warnings/errors 0; external HTTP(S) requests 0.
+- No added fetch/XMLHttpRequest/WebSocket/Supabase client/HTTP dependency, Slice 2 Professor Home, Blender/GLB/gltf/three.js, deployment or canonical-promotion surface detected in changed text.
+
+HARNESS NOTE
+One preliminary scroll assertion sampled while CSS smooth scrolling was still in progress and appeared 1513→1483. Candidate bytes were unchanged. Settled rerun preserved 700→700 with focus on r6TaskCanvas; this was a harness-timing false signal, not a product defect.
+
+CORROBORATING BOB EVIDENCE
+- Drive 1DDlnnESIURUjWGcezQ7IcKBuRfBRqikg
+- Independently hashed SHA-256 7c35dec191fa1d252fa3565b6bf8ceb95971c395711859a7b2b304409d0949ab / 14104 bytes
+- Reports 82/82 PASS and binds to same exact Q-B14 candidate. Used as corroboration only.
+
+RESULT ARTIFACTS
+- docs/STUART_QS10_SLICE1_ACCEPTANCE.md
+- tests/stuart_qs10_slice1_acceptance_results.json
+- routes/STUART_QS10_SLICE1_ACCEPTANCE_STARTED.txt
+- routes/STUART_QS10_SLICE1_ACCEPTANCE_DONE.txt
+- branch stuart-qs10-slice1-acceptance
+
+HOLD
+Physical iPad/Safari/WebKit, VoiceOver, Apple Pencil/physical interaction, physical hardware keyboard, true 200% zoom, full WCAG, hosted-origin storage/cross-tab behaviour. Synthetic Chromium evidence was not promoted to those claims.
+
+BOUNDARIES
+No canonical promotion. No product/backend/auth/Supabase/deployment mutation. No Slice 2 redesign. Kevin/Blender/A-C/motion lane untouched.
+
+General CF-0040 may consume this PASS and decide/publish the exact accepted Slice 1 pointer under coordinator authority. No smallest correction is required from Q-S10.
