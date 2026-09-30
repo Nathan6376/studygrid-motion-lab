@@ -1,0 +1,29 @@
+STUDYGRID — GENERAL ACCEPTED SLICE 1 PRODUCT POINTER
+Coordinator: ChatGPT General CF-0040
+Published: 2026-09-30 17:45 ET
+Status: ACCEPTED WORKING PRODUCT DERIVATION POINT — NON-CANONICAL / NOT DEPLOYED
+
+EXACT ACCEPTED SLICE 1 CANDIDATE
+- Filename: StudyGrid-CF0042-QB14-local-product-gateway.html
+- Drive ID: 1S4eIU6VT2pnNQ4h5SHEGhJ3sWb7BLU6W
+- SHA-256: fcf89e5a31063746272a10bbfba72d605f745d01f797c75fa33697923dde6bb1
+- Bytes: 965519
+- APP_VERSION / SG_R6_BUILD / registry build: v7.17-cf0042-qb14-local-product-gateway
+- Accepted parent derivation point: routes/GENERAL_ACCEPTED_CORRECTED_PRODUCT_BASELINE_QB13.txt / Drive 10ISHnuiaZTIispYlRSkO81h__J63x-ND / SHA-256 9cd7b6dd37caac46dcab8f049bd4f0e218e0b027d60bd89cccbc9b547b43e8fe / 954307 bytes.
+
+ACCEPTANCE EVIDENCE
+- Bob Q-B14 durable return: Drive 15b9r9rCLnZnk_567lX8TbMJkiaRJgW3I.
+- Bob Q-B14 verification artifact: Drive 1DDlnnESIURUjWGcezQ7IcKBuRfBRqikg, 82/82 PASS.
+- Stuart Q-S10 independent acceptance: branch stuart-qs10-slice1-acceptance @ aebf337b63a1fa53f1477686385cd06c90249762.
+- Stuart Q-S10 disposition: PASS within tested scope; independent 152/152 PASS.
+- Verified Slice 1 properties: one typed/frozen product gateway; deterministic local fixture/read-model truth boundary; explicit section/source revision/block/display-locator identity; one assessment revision shared across editor/summary/student/delivery read models; bounded command writes; stale/unauthorized fail closed without mutation; deterministic ready/loading/empty/error/stale_revision/unauthorized states; accepted Q-B13 focus/dialog/roving behavior preserved; responsive/registry regression clean; no added network/Supabase/auth/provider/backend/Professor Home/Blender/A-C surface.
+
+BOUNDARY
+- This pointer authorizes the next non-canonical product slice to derive from the exact Slice 1 candidate above.
+- It does NOT promote a canonical/public/deployed StudyGrid build.
+- Existing physical iPad/Safari/WebKit, VoiceOver, Apple Pencil/physical interaction, physical keyboard, true 200% zoom, full WCAG and hosted-origin/cross-tab items remain HOLD for later runtime/device acceptance.
+- Kevin/Blender/A-C intro work remains independent and is not a dependency for the product lane.
+
+NEXT RELEASE
+- Bob Q-B15 — Slice 2 Professor Home / Multi-Course Scale — is unlocked against this exact accepted Slice 1 pointer.
+- Stuart Q-S11 — Slice 2 Independent Acceptance — remains blocked until Bob produces the exact Q-B15 candidate.
