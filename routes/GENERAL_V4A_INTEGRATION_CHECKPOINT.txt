@@ -1,0 +1,21 @@
+STUDYGRID V4A — GENERAL INTEGRATION CHECKPOINT
+Timestamp: 2026-09-30 ET
+Owner wake: NO
+
+STATE
+- Kevin render-pipeline lane is DONE. Run #9 empirically proved bounded Blender render, H.264 encode, artifact integrity and source identity.
+- Bob mechanics lane returned PARTIAL with isolated source fixes for 2A, causal three-cube chain, study visibility, diagnostic camera cuts, light aim, doorway floor readability and easing.
+- Bob source commit 44e309baed49a1c7330957a2a6962237dd1a06e3 was reconciled into current main through PR #1 / merge 13200b8c6111b65608d755a576b170b55427a72e without workflow or production-StudyGrid changes.
+- Post-Bob render run #10 (36715371870) is in progress from merge commit 13200b8c6111b65608d755a576b170b55427a72e.
+
+GENERAL INDEPENDENT QA
+The pre-fix run #9 owner-QA artifact is a valid pipeline artifact but is NOT acceptable as the V4A mechanics proof. It visibly confirms the source defects Bob identified: cross-study contamination, incorrect 2A orbit, ambiguous/flattened 2C motion, non-causal Study 3 rotation, and doorway lower-cube/floor read. General also holds the original gate requirements: G->seed remains a provisional proxy, and final owner approval is not implied by any current render.
+
+STUDY 2C HOLD
+Bob correctly did not invent a final 2C topology. General independently derived a collision-free two-axis 90+90 candidate in rigid-cube math (rear stow -> rear-right reveal -> east final slot) with no sampled OBB intersection, but it is NOT source-pushed because the current 3/4 diagnostic camera cannot prove a same-size cube is genuinely occluded behind the parent. Claude's prior analysis likewise says camera yaw exposes a stowed-behind sliver and hidden-behind presentation requires a more constrained camera or explicit hidden-spawn treatment. The visual/occlusion condition must be reconciled before the topology is treated as a valid C prototype.
+
+NEXT SAFE GATE
+1. Let run #10 finish; inspect post-fix 2A, Study 3, visibility/camera/light changes and artifact integrity.
+2. Keep 2C unaccepted.
+3. Prototype the 2C stow/reveal only after choosing a camera/occlusion treatment that remains mechanically honest and matches the owner comparison contract.
+4. Do not promote V4A, mutate R5/R6/backend/Supabase, or claim G->seed/final 3x3 acceptance.
