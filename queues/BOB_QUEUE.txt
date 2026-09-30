@@ -1,6 +1,6 @@
 STUDYGRID — BOB WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 ET
+Updated: 2026-09-30 12:49 ET
 Queue owner: General
 Worker: Bob / CF-0042
 
@@ -15,33 +15,11 @@ CURRENT CONTEXT
 - Q-B6 study visibility/cut isolation fixture: DONE @ fa4cbb1d95a396d2cd9dfdb6020bd574e1383b56.
 - Q-B7 dual-variant final-integration preflight: DONE @ 5b139cb0c98721b5c343b8c35c4a46ad293cd9ab. Candidate A PASS; Candidate C PASS with bounded requirements.
 - Q-B8 global motion-invariant scanner: DONE @ 98a96da79c58b3037c00797bc6cfef555f6919af; synthetic test suite PASS.
+- Q-B9 motion→HTML integration seam map: DONE @ ce988963...; accepted R5/unpromoted R6 remained read-only, stable .welcome-page seam identified, candidate-neutral adapter/asset-manifest seam verified.
+- Q-B10 reduced-motion/loading/failure fallback harness: DONE @ 06ca7b65...; 12 acceptance groups PASS and product/motion boundaries preserved.
 - Stuart Q-S1 independently passed both Candidate A and Candidate C on the frozen technical acceptance matrix.
-- Kevin Q-K1 full-context dual preview remains active. Bob must not duplicate Kevin render work or Stuart fidelity/fixture acceptance.
+- Kevin Q-K1 full-context dual-preview latest workflow attempt rendered both Candidate A and Candidate C successfully, then failed at post-render isolation/media-integrity verification before proof hashing/upload. Kevin recovery owns that lane.
 - StudyGrid product HTML remains intentionally unmutated during the V4A motion gate. Accepted R5 and unpromoted R6 are read-only references only.
-
-Q-B9 — MOTION→HTML INTEGRATION SEAM MAP
-Eligibility: AVAILABLE NOW if no newer Bob task is STARTED.
-Purpose: prepare a candidate-neutral, no-mutation integration map for inserting the eventual approved V4A motion package into the actual StudyGrid shell without touching product HTML yet.
-Requirements:
-- Read exact accepted R5 and current unpromoted R6 only as references; do not modify or promote either.
-- Identify safe mount/container points, sizing/aspect-ratio envelope, z-index/overflow/focus interactions, asset/bootstrap boundaries, lifecycle hooks and handoff into the normal app shell.
-- Keep Candidate A/C mechanics abstract behind one adapter contract; do not select a winner.
-- Specify how the final G/3x3 asset can be swapped without re-architecting the page shell.
-- Flag any R5↔R6 integration differences that General must reconcile later instead of silently choosing one.
-- No HTML/product/main-motion-scene/workflow/R5/R6/backend/auth/Supabase/deploy mutation.
-Return: seam map, adapter/interface contract, insertion-point evidence, R5/R6 differences and blockers.
-
-Q-B10 — REDUCED-MOTION / LOADING / FAILURE FALLBACK HARNESS
-Eligibility: AVAILABLE AFTER Q-B9 DONE/PARTIAL if no blocker makes this unsafe.
-Purpose: prepare the isolated fallback contract and test harness the later HTML integration must satisfy without implementing it in StudyGrid yet.
-Requirements:
-- Define prefers-reduced-motion behaviour that preserves orientation/brand identity without running the full 3D sequence.
-- Define slow-load, asset-fail, WebGL-unavailable and skip/continue states with no dead-end or layout jump.
-- Preserve keyboard/focus semantics and avoid trapping entry into the product behind animation completion.
-- Check representative viewport envelopes and the fixed-lens motion container assumptions without changing motion mechanics.
-- Keep copy minimal/placeholder; no new visual/product direction.
-- No product/main/R5/R6/deploy mutation.
-Return: fallback state machine, harness/tests, acceptance checks and integration prerequisites.
 
 Q-B3 — APPLY OWNER-SELECTED HINGE VARIANT
 Eligibility: BLOCKED until Nathan selects A or C after General confirms owner-decision readiness and publishes the exact selected-candidate pointer.
@@ -53,4 +31,4 @@ Requirements:
 Return: exact selected-variant integration commit, diff, static checks, render-ready pointer for Kevin/Stuart.
 
 STOP CONDITION
-If no queue item is eligible, return BLOCKED/WAITING with the exact dependency and stop. Do not invent filler work.
+No other Bob item is currently eligible. Do not invent filler work or overlap Kevin's Q-K1 recovery or Stuart's independent QA. Wait for General to replenish this queue or for Q-B3's owner-decision dependency to be released.
