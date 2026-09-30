@@ -1,0 +1,16 @@
+{
+  "schema": "studygrid.qb9.seam_verification.v1",
+  "r5": {
+    "path": "/mnt/data/StudyGrid-CF0032-integrated-batch4-8-cf0039-r5.html",
+    "sha256": "0fee828511bdccd373fdc0625c0ea9f894485a57f6e6cbceff74e2652ec34d00",
+    "bytes": 874986,
+    "problems": []
+  },
+  "r6": {
+    "path": "/mnt/data/StudyGrid-CF0032-integrated-batch4-8-cf0039-r6.html",
+    "sha256": "875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef",
+    "bytes": 954208,
+    "problems": []
+  },
+  "status": "PASS"
+}
