@@ -1,0 +1,59 @@
+STUDYGRID — STUART Q-S9 CORRECTED R6 FOCUS + COMPACT REGRESSION REACCEPTANCE — DONE
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 17:01 ET
+Lifecycle: DONE
+Disposition: PASS within tested scope; existing real-device/hosted/full-accessibility items remain HOLD.
+
+EXACT CORRECTED CANDIDATE
+- StudyGrid-CF0042-QB13-r6-focusfix.html
+- Drive 10ISHnuiaZTIispYlRSkO81h__J63x-ND
+- 954307 bytes
+- SHA-256 9cd7b6dd37caac46dcab8f049bd4f0e218e0b027d60bd89cccbc9b547b43e8fe
+- APP_VERSION / SG_R6_BUILD / registry build: v7.16-cf0042-qb13-r6-focusfix
+- Provider metadata size and independently recomputed local hash match.
+
+ORIGIN R6 REVERIFIED
+- Drive 1pxKsdqM6dhKE6ihN5k4UgO-0usgNBmjD
+- 954208 bytes
+- SHA-256 875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef
+
+DIRECT DEFECT REPRODUCTION
+PASS QS8-F1 sort: replacement #r6StudentSort retains meaningful focus after repaint; activeElement is not BODY.
+PASS QS8-F1 filter: replacement #r6StudentFilter retains meaningful focus after repaint; activeElement is not BODY.
+PASS QS8-F2 confirmation: #r6TaskCanvas exists with tabindex=-1; keyboard confirmation lands focus on #r6TaskCanvas, not BODY. Nonzero-scroll replay preserved scrollY exactly at 1722 -> 1722.
+
+PREVIOUSLY PASSING KEYBOARD
+PASS roving instructor tabs: ArrowRight moved selection/focus Overview -> Students.
+PASS source-policy dialog focus.
+PASS Escape close returns focus to #r6InspectPolicy.
+Focused runtime set: 17/17 PASS; bounded page errors 0; console warnings/errors 0.
+
+COMPACT REGRESSION
+- Executable inline JS syntax 4/4 PASS.
+- Registry rev11 / 237 entries / 237 unique IDs PASS.
+- Built-in deterministic fixtures 6/6 PASS.
+- Responsive runtime matrix 18/18 PASS: Paper+Dusk x 1280/820/390 x Overview/Students/Sources. No page-level horizontal-overflow failures, duplicate-ID failures, page errors, console warnings/errors or external HTTP(S) requests.
+
+BOUNDED DIFF
+PASS. Exact R6 -> Q-B13 has 5 non-equal source-line hunks only: APP_VERSION; SG_R6_BUILD; registry top-level build; Students sort/filter focus restoration; assessment-confirmation focus target r6AttentionTitle -> r6TaskCanvas.
+Independent reverse-normalisation of exactly those identity/focus edits produces bytes exactly identical to provider R6, SHA-256 875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef. Candidate byte delta is +99 bytes.
+No professor-scale/gateway/backend/auth/Supabase/deployment/Blender/motion/A-C/canonical-G/brand-portal addition is present.
+
+CORROBORATING BOB EVIDENCE
+Drive 11FciJKAyqAfpVikzgD2LHTZ51icRi1ZC independently hashed to 68d9b989a298e7fa43aa210fc7bba8ee258e4044edc4c4e4831ff44f93415c1d / 5792 bytes and binds to the same exact candidate while reporting 45/45 PASS. Stuart did not rely on that artifact as the sole acceptance basis.
+
+HOLDS
+Physical iPad/Safari/WebKit, VoiceOver, Apple Pencil/physical interaction, physical hardware keyboard, true 200% zoom, full WCAG, and hosted-origin storage/cross-tab behaviour remain HOLD. Exact provider bytes were exercised in bounded headless Chromium/in-memory loading; no device/hosted/AT claim is promoted.
+
+RESULT ARTIFACTS
+- docs/STUART_QS9_QB13_FOCUS_REACCEPTANCE.md
+- tests/stuart_qs9_qb13_reacceptance_results.json
+- routes/STUART_QS9_QB13_FOCUS_REACCEPTANCE_STARTED.txt
+- routes/STUART_QS9_QB13_FOCUS_REACCEPTANCE_DONE.txt
+- branch: stuart-qs9-qb13-focus-reacceptance
+
+BOUNDARIES
+No canonical promotion. No product/backend/auth/Supabase/deployment mutation. Kevin/Blender/A-C lane untouched.
+
+General CF-0040 may consume this PASS as the independent Q-S9 reacceptance result and decide/publish the corrected baseline pointer under its authority. Nathan is not the technical courier.
