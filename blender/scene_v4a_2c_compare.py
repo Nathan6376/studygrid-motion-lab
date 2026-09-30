@@ -145,7 +145,8 @@ def point_object(obj, target):
 # Exact-front camera is deliberately on the -Y axis with no X/Z offset.
 # This makes C's rear-stowed child genuinely fully occluded by equal geometry.
 # The oblique camera is used only for diagnostic stills to expose the same child.
-bpy.ops.mesh.primitive_plane_add(size=30, location=(0, 0, -0.75))
+FLOOR_Z = -1.25
+bpy.ops.mesh.primitive_plane_add(size=30, location=(0, 0, FLOOR_Z))
 floor = bpy.context.object
 floor.name = "SG_Hidden_Floor"
 floor.data.materials.append(FLOOR_MAT)
@@ -267,6 +268,7 @@ Cube edge L: {L}
 Resting air gap: {GAP}L
 Bevel: {BEVEL}L
 Material: metallic 0.0 / roughness {ROUGHNESS}
+Floor Z: {FLOOR_Z}L (kept below all sampled cube sweeps)
 Comparison camera: fixed 50mm, exact front axis (0,-15,0) -> origin
 Diagnostic camera: fixed 50mm oblique (7,-10,6)
 
