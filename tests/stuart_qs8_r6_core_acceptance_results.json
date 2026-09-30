@@ -1,0 +1,159 @@
+{
+  "schema": "studygrid.stuart.qs8.r6_core_product_acceptance.v1",
+  "executed_at_et": "2026-09-30 14:39",
+  "overall": "FAIL",
+  "scope": "owner-approved instructor-first R6 release slice only; later post-R6 professor-scale, brand, architecture, teaching-mode and motion ideas excluded from failure criteria",
+  "candidate": {
+    "file": "StudyGrid-CF0032-integrated-batch4-8-cf0039-r6.html",
+    "drive_id": "1pxKsdqM6dhKE6ihN5k4UgO-0usgNBmjD",
+    "bytes": 954208,
+    "sha256": "875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef",
+    "app_version": "v7.16-cf0032-integrated-batch4-8-cf0039-r6",
+    "identity": "PASS"
+  },
+  "baseline": {
+    "file": "StudyGrid-CF0032-integrated-batch4-8-cf0039-r5.html",
+    "drive_id": "1Zp8rAflaLBN-F-5_i8B9P1hF-XR-oJHC",
+    "bytes": 874986,
+    "sha256": "0fee828511bdccd373fdc0625c0ea9f894485a57f6e6cbceff74e2652ec34d00",
+    "registry_rev": 10,
+    "registry_entries": 218
+  },
+  "authority": {
+    "owner_release_route": "1WgEnlzAJI4bf4USDdOSu5nqn_0kPUvTtCTUR4jdlfYQ @ OWNER QA RELEASE 2026-09-29 15:22 ET",
+    "product_direction": "1FQqt2rx2IF1uF-0cU6Qblyu83ESB5ywnVu1nq1_fx5E @ OWNER QA 2026-09-29 15:22 ET",
+    "implementation_spec": "1aXh8z0yicgBVTjhsvvv7U_HzsIyUN95ogFcrrRYOGhk @ OWNER QA RELEASE / IMPLEMENTATION AMENDMENT 2026-09-29 15:22 ET"
+  },
+  "families": {
+    "exact_identity_and_static_integrity": {
+      "status": "PASS",
+      "evidence": [
+        "provider-downloaded bytes independently rehashed to the released SHA and size",
+        "APP_VERSION exact match",
+        "104 static DOM ids / 104 unique",
+        "4 executable inline scripts parse under node --check; registry application/json excluded from executable JS parse",
+        "no external script dependency"
+      ]
+    },
+    "registry_integrity": {
+      "status": "PASS",
+      "evidence": [
+        "registry rev 11",
+        "237 entries / 237 unique component_id values",
+        "R5 registry remains rev 10 / 218 unique entries"
+      ]
+    },
+    "instructor_shell_and_clear_desk": {
+      "status": "PASS",
+      "evidence": [
+        "six selected-class tabs present: Overview, Students, Study sets, Announcements, Sources, Achievements",
+        "initial unresolved queue contains assessment + related-question actions only",
+        "assessment confirmation removes assessment action and preserves resolved history",
+        "question exception resolution removes the final active question action and produces a calm caught-up state with history retained"
+      ]
+    },
+    "assessment_desk_source_proof_and_timing": {
+      "status": "PASS",
+      "evidence": [
+        "proposal-only assessment review with manual fields",
+        "distinct assessment/open/close/practice/reminder/announcement timing controls",
+        "source proof identifies Fall 2026 syllabus revision syll-f26-r3 / assessment schedule / page 4",
+        "confirmation explicitly remains separate from publish/release/notify"
+      ]
+    },
+    "ai_source_policy_and_sources_rebase": {
+      "status": "PASS",
+      "evidence": [
+        "policy inspection exposes exact approved revisions syll-f26-r3, ch4-r7 and notes-0917-r2",
+        "official-authority mode explicitly not configured",
+        "no silent open-web authority claim",
+        "Sources workbench exposes Ready / Needs review / Conflict, review-before-apply, exact revision inventory and unsupported abstention while retaining the existing source library/tools"
+      ]
+    },
+    "repeated_question_answer_once": {
+      "status": "PASS",
+      "evidence": [
+        "Jordan, Aaliyah and Marcus original wording remains visible",
+        "shared answer remains marked not sent",
+        "approved answer is tied to answer/source revision evidence",
+        "unsupported Marcus exception remains an instructor-review item until separately resolved"
+      ]
+    },
+    "student_preview_resolution_and_sorting": {
+      "status": "PASS",
+      "evidence": [
+        "student preview retains timeline plus Fact / Recommendation / Unknown separation",
+        "explicit This answered my question / I still need help feedback reopens or clears an instructor action without mastery/grade/risk inference",
+        "Students offers Name / Open questions / Questions needing a reply sorts and transparent row reasons",
+        "sort behaviour was exercised, not only label-checked"
+      ]
+    },
+    "responsive_and_bounded_runtime": {
+      "status": "PASS",
+      "evidence": [
+        "30/30 independent cases: Paper + Dusk x 1280/1024/820/390/320 x Overview/Students/Sources",
+        "0 page-level horizontal-overflow failures",
+        "320px selected-class tabs compact to a horizontally scrollable 52px row rather than giant tiles",
+        "0 bounded console/page errors and 0 external HTTP(S) requests",
+        "prefers-reduced-motion context remains functional",
+        "390px coarse-pointer context remains functional"
+      ],
+      "method_limit": "Chromium exact-HTML set_content/local in-memory runtime; file:// navigation is blocked by this environment and hosted-origin behaviour is not proven"
+    },
+    "r5_regression": {
+      "status": "PASS",
+      "evidence": [
+        "StudyGridTest deterministic fixtures 6/6 PASS",
+        "runtime duplicate-id sweep 6 representative routes / 6 PASS",
+        "Bob QA evidence files were independently rehashed to their recorded digests but were not used as the sole acceptance basis"
+      ]
+    },
+    "keyboard_and_focus_basics": {
+      "status": "FAIL",
+      "defects": [
+        {
+          "id": "QS8-F1",
+          "requirement": "in-place controls preserve focus/scroll and do not jump unexpectedly",
+          "reproduction": "Instructor > Students: focus #r6StudentSort and change Name to Open questions. sgR6PaintStudents replaces the pane; document.activeElement becomes BODY/no id instead of restoring focus to the sort control.",
+          "impact": "keyboard user loses interaction context after an ordinary in-place sort change"
+        },
+        {
+          "id": "QS8-F2",
+          "requirement": "resolution flow should preserve meaningful keyboard focus when the triggering control disappears",
+          "reproduction": "Overview > Assessment Desk: focus/click #r6ConfirmAssessment. scrollY remains stable, but sgR6RefreshOverview attempts to focus #r6AttentionTitle, which is a non-focusable h4; active focus falls to BODY/no id.",
+          "impact": "keyboard user loses a meaningful focus target after resolving the assessment attention item"
+        }
+      ],
+      "positive_evidence": [
+        "selected-class tabs support ArrowRight roving focus/selection",
+        "source-policy dialog moves focus to its title and Escape closes it and returns focus to #r6InspectPolicy"
+      ]
+    },
+    "physical_device_hosted_origin_and_full_accessibility": {
+      "status": "HOLD",
+      "gaps": [
+        "physical iPad/Safari/WebKit",
+        "VoiceOver",
+        "Apple Pencil / physical drawing feel",
+        "physical hardware keyboard",
+        "true browser/user 200% zoom",
+        "full WCAG conformance",
+        "hosted-origin localStorage/cross-tab behaviour"
+      ],
+      "note": "verification gaps, not demonstrated R6 product defects"
+    }
+  },
+  "prior_evidence_integrity": {
+    "static_registry_qa_sha_match": true,
+    "targeted_qa_sha_match": true,
+    "regression_qa_sha_match": true
+  },
+  "smallest_corrective_route": "Bob-only bounded R6 accessibility/focus repair: preserve/reassign focus after Students sort/filter repaint and after attention-item resolution; do not alter product architecture. Then Stuart reruns the focused keyboard/focus checks plus a compact regression smoke on exact amended bytes.",
+  "boundaries": {
+    "r5_mutated": false,
+    "r6_mutated": false,
+    "backend_auth_supabase_deployment_mutated": false,
+    "animation_ac_lane_touched": false,
+    "canonical_promotion": false
+  }
+}
