@@ -1,0 +1,41 @@
+{
+  "schema": "studygrid.qb10.fallback_verification.v1",
+  "executed_at_et": "2026-09-30 12:21",
+  "status": "PASS",
+  "exact_sources": {
+    "R5": {"sha256":"0fee828511bdccd373fdc0625c0ea9f894485a57f6e6cbceff74e2652ec34d00","anchors":"PASS"},
+    "R6": {"sha256":"875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef","anchors":"PASS"}
+  },
+  "cases": {
+    "reduced_motion": "PASS_NO_WEBGL_NO_RUNNING",
+    "app_less_motion": "PASS_NO_WEBGL_NO_RUNNING",
+    "webgl_unavailable": "PASS_STATIC_TO_SHELL_READY",
+    "slow_load_continue": "PASS_NO_LAYOUT_JUMP_FOCUS_PRESERVED",
+    "asset_failure": "PASS_STATIC_TO_SHELL_READY",
+    "hard_timeout": "PASS_STATIC_TO_SHELL_READY",
+    "running_skip": "PASS_IMMEDIATE_SHELL_READY",
+    "normal_completion": "PASS_HANDOFF_READY_TO_SHELL_READY",
+    "route_dispose": "PASS_RESOURCES_RELEASED",
+    "active_state_escape": "PASS_LOADING_SLOW_READY_RUNNING",
+    "viewport_fixed_lens": "PASS_6_OF_6",
+    "doorway_envelope": "PASS_6_OF_6"
+  },
+  "viewports": [
+    {"size":[320,568],"aspect":0.5633802817,"q_b2_d_cover":1.2226274517},
+    {"size":[360,800],"aspect":0.45,"q_b2_d_cover":1.2226274517},
+    {"size":[768,1024],"aspect":0.75,"q_b2_d_cover":1.2226274517},
+    {"size":[1024,768],"aspect":1.3333333333,"q_b2_d_cover":0.9169705887},
+    {"size":[1440,900],"aspect":1.6,"q_b2_d_cover":0.7641421573},
+    {"size":[1920,1080],"aspect":1.7777777778,"q_b2_d_cover":0.6877279416}
+  ],
+  "q_b2_contract": {"vfov_deg":40.0,"d_near_min":0.12,"object_scale_fake":false,"fov_animation":false},
+  "limitations": [
+    "synthetic harness does not prove actual WebGL/GLB rendering or GPU recovery",
+    "final browser/device integration still needs visual and assistive-technology QA",
+    "loading thresholds remain integration-configurable rather than product decisions",
+    "fallback poster asset is not invented here; existing Welcome brand/shell is the guaranteed fallback"
+  ],
+  "candidate_selection": "NONE",
+  "html_mutation": false,
+  "promotion": "NONE"
+}
