@@ -1,6 +1,6 @@
 STUDYGRID — BOB WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 17:06 ET
+Updated: 2026-09-30 17:27 ET
 Queue owner: General
 Worker: Bob / CF-0042
 
@@ -9,38 +9,21 @@ When Nathan directly tells Bob to do his queued work, refresh current lifecycle 
 
 CURRENT CONTEXT
 - Q-B12 R6→current-product delta map: DONE @ bob-cf0042-qb12-r6-current-product-delta-map / 8200171d1c11d2c84b2ddfe614561db6949188d1.
-- Q-B13 minimal R6 keyboard/focus repair: DONE. Durable return Drive 171FH0yF5dUgNiWKMsHS66MXM1TLdOFbn.
-- Stuart Q-S9 independent reacceptance: DONE / PASS on stuart-qs9-qb13-focus-reacceptance @ 1f7aee98260f61738be6443e4b737b4e7a5ef66b.
-- General accepted corrected-baseline pointer is now published at routes/GENERAL_ACCEPTED_CORRECTED_PRODUCT_BASELINE_QB13.txt on main, commit 3cb4320286915b463343a404ae843aa591a18fd9.
-- Exact accepted working derivation point: StudyGrid-CF0042-QB13-r6-focusfix.html / Drive 10ISHnuiaZTIispYlRSkO81h__J63x-ND / SHA-256 9cd7b6dd37caac46dcab8f049bd4f0e218e0b027d60bd89cccbc9b547b43e8fe / 954307 bytes / APP_VERSION v7.16-cf0042-qb13-r6-focusfix.
-- This baseline is accepted for further non-canonical product derivation only; it is not canonical or deployed.
-- Existing real-device/hosted/full-accessibility HOLDs remain later gates.
-- Kevin/Blender/intro motion remains independent and does not gate the product lane.
+- Q-B13 minimal R6 keyboard/focus repair: DONE; accepted corrected baseline pointer published by General.
+- Q-B14 Slice 1 Local Product Gateway / Fixture Truth Boundary: DONE. Durable direct return Drive 15b9r9rCLnZnk_567lX8TbMJkiaRJgW3I.
+- Exact new Q-B14 candidate: StudyGrid-CF0042-QB14-local-product-gateway.html / Drive 1S4eIU6VT2pnNQ4h5SHEGhJ3sWb7BLU6W / SHA-256 fcf89e5a31063746272a10bbfba72d605f745d01f797c75fa33697923dde6bb1 / 965519 bytes / APP_VERSION v7.17-cf0042-qb14-local-product-gateway.
+- Provider metadata independently confirms exact filename, Drive identity and 965519-byte size.
+- Verification artifact Drive 1DDlnnESIURUjWGcezQ7IcKBuRfBRqikg independently parsed by General: 82/82 PASS, no failures; baseline SHA/bytes bind to exact accepted Q-B13; candidate SHA/bytes/version bind to Q-B14; network/provider/Supabase/Professor Home/Blender/A-C additions absent; gateway/static/identity/command/state/focus/regression checks PASS.
+- Bob reports typed local gateway, deterministic fixture/read models, explicit section/source identity, one shared assessment revision, bounded command path, central local ordinary states/error mapping, accepted focus behaviour preserved, and no Slice 2/backend/network/motion/canonical promotion.
+- Stuart Q-S10 independent acceptance is now the next product gate.
+- Kevin/Blender/intro remains independent and does not gate product acceptance.
 
-Q-B14 — SLICE 1: LOCAL PRODUCT GATEWAY / FIXTURE TRUTH BOUNDARY
-Eligibility: AVAILABLE NOW if no newer Bob task is STARTED.
-Purpose: implement Q-B12 Slice 1 from the exact accepted corrected baseline above without waiting for Kevin/intro motion.
-Requirements:
-- Derive from exact accepted corrected-baseline bytes identified above; reverify provider ID/SHA/size/version before editing.
-- Introduce one typed frontend product gateway boundary plus deterministic local fixture adapter/read-model layer.
-- Make section identity explicit across relevant fixture objects.
-- Carry source_revision_id/source_block_id plus a display locator for proof identity.
-- Make one assessment revision the single fixture truth consumed by Assessment Desk, student timeline and reminder/announcement views.
-- Route authoritative-domain fixture writes through bounded command methods rather than direct view-layer/ad-hoc field mutation for the migrated slice.
-- Add central deterministic local loading/empty/error/stale-revision/unauthorized presentation states and bounded command-error mapping.
-- Preserve every accepted instructor/student visible workflow and the Q-B13 focus fixes.
-- Zero network/Supabase/auth/provider dependency; no vendor-specific API contract.
-- No professor-scale Slice 2+ visible redesign in this package except the minimum ordinary state presentation necessary for Slice 1.
-- No backend/auth/Supabase/deploy, Blender/motion/A-C, canonical G/final 3×3 or canonical promotion.
-Verification/return:
-- Produce a NEW non-canonical provider-visible candidate with exact ID/SHA/bytes/version.
-- Deterministic gateway/fixture tests must demonstrate the local adapter, read models, command boundaries, source/section/revision identity and ordinary state handling.
-- Re-run compact regression proving existing accepted R6/Q-B13 workflows remain reproducible and focus fixes persist.
-- Return exact diff summary, candidate identity, test evidence and any residual limitation directly to General.
-- After DONE, Stuart Q-S10 performs independent Slice 1 acceptance.
+NEXT PRODUCT SLICE
+Eligibility: BLOCKED until Stuart Q-S10 independently PASSes exact Q-B14 candidate and General publishes the accepted Slice 1 derivation pointer/scope.
+Purpose: continue the ordered post-R6 product roadmap only after Slice 1 acceptance. Do not infer or begin Slice 2 from this placeholder; General will publish the exact next-slice package after Q-S10.
 
 Q-B3 — APPLY OWNER-SELECTED HINGE VARIANT
 Eligibility: BLOCKED until Nathan selects A or C and General publishes the exact selected-candidate pointer.
 
 STOP CONDITION
-Execute Q-B14 now if eligible. Do not start professor-scale Slice 2+ work until Q-B14 has independent Q-S10 acceptance and General releases the next slice. Do not touch Kevin's animation lane or invent filler.
+No Bob item is immediately eligible. Wait for Q-S10 rather than invent filler. Do not touch Kevin's animation lane.
