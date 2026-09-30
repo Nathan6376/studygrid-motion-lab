@@ -1,0 +1,76 @@
+{
+  "status": "PASS_WITH_BOUNDED_C_INTEGRATION_REQUIREMENTS",
+  "base": {
+    "commit": "94078223a136d023e90aa105e708de4b143aab09",
+    "scene_blob": "cb87739e3f254222e9e336eb0db5b25164f59bb8",
+    "scene_sha256": "fa72445d4438b9e057285c749f5bd77776ed7f2590427b02b3184b2dd23193fd",
+    "bytes": 14943,
+    "lines": 435,
+    "git_blob_identity_match": true,
+    "python_compile": "PASS"
+  },
+  "variant_A": {
+    "patch": "blender/v4a_variant_a.patch",
+    "applied_source_sha256": "23472766ba37907a0f12a66bd50f9aa4cfb7029afb09d974fc8f53818ebc3989",
+    "applied_source_bytes": 15222,
+    "python_compile": "PASS",
+    "geometry": {
+      "start_center_parent_relative": [1.0, 0.0, 1.1],
+      "final_center_parent_relative": [1.1, 0.0, 0.0],
+      "samples": 721,
+      "obb_collision_samples": 0,
+      "minimum_positive_sat_separation": 0.09999999999999964,
+      "final_raw_face_gap": 0.10000000000000009
+    },
+    "camera_change": false,
+    "floor_change": false,
+    "integration_conflict": null
+  },
+  "variant_C": {
+    "patch": "blender/v4a_variant_c.patch",
+    "applied_source_sha256": "931214a722814a90d41a3fa68ce5c35dca06f3bf61f8b59bd30371310ebd3360",
+    "applied_source_bytes": 16486,
+    "python_compile": "PASS",
+    "geometry": {
+      "start_center_parent_relative": [0.0, 1.1, 0.0],
+      "stage1_end_center_parent_relative": [1.1, 1.0, 0.0],
+      "final_center_parent_relative": [1.1, 1.1102230246251565e-16, 0.0],
+      "samples_per_stage": 721,
+      "stage1_obb_collision_samples": 0,
+      "stage1_minimum_positive_sat_separation": 0.09999999999999964,
+      "stage2_obb_collision_samples": 0,
+      "stage2_minimum_positive_sat_separation": 0.10000000000000009,
+      "final_raw_face_gap": 0.10000000000000009,
+      "exact_front_start_fully_occluded": true,
+      "parent_projected_half_extent_normalized": 0.034482758620689655,
+      "child_projected_half_extent_normalized": 0.032051282051282055
+    },
+    "camera_change": "2C-only exact-front fixed-50mm pose at (0.4,-15,0) targeting (0.4,0,0)",
+    "floor_change": "2C-only visibility hide 8.8s-12.0s; floor restored at 12.1s; existing doorway hide retained",
+    "integration_conflict": "The old oblique 2C camera cannot prove full geometric occlusion of an equal-size child placed 1.10L directly behind the parent. Candidate C therefore requires the exact-front 2C-only camera cut. The current z=-0.75L floor would also intersect the C stage-2 sweep if left visible; the 2C-only floor hide resolves this without altering unrelated study geometry."
+  },
+  "static_checks": {
+    "A_no_scale_assignment_in_2C": true,
+    "A_no_opacity_assignment_in_2C": true,
+    "A_exact_comparison_pivot": true,
+    "A_exact_comparison_child_local": true,
+    "C_no_scale_assignment_in_2C": true,
+    "C_no_opacity_assignment_in_2C": true,
+    "C_distinct_Z_then_localY_worldX_axes": true,
+    "C_exact_comparison_H2_offset": true,
+    "C_child_study_visibility_begins_at_8_8": true,
+    "C_exact_front_camera_present": true,
+    "C_floor_isolated_only_for_2C": true,
+    "A_camera_unchanged": true,
+    "A_floor_unchanged": true,
+    "Study1_marker_preserved": true,
+    "Study3_marker_preserved": true,
+    "Study4_marker_preserved": true,
+    "Study3_hinge_keyframes_preserved": true,
+    "doorway_50mm_contract_preserved": true,
+    "later_camera_keys_preserved": true
+  },
+  "visual_verification": "NOT_RUN_IN_BOB_LANE",
+  "visual_owner": "Kevin separate render-proof lane",
+  "promotion": "NONE"
+}
