@@ -1,0 +1,14 @@
+STUDYGRID V4A — STUART EXPORT / RUNTIME READINESS — STARTED
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 09:12 ET
+
+Authority consumed:
+- Base: CGPTBASE-R0004-N8V6 (full read)
+- routes/STUART_V4A_EXPORT_RUNTIME_READINESS.txt @ blob 093adc552704588538b4dd523baa6fbe881a0149
+- current main head observed: 2daca92eef8e25b92e36e30f5f599ce67586ae66
+- post-Bob mechanics render source: commit 13200b8c6111b65608d755a576b170b55427a72e
+- run #10 / 36715371870 successful artifact remains the runtime reference for this audit
+
+Branch: stuart-v4a-export-runtime-readiness
+Scope locked: isolated-branch audit and non-mutating export preflight only. No edits to scene_v4a.py mechanics, main, workflow, StudyGrid production/R5/R6/backend/Supabase/canonical G/final 3x3 choreography; no final hinge choice.
