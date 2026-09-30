@@ -61,16 +61,17 @@ jobs:
           tar -xf "$FILE"
           rm -f "$FILE" "blender-${BLENDER_VERSION}.sha256"
 
-      - name: Install ffmpeg
+      - name: Install headless render dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg
+          sudo apt-get install -y ffmpeg libegl1 libgl1 libx11-6 libxext6 libxrender1 libxi6 libxkbcommon0
 
       - name: Verify render tools
         run: |
           set -euo pipefail
           "$BLENDER_DIR/blender" --version | head -n 2
           ffmpeg -version | head -n 1
+          ldconfig -p | grep 'libEGL.so.1' | head -n 1
 
       - name: Build and render V4A
         env:
