@@ -13,31 +13,35 @@ CURRENT CONTEXT
 - Q-B4 doorway cube-selection policy fixture: DONE @ 7c94bd8765d11398181d799a1fc9d9d53bb95ef5.
 - Q-B5 nine-cube invariant/slot validator: DONE @ 8cddfeb71b1b70c7d62aec8ba663e257242deb0c.
 - Q-B6 study visibility/cut isolation fixture: DONE @ fa4cbb1d95a396d2cd9dfdb6020bd574e1383b56.
-- Stuart Q-S1 independently passed both Candidate A and Candidate C on the frozen technical acceptance matrix. Owner preference remains held until General's owner-decision readiness gate is satisfied.
-- Kevin Q-K1 full-context dual preview is currently active; Bob must not duplicate Kevin render work or Stuart fidelity acceptance.
+- Q-B7 dual-variant final-integration preflight: DONE @ 5b139cb0c98721b5c343b8c35c4a46ad293cd9ab. Candidate A PASS; Candidate C PASS with bounded requirements.
+- Q-B8 global motion-invariant scanner: DONE @ 98a96da79c58b3037c00797bc6cfef555f6919af; synthetic test suite PASS.
+- Stuart Q-S1 independently passed both Candidate A and Candidate C on the frozen technical acceptance matrix.
+- Kevin Q-K1 full-context dual preview remains active. Bob must not duplicate Kevin render work or Stuart fidelity/fixture acceptance.
+- StudyGrid product HTML remains intentionally unmutated during the V4A motion gate. Accepted R5 and unpromoted R6 are read-only references only.
 
-Q-B7 — DUAL-VARIANT FINAL-INTEGRATION PREFLIGHT
+Q-B9 — MOTION→HTML INTEGRATION SEAM MAP
 Eligibility: AVAILABLE NOW if no newer Bob task is STARTED.
-Purpose: prove the already-prepared reversible Candidate A and Candidate C patches still apply cleanly against the latest V4A source context and the newly completed Bob fixtures, without selecting a winner or rendering.
+Purpose: prepare a candidate-neutral, no-mutation integration map for inserting the eventual approved V4A motion package into the actual StudyGrid shell without touching product HTML yet.
 Requirements:
-- Treat A and C symmetrically; no ranking or owner preference.
-- Verify patch/source identity and detect drift/conflicts.
-- Run or bind the existing G→seed scaffold, doorway handoff fixture, doorway-selection policy, nine-cube invariant validator, and visibility/cut checker against each candidate where applicable.
-- Verify no animated object-scale cheat and no focal-length/FOV animation is introduced by either candidate.
-- No redesign of mechanics, no main/product/workflow/R5/R6/Supabase/backend/auth/deploy/canonical-G/final-choreography mutation.
-Return: per-candidate preflight PASS/FAIL/HOLD, exact source/patch pointers, machine-readable report, and any smallest conflict that would need repair after owner selection.
+- Read exact accepted R5 and current unpromoted R6 only as references; do not modify or promote either.
+- Identify safe mount/container points, sizing/aspect-ratio envelope, z-index/overflow/focus interactions, asset/bootstrap boundaries, lifecycle hooks and handoff into the normal app shell.
+- Keep Candidate A/C mechanics abstract behind one adapter contract; do not select a winner.
+- Specify how the final G/3x3 asset can be swapped without re-architecting the page shell.
+- Flag any R5↔R6 integration differences that General must reconcile later instead of silently choosing one.
+- No HTML/product/main-motion-scene/workflow/R5/R6/backend/auth/Supabase/deploy mutation.
+Return: seam map, adapter/interface contract, insertion-point evidence, R5/R6 differences and blockers.
 
-Q-B8 — GLOBAL MOTION-INVARIANT SCANNER
-Eligibility: AVAILABLE AFTER Q-B7 DONE/PARTIAL if no Q-B7 blocker makes this unsafe.
-Purpose: build a reusable isolated scanner for final selected-candidate QA so later integration can automatically catch prohibited motion cheats and camera drift before render.
+Q-B10 — REDUCED-MOTION / LOADING / FAILURE FALLBACK HARNESS
+Eligibility: AVAILABLE AFTER Q-B9 DONE/PARTIAL if no blocker makes this unsafe.
+Purpose: prepare the isolated fallback contract and test harness the later HTML integration must satisfy without implementing it in StudyGrid yet.
 Requirements:
-- Detect animated object scale on governed cubes/G seed objects.
-- Detect animated camera focal length/FOV where fixed-lens physical dolly is required.
-- Detect dimension drift among final cube objects, invalid gap collapse, and prohibited visibility/opacity animation in the hidden-mechanics proof path.
-- Produce frame/time findings with object/camera identifiers.
-- Be choreography-neutral and candidate-neutral; do not decide reveal order or A/C winner.
-- Isolated branch/package only; no main/product/workflow mutation.
-Return: scanner, synthetic positive/negative tests, report schema and known limitations.
+- Define prefers-reduced-motion behaviour that preserves orientation/brand identity without running the full 3D sequence.
+- Define slow-load, asset-fail, WebGL-unavailable and skip/continue states with no dead-end or layout jump.
+- Preserve keyboard/focus semantics and avoid trapping entry into the product behind animation completion.
+- Check representative viewport envelopes and the fixed-lens motion container assumptions without changing motion mechanics.
+- Keep copy minimal/placeholder; no new visual/product direction.
+- No product/main/R5/R6/deploy mutation.
+Return: fallback state machine, harness/tests, acceptance checks and integration prerequisites.
 
 Q-B3 — APPLY OWNER-SELECTED HINGE VARIANT
 Eligibility: BLOCKED until Nathan selects A or C after General confirms owner-decision readiness and publishes the exact selected-candidate pointer.
