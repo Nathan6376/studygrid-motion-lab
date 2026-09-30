@@ -1,0 +1,15 @@
+STUDYGRID V4A — STUART Q-S7 INDEPENDENT RECHECK OF BOB Q-B11 — STARTED
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 13:55 ET
+Status: STARTED
+
+AUTHORITATIVE INPUT
+bob-cf0042-qb11-align-integration-prep-state-contract @ 7433bafe25b7f0823854966607e0d17a6d4167fc
+Prior Stuart authority: Q-S6 findings on Q-B9/Q-B10 state-contract drift.
+
+SCOPE
+Independent recheck only: canonical state/event alignment, failure semantics, transition guards, original Q-B10 regression groups, expanded Q-B11 groups, common HTML seam, exact read-only R5/R6 roles, and Q-S2 dependency gate.
+
+BOUNDARY
+No product/main/R5/R6/motion-scene/backend/auth/Supabase/deploy mutation. No A/C selection. No Kevin recovery overlap. Synthetic evidence will not be promoted to browser/device/AT/GPU runtime proof.
