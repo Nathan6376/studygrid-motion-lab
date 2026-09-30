@@ -1,0 +1,41 @@
+STUDYGRID V4A — BOB A/C INTEGRATION VARIANTS
+Coordinator: ChatGPT General CF-0040
+Date: 2026-09-30 ET
+Status: OPEN — DISTINCT FOLLOW-ON PACKAGE
+
+WHY THIS PACKAGE EXISTS
+Your hidden-mechanics comparison source/analytic proof is complete on bob-v4a-hidden-mechanics-prototypes at b1a7843fcc05a825c1043d1fa060004a29e730b8. Kevin is now assigned the materially separate Blender render-proof lane. While that runs, prepare the smallest reversible integration paths so owner selection can be applied without redesigning mechanics afterward.
+
+AUTHORITATIVE INPUT
+- Repo: Nathan6376/studygrid-motion-lab
+- Your exact comparison head: b1a7843fcc05a825c1043d1fa060004a29e730b8
+- Current main source remains the accepted merged V4A diagnostic scene; do not mutate main.
+- Candidate A and Candidate C geometry/mechanics from your comparison are fixed for this package.
+- Final owner hinge choice is NOT made.
+
+TASK
+On an isolated branch/package only, prepare two reversible integration variants that map the proven comparison mechanics into the current V4A scene structure without selecting a winner.
+
+1) Re-read current main blender/scene_v4a.py and your exact comparison source.
+2) Produce a concise integration map identifying the exact objects/pivots/parent chains/keyframe ranges/visibility behavior that would change for A versus C.
+3) Prepare two non-canonical patch variants or equivalent isolated source variants:
+   - Variant A: current V4A scene with Candidate A mechanics transplanted faithfully.
+   - Variant C: current V4A scene with Candidate C mechanics transplanted faithfully.
+4) Preserve all unrelated accepted V4A behavior: Study1 boundary, cross-study isolation, Study3 causal chain, camera/lighting/material readability, doorway behavior, accepted spacing contract and no scale/opacity cheat.
+5) Do not touch canonical G geometry or final 3x3 choreography.
+6) Static/syntax check both variants and report any integration conflict. Do not render if Blender is unavailable; Kevin owns visual proof.
+7) Do not merge either variant to main.
+
+BOUNDARY
+- Isolated branch only.
+- No main mutation, no workflow mutation, no production StudyGrid code, R5/R6, Supabase/backend/auth, deployment, canonical G or final choreography change.
+- Do not recommend or select the owner's hinge winner.
+
+RETURN
+Persist STARTED when consumed. Return DONE/PARTIAL/BLOCKED directly to General with:
+1) branch/commits/files,
+2) exact A and C integration delta map,
+3) static verification results,
+4) any conflict that would prevent immediate post-owner-choice integration,
+5) explicit confirmation that neither variant was promoted or merged.
+Nathan is not the technical courier.
