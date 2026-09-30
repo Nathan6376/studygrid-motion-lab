@@ -1,0 +1,33 @@
+STUDYGRID V4A — BOB PARALLEL ROUTE
+Owner: Nathan
+Coordinator/integration owner: General ChatGPT
+Repository: Nathan6376/studygrid-motion-lab
+Scope: Blender mechanics / motion-quality QA only
+
+CURRENT VERIFIED STATE
+- V4A is a real-3D mechanics gate, not StudyGrid production integration.
+- The G is explicitly provisional until the canonical StudyGrid G vector is frozen.
+- Current scene source: blender/scene_v4a.py.
+- The current studies cover: G stroke-thickness reduction -> seed proxy; strict single ~90° face-plane hinge; hidden-behind 90°+90° hybrid; three-cube causal chain; fixed-50mm physical camera dolly into a doorway cube.
+- Current owner-QA pipeline is being repaired in parallel by General/Kevin. Do not alter workflow/runtime infrastructure unless General explicitly re-routes that scope.
+
+OWNER / DESIGN HARD POINTS TO PROTECT
+- Cubes must read as independent equal cubes with visible air gaps; no cheap morphing or rubbery deformation.
+- The face-plane hinge must read as a physically coherent cube rotating around the correct shared face edge/plane, approximately 90°, rather than orbiting, sliding, teleporting, or clipping mechanically.
+- Camera enlargement in the doorway study must come from physical camera translation with a fixed 50mm lens, not FOV/lens zoom cheating.
+- G thickness reduction must change stroke thickness rather than whole-G scale.
+- Motion should feel premium and causally legible, not mechanical in the bad sense: no unexplained simultaneous movements, accidental intersections, camera drift between diagnostic studies, or easing that destroys hinge readability.
+- Final 3x3 production choreography is intentionally unresolved and out of scope.
+
+YOUR TASK
+1. Re-read current main and current scene_v4a.py before acting; do not assume this packet is the latest code state.
+2. Audit the actual object parenting, pivot placement, transforms, visibility windows, camera keyframes, lighting/material readability, and interpolation for each diagnostic study.
+3. Check especially whether Study 2A is a true face-edge/face-plane hinge with correct parent/child geometry through the full arc, and whether Study 2C remains mechanically coherent rather than hiding a broken transform.
+4. Identify concrete reject conditions visible in an owner-QA render: clipping, face penetration, wrong pivot, floating gap changes, cube scale drift, accidental orbiting, camera cheating, cheap easing, or ambiguous parent/child causality.
+5. You may make Blender-source fixes in blender/scene_v4a.py if the defect is clear and the fix stays inside the established V4A mechanics contract.
+6. Do not touch .github/workflows/render-v4a.yml, StudyGrid production code, R5/R6, Supabase, canonical G design, or final 3x3 choreography.
+7. Do not merge or overwrite concurrent pipeline work. If you make code changes, keep them isolated and report the exact commit so General can reconcile deliberately.
+8. If an owner-QA artifact is available, inspect its stills/MP4 as the final evidence. If it is not yet available, perform source-level QA and clearly mark visual verification pending.
+
+HANDOFF BACK
+Return STARTED, then DONE/PARTIAL/BLOCKED to General with: exact defects found, source changes/commit if any, which mechanics are source-verified vs visually verified, and any owner decision genuinely required. Keep owner-facing detail minimal.
