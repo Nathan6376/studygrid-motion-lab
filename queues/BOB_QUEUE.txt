@@ -1,11 +1,11 @@
 STUDYGRID — BOB WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 17:46 ET
+Updated: 2026-09-30 17:56 ET
 Queue owner: General
 Worker: Bob / CF-0042
 
 PULL RULE
-When Nathan directly tells Bob to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item. Do not pull another worker's queue and do not create owner-routing prompts; return durable technical results to General.
+When Nathan directly tells Bob to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Prefer executable critical-path work. If the next build gate is waiting on another worker, pull only bounded dependency-feeder/preparatory work with a named downstream consumer. Do not create filler, duplicate another active lane, mutate an unaccepted product baseline, or do research without a named downstream consumer. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item and return durable technical results to General.
 
 CURRENT CONTEXT
 - Q-B12 R6→current-product delta map: DONE @ bob-cf0042-qb12-r6-current-product-delta-map / 8200171d1c11d2c84b2ddfe614561db6949188d1.
@@ -37,10 +37,23 @@ Verification/return:
 - Deterministically test six-course/hundreds-student scale, Today non-navigation, unresolved/resolved attention lifecycle, explicit class identity, organization controls, selected-class drill-in preservation and responsive/keyboard basics.
 - Re-run compact gateway/fixture/command/state/focus/registry/responsive regression proving Slice 1 and accepted R6/Q-B13 behavior remains intact.
 - Return exact candidate identity, diff summary, test evidence and residual limitations directly to General.
-- After DONE, Stuart Q-S11 performs independent Slice 2 acceptance before any Slice 3+ release.
+- After DONE, Stuart Q-S11 performs independent Slice 2 acceptance before any Slice 3+ product mutation.
+
+Q-B16P — SLICE 3 IMPLEMENTATION PREP / FEEDER PACKAGE
+Eligibility: AVAILABLE after Q-B15 is DONE only while Q-S11 independent acceptance is still pending and no newer Bob critical-path task has become eligible.
+Purpose: use otherwise-idle Bob time to prepare the next accepted owner-released Slice 3 work without mutating the Q-B15 candidate or assuming Q-S11 will PASS.
+Named downstream consumer: future Bob Slice 3 implementation package after General releases it.
+Scope:
+- Reconcile Q-B12 A2+A3+A4 against the exact accepted Slice 1 gateway contract and whatever Q-B15 changed structurally.
+- Produce a docs/tests-only implementation map for set-up-once course defaults, assessment autofill evidence hierarchy, review-by-exception, human-readable timing, and separate assessment/open/close/practice/reminder/announcement semantics.
+- Identify exact gateway/read-model/command additions, deterministic fixtures, state transitions, likely focus/responsive risks, and a minimal regression plan.
+- Prepare test fixtures/harness scaffolding only if it cannot affect product/runtime bytes and remains reusable if Q-S11 finds a Slice 2 correction.
+- Explicitly flag any part that would need owner/design QA instead of guessing.
+- No product HTML mutation, no new candidate, no backend/auth/Supabase/network/provider/deploy, no motion/A-C, no Slice 4 enrolment.
+Return: durable prep packet that future Slice 3 implementation can consume directly; label assumptions and invalidate anything tied to Q-B15 details if Q-S11 later changes them.
 
 Q-B3 — APPLY OWNER-SELECTED HINGE VARIANT
 Eligibility: BLOCKED until Nathan selects A or C and General publishes the exact selected-candidate pointer.
 
 STOP CONDITION
-Execute Q-B15 now if eligible. Do not begin Slice 3+ until Q-B15 passes independent Q-S11 acceptance and General releases the next slice. Do not touch Kevin's animation lane or invent filler.
+Execute Q-B15 now if eligible. If Q-B15 completes and Q-S11 is still pending, continue to Q-B16P instead of idling. Stop before actual Slice 3 product mutation until Q-S11 PASS + General release. Do not touch Kevin's animation lane or invent filler.
