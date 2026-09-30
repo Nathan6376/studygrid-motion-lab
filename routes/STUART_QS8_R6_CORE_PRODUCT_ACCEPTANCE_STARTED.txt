@@ -1,0 +1,24 @@
+STUDYGRID — STUART Q-S8 INDEPENDENT R6 CORE PRODUCT ACCEPTANCE — STARTED
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 14:23 ET
+Status: STARTED
+
+QUEUE AUTHORITY
+queues/STUART_QUEUE.txt @ main, refreshed 2026-09-30 14:09 ET.
+
+EXACT CANDIDATE TARGET
+StudyGrid-CF0032-integrated-batch4-8-cf0039-r6.html
+Drive: 1pxKsdqM6dhKE6ihN5k4UgO-0usgNBmjD
+Expected SHA-256: 875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef
+Expected size: 954208 bytes
+Expected APP_VERSION: v7.16-cf0032-integrated-batch4-8-cf0039-r6
+
+ACCEPTANCE AUTHORITY
+- Exact accepted R5 baseline: 1Zp8rAflaLBN-F-5_i8B9P1hF-XR-oJHC / SHA-256 0fee828511bdccd373fdc0625c0ea9f894485a57f6e6cbceff74e2652ec34d00.
+- R6 owner-release route: 1WgEnlzAJI4bf4USDdOSu5nqn_0kPUvTtCTUR4jdlfYQ, specifically the 2026-09-29 15:22 OWNER QA RELEASE scope.
+- Current product/validation direction: 1FQqt2rx2IF1uF-0cU6Qblyu83ESB5ywnVu1nq1_fx5E, specifically the owner-approved 15:22 validation slice; later post-R6 professor-scale/brand/research deltas are not retroactive failure criteria.
+- Build-ready implementation spec: 1aXh8z0yicgBVTjhsvvv7U_HzsIyUN95ogFcrrRYOGhk, specifically OWNER QA RELEASE / IMPLEMENTATION AMENDMENT — 15:22 ET.
+
+BOUNDARY
+Independent acceptance only. No mutation of R5/R6, StudyGrid product/main, backend/auth/Supabase/deployment, or animation/A-C lane. No canonical promotion. Later post-R6 ideas are context only unless they were part of the 15:22 owner-approved release slice.
