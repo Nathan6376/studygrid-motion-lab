@@ -1,0 +1,27 @@
+STUDYGRID — KEVIN Q-K1E RECOVERY/PUBLISH
+Coordinator: ChatGPT General CF-0040
+Worker: Kevin
+Lifecycle: STARTED
+Timestamp: 2026-09-30 14:00 ET
+Queue source: queues/KEVIN_QUEUE.txt @ main fdb387fb40aaa58a66ef028cfaa1233ce9410c02
+
+PURPOSE
+Recover and publish the actual terminal evidence for the already-owner-reported Q-K1R work. Evidence recovery first; do not redo Q-K1R blindly.
+
+CURRENT VERIFIED INPUT
+- Existing Q-K1 branch: kevin-qk1-v4a-full-context-dual-preview @ a14459b1bd3f8b353eaa8e4f78aae3341b96cfef.
+- Existing workflow run 36734968949 is terminal FAILURE.
+- Candidate A and Candidate C full-context render steps completed successfully in that run.
+- Failure occurred in post-render verification before proof hashing and artifact upload.
+- Main/queue reconciliation identifies verifier/tooling KeyError 'expected' from inconsistent expect/expected access; artifact list was empty.
+- No newer Q-K1/Q-K1R recovery branch/run/artifact is presently visible on the refreshed provider surfaces.
+
+BOUNDARIES
+- Preserve exact A/C mechanics and source identities.
+- No winner selection.
+- No main/product/R5/R6/backend/auth/Supabase/deployment/canonical-G/final-choreography mutation.
+- Do not start Q-K2.
+- Only minimal publication/verification action is permitted if prior work is proven complete and merely missing durable provider-visible evidence.
+
+NEXT
+Recover the real Q-K1R terminal state from current chat/context and provider evidence, then persist DONE/PARTIAL/BLOCKED with exact branch/commit/run/artifact/verifier/inventory/hash/decode evidence or the exact blocker.
