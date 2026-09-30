@@ -1,6 +1,6 @@
 STUDYGRID — KEVIN WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 13:10 ET
+Updated: 2026-09-30 13:46 ET
 Queue owner: General
 Worker: Kevin
 
@@ -8,43 +8,29 @@ PULL RULE
 When Nathan directly tells Kevin to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item. Do not pull another worker's queue and do not create owner-routing prompts; return durable technical results to General.
 
 CURRENT CONTEXT
-- Earlier A/C hidden-mechanics render proof is DONE and independently accepted by Stuart: Candidate A PASS and Candidate C PASS on the frozen technical matrix; no owner winner selected.
-- Q-K1 full-context branch: kevin-qk1-v4a-full-context-dual-preview.
-- Q-K1 workflow run 36734968949 reached successful Candidate A and Candidate C full-context renders, then FAILED in the post-render verifier before proof hashing/upload.
-- Fresh General inspection of job 109954161030 isolates the failure to verifier/tooling logic: .github/tools/verify_v4a_qk1_full_context.py raises KeyError: 'expected' after inconsistent schema/key access involving expect/expected. This failure is not evidence that either rendered candidate media is defective.
-- Because the failed GitHub-hosted runner is terminal and the proof package was never uploaded, do not assume its ephemeral render bytes are durably recoverable. Reuse them only if provider-visible durable evidence proves they remain available; otherwise rerendering the exact unchanged candidates is permitted.
-- No durable Q-K1 recovery return or valid full-context proof artifact is currently present on the shared surfaces checked by General.
+- Nathan reported at approximately 13:44 ET that the workers are done. Treat Kevin as owner-reported terminal at the chat surface, but do not infer task success from that report alone.
+- Shared technical surfaces still show no durable Kevin Q-K1R terminal return, no recovery branch/commit, no newer workflow run, and no valid full-context A+C artifact.
+- Existing Q-K1 branch remains kevin-qk1-v4a-full-context-dual-preview @ a14459b1bd3f8b353eaa8e4f78aae3341b96cfef.
+- Existing run 36734968949 remains terminal FAILURE after successful A/C renders and a verifier KeyError involving expect/expected; artifact list is empty.
+- Therefore General cannot release Q-K2 or Stuart Q-S2 until Kevin's actual terminal evidence is recovered and verified.
 
-Q-K1R — Q-K1 VERIFIER RECOVERY + DURABLE FULL-CONTEXT PROOF
-Eligibility: AVAILABLE NOW if no newer Kevin recovery package is STARTED.
-Purpose: repair only the Q-K1 post-render verification/tooling defect and produce the durable valid A+C full-context proof that Q-K1 was intended to deliver.
+Q-K1E — RECOVER/PUBLISH EXISTING Q-K1R TERMINAL EVIDENCE
+Eligibility: AVAILABLE NOW because Nathan reports Kevin finished but the shared durable return is missing.
+Purpose: reconcile the already-finished Kevin chat/work with shared state. This is evidence recovery first, not permission to redo Q-K1R blindly.
 Requirements:
-- Start from the exact Q-K1 candidate/source identities already used by run 36734968949. Preserve Candidate A/C mechanics and all unrelated accepted V4A behaviour; do not redesign or select a winner.
-- Diagnose and correct the verifier schema/key mismatch that produced KeyError: 'expected'. Normalize the verifier to one explicit manifest/schema contract and add a regression that fails if expect/expected handling drifts again.
-- Keep the fix verifier/tooling-only unless new evidence demonstrates a real media defect. If a real media defect is discovered, stop and return PARTIAL/BLOCKED with exact evidence instead of silently changing mechanics.
-- Reuse prior A/C render outputs only if they are durably recoverable and source-identical. If the GitHub runner discarded them, rerender A and C from the exact unchanged Q-K1 sources; rerendering due ephemeral-runner loss is not a mechanics change.
-- Complete post-render isolation/media-integrity verification, proof hashes/manifest, and artifact upload.
-- Independently verify the uploaded artifact identity, expected inventory, media decode, source identity and payload hashes before DONE.
-- Return exact recovery commit, workflow run ID, artifact name/ID/digest, A/C source identities, verifier regression result, inventory/hash/decode result and any residual limitation directly to General.
-- No main product/R5/R6/backend/auth/Supabase/deploy/canonical-G/final-choreography mutation and no owner winner selection.
+- First recover the actual terminal Q-K1R result from Kevin's current work/chat context and persist it to the authorized StudyGrid team surface.
+- If Q-K1R truly completed successfully, publish the exact recovery branch/commit, workflow run ID, artifact name/ID/digest, A/C source identities, verifier regression result, inventory/hash/decode result and residual limitations. Do not rerender or redesign merely because shared state was missing.
+- If Q-K1R ended PARTIAL/BLOCKED/FAILED or never actually produced a valid artifact, persist that exact terminal state and blocker. Do not call it DONE and do not start Q-K2.
+- Only if the prior work clearly completed a verifier fix but a provider-visible artifact was lost solely because a final publish step was omitted may Kevin perform the smallest publication/verification-only action required to make the existing result durable. No mechanics changes.
+- Preserve Candidate A/C mechanics and all product/main/R5/R6/backend/auth/Supabase/deploy/canonical-G/final-choreography boundaries.
+Return: durable terminal lifecycle and exact evidence directly to General.
 
 Q-K2 — DUAL-CANDIDATE GLB EXPORT SMOKE
-Eligibility: BLOCKED until Q-K1R produces a durable valid source-stable A+C full-context proof artifact and General/Stuart can consume that evidence.
-Purpose: Prove that the two candidate hinge structures can survive the Blender→GLB boundary with transform hierarchy intact before the owner choice.
-Requirements:
-- Export only the minimum hinge fixture(s), not the whole product.
-- Verify transform hierarchy, animation clips, fixed cube dimensions, camera/lens metadata where applicable, and no baked scale cheat.
-- No Three.js production integration yet; this is an isolated export smoke test.
-- If one candidate cannot be exported faithfully without changing mechanics, report BLOCKED for that candidate rather than redesigning it.
-Return: GLB artifacts/manifests, export logs, structural verification and differences.
+Eligibility: BLOCKED until General verifies a durable valid source-stable A+C full-context proof artifact from Q-K1R/Q-K1E.
+Purpose: prove that the two candidate hinge structures can survive the Blender→GLB boundary with transform hierarchy intact before the owner choice.
 
 Q-K3 — SELECTED-CANDIDATE FINAL RENDER / ROUND-TRIP
 Eligibility: BLOCKED until Nathan selects A or C after independent full-context acceptance and General publishes the selected integration source.
-Purpose: Render and, if separately routed, run the smallest chosen-candidate GLB→Three.js round-trip including the doorway camera handoff.
-Requirements:
-- Use only owner-selected accepted mechanics.
-- No deployment/canonical promotion without later explicit route.
-Return: final chosen-candidate QA artifact and runtime handoff evidence.
 
 STOP CONDITION
-If Q-K1R is already STARTED in a newer durable lifecycle record, do not duplicate it. Otherwise Q-K1R is the first eligible Kevin item. Q-K2 and Q-K3 remain blocked as stated. Do not invent filler work.
+Execute Q-K1E only. Do not start Q-K2 from owner-reported completion alone; General must verify the recovered durable artifact first. Do not invent filler.
