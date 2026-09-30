@@ -7,23 +7,37 @@ Worker: Stuart
 PULL RULE
 When Nathan directly tells Stuart to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item. Do not pull another worker's queue and do not create owner-routing prompts; return durable technical results to General.
 
-CURRENT ACTIVE PACKAGE
-- routes/STUART_V4A_AC_ACCEPTANCE_HARNESS_PREP.txt is the current preparation package. Finish it before pulling queue work.
+CURRENT CONTEXT
+- Q-S1 A/C independent acceptance: DONE. Candidate A PASS and Candidate C PASS on the frozen 15-point technical matrix; no owner winner selected.
+- The raw validator produced false FAIL rows because Kevin's artifact paths had an output-v4a-hidden/ receipt prefix while the ZIP root was flattened; independent reconciliation proved 19/19 files present and 19/19 SHA matches.
+- Kevin Q-K1 full-context dual-preview run 36734968949 is currently IN_PROGRESS, so Q-S2 remains dependency-blocked.
+- Bob Q-B4, Q-B5 and Q-B6 are now durable and available for independent QA; Bob's next work is separate.
 
-Q-S1 — RUN A/C INDEPENDENT ACCEPTANCE
-Eligibility: AVAILABLE once Kevin's current A/C Blender render-proof artifact is durable and the prepared acceptance harness is complete enough to execute.
-Purpose: Apply the predeclared acceptance matrix to Kevin's real render without moving criteria after seeing the output.
+Q-S4 — ACCEPTANCE VALIDATOR PATH-NORMALIZATION REPAIR
+Eligibility: AVAILABLE NOW if no newer Stuart task is STARTED.
+Purpose: repair only the frozen harness artifact-path handling so a safe known packaging prefix/flattened-root case cannot create false FAIL rows while preserving strict integrity checks.
 Requirements:
-- Verify artifact/source identity first.
-- Separate visual findings from source/analytic findings.
-- PASS/FAIL/HOLD Candidate A and Candidate C against the fixed contract; do not choose the owner's preferred candidate.
-- Confirm C rear-stow truthfulness, oblique existence proof, no scale/opacity cheat, collision/floor/gap/camera parity, pacing and final rest.
-- No main/product mutation.
-Return: independent matrix result, evidence, and exact owner-decision surface General may safely present.
+- Preserve the existing frozen acceptance criteria and prior Q-S1 verdict; this is tooling repair only, not retroactive criteria movement.
+- Normalize only unambiguous expected root-prefix/flattened-root layouts; reject collisions, duplicate normalized paths, traversal/unsafe ZIP names, missing files and SHA mismatches.
+- Re-run against Kevin run-2 artifact plus synthetic positive/negative fixtures.
+- Preserve raw prior Q-S1 evidence; do not rewrite history.
+- Isolated branch/package only; no product/main/workflow/mechanics mutation.
+Return: repaired validator, regression set, before/after explanation and provider-verifiable test result.
+
+Q-S5 — INDEPENDENT QA OF BOB Q-B4/Q-B5/Q-B6 FIXTURES
+Eligibility: AVAILABLE AFTER Q-S4 DONE/PARTIAL with no blocker that makes Q-S5 unsafe.
+Purpose: independently verify Bob's doorway selection policy, nine-cube invariant validator and visibility/cut isolation fixture before those utilities are relied on during final integration.
+Requirements:
+- Q-B4: test first-run, one-cube, two+ cube, invalid-prior and deterministic replay; verify no-immediate-repeat when possible.
+- Q-B5: adversarially test missing/extra cube, unequal dimensions, collapsed gaps, duplicate slots and invalid parent references.
+- Q-B6: test cross-study bleed and boundary frames at representative 8/12/30 fps; verify checker does not conflate camera cuts with motion easing.
+- Report PASS/FAIL/HOLD per fixture and exact evidence; do not redesign Bob's implementation unless a later General repair route asks for it.
+- No product/main/workflow/R5/R6/Supabase/backend/auth/deploy mutation.
+Return: independent QA report and smallest corrective route if any fixture fails.
 
 Q-S2 — FULL-CONTEXT VARIANT FIDELITY AUDIT
-Eligibility: AVAILABLE after Kevin produces full-context A and C preview renders and Bob's corresponding reversible source variants are durable.
-Purpose: Verify each full-context preview actually matches Bob's source variant and preserves unrelated accepted V4A behavior.
+Eligibility: AVAILABLE after Kevin produces durable full-context A and C preview renders and Bob's corresponding reversible source variants remain durable.
+Purpose: verify each full-context preview actually matches Bob's source variant and preserves unrelated accepted V4A behavior.
 Requirements:
 - No preference ranking or owner winner selection.
 - Compare source identities, hierarchy, camera/material parity, Study1/Study3/doorway preservation and any visibility/floor/collision deviations.
@@ -32,7 +46,7 @@ Return: fidelity report and any smallest corrective route General should issue.
 
 Q-S3 — EXPORT/RUNTIME ACCEPTANCE
 Eligibility: AVAILABLE after Kevin produces candidate GLB export-smoke artifacts or later selected-candidate runtime round-trip artifacts.
-Purpose: Independently validate Blender→GLB→runtime structural fidelity using the export-readiness contract already prepared.
+Purpose: independently validate Blender→GLB→runtime structural fidelity using the export-readiness contract already prepared.
 Requirements:
 - Check curated export subset, hierarchy, animation clips, visibility schedule, modifier/instancing handling, camera handoff markers and web-material/lighting assumptions.
 - Distinguish Blender-verified, GLB-verified and runtime-verified claims.
