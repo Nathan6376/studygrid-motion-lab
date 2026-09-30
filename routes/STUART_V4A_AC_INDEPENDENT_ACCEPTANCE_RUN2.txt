@@ -1,0 +1,52 @@
+STUDYGRID V4A — STUART INDEPENDENT A/C ACCEPTANCE — RUN 2
+Coordinator: ChatGPT General CF-0040
+Date: 2026-09-30 ET
+Status: OPEN — DISTINCT POST-RENDER ACCEPTANCE PACKAGE
+
+WHY THIS PACKAGE EXISTS
+Stuart's frozen A/C acceptance harness is DONE on this branch. Kevin's Blender A/C render proof has now completed successfully and produced a durable artifact, so the first queued Stuart acceptance item is eligible now. This package applies the already-frozen criteria; it must not change criteria after seeing the result and must not select the owner's preferred candidate.
+
+AUTHORITATIVE INPUTS
+- Stuart harness branch: stuart-v4a-ac-acceptance-harness-prep
+- Harness head before this route: 6cffff02fc37f6bdb186912ffeacc8a3a86386df
+- Frozen acceptance matrix / validator / reject conditions from Stuart's DONE package on this branch.
+- Kevin workflow: Kevin V4A A-C Render Proof
+- Kevin run: 36726558912 / run #2
+- Run conclusion: SUCCESS
+- Exact render source head: 73738d53c1f6fab4153e24155603b9e3e048b0b7
+- Artifact: studygrid-v4a-ac-render-proof
+- Artifact ID: 11103902103
+- Artifact provider digest: sha256:0b71adc48c9d47f395e204e0a4ba8f5fae19f2a5afb8a97180a9af8be947ae14
+- Bob mechanics authority remains the fixed A/C comparison geometry already referenced by the harness.
+- Owner A/C choice remains HELD.
+
+TASK
+1) Refresh current lifecycle and confirm no newer superseding Kevin render exists before evaluation.
+2) Fetch/download the exact run-2 artifact and verify provider identity, archive integrity, expected inventory and media decode before visual judgment.
+3) Execute the frozen validator/checklist exactly as prepared. Do not add, weaken or move acceptance criteria after seeing the render.
+4) Apply the frozen matrix independently to Candidate A and Candidate C.
+5) Separate:
+   - artifact/source identity verified facts,
+   - source/analytic mechanics evidence,
+   - visually verified render evidence,
+   - unknown/held items.
+6) Specifically verify the C rear-stow claim: exact-front genuine occlusion, oblique proof that the child physically exists behind the parent, no opacity/scale cheat, coherent two-stage hinge sequence, no floor/cube intersection, final 0.10L gap and correct rest state.
+7) Verify Candidate A against the same shared comparison/material/camera/readability contract.
+8) Produce PASS / FAIL / HOLD per criterion and per candidate. Do not rank candidates or choose a winner for Nathan.
+9) Return the smallest owner-decision surface General can safely show Nathan: what each candidate visibly does, any failed/held condition, and which artifacts/stills are suitable for owner viewing without debug clutter.
+
+BOUNDARY
+- Independent acceptance only.
+- No mutation of main, Kevin branch, Bob branches, workflow, StudyGrid production code, R5/R6, Supabase/backend/auth, canonical G, final 3x3 choreography or deployment.
+- No candidate redesign or repair in this package.
+- No owner preference/winner selection.
+
+RETURN
+Persist STARTED, then DONE/PARTIAL/BLOCKED directly to General with:
+1) exact artifact/source identity checked,
+2) validator result,
+3) frozen matrix outcome for A and C,
+4) evidence links/file names for each visual claim,
+5) source-vs-visual-vs-unknown separation,
+6) smallest owner-facing comparison General can present next.
+Nathan is not the technical courier.
