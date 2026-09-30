@@ -1,6 +1,6 @@
 STUDYGRID — BOB WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 18:37 ET
+Updated: 2026-09-30 19:12 ET
 Queue owner: General
 Worker: Bob / CF-0042
 
@@ -9,16 +9,17 @@ When Nathan directly tells Bob to do his queued work, refresh current lifecycle 
 
 CURRENT CONTEXT
 - Q-B13 corrected R6 focus baseline: DONE / independently accepted.
-- Q-B14 Slice 1 Local Product Gateway: DONE / independently accepted; General pointer routes/GENERAL_ACCEPTED_SLICE1_QB14.txt.
-- Q-B15 Slice 2 Professor Home / Multi-Course Scale: DONE. Exact candidate: StudyGrid-CF0042-QB15-professor-home-scale.html / Drive 1CSN0jYJHnYbk2kpLAz8HNg4BSYELbe6U / SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf / 996820 bytes / v7.18-cf0042-qb15-professor-home-scale. Return Drive 1Q4Xj7lZF1NQutngTPvae6Gyx1dEc-dM6; verification Drive 1dD_bYpgUBk2wf46DDHKky_Hoy-EXwb1o; 133/133 PASS reported.
+- Q-B14 Slice 1 Local Product Gateway: DONE / independently accepted.
+- Q-B15 Slice 2 Professor Home / Multi-Course Scale: DONE. Exact candidate: StudyGrid-CF0042-QB15-professor-home-scale.html / Drive 1CSN0jYJHnYbk2kpLAz8HNg4BSYELbe6U / SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf / 996820 bytes / v7.18-cf0042-qb15-professor-home-scale.
+- Stuart Q-S11 independent Slice 2 acceptance: DONE / PASS on stuart-qs11-slice2-acceptance @ 1ede785b5a38061b6bb975b1246ae81645e44249; 145/145 PASS within tested scope. Physical-device / hosted-origin / full-accessibility remain HOLD.
+- General accepted Slice 2 working pointer: routes/GENERAL_ACCEPTED_SLICE2_QB15.txt @ main commit 72542fcd9b93bddc8b619afd2fad86efb05ab144.
 - Q-B16P Slice 3 implementation prep: DONE. Human prep Drive 17d14zH6BPs1bJIVsvGi0KupQiyfd_Zbi; ZIP Drive 1RmVscYlBs3v3d2AeCgJKHzj8jzkIrDFY; return Drive 1Ppar-sfGffouxQ5-ealjoXFwoN8m_gld; prep self-test 17/17 PASS. No product/runtime mutation.
-- Stuart Q-S11 independent Slice 2 acceptance is AVAILABLE NOW and is the current product gate.
-- Claude C-A..C-D acceleration is DONE. Relevant frontend/backend seam catches for the next product slice: class-section tenancy identity must be distinct from document-heading identity; future real authorization must not trust client actor_role; mutating commands need expected_revision + idempotency; human-readable weekdays must be computed, not hand-typed.
-- Kevin/Blender/intro remains independent and does not gate product work.
+- OWNER REVIEW CHECKPOINT: Nathan explicitly wants to inspect the actual product before substantial additional UI/product work compounds in a direction he may not want. Q-B17 product mutation is therefore held until General consumes Nathan's visual/product feedback on the exact accepted Slice 2 candidate.
+- Claude C-A..C-D remain reusable; Claude C-E is interrupted/partial by owner report and held for credit reset. Kevin/Blender/intro remains independent.
 
 Q-B17 — SLICE 3: SET-UP ONCE / ASSESSMENT AUTOFILL / HUMAN TIMING + SEAM CLEANUP
-Eligibility: BLOCKED until Stuart Q-S11 PASSes exact Q-B15 and General publishes the exact accepted Slice 2 derivation pointer. If Q-S11 FAIL/HOLDs, do not start this task; consume only General's smallest correction route.
-Purpose: implement owner-approved Q-B12 A2+A3+A4 on top of the accepted Slice 2 product while consuming Q-B16P and the bounded Claude seam corrections that are frontend-safe.
+Eligibility: BLOCKED pending Nathan owner visual/product review of exact accepted Slice 2 and General release after reconciling that feedback. Q-S11 already PASSed; no further technical Slice 2 gate is outstanding.
+Purpose once released: implement owner-approved Q-B12 A2+A3+A4 on top of accepted Slice 2 while consuming Q-B16P and bounded Claude seam corrections that are frontend-safe.
 Scope once released:
 - set-up-once class meeting pattern and course defaults with review-by-exception;
 - deterministic source/evidence/default hierarchy: explicit syllabus fact → confirmed timetable → approved course-material structure → instructor-confirmed defaults → prior confirmed pattern offered for reuse, never silently promoted as new truth;
@@ -26,24 +27,24 @@ Scope once released:
 - distinct assessment/event, opens, closes, practice release, reminder and announcement semantics; confirm/approve never equals publish/send;
 - explicit basis / why-these-times explanation and bounded instructor question on ambiguity/conflict;
 - preserve one shared assessment revision across instructor/student/delivery surfaces;
-- frontend-safe seam cleanup: separate class_section_id tenancy identity from doc_heading_key/source-block/display-locator identity; do not rely on client actor_role as authorization truth; include expected_revision + idempotency key in the local command contract shape; compute displayed weekday/date from the timestamp/timezone.
+- frontend-safe seam cleanup: separate class_section_id tenancy identity from doc_heading_key/source-block/display-locator identity; do not rely on client actor_role as authorization truth; include expected_revision + idempotency key in the local command contract shape; compute displayed weekday/date from the timestamp/timezone;
 - preserve Q-B13 focus fixes, accepted Slice 1 gateway/command/state behavior and accepted Slice 2 Professor Home/drill-in.
 Boundaries:
 - no real backend/auth/Supabase/network/provider/deploy;
 - no Slice 4 enrolment implementation unless General separately releases it;
 - no B/C design-gated upload/privacy/teaching-mode/public-evidence surfaces;
 - no Blender/A-C/motion and no canonical promotion.
-Verification/return:
+Verification/return once released:
 - produce a NEW provider-visible non-canonical candidate with exact ID/SHA/bytes/version;
 - exercise setup-once fixture patterns, ambiguity/conflict stops, propagation across shared assessment revision, all six timing semantics, computed weekday correctness, review-by-exception, gateway seam fields, keyboard/focus/responsive behavior and compact inherited regressions;
 - return exact candidate identity/evidence directly to General; Stuart independently accepts before Slice 4/integration release.
 
 Q-B18P — SLICE 4 LARGE-ROSTER + LOCAL ENROLMENT PREP
-Eligibility: AVAILABLE only after Q-B17 is terminal and while its independent acceptance is pending, if General has not released a higher-priority build/correction.
+Eligibility: BLOCKED until Q-B17 is released and terminal; then may become available while independent acceptance is pending if General has not released a higher-priority build/correction.
 Purpose: docs/tests-only prep for Q-B12 A5+A6 large-roster + local enrolment workflow. No product mutation. Named downstream consumer: future Slice 4 implementation.
 
 Q-B3 — APPLY OWNER-SELECTED HINGE VARIANT
 Eligibility: BLOCKED until Nathan selects A or C and General publishes the exact selected-candidate pointer.
 
 STOP CONDITION
-Wait for Q-S11. Do not start Q-B17 from unaccepted Q-B15 bytes. After General publishes accepted Slice 2 and releases Q-B17, execute it; if Q-B17 finishes and acceptance is pending, Q-B18P may run as named-consumer prep. No filler.
+Hold product mutation at the owner visual checkpoint. Do not start Q-B17 until General explicitly releases it after Nathan reviews exact accepted Slice 2. No filler.
