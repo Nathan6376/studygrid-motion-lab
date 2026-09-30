@@ -1,0 +1,29 @@
+STUDYGRID — BOB WORKER ROLLOVER
+Coordinator: ChatGPT General CF-0040
+Created: 2026-09-30 ET
+Old worker: CHAT-CGPT-20260928-STUDYGRID-WORKER-01 / CF-0032 / Bob
+Successor reservation: CHAT-CGPT-20260930-STUDYGRID-BOB-01 / CF-0042
+Operational status: OLD WORKER RETIRED IN SHARED STATE; HOST UI ARCHIVE NOT CLAIMED; SUCCESSOR OWNER ACTIVATION PENDING
+
+WHY ROLLOVER IS SAFE
+All material Bob continuity needed by the successor is durable outside the old conversation:
+- Latest Bob A/C integration package return is durable in shared Response Trace row RT-20260930-0958-CF0032-STUDYGRID-V4A-AC-INTEGRATION-VARIANTS and its Drive return pointer.
+- Isolated integration branch: bob-v4a-ac-integration-variants @ 09b8d26a8969a809d60c47a9e7dbbaca9adcbd27.
+- Hidden-mechanics source branch remains durable separately.
+- General repaired Bob's accidental route-only main write by deleting routes/BOB_V4A_AC_INTEGRATION_VARIANTS_STARTED.txt from main; repair commit f155b86bc39483610ef1ef57e30c74ba4293b5b0. No product/source/workflow file was altered by that repair.
+- Bob's ordered future work queue is durable at queues/BOB_QUEUE.txt.
+
+CURRENT WORK STATE
+Bob's integration-variants package is source/static complete but its worker return remained PARTIAL because of the now-repaired route-only main boundary violation and because visual proof is explicitly owned by Kevin. The successor must not redo the completed integration source/static work. Treat Kevin's visual proof as a separate dependency.
+
+SUCCESSOR STARTUP
+On owner activation, the successor must:
+1) read current ChatGPT Base and Active Corrections;
+2) read this rollover pointer;
+3) refresh General's latest StudyGrid route/state and Bob's current queue;
+4) verify CF-0042 registry ownership and mark successor ACTIVE only after exact-row readback;
+5) consume the first eligible Bob queue item when Nathan asks to do queued work;
+6) return technical lifecycle/results directly to General, not to Nathan as courier.
+
+BOUNDARIES
+No main/product/R5/R6/Supabase/backend/auth/deployment/canonical-G/final-choreography authority is granted by this rollover. No claim is made that the old ChatGPT UI conversation was archived or deleted.
