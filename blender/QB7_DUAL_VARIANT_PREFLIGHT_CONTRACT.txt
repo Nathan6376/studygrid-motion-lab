@@ -1,0 +1,33 @@
+STUDYGRID BOB Q-B7 — DUAL-VARIANT FINAL-INTEGRATION PREFLIGHT
+
+PURPOSE
+Candidate-neutral static preflight for the already-prepared A/C reversible integration patches. This package does not select a winner, render, mutate main, integrate canonical G, decide final choreography, or change product/backend/deployment state.
+
+CURRENT SOURCE IDENTITY
+- main at execution: d3c96c4b66fb3d057f3d3717a2e66fad19054013
+- blender/scene_v4a.py Git blob: cb87739e3f254222e9e336eb0db5b25164f59bb8
+- scene SHA256: fa72445d4438b9e057285c749f5bd77776ed7f2590427b02b3184b2dd23193fd
+- This is the exact same scene blob/bytes used by the original A/C static integration verification, so there is no source drift at the patch target.
+
+PATCH IDENTITIES
+- A: bob-v4a-ac-integration-variants @ 09b8d26a8969a809d60c47a9e7dbbaca9adcbd27 / blob 458af43daddb0a6e266365d9511e038701fafb00
+- C: bob-v4a-ac-integration-variants @ 09b8d26a8969a809d60c47a9e7dbbaca9adcbd27 / blob c010ea6f61a64544474502b7eee5bc16122ce97a
+- Prior applied-source compilation and geometry verification remain evidence-bound because both patch bytes and target source bytes are unchanged.
+
+RESULT
+- Candidate A: PASS. No source drift, no added scale animation, no lens/FOV animation, no camera/floor change.
+- Candidate C: PASS WITH BOUNDED C REQUIREMENTS ALREADY IN PATCH. Its exact-front 2C camera cut remains fixed at 50mm and its 2C-only floor hide/restoration remains isolated from later studies. No scale or lens/FOV animation is added.
+- No A/C winner, ranking, or owner preference is encoded.
+
+FIXTURE BINDINGS
+- Q-B1 G→seed continuity: both candidates leave the Study 1 source region untouched. Canonical G is still a later external input.
+- Q-B2 doorway camera handoff: A leaves camera path untouched. C adds only the earlier 2C exact-front cut; the later doorway physical-dolly/fixed-lens path remains untouched.
+- Q-B4 doorway cube-selection policy: immutable fixture bound as a separate integration precondition; neither A nor C patch overlaps it.
+- Q-B5 nine-cube invariant validator: immutable fixture bound for later final-grid integration. Current diagnostic scene intentionally has no final 3x3, so this is not a candidate failure.
+- Q-B6 visibility/cut isolation: A remains within the same 2C object window. C adds a 2C environmental floor isolation while preserving the study object-group partition and later-study restoration.
+
+SMALLEST POST-SELECTION CONFLICT
+None against the current source. If scene_v4a.py changes before Q-B3, rerun this preflight against the new exact blob before applying the selected patch.
+
+BOUNDARIES
+No main/product/workflow/R5/R6/Supabase/backend/auth/deploy/canonical-G/final-choreography mutation. Render/fidelity acceptance remains Kevin/Stuart work.
