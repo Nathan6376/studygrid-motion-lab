@@ -2,43 +2,55 @@ STUDYGRID — BOB WORK QUEUE
 Coordinator: ChatGPT General CF-0040
 Updated: 2026-09-30 ET
 Queue owner: General
-Worker: Bob
+Worker: Bob / CF-0042
 
 PULL RULE
 When Nathan directly tells Bob to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item. Do not pull another worker's queue and do not create owner-routing prompts; return durable technical results to General.
 
 CURRENT CONTEXT
-- Bob's A/C integration-variants package is source/static complete on isolated branch; visual proof is owned by Kevin.
-- General repaired Bob's accidental route-only main write; no StudyGrid product/source/workflow mutation was involved.
-- Candidate A/C owner selection remains held.
+- Q-B1 G→seed continuity scaffold: DONE on bob-cf0042-qb1-g-seed-continuity @ d60b45e...
+- Q-B2 doorway camera handoff safety fixture: DONE on bob-cf0042-qb2-doorway-camera-fixture @ 1ac0ce6...
+- Candidate A/C owner selection remains held pending Stuart independent acceptance and General owner-decision surface.
+- Kevin and Stuart own render/acceptance lanes; Bob must not duplicate their active work.
 
-Q-B1 — G→SEED CONTINUITY SCAFFOLD
-Eligibility: AVAILABLE NOW after prior Bob package has durable return and no overlapping Bob task is STARTED.
-Purpose: Prepare an isolated, parameterized implementation scaffold for the G→seed continuity so the final canonical G vector can be dropped in later without re-architecting the transform.
+Q-B4 — DOORWAY CUBE-SELECTION POLICY FIXTURE
+Eligibility: AVAILABLE NOW if no newer Bob task is STARTED.
+Purpose: Build an isolated source/test fixture for the locked requirement that the doorway cube may vary per run with no immediate repeat, without integrating it into product or changing camera mechanics.
 Requirements:
-- Preserve the exact motion contract: same perceived green G, no global scale-to-50% shortcut, stroke thickness targets about half during G→seed, no crossfade/replacement G, true 3D continuity into centre seed.
-- Do NOT freeze or invent canonical G geometry. Use explicit placeholder/interface boundaries for future canonical vector input.
-- Build source-level transform/parent/deformation mapping, timing hooks, and static verification only.
-- Isolated branch/package only; no main/workflow/product/R5/R6/Supabase/backend/auth/deploy/final choreography mutation.
-Return: scaffold files, parameter contract, static checks, unresolved canonical-G dependency.
+- Define a small deterministic selection-policy interface that can accept a seed/history for testability while supporting random selection at runtime later.
+- Enforce no immediate repeat when more than one eligible cube exists.
+- Keep selection logically separate from camera movement, object scale, hinge mechanics and tutorial handoff.
+- Include edge cases: first run/no history, one eligible cube, two+ cubes, invalid prior selection, deterministic replay.
+- Isolated branch/package only; no main/workflow/product/R5/R6/Supabase/backend/auth/deploy/canonical-G/final-choreography mutation.
+Return: fixture/source, tests, behavioural contract and any assumptions that must wait for product integration.
 
-Q-B2 — DOORWAY CAMERA HANDOFF SAFETY FIXTURE
-Eligibility: AVAILABLE AFTER Q-B1 DONE/PARTIAL with no blocker that makes Q-B2 unsafe.
-Purpose: Build an isolated QA fixture for the selected-cube camera entry handoff so the camera approaches/enters physically with fixed lens/FOV and hands off before near-plane clipping or inside-mesh failure.
+Q-B5 — NINE-CUBE GRID INVARIANT / SLOT VALIDATOR
+Eligibility: AVAILABLE AFTER Q-B4 DONE/PARTIAL with no blocker that makes Q-B5 unsafe.
+Purpose: Build a generic isolated validator/scaffold for the final nine-cube structural invariants without deciding the final choreography or hinge winner.
 Requirements:
-- No object-scale fake.
-- Preserve fixed lens/FOV and perspective-driven enlargement.
-- Provide near-plane/mesh-intersection test points and safe handoff markers.
-- Keep doorway-cube randomization logic untouched except for read-only assumptions.
-- Isolated branch/package only; no main/product mutation.
-Return: fixture, safe handoff envelope, failure cases, static/analytic evidence.
+- Verify exactly nine independent equal cubes, deliberate air gaps, fixed cube dimensions, no fused-slab representation, and no animated object-scale cheat.
+- Represent 3x3 target slots and adjacency/parent-child attachment metadata generically; do NOT decide the final reveal order/choreography.
+- Provide static/analytic checks for slot spacing/gaps, duplicate occupancy, missing/extra cubes, dimension drift and invalid parent references.
+- Make the tool reusable against later A or C selected integration.
+- Isolated branch/package only; no main/product/workflow/R5/R6/Supabase/backend/auth/deploy/canonical-G/final-choreography mutation.
+Return: validator/scaffold, tests, invariant report format and unresolved dependencies.
+
+Q-B6 — STUDY VISIBILITY / CUT ISOLATION FIXTURE
+Eligibility: AVAILABLE AFTER Q-B5 DONE/PARTIAL with no unsafe blocker.
+Purpose: Turn the previously observed cross-study visibility contamination into a reusable isolated QA fixture so future V4A renders can prove only intended study objects are visible in each diagnostic window.
+Requirements:
+- Define expected visible object groups per study/window and reject cross-study bleed.
+- Treat diagnostic camera cuts separately from motion easing; do not redesign cameras or mechanics.
+- Include boundary-frame checks immediately before/at/after cuts.
+- No product/main/workflow mutation.
+Return: fixture/checker, test cases, expected visibility schedule format and any source assumptions.
 
 Q-B3 — APPLY OWNER-SELECTED HINGE VARIANT
 Eligibility: BLOCKED until Nathan selects A or C after Stuart independent acceptance and General publishes the exact selected-candidate pointer.
 Purpose: Apply the already-prepared reversible integration variant to an isolated final-integration branch without redesigning mechanics.
 Requirements:
 - Use only the selected accepted candidate.
-- Preserve all unrelated accepted V4A behavior.
+- Preserve all unrelated accepted V4A behaviour.
 - Do not merge main or deploy without a later explicit General route.
 Return: exact selected-variant integration commit, diff, static checks, render-ready pointer for Kevin/Stuart.
 
