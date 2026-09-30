@@ -1,6 +1,6 @@
 STUDYGRID — BOB WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 13:46 ET
+Updated: 2026-09-30 14:09 ET
 Queue owner: General
 Worker: Bob / CF-0042
 
@@ -8,21 +8,27 @@ PULL RULE
 When Nathan directly tells Bob to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item. Do not pull another worker's queue and do not create owner-routing prompts; return durable technical results to General.
 
 CURRENT CONTEXT
-- Q-B1/B2/B4/B5/B6/B7/B8/B9/B10 are DONE.
-- Q-B11 integration-prep state-contract alignment: DONE on bob-cf0042-qb11-align-integration-prep-state-contract @ 7433bafe25b7f0823854966607e0d17a6d4167fc.
-- Q-B11 preserved product/R5/R6/motion boundaries; original Q-B10 12/12 PASS; expanded Q-B11 groups 6/6 PASS, graph 33/33, skip 4/4, failure 2/2, invalid NEW negatives 2/2 rejected, layout 78/78.
-- Stuart Q-S7 independent recheck is now the next verifier for Q-B11.
-- Kevin Q-K1R has no durable terminal return or valid full-context A+C artifact on shared surfaces as of General refresh; do not overlap that lane.
-- StudyGrid product HTML remains unmutated; accepted R5 and unpromoted R6 remain read-only.
+- Q-B1/B2/B4/B5/B6/B7/B8/B9/B10/Q-B11 are DONE.
+- Kevin remains the sole active animation-evidence lane; do not overlap Blender/render/verifier work.
+- Stuart Q-S8 is being released for independent acceptance of exact R6 against its owner-approved instructor-first release scope.
+- Exact accepted product baseline R5 remains preserved. Exact R6 is a verified non-canonical candidate: Drive 1pxKsdqM6dhKE6ihN5k4UgO-0usgNBmjD; SHA-256 875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef; 954208 bytes; APP_VERSION v7.16-cf0032-integrated-batch4-8-cf0039-r6.
+- Post-R6 owner-direct product additions include professor-scale scheduling automation, human-readable timing, multi-course organization, class codes, assessment autofill, scale-to-hundreds workflow and animated signup/brand requirements. Separate research/design/architecture packets also exist. Some post-R6 proposals still require owner/design disposition before implementation.
+
+Q-B12 — R6 → CURRENT PRODUCT DELTA MAP / NEXT-CANDIDATE DECOMPOSITION
+Eligibility: AVAILABLE NOW if no newer Bob task is STARTED.
+Purpose: move back to the actual StudyGrid product while Kevin finishes animation by producing an implementation-ready, source-truthed map from exact R6 to the current product direction, without prematurely mutating HTML.
+Requirements:
+- Retrieve and verify exact R6 provider bytes/identity first.
+- Retrieve the current product-direction source and the relevant post-R6 owner-direct additions, professor-scale V3/design materials, accepted architecture/seam audit and current evidence/privacy research pointers needed to classify deltas.
+- Separate every delta into: (A) already owner-approved/released and safe for next candidate implementation; (B) owner-direct requirement but visual/interaction treatment still needs owner QA; (C) research/architecture recommendation not yet owner-approved; (D) blocked by backend/institutional/privacy/deploy dependency.
+- Produce the smallest coherent next-candidate implementation slices in dependency order, with exact source pointers and acceptance criteria for each slice.
+- Explicitly identify what can be built immediately after General/owner disposition without waiting for the intro animation, and what must remain independent of motion.
+- Reconcile the R6 frontend↔backend seam-audit findings into the plan, especially typed gateway/local fixture adapter, but do not implement backend/auth/Supabase or claim those are approved if they are not.
+- No R5/R6 mutation, no new HTML candidate, no backend/auth/Supabase/deploy, no motion/A-C/canonical-G work.
+Return: exact delta map, implementation decomposition, unresolved owner-decision list kept as small as possible, and recommended first build slice directly to General.
 
 Q-B3 — APPLY OWNER-SELECTED HINGE VARIANT
-Eligibility: BLOCKED until Nathan selects A or C after General confirms owner-decision readiness and publishes the exact selected-candidate pointer.
-Purpose: apply the already-prepared reversible integration variant to an isolated final-integration branch without redesigning mechanics.
-Requirements:
-- Use only the selected accepted candidate.
-- Preserve all unrelated accepted V4A behaviour.
-- Do not merge main or deploy without a later explicit General route.
-Return: exact selected-variant integration commit, diff, static checks, render-ready pointer for Kevin/Stuart.
+Eligibility: BLOCKED until Nathan selects A or C and General publishes the exact selected-candidate pointer.
 
 STOP CONDITION
-No Bob item is currently eligible. Wait for Stuart Q-S7 and Kevin Q-K1R evidence or an owner A/C decision. Do not invent filler work.
+Execute Q-B12 now. After Q-B12, stop unless General has released a concrete product-build slice or the A/C owner gate has opened. Do not invent filler.
