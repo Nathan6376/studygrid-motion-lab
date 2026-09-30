@@ -1,0 +1,64 @@
+{
+  "schema": "studygrid.stuart.qs7.qb11_independent_recheck.v1",
+  "executed_at_et": "2026-09-30 13:57",
+  "status": "PASS",
+  "authoritative_input": {
+    "branch": "bob-cf0042-qb11-align-integration-prep-state-contract",
+    "commit": "7433bafe25b7f0823854966607e0d17a6d4167fc"
+  },
+  "provider_file_blobs": {
+    "MOTION_HTML_ADAPTER_CONTRACT.txt": "90b8d8d847d4f0ac9bf1a8a078949e7efc123a86",
+    "FALLBACK_STATE_MACHINE_CONTRACT.txt": "bf8ed72e4358cf2c93159a28a09da7b54dec7a31",
+    "fallback_state_machine.json": "55333fd8fee85245999b85aa2cc02d21bf36edde",
+    "motion_fallback_harness.py": "baeff90567f388c9f5d81869d0ef4c1c3ab6178d",
+    "motion_html_seam_map.json": "70b212376cf43a035ceedd42ec4a035a694c6d85",
+    "verify_motion_fallback_harness.py": "5f78597218394db9bf517b9e2ef812e7e74ed77f",
+    "qb11_verification.json": "e5d2d5bab5706316a777d1af6483159e012fff1d"
+  },
+  "exact_sources": {
+    "R5": {"sha256": "0fee828511bdccd373fdc0625c0ea9f894485a57f6e6cbceff74e2652ec34d00", "bytes": 874986, "anchors": "PASS", "role": "accepted_read_only_baseline"},
+    "R6": {"sha256": "875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef", "bytes": 954208, "anchors": "PASS", "role": "verified_unpromoted_read_only_candidate"}
+  },
+  "contract_alignment": {
+    "canonical_states": 13,
+    "canonical_events": 13,
+    "expanded_transitions": 33,
+    "adapter_contract_json_harness": "PASS",
+    "ready_running_failure_semantics": "PASS",
+    "invalid_new_skip_failure_rejection": "PASS_2_OF_2"
+  },
+  "regression": {
+    "original_qb10_groups": "PASS_12_OF_12",
+    "expanded_qb11_groups": "PASS_6_OF_6",
+    "skip_paths": "PASS_4_OF_4",
+    "dispose_paths": "PASS_11_OF_11",
+    "ready_running_failure_paths": "PASS_2_OF_2",
+    "state_viewport_layout": "PASS_78_OF_78",
+    "fixed_lens_viewports": "PASS_6_OF_6",
+    "doorway_envelope_viewports": "PASS_6_OF_6",
+    "exhaustive_transition_matrix": "PASS_33_VALID_ACCEPTED_136_INVALID_REJECTED"
+  },
+  "branch_delta": {
+    "base_qb10": "06ca7b6557b1cc2160873bd26ac42d51f457a01a",
+    "head_qb11": "7433bafe25b7f0823854966607e0d17a6d4167fc",
+    "ahead_by_commits": 8,
+    "changed_files": 8,
+    "scope": "prep/docs only; no product/R5/R6/main-motion/backend/auth/Supabase/deploy mutation"
+  },
+  "runtime_holds": [
+    "browser DOM/keyboard/assistive-technology focus",
+    "real GPU/WebGL failure and recovery",
+    "rendered device acceptance"
+  ],
+  "q_s2_dependency": {
+    "status": "BLOCKED_NOT_STARTED",
+    "kevin_branch": "kevin-qk1-v4a-full-context-dual-preview",
+    "latest_run": 36734968949,
+    "latest_run_conclusion": "failure",
+    "artifact_count": 0,
+    "durable_valid_full_context_ac_artifact": false
+  },
+  "candidate_selection": "NONE",
+  "product_mutation": false,
+  "promotion": "NONE"
+}
