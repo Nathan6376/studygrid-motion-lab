@@ -1,0 +1,46 @@
+STUDYGRID — BOB WORK QUEUE
+Coordinator: ChatGPT General CF-0040
+Updated: 2026-09-30 ET
+Queue owner: General
+Worker: Bob
+
+PULL RULE
+When Nathan directly tells Bob to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item. Do not pull another worker's queue and do not create owner-routing prompts; return durable technical results to General.
+
+CURRENT CONTEXT
+- Bob's A/C integration-variants package is source/static complete on isolated branch; visual proof is owned by Kevin.
+- General repaired Bob's accidental route-only main write; no StudyGrid product/source/workflow mutation was involved.
+- Candidate A/C owner selection remains held.
+
+Q-B1 — G→SEED CONTINUITY SCAFFOLD
+Eligibility: AVAILABLE NOW after prior Bob package has durable return and no overlapping Bob task is STARTED.
+Purpose: Prepare an isolated, parameterized implementation scaffold for the G→seed continuity so the final canonical G vector can be dropped in later without re-architecting the transform.
+Requirements:
+- Preserve the exact motion contract: same perceived green G, no global scale-to-50% shortcut, stroke thickness targets about half during G→seed, no crossfade/replacement G, true 3D continuity into centre seed.
+- Do NOT freeze or invent canonical G geometry. Use explicit placeholder/interface boundaries for future canonical vector input.
+- Build source-level transform/parent/deformation mapping, timing hooks, and static verification only.
+- Isolated branch/package only; no main/workflow/product/R5/R6/Supabase/backend/auth/deploy/final choreography mutation.
+Return: scaffold files, parameter contract, static checks, unresolved canonical-G dependency.
+
+Q-B2 — DOORWAY CAMERA HANDOFF SAFETY FIXTURE
+Eligibility: AVAILABLE AFTER Q-B1 DONE/PARTIAL with no blocker that makes Q-B2 unsafe.
+Purpose: Build an isolated QA fixture for the selected-cube camera entry handoff so the camera approaches/enters physically with fixed lens/FOV and hands off before near-plane clipping or inside-mesh failure.
+Requirements:
+- No object-scale fake.
+- Preserve fixed lens/FOV and perspective-driven enlargement.
+- Provide near-plane/mesh-intersection test points and safe handoff markers.
+- Keep doorway-cube randomization logic untouched except for read-only assumptions.
+- Isolated branch/package only; no main/product mutation.
+Return: fixture, safe handoff envelope, failure cases, static/analytic evidence.
+
+Q-B3 — APPLY OWNER-SELECTED HINGE VARIANT
+Eligibility: BLOCKED until Nathan selects A or C after Stuart independent acceptance and General publishes the exact selected-candidate pointer.
+Purpose: Apply the already-prepared reversible integration variant to an isolated final-integration branch without redesigning mechanics.
+Requirements:
+- Use only the selected accepted candidate.
+- Preserve all unrelated accepted V4A behavior.
+- Do not merge main or deploy without a later explicit General route.
+Return: exact selected-variant integration commit, diff, static checks, render-ready pointer for Kevin/Stuart.
+
+STOP CONDITION
+If no queue item is eligible, return BLOCKED/WAITING with the exact dependency and stop. Do not invent filler work.
