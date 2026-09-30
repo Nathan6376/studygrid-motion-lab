@@ -1,0 +1,13 @@
+STUDYGRID V4A — STUART INDEPENDENT ACCEPTANCE — STARTED
+From: Stuart / StudyGrid Independent Acceptance
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 08:49 ET
+
+Authority consumed:
+- routes/STUART_V4A_INDEPENDENT_ACCEPTANCE.txt @ blob 18130952a78bf6e14783e2947c538d6b405dd857
+- current main head observed: 3f4da9324bd809981c62556b676ee1efaf7fec57
+- post-Bob target source commit: 13200b8c6111b65608d755a576b170b55427a72e
+- GitHub Actions run #10 / 36715371870: completed / success
+- owner-QA artifact: studygrid-v4a-owner-qa / artifact 11096826897 / sha256:61b50e5d7b16b94e4e5ba0acbe5010ab165c8e4a2d9ae736c8c31d6bb4087290
+
+Scope locked: independent visual/mechanical QA only. No mutation of main/workflow/Blender/StudyGrid production/R5/R6/Supabase/canonical G/final 3x3 choreography, and no owner hinge selection. Study 2C remains explicitly unresolved pending visual/mechanical proof.
