@@ -1,0 +1,73 @@
+STUDYGRID V4A — BOB Q-B12 R6 → CURRENT PRODUCT DELTA MAP — DONE
+From: Bob / CF-0042
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 14:39 ET
+Status: DONE — NON-MUTATING PRODUCT DECOMPOSITION
+
+EXACT R6
+Drive: 1pxKsdqM6dhKE6ihN5k4UgO-0usgNBmjD
+SHA-256: 875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef
+Bytes: 954208
+APP_VERSION: v7.16-cf0032-integrated-batch4-8-cf0039-r6
+
+RESULT
+The current product direction is decomposed against exact R6 in docs/V4A_QB12_R6_CURRENT_PRODUCT_DELTA_MAP.md.
+
+A — OWNER-APPROVED / BUILDABLE
+- Professor-scale Instructor Home: Today/Now & next, cross-course unresolved attention, current-term class library, transparent class sorting/labels/colour, no auto-navigation.
+- Set-up-once class schedule/defaults and review-by-exception.
+- Human-readable timing as primary surface while preserving separate assessment/open/close/practice/reminder/announcement semantics.
+- Source-aware assessment autofill using syllabus → timetable → approved material structure → confirmed defaults → optional prior-pattern reuse; ambiguity/conflict stops and asks.
+- Hundreds-scale roster search/filter/transparent action sorting, no opaque risk score.
+- Fixture-only enrolment UX: short section code + invite link/email + reset/disable + section confirmation.
+- Preserve R6 Instructor Overview/Assessment Desk/source proof/repeated questions/student preview-resolution interaction architecture.
+- Frontend typed gateway + local fixture adapter is a reversible implementation foundation under the owner-accepted architecture/delegated-default rule; this is NOT a backend/Supabase release or a claim that Nathan approved a specific interface name.
+
+B — OWNER REQUIREMENT, VISUAL/INTERACTION QA STILL NEEDED
+- Cross-section reusable-asset adoption UI.
+- Polished upload/source-ingestion UX.
+- Privacy/transparency user surface.
+- Teaching-style flexibility surface.
+- Exact short/non-blocking normal-login brand treatment.
+
+C — RESEARCH/ARCHITECTURE INPUT, NOT RELEASED PRODUCT IMPLEMENTATION
+- Public Mechanism Map / Evidence Ledger / Open Research Registry design.
+- Specific Talk/Lecture, Present/Screen, Live Check, Student-paced modes.
+- Detailed product-intelligence/benchmark/privacy-release system.
+- Exact source-revision re-review/context rule.
+- Exact pilot upload allowlist/limits/security constants.
+- AI provider/bakeoff/region/budget choice.
+- Deferred live-session/presentation module.
+
+D — DEPENDENCY BLOCKED / OUT OF CURRENT BUILD LANE
+- Q-S8 exact-R6 independent acceptance + General baseline disposition.
+- Real backend/auth/Supabase/RLS/server command/read-model implementation.
+- Real upload/scan/parser/OCR.
+- Live AI/provider execution.
+- Real Humber/student-data pilot institutional/privacy/research gates.
+- Intro/brand portal A/C motion, canonical G/final 3x3 and Blender evidence.
+- Public brand/domain/legal rollout pending clearance.
+- Email/push, grades, SSO/LTI, institution admin, warehouse, recording/live classroom and other deferred integrations.
+
+NEXT PRODUCT SLICES
+0. GATE — consume Q-S8 exact-R6 product acceptance. Intro animation is not a dependency.
+1. LOCAL PRODUCT GATEWAY / FIXTURE TRUTH BOUNDARY — typed frontend gateway + local fixture adapter; explicit section/revision/proof IDs; read-model-shaped fixture state; one assessment revision shared by Assessment Desk/timeline/reminder surfaces; centralized loading/error/stale/unauthorized states. No network/Supabase/auth.
+2. PROFESSOR HOME / MULTI-COURSE SCALE — Today/Now & next + cross-course attention + class library, preserving selected-class R6 drill-in.
+3. SET-UP ONCE + AUTOFILL + HUMAN TIMING — term/course defaults, deterministic evidence hierarchy, review exceptions, human timing and explicit basis, approval != delivery.
+4. LARGE ROSTER + LOCAL ENROLMENT — scale search/filter/reason sorts + fixture code/link/email/reset/disable/confirm-section.
+5. REUSABLE ASSETS — only after its interaction design passes owner QA.
+
+RECOMMENDED FIRST BUILD
+Slice 1 — Local Product Gateway / fixture truth boundary, after Q-S8 and General release. It is independent of Kevin/Blender/A-C/intro motion, prevents new professor-scale surfaces from multiplying R6 local-state semantics, and keeps the future real backend replaceable behind a stable frontend seam.
+If General requires the next candidate to be visibly different, the smallest coherent combined release is Slice 1 + Slice 2.
+
+IMMEDIATE OWNER DECISION
+None required for Slices 1–4 from the product/design evidence consumed. Q-S8 + General release are the immediate non-owner gates. Later owner/design QA remains for B/C items and the separate A/C intro-motion gate.
+
+BOUNDARIES VERIFIED
+No R5/R6/product HTML mutation. No new HTML candidate. No Blender/motion/A-C/canonical-G/final-3x3 change. No backend/auth/Supabase/deployment change.
+
+REPORT
+docs/V4A_QB12_R6_CURRENT_PRODUCT_DELTA_MAP.md
+
+Nathan is not the technical courier.
