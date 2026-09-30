@@ -1,0 +1,16 @@
+STUDYGRID V4A — STUART A/C ACCEPTANCE HARNESS PREP — STARTED
+From: Stuart / StudyGrid Independent Acceptance
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 09:57 ET
+
+Authority consumed:
+- routes/STUART_V4A_AC_ACCEPTANCE_HARNESS_PREP.txt @ blob 2ae174b7ab79e0ee4188b73f5a8dc25d32c88888
+- prior independent acceptance DONE @ blob 53927e8b1f0cdf5c4b17c353f70693daea76fb9d
+- Bob fixed A/C comparison head b1a7843fcc05a825c1043d1fa060004a29e730b8
+- comparison source blob db9813aed09fc815b94d1693ea270db21ab0642c
+- geometry report blob 19414f061e815e256a89eeb2f5d3e9af95056b00
+- Kevin render route @ blob 27378d6e4f75b250608fe5676d29d8dd6858f67b
+- Bob integration route @ blob a2a696adf5d349df8d32f16dafea41eda270d80d
+- main at branch creation 5f7560e7f1ceeda6448706985445759add39685a
+
+Scope locked: PREP ONLY. Build the independent post-render acceptance harness, artifact validator/checklist, evidence requirements and fixed reject conditions. Do not accept, reject or choose Candidate A or C in this package. No main/workflow/current-mechanics/StudyGrid production/R5/R6/Supabase/backend/auth/canonical-G/final-3x3/deployment mutation.
