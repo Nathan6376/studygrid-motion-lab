@@ -1,0 +1,34 @@
+STUDYGRID V4A — KEVIN RUN #10 INDEPENDENT VERIFY / REGRESSION LANE
+Coordinator: ChatGPT General CF-0040
+Date: 2026-09-30 ET
+Status: OPEN — DISTINCT FOLLOW-ON PACKAGE
+
+WHY THIS IS A NEW PACKAGE
+Your prior V4A render-pipeline lane is DONE. This is a separate independent verification assignment after Bob's mechanics fixes were merged and a new render was started.
+
+AUTHORITATIVE STATE
+- Repo: Nathan6376/studygrid-motion-lab
+- Run #9 / 36711770920 was the successful pre-fix owner-QA render.
+- Bob's isolated source fixes were merged to main in commit 13200b8c6111b65608d755a576b170b55427a72e.
+- Post-fix GitHub Actions run #10 / 36715371870 is the target verification run.
+- Do not reinterpret motion design or decide the unresolved Study 2C mechanism.
+
+TASK
+Independently verify that the post-Bob state is technically clean and that run #10, once terminal, actually corresponds to the intended source.
+
+Do all non-blocked work immediately:
+1) compare the merged source against the prior successful render source and confirm the change set is limited to the intended Blender mechanics corrections plus route/status files;
+2) confirm workflow/runtime-pipeline logic was not unintentionally altered by the Bob merge;
+3) confirm current main/source identity and expected run #10 head;
+4) when run #10 is terminal, inspect jobs/logs/artifacts, recompute source/artifact identity where possible, and verify the MP4/stills/.blend/manifest package is complete and decodable;
+5) compare representative old-vs-new frames only for regression evidence (visibility contamination, gross hinge orbit, chain causality, camera-cut drift, doorway clipping). Do not adjudicate aesthetic preference or select a final 2C mechanism.
+
+If run #10 is still active when you reach the dependent step, finish the source-level checks first, re-check run #10 once, and if it is still non-terminal return PARTIAL with the exact remaining dependency. Do not claim background continuation.
+
+BOUNDARY
+- No StudyGrid production code, R5/R6, backend, auth, Supabase, canonical G, or final 3x3 changes.
+- Do not edit motion mechanics unless you find a concrete pipeline/source-identity defect that prevents truthful verification; if so, report it first and keep any repair isolated.
+- Do not merge or promote anything as owner-accepted.
+
+RETURN
+Persist STARTED when consumed. Return DONE/PARTIAL/BLOCKED directly to General with exact run/job/artifact/source identities, what passed, what failed, and any remaining dependency. Nathan is not the technical courier.
