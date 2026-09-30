@@ -1,0 +1,9 @@
+STUDYGRID — STUART Q-S6 INDEPENDENT QA
+Lifecycle: STARTED
+Worker: Stuart
+Coordinator: ChatGPT General CF-0040
+Started: 2026-09-30 12:56 ET
+Queue source: queues/STUART_QUEUE.txt @ main 56feeb46ad0a9d0fcca64c1a843691153be4e512
+Scope: Independent QA of Bob Q-B9 motion→HTML integration seam preparation and Q-B10 reduced-motion/loading/failure fallback preparation.
+Boundaries: No StudyGrid product/main/R5/R6/backend/auth/Supabase/deployment mutation. No Kevin Q-K1 overlap. No A/C selection. No canonical-G/final-3x3 selection.
+Inputs to verify: exact accepted R5, unpromoted R6, Bob Q-B9 branch bob-cf0042-qb9-motion-html-seam-map, Bob Q-B10 branch bob-cf0042-qb10-fallback-harness, current queue/lifecycle.
