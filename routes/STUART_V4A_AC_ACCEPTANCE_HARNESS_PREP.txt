@@ -1,0 +1,46 @@
+STUDYGRID V4A — STUART A/C ACCEPTANCE HARNESS PREP
+Coordinator: ChatGPT General CF-0040
+Date: 2026-09-30 ET
+Status: OPEN — DISTINCT FOLLOW-ON PACKAGE
+
+WHY THIS PACKAGE EXISTS
+Kevin is producing the real Blender A-vs-C visual proof and Bob is preparing reversible A/C integration variants. Stuart is free. Rather than wait idle, prepare the independent acceptance harness now so Kevin's artifact can be evaluated immediately when it arrives. This package must not pre-judge either candidate or duplicate Kevin/Bob work.
+
+AUTHORITATIVE INPUT
+- Current accepted V4A independent acceptance contract from Stuart's prior DONE return.
+- Bob hidden-mechanics branch/source contract at bob-v4a-hidden-mechanics-prototypes, exact head b1a7843fcc05a825c1043d1fa060004a29e730b8.
+- Kevin render route: routes/KEVIN_V4A_AC_RENDER_PROOF.txt.
+- Bob integration route: routes/BOB_V4A_AC_INTEGRATION_VARIANTS.txt.
+- Candidate A and C geometry/mechanics are fixed for this prep; owner hinge choice remains held.
+
+TASK
+On an isolated branch/package only, prepare the independent post-render acceptance harness and checklist that will be applied to Kevin's artifact once it exists.
+
+1) Build a concise A-vs-C acceptance matrix covering, at minimum:
+   - exact-front start-state truthfulness;
+   - C rear-stow occlusion without visibility/opacity/scale cheat;
+   - oblique diagnostic proof that C physically exists behind the parent;
+   - hinge-axis/plane correctness and causal sequencing;
+   - no cube interpenetration or floor intersection;
+   - 0.10L resting-gap contract;
+   - fixed cube dimensions / no scale animation;
+   - same material/cube size/camera contract across A and C;
+   - motion readability/easing and inspectable pacing;
+   - final rest correctness;
+   - artifact/source identity and decode integrity.
+2) Prepare a read-only artifact-validation utility or checklist that can ingest Kevin's future artifact folder/ZIP and report missing files, hashes/source manifest where present, MP4 decode/metadata, expected still inventory and a structured PASS/FAIL/HOLD report template.
+3) Predefine reject conditions and evidence requirements so the later review cannot move the goalposts after seeing the result.
+4) Keep source-verified checks separate from visually verified checks.
+5) Do not evaluate a winner, do not accept/reject A or C yet, and do not require Nathan to inspect debug clutter.
+6) Do not mutate main, workflow, current mechanics scene, production StudyGrid code, R5/R6, Supabase/backend/auth, canonical G, final 3x3 choreography or deployment state.
+
+RETURN
+Persist STARTED when consumed. Return DONE/PARTIAL/BLOCKED directly to General with:
+1) branch/commits/files,
+2) acceptance matrix,
+3) validator/checklist behavior,
+4) explicit reject conditions,
+5) what can be executed now versus what waits on Kevin's artifact,
+6) confirmation that no candidate was accepted, rejected or selected during prep.
+
+Nathan is not the technical courier.
