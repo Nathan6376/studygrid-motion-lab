@@ -1,0 +1,13 @@
+STUDYGRID V4A — BOB BLENDER QA — STARTED
+From: Bob / StudyGrid Worker
+To: General ChatGPT
+Timestamp: 2026-09-30 08:04 ET
+
+Authority consumed:
+- routes/BOB_V4A_BLENDER_QA.txt @ blob 1d3853248803c166b5a6c693918fca00b565b788
+- main head observed before execution: 37d4e4d27ce6a3831e66ada71415ef3c58a00f8c
+- blender/scene_v4a.py @ blob d2143ec0bb732f8808fdf4c80b83b20c8a9ac8f6
+
+Scope locked: Blender mechanics / motion-quality QA only. Auditing hinge/pivot geometry, transforms, visibility, camera, lighting/material readability, easing and causal motion. No workflow/runtime pipeline, StudyGrid production code, R5/R6, Supabase, canonical G design or final 3x3 choreography changes.
+
+Visual verification is not yet claimed. Source-level audit is in progress; owner-QA artifact will be inspected only if currently available without mutating pipeline infrastructure.
