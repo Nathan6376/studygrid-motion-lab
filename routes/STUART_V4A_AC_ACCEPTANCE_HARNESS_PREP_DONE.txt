@@ -1,0 +1,110 @@
+STUDYGRID V4A — STUART A/C ACCEPTANCE HARNESS PREP — DONE
+From: Stuart / StudyGrid Independent Acceptance
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 10:11 ET
+Status: DONE — PREP ONLY complete; no Candidate A/C acceptance, rejection or owner selection performed
+
+BOUNDARY
+Isolated branch only. Stuart did not modify main, any workflow, current V4A mechanics source, StudyGrid production/R5/R6/backend/auth/Supabase, canonical G, final 3x3 choreography or deployment state. No merge performed.
+
+BRANCH / COMMITS / FILES
+Branch: stuart-v4a-ac-acceptance-harness-prep
+Base: main @ 5f7560e7f1ceeda6448706985445759add39685a
+STARTED commit: b4524915cf295cd51cecbb9ba02245026bc48d4b
+Validator commit: 44ed491101fb8ea19d1333dc0068706b5644f3f7
+Acceptance-matrix commit: 7765b8dfdf62575b173788ead237f088d8f6f21b
+Report-template commit: 7699f1b9979f09cd323ecfcd0b5cc19ccc94a6cf
+Files added before this terminal return:
+- routes/STUART_V4A_AC_ACCEPTANCE_HARNESS_PREP_STARTED.txt
+- tools/v4a_ac_artifact_validator.py
+- docs/V4A_AC_ACCEPTANCE_HARNESS.md
+- docs/V4A_AC_ACCEPTANCE_REPORT_TEMPLATE.md
+Pre-DONE branch compare: ahead 4 / behind 0 from exact base; exactly those four files added; no mechanics/workflow/product file changed.
+
+AUTHORITATIVE CONTRACT BIND
+- Stuart prior independent acceptance DONE blob: 53927e8b1f0cdf5c4b17c353f70693daea76fb9d
+- Bob fixed comparison head: b1a7843fcc05a825c1043d1fa060004a29e730b8
+- Bob comparison source blob: db9813aed09fc815b94d1693ea270db21ab0642c
+- Bob geometry report blob: 19414f061e815e256a89eeb2f5d3e9af95056b00
+- Bob analytic verifier blob: 65b39e13b051dbff9c1012fdb9df9447325cf25a
+- Kevin render route blob: 27378d6e4f75b250608fe5676d29d8dd6858f67b
+- Bob integration route blob: a2a696adf5d349df8d32f16dafea41eda270d80d
+
+SOURCE/ANALYTIC BASELINE — NOT POST-RENDER ACCEPTANCE
+Bob's fixed report already establishes the analytic baseline for the harness: A has zero sampled collisions, positive floor clearance and 0.10L final gap; C has zero sampled collisions in both stages, positive floor clearance, 0.10L final gap, visibility_toggle=none and analytic exact-front start occlusion. These facts are prerequisites only. They do not accept A or C visually.
+
+ACCEPTANCE MATRIX — FROZEN BEFORE RENDER REVIEW
+1. Exact-front start-state truthfulness — A + C.
+2. C exact-front rear-stow occlusion.
+3. C oblique same-state proof that the child physically exists behind the parent.
+4. C no visibility/opacity/scale cheat.
+5. A single world-Y face-plane hinge correctness.
+6. C world-Z stage 1 then local-Y/world-X stage 2 correctness and causal order.
+7. No parent/child interpenetration.
+8. No cube/floor/environment intersection.
+9. Exact 0.10L resting-gap contract.
+10. Fixed cube dimensions / no candidate scale animation.
+11. Same material/cube-size/camera comparison conditions across A and C.
+12. Inspectable pacing and easing that does not alter the mechanic.
+13. Correct final east-side adjacent rest state.
+14. Artifact/run/executed-source identity binding.
+15. Required-still/motion inventory and media decode integrity.
+
+STATUS RULE
+PASS = evidence satisfies the frozen condition.
+FAIL = evidence proves a frozen reject condition was violated.
+HOLD = evidence is missing, ambiguous, unbound or not inspectable enough.
+Acceptance status never becomes an owner preference. If both pass, owner choice is still separate. If one fails, Stuart does not auto-select the other.
+
+FIXED REJECT CONDITIONS
+Candidate A is rejected only on proved mechanics violations such as wrong pivot/plane, orbit/slide/teleport substitution, cube collision, floor/environment intersection, non-0.10L final gap/contact, visible cube scale change, wrong final rest, or easing overshoot/reversal that materially changes the mechanic.
+Candidate C is rejected only on proved violations such as child exposed in the exact-front stowed start, hidden start manufactured by visibility/opacity/scale, oblique proof showing no genuine rear-stow, wrong/same-axis/substituted hinge sequence, collision, floor/environment intersection, non-0.10L final gap/contact, visible cube scale change, wrong final rest, or easing/stage overlap that materially changes the mechanism.
+Missing/unclear evidence, inconsistent comparison conditions, too-fast pacing, corrupt/missing media or unbound source identity produce HOLD rather than a made-up mechanical rejection.
+
+REQUIRED FUTURE VISUAL EVIDENCE
+- front_00_start_stowed.png
+- front_01_stage1_mid.png
+- front_02_stage1_landed.png
+- front_03_stage2_mid.png
+- front_04_final.png
+- diag_00_start_stowed.png
+- one slow/inspectable A-vs-C MP4 or equivalent sequence
+- render run/head/artifact identity + executed-source identity/hash receipt where available
+- Bob analytic geometry report or exact bound reference
+
+VALIDATOR BEHAVIOUR
+Added tools/v4a_ac_artifact_validator.py. It is read-only with respect to the input artifact and accepts a ZIP or extracted folder. It:
+- validates ZIP CRC/path safety and hashes the archive;
+- inventories files;
+- checks the six frozen still roles and PNG dimensions;
+- uses ffprobe when available for MP4 metadata and ffmpeg when available for full decode;
+- parses Bob-compatible geometry report fields for collision/floor/gap/occlusion/no-toggle prerequisites;
+- looks for Bob head/source provenance in manifests/receipts;
+- verifies filename-bound SHA-256 receipts when present;
+- reports PASS/FAIL/HOLD/INFO;
+- always leaves Candidate A, Candidate C and owner hinge choice on HOLD until independent visual acceptance is actually run.
+Exit 0 = no machine-level FAIL (HOLD may remain); exit 1 = machine-level FAIL; exit 2 = artifact/ZIP processing failure.
+
+PREP CHECK RESULTS
+- Local validator snapshot Python compile: PASS.
+- Synthetic valid-folder fixture: PASS 17 / FAIL 0 / HOLD 2 / INFO 3; artifact-ready-for-manual-acceptance=true; A HOLD; C HOLD; owner choice HOLD.
+- Synthetic valid-ZIP fixture: PASS 18 / FAIL 0 / HOLD 2 / INFO 2; ZIP integrity/hash path exercised; artifact-ready=true; candidate/owner status still HOLD.
+- Missing required oblique-start still fixture: correctly FAILS that still role and artifact-ready=false.
+- Unsafe ZIP path-traversal fixture: correctly rejected with exit 2 before extraction.
+- Provider readback verified the branch validator and frozen matrix files after creation.
+
+WHAT REMAINS DEPENDENT ON KEVIN'S RENDER
+Kevin's run #2 / 36726558912 on branch kevin-v4a-ac-render-proof at head 73738d53c1f6fab4153e24155603b9e3e048b0b7 was still IN PROGRESS on the final provider check for this prep. Its workflow records Bob source commit b1a7843..., preserves the comparison source blob, and uses a documented render-only EEVEE-sample runtime copy; no visual result is consumed here.
+Once the artifact exists, the next independent acceptance must:
+1) bind run/head/artifact/executed-source identity;
+2) run the validator against the actual artifact;
+3) inspect exact-front start, C oblique rear-stow proof, A motion, C stage1/stage2 motion and final rest;
+4) assign PASS/FAIL/HOLD by candidate using only the frozen matrix/reject conditions;
+5) keep owner hinge preference separate.
+
+NO CANDIDATE DISPOSITION IN THIS PACKAGE
+Candidate A: HOLD — not evaluated post-render.
+Candidate C: HOLD — not evaluated post-render.
+Owner hinge choice: HOLD — not selected.
+
+Nathan is not the technical courier.
