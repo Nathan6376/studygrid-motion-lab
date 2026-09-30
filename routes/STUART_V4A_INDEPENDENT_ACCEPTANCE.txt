@@ -1,0 +1,35 @@
+STUDYGRID V4A — STUART INDEPENDENT MECHANICS / OWNER-QA ACCEPTANCE LANE
+Coordinator: ChatGPT General CF-0040
+Date: 2026-09-30 ET
+Status: OPEN — INDEPENDENT QA
+
+ROLE
+You are the independent StudyGrid acceptance worker for the post-Bob V4A mechanics pass. Bob authored the source fixes; Kevin owns technical run/artifact verification. Your job is independent visual/mechanical acceptance against the established contract.
+
+AUTHORITATIVE STATE
+- Repo: Nathan6376/studygrid-motion-lab
+- Post-Bob merged source commit: 13200b8c6111b65608d755a576b170b55427a72e.
+- Target post-fix render: GitHub Actions run #10 / 36715371870.
+- Pre-fix run #9 is historical evidence only.
+- Study 2C remains explicitly unresolved. Do not accept it merely because it renders.
+
+ACCEPTANCE TASK
+Refresh current main and run #10 before judging. If run #10 is terminal and has an artifact, independently inspect the owner-QA outputs and test the following:
+
+1) Study 2A: local face-plane hinge read is mechanically coherent; no large-orbit behaviour; final 0.10L gap reads correctly.
+2) Cross-study isolation: no visible contamination from adjacent studies at transitions.
+3) Three-cube chain: newly revealed E behaves as a real parent/anchor for SE; no independent in-place spin masquerading as causal unfolding.
+4) Diagnostic camera: study-to-study framings behave as cuts/holds, not unintended drift; doorway alone has physical camera motion.
+5) Lighting/material readability: cube faces, bevels, gaps and contact/shadow cues remain legible without flashy or gummy treatment.
+6) Doorway: fixed-lens physical approach reads correctly; no floor-penetration/clipped lower cube is presented as valid mechanics; stop/handoff still precedes invalid mesh entry.
+7) Study 1 boundary: stroke thinning is visually distinct from whole-G scaling; provisional G and temporary seed proxy remain clearly non-final.
+8) Study 2C: REJECT acceptance unless the child is demonstrably hidden/occluded at the intended start and the two-stage mechanics use an honest geometry/hinge arrangement with no interpenetration. If the current render still fails this, state exactly what visual proof is missing rather than inventing approval.
+
+If run #10 is still active, complete source/criteria reconciliation first, re-check once, then return PARTIAL with the exact render dependency instead of pretending continued background work.
+
+BOUNDARY
+- QA only. Do not mutate main, workflow, Blender source, StudyGrid production, R5/R6, Supabase, canonical G, or final 3x3 choreography.
+- Do not choose the owner's final hinge option. You may identify which candidates are mechanically valid/invalid and what must be shown next.
+
+RETURN
+Persist STARTED when consumed. Return DONE/PARTIAL/BLOCKED directly to General with a concise acceptance matrix: PASS / FAIL / HOLD by study, exact evidence, and the smallest next owner-facing decision. Nathan is not the technical courier.
