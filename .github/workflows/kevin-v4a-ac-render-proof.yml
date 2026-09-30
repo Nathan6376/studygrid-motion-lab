@@ -1,0 +1,152 @@
+name: Kevin V4A A-C Render Proof
+
+on:
+  push:
+    branches: [kevin-v4a-ac-render-proof]
+    paths:
+      - ".github/workflows/kevin-v4a-ac-render-proof.yml"
+      - "blender/scene_v4a_2c_compare.py"
+      - "blender/verify_v4a_hidden_mechanics.py"
+      - "blender/v4a_hidden_geometry_report.json"
+      - "routes/KEVIN_V4A_AC_RENDER_PROOF_STARTED.txt"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kevin-v4a-ac-render-proof
+  cancel-in-progress: true
+
+env:
+  BLENDER_VERSION: "4.5.14"
+  BLENDER_DIR: ${{ github.workspace }}/.tools/blender-4.5.14-linux-x64
+
+jobs:
+  render-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout exact branch head
+        uses: actions/checkout@v4
+
+      - name: Cache Blender 4.5.14 LTS
+        id: cache-blender
+        uses: actions/cache@v4
+        with:
+          path: .tools/blender-4.5.14-linux-x64
+          key: blender-4.5.14-linux-x64
+
+      - name: Install Blender 4.5.14 LTS
+        if: steps.cache-blender.outputs.cache-hit != 'true'
+        run: |
+          set -euo pipefail
+          mkdir -p .tools
+          cd .tools
+          FILE="blender-${BLENDER_VERSION}-linux-x64.tar.xz"
+          curl --fail --location --retry 3 --output "$FILE" "https://download.blender.org/release/Blender4.5/$FILE"
+          curl --fail --location --retry 3 --output "blender-${BLENDER_VERSION}.sha256" "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}.sha256"
+          grep " $FILE$" "blender-${BLENDER_VERSION}.sha256" | sha256sum --check --strict -
+          tar -xf "$FILE"
+          rm -f "$FILE" "blender-${BLENDER_VERSION}.sha256"
+
+      - name: Install headless render dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg libegl1 libgl1 libx11-6 libxext6 libxrender1 libxi6 libxkbcommon0
+
+      - name: Verify tools and exact source identity
+        run: |
+          set -euo pipefail
+          "$BLENDER_DIR/blender" --version | head -n 2
+          ffmpeg -version | head -n 1
+          mkdir -p output-v4a-hidden
+          {
+            echo "repository=Nathan6376/studygrid-motion-lab"
+            echo "branch=${GITHUB_REF_NAME}"
+            echo "head_sha=${GITHUB_SHA}"
+            echo "comparison_blob=$(git hash-object blender/scene_v4a_2c_compare.py)"
+            echo "verifier_blob=$(git hash-object blender/verify_v4a_hidden_mechanics.py)"
+            echo "committed_report_blob=$(git hash-object blender/v4a_hidden_geometry_report.json)"
+            sha256sum blender/scene_v4a_2c_compare.py blender/verify_v4a_hidden_mechanics.py blender/v4a_hidden_geometry_report.json
+          } | tee output-v4a-hidden/source_identity.txt
+
+      - name: Re-run analytic geometry verifier and compare report
+        run: |
+          set -euo pipefail
+          python3 blender/verify_v4a_hidden_mechanics.py > output-v4a-hidden/v4a_hidden_geometry_report_runtime.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          committed = json.loads(Path('blender/v4a_hidden_geometry_report.json').read_text())
+          runtime = json.loads(Path('output-v4a-hidden/v4a_hidden_geometry_report_runtime.json').read_text())
+          if committed != runtime:
+              raise SystemExit('Runtime geometry verifier output differs from committed Bob report')
+          if runtime.get('pass') is not True:
+              raise SystemExit('Runtime geometry verifier did not pass')
+          print('geometry_report_match=true')
+          PY
+
+      - name: Render Bob exact A-C comparison source
+        run: |
+          set -euo pipefail
+          "$BLENDER_DIR/blender" --background --factory-startup \
+            --python-exit-code 1 \
+            --python blender/scene_v4a_2c_compare.py \
+            -- \
+            --output-dir "$GITHUB_WORKSPACE/output-v4a-hidden" \
+            --quality preview
+
+      - name: Encode slow inspectable front comparison MP4
+        run: |
+          set -euo pipefail
+          ffmpeg -y \
+            -framerate 12 \
+            -start_number 1 \
+            -i output-v4a-hidden/frames/frame_%04d.png \
+            -c:v libx264 -pix_fmt yuv420p -crf 18 \
+            -movflags +faststart \
+            output-v4a-hidden/studygrid-v4a-ac-front-compare.mp4
+          ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,pix_fmt,width,height,r_frame_rate,nb_frames -show_entries format=duration -of default=noprint_wrappers=1 output-v4a-hidden/studygrid-v4a-ac-front-compare.mp4 | tee output-v4a-hidden/mp4_probe.txt
+          ffmpeg -v error -i output-v4a-hidden/studygrid-v4a-ac-front-compare.mp4 -f null -
+
+      - name: Verify artifact inventory and decode stills
+        run: |
+          set -euo pipefail
+          test -f output-v4a-hidden/stills/front_00_start_stowed.png
+          test -f output-v4a-hidden/stills/front_01_stage1_mid.png
+          test -f output-v4a-hidden/stills/front_02_stage1_landed.png
+          test -f output-v4a-hidden/stills/front_03_stage2_mid.png
+          test -f output-v4a-hidden/stills/front_04_final.png
+          test -f output-v4a-hidden/stills/diag_00_start_stowed.png
+          test -f output-v4a-hidden/studygrid-v4a-hidden-mechanics-compare.blend
+          test -f output-v4a-hidden/qa_manifest_hidden_mechanics.txt
+          for f in output-v4a-hidden/stills/*.png; do
+            ffmpeg -v error -i "$f" -frames:v 1 -f null -
+          done
+          printf 'required_stills=front_00_start_stowed,front_01_stage1_mid,front_02_stage1_landed,front_03_stage2_mid,front_04_final,diag_00_start_stowed\n' > output-v4a-hidden/render_proof_inventory.txt
+          find output-v4a-hidden -maxdepth 2 -type f -printf '%P\n' | sort >> output-v4a-hidden/render_proof_inventory.txt
+
+      - name: Hash owner-QA proof artifacts
+        run: |
+          set -euo pipefail
+          find output-v4a-hidden -maxdepth 2 -type f ! -path '*/frames/*' ! -name 'artifact_sha256.txt' -print0 | sort -z | xargs -0 sha256sum > output-v4a-hidden/artifact_sha256.txt
+          cat output-v4a-hidden/artifact_sha256.txt
+
+      - name: Upload isolated A-C render proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: studygrid-v4a-ac-render-proof
+          path: |
+            output-v4a-hidden/studygrid-v4a-ac-front-compare.mp4
+            output-v4a-hidden/stills/*.png
+            output-v4a-hidden/studygrid-v4a-hidden-mechanics-compare.blend
+            output-v4a-hidden/qa_manifest_hidden_mechanics.txt
+            output-v4a-hidden/v4a_hidden_geometry_report_runtime.json
+            output-v4a-hidden/source_identity.txt
+            output-v4a-hidden/mp4_probe.txt
+            output-v4a-hidden/render_proof_inventory.txt
+            output-v4a-hidden/artifact_sha256.txt
+          retention-days: 3
+          if-no-files-found: error
