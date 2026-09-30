@@ -1,0 +1,51 @@
+STUDYGRID — STUART Q-S11P SLICE 2 ACCEPTANCE HARNESS / ADVERSARIAL PREP — DONE
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 18:21 ET
+Lifecycle: DONE
+Disposition: PREP PASS — NOT Q-S11 CANDIDATE ACCEPTANCE EVIDENCE.
+
+BASIS
+- queues/STUART_QUEUE.txt sha cc2d7ab156f21b4528f0c4b95272b3e177cbb6cd consumed at start.
+- General accepted Slice 1 pointer routes/GENERAL_ACCEPTED_SLICE1_QB14.txt sha d93a558b5f3669778a58c75d1f65f34507fba13f consumed.
+- Exact accepted Slice 1 provider bytes were re-fetched and independently reverified: StudyGrid-CF0042-QB14-local-product-gateway.html / Drive 1S4eIU6VT2pnNQ4h5SHEGhJ3sWb7BLU6W / SHA-256 fcf89e5a31063746272a10bbfba72d605f745d01f797c75fa33697923dde6bb1 / 965519 bytes / v7.17-cf0042-qb14-local-product-gateway.
+- At Q-S11P STARTED, Bob Q-B15 was provider-visible STARTED at 17:53 ET and no durable terminal candidate/return was found in the current worker/Response Trace scope.
+
+PREP RESULT
+- Implementation-independent 46-gate Q-S11 acceptance matrix complete.
+- Reusable pure oracle scaffolding complete; it does not import or mutate StudyGrid runtime.
+- Synthetic positive/negative adversarial scaffold self-test: 39/39 PASS.
+- Prep-only accepted Slice 1 anchor/version/gateway/registry/matrix checks: 7/7 PASS.
+- Normalized runtime observation template prepared for exact Q-B15 provider bytes.
+
+COVERAGE
+- approximately six-course / hundreds-student scale
+- bounded Professor Home rather than full-roster long-scroll dashboard
+- confirmed Today / no auto-navigation or context theft
+- unresolved→resolved attention lifecycle and history retention
+- explicit class name/code/section plus student/open-question context
+- colour not sole identity; duplicate colour/label adversarial case
+- transparent pin/favourite/colour/label/sort; no opaque risk/readiness/priority rank
+- selected-class R6 drill-in preservation
+- Slice 1 gateway/read-model/command/source/revision invariants
+- stale and unauthorized fail-closed/no-mutation
+- deterministic ordinary states
+- Q-B13 focus, roving tabs and policy-dialog return
+- desktop/tablet/phone overflow/duplicate-ID stress
+- explicit Slice 3/4/backend/network/provider/motion/canonical exclusions
+- physical-device/hosted/full-accessibility HOLD boundary
+
+DURABLE ARTIFACTS
+- docs/STUART_QS11P_SLICE2_ACCEPTANCE_MATRIX.md
+- tests/stuart_qs11_professor_home_oracles.py
+- tests/stuart_qs11p_scaffold_selftest.py
+- tests/stuart_qs11_slice2_acceptance_spec.json
+- tests/stuart_qs11_runtime_observation_template.json
+- tests/stuart_qs11p_prep_results.json
+- branch stuart-qs11p-slice2-acceptance-prep
+
+BOUNDARY
+No StudyGrid product/runtime bytes were mutated. No Bob private work-in-progress was inspected. No A/C choice was made. No backend/auth/Supabase/network/provider/deployment, Blender/motion, Slice 3/4, or canonical action was taken. This prep cannot PASS Q-S11; exact provider candidate evidence supersedes prep assumptions.
+
+NEXT
+Per Nathan's instruction, refresh once after this terminal. If Bob Q-B15 is then durable and Q-S11 is eligible, continue directly into Q-S11. Otherwise stop at that real dependency.
