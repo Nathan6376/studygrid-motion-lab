@@ -1,6 +1,6 @@
 STUDYGRID — STUART WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 16:23 ET
+Updated: 2026-09-30 16:49 ET
 Queue owner: General
 Worker: Stuart
 
@@ -8,28 +8,29 @@ PULL RULE
 When Nathan directly tells Stuart to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item. Do not pull another worker's queue and do not create owner-routing prompts; return durable technical results to General.
 
 CURRENT CONTEXT
-- Q-S8 independent R6 core product acceptance is DONE.
-- Exact R6 identity passed: Drive 1pxKsdqM6dhKE6ihN5k4UgO-0usgNBmjD / 954208 bytes / SHA-256 875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef / APP_VERSION v7.16-cf0032-integrated-batch4-8-cf0039-r6.
-- PASS families: identity/static; registry 237/237 unique rev11; Clear Desk/action lifecycle; Assessment Desk/source proof/timing; source policy/Sources rebase; repeated-question answer-once; student preview/feedback/sorts; 30/30 responsive local-runtime matrix; 6/6 deterministic fixtures; 6/6 runtime duplicate-ID route sweep; roving instructor tabs; policy dialog focus + Escape return.
-- FAIL family is bounded to QS8-F1/QS8-F2 keyboard/focus: Students sort repaint drops focus to BODY; assessment confirmation refresh targets non-focusable #r6AttentionTitle h4 and drops focus to BODY.
-- Real-device/hosted/full-accessibility remain HOLD, not current candidate failures.
-- Bob Q-B13 is released to make only the two bounded focus repairs as a new non-canonical candidate. Q-B12 Slice 1 product gateway is staged behind independent reacceptance of that exact corrected candidate.
-- Kevin/Blender/intro motion is separate and is not a dependency for this product lane.
+- Q-S8 independent R6 core product acceptance: DONE. All tested owner-release families passed except bounded keyboard/focus defects QS8-F1/QS8-F2; real-device/hosted/full-accessibility remained HOLD rather than failures.
+- Bob Q-B13 minimal focus repair: DONE with durable return Drive 171FH0yF5dUgNiWKMsHS66MXM1TLdOFbn.
+- Exact corrected candidate to test: StudyGrid-CF0042-QB13-r6-focusfix.html / Drive 10ISHnuiaZTIispYlRSkO81h__J63x-ND / SHA-256 9cd7b6dd37caac46dcab8f049bd4f0e218e0b027d60bd89cccbc9b547b43e8fe / 954307 bytes / APP_VERSION v7.16-cf0042-qb13-r6-focusfix.
+- Provider metadata independently confirms the file identity and 954307-byte size. Bob verification artifact: Drive 11FciJKAyqAfpVikzgD2LHTZ51icRi1ZC, reporting 45/45 PASS and the same candidate SHA/size/version.
+- Reported bounded changes: Students sort/filter repaint restores focus to replacement #r6StudentSort/#r6StudentFilter with preventScroll; assessment confirmation refresh targets existing tabindex=-1 #r6TaskCanvas instead of non-focusable #r6AttentionTitle. Candidate identity fields updated; exact R5/R6 untouched; no professor-scale/gateway/backend/auth/Supabase/deploy/motion/A-C/canonical-G/brand-portal work added.
+- Kevin/Blender/intro motion remains separate and is not a dependency for this product gate.
 
 Q-S9 — CORRECTED R6 FOCUS + COMPACT REGRESSION REACCEPTANCE
-Eligibility: BLOCKED until Bob Q-B13 returns a provider-visible corrected candidate with exact identity and evidence.
-Purpose: independently verify only the bounded focus repair and enough compact regression to decide whether the corrected candidate may become General's working product derivation point for Slice 1.
-Requirements once unblocked:
-- Verify exact Q-B13 provider bytes/SHA/size/version first.
-- Reproduce QS8-F1 and QS8-F2 directly; both must PASS with meaningful focus preservation/restoration and activeElement must not collapse to BODY.
-- Recheck roving instructor tabs and policy dialog focus/Escape-return.
-- Re-run compact static/registry/runtime/responsive/regression smoke across the Q-S8 families most likely to be affected by the diff.
-- Confirm Bob changed only the bounded focus repair surface and did not introduce professor-scale/gateway/backend/motion additions.
-- Report PASS/FAIL/HOLD with exact evidence. Do not promote canonical or mutate product/backend/deployment.
-Return: exact corrected candidate identity, Q-S9 result and any smallest remaining defect directly to General.
+Eligibility: AVAILABLE NOW if no newer Stuart task is STARTED.
+Purpose: independently decide whether exact Q-B13 corrected bytes can become General's accepted corrected product derivation point for Slice 1.
+Requirements:
+- Fetch exact provider candidate Drive 10ISHnuiaZTIispYlRSkO81h__J63x-ND and independently verify SHA-256 9cd7b6dd37caac46dcab8f049bd4f0e218e0b027d60bd89cccbc9b547b43e8fe, 954307 bytes and APP_VERSION v7.16-cf0042-qb13-r6-focusfix before testing.
+- Reproduce QS8-F1 sort and filter repaint focus directly. Both must preserve/restore meaningful focus and activeElement must not collapse to BODY.
+- Reproduce QS8-F2 confirmation refresh directly. Focus must land on an actually programmatically focusable, context-appropriate target; activeElement must not be BODY; preserve intended scroll semantics.
+- Recheck roving instructor tabs and source-policy dialog focus + Escape-return.
+- Re-run compact static/registry/runtime/responsive/regression smoke across Q-S8 families plausibly affected by the bounded diff, including registry uniqueness and representative desktop/tablet/phone behavior.
+- Independently compare exact Q-B13 against exact R6 enough to confirm the product-behaviour change is bounded to the two focus repairs plus candidate identity fields; no professor-scale/gateway/backend/motion additions may be present.
+- Treat real-device/hosted/full-accessibility gaps as existing HOLDs unless new evidence changes them; do not promote synthetic Chromium evidence to those claims.
+- No canonical promotion, product/backend/deployment mutation or motion/A-C work.
+Return: PASS/FAIL/HOLD, exact corrected candidate identity, direct reproduction evidence, bounded-diff conclusion and any smallest remaining defect directly to General.
 
 Q-S10 — SLICE 1 INDEPENDENT ACCEPTANCE
-Eligibility: BLOCKED until General releases Bob Q-B14 implementation and an exact Slice 1 candidate exists.
+Eligibility: BLOCKED until General publishes Q-S9 PASS as the accepted corrected baseline pointer and Bob Q-B14 produces an exact Slice 1 candidate.
 Purpose: independently accept/reject the Local Product Gateway / deterministic fixture truth boundary without conflating it with backend or motion.
 
 Q-S2 — FULL-CONTEXT A/C VARIANT FIDELITY AUDIT
@@ -39,4 +40,4 @@ Q-S3 — EXPORT/RUNTIME ACCEPTANCE
 Eligibility: BLOCKED until Kevin produces candidate GLB export-smoke or later selected-candidate runtime artifacts.
 
 STOP CONDITION
-No Stuart task is immediately eligible until Q-B13 returns. Wait rather than invent filler. When Q-S9 becomes eligible, execute it before any Slice 1 acceptance work.
+Execute Q-S9 now. After Q-S9, stop unless General has published a newly eligible distinct task. Do not invent filler.
