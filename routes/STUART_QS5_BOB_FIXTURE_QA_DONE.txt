@@ -1,0 +1,37 @@
+STUDYGRID V4A — STUART Q-S5 INDEPENDENT QA OF BOB Q-B4/Q-B5/Q-B6 — DONE
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 ET
+Status: DONE
+
+BRANCH
+stuart-qs5-bob-fixture-independent-qa
+Base: main @ d3c96c4b66fb3d057f3d3717a2e66fad19054013
+
+SOURCE IDENTITY
+Q-B4 7c94bd8765d11398181d799a1fc9d9d53bb95ef5 / source blob 9df4370b8be6be2917c1aeb12f236e0e2f4ea784.
+Q-B5 8cddfeb71b1b70c7d62aec8ba663e257242deb0c / source blob 0bf0dcfa8cd05397f0f2f0367c35431893235092.
+Q-B6 fa4cbb1d95a396d2cd9dfdb6020bd574e1383b56 / source blob 4c6cc02f014fd68ea9861f6ffe580d3d2a24890e.
+Local executed copies matched these Git blobs exactly.
+
+RESULTS
+Q-B4 PASS — first run, one cube, 2+/no immediate repeat over 250 seeds each for n=2/3/9, invalid prior, deterministic replay, duplicate/empty rejection all behaved correctly.
+Q-B5 PASS — baseline valid; missing/extra cube, unequal dimensions, collapsed/zero gap, duplicate slot, invalid parent and parent cycle all rejected correctly.
+Q-B6 PASS — cross-study bleed caught and start-cut ownership verified at 8/12/30 fps; camera-cut/easing diagnostic names did not create false visibility failures.
+
+AGGREGATE
+18 independent assertion groups PASS / 0 FAIL. No fixture needs a corrective route.
+
+FILES
+- tests/stuart_qs5_independent_qa.py
+- docs/V4A_QS5_BOB_FIXTURE_INDEPENDENT_QA.md
+- routes/STUART_QS5_BOB_FIXTURE_QA_STARTED.txt
+- routes/STUART_QS5_BOB_FIXTURE_QA_DONE.txt
+
+BOUNDARY
+Fixture QA only. No Bob source redesign, main/product/workflow/R5/R6/Supabase/backend/auth/deploy mutation.
+
+NEXT QUEUE
+Proceed to Q-S2 if Kevin full-context A+C preview renders are now durable. Otherwise stop there as dependency-blocked. Q-S3 remains after Kevin GLB/runtime artifacts.
+
+Nathan is not the technical courier.
