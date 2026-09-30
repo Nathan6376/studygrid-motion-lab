@@ -1,0 +1,24 @@
+STUDYGRID — KEVIN QUEUE Q-K1 — STARTED
+From: StudyGrid Worker Kevin
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 11:07 ET
+Status: STARTED
+
+QUEUE SOURCE
+- queues/KEVIN_QUEUE.txt @ blob 15623ef665f627535565cf6b449efb7207b4204b
+- Q-K1 FULL-CONTEXT DUAL-CANDIDATE PREVIEW RENDERS
+
+ELIGIBILITY REFRESH
+- Prior Kevin A/C render-proof is DONE with durable source/run/artifact identity.
+- Bob reversible A/C integration variants are durable on bob-v4a-ac-integration-variants @ 09b8d26a8969a809d60c47a9e7dbbaca9adcbd27.
+- General CF-0040 response-trace state at 10:27 ET explicitly marks Kevin DONE and Q-K1/Q-K2 eligible.
+- No overlapping Kevin package is STARTED.
+
+ISOLATION
+- Execution branch: kevin-qk1-v4a-full-context-dual-preview
+- Branch base: Bob integration variants head 09b8d26a8969a809d60c47a9e7dbbaca9adcbd27
+- No main/product/R5/R6/Supabase/backend/auth/deploy/canonical-G/final-3x3 mutation.
+- Neither A nor C is selected or preferred.
+
+PLAN
+Render Bob Variant A and Variant C faithfully as separate full-V4A owner-QA previews with common source/render controls, slow MP4s, key stills, source/run identity, decode/integrity checks, and unchanged-study parity checks. Return directly to General.
