@@ -1,0 +1,97 @@
+{
+  "schema": "studygrid.motion_html_seam_map.v1",
+  "status": "PREPARATION_ONLY",
+  "selection": "NONE",
+  "source_references": {
+    "R5": {
+      "role": "accepted_read_only_baseline",
+      "drive_id": "1Zp8rAflaLBN-F-5_i8B9P1hF-XR-oJHC",
+      "sha256": "0fee828511bdccd373fdc0625c0ea9f894485a57f6e6cbceff74e2652ec34d00",
+      "bytes": 874986,
+      "app_version": "v7.15-cf0032-integrated-batch4-8-cf0039-r5"
+    },
+    "R6": {
+      "role": "verified_unpromoted_read_only_candidate",
+      "drive_id": "1pxKsdqM6dhKE6ihN5k4UgO-0usgNBmjD",
+      "sha256": "875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef",
+      "bytes": 954208,
+      "app_version": "v7.16-cf0032-integrated-batch4-8-cf0039-r6"
+    }
+  },
+  "stable_shell_evidence": {
+    "root_mount": {"selector":"#root","r5_line":1109,"r6_line":1122,"meaning":"route render surface"},
+    "entry_mode": {"selector":"body.entry-mode","r5_line":633,"r6_line":633,"meaning":"welcome/tour/access/start hide normal top/mobile chrome"},
+    "entry_root_min_height": {"selector":"body.entry-mode #root","r5_line":634,"r6_line":634,"meaning":"entry route reserves full viewport shell"},
+    "welcome_surface": {"selector":"#root > .welcome-page","r5_line":635,"r6_line":635,"meaning":"relative, isolated, overflow-hidden full-viewport entry surface"},
+    "welcome_content_layer": {"selector":".welcome-shell","r5_line":641,"r6_line":641,"meaning":"existing interactive welcome content is z-index 2"},
+    "route_dispatch": {"symbol":"render()","r5_line":2004,"r6_line":2017,"meaning":"common route dispatcher calls renderWelcome for /welcome"},
+    "route_dispose_boundary": {"symbol":"handleRouteHistoryChange()","r5_line":2095,"r6_line":2108,"meaning":"route changes close overlays, re-render root and restore route focus"},
+    "focus_contract": {"symbol":"focusRouteEntry()","r5_line":2003,"r6_line":2016,"meaning":"existing route transition focus targets first heading/root"}
+  },
+  "future_mount_contract": {
+    "host_selector": "[data-sg-motion-host]",
+    "placement": "first child of #root > .welcome-page, sibling of welcome visual/copy layers",
+    "positioning": "absolute inset:0 inside .welcome-page stacking context",
+    "visual_layer": "z-index 0 or 1, below .welcome-shell z-index 2",
+    "pointer_policy": "visual canvas pointer-events:none; any skip/continue control is normal DOM outside canvas",
+    "global_z_index_rule": "do not use global overlay bands >=50; entry motion stays inside welcome stacking context",
+    "overflow_rule": "rely on .welcome-page overflow:hidden; do not change body/root overflow for motion",
+    "layout_reservation": "welcome-page/root retain full-viewport min-height before/during/after motion to avoid layout jump",
+    "resize_rule": "renderer receives host CSS-pixel width/height and updates camera aspect only; fixed lens/FOV remains invariant",
+    "dpr_rule": "adapter may cap render DPR for performance; DPR is rendering quality, never a geometry/scale mechanic",
+    "shell_dependency": "must not query or position from .welcome-shell, .r6-welcome-grid or Candidate A/C DOM"
+  },
+  "adapter_interface": {
+    "name": "StudyGridMotionEntryAdapter",
+    "constructor_config": {
+      "host": "HTMLElement required",
+      "assetManifest": "MotionAssetManifest required",
+      "motionProfileId": "opaque approved profile id; shell does not branch on A/C",
+      "reducedMotion": "boolean",
+      "onStateChange": "(state,detail)=>void",
+      "onHandoff": "(detail)=>void",
+      "onFailure": "(error)=>void"
+    },
+    "methods": {
+      "mount": "allocate renderer/assets/listeners without navigating or stealing focus",
+      "start": "start full sequence only when allowed; must be idempotent",
+      "skip": "transition to shell-ready state immediately and safely",
+      "dispose": "cancel loads/RAF/listeners and release renderer resources",
+      "replaceAssetManifest": "swap approved G/3x3 asset/version without changing shell DOM contract",
+      "getState": "return current adapter state"
+    },
+    "events": ["MOUNTED","LOADING","READY","RUNNING","HANDOFF_READY","SKIPPED","REDUCED_MOTION","FAILED","DISPOSED"],
+    "handoff_rule": "HANDOFF_READY reveals/enables the existing welcome shell; it does not auto-navigate. Existing welcome controls remain the authority for /start, /tour and sign-in."
+  },
+  "asset_manifest_contract": {
+    "fields": {
+      "version": "immutable package version",
+      "gAssetUri": "approved canonical-G-derived asset pointer when available",
+      "gridAssetUri": "approved nine-cube/final-grid asset pointer when available",
+      "motionClips": "logical clip-name -> clip pointer map",
+      "handoffMarker": "named motion marker used for HTML handoff timing",
+      "integrity": "optional per-asset digest map",
+      "metadata": "dimensions/unit/up-axis/export version; no product state"
+    },
+    "swap_guarantee": "changing canonical G or final 3x3 asset is manifest-level; no welcome/root shell rewrite required"
+  },
+  "r5_r6_differences": [
+    {"area":"welcome composition","R5":"single centred .welcome-shell width min(780px,100%)","R6":"late renderWelcome override widens shell to min(1120px,calc(100% - 32px)) and adds .r6-welcome-grid/.r6-welcome-panel","integration_effect":"motion host cannot use welcome-shell geometry as camera/mount geometry"},
+    {"area":"responsive welcome","R5":"single-column welcome","R6":".r6-welcome-grid collapses to one column at max-width 900px; additional mobile rules at 620px","integration_effect":"host must bind to .welcome-page bounds, not content column count"},
+    {"area":"renderWelcome definition","R5":"single function renderWelcome","R6":"original function remains plus late assignment override","integration_effect":"do not monkey-patch a specific renderWelcome body; future integration should use one common post-render sync hook"},
+    {"area":"product content","R5":"accepted baseline","R6":"adds instructor-first welcome/workspace and related overrides","integration_effect":"shell handoff must preserve whichever baseline General later authorizes; Q-B9 does not choose"}
+  ],
+  "future_insertion_point": {
+    "preferred_hook": "one explicit syncMotionEntry(route) call after route-specific render inside common render()",
+    "why": "common across R5/R6, allows mount on /welcome and dispose on every other route, avoids duplicate R6 renderWelcome bodies",
+    "mutation_status": "NOT_IMPLEMENTED"
+  },
+  "integration_blockers": [
+    {"kind":"BASELINE_DECISION","detail":"General must later choose the authorized HTML integration baseline because R5 is accepted while R6 remains unpromoted.","blocks_QB9":false,"blocks_future_integration":true},
+    {"kind":"MOTION_PACKAGE_APPROVAL","detail":"Candidate A/C selection and final approved motion package/asset manifest are intentionally absent.","blocks_QB9":false,"blocks_future_integration":true},
+    {"kind":"CANONICAL_ASSET","detail":"canonical G/final 3x3 asset identity must be supplied later; adapter contract already isolates this as manifest data.","blocks_QB9":false,"blocks_future_integration":true}
+  ],
+  "forbidden": [
+    "modify R5/R6 HTML","modify main motion scene","select A/C","navigate automatically on motion completion","gate product entry on animation completion","animate object scale as mechanics","animate camera lens/FOV in fixed-lens path","capture global keyboard focus in canvas"
+  ]
+}
