@@ -1,0 +1,46 @@
+STUDYGRID V4A — KEVIN A/C BLENDER RENDER PROOF
+Coordinator: ChatGPT General CF-0040
+Date: 2026-09-30 ET
+Status: OPEN — DISTINCT FOLLOW-ON PACKAGE
+
+WHY THIS PACKAGE EXISTS
+Bob's hidden-mechanics branch has source/analytic proof complete at b1a7843fcc05a825c1043d1fa060004a29e730b8, but his return remains PARTIAL because the new A/C comparison has not been rendered in Blender. Stuart's independent QA says the old 2C is invalid and owner hinge choice must remain held until a truthful corrected comparison exists. Kevin's prior run #10 verification is DONE, so this is a materially distinct free-worker package.
+
+AUTHORITATIVE INPUT
+- Repo: Nathan6376/studygrid-motion-lab
+- Bob branch: bob-v4a-hidden-mechanics-prototypes
+- Exact Bob head: b1a7843fcc05a825c1043d1fa060004a29e730b8
+- Comparison source: blender/scene_v4a_2c_compare.py
+- Geometry verifier/report on Bob branch: blender/verify_v4a_hidden_mechanics.py and blender/v4a_hidden_geometry_report.json
+- Current main head at routing: 2daca92eef8e25b92e36e30f5f599ce67586ae66
+- Do not reinterpret Candidate A or C geometry. Do not choose the owner winner.
+
+TASK
+Create an isolated Kevin render-proof branch from Bob's exact head and produce the smallest truthful Blender visual proof needed for owner QA.
+
+1) Re-read Bob's exact branch source and geometry report before changing anything.
+2) If necessary, add branch-local render/workflow support only to execute blender/scene_v4a_2c_compare.py. Do not alter Bob's candidate mechanics except for a clearly necessary render-only compatibility fix; if such a fix is required, document it separately and keep it minimal.
+3) Render owner-QA outputs at minimum:
+   - exact-front A start / representative motion / final rest;
+   - exact-front C stowed start / stage-1 / stage-2 / final rest;
+   - one oblique C start diagnostic proving the child physically exists behind the parent while the exact-front view genuinely occludes it;
+   - one inspectable A-vs-C motion MP4 or equivalent sequence using the same material, cube size, gap and camera contract.
+4) Keep first QA slow/inspectable rather than presentation-fast.
+5) Verify artifact integrity, actual executed source identity and successful decode. Record exact run ID/head/artifact IDs/hashes where available.
+6) Do not merge to main and do not select A or C.
+
+BOUNDARY
+- Isolated branch only.
+- No StudyGrid production code, R5/R6, Supabase/backend/auth, canonical G, final 3x3 choreography, deployment or product mutation.
+- No main mutation.
+- No reinterpretation of Bob's A/C mechanics contract.
+
+RETURN
+Persist STARTED when consumed. Return DONE/PARTIAL/BLOCKED directly to General with:
+1) branch/commits,
+2) exact workflow run + source identity,
+3) artifact inventory,
+4) visual findings by A/C stage,
+5) source/render verification distinction,
+6) whether the artifact is ready for Stuart independent acceptance and Nathan owner comparison.
+Nathan is not the technical courier.
