@@ -1,0 +1,17 @@
+{
+  "schema": "studygrid.motion_invariant_scanner_verification.v1",
+  "executed_at_et": "2026-09-30 11:58",
+  "status": "PASS",
+  "cases": {
+    "clean_positive": {"expected": "PASS", "observed": "PASS"},
+    "animated_scale_negative": {"expected_code": "ANIMATED_OBJECT_SCALE", "observed": "FAIL_WITH_EXPECTED_CODE"},
+    "animated_lens_negative": {"expected_code": "ANIMATED_CAMERA_FOV", "observed": "FAIL_WITH_EXPECTED_CODE"},
+    "hidden_visibility_negative": {"expected_code": "UNAPPROVED_HIDDEN_VISIBILITY_WINDOW", "observed": "FAIL_WITH_EXPECTED_CODE"},
+    "dimension_drift_negative": {"expected_code": "CUBE_DIMENSION_DRIFT", "observed": "FAIL_WITH_EXPECTED_CODE"},
+    "gap_collapse_negative": {"expected_code": "GAP_COLLAPSE", "observed": "FAIL_WITH_EXPECTED_CODE"},
+    "missing_state_hold": {"expected_code": "FINAL_STATE_MANIFEST_MISSING", "observed": "HOLD_WITH_EXPECTED_CODE"}
+  },
+  "candidate_selection": "NONE",
+  "choreography_selection": "NONE",
+  "promotion": "NONE"
+}
