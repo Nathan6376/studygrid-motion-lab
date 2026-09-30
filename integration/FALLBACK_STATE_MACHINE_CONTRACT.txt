@@ -1,68 +1,101 @@
-STUDYGRID Q-B10 — REDUCED-MOTION / LOADING / FAILURE FALLBACK CONTRACT
+STUDYGRID Q-B11 — REDUCED-MOTION / LOADING / FAILURE FALLBACK CONTRACT
 Status: preparation-only; no StudyGrid product mutation.
+Supersedes the Q-B10 state-machine wording only; preserves its fallback intent and Q-B9 seam.
 
-A. NON-BLOCKING ENTRY
-Animation is an enhancement, never a gate. From the first mounted state there must be an ordinary DOM path to continue/skip into the existing Welcome shell. Motion completion, WebGL, GLB load success and a specific frame marker are never prerequisites for product entry.
+A. CANONICAL STATE/EVENT AUTHORITY
+Q-B9 and Q-B10 use one canonical state/event model:
+States:
+  NEW, MOUNTED, REDUCED_MOTION, LOADING, SLOW_LOAD, READY, RUNNING,
+  FAILED, FALLBACK_STATIC, SKIPPED, HANDOFF_READY, SHELL_READY, DISPOSED
+Events:
+  MOUNT, REDUCED_MOTION_SELECTED, CAPABILITY_FAILURE, LOAD_BEGIN,
+  SLOW_LOAD_THRESHOLD, ASSETS_READY, FAILURE, START, SKIP, COMPLETE,
+  FALLBACK, SHELL_HANDOFF, DISPOSE
+The machine rejects any transition not present in fallback_state_machine.json.
+NEW is pre-mount internal state. NEW -> SKIPPED and NEW -> FAILED are invalid and must reject.
 
-B. REDUCED MOTION
+B. NON-BLOCKING ENTRY
+Animation is an enhancement, never a gate. Once mount resolves into a user-visible entry state,
+there must be an ordinary DOM path to continue/skip into the existing Welcome shell.
+Motion completion, WebGL, GLB load success and a specific frame marker are never prerequisites
+for product entry.
+
+C. REDUCED MOTION
 When either browser prefers-reduced-motion or StudyGrid's existing less-motion preference is true:
 - do not initialise the WebGL renderer solely for the entry sequence;
 - do not play the full 3D sequence;
 - show an approved static brand/orientation frame if available, otherwise use the existing Welcome brand/shell as the fallback;
-- move directly to shell-ready without auto-navigation.
+- transition REDUCED_MOTION -> FALLBACK_STATIC -> SHELL_READY without auto-navigation.
 This composes the existing R5/R6 reduced-motion CSS instead of replacing it.
 
-C. LOADING
-LOADING preserves the full welcome-page geometry. A loading indicator may use placeholder copy "Loading…" but cannot replace or disable the Continue/Skip path.
-At an integration-configurable slow-load threshold, state becomes SLOW_LOAD:
+D. LOADING
+LOADING preserves the full welcome-page geometry. A loading indicator may use placeholder copy
+"Loading…" but cannot replace or disable the Continue/Skip path.
+At an integration-configurable slow-load threshold, LOADING -> SLOW_LOAD:
 - loading may continue;
 - Continue is explicit;
-- choosing Continue cancels/ignores the pending cinematic and hands off immediately.
-At an integration-configurable hard timeout, use the same static fallback as asset failure.
+- choosing Continue uses SKIP and hands off immediately.
+At an integration-configurable hard timeout, FAILURE -> FAILED -> FALLBACK_STATIC -> SHELL_READY.
 
-D. FAILURE / CAPABILITY
-WebGL unavailable, asset fetch/decode failure, renderer creation failure or hard timeout:
-FAILED -> FALLBACK_STATIC -> SHELL_READY.
+E. FAILURE / CAPABILITY
+WebGL unavailable at mount:
+  MOUNTED --CAPABILITY_FAILURE--> FAILED -> FALLBACK_STATIC -> SHELL_READY.
+Asset fetch/decode failure, renderer/runtime failure or hard timeout from LOADING/SLOW_LOAD,
+and renderer/runtime failure from READY/RUNNING:
+  source --FAILURE--> FAILED -> FALLBACK_STATIC -> SHELL_READY.
+READY -> FAILED and RUNNING -> FAILED are explicitly valid.
 No blank page, technical error wall, retry loop or layout collapse is allowed.
 Failure detail can be logged for diagnostics later but is not required owner-facing copy.
 
-E. SKIP / CONTINUE
+F. SKIP / CONTINUE
 Skip/Continue is a real DOM control with normal keyboard semantics.
-It is available during LOADING, SLOW_LOAD, READY and RUNNING.
-Activation stops/cancels animation work where possible and immediately yields SHELL_READY.
+The adapter skip() transition is allowed only from LOADING, SLOW_LOAD, READY and RUNNING:
+  source --SKIP--> SKIPPED -> SHELL_READY.
+Invalid calls, including NEW -> SKIPPED, reject rather than silently succeeding.
 Canvas never owns the only input path.
 
-F. FOCUS
+G. FOCUS
 - mount, loading, ready, run, completion and fallback do not steal focus;
 - canvas is non-focusable and aria-hidden;
 - existing focusRouteEntry() remains the route-transition focus authority;
 - route exit disposes the adapter without restoring focus into detached motion DOM.
+Synthetic focus-token continuity is preparation evidence only. Real DOM/keyboard/assistive-
+technology focus remains later integration QA.
 
-G. VIEWPORT / FIXED LENS
+H. VIEWPORT / FIXED LENS
 Representative harness envelope:
   320x568, 360x800, 768x1024, 1024x768, 1440x900, 1920x1080.
 The motion host fills the stable Welcome entry surface. Resize changes camera aspect only.
 The fixed-lens path keeps its lens/FOV constant; CSS/object-scale tricks are forbidden.
 Device-pixel-ratio changes may change render resolution, not scene geometry.
-The Q-B2 doorway safety formula is also re-evaluated over this viewport set using its existing fixed 40° vfov analytic contract; portrait ratios remain within the same 1.222627L cover boundary, while wider ratios reduce the cover distance without changing vfov.
+The Q-B2 doorway safety formula is re-evaluated over this viewport set using the existing fixed
+40° vfov analytic contract.
 
-H. LAYOUT
-The Welcome surface remains full-viewport in MOUNTED/LOADING/SLOW_LOAD/RUNNING/FALLBACK/SHELL_READY. The visual host is an absolute layer inside .welcome-page, so state changes must not add/remove normal-flow height or shift the existing Welcome content.
+I. LAYOUT
+The Welcome surface reservation is state-invariant in the synthetic harness for every canonical
+state × every representative viewport. The visual host is an absolute layer inside .welcome-page,
+so runtime state changes must not add/remove normal-flow height or shift existing Welcome content.
+Actual browser layout remains later integration QA.
 
-I. ACCEPTANCE
-1. Reduced-motion test never enters RUNNING and never initialises WebGL.
-2. WebGL-unavailable test reaches SHELL_READY without waiting for assets.
-3. Slow-load exposes Continue and Continue reaches SHELL_READY.
-4. Asset failure reaches static fallback then SHELL_READY.
-5. Skip works from LOADING and RUNNING.
-6. Route exit disposes from every active state.
-7. Focus token remains unchanged across non-user focus transitions.
-8. Layout reservation is identical across all states for every representative viewport.
-9. Camera lens/FOV is invariant across viewport resize; aspect updates.
-10. Q-B2 doorway cover/near-plane envelope remains safe across representative viewports.
-11. Exact R5/R6 source anchors for reduced-motion and entry-mode remain present.
+J. DISPOSE
+DISPOSE is valid from every mounted/non-NEW canonical state and transitions to DISPOSED.
+dispose() releases renderer/assets/listeners. NEW is not a mounted state.
 
-J. INTEGRATION PREREQUISITES
+K. ACCEPTANCE
+Original Q-B10 groups must still pass:
+1. reduced-motion; 2. app less-motion; 3. WebGL unavailable; 4. slow-load Continue;
+5. asset failure; 6. hard timeout; 7. running Skip; 8. normal completion;
+9. route dispose; 10. viewport fixed lens; 11. doorway envelope; 12. active-state escape.
+Expanded Q-B11 regression must also pass:
+13. canonical JSON/harness state+event+transition alignment;
+14. Skip from LOADING/SLOW_LOAD/READY/RUNNING;
+15. dispose from every mounted/non-NEW state;
+16. READY and RUNNING failure -> FAILED -> FALLBACK_STATIC -> SHELL_READY;
+17. invalid NEW skip/failure rejection;
+18. every canonical state × six viewports preserves layout reservation.
+
+L. INTEGRATION PREREQUISITES
 - General names the authorized HTML baseline (accepted R5 or later-promoted successor).
 - General supplies the approved motion profile/asset manifest; this package does not choose A/C.
-- Final integration runs browser/device visual QA for the actual GLB/renderer. This harness proves deterministic state/layout/focus contracts, not rendered appearance or GPU behaviour.
+- Final integration runs real browser/device/assistive-technology and GPU/WebGL visual/recovery QA.
+This harness proves deterministic preparation contracts only, not rendered runtime acceptance.
