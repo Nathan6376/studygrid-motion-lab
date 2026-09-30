@@ -1,6 +1,6 @@
 STUDYGRID — BOB WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 16:49 ET
+Updated: 2026-09-30 17:06 ET
 Queue owner: General
 Worker: Bob / CF-0042
 
@@ -10,26 +10,37 @@ When Nathan directly tells Bob to do his queued work, refresh current lifecycle 
 CURRENT CONTEXT
 - Q-B12 R6→current-product delta map: DONE @ bob-cf0042-qb12-r6-current-product-delta-map / 8200171d1c11d2c84b2ddfe614561db6949188d1.
 - Q-B13 minimal R6 keyboard/focus repair: DONE. Durable return Drive 171FH0yF5dUgNiWKMsHS66MXM1TLdOFbn.
-- Q-B13 corrected candidate is provider-visible and exact: StudyGrid-CF0042-QB13-r6-focusfix.html / Drive 10ISHnuiaZTIispYlRSkO81h__J63x-ND / SHA-256 9cd7b6dd37caac46dcab8f049bd4f0e218e0b027d60bd89cccbc9b547b43e8fe / 954307 bytes / APP_VERSION v7.16-cf0042-qb13-r6-focusfix.
-- Provider metadata independently confirms the file identity and 954307-byte size. Bob's provider-readback/verification artifact 11FciJKAyqAfpVikzgD2LHTZ51icRi1ZC records 45/45 PASS and the same candidate SHA/size/version.
-- Q-B13 scope is bounded to Q-S8 QS8-F1/QS8-F2 plus candidate identity fields: sort/filter focus restoration; confirmation refresh focus target moved from non-focusable #r6AttentionTitle to programmatically focusable #r6TaskCanvas. Exact R5 and R6 remain untouched; no professor-scale/gateway/backend/auth/Supabase/deploy/motion/A-C/canonical-G/brand-portal work was added.
-- Stuart Q-S9 is now released to independently reaccept these exact corrected bytes.
+- Stuart Q-S9 independent reacceptance: DONE / PASS on stuart-qs9-qb13-focus-reacceptance @ 1f7aee98260f61738be6443e4b737b4e7a5ef66b.
+- General accepted corrected-baseline pointer is now published at routes/GENERAL_ACCEPTED_CORRECTED_PRODUCT_BASELINE_QB13.txt on main, commit 3cb4320286915b463343a404ae843aa591a18fd9.
+- Exact accepted working derivation point: StudyGrid-CF0042-QB13-r6-focusfix.html / Drive 10ISHnuiaZTIispYlRSkO81h__J63x-ND / SHA-256 9cd7b6dd37caac46dcab8f049bd4f0e218e0b027d60bd89cccbc9b547b43e8fe / 954307 bytes / APP_VERSION v7.16-cf0042-qb13-r6-focusfix.
+- This baseline is accepted for further non-canonical product derivation only; it is not canonical or deployed.
+- Existing real-device/hosted/full-accessibility HOLDs remain later gates.
 - Kevin/Blender/intro motion remains independent and does not gate the product lane.
 
 Q-B14 — SLICE 1: LOCAL PRODUCT GATEWAY / FIXTURE TRUTH BOUNDARY
-Eligibility: BLOCKED until Stuart Q-S9 independently PASSes exact candidate Drive 10ISHnuiaZTIispYlRSkO81h__J63x-ND and General publishes the exact accepted corrected-baseline pointer.
-Purpose once released: implement Q-B12 Slice 1 without waiting for Kevin/intro motion.
-Released scope once dependency clears:
-- one typed frontend product gateway boundary plus deterministic local fixture adapter/read-model layer;
-- explicit section identity, source_revision_id/source_block_id + display locator, one assessment revision shared across relevant fixture surfaces;
-- bounded command path for authoritative-domain fixture mutations rather than view-layer ad-hoc truth writes;
-- central local loading/empty/error/stale-revision/unauthorized presentation states and command-error mapping;
-- preserve all accepted R6 instructor/student visible workflows;
-- zero network/Supabase/auth/provider dependency and no visible redesign beyond necessary ordinary state handling.
-Acceptance target: provider-identifiable new candidate, deterministic tests, no vendor lock-in, existing accepted workflows reproducible, then independent Stuart Q-S10 acceptance.
+Eligibility: AVAILABLE NOW if no newer Bob task is STARTED.
+Purpose: implement Q-B12 Slice 1 from the exact accepted corrected baseline above without waiting for Kevin/intro motion.
+Requirements:
+- Derive from exact accepted corrected-baseline bytes identified above; reverify provider ID/SHA/size/version before editing.
+- Introduce one typed frontend product gateway boundary plus deterministic local fixture adapter/read-model layer.
+- Make section identity explicit across relevant fixture objects.
+- Carry source_revision_id/source_block_id plus a display locator for proof identity.
+- Make one assessment revision the single fixture truth consumed by Assessment Desk, student timeline and reminder/announcement views.
+- Route authoritative-domain fixture writes through bounded command methods rather than direct view-layer/ad-hoc field mutation for the migrated slice.
+- Add central deterministic local loading/empty/error/stale-revision/unauthorized presentation states and bounded command-error mapping.
+- Preserve every accepted instructor/student visible workflow and the Q-B13 focus fixes.
+- Zero network/Supabase/auth/provider dependency; no vendor-specific API contract.
+- No professor-scale Slice 2+ visible redesign in this package except the minimum ordinary state presentation necessary for Slice 1.
+- No backend/auth/Supabase/deploy, Blender/motion/A-C, canonical G/final 3×3 or canonical promotion.
+Verification/return:
+- Produce a NEW non-canonical provider-visible candidate with exact ID/SHA/bytes/version.
+- Deterministic gateway/fixture tests must demonstrate the local adapter, read models, command boundaries, source/section/revision identity and ordinary state handling.
+- Re-run compact regression proving existing accepted R6/Q-B13 workflows remain reproducible and focus fixes persist.
+- Return exact diff summary, candidate identity, test evidence and any residual limitation directly to General.
+- After DONE, Stuart Q-S10 performs independent Slice 1 acceptance.
 
 Q-B3 — APPLY OWNER-SELECTED HINGE VARIANT
 Eligibility: BLOCKED until Nathan selects A or C and General publishes the exact selected-candidate pointer.
 
 STOP CONDITION
-No Bob item is immediately eligible until Q-S9 returns PASS and General publishes the accepted corrected-baseline pointer. Do not touch Kevin's animation lane or invent filler.
+Execute Q-B14 now if eligible. Do not start professor-scale Slice 2+ work until Q-B14 has independent Q-S10 acceptance and General releases the next slice. Do not touch Kevin's animation lane or invent filler.
