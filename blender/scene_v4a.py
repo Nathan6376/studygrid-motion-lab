@@ -62,13 +62,15 @@ F = lambda sec: int(round(sec * FPS))
 # -----------------------
 bpy.ops.wm.read_factory_settings(use_empty=True)
 scene = bpy.context.scene
-scene.render.engine = 'BLENDER_EEVEE_NEXT' if hasattr(bpy.types, 'BLENDER_EEVEE_NEXT') else 'BLENDER_EEVEE'
+scene.render.engine = 'BLENDER_EEVEE_NEXT'
 scene.render.fps = FPS
 scene.render.image_settings.file_format = 'PNG'
 scene.render.resolution_x = 1280 if ARGS["quality"] == "preview" else 1920
 scene.render.resolution_y = 720 if ARGS["quality"] == "preview" else 1080
 scene.render.resolution_percentage = 100
 scene.render.film_transparent = False
+if scene.world is None:
+    scene.world = bpy.data.worlds.new('SG_World')
 scene.world.color = BG[:3]
 
 scene.frame_start = 1
