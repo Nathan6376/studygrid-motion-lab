@@ -1,0 +1,22 @@
+STUDYGRID V4A — STUDY VISIBILITY / CUT ISOLATION FIXTURE
+
+Source assumption
+- Current diagnostic groups and coarse visibility windows are derived from blender/scene_v4a.py at main 933eb618f162e4e8370c275221fefd71a95ed8d1. This file is a QA fixture, not product authority. If source names/timing change, update the fixture explicitly.
+
+Current study groups
+- Study 1, 0.0–5.6 s: SG_G_PROVISIONAL, Seed.
+- Study 2A, 5.8–8.6 s: A_Parent, A_Child.
+- Study 2C, 8.8–12.0 s: C_Parent, C_Child.
+- Study 3, 12.2–16.6 s: Chain_C, Chain_E, Chain_SE.
+- Study 4, 16.8–22.0 s: Doorway, Door_L, Door_R, Door_U, Door_D.
+- SG_Floor is a permitted global stage object and is not treated as cross-study contamination.
+
+Checks
+1. For any sampled frame inside one study window, a renderable object belonging to another study group is a failure.
+2. During inter-study gaps, no study-owned renderable object may remain visible.
+3. The fixture exposes immediately-before / at / after frames for each study-start cut so future render inspection can sample cut boundaries explicitly.
+4. Missing members within a study's own coarse window are allowed by default because the scene may intentionally reveal/hide them internally. A strict completeness mode is available for narrower sub-window contracts.
+5. Camera framing/easing is outside this fixture. A camera cut and a visibility schedule are tested as separate concerns.
+
+Deferred
+- Exact sub-window visibility schedules, final camera cuts and runtime WebGL visibility toggles should be bound after the selected mechanics/camera integration exists. This fixture deliberately does not redesign those systems.
