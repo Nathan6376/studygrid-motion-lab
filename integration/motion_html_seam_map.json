@@ -1,5 +1,5 @@
 {
-  "schema": "studygrid.motion_html_seam_map.v1",
+  "schema": "studygrid.motion_html_seam_map.v2",
   "status": "PREPARATION_ONLY",
   "selection": "NONE",
   "source_references": {
@@ -53,15 +53,19 @@
       "onFailure": "(error)=>void"
     },
     "methods": {
-      "mount": "allocate renderer/assets/listeners without navigating or stealing focus",
-      "start": "start full sequence only when allowed; must be idempotent",
-      "skip": "transition to shell-ready state immediately and safely",
-      "dispose": "cancel loads/RAF/listeners and release renderer resources",
+      "mount": "NEW -> MOUNTED then synchronously resolve reduced/capability/load path without navigating or stealing focus",
+      "start": "READY -> RUNNING only",
+      "skip": "LOADING|SLOW_LOAD|READY|RUNNING -> SKIPPED -> SHELL_READY; invalid sources reject",
+      "fail": "LOADING|SLOW_LOAD|READY|RUNNING -> FAILED -> FALLBACK_STATIC -> SHELL_READY; invalid sources reject",
+      "dispose": "any mounted/non-NEW state -> DISPOSED and release renderer/resources",
       "replaceAssetManifest": "swap approved G/3x3 asset/version without changing shell DOM contract",
       "getState": "return current adapter state"
     },
-    "events": ["MOUNTED","LOADING","READY","RUNNING","HANDOFF_READY","SKIPPED","REDUCED_MOTION","FAILED","DISPOSED"],
-    "handoff_rule": "HANDOFF_READY reveals/enables the existing welcome shell; it does not auto-navigate. Existing welcome controls remain the authority for /start, /tour and sign-in."
+    "canonical_states": ["NEW","MOUNTED","REDUCED_MOTION","LOADING","SLOW_LOAD","READY","RUNNING","FAILED","FALLBACK_STATIC","SKIPPED","HANDOFF_READY","SHELL_READY","DISPOSED"],
+    "canonical_events": ["MOUNT","REDUCED_MOTION_SELECTED","CAPABILITY_FAILURE","LOAD_BEGIN","SLOW_LOAD_THRESHOLD","ASSETS_READY","FAILURE","START","SKIP","COMPLETE","FALLBACK","SHELL_HANDOFF","DISPOSE"],
+    "transition_authority": "integration/fallback_state_machine.json",
+    "handoff_rule": "HANDOFF_READY -> SHELL_READY reveals/enables the existing welcome shell; it does not auto-navigate. Existing welcome controls remain authority for /start, /tour and sign-in.",
+    "verification_limit": "synthetic state/focus/layout tests do not prove real browser/device/AT/GPU behaviour"
   },
   "asset_manifest_contract": {
     "fields": {
@@ -79,7 +83,7 @@
     {"area":"welcome composition","R5":"single centred .welcome-shell width min(780px,100%)","R6":"late renderWelcome override widens shell to min(1120px,calc(100% - 32px)) and adds .r6-welcome-grid/.r6-welcome-panel","integration_effect":"motion host cannot use welcome-shell geometry as camera/mount geometry"},
     {"area":"responsive welcome","R5":"single-column welcome","R6":".r6-welcome-grid collapses to one column at max-width 900px; additional mobile rules at 620px","integration_effect":"host must bind to .welcome-page bounds, not content column count"},
     {"area":"renderWelcome definition","R5":"single function renderWelcome","R6":"original function remains plus late assignment override","integration_effect":"do not monkey-patch a specific renderWelcome body; future integration should use one common post-render sync hook"},
-    {"area":"product content","R5":"accepted baseline","R6":"adds instructor-first welcome/workspace and related overrides","integration_effect":"shell handoff must preserve whichever baseline General later authorizes; Q-B9 does not choose"}
+    {"area":"product content","R5":"accepted baseline","R6":"adds instructor-first welcome/workspace and related overrides","integration_effect":"shell handoff must preserve whichever baseline General later authorizes; Q-B11 does not choose"}
   ],
   "future_insertion_point": {
     "preferred_hook": "one explicit syncMotionEntry(route) call after route-specific render inside common render()",
@@ -87,11 +91,19 @@
     "mutation_status": "NOT_IMPLEMENTED"
   },
   "integration_blockers": [
-    {"kind":"BASELINE_DECISION","detail":"General must later choose the authorized HTML integration baseline because R5 is accepted while R6 remains unpromoted.","blocks_QB9":false,"blocks_future_integration":true},
-    {"kind":"MOTION_PACKAGE_APPROVAL","detail":"Candidate A/C selection and final approved motion package/asset manifest are intentionally absent.","blocks_QB9":false,"blocks_future_integration":true},
-    {"kind":"CANONICAL_ASSET","detail":"canonical G/final 3x3 asset identity must be supplied later; adapter contract already isolates this as manifest data.","blocks_QB9":false,"blocks_future_integration":true}
+    {"kind":"BASELINE_DECISION","detail":"General must later choose the authorized HTML integration baseline because R5 is accepted while R6 remains unpromoted.","blocks_QB11":false,"blocks_future_integration":true},
+    {"kind":"MOTION_PACKAGE_APPROVAL","detail":"Candidate A/C selection and final approved motion package/asset manifest are intentionally absent.","blocks_QB11":false,"blocks_future_integration":true},
+    {"kind":"CANONICAL_ASSET","detail":"canonical G/final 3x3 asset identity must be supplied later; adapter contract already isolates this as manifest data.","blocks_QB11":false,"blocks_future_integration":true},
+    {"kind":"REAL_RUNTIME_QA","detail":"browser/device/assistive-technology focus and GPU/WebGL recovery remain unverified synthetic-to-runtime holds.","blocks_QB11":false,"blocks_future_integration":true}
   ],
   "forbidden": [
-    "modify R5/R6 HTML","modify main motion scene","select A/C","navigate automatically on motion completion","gate product entry on animation completion","animate object scale as mechanics","animate camera lens/FOV in fixed-lens path","capture global keyboard focus in canvas"
+    "modify R5/R6 HTML",
+    "modify main motion scene",
+    "select A/C",
+    "navigate automatically on motion completion",
+    "gate product entry on animation completion",
+    "animate object scale as mechanics",
+    "animate camera lens/FOV in fixed-lens path",
+    "capture global keyboard focus in canvas"
   ]
 }
