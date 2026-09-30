@@ -1,0 +1,24 @@
+{
+  "candidate_identity": {"filename": null, "drive_id": null, "sha256": null, "bytes": null, "version": null},
+  "home": {"location_hash": null, "selected_class_id": null, "workspace_view": "professor_home", "full_roster_rows_rendered": null, "organization_controls_visible": null, "professor_home_visible": null, "class_library_visible": null},
+  "courses": [],
+  "today": [],
+  "attention_live_before": [],
+  "attention_live_after": [],
+  "attention_history_after": [],
+  "resolved_attention_id": null,
+  "organization_before_courses": [],
+  "organization_after_courses": [],
+  "drill_after": {"selected_class_id": null, "workspace_tabs": [], "professor_home_replaced_workspace": false},
+  "gateway": {
+    "assessment_revision_by_view": {"assessment_desk": null, "instructor_summary": null, "student_timeline": null, "delivery_plan": null},
+    "sources": [],
+    "stale": {"before": {}, "result": {}, "after": {}},
+    "unauthorized": {"before": {}, "result": {}, "after": {}},
+    "states_first": {},
+    "states_second": {}
+  },
+  "focus": {"student_sort": null, "student_filter": null, "task_canvas": null, "policy_return": null, "professor_home_action_return": null, "scroll_before": null, "scroll_after": null},
+  "responsive": [],
+  "runtime": {"page_errors": [], "console_errors": [], "external_http_requests": [], "duplicate_ids": null, "horizontal_overflow_px": null}
+}
