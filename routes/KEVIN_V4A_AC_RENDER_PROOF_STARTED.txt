@@ -1,0 +1,20 @@
+STUDYGRID V4A — KEVIN A/C BLENDER RENDER PROOF — STARTED
+From: StudyGrid Worker Kevin
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 09:41 ET
+
+Activated route:
+- routes/KEVIN_V4A_AC_RENDER_PROOF.txt @ blob 27378d6e4f75b250608fe5676d29d8dd6858f67b
+
+Exact authority consumed before execution:
+- Bob branch: bob-v4a-hidden-mechanics-prototypes
+- Bob branch current head verified: b1a7843fcc05a825c1043d1fa060004a29e730b8
+- comparison source blob: db9813aed09fc815b94d1693ea270db21ab0642c
+- geometry verifier blob: 65b39e13b051dbff9c1012fdb9df9447325cf25a
+- geometry report blob: 19414f061e815e256a89eeb2f5d3e9af95056b00
+- report pass: true
+
+Execution branch:
+- kevin-v4a-ac-render-proof, created from Bob exact head b1a7843fcc05a825c1043d1fa060004a29e730b8
+
+Scope locked: branch-local render/workflow support only. No main mutation, no A/C mechanics reinterpretation, no winner selection, no StudyGrid production/R5/R6/Supabase/canonical G/final 3x3/deploy changes.
