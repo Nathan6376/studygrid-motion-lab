@@ -1,0 +1,80 @@
+STUDYGRID V4A — CANDIDATE A / C INTEGRATION DELTA MAP
+Base scene: main 94078223a136d023e90aa105e708de4b143aab09
+Base scene blob: cb87739e3f254222e9e336eb0db5b25164f59bb8
+Comparison authority: b1a7843fcc05a825c1043d1fa060004a29e730b8
+Status: NON-CANONICAL / REVERSIBLE / NO OWNER WINNER SELECTED
+
+UNCHANGED IN BOTH VARIANTS
+- Study 1 G-thinning / seed diagnostic boundary.
+- Existing accepted Study 2A block at 5.8s–8.6s.
+- Cross-study isolation boundaries: 2C remains 8.8s–12.0s; Study 3 remains 12.2s–16.6s; doorway remains 16.8s–22.0s.
+- Study 3 nested causal chain and its keyframes.
+- Lighting/material setup: same SG_Green, roughness 0.33, bevel 0.055L, same lights/aim.
+- Doorway fixed-50mm physical camera translation and stop.
+- Canonical/provisional G boundary and no final 3x3 choreography.
+- No scale or opacity animation is introduced in either 2C mechanics block.
+
+VARIANT A — PATCH blender/v4a_variant_a.patch
+Objects / parent chain
+- C_Parent remains anchored at world (0.4,0,0).
+- C_Child parents directly to C_A_Hinge_FacePlane_Y.
+- Remove the old C_Hinge_Rise -> C_Hinge_Settle same-axis chain.
+Pivot / geometry
+- Hinge axis: world Y through parent-relative x=+0.50L, z=+0.50L.
+- Hinge world origin in scene: (0.4 + 0.50L, 0, +0.50L).
+- Child hinge-local centre: (+0.60L,0,-0.50L) = (L/2 + GAP,0,-L/2).
+- Proven relative start centre at -90°: (+1.00L,0,+1.10L).
+- Proven relative final centre at 0°: (+1.10L,0,0), leaving 0.10L raw face gap.
+Keyframes / visibility
+- Parent and child study-level visibility: 8.8s–12.0s.
+- Hinge holds -90° at 8.8s and 9.2s, then reaches 0° at 11.8s.
+- No child visibility/opacity/scale reveal inside the visible motion.
+Camera / floor
+- No camera change from current main.
+- No floor change from current main.
+Integration effect
+- Only the old invalid Study 2C mechanics block and its manifest line are replaced.
+- Immediate post-owner-choice application conflict: NONE at static/source level.
+
+VARIANT C — PATCH blender/v4a_variant_c.patch
+Objects / parent chain
+- C_Parent remains anchored at world (0.4,0,0).
+- C_Hinge1_BackRight_Z is the first parent hinge.
+- C_Hinge2_BackTop_LocalY is parented to H1.
+- C_Child is parented to H2.
+Pivot / geometry
+- H1 world origin: parent-relative (+0.50L,+0.50L,0), world-Z axis.
+- H2 local origin inside H1: (0,+0.60L,+0.50L).
+- C_Child local centre inside H2: (-0.50L,0,-0.50L).
+- Start child centre: parent-relative (0,+1.10L,0), genuinely 0.10L behind parent.
+- Stage-1 end: parent-relative (+1.10L,+1.00L,0).
+- Stage-2/final: parent-relative (+1.10L,0,0), leaving 0.10L raw face gap.
+Keyframes / visibility
+- Parent and child study-level visibility: 8.8s–12.0s. Both appear together at 8.8s.
+- H1 world-Z: 0° hold at 8.8s/9.2s -> -90° at 10.5s.
+- H2 local-Y (world-X after H1): 0° hold at 8.8s/10.5s -> -90° at 11.8s.
+- No child opacity or scale animation. The 8.8s study-level visibility toggle occurs while the child is geometrically occluded from the dedicated exact-front camera.
+Camera
+- Current 2C oblique cut at 8.7s cannot honestly hide an equal-size child placed 1.10L directly behind the parent.
+- Variant C therefore changes ONLY the 2C camera cut to fixed-50mm exact front: camera (0.4,-15,0) targeting parent (0.4,0,0).
+- The existing 12.1s Study-3 cut and all later camera keys remain untouched.
+Floor / environment
+- The proven C sweep descends below the current z=-0.75L floor during stage 2.
+- To preserve all unrelated accepted floor reads, Variant C does NOT move the global floor. It hides the floor only for the 2C interval: visible through 8.7s, hidden 8.8s–12.0s, visible again at 12.1s. Existing doorway hide at 16.7s remains.
+Integration conflict
+- MATERIAL BUT BOUNDED: Candidate C cannot simultaneously keep the old oblique 2C camera and prove a fully occluded equal-size rear-stowed start. The exact-front 2C-only cut is required by the proven C geometry.
+- The current z=-0.75L floor also conflicts with the C sweep if left visible; the 2C-only floor hide resolves that without changing unrelated study geometry.
+- No other static/source integration conflict found.
+
+STATIC / GEOMETRY SUMMARY
+- Exact base text independently reconstructed and its Git blob SHA-1 matched cb87739e3f254222e9e336eb0db5b25164f59bb8 before applying either variant.
+- Full applied Variant A source: Python compile PASS; SHA-256 23472766ba37907a0f12a66bd50f9aa4cfb7029afb09d974fc8f53818ebc3989.
+- Full applied Variant C source: Python compile PASS; SHA-256 931214a722814a90d41a3fa68ce5c35dca06f3bf61f8b59bd30371310ebd3360.
+- Candidate A analytic sweep: 721 sampled states, 0 parent/child OBB intersections, minimum positive SAT separation ~=0.10L, final gap 0.10L.
+- Candidate C stage 1: 721 sampled states, 0 OBB intersections, minimum positive SAT separation ~=0.10L.
+- Candidate C stage 2: 721 sampled states, 0 OBB intersections, minimum positive SAT separation ~=0.10L; final gap 0.10L.
+- Exact-front C start projection: farther child silhouette is smaller than parent silhouette and fully contained; no opacity/scale cheat required.
+- Blender visual render is NOT part of this Bob package; Kevin owns the separate visual-proof lane.
+
+PROMOTION
+Neither patch is selected, promoted, merged, deployed, or canonical. Apply only after explicit owner hinge selection and coordinator reconciliation.
