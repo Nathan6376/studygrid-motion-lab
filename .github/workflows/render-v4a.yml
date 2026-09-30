@@ -1,0 +1,73 @@
+name: Render StudyGrid V4A
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "blender/**"
+      - ".github/workflows/render-v4a.yml"
+  workflow_dispatch:
+    inputs:
+      quality:
+        description: Render quality
+        type: choice
+        required: true
+        default: preview
+        options:
+          - preview
+          - review
+
+permissions:
+  contents: read
+
+concurrency:
+  group: studygrid-v4a-render
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Blender + ffmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y blender ffmpeg
+
+      - name: Show Blender version
+        run: blender --version
+
+      - name: Build and render V4A
+        env:
+          SG_QUALITY: ${{ inputs.quality || 'preview' }}
+        run: |
+          mkdir -p output
+          blender -b --factory-startup \
+            --python blender/scene_v4a.py \
+            -- \
+            --output-dir "$GITHUB_WORKSPACE/output" \
+            --quality "$SG_QUALITY"
+
+      - name: Encode preview MP4
+        run: |
+          ffmpeg -y \
+            -framerate 30 \
+            -i output/frames/frame_%04d.png \
+            -c:v libx264 -pix_fmt yuv420p -crf 20 \
+            output/studygrid-v4a-preview.mp4
+
+      - name: Upload owner-QA artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: studygrid-v4a-owner-qa
+          path: |
+            output/studygrid-v4a-preview.mp4
+            output/stills/*.png
+            output/studygrid-v4a.blend
+            output/qa_manifest.txt
+          retention-days: 3
+          if-no-files-found: error
