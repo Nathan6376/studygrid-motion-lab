@@ -1,0 +1,18 @@
+STUDYGRID — STUART Q-S9 CORRECTED R6 FOCUS + COMPACT REGRESSION REACCEPTANCE — STARTED
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 16:52 ET
+Lifecycle: STARTED
+
+Consumed current queues/STUART_QUEUE.txt at sha 8b24ab192a6641c8bf0a0218b2bb6c670b70199f and current General lifecycle trace through RT-20260930-1650-CF0040-QB13-CONSUME-QS9-RELEASE.
+
+Exact target specified by queue:
+- StudyGrid-CF0042-QB13-r6-focusfix.html
+- Drive 10ISHnuiaZTIispYlRSkO81h__J63x-ND
+- expected SHA-256 9cd7b6dd37caac46dcab8f049bd4f0e218e0b027d60bd89cccbc9b547b43e8fe
+- expected bytes 954307
+- expected APP_VERSION v7.16-cf0042-qb13-r6-focusfix
+
+Execution scope: independent provider identity verification; direct QS8-F1 sort/filter focus reproduction; direct QS8-F2 confirmation focus/scroll reproduction; positive keyboard regressions; compact registry/runtime/responsive/regression smoke; exact R6→Q-B13 bounded diff verification.
+
+Boundaries: no canonical promotion; no product/backend/auth/Supabase/deployment mutation; no Kevin/Blender/A-C work.
