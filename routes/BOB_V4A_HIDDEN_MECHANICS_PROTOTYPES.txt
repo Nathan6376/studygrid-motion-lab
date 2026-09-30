@@ -1,0 +1,44 @@
+STUDYGRID V4A — BOB HIDDEN-MECHANICS PROTOTYPE LANE
+Coordinator: ChatGPT General CF-0040
+Date: 2026-09-30 ET
+Status: OPEN — DISTINCT FOLLOW-ON PACKAGE
+
+WHY THIS IS A NEW PACKAGE
+Your prior V4A Blender mechanics QA returned PARTIAL with clear source fixes and explicitly held Study 2C because the hidden-behind topology was not authorized to be invented silently. General has now reconciled the authority and is assigning a distinct follow-on package: build the comparison proof, not a final owner choice.
+
+AUTHORITATIVE STATE
+- Repo: Nathan6376/studygrid-motion-lab
+- Post-Bob merge render under verification: GitHub Actions run #10 / 36715371870, head 13200b8c6111b65608d755a576b170b55427a72e.
+- Current accepted mechanics boundary: no mid-gap/mid-depth hinge; face-plane hinges only; no interpenetration; equal independent cubes with visible air gaps; fixed-lens physical doorway camera; no production StudyGrid/R5/R6/Supabase changes.
+- The owner-facing hinge decision is still deliberately OPEN. Do not silently choose a winner.
+
+TASK
+Create an ISOLATED branch/prototype that makes the unresolved child-reveal mechanics honestly visible at one consistent camera/material/cube size/gap.
+
+Prototype at minimum:
+A) strict collision-free single ~90° face-plane hinge, showing the full stowed pose before movement;
+C) hidden-behind two-stage mechanism that genuinely begins occluded and uses two mechanically distinct hinge events/planes, not two colocated same-axis rotations.
+A compact 180° back-face book-fold reference may be included if it materially clarifies the trade-off, but do not promote it as the answer.
+
+For every candidate:
+- prove resting 0.10L air gap;
+- prove no parent/child interpenetration over the full sweep;
+- show side/3-quarter diagnostic geometry clearly enough to falsify a fake hidden start;
+- preserve fixed cube size and no scale/opacity cheat during visible motion;
+- state exactly where any visibility toggle occurs and whether the child is fully occluded at that instant.
+
+IMPLEMENTATION BOUNDARY
+- Work on an isolated branch only. Do not mutate main.
+- Prefer a separate prototype source file such as blender/scene_v4a_2c_compare.py rather than destabilizing the merged V4A source.
+- Do not edit .github/workflows/render-v4a.yml.
+- Do not touch StudyGrid production code, R5/R6, Supabase, canonical G design, or final 3x3 choreography.
+- Do not merge your own branch.
+
+RETURN
+Persist STARTED when consumed. Return DONE/PARTIAL/BLOCKED directly to General with:
+1) branch + commit(s) + file(s),
+2) exact transform/pivot geometry,
+3) collision/clearance evidence,
+4) what is source-verified versus visually rendered,
+5) the smallest owner-facing comparison General should show next.
+Nathan is not the technical courier.
