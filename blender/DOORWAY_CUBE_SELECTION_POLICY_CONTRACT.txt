@@ -1,0 +1,18 @@
+STUDYGRID V4A — DOORWAY CUBE-SELECTION POLICY FIXTURE
+
+Scope
+- Isolated policy/test fixture only. It does not integrate with StudyGrid, Blender camera motion, hinge mechanics, tutorial handoff, backend, R5/R6, Supabase, deployment, canonical G, or final choreography.
+
+Locked behaviour
+1. Doorway target selection is logically separate from camera movement and object scale.
+2. Runtime may select among the currently eligible cube IDs.
+3. When more than one cube is eligible and the immediately previous selection is still eligible, that cube is excluded for the next run.
+4. With one eligible cube, repeat is unavoidable and therefore allowed.
+5. A stale/invalid previous cube does not constrain the current run.
+6. Tests may pass an integer seed for deterministic replay. Future runtime integration may pass a long-lived RNG instead. Passing both is an error.
+7. Eligible IDs must be non-empty and unique.
+
+Assumptions deferred to integration
+- The product layer owns which cubes are eligible for a run and how selection history is persisted.
+- This fixture does not choose a visual face, camera path, hinge variant, reveal order, or tutorial timing.
+- Statistical distribution beyond uniform choice within the permitted pool is not specified here.
