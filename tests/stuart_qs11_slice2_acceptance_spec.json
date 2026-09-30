@@ -1,0 +1,48 @@
+{
+  "schema": "studygrid.qs11.acceptance-spec.v1",
+  "status": "PREP_ONLY_NOT_CANDIDATE_EVIDENCE",
+  "accepted_slice1": {
+    "filename": "StudyGrid-CF0042-QB14-local-product-gateway.html",
+    "drive_id": "1S4eIU6VT2pnNQ4h5SHEGhJ3sWb7BLU6W",
+    "sha256": "fcf89e5a31063746272a10bbfba72d605f745d01f797c75fa33697923dde6bb1",
+    "bytes": 965519,
+    "version": "v7.17-cf0042-qb14-local-product-gateway",
+    "registry": {"revision": 11, "entries": 237, "unique_ids": 237}
+  },
+  "gate_ids": [
+    "ID-01","ID-02","ID-03","HOME-01","HOME-02","HOME-03","HOME-04",
+    "ATTN-01","ATTN-02","ATTN-03","ATTN-04","CLASS-01","CLASS-02","CLASS-03",
+    "ORG-01","ORG-02","ORG-03","ORG-04","DRILL-01","DRILL-02","DRILL-03",
+    "GW-01","GW-02","GW-03","GW-04","GW-05","GW-06",
+    "REG-01","REG-02","REG-03","REG-04","REG-05","REG-06","REG-07",
+    "RESP-01","RESP-02","EDGE-01","EDGE-02","EDGE-03","EDGE-04",
+    "SCOPE-01","SCOPE-02","SCOPE-03","SCOPE-04","SCOPE-05","HOLD-01"
+  ],
+  "adversarial_cases": [
+    "no_current_day_schedule",
+    "all_attention_resolved_history_retained",
+    "duplicate_course_colours_and_labels",
+    "six_course_hundreds_student_scale",
+    "sort_and_pin_population_invariance",
+    "stale_cross_course_update_no_mutation",
+    "unauthorized_cross_course_update_no_mutation",
+    "mobile_large_count_overflow",
+    "professor_home_action_focus_restoration"
+  ],
+  "scope_exclusions": [
+    "slice3_setup_autofill_human_timing",
+    "slice4_enrolment",
+    "backend_auth_supabase_network_provider_deploy",
+    "blender_motion_a_c",
+    "canonical_promotion"
+  ],
+  "hold_without_direct_evidence": [
+    "physical_iPad_Safari_WebKit",
+    "VoiceOver",
+    "Apple_Pencil_physical_interaction",
+    "physical_hardware_keyboard",
+    "true_200_percent_zoom",
+    "full_WCAG",
+    "hosted_origin_storage_cross_tab"
+  ]
+}
