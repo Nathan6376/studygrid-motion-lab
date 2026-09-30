@@ -1,6 +1,6 @@
 STUDYGRID — STUART WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 17:27 ET
+Updated: 2026-09-30 17:46 ET
 Queue owner: General
 Worker: Stuart
 
@@ -8,32 +8,31 @@ PULL RULE
 When Nathan directly tells Stuart to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item. Do not pull another worker's queue and do not create owner-routing prompts; return durable technical results to General.
 
 CURRENT CONTEXT
-- Q-S8 independent R6 acceptance: DONE.
+- Q-S8 exact R6 acceptance: DONE.
 - Q-S9 corrected R6 focus/regression reacceptance: DONE / PASS.
-- General accepted corrected baseline pointer: routes/GENERAL_ACCEPTED_CORRECTED_PRODUCT_BASELINE_QB13.txt.
-- Bob Q-B14 Slice 1 Local Product Gateway / Fixture Truth Boundary: DONE. Durable direct return Drive 15b9r9rCLnZnk_567lX8TbMJkiaRJgW3I.
-- Exact candidate to accept: StudyGrid-CF0042-QB14-local-product-gateway.html / Drive 1S4eIU6VT2pnNQ4h5SHEGhJ3sWb7BLU6W / SHA-256 fcf89e5a31063746272a10bbfba72d605f745d01f797c75fa33697923dde6bb1 / 965519 bytes / APP_VERSION v7.17-cf0042-qb14-local-product-gateway.
-- Provider metadata independently confirms exact filename, Drive identity and 965519-byte size.
-- Bob verification artifact Drive 1DDlnnESIURUjWGcezQ7IcKBuRfBRqikg reports 82/82 PASS and binds exact accepted Q-B13 baseline to exact Q-B14 candidate.
-- General independently parsed the verification artifact: typed gateway/static/identity/command/state checks PASS; no added fetch/XMLHttpRequest/WebSocket/createClient/provider/Supabase/Professor Home/Blender/A-C surface; stale and unauthorized commands reject without mutation; shared assessment revision stays aligned; Q-B13 focus repairs, roving tabs, policy dialog, duplicate-ID and responsive smoke remain PASS.
-- Existing physical-device/hosted/full-accessibility HOLDs remain later gates and are not promoted by this package.
-- Kevin/Blender/intro remains independent and does not gate Q-S10.
+- Q-S10 Slice 1 independent acceptance: DONE / PASS on stuart-qs10-slice1-acceptance @ aebf337b63a1fa53f1477686385cd06c90249762.
+- Q-S10 independently verified exact Q-B14 candidate Drive 1S4eIU6VT2pnNQ4h5SHEGhJ3sWb7BLU6W / SHA-256 fcf89e5a31063746272a10bbfba72d605f745d01f797c75fa33697923dde6bb1 / 965519 bytes / v7.17-cf0042-qb14-local-product-gateway.
+- Q-S10 independent suite: 152/152 PASS. Typed/frozen gateway, explicit source identity, shared assessment revision r1→r2→r3, bounded commands, stale/unauthorized no-mutation, deterministic states/errors, Q-B13 focus/dialog/roving behavior, fixtures 6/6, responsive 18/18 and registry rev11 237/237 all PASS within tested scope.
+- General accepted Slice 1 pointer published at routes/GENERAL_ACCEPTED_SLICE1_QB14.txt, main commit 3ec67d0324b933377da12042711b5d53db891824.
+- Bob Q-B15 Slice 2 Professor Home / Multi-Course Scale is now AVAILABLE and is the active product implementation lane.
+- Existing physical-device/hosted/full-accessibility HOLDs remain later gates. Kevin/Blender/intro remains separate and non-blocking for product work.
 
-Q-S10 — SLICE 1 INDEPENDENT ACCEPTANCE
-Eligibility: AVAILABLE NOW if no newer Stuart task is STARTED.
-Purpose: independently accept/reject the exact Q-B14 Local Product Gateway / deterministic fixture truth boundary without conflating it with backend or motion.
-Requirements:
-- Fetch exact provider candidate Drive 1S4eIU6VT2pnNQ4h5SHEGhJ3sWb7BLU6W and independently verify SHA-256 fcf89e5a31063746272a10bbfba72d605f745d01f797c75fa33697923dde6bb1, 965519 bytes and APP_VERSION v7.17-cf0042-qb14-local-product-gateway before testing.
-- Verify derivation from General's exact accepted Q-B13 baseline, not R6 or another candidate.
-- Confirm one typed frontend product gateway and deterministic local fixture adapter/read-model layer exist with zero network/Supabase/auth/provider dependency.
-- Verify explicit section identity and source_revision_id/source_block_id + display_locator on the relevant local source/assessment truth.
-- Verify one assessment revision is consumed consistently across Assessment Desk, instructor summary/Overview, student timeline and reminder/announcement plan before and after bounded commands.
-- Verify migrated authoritative fixture writes go through bounded commands, stale/unauthorized attempts fail closed without mutation, and command errors map deterministically.
-- Verify ready/loading/empty/error/stale_revision/unauthorized local states are deterministic and bounded.
-- Re-run compact instructor/student/focus/responsive/registry regression, including Q-B13 sort/filter and task-canvas focus behaviour, roving tabs, policy dialog focus/Escape return, duplicate-ID and overflow smoke.
-- Confirm no professor-scale Slice 2+ redesign, backend/auth/Supabase/deploy/network/provider, Blender/motion/A-C or canonical promotion slipped into Slice 1.
-- Preserve physical-device/hosted/full-accessibility items as HOLD unless direct evidence exists; do not promote headless/synthetic checks.
-Return: PASS/FAIL/HOLD with exact provider identity, independent evidence, bounded-diff conclusion and smallest correction if needed directly to General.
+Q-S11 — SLICE 2 PROFESSOR HOME / MULTI-COURSE INDEPENDENT ACCEPTANCE
+Eligibility: BLOCKED until Bob Q-B15 returns a provider-visible exact Slice 2 candidate with identity/test evidence and General confirms no overlapping newer Stuart task is STARTED.
+Purpose: independently accept/reject the professor-scale home/multi-course slice without conflating it with later setup/autofill/enrolment/backend/motion work.
+Requirements once unblocked:
+- Verify exact provider candidate identity/SHA/bytes/version and exact derivation from General's accepted Slice 1 pointer.
+- Verify Professor Home supports approximately six-course/hundreds-student deterministic fixture scale without degenerating into a long-scroll dashboard.
+- Verify Today / Now & next derives from confirmed schedule fixture and never auto-opens, steals context or auto-navigates.
+- Verify cross-course Needs your attention contains unresolved actionable items only; resolved items leave live attention and remain visible in local history/audit fixture state.
+- Verify class library exposes explicit class name/code/section and useful student/open-question context; colour is never the sole identifier.
+- Verify optional pin/favourite/colour/label/sort behavior is transparent and does not introduce opaque priority/risk ranking.
+- Verify drill-in preserves the existing selected-class R6 workspace rather than replacing its accepted interaction architecture.
+- Verify authoritative state still flows through the accepted Q-B14 typed local gateway/read-model/command boundary with explicit section/source/revision identity and shared assessment revision intact.
+- Re-run compact Slice 1 gateway/command/state/focus/registry/responsive regression plus representative desktop/tablet/phone Professor Home checks.
+- Confirm no Slice 3 setup/autofill/human-timing, Slice 4 enrolment, B/C design-gated features, backend/auth/Supabase/network/provider/deploy, Blender/motion/A-C or canonical promotion slipped into Slice 2.
+- Preserve physical-device/hosted/full-accessibility items as HOLD unless direct evidence exists.
+Return: PASS/FAIL/HOLD with exact evidence and smallest correction if needed directly to General.
 
 Q-S2 — FULL-CONTEXT A/C VARIANT FIDELITY AUDIT
 Eligibility: BLOCKED until Kevin produces a durable valid full-context A+C proof artifact.
@@ -42,4 +41,4 @@ Q-S3 — EXPORT/RUNTIME ACCEPTANCE
 Eligibility: BLOCKED until Kevin produces candidate GLB export-smoke or later selected-candidate runtime artifacts.
 
 STOP CONDITION
-Execute Q-S10 now. After Q-S10, stop unless General publishes a newly eligible distinct task. Do not invent filler.
+No Stuart product task is immediately eligible until Bob Q-B15 returns an exact candidate. Wait rather than invent filler. When Q-S11 becomes eligible, execute it before later product-slice acceptance work.
