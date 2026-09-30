@@ -1,0 +1,91 @@
+STUDYGRID V4A — STUART INDEPENDENT ACCEPTANCE — DONE
+From: Stuart / StudyGrid Independent Acceptance
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 08:59 ET
+Status: DONE — independent post-Bob V4A mechanics/owner-QA evaluation complete
+
+BOUNDARY
+QA only. No Blender/workflow/main product source, StudyGrid production, R5/R6, Supabase, canonical G, final 3x3 choreography or owner hinge choice was changed. The only repository writes by Stuart are this lane’s required STARTED/DONE lifecycle records under routes/.
+
+EXACT EVIDENCE BIND
+- Activated route: routes/STUART_V4A_INDEPENDENT_ACCEPTANCE.txt @ blob 18130952a78bf6e14783e2947c538d6b405dd857.
+- STARTED: routes/STUART_V4A_INDEPENDENT_ACCEPTANCE_STARTED.txt, commit fde6c216d79066f661abf8ad4a30f2a2039d5816.
+- Post-Bob mechanics source under test: commit 13200b8c6111b65608d755a576b170b55427a72e.
+- GitHub Actions run #10 / 36715371870: completed / success, head SHA exactly 13200b8c6111b65608d755a576b170b55427a72e.
+- Artifact: studygrid-v4a-owner-qa / ID 11096826897 / GitHub digest sha256:61b50e5d7b16b94e4e5ba0acbe5010ab165c8e4a2d9ae736c8c31d6bb4087290. Stuart downloaded and independently rehashed the ZIP to the same SHA-256.
+- Artifact runtime source SHA-256: af7425d17a4b64fd62ecb961e0a4da8ef00ffd7405312686f04d90c101e6f144; local rehash matched the artifact receipt.
+- Preview MP4: H.264, 800x450, 8 fps, 176 frames, 22.0 s. Workflow changes preview source only by bounded FPS/render-sample substitutions; mechanics remain the commit-13200 source.
+
+ACCEPTANCE MATRIX
+
+STUDY 1 — PASS (MECHANICS BOUNDARY ONLY); FINAL G/SEED DESIGN REMAINS HOLD
+Evidence:
+- Source changes curve bevel_depth 0.22 -> 0.11 while SG_G_PROVISIONAL whole-object scale is not used for thinning.
+- Run #10 0.8 s vs 2.2 s visibly shows stroke thinning without whole-G shrink.
+- Seed is a separate cube scaling proxy and is visually distinct from the thinning operation.
+- Artifact manifest explicitly labels the G PROVISIONAL and the seed closure a temporary non-production proxy.
+Disposition: accept the diagnostic distinction; do not treat canonical G or G->seed topology as approved.
+
+STUDY 2A — PASS
+Evidence:
+- A_Child is defined in A_Hinge local space with no parent-inverse cancellation; hinge sweeps -90° -> 0° around Y.
+- Independent transform/SAT sampling across 181 sweep positions found no parent/child OBB intersection.
+- Final centres are 1.10L apart on the resting axis, therefore the raw cube-face gap is exactly 0.10L before bevel treatment.
+- Run #10 6.2 s -> 7.1 s -> 8.0 s reads as a compact local fold into an adjacent cube, not the pre-fix large orbit. The final air gap remains visibly legible.
+Disposition: post-Bob 2A mechanics accepted for this diagnostic gate.
+
+CROSS-STUDY ISOLATION — PASS
+Evidence:
+- Source visibility windows no longer overlap: Study 1 ends by 5.6 s before 2A at 5.8 s; 2A ends 8.6 s before 2C at 8.8 s; 2C ends 12.0 s before Study 3 at 12.2 s; Study 3 ends 16.6 s before doorway at 16.8 s.
+- Run #10 transition frames show clean handoffs/blank separation rather than adjacent-study cubes contaminating the next diagnostic.
+Disposition: contamination defect from run #9 is visually cleared.
+
+STUDY 2C — FAIL; OWNER HINGE DECISION REMAINS HOLD
+Evidence:
+- The child is not hidden/occluded at the intended start. Parent appears from 8.8 s; when the child becomes visible at 9.1 s it is already fully readable beside the parent.
+- C_Hinge_Rise and C_Hinge_Settle both actuate about Y; C_Hinge_Settle is parented at local origin to the first hinge. The resulting mechanism is a compound same-axis sweep, not two mechanically distinct hinge planes.
+- Independent transform reconstruction places the start child centre at approximately (1.50, 0, 0) versus parent (0.40, 0, 0): an exposed adjacent cube, not a genuinely occluded child.
+- Final child centre is approximately (0.40, 0, -1.00), only 1.00L centre separation from the parent, so the raw cube faces have 0.00L gap rather than the 0.10L contract gap.
+- The floor remains at z=-0.75 during 2C while the settled child spans approximately z=-1.50..-0.50, so it intersects the floor. Run #10 around 11.2-11.8 s visibly presents the lower child as a flattened/clipped wedge beneath the parent.
+Missing proof required before acceptance:
+1) child fully hidden/occluded at the intended start without opacity/scale cheating;
+2) two genuinely distinct hinge events/planes or another explicitly accepted honest geometry;
+3) full-sweep no-interpenetration evidence, including environment/floor;
+4) correct resting air gap;
+5) a diagnostic camera angle that lets the owner falsify a fake hidden start.
+Disposition: reject current 2C as a valid hinge candidate. Do not infer owner preference from this failure.
+
+STUDY 3 — PASS
+Evidence:
+- Chain_E is parented to Chain_Hinge_E; Chain_Hinge_SE is parented to Chain_E; Chain_SE is parented to Chain_Hinge_SE. E therefore physically carries SE before SE’s own actuation.
+- Independent pairwise OBB/SAT sampling across both actuation phases found no C/E, C/SE or E/SE intersections in 362 sampled states.
+- Final centres preserve the intended 0.10L resting separations: C=(2.9,0,0), E=(4.0,0,0), SE=(4.0,-1.1,0).
+- Run #10 12.7-14.0 s shows E and SE moving as a carried assembly; 14.1-15.5 s then shows SE’s distinct second hinge. It does not read as the pre-fix independent in-place spin.
+Disposition: causal three-cube diagnostic accepted.
+
+DIAGNOSTIC CAMERA — PASS
+Evidence:
+- Source explicitly sets pre-doorway camera keyframes to CONSTANT interpolation and eases only keys at/after the 17.0 s doorway motion start.
+- Run #10 changes study framing as cuts/holds; no visible between-study drift is present in the inspected sequence.
+Disposition: diagnostic cut/hold contract accepted.
+
+LIGHTING / MATERIAL READABILITY — PASS
+Evidence:
+- Three area lights are explicitly aimed at a stable scene target; material remains non-metallic with roughness 0.33 and cube bevel target 0.055L.
+- Run #10 stills preserve separate face planes, bevel highlights, air gaps and contact/shadow cues in Studies 2A, 3 and doorway. Treatment is soft/restrained rather than neon, gummy or specular-flashy.
+Disposition: readable enough for owner mechanics comparison.
+
+STUDY 4 / DOORWAY — PASS
+Evidence:
+- Lens remains 50 mm at doorway keys. Camera physically translates from (3.8,-8.2,3.2) to (0.3,-2.0,0.3); no FOV/lens zoom or object-scale enlargement is used.
+- Diagnostic floor is hidden before the doorway study, so the lower cube is no longer presented intersecting/clipped by the floor. Run #10 doorway-start still shows the full lower cube.
+- At the 21.0 s stop the camera remains outside the central cube: camera y=-2.0 while the cube front face is at y=-0.5, leaving about 1.5L before the front plane at that x/z position. The render holds before any mesh-entry state.
+Disposition: fixed-lens physical approach and stop/handoff accepted.
+
+OVERALL
+DONE. The post-Bob run #10 clears the targeted mechanics defects for Study 1’s diagnostic boundary, Study 2A, cross-study isolation, Study 3, diagnostic camera, lighting/material readability and doorway. Study 2C is a concrete FAIL and remains excluded from owner hinge acceptance.
+
+SMALLEST NEXT OWNER-FACING DECISION
+Do not ask Nathan to choose the final hinge from run #10. First show one mechanically honest corrected 2C comparison beside the now-valid 2A at the same cube size/material/camera/gap. Only after 2C proves true hidden start + distinct mechanics + clearance should Nathan receive the single visual hinge-choice decision.
+
+Nathan is not the technical courier.
