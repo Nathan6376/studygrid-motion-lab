@@ -1,0 +1,55 @@
+STUDYGRID — Q-B2 DOORWAY CAMERA HANDOFF SAFETY CONTRACT
+Status: ISOLATED ANALYTIC/QA FIXTURE — NOT FINAL CHOREOGRAPHY
+
+READ-ONLY INPUT BOUNDARY
+- Doorway selection/randomization is NOT implemented or modified here.
+- The caller supplies the already-selected cube face marker: name, face centre and outward face normal.
+- The fixture is invariant to which eligible doorway cube was selected.
+
+LOCKED CAMERA CONTRACT
+- Perspective camera only.
+- Vertical FOV is fixed through the entire approach.
+- Selected cube/object scale remains exactly (1,1,1).
+- Apparent enlargement comes only from reduced camera-to-face distance.
+- Camera path is a translation along the selected face normal; look target is the selected face marker.
+- Camera never crosses the selected cube face.
+
+SAFE HANDOFF ENVELOPE
+For cube edge L, bevel b, vertical FOV vfov and viewport aspect a:
+
+d_cover = (L/2 - b) / (max(1,a) * tan(vfov/2))
+d_near_min = near_clip + near_margin
+safe_handoff_distance = max(d_cover, d_near_min)
+
+The handoff completes at or before safe_handoff_distance. The approach path terminates there; it does not continue into or through the mesh.
+
+DEFAULT QA PARAMETERS
+L             1.000
+bevel        0.055 L
+vfov          40 degrees, fixed
+near_clip    0.100 L
+near_margin  0.020 L
+start        8.000 L from selected face
+cube scale   (1,1,1)
+
+ANALYTIC DEFAULT ENVELOPES
+16:9  d_cover ≈ 0.687728 L; safe handoff ≈ 0.687728 L
+4:3   d_cover ≈ 0.916971 L; safe handoff ≈ 0.916971 L
+3:4   d_cover ≈ 1.222627 L; safe handoff ≈ 1.222627 L
+9:16  d_cover ≈ 1.222627 L; safe handoff ≈ 1.222627 L
+All are comfortably outside d_near_min = 0.120000 L under the default QA parameters.
+
+STATIC FAILURE CASES
+FAIL if any of these become true:
+- object_scale_fake: selected cube scale changes from unit scale;
+- fov_change: vfov is animated/changed during the approach;
+- handoff_after_cover_boundary: camera proceeds closer than the safe handoff marker before handoff completes;
+- near_plane_clip_at_handoff: handoff distance is inside near_clip + margin;
+- camera_crosses_face: signed distance to selected face is <= 0;
+- inside_mesh_failure: camera is allowed to enter the cube volume before handoff.
+
+VERIFY
+Run blender/verify_doorway_camera_handoff.py. It checks four representative face normals across 16:9, 4:3, 3:4 and 9:16 aspect ratios, fixed FOV, unit cube scale, monotonic physical camera approach, near-plane safety, outside-mesh safety and exact terminal handoff distance.
+
+BOUNDARY
+Passing this fixture is analytic/static evidence only. It does not claim Blender render acceptance, browser/WebGL parity, motion-blur/DOF quality, physical-device performance or owner visual approval. Main, StudyGrid production, R5/R6, backend/auth/Supabase, deployment and final choreography remain untouched.
