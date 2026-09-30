@@ -152,21 +152,32 @@ def damped_interp(obj):
         for kp in fc.keyframe_points:
             kp.interpolation = "BEZIER"
             kp.easing = "AUTO"
+            kp.handle_left_type = "AUTO_CLAMPED"
+            kp.handle_right_type = "AUTO_CLAMPED"
+
+
+def point_object(obj, target):
+    direction = Vector(target) - obj.location
+    obj.rotation_euler = direction.to_track_quat("-Z", "Y").to_euler()
 
 
 def point_camera(cam, target):
-    direction = Vector(target) - cam.location
-    cam.rotation_euler = direction.to_track_quat("-Z", "Y").to_euler()
+    point_object(cam, target)
 
 
-def set_constant_before_cut(obj, cut_frame):
-    """Prevent camera from drifting between diagnostic studies."""
+def set_camera_diagnostic_interpolation(obj, motion_start_frame):
+    """Hold diagnostic framings between cuts; only the doorway approach is eased."""
     if not obj.animation_data or not obj.animation_data.action:
         return
     for fc in obj.animation_data.action.fcurves:
         for kp in fc.keyframe_points:
-            if abs(kp.co.x - cut_frame) < 0.5:
+            if kp.co.x < motion_start_frame - 0.5:
                 kp.interpolation = "CONSTANT"
+            else:
+                kp.interpolation = "BEZIER"
+                kp.easing = "AUTO"
+                kp.handle_left_type = "AUTO_CLAMPED"
+                kp.handle_right_type = "AUTO_CLAMPED"
 
 # -----------------------
 # Stage / camera / lights
@@ -175,6 +186,18 @@ bpy.ops.mesh.primitive_plane_add(size=40, location=(0, 0, -0.75))
 floor = bpy.context.object
 floor.name = "SG_Floor"
 floor.data.materials.append(FLOOR_MAT)
+# The doorway cross extends below the floor plane; hide the diagnostic floor at
+# that cut rather than render mesh penetration as if it were valid mechanics.
+floor.hide_render = False
+floor.hide_viewport = False
+floor.keyframe_insert("hide_render", frame=F(16.6))
+floor.keyframe_insert("hide_viewport", frame=F(16.6))
+floor.hide_render = True
+floor.hide_viewport = True
+floor.keyframe_insert("hide_render", frame=F(16.7))
+floor.keyframe_insert("hide_viewport", frame=F(16.7))
+
+LIGHT_TARGET = (0.6, 0.0, 0.0)
 
 bpy.ops.object.light_add(type="AREA", location=(-4, -4, 6))
 key = bpy.context.object
@@ -182,18 +205,21 @@ key.name = "SG_Key"
 key.data.energy = 900
 key.data.shape = "DISK"
 key.data.size = 5.0
+point_object(key, LIGHT_TARGET)
 
 bpy.ops.object.light_add(type="AREA", location=(4, -2, 3))
 fill = bpy.context.object
 fill.name = "SG_Fill"
 fill.data.energy = 250
 fill.data.size = 4.0
+point_object(fill, LIGHT_TARGET)
 
 bpy.ops.object.light_add(type="AREA", location=(0, 5, 4))
 rim = bpy.context.object
 rim.name = "SG_Rim"
 rim.data.energy = 350
 rim.data.size = 3.0
+point_object(rim, LIGHT_TARGET)
 
 bpy.ops.object.camera_add(location=(5.2, -8.8, 5.4))
 cam = bpy.context.object
@@ -238,13 +264,16 @@ g.rotation_euler = (math.radians(90), 0, 0)
 g.keyframe_insert("rotation_euler", frame=F(2.2))
 g.rotation_euler = (math.radians(76), math.radians(10), 0)
 g.keyframe_insert("rotation_euler", frame=F(3.2))
+damped_interp(curve_data)
+damped_interp(g)
 
 seed = add_cube("Seed", loc=(0, 0, 0))
-set_linear_visibility(seed, F(3.1), F(7.0))
+set_linear_visibility(seed, F(3.1), F(5.6))
 seed.scale = (0.08, 0.08, 0.08)
 seed.keyframe_insert("scale", frame=F(3.1))
 seed.scale = (1, 1, 1)
 seed.keyframe_insert("scale", frame=F(4.4))
+damped_interp(seed)
 
 # -----------------------
 # Study 2A — strict single ~90° face-plane hinge
@@ -253,10 +282,11 @@ parent_a = add_cube("A_Parent", loc=(-2.8, 0, 0))
 child_a = add_cube("A_Child", loc=(0, 0, 0))
 hinge_a = add_empty("A_Hinge", (-2.8 + (L + GAP) / 2, 0, +L / 2))
 child_a.parent = hinge_a
-child_a.matrix_parent_inverse = hinge_a.matrix_world.inverted()
-child_a.location = (0.55, 0, 0.55)
-set_linear_visibility(parent_a, F(5.8), F(10.5))
-set_linear_visibility(child_a, F(5.8), F(10.5))
+# Local centre is defined from the hinge itself. Do not use a parent-inverse that
+# cancels the hinge translation and turns the intended fold into a large orbit.
+child_a.location = ((L + GAP) / 2, 0, -L / 2)
+set_linear_visibility(parent_a, F(5.8), F(8.6))
+set_linear_visibility(child_a, F(5.8), F(8.6))
 key_rot(hinge_a, F(6.2), -90, "Y")
 key_rot(hinge_a, F(8.0), 0, "Y")
 damped_interp(hinge_a)
@@ -271,8 +301,8 @@ hinge_c2 = add_empty("C_Hinge_Settle", (0, 0, 0))
 hinge_c2.parent = hinge_c1
 child_c.parent = hinge_c2
 child_c.location = (-0.55, 0, -0.5)
-set_linear_visibility(parent_c, F(8.8), F(14.0))
-set_linear_visibility(child_c, F(9.1), F(14.0))
+set_linear_visibility(parent_c, F(8.8), F(12.0))
+set_linear_visibility(child_c, F(9.1), F(12.0))
 key_rot(hinge_c1, F(9.2), -90, "Y")
 key_rot(hinge_c1, F(10.5), 0, "Y")
 key_rot(hinge_c2, F(10.5), -90, "Y")
@@ -284,21 +314,29 @@ damped_interp(hinge_c2)
 # Study 3 — three-cube causal chain
 # -----------------------
 chain_seed = add_cube("Chain_C", loc=(2.9, 0, 0))
-chain_e = add_cube("Chain_E", loc=(4.0, 0, 0))
-chain_se = add_cube("Chain_SE", loc=(4.0, -1.1, 0))
-set_linear_visibility(chain_seed, F(12.2), F(17.2))
-set_linear_visibility(chain_e, F(12.2), F(17.2))
-set_linear_visibility(chain_se, F(12.2), F(17.2))
-for o in (chain_e, chain_se):
-    o.rotation_mode = "XYZ"
-chain_e.rotation_euler[1] = math.radians(-90)
-chain_e.keyframe_insert("rotation_euler", frame=F(12.7))
-chain_e.rotation_euler[1] = 0
-chain_e.keyframe_insert("rotation_euler", frame=F(14.0))
-chain_se.rotation_euler[0] = math.radians(90)
-chain_se.keyframe_insert("rotation_euler", frame=F(14.1))
-chain_se.rotation_euler[0] = 0
-chain_se.keyframe_insert("rotation_euler", frame=F(15.5))
+chain_e = add_cube("Chain_E", loc=(0, 0, 0))
+chain_se = add_cube("Chain_SE", loc=(0, 0, 0))
+
+# C -> E: edge/depth-aware Y hinge. E -> SE: nested X hinge attached to E,
+# so SE is physically carried by E before its own quarter-turn begins.
+hinge_e = add_empty("Chain_Hinge_E", (2.9 + (L + GAP) / 2, 0, +L / 2))
+chain_e.parent = hinge_e
+chain_e.location = ((L + GAP) / 2, 0, -L / 2)
+
+hinge_se = add_empty("Chain_Hinge_SE", (0, -(L + GAP) / 2, +L / 2))
+hinge_se.parent = chain_e
+chain_se.parent = hinge_se
+chain_se.location = (0, -(L + GAP) / 2, -L / 2)
+
+set_linear_visibility(chain_seed, F(12.2), F(16.6))
+set_linear_visibility(chain_e, F(12.2), F(16.6))
+set_linear_visibility(chain_se, F(12.2), F(16.6))
+key_rot(hinge_e, F(12.7), -90, "Y")
+key_rot(hinge_e, F(14.0), 0, "Y")
+key_rot(hinge_se, F(14.1), -90, "X")
+key_rot(hinge_se, F(15.5), 0, "X")
+damped_interp(hinge_e)
+damped_interp(hinge_se)
 
 # -----------------------
 # Study 4 — doorway physical camera dolly
@@ -342,6 +380,7 @@ cam.keyframe_insert("rotation_euler", frame=F(21.0))
 cam.data.lens = 50
 cam.data.keyframe_insert("lens", frame=F(21.0))
 damped_interp(cam)
+set_camera_diagnostic_interpolation(cam, F(17.0))
 
 # -----------------------
 # Save, stills, render
@@ -383,9 +422,13 @@ Locked mechanics represented:
 - bevel target: {BEVEL}
 - fixed 50mm lens for doorway study
 - physical camera translation for doorway enlargement
+- diagnostic camera framings hold between cuts; only doorway approach is eased
+- Study 2A uses an edge/depth-aware local hinge transform rather than parent-inverse orbiting
+- Study 3 uses a true nested C -> E -> SE parent/child hinge chain
 Important limitation:
 - G is PROVISIONAL geometric proxy. Canonical StudyGrid G vector is not frozen in this packet.
 - Study 1 seed closure uses a temporary scale-up proxy and is NOT production-approved G->seed topology.
+- Study 2C remains a provisional hidden-chain diagnostic; its exact hidden-behind arrangement still requires coordinator reconciliation and visual proof.
 - Final 3x3 choreography intentionally not included.
 """
 (OUT / "qa_manifest.txt").write_text(manifest, encoding="utf-8")
