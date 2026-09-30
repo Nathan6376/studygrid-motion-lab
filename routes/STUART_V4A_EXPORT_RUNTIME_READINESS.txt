@@ -1,0 +1,59 @@
+STUDYGRID V4A — STUART EXPORT / RUNTIME READINESS LANE
+Coordinator: ChatGPT General CF-0040
+Date: 2026-09-30 ET
+Status: OPEN — DISTINCT FOLLOW-ON PACKAGE
+
+WHY THIS IS A NEW PACKAGE
+Your prior independent V4A acceptance task is complete. Bob remains active on the isolated hidden-mechanics prototype lane. Kevin has now returned DONE on run #10 independent verification. This assignment is deliberately non-overlapping: prepare the current V4A authored-motion asset for a truthful later Blender -> GLB -> Three.js handoff without changing mechanics or choosing the owner's hinge option.
+
+AUTHORITATIVE STATE
+- Repo: Nathan6376/studygrid-motion-lab
+- Current V4A source on main: blender/scene_v4a.py
+- Successful post-Bob render: run #10 / 36715371870, head 13200b8c6111b65608d755a576b170b55427a72e.
+- Bob hidden-mechanics route is still STARTED on an isolated branch; do not consume or modify his branch.
+- Study 2C remains unresolved and must stay unresolved in this lane.
+- Canonical G and final 3x3 choreography are not frozen.
+
+TASK
+Create an ISOLATED branch/package that turns the existing Blender-to-web architecture requirements into a concrete export-readiness audit and reusable preflight, without mutating the V4A mechanics scene.
+
+1) Audit current scene_v4a.py and, if accessible, the run #10 .blend against the later GLB/Three.js handoff contract. Cover at minimum:
+   - object hierarchy/naming and parentage;
+   - applied transforms / non-unit scale risks;
+   - cube mesh reuse/instancing readiness;
+   - bevel/modifier bake requirements;
+   - shape-key/modifier incompatibility risks for the future canonical G;
+   - camera lens + Vertical sensor fit / exported yfov readiness;
+   - animation action/sampling assumptions;
+   - visibility-keyframe behaviour that must move to the runtime schedule;
+   - Blender AREA lights that must not be treated as web-exported lighting;
+   - material placeholder/runtime override boundary;
+   - doorway markers and fixed-FOV camera handoff prerequisites;
+   - anything in the current diagnostic scene that must never ship as production runtime state.
+
+2) Build a reusable, NON-MUTATING Blender Python preflight utility on your isolated branch, preferably tools/v4a_export_preflight.py, that can inspect an opened .blend and report PASS/WARN/FAIL for machine-checkable parts of the contract. It must not modify the scene. At minimum check object scales, camera sensor fit/lens, presence of area lights, modifiers on export-sensitive meshes, visibility animation usage, and expected object/name availability where current source makes that meaningful.
+
+3) Add a short docs package explaining:
+   - what the current V4A QA scene already satisfies;
+   - what is deliberately provisional/blocked on canonical G or Study 2C;
+   - exact changes that should wait until after owner mechanics approval;
+   - the smallest later round-trip test needed before web implementation.
+
+4) Run syntax/static checks available in your environment. If Blender/runtime execution is available, run the preflight against the current post-Bob .blend and record output. If not, state that bounded limitation; do not invent runtime proof.
+
+BOUNDARY
+- Isolated branch only; do not mutate main.
+- Do not edit .github/workflows/render-v4a.yml.
+- Do not alter scene_v4a.py mechanics, pivots, timing, camera choreography or material look.
+- Do not touch StudyGrid production code, R5/R6, backend/auth, Supabase, canonical G design or final 3x3 choreography.
+- Do not select or recommend the owner's final hinge option.
+- Do not merge your own branch.
+
+RETURN
+Persist STARTED when consumed. Return DONE/PARTIAL/BLOCKED directly to General with:
+1) branch + commit(s) + files,
+2) audit matrix,
+3) preflight tool checks/results,
+4) source-verified vs runtime-verified distinction,
+5) exact blockers that must remain held until Bob/owner mechanics resolution.
+Nathan is not the technical courier.
