@@ -1,0 +1,38 @@
+STUDYGRID V4A — STUART Q-S4 VALIDATOR PATH-NORMALIZATION REPAIR — DONE
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 ET
+Status: DONE
+
+BRANCH
+stuart-qs4-validator-path-repair
+Base: stuart-v4a-ac-acceptance-harness-prep @ 5fca8d5868e7b20ec5e41614fce0cfa6a58ed5a1
+
+FILES
+- tools/v4a_ac_receipt_paths.py
+- tools/v4a_ac_artifact_validator_repaired.py
+- tests/test_v4a_ac_receipt_paths.py
+- docs/V4A_QS4_VALIDATOR_PATH_REPAIR.md
+- routes/STUART_QS4_VALIDATOR_PATH_REPAIR_STARTED.txt
+- routes/STUART_QS4_VALIDATOR_PATH_REPAIR_DONE.txt
+
+RESULT
+The frozen validator's path false-negative is repaired without changing the frozen acceptance criteria or rewriting prior Q-S1 evidence. Only the SHA receipt resolver is replaced by a strict module that permits exact paths or one explicit known flattened producer prefix: output-v4a-hidden/.
+
+EXACT ARTIFACT REGRESSION
+Kevin run-2 ZIP provider/local SHA-256: 0b71adc48c9d47f395e204e0a4ba8f5fae19f2a5afb8a97180a9af8be947ae14.
+Repaired receipt-layer run: 19 PASS / 0 FAIL. All 19 receipt hashes match exact payload bytes.
+
+NEGATIVE REGRESSION
+Traversal, unknown-prefix stripping, duplicate normalized target, hash mismatch and missing-target cases all remain hard failures. Exact prefixed-root and known flattened-root positive layouts pass. Python compile passed for repair module, repaired wrapper and regression file.
+
+HISTORY
+Prior Q-S1 raw validator output is preserved unchanged. Prior Q-S1 Candidate A PASS / Candidate C PASS is not re-scored or retroactively altered.
+
+BOUNDARY
+No main/product/workflow/mechanics/R5/R6/backend/auth/Supabase/deployment mutation. Tooling-only isolated branch.
+
+NEXT
+Q-S5 is eligible immediately because Bob Q-B4/Q-B5/Q-B6 fixtures are durable. Stuart should continue in queue order.
+
+Nathan is not the technical courier.
