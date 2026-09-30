@@ -1,6 +1,6 @@
 STUDYGRID — STUART WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 14:09 ET
+Updated: 2026-09-30 16:23 ET
 Queue owner: General
 Worker: Stuart
 
@@ -8,24 +8,29 @@ PULL RULE
 When Nathan directly tells Stuart to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item. Do not pull another worker's queue and do not create owner-routing prompts; return durable technical results to General.
 
 CURRENT CONTEXT
-- Q-S1/Q-S4/Q-S5/Q-S6/Q-S7 are DONE.
-- Q-S7 independently PASSed Bob Q-B11 and cleared the integration-prep state-contract hold.
-- Kevin remains the sole active animation-evidence lane; Q-S2/Q-S3 stay behind Kevin artifacts.
-- Exact accepted product baseline R5 remains preserved. Exact R6 is a verified non-canonical candidate built from R5 under the owner-approved instructor-first validation release, but it has not yet received a dedicated independent product acceptance pass.
-- R6 exact provider identity from prior verified return: Drive 1pxKsdqM6dhKE6ihN5k4UgO-0usgNBmjD; SHA-256 875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef; 954208 bytes; APP_VERSION v7.16-cf0032-integrated-batch4-8-cf0039-r6.
-- R6 source authority for this acceptance: owner-approved instructor-first validation release, exact R5 derivation, current product direction/build spec used for the R6 build, and the R6 builder's verified QA evidence. Later professor-scale/design/research deltas are context only unless explicitly owner-approved for R6; do not fail R6 for post-R6 unimplemented proposals.
+- Q-S8 independent R6 core product acceptance is DONE.
+- Exact R6 identity passed: Drive 1pxKsdqM6dhKE6ihN5k4UgO-0usgNBmjD / 954208 bytes / SHA-256 875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef / APP_VERSION v7.16-cf0032-integrated-batch4-8-cf0039-r6.
+- PASS families: identity/static; registry 237/237 unique rev11; Clear Desk/action lifecycle; Assessment Desk/source proof/timing; source policy/Sources rebase; repeated-question answer-once; student preview/feedback/sorts; 30/30 responsive local-runtime matrix; 6/6 deterministic fixtures; 6/6 runtime duplicate-ID route sweep; roving instructor tabs; policy dialog focus + Escape return.
+- FAIL family is bounded to QS8-F1/QS8-F2 keyboard/focus: Students sort repaint drops focus to BODY; assessment confirmation refresh targets non-focusable #r6AttentionTitle h4 and drops focus to BODY.
+- Real-device/hosted/full-accessibility remain HOLD, not current candidate failures.
+- Bob Q-B13 is released to make only the two bounded focus repairs as a new non-canonical candidate. Q-B12 Slice 1 product gateway is staged behind independent reacceptance of that exact corrected candidate.
+- Kevin/Blender/intro motion is separate and is not a dependency for this product lane.
 
-Q-S8 — INDEPENDENT R6 CORE PRODUCT ACCEPTANCE
-Eligibility: AVAILABLE NOW if no newer Stuart task is STARTED.
-Purpose: independently determine whether exact R6 faithfully implements the owner-approved instructor-first validation scope it was released to build, without treating later post-R6 ideas as retroactive requirements.
-Requirements:
-- Retrieve exact R6 bytes from provider and verify SHA-256/size/version before testing.
-- Retrieve the exact owner-approved R6 release/spec and accepted R5 derivation authority used for the build; distinguish release requirements from later held/design/research proposals.
-- Independently test the instructor-first workflow, Clear Desk/attention queue, source proof, Assessment Desk/timeline behavior, AI source policy, repeated-question answer-once flow, student preview/resolution/sorting behavior, responsive behavior, keyboard/focus basics, registry integrity and regression against R5-preserved behavior.
-- Re-run or independently reproduce the highest-value static/runtime/responsive checks rather than trusting Bob's prior results alone.
-- Report PASS/FAIL/HOLD by requirement family; identify only concrete R6 defects or verification gaps.
-- Do not promote R6 canonical, do not mutate R5/R6, backend/auth/Supabase/deployment, and do not mix motion/A-C selection into this acceptance.
-Return: exact R6 identity, acceptance report, defects if any, and a smallest corrective route if needed directly to General.
+Q-S9 — CORRECTED R6 FOCUS + COMPACT REGRESSION REACCEPTANCE
+Eligibility: BLOCKED until Bob Q-B13 returns a provider-visible corrected candidate with exact identity and evidence.
+Purpose: independently verify only the bounded focus repair and enough compact regression to decide whether the corrected candidate may become General's working product derivation point for Slice 1.
+Requirements once unblocked:
+- Verify exact Q-B13 provider bytes/SHA/size/version first.
+- Reproduce QS8-F1 and QS8-F2 directly; both must PASS with meaningful focus preservation/restoration and activeElement must not collapse to BODY.
+- Recheck roving instructor tabs and policy dialog focus/Escape-return.
+- Re-run compact static/registry/runtime/responsive/regression smoke across the Q-S8 families most likely to be affected by the diff.
+- Confirm Bob changed only the bounded focus repair surface and did not introduce professor-scale/gateway/backend/motion additions.
+- Report PASS/FAIL/HOLD with exact evidence. Do not promote canonical or mutate product/backend/deployment.
+Return: exact corrected candidate identity, Q-S9 result and any smallest remaining defect directly to General.
+
+Q-S10 — SLICE 1 INDEPENDENT ACCEPTANCE
+Eligibility: BLOCKED until General releases Bob Q-B14 implementation and an exact Slice 1 candidate exists.
+Purpose: independently accept/reject the Local Product Gateway / deterministic fixture truth boundary without conflating it with backend or motion.
 
 Q-S2 — FULL-CONTEXT A/C VARIANT FIDELITY AUDIT
 Eligibility: BLOCKED until Kevin produces a durable valid full-context A+C proof artifact.
@@ -34,4 +39,4 @@ Q-S3 — EXPORT/RUNTIME ACCEPTANCE
 Eligibility: BLOCKED until Kevin produces candidate GLB export-smoke or later selected-candidate runtime artifacts.
 
 STOP CONDITION
-Execute Q-S8 now. After Q-S8, stop unless Kevin's artifact has genuinely landed and Q-S2 becomes eligible. Do not invent filler.
+No Stuart task is immediately eligible until Q-B13 returns. Wait rather than invent filler. When Q-S9 becomes eligible, execute it before any Slice 1 acceptance work.
