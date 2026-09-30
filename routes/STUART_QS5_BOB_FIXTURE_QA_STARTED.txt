@@ -1,0 +1,15 @@
+STUDYGRID V4A — STUART Q-S5 INDEPENDENT QA OF BOB Q-B4/Q-B5/Q-B6 — STARTED
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 ET
+Status: STARTED
+
+Branch: stuart-qs5-bob-fixture-independent-qa
+Base: main @ d3c96c4b66fb3d057f3d3717a2e66fad19054013
+
+Inputs:
+- Q-B4 branch bob-cf0042-qb4-doorway-selection-policy
+- Q-B5 branch bob-cf0042-qb5-nine-cube-grid-validator
+- Q-B6 branch bob-cf0042-qb6-study-visibility-cut-fixture
+
+Scope: independent QA only. Test the exact fixture logic adversarially as queued; do not redesign Bob's implementations and do not mutate product/main/workflow/R5/R6/Supabase/backend/auth/deployment.
