@@ -1,6 +1,6 @@
 STUDYGRID — STUART WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 13:15 ET
+Updated: 2026-09-30 13:46 ET
 Queue owner: General
 Worker: Stuart
 
@@ -8,12 +8,24 @@ PULL RULE
 When Nathan directly tells Stuart to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item. Do not pull another worker's queue and do not create owner-routing prompts; return durable technical results to General.
 
 CURRENT CONTEXT
-- Q-S1 A/C independent acceptance: DONE. Candidate A PASS and Candidate C PASS on the frozen 15-point technical matrix; no owner winner selected.
-- Q-S4 validator path-normalization repair: DONE. Exact Kevin run-2 artifact passes 19/19 receipt hashes while negative fixtures hard-fail.
-- Q-S5 independent QA of Bob Q-B4/Q-B5/Q-B6: DONE. 18 assertion groups PASS / 0 FAIL.
-- Q-S6 independent QA of Bob Q-B9/Q-B10: DONE on stuart-qs6-qb9-qb10-independent-qa @ 9dd9b22fe7b52cde1f8fa0650a8a11a7ed25bd6c. Core Q-B9 seam PASS, but Q-B9 overall HOLD and Q-B10 HOLD due bounded prep-contract/state-machine drift. General has routed the smallest corrective amendment back to Bob.
-- Kevin Q-K1 recovery is STARTED in Kevin's worker chat but has no durable terminal return yet. Q-S2 remains dependency-blocked until a durable valid full-context A+C proof artifact exists.
+- Q-S1/Q-S4/Q-S5/Q-S6 are DONE.
+- Bob Q-B11 is durable DONE on bob-cf0042-qb11-align-integration-prep-state-contract @ 7433bafe25b7f0823854966607e0d17a6d4167fc. Q-S7 is now eligible.
+- Kevin Q-K1R still has no durable terminal return or valid A+C full-context artifact on shared surfaces as of General refresh. Q-S2 remains blocked.
 - Q-S3 remains blocked until candidate GLB export-smoke or later selected-candidate runtime artifacts exist.
+
+Q-S7 — RECHECK BOB Q-B11 INTEGRATION-PREP AMENDMENT
+Eligibility: AVAILABLE NOW if no newer Stuart task is STARTED.
+Purpose: independently confirm that Bob's Q-B11 canonical state/event contract, failure semantics, transition guards and expanded verifier align without product/runtime mutation.
+Authoritative source: bob-cf0042-qb11-align-integration-prep-state-contract @ 7433bafe25b7f0823854966607e0d17a6d4167fc plus Stuart's prior Q-S6 findings.
+Requirements:
+- Recheck one canonical enum including SLOW_LOAD, FALLBACK_STATIC and SHELL_READY.
+- Verify contract/JSON/harness agree on READY/RUNNING failure behavior.
+- Verify invalid NEW->SKIPPED and NEW->FAILED reject/guard rather than silently succeed.
+- Re-run allowed skip/dispose/failure paths, invalid-transition negatives, original Q-B10 12 groups, expanded Q-B11 groups and all-state × six-viewport reservation coverage.
+- Confirm the common HTML seam and R5/R6 read-only roles remain unchanged.
+- Preserve browser/device/AT focus and GPU recovery as later runtime QA; synthetic evidence must not be promoted.
+- No product/main/R5/R6/motion-scene/backend/auth/Supabase/deploy/A-C-selection mutation.
+Return: PASS/FAIL/HOLD and exact evidence directly to General.
 
 Q-S2 — FULL-CONTEXT VARIANT FIDELITY AUDIT
 Eligibility: BLOCKED until Kevin Q-K1R produces a durable valid full-context A+C proof artifact and Bob's corresponding reversible source variants remain durable.
@@ -24,26 +36,9 @@ Requirements:
 - Report candidate-specific PASS/FAIL/HOLD.
 Return: fidelity report and any smallest corrective route General should issue.
 
-Q-S7 — RECHECK BOB Q-B11 INTEGRATION-PREP AMENDMENT
-Eligibility: AVAILABLE after Bob completes the bounded Q-B11 amendment to Q-B9/Q-B10 and returns a durable branch/pointer.
-Purpose: independently confirm that the single canonical state/event contract, failure semantics, transition guards and expanded verifier now align without product/runtime mutation.
-Requirements:
-- Recheck one canonical enum including SLOW_LOAD, FALLBACK_STATIC and SHELL_READY.
-- Verify contract/JSON/harness agree on READY/RUNNING failure behavior.
-- Verify invalid NEW->SKIPPED and NEW->FAILED reject/guard rather than silently succeed.
-- Re-run allowed skip/dispose/failure paths, invalid-transition negatives, and all-state × six-viewport reservation coverage.
-- Preserve browser/device/AT focus and GPU recovery as later runtime QA; synthetic evidence must not be promoted.
-- No product/main/R5/R6/motion-scene/backend/auth/Supabase/deploy mutation.
-Return: PASS/FAIL/HOLD and exact evidence.
-
 Q-S3 — EXPORT/RUNTIME ACCEPTANCE
 Eligibility: BLOCKED until Kevin produces candidate GLB export-smoke artifacts or later selected-candidate runtime round-trip artifacts.
 Purpose: independently validate Blender→GLB→runtime structural fidelity using the export-readiness contract already prepared.
-Requirements:
-- Check curated export subset, hierarchy, animation clips, visibility schedule, modifier/instancing handling, camera handoff markers and web-material/lighting assumptions.
-- Distinguish Blender-verified, GLB-verified and runtime-verified claims.
-- No deployment/canonical promotion.
-Return: independent export/runtime PASS/FAIL/HOLD with bounded next step.
 
 STOP CONDITION
-No Stuart item is immediately eligible right now. Q-S2 waits on Kevin Q-K1R; Q-S7 waits on Bob Q-B11; Q-S3 waits on Kevin export/runtime artifacts. Stop rather than invent filler.
+Execute Q-S7 if eligible. After Q-S7, Q-S2 remains blocked unless Kevin's durable valid A+C artifact has actually landed; otherwise stop. Do not invent filler.
