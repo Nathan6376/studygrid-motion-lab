@@ -1,6 +1,6 @@
 STUDYGRID — BOB WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 14:09 ET
+Updated: 2026-09-30 16:23 ET
 Queue owner: General
 Worker: Bob / CF-0042
 
@@ -8,27 +8,40 @@ PULL RULE
 When Nathan directly tells Bob to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item. Do not pull another worker's queue and do not create owner-routing prompts; return durable technical results to General.
 
 CURRENT CONTEXT
-- Q-B1/B2/B4/B5/B6/B7/B8/B9/B10/Q-B11 are DONE.
-- Kevin remains the sole active animation-evidence lane; do not overlap Blender/render/verifier work.
-- Stuart Q-S8 is being released for independent acceptance of exact R6 against its owner-approved instructor-first release scope.
-- Exact accepted product baseline R5 remains preserved. Exact R6 is a verified non-canonical candidate: Drive 1pxKsdqM6dhKE6ihN5k4UgO-0usgNBmjD; SHA-256 875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef; 954208 bytes; APP_VERSION v7.16-cf0032-integrated-batch4-8-cf0039-r6.
-- Post-R6 owner-direct product additions include professor-scale scheduling automation, human-readable timing, multi-course organization, class codes, assessment autofill, scale-to-hundreds workflow and animated signup/brand requirements. Separate research/design/architecture packets also exist. Some post-R6 proposals still require owner/design disposition before implementation.
+- Q-B12 R6→current-product delta map is DONE on bob-cf0042-qb12-r6-current-product-delta-map @ 8200171d1c11d2c84b2ddfe614561db6949188d1.
+- Q-B12 verified exact R6 as Drive 1pxKsdqM6dhKE6ihN5k4UgO-0usgNBmjD / SHA-256 875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef / 954208 bytes / APP_VERSION v7.16-cf0032-integrated-batch4-8-cf0039-r6.
+- Stuart Q-S8 independently tested exact R6. Every tested owner-release family passed except one bounded keyboard/focus family; real-device/hosted/full-accessibility remain HOLD rather than failures.
+- Exact Q-S8 defects: QS8-F1 Students sort repaint drops active focus to BODY; QS8-F2 assessment confirmation refresh attempts to focus non-focusable #r6AttentionTitle h4 and active focus drops to BODY despite scroll preservation.
+- Q-B12 identifies the first post-R6 product slice as Local Product Gateway / deterministic local fixture truth boundary (A8). It does NOT depend on Kevin/Blender/intro motion.
+- Do not layer Slice 1 over a baseline with known Q-S8 focus defects. Correct exact R6 first, let Stuart reaccept the exact corrected bytes, then Slice 1 may start.
 
-Q-B12 — R6 → CURRENT PRODUCT DELTA MAP / NEXT-CANDIDATE DECOMPOSITION
+Q-B13 — MINIMAL R6 KEYBOARD/FOCUS REPAIR
 Eligibility: AVAILABLE NOW if no newer Bob task is STARTED.
-Purpose: move back to the actual StudyGrid product while Kevin finishes animation by producing an implementation-ready, source-truthed map from exact R6 to the current product direction, without prematurely mutating HTML.
+Purpose: repair only Q-S8 QS8-F1 and QS8-F2 on an isolated new non-canonical product candidate derived from exact R6, without folding in post-R6 product features.
 Requirements:
-- Retrieve and verify exact R6 provider bytes/identity first.
-- Retrieve the current product-direction source and the relevant post-R6 owner-direct additions, professor-scale V3/design materials, accepted architecture/seam audit and current evidence/privacy research pointers needed to classify deltas.
-- Separate every delta into: (A) already owner-approved/released and safe for next candidate implementation; (B) owner-direct requirement but visual/interaction treatment still needs owner QA; (C) research/architecture recommendation not yet owner-approved; (D) blocked by backend/institutional/privacy/deploy dependency.
-- Produce the smallest coherent next-candidate implementation slices in dependency order, with exact source pointers and acceptance criteria for each slice.
-- Explicitly identify what can be built immediately after General/owner disposition without waiting for the intro animation, and what must remain independent of motion.
-- Reconcile the R6 frontend↔backend seam-audit findings into the plan, especially typed gateway/local fixture adapter, but do not implement backend/auth/Supabase or claim those are approved if they are not.
-- No R5/R6 mutation, no new HTML candidate, no backend/auth/Supabase/deploy, no motion/A-C/canonical-G work.
-Return: exact delta map, implementation decomposition, unresolved owner-decision list kept as small as possible, and recommended first build slice directly to General.
+- Retrieve exact R6 provider bytes and reverify SHA/size/version before editing.
+- QS8-F1: after Students sort/filter repaint, preserve or deterministically restore focus to the initiating/relevant focusable control; do not leave activeElement as BODY.
+- QS8-F2: after assessment confirmation refresh, restore focus to an actually focusable target with equivalent user-context semantics; do not focus a non-focusable h4 and do not rely on scroll preservation as a substitute for focus preservation.
+- Preserve roving instructor tabs and policy-dialog focus/Escape-return behavior that already passed Q-S8.
+- Change the smallest possible HTML/JS/CSS surface; no professor-scale additions, typed gateway, backend/auth/Supabase, deployment, motion/A-C, canonical G or brand portal work in this repair.
+- Produce a NEW non-canonical candidate; never overwrite R5 or exact R6.
+- Re-run focused keyboard/focus tests plus compact static/runtime/responsive/registry/regression smoke sufficient to prove no collateral regression.
+- Return exact provider file identity, SHA-256, byte size, APP_VERSION, focused test evidence, regression evidence and diff summary directly to General.
+
+Q-B14 — SLICE 1: LOCAL PRODUCT GATEWAY / FIXTURE TRUTH BOUNDARY
+Eligibility: BLOCKED until Stuart independently reaccepts the exact Q-B13 corrected candidate on the bounded Q-S9 focus/regression gate and General publishes that accepted corrected baseline pointer.
+Purpose: implement Q-B12 Slice 1 without waiting for Kevin/intro motion.
+Released scope once dependency clears:
+- one typed frontend product gateway boundary plus deterministic local fixture adapter/read-model layer;
+- explicit section identity, source_revision_id/source_block_id + display locator, one assessment revision shared across relevant fixture surfaces;
+- bounded command path for authoritative-domain fixture mutations rather than view-layer ad-hoc truth writes;
+- central local loading/empty/error/stale-revision/unauthorized presentation states and command-error mapping;
+- preserve all accepted R6 instructor/student visible workflows;
+- zero network/Supabase/auth/provider dependency and no visible redesign beyond necessary ordinary state handling.
+Acceptance target: provider-identifiable new candidate, deterministic tests, no vendor lock-in, existing accepted workflows reproducible, then independent Stuart acceptance.
 
 Q-B3 — APPLY OWNER-SELECTED HINGE VARIANT
 Eligibility: BLOCKED until Nathan selects A or C and General publishes the exact selected-candidate pointer.
 
 STOP CONDITION
-Execute Q-B12 now. After Q-B12, stop unless General has released a concrete product-build slice or the A/C owner gate has opened. Do not invent filler.
+Execute Q-B13 now. Do not start Q-B14 until Q-S9 independently clears the corrected baseline and General publishes the exact accepted pointer. Do not touch Kevin's animation lane or invent filler.
