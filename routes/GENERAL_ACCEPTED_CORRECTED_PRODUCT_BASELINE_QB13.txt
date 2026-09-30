@@ -1,0 +1,30 @@
+STUDYGRID — GENERAL ACCEPTED CORRECTED PRODUCT BASELINE POINTER
+Coordinator: ChatGPT General CF-0040
+Published: 2026-09-30 17:05 ET
+Status: ACCEPTED WORKING PRODUCT DERIVATION POINT — NON-CANONICAL / NOT DEPLOYED
+
+EXACT ACCEPTED CORRECTED BASELINE
+- Filename: StudyGrid-CF0042-QB13-r6-focusfix.html
+- Drive ID: 10ISHnuiaZTIispYlRSkO81h__J63x-ND
+- SHA-256: 9cd7b6dd37caac46dcab8f049bd4f0e218e0b027d60bd89cccbc9b547b43e8fe
+- Bytes: 954307
+- APP_VERSION / SG_R6_BUILD / registry build: v7.16-cf0042-qb13-r6-focusfix
+- Origin R6 remains preserved read-only: Drive 1pxKsdqM6dhKE6ihN5k4UgO-0usgNBmjD / SHA-256 875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef / 954208 bytes.
+
+ACCEPTANCE EVIDENCE
+- Bob Q-B13 durable return: Drive 171FH0yF5dUgNiWKMsHS66MXM1TLdOFbn.
+- Bob verification artifact: Drive 11FciJKAyqAfpVikzgD2LHTZ51icRi1ZC, 45/45 PASS.
+- Stuart Q-S9 independent reacceptance: branch stuart-qs9-qb13-focus-reacceptance @ 1f7aee98260f61738be6443e4b737b4e7a5ef66b.
+- Stuart Q-S9 disposition: PASS within tested scope.
+- Q-S9 direct focus/runtime evidence: QS8-F1 sort/filter focus restored; QS8-F2 task-canvas focus restored with nonzero scroll 1722→1722; focused runtime 17/17 PASS; JS syntax 4/4; fixtures 6/6; responsive matrix 18/18; registry rev11 237/237 unique.
+- Independent reverse-normalisation reproduced exact original R6 bytes/SHA after removing only the bounded focus fixes and identity fields.
+
+BOUNDARY
+- This pointer authorizes derivation of the next non-canonical product candidate from the exact corrected baseline above.
+- It does NOT promote a canonical/public/deployed StudyGrid build.
+- Existing physical iPad/Safari/WebKit, VoiceOver, Pencil, physical keyboard, true 200% zoom, full WCAG and hosted-origin/cross-tab items remain HOLD for later runtime/device acceptance.
+- Kevin/Blender/A-C intro work remains independent and is not a dependency for the product lane.
+
+NEXT RELEASE
+- Bob Q-B14 — Slice 1 Local Product Gateway / Fixture Truth Boundary — is unlocked against this exact accepted corrected baseline.
+- Stuart Q-S10 remains the independent acceptance gate after Bob produces the exact Slice 1 candidate.
