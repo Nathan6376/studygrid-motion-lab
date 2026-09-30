@@ -1,11 +1,11 @@
 STUDYGRID — STUART WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 17:46 ET
+Updated: 2026-09-30 17:56 ET
 Queue owner: General
 Worker: Stuart
 
 PULL RULE
-When Nathan directly tells Stuart to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item. Do not pull another worker's queue and do not create owner-routing prompts; return durable technical results to General.
+When Nathan directly tells Stuart to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Prefer executable critical-path acceptance. If the target candidate does not yet exist, pull only bounded acceptance-preparation or adversarial-QA work with a named downstream consumer. Do not invent filler, duplicate another active lane, or mutate product/runtime. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item and return durable technical results to General.
 
 CURRENT CONTEXT
 - Q-S8 exact R6 acceptance: DONE.
@@ -14,7 +14,7 @@ CURRENT CONTEXT
 - Q-S10 independently verified exact Q-B14 candidate Drive 1S4eIU6VT2pnNQ4h5SHEGhJ3sWb7BLU6W / SHA-256 fcf89e5a31063746272a10bbfba72d605f745d01f797c75fa33697923dde6bb1 / 965519 bytes / v7.17-cf0042-qb14-local-product-gateway.
 - Q-S10 independent suite: 152/152 PASS. Typed/frozen gateway, explicit source identity, shared assessment revision r1→r2→r3, bounded commands, stale/unauthorized no-mutation, deterministic states/errors, Q-B13 focus/dialog/roving behavior, fixtures 6/6, responsive 18/18 and registry rev11 237/237 all PASS within tested scope.
 - General accepted Slice 1 pointer published at routes/GENERAL_ACCEPTED_SLICE1_QB14.txt, main commit 3ec67d0324b933377da12042711b5d53db891824.
-- Bob Q-B15 Slice 2 Professor Home / Multi-Course Scale is now AVAILABLE and is the active product implementation lane.
+- Bob Q-B15 Slice 2 Professor Home / Multi-Course Scale is the active product implementation lane.
 - Existing physical-device/hosted/full-accessibility HOLDs remain later gates. Kevin/Blender/intro remains separate and non-blocking for product work.
 
 Q-S11 — SLICE 2 PROFESSOR HOME / MULTI-COURSE INDEPENDENT ACCEPTANCE
@@ -34,6 +34,18 @@ Requirements once unblocked:
 - Preserve physical-device/hosted/full-accessibility items as HOLD unless direct evidence exists.
 Return: PASS/FAIL/HOLD with exact evidence and smallest correction if needed directly to General.
 
+Q-S11P — SLICE 2 ACCEPTANCE HARNESS / ADVERSARIAL PREP
+Eligibility: AVAILABLE NOW only while Q-S11 is blocked on the missing Q-B15 candidate and no newer Stuart critical-path acceptance task is eligible.
+Purpose: use otherwise-idle Stuart time to make Q-S11 faster and stronger without looking at or influencing Bob's implementation.
+Named downstream consumer: Q-S11 independent acceptance.
+Scope:
+- Starting only from General's accepted Slice 1 pointer and the published Q-B15 contract, prepare an implementation-independent acceptance matrix and reusable test/harness scaffolding.
+- Cover six-course/hundreds-student fixture scale, Today no-auto-navigation/context theft, unresolved→resolved attention lifecycle/history retention, explicit class identity, colour-not-sole-identifier, transparent organization controls, selected-class drill-in preservation, gateway/read-model/command invariants, keyboard/focus, responsive behavior and registry integrity.
+- Add adversarial cases most likely to expose false PASS: empty/current-day edge cases, all-attention-resolved state, duplicate course labels/colours, large roster counts, sort/pin toggles, mobile overflow, stale revision during cross-course update, and focus restoration after Professor Home actions.
+- Predefine boundary checks proving no Slice 3/4/backend/network/provider/motion/canonical scope slipped in.
+- Do not inspect private Bob work-in-progress, predict implementation details, mutate product/runtime, choose A/C, or treat the prep as acceptance evidence.
+Return: durable Q-S11 prep packet/test harness pointer. When the exact Q-B15 candidate exists, refresh and run Q-S11 against provider bytes; candidate evidence always supersedes prep assumptions.
+
 Q-S2 — FULL-CONTEXT A/C VARIANT FIDELITY AUDIT
 Eligibility: BLOCKED until Kevin produces a durable valid full-context A+C proof artifact.
 
@@ -41,4 +53,4 @@ Q-S3 — EXPORT/RUNTIME ACCEPTANCE
 Eligibility: BLOCKED until Kevin produces candidate GLB export-smoke or later selected-candidate runtime artifacts.
 
 STOP CONDITION
-No Stuart product task is immediately eligible until Bob Q-B15 returns an exact candidate. Wait rather than invent filler. When Q-S11 becomes eligible, execute it before later product-slice acceptance work.
+If Q-B15 candidate is already durable when Stuart refreshes, skip Q-S11P and execute Q-S11. Otherwise execute Q-S11P now rather than idling, then stop unless a genuinely eligible task appears. Do not invent filler.
