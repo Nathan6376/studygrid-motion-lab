@@ -1,0 +1,23 @@
+STUDYGRID V4A — NINE-CUBE GRID INVARIANT / SLOT VALIDATOR
+
+Scope
+- Generic isolated validator/scaffold only. It does not choose final reveal order, hinge winner, parent choreography, camera timing, canonical G, product integration, backend, R5/R6, Supabase or deployment.
+
+Structural invariants checked
+1. Exactly nine cube records with unique IDs.
+2. Exactly one cube per 3x3 target slot; no duplicate occupancy, missing slot or unknown slot.
+3. Equal fixed cube dimensions, default L x L x L.
+4. Deliberate positive air gap between orthogonally adjacent target slots, default 0.10L.
+5. Every entry represents an independent cube mesh; fused/non-cube slab representations fail.
+6. Object-scale samples remain (1,1,1); animated scale used to fake motion fails.
+7. Parent metadata may be absent or reference another valid cube; missing/self/cyclic references fail.
+8. Orthogonal slot adjacency is generated as reusable metadata without assigning reveal order.
+
+Report format
+- ok: overall Boolean.
+- errors: ordered unique invariant failures.
+- slot_positions: generic 3x3 target centres.
+- adjacency: generic orthogonal slot-neighbour metadata.
+
+Deferred
+- Which cube owns which final role, exact attachment sequence, selected A/C hinge mechanics, final animation timing and owner-approved choreography remain outside this validator.
