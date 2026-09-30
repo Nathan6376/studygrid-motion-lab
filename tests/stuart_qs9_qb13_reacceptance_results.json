@@ -1,0 +1,85 @@
+{
+  "task": "Q-S9 — Corrected R6 Focus + Compact Regression Reacceptance",
+  "status": "PASS",
+  "candidate": {
+    "filename": "StudyGrid-CF0042-QB13-r6-focusfix.html",
+    "drive_id": "10ISHnuiaZTIispYlRSkO81h__J63x-ND",
+    "sha256": "9cd7b6dd37caac46dcab8f049bd4f0e218e0b027d60bd89cccbc9b547b43e8fe",
+    "bytes": 954307,
+    "app_version": "v7.16-cf0042-qb13-r6-focusfix"
+  },
+  "origin_r6": {
+    "drive_id": "1pxKsdqM6dhKE6ihN5k4UgO-0usgNBmjD",
+    "sha256": "875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef",
+    "bytes": 954208,
+    "app_version": "v7.16-cf0032-integrated-batch4-8-cf0039-r6"
+  },
+  "qs8_f1": {
+    "sort_focus_active_id": "r6StudentSort",
+    "filter_focus_active_id": "r6StudentFilter",
+    "body_focus_failure": false,
+    "pass": true
+  },
+  "qs8_f2": {
+    "target_id": "r6TaskCanvas",
+    "target_tabindex": "-1",
+    "active_id_after_keyboard_confirm": "r6TaskCanvas",
+    "nonzero_scroll_before": 1722,
+    "nonzero_scroll_after": 1722,
+    "pass": true
+  },
+  "positive_keyboard": {
+    "roving_tabs": "PASS",
+    "source_policy_dialog_focus": "PASS",
+    "source_policy_escape_return": "PASS"
+  },
+  "focused_runtime": {"passed": 17, "total": 17},
+  "javascript_syntax": {"passed": 4, "total": 4},
+  "fixtures": {"passed": 6, "total": 6},
+  "responsive_matrix": {
+    "passed": 18,
+    "total": 18,
+    "matrix": "Paper+Dusk × 1280/820/390 × Overview/Students/Sources",
+    "horizontal_overflow_failures": 0,
+    "duplicate_id_failures": 0,
+    "page_errors": 0,
+    "console_warnings_errors": 0,
+    "external_http_requests": 0
+  },
+  "registry": {
+    "rev": 11,
+    "entries": 237,
+    "unique_component_ids": 237,
+    "build": "v7.16-cf0042-qb13-r6-focusfix",
+    "pass": true
+  },
+  "bounded_diff": {
+    "non_equal_line_hunks": 5,
+    "candidate_minus_r6_bytes": 99,
+    "identity_fields": ["APP_VERSION", "SG_R6_BUILD", "registry.build"],
+    "behaviour_changes": [
+      "restore replacement r6StudentSort/r6StudentFilter focus after Students repaint",
+      "assessment confirmation refresh target r6AttentionTitle -> r6TaskCanvas"
+    ],
+    "reverse_normalised_exactly_equals_provider_r6": true,
+    "reverse_normalised_sha256": "875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef",
+    "pass": true
+  },
+  "bob_verifier_integrity": {
+    "drive_id": "11FciJKAyqAfpVikzgD2LHTZ51icRi1ZC",
+    "sha256": "68d9b989a298e7fa43aa210fc7bba8ee258e4044edc4c4e4831ff44f93415c1d",
+    "bytes": 5792,
+    "reported": "45/45 PASS",
+    "same_candidate_identity": true
+  },
+  "holds": [
+    "physical iPad/Safari/WebKit",
+    "VoiceOver",
+    "Apple Pencil/physical interaction",
+    "physical hardware keyboard",
+    "true 200% zoom",
+    "full WCAG",
+    "hosted-origin storage/cross-tab behaviour"
+  ],
+  "boundaries": "No canonical promotion; no product/backend/auth/Supabase/deployment mutation; no Kevin/Blender/A-C work."
+}
