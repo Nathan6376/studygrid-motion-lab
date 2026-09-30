@@ -1,0 +1,68 @@
+STUDYGRID Q-B10 — REDUCED-MOTION / LOADING / FAILURE FALLBACK CONTRACT
+Status: preparation-only; no StudyGrid product mutation.
+
+A. NON-BLOCKING ENTRY
+Animation is an enhancement, never a gate. From the first mounted state there must be an ordinary DOM path to continue/skip into the existing Welcome shell. Motion completion, WebGL, GLB load success and a specific frame marker are never prerequisites for product entry.
+
+B. REDUCED MOTION
+When either browser prefers-reduced-motion or StudyGrid's existing less-motion preference is true:
+- do not initialise the WebGL renderer solely for the entry sequence;
+- do not play the full 3D sequence;
+- show an approved static brand/orientation frame if available, otherwise use the existing Welcome brand/shell as the fallback;
+- move directly to shell-ready without auto-navigation.
+This composes the existing R5/R6 reduced-motion CSS instead of replacing it.
+
+C. LOADING
+LOADING preserves the full welcome-page geometry. A loading indicator may use placeholder copy "Loading…" but cannot replace or disable the Continue/Skip path.
+At an integration-configurable slow-load threshold, state becomes SLOW_LOAD:
+- loading may continue;
+- Continue is explicit;
+- choosing Continue cancels/ignores the pending cinematic and hands off immediately.
+At an integration-configurable hard timeout, use the same static fallback as asset failure.
+
+D. FAILURE / CAPABILITY
+WebGL unavailable, asset fetch/decode failure, renderer creation failure or hard timeout:
+FAILED -> FALLBACK_STATIC -> SHELL_READY.
+No blank page, technical error wall, retry loop or layout collapse is allowed.
+Failure detail can be logged for diagnostics later but is not required owner-facing copy.
+
+E. SKIP / CONTINUE
+Skip/Continue is a real DOM control with normal keyboard semantics.
+It is available during LOADING, SLOW_LOAD, READY and RUNNING.
+Activation stops/cancels animation work where possible and immediately yields SHELL_READY.
+Canvas never owns the only input path.
+
+F. FOCUS
+- mount, loading, ready, run, completion and fallback do not steal focus;
+- canvas is non-focusable and aria-hidden;
+- existing focusRouteEntry() remains the route-transition focus authority;
+- route exit disposes the adapter without restoring focus into detached motion DOM.
+
+G. VIEWPORT / FIXED LENS
+Representative harness envelope:
+  320x568, 360x800, 768x1024, 1024x768, 1440x900, 1920x1080.
+The motion host fills the stable Welcome entry surface. Resize changes camera aspect only.
+The fixed-lens path keeps its lens/FOV constant; CSS/object-scale tricks are forbidden.
+Device-pixel-ratio changes may change render resolution, not scene geometry.
+The Q-B2 doorway safety formula is also re-evaluated over this viewport set using its existing fixed 40° vfov analytic contract; portrait ratios remain within the same 1.222627L cover boundary, while wider ratios reduce the cover distance without changing vfov.
+
+H. LAYOUT
+The Welcome surface remains full-viewport in MOUNTED/LOADING/SLOW_LOAD/RUNNING/FALLBACK/SHELL_READY. The visual host is an absolute layer inside .welcome-page, so state changes must not add/remove normal-flow height or shift the existing Welcome content.
+
+I. ACCEPTANCE
+1. Reduced-motion test never enters RUNNING and never initialises WebGL.
+2. WebGL-unavailable test reaches SHELL_READY without waiting for assets.
+3. Slow-load exposes Continue and Continue reaches SHELL_READY.
+4. Asset failure reaches static fallback then SHELL_READY.
+5. Skip works from LOADING and RUNNING.
+6. Route exit disposes from every active state.
+7. Focus token remains unchanged across non-user focus transitions.
+8. Layout reservation is identical across all states for every representative viewport.
+9. Camera lens/FOV is invariant across viewport resize; aspect updates.
+10. Q-B2 doorway cover/near-plane envelope remains safe across representative viewports.
+11. Exact R5/R6 source anchors for reduced-motion and entry-mode remain present.
+
+J. INTEGRATION PREREQUISITES
+- General names the authorized HTML baseline (accepted R5 or later-promoted successor).
+- General supplies the approved motion profile/asset manifest; this package does not choose A/C.
+- Final integration runs browser/device visual QA for the actual GLB/renderer. This harness proves deterministic state/layout/focus contracts, not rendered appearance or GPU behaviour.
