@@ -1,0 +1,110 @@
+STUDYGRID V4A — STUART EXPORT / RUNTIME READINESS — DONE
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 09:23 ET
+Status: DONE — export-readiness audit/preflight package complete; Blender-runtime execution of the new preflight remains unverified in this environment
+
+BOUNDARY
+Isolated branch only. No mutation of main, .github/workflows/render-v4a.yml, blender/scene_v4a.py mechanics, StudyGrid production/R5/R6/backend/Supabase, canonical G, final 3x3 choreography, or owner hinge choice. No merge performed.
+
+BRANCH / COMMITS / FILES
+Primary branch: stuart-v4a-export-runtime-readiness
+Base: main @ 2daca92eef8e25b92e36e30f5f599ce67586ae66
+STARTED commit: dbf76e961ef6e7d38e176afced90b241f01bbf25
+Preflight commit: 2978165db29f41c18ad73159eee6dde95f9facdb
+Docs/audit commit: 310c562d2fa254ad78a53a5f70640dc0f709d010
+Files added before this return:
+- routes/STUART_V4A_EXPORT_RUNTIME_READINESS_STARTED.txt
+- tools/v4a_export_preflight.py
+- docs/V4A_EXPORT_RUNTIME_READINESS.md
+Branch-vs-base verification before DONE: ahead by 3 commits; exactly those three files added; 0 behind; no scene/workflow/main-product file changed.
+
+EXACT RUN #10 / ARTIFACT EVIDENCE
+- Post-Bob source commit: 13200b8c6111b65608d755a576b170b55427a72e
+- Actions run #10 / 36715371870: completed SUCCESS on that exact head.
+- Artifact ID 11096826897 / studygrid-v4a-owner-qa / GitHub digest sha256:61b50e5d7b16b94e4e5ba0acbe5010ab165c8e4a2d9ae736c8c31d6bb4087290.
+- Artifact runtime source rehash: af7425d17a4b64fd62ecb961e0a4da8ef00ffd7405312686f04d90c101e6f144, matching runtime_source_sha256.txt.
+- Artifact .blend local rehash: f14d1dad42eeb1fadd0e6640a36503168904bb712723aec1c5a770cc631ad7d0.
+- Artifact manifest: Blender 4.5.14 LTS, preview 8 fps, 800x450, frames 1-176.
+
+AUDIT MATRIX
+1. Object hierarchy/naming — PASS (source). Stable named QA objects and expected 2A/C→E→SE parent relationships are authored. 2C hierarchy exists but its mechanics remain rejected/held.
+2. Applied transforms/non-unit-scale risk — PASS + WARN (source). add_cube() applies creation scale. Seed later animates scale 0.08→1.0 as an explicit QA proxy and must not silently become production behaviour.
+3. Cube mesh reuse/instancing — WARN. Each add_cube() call creates a fresh primitive; current QA scene is not authored as one shared instanced cube mesh. Later optimization belongs in an export/runtime copy after mechanics approval.
+4. Bevel/modifier bake — WARN. Cubes carry a Bevel modifier at 0.055L / 4 segments. Later GLB export must lock evaluated/baked modifier behaviour or an equivalent runtime geometry treatment; do not apply modifiers to the QA scene now.
+5. Canonical G / shape-key-modifier compatibility — HOLD. Current SG_G_PROVISIONAL is a Curve with animated bevel_depth, not a frozen production G. Future canonical G must be checked for curve/mesh conversion, shape keys, modifier ordering and export compatibility after it is frozen.
+6. Camera lens / Vertical fit / yfov — PASS source, runtime round-trip pending. SG_Camera is authored 50 mm + VERTICAL and doorway enlargement is camera translation. Exported GLB/Three.js yfov still requires readback from the exported camera; source alone is not runtime proof.
+7. Animation / sampling — PASS + WARN. Accepted mechanics use portable object/empty TRS chains. QA also uses non-TRS Curve.bevel_depth and Blender visibility animation. Final approved transforms must be baked/sampled explicitly and compared after GLB load.
+8. Visibility behaviour — WARN. hide_render/hide_viewport keys isolate studies in Blender; these must become a Three.js/runtime schedule or approved metadata rather than be assumed portable in GLB.
+9. Blender AREA lights — WARN. SG_Key/SG_Fill/SG_Rim are diagnostic AREA lights and must not be treated as web-exported lighting.
+10. Materials — WARN. SG_Green/SG_Floor are QA placeholders; runtime material/colour-management/lighting remain a separate web contract.
+11. Doorway markers / fixed-FOV handoff — PASS + WARN. Fixed-lens physical approach is authored; no dedicated export/handoff marker empties exist. Add explicit marker/metadata only after mechanics approval.
+12. Diagnostic scene shipping boundary — HOLD for production. Floor, QA lights, provisional G, Seed proxy, unresolved 2C and comparison studies coexist in one diagnostic scene. Never ship this .blend wholesale as production runtime state.
+
+PREFLIGHT TOOL
+Added tools/v4a_export_preflight.py. It is read-only by design and performs no frame changes, exports, saves or scene writes. It checks:
+- expected object names/types and expected parentage;
+- current object scale and scale animation;
+- cube mesh sharing/instancing readiness;
+- mesh modifiers and shape-key+modifier conflicts;
+- provisional G Curve data animation;
+- camera 50 mm / VERTICAL sensor fit / Blender angle_y and keyed lens constancy;
+- Blender visibility animation usage;
+- AREA-light presence;
+- QA material boundary;
+- doorway/export marker empties;
+- QA/provisional production-exclusion state including 2C hold.
+It prints PASS/WARN/FAIL and supports JSON output. FAIL exits 2; bpy-unavailable exits 3.
+
+CHECK RESULTS
+- python -m py_compile tools/v4a_export_preflight.py equivalent local snapshot: PASS.
+- python -m py_compile run #10 artifact scene_v4a_runtime.py: PASS.
+- No-Blender fail-safe test: PASS; exits 3 with “BLOCKED: bpy is unavailable. Run this utility inside Blender.”
+- Blender executable: unavailable in this Stuart environment.
+- Python bpy module: unavailable.
+Therefore the new preflight was NOT executed against studygrid-v4a.blend here. No Blender-runtime PASS is claimed.
+- Binary-level artifact check confirms the .blend exists, has Blender v405 header, and contains all expected named QA objects; this is presence evidence only, not semantic runtime validation.
+
+SOURCE-VERIFIED VS RUNTIME-VERIFIED
+SOURCE-VERIFIED NOW:
+- source identity/current scene blob;
+- names and explicit authored parent links;
+- scale-apply call plus Seed scale animation;
+- fresh primitive creation per add_cube call;
+- Bevel modifier authoring;
+- SG_G_PROVISIONAL Curve + bevel_depth animation;
+- 50 mm + VERTICAL camera source and physical doorway translation;
+- visibility-key authoring;
+- three AREA lights;
+- placeholder material boundary;
+- no dedicated doorway/export marker authoring;
+- QA-only/provisional objects that block wholesale production export.
+RUNTIME/ARTIFACT-VERIFIED NOW:
+- run #10 success/head identity;
+- artifact digest/source receipt and .blend existence/hash;
+- artifact-declared Blender version/FPS/resolution/frame count;
+- binary presence of expected object names.
+NOT RUNTIME-VERIFIED IN THIS LANE:
+- actual preflight PASS/WARN/FAIL output from opening the .blend in Blender;
+- evaluated modifier result after GLB export;
+- exact exported node instancing/deduplication;
+- glTF camera yfov readback;
+- animation sampling equivalence in Three.js;
+- visibility/runtime schedule parity;
+- material/lighting parity.
+
+SMALLEST LATER ROUND-TRIP
+After owner mechanics approval, use a disposable export copy containing one approved hinge fixture (2A is mechanically valid as a technical fixture), its hierarchy, one placeholder material and the fixed-lens doorway camera. Export to GLB with locked settings, load through Three.js GLTFLoader, then compare node names/parentage, unit scales/dimensions, hinge start-mid-end transforms and 0.10L gap, animation duration/sample timing, camera yfov/aspect/start-stop transforms, and absence of Blender-only visibility/light assumptions. This does not select the owner’s final hinge.
+
+HELD BLOCKERS
+- Study 2C remains unresolved/rejected for production export.
+- Canonical G remains unfrozen.
+- G→Seed remains a temporary QA proxy.
+- Final 3x3 choreography remains unresolved.
+- Production materials/lighting, runtime visibility schedule, export subset and doorway marker schema remain post-owner-approval work.
+- Blender runtime execution of this preflight remains pending an environment with Blender/bpy.
+
+MATERIAL EXECUTION ERROR / CLEANUP NOTE
+During branch setup, Stuart mistakenly created five extra empty branch refs from the same base before using the intended branch: stuart-v4a-export-runtime-readiness-2, -check, -final, -real, and -worker. No package commits/files were written to those refs. The available connector exposes branch creation/ref movement but not branch deletion, so Stuart could not safely remove them. General should treat only stuart-v4a-export-runtime-readiness as authoritative for this package and may clean the empty refs when a deletion-capable path is available. No main mutation resulted.
+
+Nathan is not the technical courier.
