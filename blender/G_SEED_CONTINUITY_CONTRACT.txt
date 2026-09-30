@@ -1,0 +1,70 @@
+STUDYGRID — Q-B1 G→SEED CONTINUITY SCAFFOLD CONTRACT
+Status: ISOLATED SOURCE/STATIC SCAFFOLD — NOT CANONICAL G, NOT FINAL CHOREOGRAPHY
+
+AUTHORITY BOUNDARY
+- The canonical StudyGrid green G vector is NOT supplied or frozen here.
+- No geometry in this package may be promoted as the canonical G.
+- Final integration must inject one frozen canonical vector plus its recorded hash.
+- Main, StudyGrid production, R5/R6, backend/auth/Supabase, deployment and final choreography are outside this package.
+
+IDENTITY / PARENT CONTRACT
+SG_Root
+  SG_G  ← one persistent perceptual/render object for the whole G→seed transformation
+
+Seed is a destination anchor / target state during the transformation, not a replacement G.
+Object-level SG_G scale remains (1,1,1). No opacity or visibility handoff is permitted.
+
+CANONICAL INPUT INTERFACE
+A future canonical-G adapter must provide one topology-stable mesh/state family with identical vertex count and ordering:
+1. basis_points      — frame-0 surface derived from the frozen canonical G
+2. depth_points      — same vertices after real-depth formation
+3. fold_points       — same vertices after fold/close preparation
+4. cube_close_points — same vertices projected onto the centre-seed cube surface
+
+The scaffold intentionally cannot synthesize those arrays from an unfrozen brand outline.
+
+PARAMETER CONTRACT
+object_name          SG_G
+root_name            SG_Root
+seed_anchor_name     Seed
+object_scale         (1,1,1), invariant
+opacity              1.0, invariant
+visible              true, invariant
+half_stroke_ratio    0.50 target, tolerance ±0.05
+min_depth_ratio      >0; actual production depth remains canonical-asset/lookdev dependent
+
+NORMALIZED TIMING HOOKS
+half_stroke  0.05 → 0.32
+soften       0.12 → 0.42
+depth        0.18 → 0.58
+fold         0.40 → 0.84
+cube_close   0.72 → 1.00
+
+These are scaffold hooks, not approved final choreography timings. General/owner motion QA may retime them without changing the continuity architecture.
+
+DEFORMATION CONTRACT
+- Stroke change is a radius/profile deformation; it is not global object scaling.
+- Vertex identity/order remains stable throughout.
+- SG_G stays opaque and visible throughout the transformation.
+- The geometry gains real Z/depth before cube close.
+- The final deformation state equals the externally supplied cube_close_points.
+- No duplicate G, replacement glyph, flat G→square crossfade, or independent seed pop-in is part of this scaffold.
+
+BLENDER INTEGRATION TARGET
+When the canonical vector exists, the adapter should build one modifier-free topology-stable SG_G mesh with shape-key-compatible states corresponding to the four maps above (plus any approved intermediate soft-end states). All states must retain exact vertex ordering. SG_G remains under SG_Root; its object TRS scale stays applied/unit. The seed anchor supplies the centre-cube target frame only.
+
+STATIC ACCEPTANCE
+blender/verify_g_seed_continuity.py must pass all of these invariant checks:
+- same_object_identity
+- no_global_scale
+- no_visibility_or_opacity_swap
+- stable_vertex_topology
+- half_stroke_target_reached
+- depth_phase_reaches_3d_state
+- final_vertices_equal_supplied_cube_close_map
+- canonical_geometry_embedded_by_scaffold=false
+
+The verifier uses an explicitly labelled NON-BRAND fixture only. Passing it proves the scaffold logic/invariants, not the final G appearance, Blender render, browser runtime, or owner acceptance.
+
+UNRESOLVED REQUIRED INPUT
+Canonical StudyGrid G vector + final source hash + canonical-derived topology/state maps. Until supplied and independently rendered, exact G continuity and final visual acceptance remain unverified.
