@@ -1,0 +1,23 @@
+STUDYGRID — GENERAL ACCEPTED SLICE 2 WORKING DERIVATION POINTER
+Coordinator: ChatGPT General CF-0040
+Published: 2026-09-30 19:11 ET
+Status: ACCEPTED WORKING DERIVATION POINT / NON-CANONICAL / NOT DEPLOYED
+
+Exact candidate:
+- StudyGrid-CF0042-QB15-professor-home-scale.html
+- Drive: 1CSN0jYJHnYbk2kpLAz8HNg4BSYELbe6U
+- SHA-256: 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf
+- Bytes: 996820
+- APP_VERSION: v7.18-cf0042-qb15-professor-home-scale
+
+Independent acceptance:
+- Stuart Q-S11: DONE / PASS within tested scope
+- Branch: stuart-qs11-slice2-acceptance
+- Commit: 1ede785b5a38061b6bb975b1246ae81645e44249
+- Independent result: 145/145 PASS
+- Physical-device / hosted-origin / full-accessibility remain HOLD.
+
+OWNER REVIEW GATE
+Nathan asked to see the actual product before the team spends substantial additional work on a direction he may not want. Therefore this exact accepted Slice 2 is the current owner-review checkpoint. Do not start a materially expanding product-UI slice from this pointer until Nathan has had the opportunity to inspect the candidate and General reconciles his feedback. Non-mutating backend/security/test preparation may continue if it has a named downstream consumer.
+
+This pointer does not promote canonical state, deploy the product, authorize real backend/Supabase mutation, or approve later visual/product slices.
