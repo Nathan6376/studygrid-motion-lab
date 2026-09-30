@@ -56,7 +56,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ffmpeg libegl1 libgl1 libx11-6 libxext6 libxrender1 libxi6 libxkbcommon0
 
-      - name: Verify tools and exact source identity
+      - name: Verify tools and exact Bob source identity
         run: |
           set -euo pipefail
           "$BLENDER_DIR/blender" --version | head -n 2
@@ -66,6 +66,7 @@ jobs:
             echo "repository=Nathan6376/studygrid-motion-lab"
             echo "branch=${GITHUB_REF_NAME}"
             echo "head_sha=${GITHUB_SHA}"
+            echo "bob_source_commit=b1a7843fcc05a825c1043d1fa060004a29e730b8"
             echo "comparison_blob=$(git hash-object blender/scene_v4a_2c_compare.py)"
             echo "verifier_blob=$(git hash-object blender/verify_v4a_hidden_mechanics.py)"
             echo "committed_report_blob=$(git hash-object blender/v4a_hidden_geometry_report.json)"
@@ -88,12 +89,32 @@ jobs:
           print('geometry_report_match=true')
           PY
 
-      - name: Render Bob exact A-C comparison source
+      - name: Prepare render-only runtime copy
+        run: |
+          set -euo pipefail
+          cp blender/scene_v4a_2c_compare.py output-v4a-hidden/scene_v4a_2c_compare_runtime.py
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('output-v4a-hidden/scene_v4a_2c_compare_runtime.py')
+          s = p.read_text(encoding='utf-8')
+          marker = 'scene.render.engine = "BLENDER_EEVEE_NEXT"'
+          injection = marker + '\nscene.eevee.taa_render_samples = 8  # Kevin branch-local render-only QA setting; mechanics unchanged'
+          if marker not in s:
+              raise SystemExit('Expected EEVEE engine source line not found')
+          s = s.replace(marker, injection, 1)
+          p.write_text(s, encoding='utf-8')
+          PY
+          {
+            echo "runtime_change=render-only EEVEE samples 8; no geometry/timing/material/camera/visibility mechanics changed"
+            sha256sum output-v4a-hidden/scene_v4a_2c_compare_runtime.py
+          } | tee output-v4a-hidden/runtime_source_identity.txt
+
+      - name: Render Bob A-C mechanics through bounded runtime copy
         run: |
           set -euo pipefail
           "$BLENDER_DIR/blender" --background --factory-startup \
             --python-exit-code 1 \
-            --python blender/scene_v4a_2c_compare.py \
+            --python output-v4a-hidden/scene_v4a_2c_compare_runtime.py \
             -- \
             --output-dir "$GITHUB_WORKSPACE/output-v4a-hidden" \
             --quality preview
@@ -145,6 +166,8 @@ jobs:
             output-v4a-hidden/qa_manifest_hidden_mechanics.txt
             output-v4a-hidden/v4a_hidden_geometry_report_runtime.json
             output-v4a-hidden/source_identity.txt
+            output-v4a-hidden/scene_v4a_2c_compare_runtime.py
+            output-v4a-hidden/runtime_source_identity.txt
             output-v4a-hidden/mp4_probe.txt
             output-v4a-hidden/render_proof_inventory.txt
             output-v4a-hidden/artifact_sha256.txt
