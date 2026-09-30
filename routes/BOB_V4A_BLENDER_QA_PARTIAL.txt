@@ -1,0 +1,80 @@
+STUDYGRID V4A — BOB BLENDER MECHANICS / MOTION-QUALITY QA — PARTIAL
+From: Bob / StudyGrid Worker
+To: General ChatGPT
+Timestamp: 2026-09-30 ET
+Owner wake: NO
+
+STATUS
+PARTIAL — source-level mechanics audit is complete and clear defects have isolated source fixes. The pre-fix owner-QA artifact was visually inspected and confirms several defects. The Bob fix commit has NOT yet been rendered, so no post-fix visual acceptance is claimed. Study 2C's hidden-chain geometry remains intentionally unresolved because the accepted creative-direction state leaves that arrangement for coordinator reconciliation rather than silent worker invention.
+
+AUTHORITY / FRESHNESS
+- Activated route: routes/BOB_V4A_BLENDER_QA.txt @ blob 1d3853248803c166b5a6c693918fca00b565b788.
+- STARTED return: routes/BOB_V4A_BLENDER_QA_STARTED.txt; main commit da1c14e4baf6abf54e35fe8c23c602188319a984.
+- Main re-read immediately before terminal return: da1c14e4baf6abf54e35fe8c23c602188319a984; no newer General -> Bob route was present in routes/.
+- Audited source: blender/scene_v4a.py @ blob d2143ec0bb732f8808fdf4c80b83b20c8a9ac8f6.
+- Established motion-quality contract also checked: edge/depth-aware hinges with demonstrated sweep clearance; no midpoint-pivot assumption as proven; hidden cubes need physically plausible stowage; fixed cube dimensions and visible separation; stable lighting; fixed-lens physical camera entry.
+
+ISOLATED FIX
+- Branch: bob-v4a-blender-qa
+- Commit: 44e309baed49a1c7330957a2a6962237dd1a06e3
+- New scene blob: cb87739e3f254222e9e336eb0db5b25164f59bb8
+- Compare against STARTED base da1c14e4...: exactly one file changed — blender/scene_v4a.py; +70/-27. No workflow/runtime file, production StudyGrid code, R5/R6, Supabase, canonical G asset or final 3x3 choreography changed.
+
+EXACT DEFECTS FOUND / DISPOSITION
+1. STUDY 2A — WRONG PARENT-INVERSE / LARGE ORBIT — FIXED IN BRANCH.
+   Original child setup applied hinge parent + matrix_parent_inverse, then assigned child local location (0.55,0,0.55). The parent inverse cancelled the intended hinge-frame relationship and produced a large orbit instead of a local face-edge fold. Analytically, the child centre travels approximately (-2.30,0,3.30) -> (-0.305,0,2.515) -> (0.55,0,0.55) while the parent is at (-2.8,0,0).
+   Fix: remove the parent inverse; define child centre directly in hinge-local space as ((L+GAP)/2,0,-L/2). Final centre becomes (-1.7,0,0), preserving the 0.10 resting gap. Sampled oriented-box checks over the full -90° -> 0° sweep found no parent/child intersection; minimum broad-face separation is about 0.05 during the arc.
+
+2. STUDY 2C — SAME-PIVOT / SAME-AXIS HYBRID DOES NOT PROVE HIDDEN-BEHIND MECHANICS — NOT TOPOLOGY-FIXED.
+   Original hinge_c2 is effectively colocated with hinge_c1 and both actuate about Y. The sequence behaves as a staged ~180° same-axis sweep, not two demonstrated distinct hinge planes. Source also does not establish a physically hidden-behind stowed location, and its neutral final child position ends without the intended 0.10 cube separation.
+   Disposition: visibility isolation/easing only. Do NOT invent a hidden-chain topology in Bob lane. General must reconcile the safe depth/clearance arrangement before accepting 2C mechanics.
+
+3. STUDY 3 — NOT A CAUSAL C -> E -> SE CHAIN — FIXED IN BRANCH.
+   Original E and SE were independent cubes placed at final centres and merely rotated around their own centres. There was no parent-child hinge chain and no translated hinge arc.
+   Fix: C anchors a true Y-axis edge/depth hinge for E; SE has its own X-axis hinge parented to E, so E physically carries SE before SE actuates. Final centres remain C=(2.9,0,0), E=(4.0,0,0), SE=(4.0,-1.1,0). Sampled 3D OBB checks across both actuation phases found no C/E/SE intersections; minimum broad-cube separation is about 0.05 in motion with 0.10 resting gaps.
+
+4. CROSS-STUDY VISIBILITY BLEED — FIXED IN BRANCH.
+   Original windows overlapped: Seed with 2A, 2A with 2C, 2C with Study 3, and Study 3 with doorway. This contaminates diagnostic reads and can create apparent intersections unrelated to the study under review.
+   Fix: end each diagnostic before the next cut; Study 1 seed ends 5.6s, 2A 8.6s, 2C 12.0s, Study 3 16.6s.
+
+5. DIAGNOSTIC CAMERA DRIFT — FIXED IN BRANCH.
+   Original camera poses described as deliberate cuts were all later converted to BEZIER by damped_interp(cam); the provided cut helper was unused. The camera therefore drifted between diagnostic studies.
+   Fix: diagnostic camera keys hold CONSTANT before the doorway motion; only the 17.0s -> 21.0s physical doorway approach is eased.
+
+6. AREA-LIGHT READABILITY — FIXED IN BRANCH.
+   Original key/fill/rim area lights had positions/energy but no explicit aim. Their named roles therefore did not reliably point at the subject.
+   Fix: aim the three area lights at a stable scene target; material remains non-metallic green, roughness 0.33, bevel 0.055.
+
+7. DOORWAY FLOOR PENETRATION — FIXED FOR DIAGNOSTIC READABILITY.
+   Door_D centre is z=-1.1 while the floor is z=-0.75, so the lower doorway cube intersects the floor plane and reads as a flattened/clipped slab.
+   Fix: hide the diagnostic floor at the doorway cut instead of presenting the penetration as valid mechanics. Door cube geometry/camera intent is unchanged.
+
+8. EASING HARDENING — FIXED IN BRANCH.
+   Original motion used BEZIER/AUTO without clamped handles. Fix uses AUTO_CLAMPED handles for hinge/G/seed/doorway eased keys to avoid unintended overshoot while retaining weighted, non-bouncy motion.
+
+9. STUDY 1 G THINNING — SOURCE VERIFIED, NO CONTRACT CHANGE.
+   The G stroke change is curve bevel_depth 0.22 -> 0.11; whole-G scale is not used for the 50% thinning. The cube scale-up remains explicitly a temporary seed proxy and was not redesigned because canonical G->seed topology is outside Bob's V4A lane.
+
+10. DOORWAY CAMERA — SOURCE VERIFIED, NO CONTRACT CHANGE.
+    Lens remains fixed at 50mm at doorway keys. Enlargement is produced by actual camera translation from (3.8,-8.2,3.2) toward (0.3,-2.0,0.3), not object scale or lens/FOV zoom.
+
+VISUAL EVIDENCE — PRE-FIX ARTIFACT ONLY
+- GitHub Actions run #9: 36711770920 — SUCCESS.
+- Run head: 637729ed5932b4c8d727269753db22bc89213e6c (older than Bob STARTED/fix).
+- Artifact: studygrid-v4a-owner-qa / ID 11095228008 / digest sha256:7bda8efe3d05603b2043a7ef3e71142f7ee2733b5fa0789fd1465a93ee0d5159.
+- Runtime source SHA in artifact: 63522e581d95048de6c9c3c7521a79e11057ba30eb68d9e0eb9fd07ec43a1a2f; local rehash matched.
+- Visually confirmed on the OLD source: cross-study contamination is obvious around 5.9-6.6s and 9.2-10.0s; 2C produces a mechanically ambiguous/flattened child view near its settle; Study 3 reads as independent/in-place cube rotation rather than a causal carried chain; doorway start contains a visibly clipped/flattened lower cube from floor penetration. Doorway near frame confirms physical camera approach fills the frame, but does not validate Bob's fixes.
+- Because run #9 predates commit 44e309..., none of the fixes above are visually verified yet.
+
+SOURCE VERIFICATION
+- Modified source syntax check: PASS (Python compile of source text; Blender module execution not available locally).
+- Branch source readback: PASS; blob cb87739e3f254222e9e336eb0db5b25164f59bb8.
+- Branch compare: PASS; only blender/scene_v4a.py changed.
+- Analytic hinge/OBB clearance checks: PASS for fixed 2A and fixed C->E->SE diagnostic chain across sampled full arcs.
+- Visual post-fix verification: PENDING a render of commit 44e309... through the separately owned render pipeline.
+
+BOUNDARY
+No .github/workflows/render-v4a.yml change. No runtime-pipeline change. No StudyGrid production/R5/R6/Supabase change. No canonical G design. No final 3x3 choreography. No merge of Bob source branch into main.
+
+GENERAL ACTION
+Reconcile commit 44e309baed49a1c7330957a2a6962237dd1a06e3 deliberately with current main/pipeline state, keep 2C topology held until its hidden-chain depth/clearance arrangement is explicitly resolved, and obtain a post-fix owner-QA render before accepting the fixed mechanics visually. Nathan is not the technical courier.
