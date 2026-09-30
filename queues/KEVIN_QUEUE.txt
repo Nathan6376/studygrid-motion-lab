@@ -1,0 +1,43 @@
+STUDYGRID — KEVIN WORK QUEUE
+Coordinator: ChatGPT General CF-0040
+Updated: 2026-09-30 ET
+Queue owner: General
+Worker: Kevin
+
+PULL RULE
+When Nathan directly tells Kevin to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item. Do not pull another worker's queue and do not create owner-routing prompts; return durable technical results to General.
+
+CURRENT ACTIVE PACKAGE
+- routes/KEVIN_V4A_AC_RENDER_PROOF.txt is the current critical-path render package. Finish it before pulling queue work.
+
+Q-K1 — FULL-CONTEXT DUAL-CANDIDATE PREVIEW RENDERS
+Eligibility: AVAILABLE after current A/C render-proof package is DONE/PARTIAL with valid render source identity AND Bob's reversible A/C integration variants have a durable branch/pointer.
+Purpose: Render Candidate A and Candidate C as two separate full-V4A isolated previews so Nathan can compare the real mechanism in context before selecting a winner.
+Requirements:
+- Use Bob's reversible variants faithfully; do not redesign or select a winner.
+- Same camera/material/cube-size/gap/pacing contract wherever comparison requires parity.
+- Preserve accepted Study1, cross-study isolation, Study3 causal chain, doorway and other unrelated behavior.
+- Produce slow inspectable MP4s plus key stills and source/run/artifact identity.
+- Isolated branches only; no main/product/R5/R6/Supabase/backend/auth/deploy/canonical-G/final-choreography mutation.
+Return: A and C full-context artifacts, integrity/source evidence, any candidate-specific integration/render conflict.
+
+Q-K2 — DUAL-CANDIDATE GLB EXPORT SMOKE
+Eligibility: AVAILABLE after Q-K1 produces source-stable A/C full-context variants; does NOT require owner winner if both can be exported independently without changing mechanics.
+Purpose: Prove that the two candidate hinge structures can survive the Blender→GLB boundary with transform hierarchy intact before the owner choice.
+Requirements:
+- Export only the minimum hinge fixture(s), not the whole product.
+- Verify transform hierarchy, animation clips, fixed cube dimensions, camera/lens metadata where applicable, and no baked scale cheat.
+- No Three.js production integration yet; this is an isolated export smoke test.
+- If one candidate cannot be exported faithfully without changing mechanics, report BLOCKED for that candidate rather than redesigning it.
+Return: GLB artifacts/manifests, export logs, structural verification and differences.
+
+Q-K3 — SELECTED-CANDIDATE FINAL RENDER / ROUND-TRIP
+Eligibility: BLOCKED until Nathan selects A or C after independent acceptance and General publishes the selected integration source.
+Purpose: Render and, if separately routed, run the smallest chosen-candidate GLB→Three.js round-trip including the doorway camera handoff.
+Requirements:
+- Use only owner-selected accepted mechanics.
+- No deployment/canonical promotion without later explicit route.
+Return: final chosen-candidate QA artifact and runtime handoff evidence.
+
+STOP CONDITION
+If no queue item is eligible, return BLOCKED/WAITING with the exact dependency and stop. Do not invent filler work.
