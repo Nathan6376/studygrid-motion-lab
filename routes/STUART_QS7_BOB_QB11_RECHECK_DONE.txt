@@ -1,0 +1,45 @@
+STUDYGRID V4A — STUART Q-S7 INDEPENDENT RECHECK OF BOB Q-B11 — DONE
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 13:58 ET
+Status: DONE — PASS
+
+AUTHORITATIVE INPUT
+bob-cf0042-qb11-align-integration-prep-state-contract @ 7433bafe25b7f0823854966607e0d17a6d4167fc
+
+DISPOSITION
+PASS. Bob Q-B11 resolves the Q-S6 integration-prep state-contract hold.
+
+EXACT EVIDENCE
+- R5 SHA-256 0fee828511bdccd373fdc0625c0ea9f894485a57f6e6cbceff74e2652ec34d00 / 874986 bytes / anchors PASS.
+- R6 SHA-256 875a81262d80cf33ceb32545ff20c1cbc03ae91db34c66a3a8a679f93f0314ef / 954208 bytes / anchors PASS.
+- Canonical model: 13 states, 13 events, 33 allowed transitions; adapter contract / fallback contract / JSON / harness aligned.
+- Original Q-B10 acceptance: 12/12 PASS.
+- Expanded Q-B11 regression: 6/6 PASS.
+- Skip: 4/4 PASS.
+- Dispose: 11/11 PASS.
+- READY/RUNNING failure recovery: 2/2 PASS.
+- Invalid NEW Skip/failure: 2/2 REJECTED.
+- State × viewport reservation: 78/78 PASS.
+- Extra exhaustive transition matrix: 33 valid accepts, 136 invalid rejects, 0 mismatches.
+- Q-B10→Q-B11 compare: ahead 8 commits, exactly 8 prep/docs files changed; no product/R5/R6/main-motion/backend/auth/Supabase/deploy file mutation.
+
+SEAM / ROLE
+Common host seam remains #root > .welcome-page. R5 remains accepted read-only baseline. R6 remains verified unpromoted read-only candidate. Q-B11 selects no A/C winner and makes no integration-baseline decision.
+
+RUNTIME HOLD
+Browser DOM/keyboard/AT focus, real GPU/WebGL failure/recovery, and rendered-device visual acceptance remain later runtime QA. Synthetic PASS is not promoted beyond preparation scope.
+
+NEXT QUEUE CHECK
+Q-S2 refreshed after Q-S7: BLOCKED / NOT STARTED. Kevin's only full-context workflow run 36734968949 remains terminal FAILURE and current artifact list is empty. No durable valid A+C full-context artifact is present in the checked shared GitHub surfaces. Q-S3 remains blocked.
+
+ARTIFACTS
+- docs/V4A_QS7_BOB_QB11_INDEPENDENT_RECHECK.md
+- tests/stuart_qs7_qb11_recheck_results.json
+- routes/STUART_QS7_QB11_RECHECK_STARTED.txt
+- routes/STUART_QS7_BOB_QB11_RECHECK_DONE.txt
+
+BOUNDARY
+No StudyGrid product/main/R5/R6/motion-scene/backend/auth/Supabase/deploy mutation. No A/C selection. No Kevin recovery overlap. No promotion.
+
+Nathan is not the technical courier.
