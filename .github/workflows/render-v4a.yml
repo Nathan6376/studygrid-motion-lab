@@ -24,6 +24,10 @@ concurrency:
   group: studygrid-v4a-render
   cancel-in-progress: true
 
+env:
+  BLENDER_VERSION: "4.5.14"
+  BLENDER_DIR: ${{ github.workspace }}/.tools/blender-4.5.14-linux-x64
+
 jobs:
   render:
     runs-on: ubuntu-latest
@@ -33,20 +37,44 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Blender + ffmpeg
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y blender ffmpeg
+      - name: Cache Blender 4.5.14 LTS
+        id: cache-blender
+        uses: actions/cache@v4
+        with:
+          path: .tools/blender-4.5.14-linux-x64
+          key: blender-4.5.14-linux-x64
 
-      - name: Show Blender version
-        run: blender --version
+      - name: Install Blender 4.5.14 LTS
+        if: steps.cache-blender.outputs.cache-hit != 'true'
+        run: |
+          set -euo pipefail
+          mkdir -p .tools
+          cd .tools
+          FILE="blender-${BLENDER_VERSION}-linux-x64.tar.xz"
+          curl --fail --location --retry 3 \
+            --output "$FILE" \
+            "https://download.blender.org/release/Blender4.5/$FILE"
+          curl --fail --location --retry 3 \
+            --output "blender-${BLENDER_VERSION}.sha256" \
+            "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}.sha256"
+          grep " $FILE$" "blender-${BLENDER_VERSION}.sha256" | sha256sum --check --strict -
+          tar -xf "$FILE"
+          rm -f "$FILE" "blender-${BLENDER_VERSION}.sha256"
+
+      - name: Verify render tools
+        run: |
+          set -euo pipefail
+          "$BLENDER_DIR/blender" --version
+          ffmpeg -version | head -n 1
 
       - name: Build and render V4A
         env:
           SG_QUALITY: ${{ inputs.quality || 'preview' }}
         run: |
+          set -euo pipefail
           mkdir -p output
-          blender -b --factory-startup \
+          "$BLENDER_DIR/blender" --background --factory-startup \
+            --python-exit-code 1 \
             --python blender/scene_v4a.py \
             -- \
             --output-dir "$GITHUB_WORKSPACE/output" \
@@ -54,8 +82,10 @@ jobs:
 
       - name: Encode preview MP4
         run: |
+          set -euo pipefail
           ffmpeg -y \
             -framerate 30 \
+            -start_number 1 \
             -i output/frames/frame_%04d.png \
             -c:v libx264 -pix_fmt yuv420p -crf 20 \
             output/studygrid-v4a-preview.mp4
