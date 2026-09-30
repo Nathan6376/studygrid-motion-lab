@@ -1,0 +1,22 @@
+{
+  "status": "PREP_ONLY_NOT_CANDIDATE_ACCEPTANCE",
+  "baseline": {
+    "file": "StudyGrid-CF0042-QB14-local-product-gateway.html",
+    "sha256": "fcf89e5a31063746272a10bbfba72d605f745d01f797c75fa33697923dde6bb1",
+    "bytes": 965519,
+    "version": "v7.17-cf0042-qb14-local-product-gateway"
+  },
+  "checks": [
+    {"name": "baseline.exact_identity", "pass": true},
+    {"name": "baseline.version_triplet", "pass": true},
+    {"name": "baseline.gateway_contract", "pass": true},
+    {"name": "baseline.registry", "pass": true},
+    {"name": "baseline.registry.summary", "pass": true, "detail": {"rev": 11, "entries": 237, "unique": 237}},
+    {"name": "matrix.gate_count", "pass": true, "detail": 46},
+    {"name": "matrix.hold_gate", "pass": true}
+  ],
+  "scaffold_selftest": {"passed": 39, "total": 39, "failed": []},
+  "passed": 7,
+  "total": 7,
+  "failed": []
+}
