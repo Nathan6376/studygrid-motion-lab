@@ -1,0 +1,43 @@
+STUDYGRID — STUART WORK QUEUE
+Coordinator: ChatGPT General CF-0040
+Updated: 2026-09-30 ET
+Queue owner: General
+Worker: Stuart
+
+PULL RULE
+When Nathan directly tells Stuart to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item. Do not pull another worker's queue and do not create owner-routing prompts; return durable technical results to General.
+
+CURRENT ACTIVE PACKAGE
+- routes/STUART_V4A_AC_ACCEPTANCE_HARNESS_PREP.txt is the current preparation package. Finish it before pulling queue work.
+
+Q-S1 — RUN A/C INDEPENDENT ACCEPTANCE
+Eligibility: AVAILABLE once Kevin's current A/C Blender render-proof artifact is durable and the prepared acceptance harness is complete enough to execute.
+Purpose: Apply the predeclared acceptance matrix to Kevin's real render without moving criteria after seeing the output.
+Requirements:
+- Verify artifact/source identity first.
+- Separate visual findings from source/analytic findings.
+- PASS/FAIL/HOLD Candidate A and Candidate C against the fixed contract; do not choose the owner's preferred candidate.
+- Confirm C rear-stow truthfulness, oblique existence proof, no scale/opacity cheat, collision/floor/gap/camera parity, pacing and final rest.
+- No main/product mutation.
+Return: independent matrix result, evidence, and exact owner-decision surface General may safely present.
+
+Q-S2 — FULL-CONTEXT VARIANT FIDELITY AUDIT
+Eligibility: AVAILABLE after Kevin produces full-context A and C preview renders and Bob's corresponding reversible source variants are durable.
+Purpose: Verify each full-context preview actually matches Bob's source variant and preserves unrelated accepted V4A behavior.
+Requirements:
+- No preference ranking or owner winner selection.
+- Compare source identities, hierarchy, camera/material parity, Study1/Study3/doorway preservation and any visibility/floor/collision deviations.
+- Report candidate-specific PASS/FAIL/HOLD.
+Return: fidelity report and any smallest corrective route General should issue.
+
+Q-S3 — EXPORT/RUNTIME ACCEPTANCE
+Eligibility: AVAILABLE after Kevin produces candidate GLB export-smoke artifacts or later selected-candidate runtime round-trip artifacts.
+Purpose: Independently validate Blender→GLB→runtime structural fidelity using the export-readiness contract already prepared.
+Requirements:
+- Check curated export subset, hierarchy, animation clips, visibility schedule, modifier/instancing handling, camera handoff markers and web-material/lighting assumptions.
+- Distinguish Blender-verified, GLB-verified and runtime-verified claims.
+- No deployment/canonical promotion.
+Return: independent export/runtime PASS/FAIL/HOLD with bounded next step.
+
+STOP CONDITION
+If no queue item is eligible, return BLOCKED/WAITING with the exact dependency and stop. Do not invent filler work.
