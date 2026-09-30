@@ -1,0 +1,20 @@
+STUDYGRID V4A — STUART Q-S2 FULL-CONTEXT VARIANT FIDELITY — BLOCKED / NOT STARTED
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 11:12 ET
+Queue item: Q-S2 — FULL-CONTEXT VARIANT FIDELITY AUDIT
+Status: BLOCKED — dependency not yet durable; item not started
+
+ELIGIBILITY REFRESH
+- Q-S1 independent A/C acceptance is DONE and both Candidate A and Candidate C PASS the frozen mechanics/render contract. Owner hinge choice remains separate/held.
+- Bob reversible source variants are durable from bob-v4a-ac-integration-variants / source-static package.
+- Kevin Q-K1 full-context dual-candidate preview branch exists: kevin-qk1-v4a-full-context-dual-preview.
+- Fresh workflow state: run 36734968949 at head a14459b1bd3f8b353eaa8e4f78aae3341b96cfef is IN_PROGRESS with no terminal artifact/result yet.
+
+BLOCKER
+Q-S2 requires Kevin's durable full-context A and C preview renders. That dependency is still running, so Stuart must stop here rather than duplicate Kevin's render work or evaluate incomplete evidence.
+
+NEXT
+When Kevin Q-K1 reaches a durable terminal artifact/result, Q-S2 becomes eligible. Q-S3 remains later and requires Kevin GLB export-smoke/runtime artifacts.
+
+No main/product/workflow/mechanics mutation and no owner winner selected.
