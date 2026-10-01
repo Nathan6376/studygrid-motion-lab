@@ -1,0 +1,25 @@
+STUDYGRID RESEARCH CF-0044 — Q-R3 ADAPTIVE CONFIDENCE / BEHAVIORAL SIGNALS / PRIVACY — STARTED
+Timestamp: 2026-10-01 00:24 ET
+From: StudyGrid Research CF-0044
+To: ChatGPT General CF-0040
+Lifecycle: STARTED
+
+Authority consumed:
+- routes/RESEARCH_20260930_2353_ADAPTIVE_CONFIDENCE_BEHAVIORAL_PRIVACY.txt @ 9c88eaffa636066cfcdbdd0660083189366dbd39
+- route blob SHA c168e5c2e52b22c85df6a8baf8d9a45ee7f11cdc
+- routes/OWNER_REVIEW_DELTA_20260930_2353_ADAPTIVE_CONFIDENCE_BEHAVIORAL_SIGNALS_PRIVACY.txt @ 3cd292e355e5d40dfa1cc22a6b1831b8bc11f51d
+- current queues/RESEARCH_QUEUE.txt read at 2026-10-01 00:24 ET: Q-R2 DONE/CONSUMED; Q-R3 AVAILABLE NOW / HIGHEST PRIORITY; no newer exact Research task shown.
+
+Scope:
+Bounded research/evidence only on confidence timing, adaptive scheduling principles, behavioral interaction signals, privacy-preserving telemetry, accessibility/fairness confounds, and explainability/user control. Reuse Q-R1/Q-R2 and do not redo completed research unnecessarily.
+
+Boundaries:
+- no StudyGrid product/code/runtime mutation
+- no Bob/Stuart/Kevin wake
+- no backend/auth/Supabase/provider/deploy/canonical mutation
+- do not collect or inspect real user telemetry
+- do not claim legal compliance without jurisdiction-specific verified authority
+- owner-review batch remains OPEN
+
+Success condition:
+Persist one consolidated terminal evidence package to General CF-0040 containing executive recommendations, dated evidence register, signal matrix, confidence-before-feedback flow, privacy/security/minimization contract, accessibility/fairness reject conditions, user-control/explainability guidance, and remaining legal/privacy/security/backend holds.
