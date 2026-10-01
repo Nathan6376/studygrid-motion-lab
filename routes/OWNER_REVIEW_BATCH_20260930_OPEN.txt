@@ -1,117 +1,13 @@
-STUDYGRID — OWNER REVIEW BATCH OPEN
-Timestamp opened: 2026-09-30 21:30 ET
-Last reconciled: 2026-09-30 23:46 ET
-Coordinator: ChatGPT General CF-0040
-Authority: Nathan direct owner instruction
-Status: OPEN — ACCUMULATE/RECONCILE CURRENT PASS; DO NOT WAKE BOB/STUART/KEVIN YET
+STUDYGRID — OWNER REVIEW BATCH
+Opened: 2026-09-30 21:30 ET
+Closed: 2026-10-01 00:30 ET
+Coordinator: General CF-0040
+Status: CLOSED / SUPERSEDED
 
-OWNER PROCESS
-- Nathan wants the current release feedback accumulated into one coherent package, not repeated small Bob/Stuart/Kevin activations.
-- General owns StudyGrid product coordination and delegates specialist work appropriately: Research for evidence, Gemini for external creative/motion direction, Sol for exact-source inspection, and Astra later only when Nathan explicitly releases it. General reconciles the results.
-- Relay Architecture CF-0041 is NOT a StudyGrid product-design/UX adjudication lane. It remains the Relay/system architecture coordinator. General and Relay Architecture only peer-sync material cross-system/governance/routing implications so Nathan does not have to repeat them.
-- Gemini does not have verified shared routing access in the tested Gemini 3.1 Pro environment; Gemini tasks must be self-contained copyable TXT unless a future environment proves direct access.
-- Astra tasks are staged but HELD until Nathan explicitly releases them near his reported reset window. Do not burn Astra now.
-- Sol CF-0043 is ACTIVE on Q-SOL1 exact-source preparation. Consume terminal return when it exists; do not infer completion early.
-- When this review/build tranche is sufficiently specified, General reconciles Research + Gemini + Sol + all owner feedback (+ Astra only if later released), then publishes one batched implementation/acceptance round for Bob/Stuart/Kevin. Nathan wants the motion/tutorial tranche settled ASAP and a reviewable teacher-facing candidate ready by Monday 2026-10-05 if feasible; this is a planning target, not a guarantee.
+Current closure record:
+routes/OWNER_REVIEW_BATCH_20260930_CLOSED.txt @ 707194c337ea4eafd15b12e433c90ed45bc690ba
 
-CURRENT FEEDBACK IN BATCH
-1. routes/OWNER_FEEDBACK_20260930_2113_SLICE2_REFINEMENT.txt
-   - Feedback hover geometry
-   - Dusk interaction
-   - edit-only label/colour controls
-   - restrained course-card colour/hover
-   - resolve undo
-   - instructor-only navigation/surfaces
-   - information-density cleanup
+Current implementation release:
+routes/GENERAL_RELEASE_20261001_0030_OWNER_REVIEW_BUILD.txt @ a4033b973d3efd19f2bd7f362a7af5cd769fb173
 
-2. routes/OWNER_FEEDBACK_20260930_2123_ADD_CLASS_ONBOARDING_REDESIGN.txt
-   - course-field personal-name autofill problem
-   - school/program/term setup once
-   - Term 1/2/3/4 + Other selector
-   - curated/searchable institution/program selection
-   - contextual course number/prefix handling
-   - verified official catalogue-backed course picker
-   - join-code shortcut
-   - manual fallback
-   - program-term vs academic-session separation
-
-3. routes/OWNER_REVIEW_DELTA_20260930_2147_HOME_STUDY_MOTION_NAV.txt
-   - Selectric/typeball-style single rotating full-loop control
-   - welcome composition/logo/sign-in hierarchy
-   - fast onboarding/tutorial and code-first start choices
-   - normal learner account vs owner/admin separation
-   - tour/highlight toggle semantics
-   - retire novice copy into compact Continue destination
-   - satisfying Mark reviewed microinteraction
-   - page/route transitions and contextual chrome research
-   - intrusive text-selection/I-beam cursor investigation
-   - full button/back/next/destination audit
-   - feedback-capture evidence research
-
-4. routes/OWNER_REVIEW_DELTA_20260930_2324_INSTRUCTOR_TOUR_ALIVE_UI_MOTION.txt @ 87cef27fe6a52fae030467c41d6a569ac7805a1a
-   - replace ugly/unexplained blue focus line with deliberate accessible StudyGrid focus treatment
-   - remove unexplained decorative lines/circles after exact source mapping
-   - animated instructor request-to-review/adaptive-response demo; changing relevant words turn green
-   - correct-answer vs learner-answer clarity
-   - redesign squished confidence controls / help composition
-   - true instructor-only shell; no learner Study leakage
-   - fake-class instructor walkthrough with Skip, then real signup/setup
-   - context-aware `Find current class` with basis/correction
-   - Help includes privacy/policy destinations without claiming legal completeness
-   - `How this works` reveal must not make unrelated page content jump
-   - ghost-cursor/selection demonstration that disappears on real interaction
-   - Explain/Highlight/Ask teacher tour controls should behave like real product previews
-   - simpler student-facing English
-   - fix tour Next spacing
-   - one-time safe Paper→Dusk→Paper theatrical appearance demo; reduced-motion/photosensitivity-safe path mandatory
-   - preserve liked student-tour transition and StudyGrid orb/ball
-
-5. routes/OWNER_REVIEW_SCREENSHOT_EVIDENCE_20260930_2335.txt @ d2e1e5e5bb21b3f20003dffc0b5312850f13f4bc
-   - exact screenshot evidence for decorative arc/circle, cramped practice card, Next halo/double-edge, blue heading outline, adaptive response card layout, and current selection/tool tour surface.
-
-SPECIALIST STATE
-- Scope correction effective: routes/GENERAL_CORRECTION_20260930_2342_RELAY_ARCHITECTURE_SCOPE.txt @ 8248b684df0ad5f83b46ac66ee3bd0fd33bc8183.
-- Prior Relay Architecture StudyGrid outputs are historical/non-authoritative design input already consumed by General; do not route new StudyGrid product-design work to Relay Architecture.
-- The pending routes/ARCHITECTURE_20260930_2324_INSTRUCTOR_TOUR_ROLE_SPLIT_SUPPLEMENT.txt is RETRACTED / DO NOT ACTIVATE.
-- Research CF-0044 Q-R1 DONE/consumed: routes/RESEARCH_CF0044_20260930_2257_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH_DONE.txt @ c9c5f93171ca286cda6968c2b730d56d63fd4344.
-- General Q-R1 reconciliation: routes/GENERAL_RECONCILIATION_20260930_2303_RESEARCH_CF0044_OWNER_REVIEW.txt @ fab98022bdfe5852109f87eb52fa8493ff9c1381.
-- Research Q-R2 AVAILABLE: routes/RESEARCH_20260930_2324_GUIDED_TOUR_MOTION_PLAIN_LANGUAGE_POLICY_UX.txt @ 094c1d540e745f622f2ea5b1ad6dc27d88d83ddf; screenshots referenced via the owner screenshot appendix.
-- Gemini 3.1 Pro screenshot/motion return RECEIVED and persisted: routes/GEMINI_RETURN_20260930_2346_INSTRUCTOR_TOUR_MOTION_SCREENSHOT_PASS.txt @ d27eab81ecade0d361ac17c32c13695f890dc140.
-- Gemini return aligns strongly on decorative-arc removal, stable adaptive-response cards, changed-phrase-only green emphasis, Skip separation, state-specific focus language, ghost-selection teardown, and miniature real tool behaviors. General provisionally AMENDS two points: no accordion if it creates owner-rejected layout jump; do not claim confidence affects future practice frequency unless actual StudyGrid behavior establishes that.
-- Astra primary/secondary tasks remain STAGED/HOLD. Do not activate without Nathan's explicit release.
-- Sol CF-0043 remains ACTIVE on Q-SOL1 exact-source interaction audit; consume terminal return when available.
-- Claude post-reset QA remains staged only.
-
-RECONCILED EVIDENCE-BASED PRODUCT CONTRACT — CURRENT
-- First-run: class-code shortcut OR institution -> program -> program term once, then scoped course picker with manual fallback.
-- Program Term and Academic Session remain separate.
-- Humber/Police Foundations current-vs-historical catalogue provenance must stay explicit; display shorthand may show `207` while canonical verified identity remains `PFP 207`.
-- Novice guidance retires by demonstrated milestones, not arbitrary login count; Tour/Help stays replayable.
-- Feedback is progressive and privacy-bounded.
-- Route animation is progressive enhancement; history/focus/state correctness works with motion off.
-- Mark reviewed/resolved uses brief local settle feedback + exact Undo; no confetti/loops/springy reflow/web-haptic dependency.
-- Broad `cursor:text` on passive reading containers is a strong source-backed cause of the observed iPad I-beam; preserve selection without forcing text cursor broadly.
-- Safari may ignore autocomplete=off; physical iPad/Safari testing remains required.
-- Navigation controls must match their semantic category/action/destination.
-- Selectric/full-loop: implied rotor, semantic native DOM text, CSS 3D + Web Animations, no visible globe/360 flourish/blur-heavy smear/spring bounce; reduced motion static/instant/minimal.
-- Contextual help/tours must preserve orientation, avoid unrelated layout jumps, stop guidance when the user begins real interaction, and remain skippable/replayable.
-- Instructor and learner shells must be meaningfully separated; capabilities may coexist on an account without mixing everyday chrome.
-- Theme showcase may be theatrical only within strict flicker/photosensitivity/reduced-motion safety constraints.
-- Adaptive-response demo should preserve the two-card question/response composition and localize motion to changed phrases; changed response terms may briefly use StudyGrid green, then settle.
-- Practice state must visually and semantically separate learner answer, correct answer, confidence selection, help/explanation and Skip. Skip is not a confidence value.
-- Visual state language must distinguish focus, hover, pressed, selected/active, tutorial target and decorative emphasis; noninteractive copy must not receive focus-looking rectangles.
-- Ghost guidance must never fight real input and must tear down immediately on pointer/touch/selection interaction.
-
-WORKER HOLD / ALLOWED PARALLEL LANES
-- Bob: HOLD product mutation until General releases the reconciled batched build contract.
-- Stuart: HOLD acceptance until exact reconciled candidate exists; later acceptance must include all owner-feedback regressions.
-- Kevin: HOLD until General releases a bounded non-overlapping task in the batched round.
-- Research CF-0044: Q-R2 AVAILABLE NOW after owner activation; evidence only.
-- Gemini: current screenshot/motion task COMPLETE; no new Gemini task unless a materially new specialist question arises.
-- Relay Architecture: NO StudyGrid product-design activation. Peer sync only for cross-system/governance/routing implications.
-- Astra: HOLD.
-- Sol CF-0043: ACTIVE Q-SOL1.
-- Claude: HOLD until reset/release.
-
-CLOSE / RELEASE CONDITION
-Do not treat specialist research as implementation. General should reconcile Research + Gemini + Sol terminal audit (+ Astra only if later explicitly released) into one implementation contract. Nathan wants this tranche built once the specification is coherent; do not fragment it into repeated worker wakes. Bob/Stuart/Kevin remain held until that one batched release is ready.
+This file no longer represents an open review state.
