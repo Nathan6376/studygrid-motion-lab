@@ -1,24 +1,24 @@
 STUDYGRID — BOB WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 21:30 ET
+Updated: 2026-10-01 00:30 ET
 Queue owner: General
 Worker: Bob / CF-0042
 
 PULL RULE
-When Nathan directly tells Bob to do queued work, refresh lifecycle and this queue, then execute the first eligible unclaimed item. Never invent filler or mutate an unreconciled product direction. Return durable technical results directly to General.
+When Nathan tells Bob to check routing, refresh lifecycle and this queue, then execute the first eligible unclaimed item. Return durable technical results directly to General. Do not invent filler or claim independent acceptance.
 
 CURRENT CONTEXT
-- Accepted Slice 2 baseline remains StudyGrid-CF0042-QB15-professor-home-scale.html / SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf.
-- Nathan is actively reviewing the current owner-visible release and wants all feedback accumulated before another implementation round.
-- Authoritative batching control: routes/OWNER_REVIEW_BATCH_20260930_OPEN.txt @ commit e88babfc2b8cee0ba9f5aae5de6151d0f4bf0a9d.
-- Existing feedback packets remain routes/OWNER_FEEDBACK_20260930_2113_SLICE2_REFINEMENT.txt and routes/OWNER_FEEDBACK_20260930_2123_ADD_CLASS_ONBOARDING_REDESIGN.txt.
-- Relay Architecture may adjudicate the onboarding/add-class packet in parallel, but Bob must not implement piecemeal while Nathan is still reviewing.
+- Accepted baseline: StudyGrid-CF0042-QB15-professor-home-scale.html / SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf / 996820 bytes / v7.18-cf0042-qb15-professor-home-scale.
+- Owner review pass closed at 2026-10-01 00:30 ET.
+- Closure: routes/OWNER_REVIEW_BATCH_20260930_CLOSED.txt @ 707194c337ea4eafd15b12e433c90ed45bc690ba.
+- Authoritative release: routes/GENERAL_RELEASE_20261001_0030_OWNER_REVIEW_BUILD.txt @ a4033b973d3efd19f2bd7f362a7af5cd769fb173.
 
-Q-B17R — OWNER-FEEDBACK REFINEMENT
-Eligibility: BLOCKED until Nathan closes the owner review batch and General publishes one reconciled post-Architecture implementation contract.
+Q-B17R — INTEGRATED OWNER-FEEDBACK REFINEMENT
+Eligibility: AVAILABLE NOW.
+Execute the exact General release as one integrated product candidate. Consume the activated held contract, Sol Q-SOL1 exact-source feeder and Research Q-R3 override specified by the release. Publish exact filename, bytes, SHA-256 and APP_VERSION plus self-test and durable DONE/PARTIAL/BLOCKED return to General.
 
 Q-B17 — SLICE 3
-Eligibility: BLOCKED until Q-B17R is independently accepted and Nathan reviews the corrected HTML.
+Eligibility: BLOCKED until Q-B17R candidate passes independent acceptance and Nathan reviews the corrected HTML.
 
 STOP CONDITION
-Do not start product mutation while routes/OWNER_REVIEW_BATCH_20260930_OPEN.txt is OPEN. Wait for one reconciled release from General. No filler.
+Do Q-B17R only. Do not continue into Slice 3 without a newer General release.
