@@ -1,0 +1,17 @@
+STUDYGRID — SOL WORK QUEUE
+Coordinator: ChatGPT General CF-0040
+Updated: 2026-09-30 22:18 ET
+Queue owner: General
+Worker identity reserved: CHAT-CGPT-20260930-STUDYGRID-SOL-01 / CF-0043
+Owner-visible title projection: SG Sol - September 30
+
+PULL RULE
+On owner activation, first verify the exact reserved registry identity and current Base/Active Corrections, then refresh this queue. Execute the first eligible unclaimed item only. Continue to later eligible items only if General has explicitly queued them and there is no overlap/dependency/owner-decision/safety boundary. Persist STARTED then DONE/PARTIAL/BLOCKED and return direct to General. Queue publication is not execution.
+
+Q-SOL1 — RELEASE INTERACTION / SOURCE AUDIT
+Eligibility: AVAILABLE ON OWNER ACTIVATION.
+Exact route: routes/SOL_20260930_RELEASE_INTERACTION_SOURCE_AUDIT.txt @ commit 9f94b1cd3067d9330ae09a4a76c34c3e7c75d6a8.
+Purpose: heavy exact source inspection and implementation-feeder preparation for the current StudyGrid owner-review batch. No external research and no product mutation.
+
+STOP CONDITION
+After Q-SOL1 terminal return, refresh once. If General has not published a newer exact Sol task, stop. Do not invent filler.
