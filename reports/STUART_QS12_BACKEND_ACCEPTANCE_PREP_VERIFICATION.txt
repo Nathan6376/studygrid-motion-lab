@@ -1,0 +1,38 @@
+STUDYGRID — STUART Q-S12 BACKEND ACCEPTANCE PREP — VERIFICATION
+Timestamp: 2026-09-30 20:58 ET
+Disposition: PREP PASS / NOT BACKEND ACCEPTANCE
+
+SOURCE COVERAGE
+- Claude C-A non-applied candidate inspected from exact current Drive bytes.
+- 23 app tables found; 23/23 represented in the RLS acceptance matrix; no missing or extra table rows.
+- 12 current api.cmd_* functions found; 12/12 represented in the command authorization matrix; no missing or extra command rows.
+- 3 current api views found and included in read-model/static/leakage gates: v_student_timeline, v_assessment_desk, v_attention_queue.
+
+PREP MATRIX
+- 12 leakage/privacy gates.
+- 9 concurrency/idempotency gates.
+- 10 static fail-closed gates.
+- 10 frontend/backend adapter parity gates.
+- 4 source-bound backend contract ambiguities explicitly held for release binding rather than silently assumed.
+
+SCAFFOLD SAFETY
+- Read-only staging static scaffold persisted at tests/backend/STUART_QS12_STATIC_STAGING_SCAFFOLD.sql.
+- Local token scan found zero executable mutation statements beginning INSERT/UPDATE/DELETE/ALTER/DROP/CREATE/GRANT/REVOKE/TRUNCATE/COPY/CALL/DO.
+- The scaffold is inspection-only and was not run against Supabase, production, or any shared database.
+
+STRENGTHENING AGAINST C-A KNOWN WEAKNESSES
+- C-A T08 vacuous source-state half replaced in the plan by explicit cross-section ready/non-ready source fixtures and role-specific visibility oracles.
+- C-A T31 weak audit-text check replaced by a sentinel free-text leakage probe across audit_events, command_log, outbox and serialized results plus canonical payload-hash validation.
+
+SOURCE-BOUND AMBIGUITIES FOR FUTURE RELEASE CONTRACT
+1. Unverified co-instructor: current SQL denies editor commands but still allows staff-scoped reads through role-only app.is_staff. Released contract must say whether verification loss also revokes staff reads.
+2. Removed member: class/course/source/assessment access is lost, while self-profile/membership/question/signal history remains visible under current self-only policies. Released retention contract must bind this explicitly.
+3. AI worker: current SQL grants global SELECT on ai_jobs/source_blocks while prose says jobs/blocks 'it is given'. Released contract must authorize trusted global scope or narrow it.
+4. Parallel idempotency: current candidate tests sequential replay/conflict only; real staging must prove same-key parallel calls are duplicate-safe and never leak raw unique violations or duplicate side effects.
+
+ARTIFACT HASHES (local exact text used for verification)
+- Acceptance plan SHA-256 c5cbd1ad9c904604ceaa9ca0f10b826f6395c769c36e2ab66eb89e060f2fb484.
+- Static staging scaffold SHA-256 62d699dfd8cf63c0b5e40cb76be251b136137c1cc5f2d28a222ef77333dc8d62.
+
+BOUNDARIES
+No SQL applied. No Supabase/auth/backend target mutated. No StudyGrid product/runtime/UI bytes changed. No unreleased Slice 3 validation or pre-approval. No deployment or canonical promotion. This prep becomes evidence only for harness readiness; a future real staging target still requires independent execution and observation.
