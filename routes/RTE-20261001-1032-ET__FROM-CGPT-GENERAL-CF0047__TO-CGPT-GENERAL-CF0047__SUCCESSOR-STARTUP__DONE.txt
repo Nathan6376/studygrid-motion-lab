@@ -1,0 +1,22 @@
+STATUS: DONE
+Timestamp: 2026-10-01 10:32 ET
+Actor: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+Task: Resume the closed General lane from CF-0040.
+
+VERIFIED STARTUP
+- Base CGPTBASE-R0004-N8V6 read in full.
+- SYSTEM — Active Corrections read through current applicable rows.
+- CF-0047 reserved identity verified unique, activated, and provider-read back.
+- Transition routes/GENERAL_ROLLOVER_CF0040_TO_CF0047_20261001.txt @ 016e6a6ece715698779169fc7b62e2ebecadec67 read in full.
+- Recipient acknowledgement routes/ACK-20261001-1025-ET__CF0047__GENERAL-ROLLOVER-CF0040-TO-CF0047.txt @ ac2d339c517514246df9ded77becc3474a074dad persisted/read back.
+
+CURRENT STATE REFRESH
+- Bob Q-B17R2 terminal DONE consumed from Drive 1dwuiVe0o1H5SlIVApFP7sod1pDIDypdD. Exact repaired candidate: StudyGrid-CF0042-QB17R2-stuart-defect-repair.html / Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46 / SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab / 1,063,586 bytes / v7.20-cf0042-qb17r2-stuart-defect-repair. Bob focused verification: 42/42 PASS; independent acceptance not claimed.
+- Stuart CF-0046 ACTIVE. Q-S13R2 exact acceptance route released/read back at routes/GENERAL_20261001_1031_STUART_QS13R2_QB17R2_REACCEPTANCE.txt @ 5be1818d845fa01206a460ea522a4eb216aa3a73. Stuart queue updated/read back at commit 099568d247877c2bc28586d3d3aace5213ce81ef; Q-S13R2 AVAILABLE NOW.
+- Kevin Q-K1F remains STARTED / terminal return not recovered in current queue, Response Traces Q-K1F search, or Drive Q-K1F DONE search. Q-K2 remains blocked.
+- Claude C-E terminal return Drive 1bocM5RBVoM-mN6NapytYQ5nF7jmvSAML consumed: local PostgreSQL suite 1223/1223 PASS; no real Supabase/staging/deploy occurred, so staging remains separately gated.
+- Slice 3 and Astra remain HOLD.
+
+NEXT OWNER ACTION
+Activate Stuart CF-0046 with: Check routing — Stuart.
+Do not pre-send a future return-to-General prompt; wait for Stuart terminal state under the deferred-continuation rule.
