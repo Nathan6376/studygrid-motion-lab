@@ -1,0 +1,51 @@
+STUDYGRID — STUART Q-S13R2 — QB17R2 NARROW REPAIR RE-ACCEPTANCE RETURN
+FROM: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+TO: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+Timestamp: 2026-10-01 10:43 ET
+STATUS: DONE / PASS
+
+TASK
+Independently re-accept General-released QB17R2 against the two defects that held Q-S13R plus bounded unchanged-regression checks. No mutation.
+
+EXACT CANDIDATE VERIFIED
+- StudyGrid-CF0042-QB17R2-stuart-defect-repair.html
+- Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46
+- 1,063,586 bytes
+- SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab
+- APP_VERSION / SG_R6_BUILD v7.20-cf0042-qb17r2-stuart-defect-repair
+
+RESULT
+PASS.
+
+DEFECT 1 — WELCOME ROTOR
+CLEARED.
+- Stable 3-item semantic summary exists independently of the visual rotor.
+- Moving rotor is AT-hidden and non-live.
+- Normal autoplay works only before engagement.
+- Focus and pointer interaction cancel autoplay.
+- Manual advance still works.
+- Reduced-motion path stays static unless manually advanced.
+
+DEFECT 2 — `HOW THIS WORKS`
+CLEARED.
+- Fixed-position anchored disclosure.
+- 0.0 px unrelated `#tourNext` movement at 1024, 820, 390 and 320 px tested widths; reduced-motion path also 0.0 px.
+- Focus enters dialog; Escape and Close both dismiss and restore focus to Explain; aria-expanded is reconciled.
+
+BOUNDED REGRESSION
+PASS.
+- 4/4 executable inline scripts parse.
+- Component registry 237/237 unique, build identity current.
+- QB17R→QB17R2 diff bounded to 8 targeted replacement regions.
+- Representative unchanged routes rendered with no tested horizontal overflow, page errors or console errors.
+- No unexpected network requests in the exact in-memory runtime.
+
+FULL REPORT
+reports/STUART_QS13R2_QB17R2_REACCEPTANCE_REPORT.txt
+report commit e07a3907def894a7484069779bdca1ecdfece8af
+
+HOLDS / NOT CLAIMED
+Physical iPad/Safari/WebKit, VoiceOver, physical hardware keyboard, hosted-origin persistence, backend/auth/Supabase/live providers/deploy/canonical promotion remain outside this bounded evidence.
+
+BOUNDARY
+This PASS clears Q-S13R2 only. Do not advance Slice 3 from this return alone. Current queue still requires Nathan review of the corrected HTML plus a newer General Slice 3 release. Stuart performed no StudyGrid mutation and stops here.
