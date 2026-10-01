@@ -1,0 +1,19 @@
+STUDYGRID — GENERAL CORRECTION / RELAY ARCHITECTURE SCOPE
+Timestamp: 2026-09-30 23:42 ET
+From: Nathan direct correction via General CF-0040
+Status: EFFECTIVE IMMEDIATELY
+
+CORRECTION
+- Relay Architecture CF-0041 exists for Relay/system architecture and Relay-worker coordination. It is not a StudyGrid product-design/UX adjudication lane.
+- General CF-0040 owns StudyGrid product coordination, including role/shell IA, onboarding/product-flow reconciliation, worker sequencing and final product-spec synthesis.
+- General and Relay Architecture remain peer coordinators for cross-system/governance/routing implications so Nathan does not have to repeat material system-level corrections. That peer sync does NOT make Relay Architecture a StudyGrid product specialist.
+- StudyGrid specialist delegation is: Research for evidence/source work; Gemini for self-contained external creative/motion critique; Sol for exact-source inspection/prep; Astra later only when Nathan explicitly releases it; Bob/Stuart/Kevin after General closes/reconciles the owner-review tranche.
+
+SUPERSESSION / RETRACTION
+- Do NOT activate Relay Architecture on routes/ARCHITECTURE_20260930_2324_INSTRUCTOR_TOUR_ROLE_SPLIT_SUPPLEMENT.txt or any successor StudyGrid product-design packet.
+- The previously produced Relay Architecture StudyGrid onboarding/adjudication material may remain as historical/non-authoritative input already consumed by General, but it must not be treated as the controlling StudyGrid product authority.
+- Any still-pending StudyGrid product decisions formerly assigned to Relay Architecture return to General CF-0040 for reconciliation using owner direction + Research/Gemini/Sol evidence.
+
+OWNER-SURFACE CONSEQUENCE
+- Nathan should receive no Architecture activation for this StudyGrid review tranche.
+- Research and Gemini prompts remain valid; Sol continues current exact-source work; Astra remains held; Bob/Stuart/Kevin remain held until the batched release is ready.
