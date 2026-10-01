@@ -1,0 +1,292 @@
+STUDYGRID — BOB IMPLEMENTATION FEASIBILITY — NO BUILD
+From: StudyGrid Bob / CF-0042
+To: ChatGPT General CF-0047
+Timestamp: 2026-10-01 17:12 ET
+Lifecycle: DONE — TECHNICAL FEASIBILITY ONLY / NO PRODUCT MUTATION
+
+AUTHORITY / EXACT BASE
+- Nathan activation: “Check routing — Bob. Consume General CF-0047’s current implementation-feasibility route. Do not build or mutate the product.”
+- General route consumed: routes/GENERAL_20261001_1700_BOB_IMPLEMENTATION-FEASIBILITY-OPTIONS-NO-BUILD.txt @ f7189b3e93c16e65978df55e92e6c77142bc635f.
+- Owner review delta consumed: routes/OWNER_REVIEW_DELTA_20261001_1657_PRODUCT-FLOW-STUDY-MODE.txt @ 9e44452c4687b03fe62a1bc6faee387cc2713c6d.
+- Exact source inspected: StudyGrid-CF0042-QB17R2-stuart-defect-repair.html / Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46 / SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab / 1063586 bytes / v7.20-cf0042-qb17r2-stuart-defect-repair.
+- No StudyGrid HTML/product bytes, product branch, backend/auth/Supabase, deployment, or canonical state changed. No design winner is selected here.
+
+BOTTOM LINE
+All owner-requested product directions in this tranche are implementable inside the current single-file architecture, but the current full-root/full-course-shell render pattern is the main technical source of physical instability. The clean feasibility seam is to separate stable shell/context chrome from changing route content. There are three viable migration shapes below; General/Astra should choose/reconcile the product design before any implementation.
+
+CURRENT SOURCE ARCHITECTURE — MATERIAL FINDINGS
+1. ROUTING / HISTORY
+- The app already has a small hash router: routePartsFromValue(), routeContextFromParts(), sameRouteContext(), nav(), parseRoute().
+- nav() records route scroll/anchor when current/next routes share a route context, then changes location.hash (or replaceState for replacement navigation).
+- handleRouteHistoryChange() listens to hashchange + popstate, closes route overlays, calls render(), focuses the route entry for cross-context changes, then restores scroll/anchor for same-context changes.
+- This is usable infrastructure; it does not need to be replaced merely to improve UI stability.
+
+2. FULL REMOUNT IS THE MAIN INSTABILITY SOURCE
+- render() dispatches the whole root to Welcome, Tour, Start, Course, Plan, Access, Profile, Workspace or Courses.
+- renderCourseRoute() reconstructs the complete .course-shell (course rail + course identity + course nav + #courseMain) on course-route changes, then renders the selected view.
+- Therefore a sibling route change can recreate persistent chrome even when the user perceives it as the same workspace. That is the right architectural target for owner-reported layout/target movement.
+
+3. THERE IS ALREADY A GOOD PARTIAL-UPDATE PRECEDENT
+- Study Learn/Test/Support links already special-case same-workspace switching: history.pushState(), direct renderStudyStart(c,nextView), explicit keyboard-focus restoration and scroll restoration.
+- That proves a persistent-shell/outlet pattern can be introduced incrementally without replacing the whole router.
+
+4. STATE IS SUFFICIENT FOR A STABLE SHELL
+- The current local state already carries activeCourseId, lastLearnerRoute, previewPersona, demoSignedIn, currentSession, lastSummary, questionReviews, studyHistory, coinBalance/coinAwards, localClasses and onboarding state.
+- Persistence is already split into prefs / learn / support / feedback / telemetry namespaces.
+- No backend is required to prototype a stable signed-in shell, context model, review terminal state, or automatic local reward state.
+
+5. LATE OVERRIDES INCREASE REFACTOR RISK
+- The file contains base renderers plus later sgBase* captures/overrides (render, renderStudyStart, renderSessionSummary, renderInstructorWorkspace, QB17R welcome, etc.).
+- Future implementation should consolidate the chosen seam rather than add another broad late override layer; otherwise route/focus/state behavior becomes harder to reason about and test.
+
+6. STUDY SETS: THE LAST-ITEM NO-OP IS EXPLAINED IN SOURCE
+- Study Sets already has revision-bound review keys and states needs_review / approved / needs_changes / held, with set-level Draft / Needs review / Ready / Published / Held.
+- “Approve & next” records approval then selects the next unapproved question. If none exists, it leaves the current question selected and re-renders the same workbench. That directly explains the owner-observed final-item action appearing to do nothing.
+- The repair should be an explicit terminal review state, not an animation hack.
+
+7. REWARD / SEEDS IS CURRENTLY A MANUAL TWO-STEP COMMIT
+- finishSession() calculates the reward but stores coinsCollected:false.
+- renderSessionSummary() presents “Collect Seeds”; the click adds an idempotent milestone award and balance, then persists; persistence failure rolls back and reports failure.
+- Automatic reward is feasible by moving the same idempotent award transaction into session finalization. Failure must remain honest: no fake collected state if persistence fails.
+
+8. WELCOME ROTOR NOW HAS ACCESSIBILITY-SAFE FOUNDATIONS
+- Q-B17R2 keeps the moving layer aria-hidden and provides a stable semantic ordered list.
+- Current autoplay is intentionally finite and stops on focus/pointer/touch/keyboard/manual interaction; reduced motion remains static.
+- Owner’s newer continuous 1→2→3 requirement is feasible, but must preserve those accessibility repairs: continuous while idle, paused/stopped during actual engagement, no live-region spam, and a static/minimal reduced-motion presentation.
+
+ARCHITECTURE OPTION A — PERSISTENT SIGNED-IN APP SHELL + ROUTE OUTLET
+Shape:
+- Keep the existing hash/History deep-link model.
+- Split rendering into stable zones: Public/Onboarding shell and Signed-in shell.
+- Signed-in shell mounts persistent global/context chrome once; route changes update a main outlet and only the context pieces that truly changed.
+- Introduce a small route descriptor, e.g. zone(public|onboarding|signed-in), persona/role, courseId, surface, relation(parent|child|sibling), focusPolicy, scrollPolicy.
+- A signed-in Home/current-workspace route can be represented without letting product Back controls walk into /start or public onboarding. Sign out remains the explicit exit.
+
+How it handles the requested surfaces:
+- Global vs local nav: one persistent app-level nav; course/context nav lives within the signed-in shell and is reduced when redundant.
+- Sibling changes (Learn/Test/Support, instructor tabs): update outlet, preserve shell + control positions + relevant anchor/focus.
+- Parent/child changes (Home→course, Study→lesson): update context/outlet; focus new heading when semantic context changes.
+- General/self-directed study: represent it as a signed-in workspace context with courseId=null rather than as a separate public/onboarding branch.
+- Role: route descriptor carries learner/instructor/general-study context; expose one compact stable context marker rather than stacking banners.
+
+Risk / blast radius / reversibility:
+- Implementation risk: MEDIUM.
+- Blast radius: MEDIUM because render()/renderCourseRoute() and shell ownership change, but local feature state can remain intact.
+- Test burden: HIGH on route/back/focus/scroll matrix, but coherent rather than special-case-heavy.
+- Reversibility: GOOD if introduced behind a render adapter and migrated surface-by-surface.
+- Primary benefit: directly attacks the repeated full-shell remount that causes target movement and duplicated chrome.
+
+ARCHITECTURE OPTION B — TARGETED “ROUTE ISLANDS” ON THE CURRENT RENDERER
+Shape:
+- Preserve render() and renderCourseRoute() as the default.
+- Add targeted partial-render paths only for high-friction same-workspace transitions: Study modes, instructor tabs, Study Sets review, selected class/context controls, completion panels.
+- Generalize the existing Study pushState + direct render + scroll/focus restore pattern into a small transition helper.
+
+How it handles the requested surfaces:
+- Persistent action bars can be added around changing Study Set question bodies.
+- Learn/Test/Support can preserve the tab strip/height anchor while replacing only the pane.
+- Instructor tab/body can update without rebuilding surrounding class shell.
+- Home/onboarding leakage still needs a bounded route policy fix even if most rendering remains unchanged.
+
+Risk / blast radius / reversibility:
+- Implementation risk: LOW–MEDIUM.
+- Blast radius: LOW per slice.
+- Test burden: MEDIUM initially, rising over time as more special cases accumulate.
+- Reversibility: VERY GOOD.
+- Main downside: long-term complexity; it can become a collection of exceptions around an architecture that still remounts too much.
+
+ARCHITECTURE OPTION C — INTERNAL ROUTE/CONTROLLER LAYER INSIDE THE SINGLE FILE
+Shape:
+- Introduce a route table and controller lifecycle (mount/update/dispose) while keeping the product a single-file app.
+- Persistent shell owns global delegated events. Each major surface owns an outlet/controller and updates state without recreating unrelated DOM.
+- The current hash/History router can remain the compatibility transport initially; a Navigation API adapter can be optional later.
+
+How it handles the requested surfaces:
+- Explicit route metadata makes signed-in/public boundaries, roles, parent/child/sibling semantics, Back behavior, focus policy and scroll policy first-class rather than inferred ad hoc.
+- Review/workflow state machines become controllers with terminal states rather than markup side effects.
+- Cleaner long-term basis for general study + class study + instructor context.
+
+Risk / blast radius / reversibility:
+- Implementation risk: HIGH initially.
+- Blast radius: HIGH if done as one rewrite; should only be considered as staged migration.
+- Test burden: HIGHEST up front.
+- Reversibility: MODERATE unless the old renderer remains behind an adapter during migration.
+- Long-term benefit: strongest separation of route, state, DOM ownership and transition policy.
+
+BROWSER / PLATFORM PRIMITIVES — FEASIBILITY
+A. View Transition API
+- Same-document document.startViewTransition() is now a practical progressive enhancement: Safari added View Transitions in Safari 18.0; MDN marks same-document startViewTransition Baseline 2025 across latest browsers.
+- Use only behind feature detection. Correctness, focus, route state and layout must work identically without it because older iPads/Safari remain plausible.
+- Good fit: sibling outlet swaps where the shell remains stable, selected-class or persistent-control continuity, modest cross-fades/slides.
+- Poor fit: making every state change a page transition or relying on captured snapshots for focus/semantic behavior.
+
+B. Navigation API
+- MDN marks Navigation API Baseline 2026 on latest browsers, but WebKit’s Interop 2026 work still targets interoperability and Safari 26.3 continued adding Navigation API behavior.
+- Therefore it is viable as a later adapter, NOT a core requirement for this tranche. The current hash/History router should remain the fallback/correctness path until physical supported-device QA proves parity.
+
+C. Web Animations API (WAAPI)
+- Safe as the primary controlled imperative animation primitive for this app; Safari has shipped Web Animations since Safari 13.1 / iPadOS 13.4.
+- The app already uses Element.animate() and has a TourMotion primitive with direction, race/coalescing, focus behavior and reduced-motion handling.
+- Reuse that discipline for bounded sibling transitions; do not indiscriminately animate layout.
+
+D. CSS transitions
+- Best for local visual state: hover/focus/pressed/state-emphasis, opacity/transform of contained controls.
+- Avoid height/position animations that move unrelated targets. Prefer fixed/reserved geometry or outlet snapshots.
+
+E. FLIP / shared-element techniques
+- Feasible, but not needed as the default. Use only if a later selected design has a true shared element whose continuity materially improves orientation and View Transitions cannot provide the effect.
+- Manual FLIP increases measurement/compositing and Safari/iPad QA burden; keep it exceptional.
+
+F. Scroll/focus/history
+- history.scrollRestoration is widely available. The existing app already has route-anchor and manual scroll helpers; preserve/refine them.
+- Focus policy should be semantic: sibling transition retains triggering control where useful; parent/context transition focuses the new route heading; modal/dialog restores trigger; browser Back restores logical anchor without forced page-top unless context changed.
+
+ACCESSIBILITY / MOTION CONTRACT
+- Motion must never carry essential meaning alone.
+- Keep prefers-reduced-motion and StudyGrid less-motion as hard gates.
+- Moving Welcome visual remains AT-hidden with a stable semantic summary.
+- Auto cycling pauses on focus and real pointer/touch/keyboard interaction; do not resume in a way that fights an engaged user.
+- Keep route changes out of aria-live spam. Announce only concise outcome/context where needed.
+- Never remove keyboard focus visibility to solve the owner’s green-square complaint.
+
+FOCUS TREATMENT FEASIBILITY
+Current source has a broad 3px outline plus multiple local focus-visible styles. The family can be centralized without reducing accessibility:
+- one focus token set (color, outer contrast ring, offset/width);
+- rounded controls use a radius-aware outer ring/box-shadow or outline strategy that follows component shape;
+- :focus-visible gates keyboard-style focus so pointer clicks do not leave unnecessary square treatment;
+- forced-colors/high-contrast fallback retains a real outline.
+This should be a family-level refactor, not one selector at a time.
+
+STUDY SET REVIEW — STABLE CONTROL + TERMINAL STATE
+A future selected design should model the review workbench as explicit state:
+1. SET_SELECTED
+2. QUESTION_REVIEW (index/status)
+3. DECISION_SAVED
+4. NEXT_PENDING or REVIEW_COMPLETE
+5. READY / HELD / NEEDS_CHANGES
+6. optional PUBLICATION_PREVIEW (still separate from approval)
+
+Implementation seam:
+- Keep the review action dock mounted outside the changing question body so Approve & next stays in a fixed location.
+- Replace only question content/status in the review outlet.
+- After last effective approval, transition to REVIEW_COMPLETE/READY with an explicit “15 of 15 reviewed” completion surface and meaningful next action; do not select the same last question again and pretend the operation advanced.
+- Existing revision-bound review key/content binding should be retained.
+
+LEARNER STUDY WORKFLOW — SIMPLIFIED STATE MODEL
+A technically clean future flow can be represented without inventing more routes:
+1. ORIENT / TEACH — why this item matters, source/context, short teaching material where needed.
+2. PRACTISE — answer interaction (single or multi-select).
+3. OPTIONAL CONFIDENCE — subordinate, not a full visual takeover unless selected design requires it.
+4. FEEDBACK — outcome + concise explanation/source; deeper tools secondary.
+5. ADVANCE — stable Next/Finish target.
+6. COMPLETE — accomplishment + what changed + recommended forward next step.
+
+Assessment is a policy variant: response is stored but feedback is deferred until completion. Pause/resume is orthogonal session state, not a new study mode.
+
+This separates “what am I doing?” from “how long do I have?” and avoids treating Quick/Focused/Deep labels as the product model. If duration remains, it can parameterize a selected study job rather than masquerade as three different jobs.
+
+AUTOMATIC SEEDS — TRANSACTION SHAPE
+- Reuse the existing deterministic milestone key so a reward cannot be duplicated.
+- During finishSession(), compute reward; if key is absent, add award + balance + summary state together, then persist once.
+- If persistence succeeds: completion UI says Seeds were added automatically; animation is secondary acknowledgement only.
+- If persistence fails: roll back the local award/balance and show a truthful pending/unavailable state. Do not require “Collect” and do not claim the reward was saved.
+- This remains local-only until a future connected backend has an authoritative transaction service.
+
+WELCOME 1→2→3 CONTINUOUS LOOP — TECHNICAL CONTRACT
+Feasible without changing the semantic/accessibility repair:
+- visual idle state cycles 1→2→3→1 continuously using one controller/timer;
+- stable semantic ordered list remains outside/independent from moving faces;
+- moving faces remain aria-hidden/non-live;
+- manual Next remains deterministic;
+- real focus/pointer/touch/keyboard engagement pauses/stops autoplay while the user is engaged;
+- reduced motion presents a static/minimal state and manual access to the three meanings without continuous motion;
+- timer/controller is disposed on route exit to prevent detached-DOM work;
+- exact transition style/duration remains a design decision for Research/Astra/General, not Bob.
+
+RETAIN / REFACTOR / REPLACE MAP
+RETAIN
+- Existing hash/deep-link route identities as compatibility transport.
+- route scroll/anchor helpers and semantic focusRouteEntry concept.
+- namespaced local persistence and current state data where semantics remain valid.
+- revision-bound question review keys/content binding.
+- TourMotion discipline (direction, race handling, focus, reduced motion) as a bounded reusable primitive.
+- Q-B17R2 stable rotor semantic list/non-live moving layer.
+
+REFACTOR
+- render() into zone/shell + outlet responsibilities.
+- renderCourseRoute() so course shell/context can persist while main view changes.
+- special Study sibling-switch logic into one reusable route-transition helper.
+- Study Sets to persistent workbench/action dock + explicit terminal state.
+- study session render path into explicit orient/teach→practise→feedback→complete model.
+- reward finalization into automatic idempotent local commit.
+- focus-visible styling into centralized, radius-aware tokens/rules.
+- role/context truth from repeated banners into one stable shell/context representation.
+
+REPLACE / REMOVE
+- Signed-in product Back controls that route through /courses→/start→public/onboarding.
+- Full-pane/full-shell remounts for same-level sibling changes where no semantic context changed.
+- manual Collect Seeds requirement.
+- last-question Approve & next behavior that returns to the same last question.
+- duplicate global + course chrome that communicates the same context twice.
+- scattered one-off sharp focus/border fixes.
+
+TEST / QA BURDEN FOR ANY SELECTED IMPLEMENTATION
+Core functional matrix:
+- direct deep link; link click; programmatic nav; browser Back/Forward; same-sibling switch; parent/child switch; signed-in Home; Sign out/onboarding boundary.
+- scroll preservation vs intentional reset; keyboard focus; focus restore from dialogs; no detached-focus targets.
+- state continuity for active course, review queue, current session, last summary, reward idempotency.
+- Study Set first/middle/last approval + Held/Needs changes + publication separation.
+- practice immediate-review vs assessment-deferred-review completion.
+
+Accessibility:
+- keyboard-only; reduced motion; stable target/focus under mode switching; no unsolicited live announcements from moving visuals; modal/dialog focus containment/restore; visible focus family; touch targets.
+- VoiceOver remains a physical-device acceptance requirement, not proven by static source review.
+
+Responsive / Safari:
+- at minimum 320/390 phone widths plus 768/820/1024 tablet portrait/landscape classes and desktop widths.
+- physical iPad Safari should explicitly verify sticky/fixed shell behavior, dynamic viewport/safe-area handling, backdrop/filter compositing, View Transition snapshot behavior if enabled, keyboard focus, and touch scroll during partial swaps.
+- Older Safari path must work with View Transition and Navigation API absent.
+
+RESEARCH BASIS FOR WEB PRIMITIVES
+- MDN: Document.startViewTransition / View Transition API — Baseline 2025 on latest browsers; feature-detect for older browsers.
+- WebKit: “WebKit Features in Safari 18.0” — same-document View Transitions shipped in Safari 18.
+- MDN: Navigation API — Baseline 2026 on latest browsers; not guaranteed on older devices.
+- WebKit: “Announcing Interop 2026” + “WebKit features for Safari 26.3” — Navigation API interoperability continues and Safari 26.3 added further navigation-abort behavior.
+- WebKit: “Web Animations in Safari 13.1” — WAAPI available since Safari 13.1 / iPadOS 13.4.
+- MDN: history.scrollRestoration — widely available since 2020.
+
+FUTURE BOUNDED IMPLEMENTATION SEQUENCE — ONLY AFTER GENERAL SELECTS DESIGN DIRECTION
+Slice 1 — SHELL / IA
+- Define route descriptors and public/onboarding/signed-in boundary.
+- Introduce selected shell/outlet strategy.
+- Establish signed-in Home/current-workspace behavior and Back/Sign-out policy.
+- Remove only chrome duplication that the selected design explicitly resolves.
+Gate: exact route/back/forward/focus/scroll regression matrix PASS before proceeding.
+
+Slice 2 — TRANSITION / MOTION
+- Add selected sibling transition helper.
+- Optional View Transition enhancement with WAAPI/CSS/no-motion fallback.
+- Implement selected Welcome idle loop while preserving Q-B17R2 accessibility semantics.
+Gate: reduced motion + keyboard + iPad/Safari motion/focus/scroll checks.
+
+Slice 3 — STUDY WORKFLOW
+- Implement selected teaching→practice→feedback→completion model.
+- Stabilize repeated controls.
+- Add explicit Study Set terminal/finalization state.
+- Move Seeds to automatic idempotent finalization with truthful persistence-failure state.
+Gate: end-to-end session/review/reward state tests + unchanged source/provenance semantics.
+
+Slice 4 — VISUAL / ACCESSIBILITY POLISH
+- Central focus-visible family.
+- Edge-only gloss and selected control styling from approved design.
+- Remove residual square/border artifacts as a family.
+- Full responsive + accessibility regression.
+
+REAL BLOCKERS / HOLDS
+- No technical blocker to the above feasibility work.
+- Actual implementation is correctly HELD until General completes feeder synthesis, Nathan’s current owner-review tranche is sufficiently closed/paused, and a design direction is selected/released.
+- Exact IA labels, visual motion choice, Home composition, mode names and which destinations are removed are design/product decisions, not Bob technical authority.
+- Physical iPad/Safari/VoiceOver behavior remains acceptance evidence to obtain after implementation; static/source feasibility does not prove it.
+
+TERMINAL RETURN
+DONE — no-build feasibility complete. General CF-0047 can consume this report directly for architecture/design synthesis. Product remains byte-identical to the exact Q-B17R2 base.
