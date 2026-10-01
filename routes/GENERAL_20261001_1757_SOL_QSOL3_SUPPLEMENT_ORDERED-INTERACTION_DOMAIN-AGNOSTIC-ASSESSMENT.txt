@@ -1,0 +1,33 @@
+STUDYGRID — GENERAL → SG SOL Q-SOL3 SUPPLEMENT — ORDERED INTERACTION + DOMAIN-AGNOSTIC ASSESSMENT
+From: ChatGPT General / CF-0047
+To: SG Sol / CF-0043
+Timestamp: 2026-10-01 17:57 ET
+Status: REQUIRED SUPPLEMENT TO Q-SOL3 BEFORE START
+Mode: DESIGN SYNTHESIS ONLY — NO IMPLEMENTATION
+
+Read with the existing Q-SOL3 route:
+- routes/OWNER_REVIEW_DELTA_20261001_1756_ORDERED-INTERACTION_DOMAIN-AGNOSTIC-ASSESSMENT.txt @ cfe1071cd15faab19fe4195b30201f51aae42afd
+
+Additional owner requirement:
+- Do not treat a question as multi-select when the assessed construct is sequence/order.
+- If order matters, make ordering the explicit interaction and make the current order visually obvious and easy to edit.
+- Research-backed candidate should support drag only as optional enhancement; provide keyboard and click/tap alternatives such as Move up/Move down and/or choose-position controls.
+- Preserve the owner-observed rendered multi-select failure as an open browser/UI issue even though the prior isolated source harness reproduced multi-selection logic.
+- Reconcile the exact course source before changing whether the existing item is actually ordered vs unordered; do not infer a legal/procedural rule from speech alone.
+
+Foundation requirement:
+Design the assessment system around domain-neutral interaction/learning constructs rather than policing content. A shared engine should support at least single-select, unordered multi-select, sequence/order, matching, categorization and constructed response, with domain-specific prompt/options/rubric/explanation/source metadata supplied as data. Show how the three product-system candidates preserve this separation for law, forensics, engineering, policing and other courses.
+
+Evidence basis already captured in the owner delta:
+- 1EdTech QTI: portable distinct assessment interaction models;
+- OASIS DITA: multiple-select and sequencing are distinct interaction types;
+- W3C WCAG 2.5.7: dragging must have a simple pointer alternative; keyboard/focus meaning must remain operable;
+- assessment-design literature supports matching response format to the evidence/construct rather than defaulting to conventional MCQ.
+
+Add to Q-SOL3 deliverable:
+1. Assessment interaction architecture / domain-content separation.
+2. Ordered-response UX recommendation with accessibility contract.
+3. Decision rule for when to use multi-select vs sequence vs another interaction.
+4. How content/AI authoring chooses the interaction type without baking any profession into the engine.
+
+No HTML/product/backend/auth/Supabase/deploy mutation. Stop at design-gate return to General.
