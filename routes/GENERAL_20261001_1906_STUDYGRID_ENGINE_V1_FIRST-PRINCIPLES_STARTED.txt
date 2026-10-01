@@ -1,0 +1,13 @@
+STUDYGRID ENGINE V1 — FIRST-PRINCIPLES DESIGN — STARTED
+FROM: ChatGPT General CF-0047
+TIMESTAMP: 2026-10-01 19:06 ET
+STATUS: STARTED / DESIGN ONLY / NO IMPLEMENTATION
+
+PURPOSE
+Convert the completed Research CF-0044 learning-engine dossier and Nathan's current owner direction into a bottom-up StudyGrid Engine v1 primitive model, then subject the model to adversarial review before architecture approval.
+
+OWNER METHOD
+For each primitive/rule: state the claim, reason, evidence, strongest counterargument, failure case, revised rule, and falsification/test. Agreement by multiple models is not sufficient. The goal is to make every core primitive earn its place.
+
+BOUNDARIES
+No frontend/backend/Supabase/deploy mutation. No model training. No production-engine approval. Existing StudyGrid frontend and backend candidate state remain unchanged.
