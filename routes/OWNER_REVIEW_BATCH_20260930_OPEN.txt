@@ -1,18 +1,18 @@
 STUDYGRID — OWNER REVIEW BATCH OPEN
 Timestamp opened: 2026-09-30 21:30 ET
-Last reconciled: 2026-09-30 23:24 ET
+Last reconciled: 2026-09-30 23:42 ET
 Coordinator: ChatGPT General CF-0040
 Authority: Nathan direct owner instruction
 Status: OPEN — ACCUMULATE/RECONCILE CURRENT PASS; DO NOT WAKE BOB/STUART/KEVIN YET
 
 OWNER PROCESS
 - Nathan wants the current release feedback accumulated into one coherent package, not repeated small Bob/Stuart/Kevin activations.
-- General delegates specialist work appropriately: Research for evidence, Gemini for external creative/motion direction, Architecture for role/IA/system boundaries, Sol for exact-source inspection. General reconciles the results.
+- General owns StudyGrid product coordination and delegates specialist work appropriately: Research for evidence, Gemini for external creative/motion direction, Sol for exact-source inspection, and Astra later only when Nathan explicitly releases it. General reconciles the results.
+- Relay Architecture CF-0041 is NOT a StudyGrid product-design/UX adjudication lane. It remains the Relay/system architecture coordinator. General and Relay Architecture only peer-sync material cross-system/governance/routing implications so Nathan does not have to repeat them.
 - Gemini does not have verified shared routing access in the tested Gemini 3.1 Pro environment; Gemini tasks must be self-contained copyable TXT unless a future environment proves direct access.
 - Astra tasks are staged but HELD until Nathan explicitly releases them near his reported reset window. Do not burn Astra now.
 - Sol CF-0043 is ACTIVE on Q-SOL1 exact-source preparation. Consume terminal return when it exists; do not infer completion early.
-- Material architecture deltas propagate to Relay Architecture through the shared peer-coordinator route so Nathan does not repeat them.
-- When this review/build tranche is sufficiently specified, General reconciles Architecture + Research + Gemini + Sol + all owner feedback, then publishes one batched implementation/acceptance round for Bob/Stuart/Kevin. Nathan wants the motion/tutorial tranche settled ASAP and a reviewable teacher-facing candidate ready by Monday 2026-10-05 if feasible; this is a planning target, not a guarantee.
+- When this review/build tranche is sufficiently specified, General reconciles Research + Gemini + Sol + all owner feedback (+ Astra only if later released), then publishes one batched implementation/acceptance round for Bob/Stuart/Kevin. Nathan wants the motion/tutorial tranche settled ASAP and a reviewable teacher-facing candidate ready by Monday 2026-10-05 if feasible; this is a planning target, not a guarantee.
 
 CURRENT FEEDBACK IN BATCH
 1. routes/OWNER_FEEDBACK_20260930_2113_SLICE2_REFINEMENT.txt
@@ -66,16 +66,19 @@ CURRENT FEEDBACK IN BATCH
    - one-time safe Paper→Dusk→Paper theatrical appearance demo; reduced-motion/photosensitivity-safe path mandatory
    - preserve liked student-tour transition and StudyGrid orb/ball
 
-ARCHITECTURE / RESEARCH / SPECIALIST STATE
-- Relay Architecture prior onboarding adjudication consumed: routes/ARCHITECTURE_ADJUDICATION_20260930_2129_ADD_CLASS_ONBOARDING.txt.
-- Architecture prior supplement: routes/ARCHITECTURE_20260930_2147_OWNER_REVIEW_SUPPLEMENT.txt.
-- New Architecture supplement/adjudication request: routes/ARCHITECTURE_20260930_2324_INSTRUCTOR_TOUR_ROLE_SPLIT_SUPPLEMENT.txt @ 67feb821414690f5090fb6dece02c5cb1660cefb.
+5. routes/OWNER_REVIEW_SCREENSHOT_EVIDENCE_20260930_2335.txt @ d2e1e5e5bb21b3f20003dffc0b5312850f13f4bc
+   - exact screenshot evidence for decorative arc/circle, cramped practice card, Next halo/double-edge, blue heading outline, adaptive response card layout, and current selection/tool tour surface.
+
+SPECIALIST STATE
+- Scope correction effective: routes/GENERAL_CORRECTION_20260930_2342_RELAY_ARCHITECTURE_SCOPE.txt @ 8248b684df0ad5f83b46ac66ee3bd0fd33bc8183.
+- Prior Relay Architecture StudyGrid outputs are historical/non-authoritative design input already consumed by General; do not route new StudyGrid product-design work to Relay Architecture.
+- The pending routes/ARCHITECTURE_20260930_2324_INSTRUCTOR_TOUR_ROLE_SPLIT_SUPPLEMENT.txt is RETRACTED / DO NOT ACTIVATE.
 - Research CF-0044 Q-R1 DONE/consumed: routes/RESEARCH_CF0044_20260930_2257_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH_DONE.txt @ c9c5f93171ca286cda6968c2b730d56d63fd4344.
 - General Q-R1 reconciliation: routes/GENERAL_RECONCILIATION_20260930_2303_RESEARCH_CF0044_OWNER_REVIEW.txt @ fab98022bdfe5852109f87eb52fa8493ff9c1381.
-- Research Q-R2 now AVAILABLE: routes/RESEARCH_20260930_2324_GUIDED_TOUR_MOTION_PLAIN_LANGUAGE_POLICY_UX.txt @ 87d1a06b43fb581302e120bab6f1d9d93d40abce; queue commit 9ba0a9fcb01be5539ce230d14974cd1c53ed445f.
-- Gemini 3.1 Pro prior Selectric return is consumed. General will give Nathan a new self-contained Gemini prompt for this new motion tranche because Gemini has no verified shared routing access.
+- Research Q-R2 now AVAILABLE: routes/RESEARCH_20260930_2324_GUIDED_TOUR_MOTION_PLAIN_LANGUAGE_POLICY_UX.txt @ 094c1d540e745f622f2ea5b1ad6dc27d88d83ddf; screenshots are referenced via the owner screenshot appendix.
+- Gemini 3.1 Pro prior Selectric return is consumed. General has a new self-contained Gemini motion/creative-direction prompt for this tranche plus screenshot appendix instructions because Gemini has no verified shared routing access.
 - Astra primary/secondary tasks remain STAGED/HOLD. Do not activate without Nathan's explicit release.
-- Sol CF-0043 remains ACTIVE on Q-SOL1 exact-source interaction audit; no terminal return consumed at 23:24 ET.
+- Sol CF-0043 remains ACTIVE on Q-SOL1 exact-source interaction audit; consume terminal return when available.
 - Claude post-reset QA remains staged only.
 
 RECONCILED EVIDENCE-BASED PRODUCT CONTRACT — CURRENT
@@ -100,10 +103,10 @@ WORKER HOLD / ALLOWED PARALLEL LANES
 - Kevin: HOLD until General releases a bounded non-overlapping task in the batched round.
 - Research CF-0044: Q-R2 AVAILABLE NOW after owner activation; evidence only.
 - Gemini: new motion task requires owner copy/paste of self-contained prompt.
-- Architecture: new peer-coordinator packet available; publication does not wake the chat.
+- Relay Architecture: NO StudyGrid product-design activation. Peer sync only for cross-system/governance/routing implications.
 - Astra: HOLD.
 - Sol CF-0043: ACTIVE Q-SOL1.
 - Claude: HOLD until reset/release.
 
 CLOSE / RELEASE CONDITION
-Do not treat specialist research as implementation. General should reconcile the new Research/Gemini/Architecture returns plus Sol terminal audit into one implementation contract. Nathan's current statement indicates he wants this tranche built once the specification is coherent; do not fragment it into repeated worker wakes. Bob/Stuart/Kevin remain held until that one batched release is ready.
+Do not treat specialist research as implementation. General should reconcile Research + Gemini + Sol terminal audit (+ Astra only if later explicitly released) into one implementation contract. Nathan wants this tranche built once the specification is coherent; do not fragment it into repeated worker wakes. Bob/Stuart/Kevin remain held until that one batched release is ready.
