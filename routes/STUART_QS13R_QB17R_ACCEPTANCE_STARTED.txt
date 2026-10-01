@@ -1,0 +1,26 @@
+STUDYGRID — STUART Q-S13R QB17R INDEPENDENT ACCEPTANCE — STARTED
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-10-01 08:44 ET
+Lifecycle: STARTED
+
+TASK
+Independently accept/reject the exact General-released QB17R owner-feedback refinement candidate. No product mutation.
+
+EXACT RELEASED CANDIDATE
+StudyGrid-CF0042-QB17R-owner-feedback-refinement.html
+Drive 1gx9I7W1DOtQn9VRnjf5iAFiqQinYx_Bt
+1061386 bytes
+SHA-256 edf870009c769e8624de34d6356eb2c7bd3457e49f471b316b098820bb45fd2e
+APP_VERSION / SG_R6_BUILD v7.19-cf0042-qb17r-owner-feedback-refinement
+Parent QB15 SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf
+
+CURRENT AUTHORITIES READ
+- Full ChatGPT Base CGPTBASE-R0004-N8V6.
+- Current SYSTEM — Active Corrections.
+- queues/STUART_QUEUE.txt current 08:33 ET state.
+- routes/GENERAL_RELEASE_20261001_0833_STUART_QS13R_QB17R_ACCEPTANCE.txt exact released route.
+- Prior Q-S13RP prep is already durable from the previous Stuart activation.
+
+SUCCESS CONDITION
+Return PASS/PARTIAL/BLOCKED with exact tested identity, independent evidence, concrete defects and smallest repairs if needed. Preserve explicit physical iPad/Safari/VoiceOver/hosted-origin holds. Do not advance Slice 3.
