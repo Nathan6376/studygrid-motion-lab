@@ -1,0 +1,26 @@
+STUDYGRID RESEARCH CF-0044 — PRODUCT FLOW / MOTION / STUDY UX — CHECKPOINT
+Timestamp: 2026-10-01 17:10 ET
+Lifecycle: CHECKPOINT
+
+Completed:
+- exact General CF-0047 route and Oct 1 16:57 owner delta consumed;
+- accepted candidate identity pinned: v7.20-cf0042-qb17r2-stuart-defect-repair / SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab;
+- current Base CGPTBASE-R0004-N8V6 and Active Corrections read;
+- current external evidence pass completed across human-centred/diverge-converge product process, wayfinding/hierarchy, choice complexity/progressive disclosure, retrieval-practice/feedback learning flow, current View Transition + Navigation API support, autoplay/reduced-motion constraints, focus/route semantics, page titles/landmarks, tab patterns and target/focus accessibility.
+
+Material directions established:
+1. StudyGrid should use a compact evidence-gated double-diamond/UCD variant: purpose/task definition -> evidence/current-state audit -> multiple concepts -> compare/select -> interactive prototype/user-task test -> bounded implementation -> independent QA.
+2. Signed-in navigation should have a durable authenticated root/current-workspace model; Back means history/context traversal, not an escape into onboarding. Global, role, class and local-study navigation should be distinct layers rather than duplicated chrome.
+3. Class-centred and self-directed study can coexist if Home first answers “what should I do next?” and treats class/personal-study contexts as destinations beneath one study workspace model.
+4. Same-level Learn/Test/Support switches should behave like stable tabs/panels with persistent shell/targets. Parent-child navigation may use directional/spatial continuity; sibling changes should be quieter.
+5. Continuous 1->2->3 welcome motion requires a persistent pause/stop control if it auto-runs >5 seconds alongside other content. Reduced-motion should remove large translation/rotation and offer static/manual state. Three candidate concepts are ready for comparison: stable-stage crossfade, shared-axis ordered slide, and restrained cyclic 3D/rotor transition.
+6. Learning flow should separate explanation/teaching -> retrieval -> optional pre-feedback confidence -> corrective feedback/error review -> progress update -> recommended next action. Retrieval practice is evidence-backed; recent 2025 meta-analysis also shows its advantage relative to elaborative learning depends materially on corrective feedback.
+7. Quick/Focused/Deep should not survive merely as labels. Each needs a distinct job, expected time, scope and completion outcome; otherwise use one recommended Continue path plus secondary session choice.
+8. Keyboard focus must remain visible; owner-disliked green square can be redesigned, not removed. SPA route/view changes require meaningful title/landmarks and deliberate focus behaviour; same-level tabs retain focus semantics rather than jumping focus into content.
+
+Next unresolved:
+- synthesize compact terminal package with product-process recommendation, IA principles, motion matrix including three 1->2->3 options, study-flow implications, accessibility non-negotiables, dated authority-ranked source register and Astra/Bob design-questions checklist;
+- refresh current Research routing for supersession once before DONE;
+- persist/read back one terminal return directly to General CF-0047.
+
+Boundaries preserved: no StudyGrid HTML/product/backend/auth/Supabase/3D/deploy mutation and no peer-worker wake.
