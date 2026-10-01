@@ -1,0 +1,429 @@
+STUDYGRID RESEARCH CF-0044 — PRODUCT FLOW / MOTION / STUDY UX EVIDENCE — DONE
+Timestamp: 2026-10-01 17:12 ET
+From: SG Research / CF-0044
+To: ChatGPT General / CF-0047
+Lifecycle: DONE — RESEARCH / EVIDENCE ONLY
+
+AUTHORITY / CURRENT BASELINE
+- Exact route consumed: routes/GENERAL_20261001_1700_RESEARCH_PRODUCT-FLOW-MOTION-STUDY-UX.txt @ f4a808f3e0e979c1774c5ef82680049510854390; blob 322c943364a962efe658fb049578749caab4328c.
+- Owner delta consumed: routes/OWNER_REVIEW_DELTA_20261001_1657_PRODUCT-FLOW-STUDY-MODE.txt @ 9e44452c4687b03fe62a1bc6faee387cc2713c6d.
+- Exact accepted frontend candidate held unchanged: StudyGrid-CF0042-QB17R2-stuart-defect-repair.html | Drive 1k0d69ZOrgs4NRRORKBmIwOR1Q0mE46 | SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab | v7.20-cf0042-qb17r2-stuart-defect-repair.
+- Current ChatGPT Base identity verified as CGPTBASE-R0004-N8V6; current SYSTEM — Active Corrections read before execution.
+- STARTED read back at df603c8781e346d89ae20ccde2d4506a9f8287e9.
+- Material CHECKPOINT read back at 893f05ff75a7891a86bea39e0d362e8ac7de4257.
+- Pre-terminal recent-commit refresh found no newer exact Research route superseding this task; Bob/Sol/Astra routes are parallel feeder lanes.
+
+BOUNDARY
+Research only. No StudyGrid HTML/product/runtime mutation; no backend/auth/Supabase/3D/deploy mutation; no peer worker wake. This package distinguishes EXTERNAL EVIDENCE, STUDYGRID DESIGN JUDGEMENT and IMPLEMENTATION INFERENCE. Owner review / design selection remains General/Nathan-controlled.
+
+======================================================================
+1. PRODUCT-PROCESS RECOMMENDATION FOR STUDYGRID
+======================================================================
+
+EXTERNAL EVIDENCE
+- ISO 9241-210:2019 specifies human-centred design principles/activities across the lifecycle of interactive systems; ISO reports the edition was reviewed and confirmed in 2025 and remains current.
+- Design Council's Double Diamond explicitly alternates divergence and convergence: Discover user/problem evidence, Define the challenge, Develop multiple potential solutions, Deliver by testing/selecting/refining. Design Council also states the process is iterative rather than strictly linear.
+
+STUDYGRID DESIGN JUDGEMENT — SMALLEST RIGOROUS PROCESS
+Use Nathan's required method as a compact evidence-gated Double Diamond/UCD loop:
+
+GATE 0 — PURPOSE CONTRACT
+For each material surface/change, write one short contract before design:
+- Who is acting, and in what role/context?
+- What job/problem are they trying to complete?
+- What must they understand, do next, and know is complete?
+- What current evidence says the experience is failing?
+- What success/failure would be observable in a prototype/QA pass?
+
+GATE 1 — CURRENT-STATE + EVIDENCE PASS
+Before visual design:
+- pin exact candidate/source behaviour;
+- map current route/state/history/focus semantics;
+- identify role/data/learning constraints;
+- identify accessibility and motion non-negotiables;
+- check platform feasibility only far enough to rule out impossible designs.
+
+GATE 2 — DIVERGE
+Produce at least 2 materially different interaction concepts for a material UI decision. Variants that only change colour/radius/spacing do not count as meaningful divergence.
+
+GATE 3 — COMPARE / SELECT
+Compare concepts against:
+1. purpose/task clarity;
+2. orientation/wayfinding;
+3. target stability and interaction cost;
+4. accessibility/reduced-motion behaviour;
+5. learner/instructor role coherence;
+6. technical feasibility/fallback risk;
+7. owner design direction and existing visual language.
+Record why the selected/reconciled concept is stronger; do not jump from research to implementation by default.
+
+GATE 4 — INTERACTIVE PROTOTYPE + TASK CHECK
+Prototype the critical flow using realistic content/state. Check whether a user can answer the five owner questions:
+- Where am I?
+- What am I doing?
+- Why am I doing it?
+- What happens next?
+- What have I completed?
+If the model/task remains unclear, return to Define/Develop rather than polishing pixels.
+
+GATE 5 — BOUNDED IMPLEMENTATION
+Implement the selected concept as one coherent package on the exact accepted base. Do not accumulate unrelated local patches.
+
+GATE 6 — INDEPENDENT QA / ACCEPTANCE
+Independently verify route/history, focus, keyboard/touch/iPad behaviour, reduced motion, layout stability, semantics, learning-state correctness, regression criteria and exact owner acceptance conditions.
+
+WHAT MUST EXIST BEFORE MATERIAL BUILD
+Required before implementation:
+- purpose/task contract;
+- exact current-source behaviour;
+- interaction/IA semantics and role boundaries;
+- relevant accessibility/motion constraints;
+- at least 2 meaningful concepts and a selection rationale;
+- a feasibility/fallback check for any browser/API dependency that materially changes the concept.
+
+CAN ITERATE AFTER PROTOTYPE WITHOUT REOPENING THE WHOLE DESIGN
+Usually safe to tune after the selected interaction model works:
+- local spacing and type scale;
+- microcopy precision that does not change the job/state meaning;
+- easing/duration within the agreed motion contract;
+- visual polish such as restrained gloss/border treatment;
+- non-semantic icon/ornament details.
+If iteration changes route meaning, hierarchy, role context, state model, focus order or learning workflow, it is not mere polish and should return to the relevant earlier gate.
+
+======================================================================
+2. IA / WAYFINDING PRINCIPLES
+======================================================================
+
+EXTERNAL EVIDENCE
+- WAI page-structure guidance emphasizes meaningful regions/headings for orientation and navigation.
+- WCAG Page Titled requires descriptive titles; W3C explicitly notes that SPA titles should update to reflect the current view.
+- Breadcrumb guidance from multiple public design systems treats breadcrumbs as hierarchy/location, not browser-history replay; they are most useful in genuinely multi-level structures and unnecessary in flat/linear flows.
+- Choice-overload meta-analysis (Chernev, Böckenholt & Goodman, 2015; 99 observations, N=7,202) finds overload is conditional, especially on choice-set complexity, task difficulty, preference uncertainty and decision goals. Therefore "fewer choices is always better" is not evidence-based; the goal is fewer simultaneous ambiguous choices at difficult moments.
+
+STUDYGRID DESIGN JUDGEMENT
+A. AUTHENTICATED ROOT
+- Establish one durable signed-in Home/current-workspace root.
+- Completing first-start/onboarding should not leave a pseudo-Back path into onboarding as if onboarding were a parent workspace.
+- Account exit is Sign out, not Back.
+- "Your Classes" should exist as a destination only if it owns a real recurring job (browse/manage classes). If it is only an empty transition to another choice, fold that choice into Home or a scoped class selector.
+
+B. FOUR NAVIGATION LAYERS — DO NOT DUPLICATE THEM
+1. Global/account: Home, profile/settings, explicit role/context access.
+2. Role/workspace: learner vs instructor/admin context when the account has multiple capabilities.
+3. Content context: selected class or self-directed/personal study context.
+4. Local task/mode: overview/lesson/practice/review or instructor-local destinations.
+A control should belong primarily to one layer. Repeating the same course identity and destinations across top bar + rail + page header creates chrome without adding orientation.
+
+C. CLASS-BASED + SELF-DIRECTED STUDY
+Keep the product class-centred without making classes mandatory for every learning task by making the root mental model "current study/workspace" rather than "class list".
+Recommended Home structure:
+- PRIMARY: one contextual Continue/Next recommendation with its class/personal-study context visible;
+- SECONDARY: browse/switch class;
+- SECONDARY: study something outside a class / personal study;
+- tertiary setup/history/settings as appropriate.
+This keeps one start point while preserving exploration.
+
+D. ROLE CONTEXT
+Instructor, learner and personal study are not just tabs in one flat destination set. The shell must make the current role/workspace explicit. Entering a study surface from instructor context must either:
+- remain clearly an instructor preview/review of material; or
+- deliberately transition into a learner/study context with a visible way back.
+Do not silently switch role meaning because the user clicked "Study".
+
+E. BACK / UP / HOME
+- Browser/history Back: returns through meaningful prior navigation state.
+- Hierarchy Up: goes to semantic parent, independently of how the user arrived.
+- Home: explicit durable root.
+- Breadcrumbs: hierarchy/location only when hierarchy is deep enough to help.
+Do not label an explicit parent destination as generic Back if it does not replay meaningful prior context.
+
+F. SAME-LEVEL MODES
+Learn/Test/Support or equivalent peer modes should use a stable shared shell and behave like same-level panels/tabs where feasible:
+- persistent controls stay put;
+- the active state is explicit;
+- the content region changes without moving the mode controls;
+- keyboard focus remains predictable.
+WAI APG tabs provide the established tab/tabpanel keyboard and aria-selected model when the semantics genuinely are tabs.
+
+G. RECOMMENDED NEXT STEP WITHOUT LOCK-IN
+At key entry/completion points, show one strongest recommendation with the reason/context, then lower-emphasis alternatives. Avoid presenting Learn + Notes + Questions + Browse Lessons + Quick + Focus + Deep as equally weighted starting decisions unless they genuinely represent distinct jobs.
+
+======================================================================
+3. MOTION / TRANSITION PATTERN MATRIX
+======================================================================
+
+EXTERNAL PLATFORM STATE — CURRENT AS OF 2026-10-01
+- MDN marks ViewTransition as Baseline 2025 / available across latest browsers since Oct 2025, with some feature-support variation.
+- Safari 18.2 shipped cross-document View Transitions; Safari 18.0 had same-document support.
+- MDN marks Navigation API Baseline 2026 / latest-browser availability since Jan 2026, with older-browser gaps.
+- Web Animations API is widely available; CSS/WAAPI remain suitable for component-local animation.
+- `prefers-reduced-motion` is widely available and communicates a user preference to remove/reduce/replace nonessential motion.
+- WCAG 2.2 SC 2.2.2 requires pause/stop/hide for automatically moving/blinking/scrolling content that lasts >5 seconds and is presented alongside other content, unless essential.
+
+PATTERN MATRIX — STUDYGRID DESIGN JUDGEMENT
+
+RELATIONSHIP: PARENT -> CHILD / ENTERING DEEPER CONTEXT
+Preferred motion: shared-element/container continuity or restrained directional movement while keeping persistent shell fixed.
+Why: communicates hierarchy and preserves where the new content came from.
+Reject: whole-screen theatrical slide that moves fixed navigation, delays input or creates false physical hierarchy.
+
+RELATIONSHIP: CHILD -> PARENT
+Preferred motion: inverse/reverse relationship when useful, or a simple continuity transition.
+Reject: unrelated animation direction that breaks the spatial model.
+
+RELATIONSHIP: SIBLING / SAME-LEVEL MODE
+Preferred motion: quiet crossfade or very short low-amplitude horizontal/opacity transition; shared controls stay fixed.
+Why: peers are not deeper/shallower destinations.
+Reject: moving the Learn/Test/Support controls, full-page zoom, or layout reflow that makes the user reacquire the target.
+
+RELATIONSHIP: LOCAL REVEAL / POPOVER / HELP
+Preferred motion: anchored fade/scale or short reveal that keeps its source visually connected.
+Reject: unrelated page movement or content jump.
+
+RELATIONSHIP: COMPLETION / STATE CHANGE
+Preferred motion: local settle/check/progress update; then stable forward next-action surface.
+Reject: celebratory animation that becomes the task or sends the user visually backward.
+
+IMPLEMENTATION INFERENCE
+- Route correctness/history/state must work without animation.
+- View Transition API is a progressive-enhancement candidate for route/view continuity, not a routing system.
+- Navigation API can simplify modern same-origin history/navigation handling but is newly Baseline 2026; StudyGrid should feature-detect and preserve a fallback rather than make navigation correctness depend on it.
+- CSS/WAAPI are appropriate for local component motion and the welcome loop; animations should be cancellable and state-driven.
+
+WELCOME 1 -> 2 -> 3 CONTINUOUS LOOP — THREE RESEARCH CANDIDATES
+
+CANDIDATE A — SHARED-AXIS ORDERED SLIDE [strongest sequence candidate]
+- Fixed stage/orb/loop anchor.
+- Current numbered step exits a short distance along one consistent axis; next step enters from the same sequence direction.
+- Copy stays readable at rest; CTA remains outside the moving region.
+Strength: most directly communicates ordered progression 1→2→3→1.
+Risk: continuous translation can become distracting if amplitude/duration is too large.
+
+CANDIDATE B — STABLE-STAGE CROSSFADE / SHARED NUMBER MORPH [quietest candidate]
+- Stage geometry does not move.
+- Number/progress marker and copy crossfade/morph locally; stable StudyGrid loop/orb can subtly settle.
+Strength: minimal orientation cost; naturally close to reduced-motion treatment.
+Risk: weaker sense of physical sequence unless numbering/progress cue is strong.
+
+CANDIDATE C — RESTRAINED CYCLIC ROTOR / CARD TURN [brand-forward experimental candidate]
+- 1/2/3 rotate around one implied compact axis; only one message is fully front-facing/readable at a time.
+- Motion must be shallow enough that text is not read while angled/blurred.
+Strength: strongest loop metaphor and continuity with StudyGrid's existing motion language.
+Risk: highest distraction/legibility/vestibular cost; can feel gimmicky if used beyond the hero.
+
+AUTOPLAY CONTRACT
+Nathan's current requirement is continuous automatic cycling; that can coexist with accessibility only if user control is real:
+- Provide a persistent Pause/Play or equivalent control if continuous movement runs >5 seconds alongside other content.
+- Do not rely only on "pause while focused" as the sole user control.
+- User interaction with a step should pause the cycle so the interface does not fight reading/exploration; explicit Resume may restart it.
+- Keep interactive CTA/button targets outside the moving sequence region where possible.
+- Do not move a focused control out from under the user.
+- `prefers-reduced-motion: reduce`: remove large translation/rotation; use static/manual step state or near-instant/low-motion content replacement.
+- Dwell and transition duration are prototype variables, not standards. A reasonable initial test hypothesis is roughly 3–5 seconds of readable dwell and a short ~200–350 ms transition, then user-test with the actual copy. Do not treat those numbers as evidence-backed universal values.
+
+======================================================================
+4. STUDY SESSION / LEARNING FLOW
+======================================================================
+
+EXTERNAL EVIDENCE
+- Retrieval-practice reviews show that retrieving learned material strengthens later retention across many materials/learner groups; corrective feedback further helps error correction and retention.
+- A 2025 systematic/meta-analytic review comparing retrieval practice with elaborative encoding found only a small overall retrieval advantage, but the advantage was materially conditional on feedback; when feedback was absent, elaborative approaches could outperform retrieval in those comparisons. This argues against StudyGrid behaving like a context-free quiz dump.
+- Confidence/metacognition research shows confidence is useful but inferential/imperfect. Q-R3 already established the StudyGrid evidence contract: `answer -> optional confidence -> correctness/correct answer/explanation -> adaptive update`.
+- Choice overload evidence says difficult, complex and preference-uncertain decisions are where extra options are more likely to hurt.
+
+STUDYGRID DESIGN JUDGEMENT — ONE COHERENT LEARNING LOOP
+A StudyGrid study session should make the mode/state legible rather than mixing all evidence at once:
+1. TEACH / ORIENT — short explanation, worked example, source context or lesson segment when the learner lacks the basis for retrieval.
+2. RETRIEVE — one clear question/task that requires recall/application rather than rereading.
+3. CONFIDENCE — optional pre-feedback judgement when enabled, before correctness is revealed.
+4. FEEDBACK — clear right/wrong + correct answer/explanation; avoid an overloaded metadata wall.
+5. ERROR REVIEW — explain the misconception/context needed for missed or high-confidence-wrong responses; let the learner retry later rather than immediately declaring mastery.
+6. PROGRESS — update what changed in the session/model, with reward/progress as secondary feedback.
+7. NEXT — one recommended next action; alternatives remain available but subordinate.
+
+TEACHING VS QUIZZING
+If a learner has not been introduced to the material in the current context, StudyGrid should not present a sequence of unexplained retrieval questions and call that the whole learning experience. Retrieval remains valuable, but explanation/source context and corrective feedback are part of the learning loop.
+
+STABLE REPETITIVE TARGETS
+For workflows such as 15-question instructor review or repeated learner practice:
+- keep Next / Approve and next / confidence controls in stable locations where the layout permits;
+- swap content inside a stable frame instead of moving the primary action after each item;
+- terminal item must change to an explicit completion/finalisation state rather than leaving an inert `Approve and next` button.
+This is a StudyGrid interaction judgement informed by predictable focus/target principles; it is not a separate WCAG numeric rule.
+
+QUICK / FOCUSED / DEEP — KEEP ONLY IF THE JOBS DIFFER
+There is no evidence-backed universal three-tier study taxonomy. The labels are defensible only if each maps to a meaningfully different plan and outcome.
+
+TESTABLE PRODUCT HYPOTHESES, NOT RESEARCHED UNIVERSAL DURATIONS:
+- Quick review: ~5 min; retrieve due/recent items; minimal setup; finish a small bounded set.
+- Focus session: ~15–20 min; one selected topic/skill; teach -> retrieve -> error review -> checkpoint.
+- Deep session: ~30–45 min; broader module/multiple linked concepts; explanation/worked material + retrieval + error review + progress summary.
+If the scheduler/content plan does not actually change in these ways, remove or collapse the labels. A stronger default may be `Continue` plus an optional `Choose session` path.
+
+END-OF-SESSION CONTRACT
+Completion should feel forward-moving:
+- state accomplishment first (`Session complete`, what was practised/reviewed);
+- summarize what changed (`3 strong`, `2 to revisit`, etc., only if real state supports it);
+- give one recommended next action;
+- retain navigation such as Back to course/Progress as secondary options, not the emotional main action.
+
+======================================================================
+5. ACCESSIBILITY NON-NEGOTIABLES
+======================================================================
+
+FOCUS
+- Never remove visible keyboard focus to solve the sharp green-square complaint.
+- Use `:focus-visible`/equivalent input-aware styling so pointer activation need not look like persistent keyboard focus when the platform would not normally show it.
+- Focus visual must be visually distinct from selected/active/tutorial-target state.
+- WCAG 2.4.7 requires visible focus at AA. WCAG 2.4.13 Focus Appearance is AAA and can be used as a stronger internal design target (area roughly equivalent to a 2 CSS px perimeter with 3:1 change contrast); do not misstate it as an AA minimum.
+- WCAG 2.4.11 AA requires focused components not be entirely obscured by author-created content.
+
+FOCUS STYLE DESIGN JUDGEMENT
+Replace the current hard square with an on-brand indicator that remains unmistakable, e.g. rounded outer ring/halo or edge treatment with adequate contrast and offset. Do not use the same StudyGrid green fill/border language for focus, selection and success simultaneously.
+
+ROUTE / SPA ORIENTATION
+- Update `document.title` for distinct SPA views; W3C explicitly calls this out for dynamic SPA pages.
+- Keep meaningful main landmarks/headings and labelled navigation regions.
+- For a true page/route context change, deliberately manage focus so keyboard/screen-reader users are oriented to the new content; do not leave focus in removed DOM.
+- For same-level tab/mode change, follow tab semantics: focus remains on/within the tab interaction model and the corresponding panel updates; do not jump focus arbitrarily into content.
+- Status-only updates such as completion/progress messages that do not change context should be exposed programmatically without stealing focus.
+
+MOTION
+- Honor `prefers-reduced-motion` by removing/replacing nonessential spatial motion.
+- Continuous welcome motion needs pause/stop/hide control under WCAG 2.2.2 when it meets the criterion's autoplay/duration/parallel-content conditions.
+- Route function and learning state must remain correct when animation is skipped/cancelled.
+
+TARGETS / REPETITIVE WORK
+- WCAG 2.5.8 AA requires pointer targets at least 24x24 CSS px or one of its spacing/equivalent/inline/UA/essential exceptions.
+- Stable placement for repeated actions is an additional usability target, especially for fast review loops.
+
+MULTI-SELECT
+- For ordinary quiz answers, prefer native semantic checkbox groups (`fieldset`/`legend` + checkboxes) when the interaction is simply choosing multiple independent answers.
+- If a custom listbox is genuinely needed, WAI APG requires the proper multi-select model (`aria-multiselectable=true`, consistent selected states and keyboard behaviour). Do not fake multi-select visually while only one value can be selected.
+
+======================================================================
+6. SOURCE REGISTER — RETRIEVED/CHECKED 2026-10-01
+======================================================================
+
+PRIMARY / STANDARDS / OFFICIAL
+S1. ISO 9241-210:2019 — Human-centred design for interactive systems. Edition 2; ISO states reviewed/confirmed 2025, current.
+https://committee.iso.org/standard/77520.html?browse=tc
+Authority: international standard / lifecycle design guidance.
+
+S2. Design Council — Framework for Innovation / Double Diamond.
+https://www.designcouncil.org.uk/resources/framework-for-innovation/
+https://www.designcouncil.org.uk/resources/the-double-diamond/history-of-the-double-diamond/
+Authority: originator of the named Double Diamond model; process framework, not a usability standard.
+
+S3. W3C WCAG 2.2 and Understanding SC 2.2.2 Pause, Stop, Hide.
+https://www.w3.org/TR/wcag/
+https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide
+Authority: web accessibility standard / normative criterion plus explanatory guidance.
+
+S4. W3C WAI — Understanding Page Titled (2.4.2), Focus Not Obscured (2.4.11), Focus Appearance (2.4.13).
+https://www.w3.org/WAI/WCAG22/Understanding/page-titled
+https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum
+https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance
+Authority: W3C accessibility guidance. Note Focus Appearance is AAA.
+
+S5. W3C WAI Page Structure / Regions / Headings.
+https://www.w3.org/WAI/tutorials/page-structure/
+https://www.w3.org/WAI/tutorials/page-structure/regions/
+https://www.w3.org/WAI/tutorials/page-structure/headings/
+Authority: W3C best-practice accessibility guidance.
+
+S6. WAI-ARIA Authoring Practices — Tabs pattern / keyboard interface.
+https://www.w3.org/WAI/ARIA/apg/patterns/tabs/
+https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/
+Authority: W3C APG implementation guidance/examples, not WCAG conformance text itself.
+
+PLATFORM / WEB IMPLEMENTATION
+S7. MDN View Transition API / ViewTransition / startViewTransition.
+https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API
+https://developer.mozilla.org/en-US/docs/Web/API/ViewTransition
+https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition
+Current note: MDN marks core interfaces Baseline 2025 / latest-browser availability since Oct 2025; some feature support varies.
+
+S8. WebKit — Safari 18.2 View Transitions.
+https://webkit.org/blog/16301/webkit-features-in-safari-18-2/
+Dated: 2024-12-09. Confirms Safari 18.2 cross-document View Transitions; builds on Safari 18.0 support.
+
+S9. MDN Navigation API.
+https://developer.mozilla.org/en-US/docs/Web/API/Navigation_API
+Current note: MDN marks it Baseline 2026 / latest-browser availability since Jan 2026; older devices/browsers remain a fallback concern.
+
+S10. MDN Web Animations API / prefers-reduced-motion.
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/%40media/prefers-reduced-motion
+Authority: platform documentation/reference; reduced-motion page last modified Jun 2026 and describes broad availability since 2020.
+
+PEER-REVIEWED / RESEARCH
+S11. McDermott, K. B. (2021). Practicing Retrieval Facilitates Learning. Annual Review of Psychology 72:609–633.
+https://www.annualreviews.org/content/journals/10.1146/annurev-psych-010419-051019
+Authority: peer-reviewed scholarly review.
+
+S12. Gonçalves, Muniz & Jaeger (2025). Retrieval Practice Versus Elaborative Encoding: A Systematic and Meta-analytic Review. Educational Psychology Review 37:100.
+https://doi.org/10.1007/s10648-025-10076-6
+Authority: peer-reviewed systematic/meta-analytic review; includes the finding that comparative retrieval advantage was conditional on feedback in the reviewed comparisons.
+
+S13. Fleming, S. M. (2024). Metacognition and Confidence: A Review and Synthesis. Annual Review of Psychology 75:241–268.
+https://www.annualreviews.org/content/journals/10.1146/annurev-psych-022423-032425
+Authority: peer-reviewed scholarly review. Used with prior StudyGrid Q-R3 confidence evidence; not rerun into a new confidence algorithm.
+
+S14. Chernev, Böckenholt & Goodman (2015). Choice overload: A conceptual review and meta-analysis. Journal of Consumer Psychology 25:333–358.
+https://doi.org/10.1016/j.jcps.2014.08.002
+Authority: peer-reviewed meta-analysis; supports context-dependent, not blanket, choice-overload claims.
+
+SECONDARY DESIGN RESEARCH / PRACTICE
+S15. Nielsen Norman Group — Progressive Disclosure (2006).
+https://www.nngroup.com/articles/progressive-disclosure/
+Authority: secondary UX guidance. Useful as a pattern explanation; not treated as a current platform standard or sole evidence base.
+
+======================================================================
+7. QUESTIONS THE DESIGNS MUST ANSWER — ASTRA / BOB CHECKLIST
+======================================================================
+
+Before a concept is selected or built, it should answer these plainly:
+
+PURPOSE / ENTRY
+1. What exact job is this surface doing that the prior/parent surface does not?
+2. On entry, can the user tell where they are, their role/context, and the strongest next action?
+3. Does this surface deserve to be a destination, or is it only a transition/control that should live in Home/context UI?
+
+NAVIGATION / IA
+4. Is this control global, role-level, class-level, or local-task navigation — and is it duplicated elsewhere?
+5. What should Back do here: history, parent, or explicit destination? Is that meaning reflected in the label?
+6. Can a signed-in user accidentally Back into onboarding/first-start?
+7. Can class study and personal/general study coexist without presenting two competing product mental models?
+8. When role/context changes, is the transition explicit and reversible?
+
+STUDY FLOW
+9. Is the user being taught/explained enough before retrieval when needed?
+10. Are retrieval, confidence, feedback/error correction and progress states visually and semantically distinct?
+11. Is there one recommended next step instead of an undifferentiated menu of study entry points?
+12. If Quick/Focus/Deep remain, what distinct job, time expectation, content plan and completion output does each own?
+13. Does the last item in a repeated workflow produce an explicit terminal state and forward next action?
+
+STABILITY / MOTION
+14. Which relationship is being communicated: parent-child, sibling, local reveal, or completion? Does the motion match that relationship?
+15. Which controls/anchors must remain spatially stable while content changes?
+16. Can the animation be skipped/cancelled without breaking state/history/focus?
+17. For the continuous 1→2→3 loop, where is Pause/Play and what happens under reduced motion or direct user interaction?
+
+ACCESSIBILITY
+18. Is keyboard focus always visible, distinguishable from selection/success, and not obscured?
+19. Does a same-level mode use predictable tab/panel semantics where appropriate?
+20. Are multi-select questions actually multi-select with semantic state/keyboard/touch support?
+21. Are dynamic route titles/headings/landmarks updated so assistive-technology users can orient to the new view?
+22. Are touch/pointer targets and repeated actions usable without chasing moving controls?
+
+IMPLEMENTATION / QA
+23. Does the concept depend on View Transition/Navigation APIs, and what is the correct fallback?
+24. What exact current-source selectors/state/routes will change, and what must remain byte/behaviourally untouched?
+25. What independent acceptance evidence proves the purpose was achieved, not merely that the UI changed?
+
+======================================================================
+TERMINAL DISPOSITION
+======================================================================
+DONE — product-process evidence, IA/wayfinding principles, motion matrix + three continuous 1→2→3 concepts, study-flow evidence, accessibility non-negotiables, dated authority-ranked source register and Astra/Bob design checklist are complete and returned to General CF-0047 through shared GitHub state.
+
+No product/backend/auth/Supabase/3D/deploy mutation occurred. No peer worker was activated. Exact accepted frontend candidate remains held.
