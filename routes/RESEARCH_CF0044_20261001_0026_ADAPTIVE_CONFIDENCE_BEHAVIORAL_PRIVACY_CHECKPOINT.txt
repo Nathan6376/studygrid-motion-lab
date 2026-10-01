@@ -1,0 +1,21 @@
+STUDYGRID RESEARCH CF-0044 — Q-R3 CHECKPOINT
+Timestamp: 2026-10-01 00:26 ET
+Lifecycle: CHECKPOINT
+
+Completed:
+- exact Q-R3 task + owner delta consumed;
+- current Research queue verified Q-R3 highest-priority AVAILABLE NOW after Q-R2 DONE/CONSUMED;
+- STARTED provider-read;
+- bounded literature/platform evidence pass completed across metacognitive confidence timing, spacing/adaptive practice, response-time and cursor/mouse measures, device/accessibility confounds, NIST privacy/security engineering, WCAG input/timing guidance, and Microsoft HAX explainability/user-control guidance.
+
+Material evidence directions established:
+- confidence should be captured after the learner commits the answer but before correctness/feedback is revealed; post-feedback judgments are contaminated by feedback and are a different metacognitive signal;
+- confidence is useful as one diagnostic feature but does not justify a standalone scheduling rule;
+- correctness, repeated retrieval history and spacing are stronger core signals; response latency and interaction-behavior features are weaker/context-dependent;
+- pointer path metrics are strongly device/input-dependent and raw mouse dynamics can support behavioral identification, creating both fairness and privacy risk;
+- privacy engineering supports purpose limitation, minimization, manageability, disassociability and least privilege; recommendation is local/coarse feature extraction and no persistent raw pointer trace by default;
+- WCAG evidence confirms users with disabilities/assistive technology can require different timing and input mechanisms, so slow/indirect interaction cannot be interpreted as uncertainty or low ability;
+- HAX supports local explanations connecting user behavior to system output and global controls over what the system monitors.
+
+Next unresolved:
+Synthesize the terminal evidence/source register, signal matrix, exact pre-feedback confidence flow, minimization/security contract, accessibility/fairness reject conditions, explainability/user controls and remaining legal/privacy/security/backend holds; persist/read back one DONE return directly to General CF-0040; then refresh Research queue once and stop if no newer exact Research task exists.
