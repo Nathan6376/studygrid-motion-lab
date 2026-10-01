@@ -1,0 +1,49 @@
+STUDYGRID ENGINE V1 — PRIMITIVES ADVERSARIAL REVIEW
+FROM: ChatGPT General CF-0047
+TO: StudyGrid Research CF-0044
+TIMESTAMP: 2026-10-01 19:10 ET
+STATUS: OPEN / ADVERSARIAL DESIGN-RESEARCH ONLY / NO IMPLEMENTATION
+
+READ FIRST
+1. design/STUDYGRID_ENGINE_V1_FIRST_PRINCIPLES_DRAFT_0.txt @ e980050f5d73dc0ef189288f11dc9ff1d1337689
+2. routes/RESEARCH_CF0044_20261001_1852_STUDYGRID_LEARNING_ENGINE_DEEP_RESEARCH_DONE.txt @ 948933a381288af503589d39612e101c4e1e9502
+3. Current effective owner deltas for StudyGrid backend moat/research-first, domain-neutral assessment, and non-timer-centric adaptive UX.
+
+TASK
+Do not improve this draft politely. Try to BREAK it.
+
+For every primitive or distinction in Draft 0:
+- identify hidden assumptions;
+- find research or implementation evidence that contradicts or limits it;
+- identify circular definitions, false precision, redundant state, unmeasurable constructs, causal overreach, or places where the engine could confidently learn nonsense;
+- test cross-domain portability (law, engineering/math, forensics/science, procedural learning, memorization-heavy content, constructed responses);
+- attack the cold-start logic;
+- attack the evidence model and learner-state update logic;
+- attack the practice/diagnostic/graded intervention-mode split;
+- attack accessibility, accommodations, language and modality assumptions;
+- attack privacy/data-minimization tradeoffs;
+- attack instructor analytics assumptions;
+- attack institutional-scale operational feasibility;
+- identify where a proven standard/model/library should replace a custom primitive;
+- identify what StudyGrid must intentionally refuse to infer.
+
+METHOD
+For each material claim use:
+CLAIM -> STRONGEST COUNTERCASE -> EVIDENCE -> FAILURE MODE -> KEEP / REVISE / REMOVE / SPLIT -> MINIMUM REPAIR -> FALSIFICATION TEST.
+
+Do not use model agreement as evidence. Prefer primary research, systematic reviews/meta-analysis, standards, mature open-source implementation evidence and reproducible counterexamples. If evidence is weak or contested, say so.
+
+SPECIAL QUESTIONS
+1. Is “Learning Target” the correct atomic engine primitive, or should StudyGrid distinguish knowledge component / competency / objective / skill / proposition / procedure differently?
+2. Is LEARNED vs RETAINED a valid engine distinction, or should retention be represented as a continuous/time-indexed property rather than a separate state?
+3. How should conflicting evidence be represented without arbitrary averaging?
+4. What minimum evidence contract can work across radically different domains without becoming so abstract it is useless?
+5. What is the smallest coherent Engine v1 that can be beta-tested honestly with ~20 students + one professor?
+6. Which primitives are product concepts versus actual backend entities?
+7. Which invariants should be hard deterministic contracts versus empirical/tunable hypotheses?
+
+DELIVERABLE
+Return a red-team report plus a proposed Draft 1 change list. Do NOT write production code, mutate frontend/backend/Supabase/deploy state, or declare architecture approved.
+
+LIFECYCLE
+Persist STARTED before substantive work, checkpoint if long-running, then terminal DONE/PARTIAL/BLOCKED to General CF-0047 with exact artifact references.
