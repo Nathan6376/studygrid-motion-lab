@@ -1,0 +1,21 @@
+STUDYGRID — CLAUDE POST-RESET FULL CURRENT-RELEASE CLICKABLE-FLOW QA
+Timestamp: 2026-09-30 21:47 ET
+Coordinator: ChatGPT General CF-0040
+Authority: Nathan direct request that Claude later scroll through/check the release thoroughly; current Claude credits are exhausted/held until reset
+Status: STAGED / DO NOT ACTIVATE UNTIL CREDIT RESET + OWNER REVIEW BATCH CLOSE OR GENERAL RELEASE
+
+PURPOSE
+After Claude credits reset and General has reconciled the complete owner-review batch, use Claude as an independent broad clickable-flow/product QA pass rather than primary implementation.
+
+SCOPE WHEN RELEASED
+- Consume the exact then-current StudyGrid owner-review candidate and complete owner-feedback/research/Architecture packets.
+- Traverse all major learner/instructor/onboarding/study/notes/profile/feedback routes and every material button/back/next/continue/open/edit/toggle action.
+- Check destination semantics against labels and context; flag hardcoded/back-route mistakes.
+- Check cursor/text-selection behavior, overlays/pointer capture teardown, iPad/Safari-class concerns, focus management and keyboard paths.
+- Check theme/tour/highlight toggles and whether repeat activation reverses/dismisses where intended.
+- Check information density, role separation, transition consistency, undo/reversibility and no stale state.
+- Produce a concise prioritized defect list with exact route/control/reproduction and severity; do not silently redesign owner-approved direction.
+
+BOUNDARIES
+- No activation before General release.
+- No product mutation, backend/auth/Supabase/deploy/canonical promotion unless separately routed later.
