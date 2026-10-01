@@ -1,0 +1,29 @@
+STUDYGRID — GENERAL CF-0047 — PRODUCT-DESIGN RECONCILIATION — DONE
+Timestamp: 2026-10-01 17:49 ET
+Actor: ChatGPT General / CF-0047
+Transaction: TX-0270
+Lifecycle: DONE — CURRENT COORDINATOR RECONCILIATION COMPLETE / NEXT DESIGN GATE ROUTED
+
+Completed:
+- Research CF-0044 terminal consumed: 1b8d4e5bc401adeb3a97c6823e6c9455130de92b.
+- Bob CF-0042 terminal consumed: bce1a09fc6517163d57a5dd403b2619b7d7bc5a4.
+- Sol CF-0043 exact-source terminal consumed: 3b99d279360b61e67c27ee1cbfa632239083e8b3.
+- No new terminal return for the 17:00 Astra design-system task was recovered in the bounded current checks; owner has since made Astra exception-only, so this is non-blocking.
+- Candidate pointer typo from the frozen 16:57 owner delta corrected prospectively in successor delta 18c3f30159717dfe971fb0ae8c4cf63756ba0adb; accepted candidate bytes unchanged.
+- Reconciliation checkpoint persisted/read back: 3c51b11776d2268a3809aeb4ce2959230a1e0308.
+- New Sol design-synthesis/divergence gate persisted/read back: b2ba8a35d1b001db8bbd07c795cbf8ef845a35fe.
+- Sol queue advanced/read back: 2248042ae2923820b84b9a5a0b9449e3f6573c76.
+
+Reconciled direction before implementation:
+- durable signed-in Home/current-workspace root;
+- public/onboarding separated from signed-in navigation; Sign out is account exit;
+- class study + personal/general study as signed-in contexts;
+- stable persistent shell/outlet is the strongest technical candidate for later design implementation, while existing hash/History transport can remain correctness fallback;
+- one coherent learning loop: orient/teach → practice/retrieve → optional confidence → feedback/error review → progress → forward next;
+- Study Set repetitive actions stay spatially stable and terminate in explicit finalisation;
+- motion communicates relationship (parent/child, sibling, local reveal, completion) and preserves reduced-motion/focus semantics;
+- required continuous 1→2→3 welcome loop still needs design selection among materially different motion concepts;
+- exact-source defects/seams from Sol remain in scope; geometry/native-input observations not browser-reproduced remain owner observations pending later browser/device QA.
+
+Next owner action:
+Activate SG Sol / CF-0043 on the newly published design-synthesis gate. General expects a return afterward; implementation remains held until that design gate is consumed and owner-facing design decisions are resolved.
