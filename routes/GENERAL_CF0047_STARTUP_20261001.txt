@@ -1,0 +1,18 @@
+GENERAL CF-0047 — SUCCESSOR STARTUP
+Identity: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+Owner-visible title: General — October 1
+Predecessor: CHAT-CGPT-20260930-GENERAL-01 / CF-0040
+Transition: routes/GENERAL_ROLLOVER_CF0040_TO_CF0047_20261001.txt @ 016e6a6ece715698779169fc7b62e2ebecadec67
+
+STARTUP ORDER
+1. Verify exact reserved CF-0047 Chat Registry row and collision-free identity.
+2. Read full current Base CGPTBASE-R0004-N8V6 and current applicable SYSTEM — Active Corrections.
+3. Read the transition above in full.
+4. Persist/read back recipient-side transition acknowledgement before continuity-dependent claims.
+5. Refresh current live StudyGrid state: Bob Q-B17R2, Stuart CF-0046, Kevin Q-K1F, Claude C-E terminal return.
+6. Continue the current owner gate: repaired HTML → independent Stuart PASS → exact HTML to Nathan for owner review. Keep Slice 3 and Astra held unless Nathan changes them.
+
+DEFAULT OWNER WAKE TEXT
+Check routing — ChatGPT. Resume the closed General lane.
+
+Do not claim host UI title/archive changes from registry state alone.
