@@ -1,0 +1,36 @@
+STUDYGRID — OWNER REVIEW DELTA — BACKEND MOAT / DATA OWNERSHIP / RESEARCH-FIRST ENGINEERING
+Captured by: ChatGPT General / CF-0047
+Owner source: Nathan direct, 2026-10-01 18:10 ET
+Status: EFFECTIVE OWNER DIRECTION / NO PRODUCT MUTATION
+
+OWNER DIRECTION
+- UI polish is not the moat. Institutional value depends heavily on the backend learning engine, evidence model, data quality, instructor/student loop and trustworthy architecture.
+- Avoid AI-generated code that is locally plausible but globally incoherent. Before material implementation: research the problem, inspect mature/open-source architectures, define purpose/contracts, choose an architecture, write tests, then implement and independently review.
+- Treat code quality as an architecture problem, not a cleanup problem. Prefer coherent modular boundaries, stable APIs/contracts, migrations/versioning, explicit data ownership, reproducible tests, observability and rollback over piles of patches.
+- Research competitors, academic work and high-quality open-source systems to understand what already exists, why it works, where it fails, and where StudyGrid can differentiate. Do not build in blissful ignorance.
+- StudyGrid's proprietary/defensible core should centre on the learning loop: structured knowledge/course model + learner/evidence model + memory/retention model + assessment interaction model + next-best-action policy + instructor insight loop.
+- Nathan wants the StudyGrid intelligence to be a black box to competitors but inspectable/auditable internally: proprietary decision logic with explainable internal traces and strong provenance.
+- User/institution data should remain under StudyGrid/institutional control; do not make third-party model providers the authoritative store of learner/course truth.
+- Long-term scope is domain-agnostic: teach anyone about anything, including future institutional/professional learning such as case-law updates, without hard-coding policing-specific assumptions into the engine.
+- Rich modalities such as voice/thinking-aloud may become future evidence/input channels, but they are not the current foundation and should not distract from building a strong domain-neutral learning engine.
+
+CURRENT RESEARCH SIGNALS
+- ALEKS is a mature example of a research-driven adaptive system based on Knowledge Space Theory: a formal domain/knowledge model, probabilistic assessment, guidance toward topics a learner is ready to learn, and periodic reassessment informed by learner data.
+- Open edX is a mature open-source reference for platform architecture: modular monolith at the centre, supported by stable APIs and separately deployable components/micro-frontends; this illustrates the value of explicit boundaries over ad-hoc page logic.
+- These are references, not templates to copy wholesale. StudyGrid should identify reusable engineering/scientific patterns while preserving its own learning-loop product model.
+
+ENGINEERING CONSEQUENCE
+Before production learning-engine implementation, General/Research/Sol should produce a backend/learning-engine research and architecture gate covering:
+1. competitor/system landscape;
+2. open-source/reference architectures worth inspecting;
+3. learning-science/model families and tradeoffs;
+4. proprietary vs commodity boundary;
+5. exact data model/evidence model;
+6. next-best-action policy v1;
+7. explainability/audit contract;
+8. institution/privacy/data-governance requirements;
+9. test strategy, simulation and offline evaluation;
+10. staged implementation plan designed to avoid rewrite-by-spaghetti.
+
+NO IMPLEMENTATION RELEASE
+This delta captures product/architecture direction only. No frontend/backend/provider state changed.
