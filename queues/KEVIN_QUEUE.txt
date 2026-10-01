@@ -1,6 +1,6 @@
 STUDYGRID — KEVIN WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 13:46 ET
+Updated: 2026-09-30 21:06 ET
 Queue owner: General
 Worker: Kevin
 
@@ -8,29 +8,24 @@ PULL RULE
 When Nathan directly tells Kevin to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item. Do not pull another worker's queue and do not create owner-routing prompts; return durable technical results to General.
 
 CURRENT CONTEXT
-- Nathan reported at approximately 13:44 ET that the workers are done. Treat Kevin as owner-reported terminal at the chat surface, but do not infer task success from that report alone.
-- Shared technical surfaces still show no durable Kevin Q-K1R terminal return, no recovery branch/commit, no newer workflow run, and no valid full-context A+C artifact.
-- Existing Q-K1 branch remains kevin-qk1-v4a-full-context-dual-preview @ a14459b1bd3f8b353eaa8e4f78aae3341b96cfef.
-- Existing run 36734968949 remains terminal FAILURE after successful A/C renders and a verifier KeyError involving expect/expected; artifact list is empty.
-- Therefore General cannot release Q-K2 or Stuart Q-S2 until Kevin's actual terminal evidence is recovered and verified.
+- Q-K1E evidence recovery/publish: TERMINAL BLOCKED on commit 94be99b582a21eccab0ce708fd467f23b6d8f482. The recovered real Q-K1R state is FAILED, not DONE.
+- Existing Q-K1 branch: kevin-qk1-v4a-full-context-dual-preview @ a14459b1bd3f8b353eaa8e4f78aae3341b96cfef.
+- Workflow run 36734968949 rendered Candidate A and Candidate C successfully but failed during verification before proof hashing/upload. Provider artifact inventory: 0.
+- No valid source-stable full-context A+C proof artifact exists yet.
+- Q-K2 and Stuart Q-S2 remain blocked until a separately released recovery produces and verifies that durable artifact.
+- Candidate A/C mechanics remain unchanged; no winner selected.
 
-Q-K1E — RECOVER/PUBLISH EXISTING Q-K1R TERMINAL EVIDENCE
-Eligibility: AVAILABLE NOW because Nathan reports Kevin finished but the shared durable return is missing.
-Purpose: reconcile the already-finished Kevin chat/work with shared state. This is evidence recovery first, not permission to redo Q-K1R blindly.
-Requirements:
-- First recover the actual terminal Q-K1R result from Kevin's current work/chat context and persist it to the authorized StudyGrid team surface.
-- If Q-K1R truly completed successfully, publish the exact recovery branch/commit, workflow run ID, artifact name/ID/digest, A/C source identities, verifier regression result, inventory/hash/decode result and residual limitations. Do not rerender or redesign merely because shared state was missing.
-- If Q-K1R ended PARTIAL/BLOCKED/FAILED or never actually produced a valid artifact, persist that exact terminal state and blocker. Do not call it DONE and do not start Q-K2.
-- Only if the prior work clearly completed a verifier fix but a provider-visible artifact was lost solely because a final publish step was omitted may Kevin perform the smallest publication/verification-only action required to make the existing result durable. No mechanics changes.
-- Preserve Candidate A/C mechanics and all product/main/R5/R6/backend/auth/Supabase/deploy/canonical-G/final-choreography boundaries.
-Return: durable terminal lifecycle and exact evidence directly to General.
+Q-K1F — BOUNDED VERIFIER RECOVERY + SOURCE-STABLE A/C PROOF PUBLICATION
+Eligibility: BLOCKED pending General release after consuming Q-K1E and confirming the smallest repair scope.
+Purpose once released: repair only the failed verification/publication path from the existing A/C full-context run, preserving the already-rendered candidate mechanics and source identities; then produce the durable source-stable A+C proof artifact required for independent audit.
+Boundaries: no redesign, no A/C winner selection, no product/main/R5/R6/backend/auth/Supabase/deploy/canonical-G/final-choreography mutation.
 
 Q-K2 — DUAL-CANDIDATE GLB EXPORT SMOKE
-Eligibility: BLOCKED until General verifies a durable valid source-stable A+C full-context proof artifact from Q-K1R/Q-K1E.
+Eligibility: BLOCKED until General verifies a durable valid source-stable A+C full-context proof artifact from Q-K1F or an equivalent authorised recovery.
 Purpose: prove that the two candidate hinge structures can survive the Blender→GLB boundary with transform hierarchy intact before the owner choice.
 
 Q-K3 — SELECTED-CANDIDATE FINAL RENDER / ROUND-TRIP
 Eligibility: BLOCKED until Nathan selects A or C after independent full-context acceptance and General publishes the selected integration source.
 
 STOP CONDITION
-Execute Q-K1E only. Do not start Q-K2 from owner-reported completion alone; General must verify the recovered durable artifact first. Do not invent filler.
+Do not start Q-K1F or Q-K2 until General explicitly releases the bounded recovery after current reconciliation. No filler.
