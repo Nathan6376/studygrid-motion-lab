@@ -1,6 +1,6 @@
 STUDYGRID — OWNER REVIEW BATCH OPEN
 Timestamp opened: 2026-09-30 21:30 ET
-Last reconciled: 2026-09-30 23:42 ET
+Last reconciled: 2026-09-30 23:46 ET
 Coordinator: ChatGPT General CF-0040
 Authority: Nathan direct owner instruction
 Status: OPEN — ACCUMULATE/RECONCILE CURRENT PASS; DO NOT WAKE BOB/STUART/KEVIN YET
@@ -75,8 +75,9 @@ SPECIALIST STATE
 - The pending routes/ARCHITECTURE_20260930_2324_INSTRUCTOR_TOUR_ROLE_SPLIT_SUPPLEMENT.txt is RETRACTED / DO NOT ACTIVATE.
 - Research CF-0044 Q-R1 DONE/consumed: routes/RESEARCH_CF0044_20260930_2257_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH_DONE.txt @ c9c5f93171ca286cda6968c2b730d56d63fd4344.
 - General Q-R1 reconciliation: routes/GENERAL_RECONCILIATION_20260930_2303_RESEARCH_CF0044_OWNER_REVIEW.txt @ fab98022bdfe5852109f87eb52fa8493ff9c1381.
-- Research Q-R2 now AVAILABLE: routes/RESEARCH_20260930_2324_GUIDED_TOUR_MOTION_PLAIN_LANGUAGE_POLICY_UX.txt @ 094c1d540e745f622f2ea5b1ad6dc27d88d83ddf; screenshots are referenced via the owner screenshot appendix.
-- Gemini 3.1 Pro prior Selectric return is consumed. General has a new self-contained Gemini motion/creative-direction prompt for this tranche plus screenshot appendix instructions because Gemini has no verified shared routing access.
+- Research Q-R2 AVAILABLE: routes/RESEARCH_20260930_2324_GUIDED_TOUR_MOTION_PLAIN_LANGUAGE_POLICY_UX.txt @ 094c1d540e745f622f2ea5b1ad6dc27d88d83ddf; screenshots referenced via the owner screenshot appendix.
+- Gemini 3.1 Pro screenshot/motion return RECEIVED and persisted: routes/GEMINI_RETURN_20260930_2346_INSTRUCTOR_TOUR_MOTION_SCREENSHOT_PASS.txt @ d27eab81ecade0d361ac17c32c13695f890dc140.
+- Gemini return aligns strongly on decorative-arc removal, stable adaptive-response cards, changed-phrase-only green emphasis, Skip separation, state-specific focus language, ghost-selection teardown, and miniature real tool behaviors. General provisionally AMENDS two points: no accordion if it creates owner-rejected layout jump; do not claim confidence affects future practice frequency unless actual StudyGrid behavior establishes that.
 - Astra primary/secondary tasks remain STAGED/HOLD. Do not activate without Nathan's explicit release.
 - Sol CF-0043 remains ACTIVE on Q-SOL1 exact-source interaction audit; consume terminal return when available.
 - Claude post-reset QA remains staged only.
@@ -96,13 +97,17 @@ RECONCILED EVIDENCE-BASED PRODUCT CONTRACT — CURRENT
 - Contextual help/tours must preserve orientation, avoid unrelated layout jumps, stop guidance when the user begins real interaction, and remain skippable/replayable.
 - Instructor and learner shells must be meaningfully separated; capabilities may coexist on an account without mixing everyday chrome.
 - Theme showcase may be theatrical only within strict flicker/photosensitivity/reduced-motion safety constraints.
+- Adaptive-response demo should preserve the two-card question/response composition and localize motion to changed phrases; changed response terms may briefly use StudyGrid green, then settle.
+- Practice state must visually and semantically separate learner answer, correct answer, confidence selection, help/explanation and Skip. Skip is not a confidence value.
+- Visual state language must distinguish focus, hover, pressed, selected/active, tutorial target and decorative emphasis; noninteractive copy must not receive focus-looking rectangles.
+- Ghost guidance must never fight real input and must tear down immediately on pointer/touch/selection interaction.
 
 WORKER HOLD / ALLOWED PARALLEL LANES
 - Bob: HOLD product mutation until General releases the reconciled batched build contract.
 - Stuart: HOLD acceptance until exact reconciled candidate exists; later acceptance must include all owner-feedback regressions.
 - Kevin: HOLD until General releases a bounded non-overlapping task in the batched round.
 - Research CF-0044: Q-R2 AVAILABLE NOW after owner activation; evidence only.
-- Gemini: new motion task requires owner copy/paste of self-contained prompt.
+- Gemini: current screenshot/motion task COMPLETE; no new Gemini task unless a materially new specialist question arises.
 - Relay Architecture: NO StudyGrid product-design activation. Peer sync only for cross-system/governance/routing implications.
 - Astra: HOLD.
 - Sol CF-0043: ACTIVE Q-SOL1.
