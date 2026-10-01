@@ -1,0 +1,43 @@
+STUDYGRID RESEARCH — ROLLOVER / SUCCESSOR HANDOFF
+Timestamp: 2026-09-30 22:37 ET
+Coordinator: ChatGPT General CF-0040
+Source lane: CHAT-CGPT-20260928-STUDYGRID-RESEARCH-01 / CF-0031
+Successor lane: CHAT-CGPT-20260930-STUDYGRID-RESEARCH-01 / CF-0044
+Owner-visible title projection: StudyGrid Research — September 30
+Status: SOURCE LANE OPERATIONALLY RETIRED FOR NEW WORK / SUCCESSOR OWNER ACTIVATION REQUIRED
+
+WHY THIS ROLLOVER EXISTS
+- Nathan reports the current StudyGrid Research chat became too long and the most recent research batch did not complete there.
+- General checked CENTRAL ROUTING for routes/RESEARCH_20260930_2147_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH.txt as of 2026-09-30 22:37 ET. The route publication exists at seq421 / row425; no terminal return for that exact batch was found in that bounded routing check.
+- Therefore the unfinished current research batch is carried forward to a fresh successor instead of asking Nathan to re-explain or re-paste the technical work.
+
+SOURCE CONTINUITY
+CF-0031 previously completed multiple StudyGrid research packages through 2026-09-29, including instructor/dashboard, provenance, privacy/provider, assessment/timeline, evidence/efficacy and 3D motion work. Those terminal results remain historical inputs and must not be redone merely because the chat is rolling over.
+
+CURRENT UNFINISHED WORK TO CONSUME
+Primary current task:
+- routes/RESEARCH_20260930_2147_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH.txt
+
+Parent/current owner-review context:
+- routes/OWNER_REVIEW_BATCH_20260930_OPEN.txt
+- routes/OWNER_FEEDBACK_20260930_2113_SLICE2_REFINEMENT.txt
+- routes/OWNER_FEEDBACK_20260930_2123_ADD_CLASS_ONBOARDING_REDESIGN.txt
+- routes/OWNER_REVIEW_DELTA_20260930_2147_HOME_STUDY_MOTION_NAV.txt
+- routes/ARCHITECTURE_ADJUDICATION_20260930_2129_ADD_CLASS_ONBOARDING.txt
+- routes/GEMINI_RETURN_20260930_2209_SELECTRIC_BALL_MOTION.txt
+- routes/GENERAL_ADJUDICATION_20260930_2209_GEMINI_SELECTRIC_MOTION.txt
+
+TASK EXECUTION RULE
+The successor should first recover any durable partial/STARTED material from CF-0031 if it exists in shared state. Reuse it. Do not restart completed research from zero. Then finish every still-unanswered workstream in the 21:47 evidence batch and return one consolidated DONE/PARTIAL/BLOCKED package directly to General CF-0040.
+
+BOUNDARIES
+- Research/evidence only; no StudyGrid code/product mutation.
+- No Bob/Stuart/Kevin wake.
+- No backend/auth/Supabase/provider/deploy/canonical mutation.
+- Do not close Nathan's owner-review batch.
+- Distinguish primary-source evidence, secondary evidence, inference and recommendation.
+- Current factual/browser/platform claims require fresh verification and citations.
+- Preserve existing completed CF-0031 research; only unfinished/current work should be executed.
+
+SUCCESSOR STARTUP
+On activation, CF-0044 must verify its reserved registry row, current Base + Active Corrections, this rollover, queues/RESEARCH_QUEUE.txt, and the exact 21:47 research task before marking itself ACTIVE and executing the queue.
