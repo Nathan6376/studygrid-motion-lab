@@ -1,6 +1,6 @@
 STUDYGRID — OWNER REVIEW BATCH OPEN
 Timestamp opened: 2026-09-30 21:30 ET
-Last reconciled: 2026-09-30 21:47 ET
+Last reconciled: 2026-09-30 22:09 ET
 Coordinator: ChatGPT General CF-0040
 Authority: Nathan direct owner instruction
 Status: OPEN — ACCUMULATE FEEDBACK; DO NOT WAKE BOB/STUART/KEVIN YET
@@ -8,7 +8,7 @@ Status: OPEN — ACCUMULATE FEEDBACK; DO NOT WAKE BOB/STUART/KEVIN YET
 OWNER PROCESS
 - Nathan wants to inspect the current owner-review release thoroughly and give all visible/interaction/product feedback before implementation workers are reactivated.
 - Do not repeatedly send Bob, Stuart or Kevin small incremental batches. Accumulate the release feedback first, reconcile it into one coherent implementation/acceptance package, then activate the workers once Nathan explicitly indicates the review batch is complete / ready to build.
-- Relay Architecture and dedicated Research may work in parallel while Nathan continues reviewing. Gemini may answer narrow owner-requested creative/technical research. None of those returns authorizes product mutation.
+- Relay Architecture and dedicated Research may work in parallel while Nathan continues reviewing. Gemini is an external specialist lane and, in the currently tested Gemini 3.1 Pro environment, does NOT have direct shared Drive/routing access; any Gemini task must therefore be supplied as a self-contained copyable code-box prompt unless a future environment proves direct access.
 - New owner feedback during this review is appended/reconciled into the open review batch. Material architecture deltas are propagated to Relay Architecture under the peer-coordinator sync rule without making Nathan repeat them.
 - When the batch closes: General reconciles Architecture + Research + Gemini/Claude-if-available returns with the complete owner feedback; publishes exact worker-specific shared routes; then Nathan receives only short exact activations and one paired return-to-General continuation block.
 
@@ -44,11 +44,12 @@ CURRENT FEEDBACK IN BATCH
    - full button/back/next/destination audit
    - feedback-capture evidence research
 
-ARCHITECTURE / RESEARCH STATE
-- Relay Architecture returned routes/ARCHITECTURE_ADJUDICATION_20260930_2129_ADD_CLASS_ONBOARDING.txt; General has consumed it as design input only. It authorizes Research source verification but does NOT override the owner batch hold on Bob/Stuart/Kevin.
-- New architecture supplement: routes/ARCHITECTURE_20260930_2147_OWNER_REVIEW_SUPPLEMENT.txt.
-- Dedicated Research batch: routes/RESEARCH_20260930_2147_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH.txt.
-- Gemini narrow motion packet: routes/GEMINI_20260930_2147_SELECTRIC_BALL_MOTION_RESEARCH.txt.
+ARCHITECTURE / RESEARCH / SPECIALIST STATE
+- Relay Architecture returned routes/ARCHITECTURE_ADJUDICATION_20260930_2129_ADD_CLASS_ONBOARDING.txt; General consumed it as design input only. It authorizes Research source verification but does NOT override the owner batch hold on Bob/Stuart/Kevin.
+- Architecture supplement: routes/ARCHITECTURE_20260930_2147_OWNER_REVIEW_SUPPLEMENT.txt.
+- Dedicated Research batch: routes/RESEARCH_20260930_2147_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH.txt. Research is still pending by owner report at 22:09 ET.
+- Gemini 3.1 Pro motion return has been received and persisted at routes/GEMINI_RETURN_20260930_2209_SELECTRIC_BALL_MOTION.txt.
+- General's provisional AMEND adjudication of Gemini is at routes/GENERAL_ADJUDICATION_20260930_2209_GEMINI_SELECTRIC_MOTION.txt. Core implied-sphere/CSS-3D direction is strong, but easing/angles/blur/accessibility/manual-control details remain non-final pending Research and owner review.
 - Claude post-reset QA staged only: routes/CLAUDE_20260930_POSTRESET_CURRENT_RELEASE_QA.txt.
 
 WORKER HOLD
@@ -56,7 +57,7 @@ WORKER HOLD
 - Stuart: HOLD acceptance prep/acceptance until exact reconciled candidate/contract exists after batch close.
 - Kevin: HOLD Q-K1F activation until owner review batch closes; Nathan wants one batched worker activation round.
 - Research: MAY RUN NOW because it is evidence gathering for the open batch, not implementation.
-- Gemini: MAY RUN NOW only on the narrow Selectric/typeball research packet.
+- Gemini: CURRENT MOTION TASK COMPLETE; do not send another Gemini task unless Nathan requests it or General has a materially new specialist question.
 - Claude: HOLD until credit reset and General release.
 
 CLOSE CONDITION
