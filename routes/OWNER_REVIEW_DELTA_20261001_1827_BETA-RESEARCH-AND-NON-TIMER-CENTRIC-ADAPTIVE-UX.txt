@@ -1,0 +1,27 @@
+STUDYGRID — OWNER REVIEW DELTA — BETA RESEARCH + NON-TIMER-CENTRIC ADAPTIVE UX
+Captured by: ChatGPT General / CF-0047
+Owner source: Nathan direct, 2026-10-01 18:23–18:27 ET
+Status: EFFECTIVE OWNER DELTA / NO PRODUCT MUTATION
+
+OWNER DIRECTION
+1. Student-facing StudyGrid should not be framed primarily as “tell us how much time you have.” The owner rejects a timer-centric adaptive-learning model as too simplistic and boring.
+2. Time can remain one optional input or session parameter, but the system should primarily understand the learner’s real context from course material, syllabus, assessments, progress, prior evidence, upcoming tests/deadlines, current weak areas, prerequisites and other meaningful signals.
+3. The learner experience should feel seamless: open StudyGrid, see what matters, continue intelligently, and be able to study briefly or deeply without having to manually design the study plan.
+4. Estimated effort can be shown, but should not become the core product model.
+5. StudyGrid must be good at teaching, not merely scheduling questions. The adaptive engine must decide when to teach/explain, when to retrieve/test, when to review, and what should follow next.
+6. UI remains strategically important as the acquisition/curiosity layer: strong visual identity, motion, scenarios, class visuals and transitions can make people ask “what is that?” and try the product. The engine underneath is what creates durable value.
+7. Instructor-facing features must be discovered with real instructors rather than invented in isolation. Candidate ideas such as weekly/monthly digests, misconception summaries, class-level weak areas and suggested follow-up topics are hypotheses until validated with professors.
+8. Owner wants a lightweight pre-beta/onboarding research website for professor testers such as Carolyn: thank them for beta participation, let them create/setup access, then ask targeted questions whose answers inform StudyGrid product design.
+9. Owner believes a beta cohort of roughly 20 students plus at least one professor can be recruited quickly from current real-world interest; product decisions should therefore be testable against real users rather than endlessly inferred internally.
+
+PRODUCT IMPLICATION
+The adaptive experience should be event/context-driven, not session-duration-driven. A plausible default product behaviour is a strong “Continue / Up next” recommendation generated from learning evidence and course context, with optional session scope/intensity choices available without forcing the learner to declare a timer first.
+
+RESEARCH REQUIREMENT
+Before implementation, research should compare how effective adaptive-learning systems choose next actions using mastery/knowledge state, prerequisite structure, forgetting/retrieval scheduling, assessment urgency, course sequence, confidence/error patterns, learner goals and session behaviour. Determine which signals improve decisions versus merely adding noise.
+
+INSTRUCTOR DISCOVERY REQUIREMENT
+Build the professor beta questionnaire around decisions/jobs-to-be-done rather than feature wishlists. Ask what instructors currently struggle to know, what evidence they trust, what actions they take after seeing learning problems, what they would never want automated, what summaries would save time, and what would make them distrust the system.
+
+NO IMPLEMENTATION RELEASE
+This is design/research input. Exact frontend candidate remains unchanged.
