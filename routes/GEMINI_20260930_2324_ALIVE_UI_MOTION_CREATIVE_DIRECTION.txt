@@ -1,0 +1,56 @@
+STUDYGRID — GEMINI 3.1 PRO MOTION / CREATIVE-DIRECTION BRIEF
+Date: 2026-09-30
+Context owner: Nathan
+Coordinator: ChatGPT General CF-0040
+Mode: external specialist; Gemini has no verified shared routing/Drive access in this environment.
+
+MISSION
+Design a coherent premium motion language for a StudyGrid teacher/student product demo. Do not implement the app. Return technically credible motion/interaction contracts another team can build.
+
+PRODUCT TONE
+Calm, intelligent, alive, purposeful, premium; not generic ed-tech, not a tech demo, not childish. Warm Paper visual language + Dusk theme. Existing student-tour Next transition is liked. Existing small StudyGrid orb/ball is liked. Previous Selectric direction: one implied rotor, native DOM text + CSS 3D/Web Animations, no visible globe, no 360 show-off spin, no blur-heavy smear, no spring/bounce, ~450–650ms prototype transition, reduced motion static/instant/minimal.
+
+TASK A — INSTRUCTOR ADAPTIVE RESPONSE DEMO
+Show a student question changing and a suggested instructor/auto-response adapting to it. The specific words/phrases that changed meaningfully should briefly become StudyGrid green so the viewer sees what adapted. The effect should communicate contextual intelligence, not flashing text. Recommend exact choreography, timing, whether to morph/crossfade individual tokens/lines, and how to avoid layout jumps. Consider reusing the same physical/motion grammar as the Selectric control without literally using the same animation.
+
+TASK B — INSTRUCTOR GUIDED DEMO
+The fake instructor workspace should guide a first-time instructor through example classes, a student who needs help, repeated-question review, content/practice review and class-level signals. Short, skippable, replayable. Recommend coachmark/spotlight/highlight motion that points to real controls without covering them, causing layout shift, or trapping focus. Define how target emphasis enters/exits and how the walkthrough transitions naturally to real signup/setup.
+
+TASK C — STUDENT GHOST-CURSOR SELECTION DEMO
+Owner wants a faint ghost cursor/pointer that periodically demonstrates selecting a phrase in normal lesson text. It should visually drag/select the target words, then reset/fade. As soon as the real user interacts, it disappears and does not fight the pointer. The target words may have a subtle non-link cue but no permanent underline. Recommend implementation/choreography, timing, repeat policy, and touch/iPad alternative. Reduced-motion and screen-reader users must get an intentional non-animated cue.
+
+TASK D — EXPLAIN / HIGHLIGHT / ASK TEACHER MINI DEMO
+In the tour, these controls should behave like the real product preview. Explain reveals a real contextual explanation. Highlight toggles on/off. Ask teacher opens a small question composer showing rotating plausible example questions every ~4 seconds with gentle text change (no live sending required). Recommend a shared reveal/close motion language, exact state changes, and how to keep this compact/alive.
+
+TASK E — `HOW THIS WORKS` REVEAL WITHOUT PAGE JUMP
+Current reveal pushes surrounding copy and feels ugly. Propose the best pattern and motion to reveal explanation while preserving spatial orientation and minimizing unrelated layout movement. Compare anchored popover, overlay, sidecar, reserved-space inline reveal, etc. Give the preferred pattern for desktop + iPad.
+
+TASK F — ONE-TIME PAPER → DUSK → PAPER SHOWCASE
+Owner wants one theatrical appearance demo: Paper briefly transforms into Dusk, then smoothly returns to Paper and stays there. Desired emotional vibe: slightly eerie/broken-light/Halloween-like, with words/components converting in a staggered way, buttons compressing/settling, and the StudyGrid orb rotating/morphing. IMPORTANT: do not use unsafe strobing or rapid full-screen luminance flashes. Preserve legibility and make a photosensitivity-safe/reduced-motion path. Recommend how to get the drama through sequential local changes, wipes, masked reveals, staggered color/material changes, etc. Define hard reject conditions for flash frequency/luminance/whole-screen flicker.
+
+TASK G — FOCUS / HIGHLIGHT VISUAL LANGUAGE
+Current generic focus treatment can appear as an ugly blue outline. Do NOT remove keyboard focus visibility. Propose a StudyGrid-consistent accessible focus/selection/coachmark language that distinguishes keyboard focus from tutorial spotlight, selected state, and green adaptive-word emphasis.
+
+TASK H — UNIFIED MOTION SYSTEM
+Unify the Selectric loop, route/page transitions, coachmarks, adaptive text, ghost cursor, local completion feedback, contextual help and appearance showcase into a small set of reusable motion primitives/tokens. Recommend durations/easings only where justified. Avoid bounce/spring by default. Avoid blur-heavy transformed text. Motion must never delay interaction.
+
+PLATFORM / ACCESSIBILITY CONSTRAINTS
+- Target Safari/iPad as important.
+- Native text should remain crisp at rest.
+- Progressive enhancement: interaction/history/focus/state must work with motion disabled.
+- `prefers-reduced-motion` path must remove large spatial transforms/rotations and any flicker-like effect.
+- No continuous autoplay that becomes distracting; bounded cycles preferred.
+- No focus moving with decorative copies.
+- No live-region spam.
+- No layout shift unless the content relationship truly requires it.
+
+OUTPUT
+1. Shared StudyGrid motion grammar / primitives.
+2. Exact choreography for A–G.
+3. Recommended implementation family per effect (CSS transitions/transforms, WAAPI, View Transitions, etc.).
+4. Accessibility/reduced-motion contracts.
+5. Safari/iPad risks.
+6. Reject conditions.
+7. A concise handoff table that implementation can follow.
+
+Be specific and decisive. Flag subjective creative choices as subjective. Do not redesign unrelated product IA and do not implement the application.
