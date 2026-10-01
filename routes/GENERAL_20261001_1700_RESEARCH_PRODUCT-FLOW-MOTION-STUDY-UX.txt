@@ -1,0 +1,49 @@
+STUDYGRID — GENERAL → RESEARCH — PRODUCT FLOW / MOTION / STUDY UX EVIDENCE
+From: ChatGPT General / CF-0047
+To: SG Research / CF-0044
+Status: AVAILABLE — OWNER ACTIVATION REQUIRED
+Mode: RESEARCH ONLY / NO PRODUCT MUTATION
+
+READ FIRST
+1. routes/OWNER_REVIEW_DELTA_20261001_1657_PRODUCT-FLOW-STUDY-MODE.txt @ owner-delta commit 9e44452c4687b03fe62a1bc6faee387cc2713c6d
+2. Exact current candidate identity from that delta.
+3. Current applicable Base + Active Corrections + current Research queue/lifecycle.
+
+PURPOSE
+Nathan explicitly requires StudyGrid UI/product work to follow purpose → research → multiple designs → selection → implementation → independent QA. Produce the evidence layer that the other lanes can use. Do not design by copying Apple or another product; extract principles and constraints that fit StudyGrid.
+
+RESEARCH QUESTIONS
+A. PRODUCT / DESIGN PROCESS
+- Research established product/UX development processes that begin with understanding the user problem and diverge before converging. Compare practical elements from evidence-based approaches (e.g. Discover/Define/Develop/Deliver, user-centred design, task analysis, usability testing) and propose the smallest rigorous StudyGrid-specific process.
+- Define what evidence is required before a material UI build versus what can be iterated after a prototype.
+
+B. WAYFINDING / INFORMATION ARCHITECTURE
+- Best practices for signed-in home/root, parent-child/sibling navigation, local navigation, role context, breadcrumbs/back semantics, transition pages vs destination pages, and avoiding “lost in hyperspace”.
+- How to support both class-based study and self-directed/general study without muddying the primary mental model.
+- How to make the recommended next step obvious without over-constraining exploration.
+
+C. MOTION / TRANSITIONS
+- Evidence/guidance on motion that communicates hierarchy, parent→child vs sibling transitions, shared-element/spatial continuity, preserving user orientation, stable controls, reduced motion, and avoiding decorative overload.
+- Research suitable patterns for the continuously cycling 1→2→3 welcome sequence. Compare at least three motion concepts and note when autoplay becomes distracting; define pause/reduced-motion/user-interaction rules.
+- Research practical web implementation considerations: View Transition API, Navigation API/history/state, CSS/WAAPI, focus restoration, scroll preservation, browser support/fallbacks. Distinguish evidence from implementation feasibility.
+
+D. STUDY EXPERIENCE / LEARNING FLOW
+- Research how learning interfaces should distinguish teaching/explanation, retrieval practice/quizzing, confidence judgements, review of errors, progress/reward feedback and next-step recommendations.
+- Evidence on cognitive load from too many choices; progressive disclosure; stable spatial targets during repetitive review; end-of-session completion/forward momentum.
+- Research when a “quick/focused/deep” session taxonomy helps versus confuses, and what distinct jobs/durations/outcomes would justify each.
+
+E. ACCESSIBILITY
+- Focus visibility and :focus-visible patterns: owner dislikes the current sharp green square, but keyboard focus cannot be removed.
+- Motion/reduced-motion, focus not obscured, stable target placement, screen-reader route announcements, and multi-select control semantics.
+
+DELIVERABLE
+Return one compact evidence package to General with:
+1. Product-process recommendation for StudyGrid.
+2. Research-backed IA/wayfinding principles.
+3. Motion/transition pattern matrix, including 1→2→3 recommendation candidates.
+4. Study-session/learning-flow evidence and implications.
+5. Accessibility/non-negotiables.
+6. Source list with dated links/authority level and clear distinction between evidence, design judgement and implementation inference.
+7. A short “questions the designs must answer” checklist for Astra/Bob.
+
+Do not implement HTML, backend, auth, Supabase, 3D or deploy. Persist STARTED before work and return terminal result directly to General CF-0047.
