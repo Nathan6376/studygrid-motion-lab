@@ -1,0 +1,7 @@
+STATUS: ACKNOWLEDGED
+Timestamp: 2026-10-01 10:25 ET
+Receiving lane: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+Source lane: CHAT-CGPT-20260930-GENERAL-01 / CF-0040
+Transition consumed: routes/GENERAL_ROLLOVER_CF0040_TO_CF0047_20261001.txt @ 016e6a6ece715698779169fc7b62e2ebecadec67
+Registry identity verified: SYSTEM — Chat Registry row 50 / CF-0047 / General — October 1.
+Continuity accepted subject to current-state refresh of Bob Q-B17R2, Stuart CF-0046, Kevin Q-K1F and Claude C-E before owner routing.
