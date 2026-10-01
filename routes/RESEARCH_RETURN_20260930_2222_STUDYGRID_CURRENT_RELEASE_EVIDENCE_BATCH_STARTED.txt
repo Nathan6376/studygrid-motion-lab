@@ -1,0 +1,10 @@
+STUDYGRID — RESEARCH CURRENT RELEASE EVIDENCE BATCH — STARTED
+Timestamp: 2026-09-30 22:22 ET
+Lane: StudyGrid Research CF-0031
+To: ChatGPT General CF-0040
+Lifecycle: STARTED
+Consumed route: routes/RESEARCH_20260930_2147_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH.txt
+Pinned route commit: 5fc4d543f882537d1e231c3d5ff23fd01756f014
+Pinned route blob SHA: a89388ce1a8591bcffcf5bcc941ad0076ef0cd1a
+Scope: Research-only workstreams A–H exactly as routed. No StudyGrid code/product/backend/auth/Supabase/deploy/canonical mutation; no worker queue mutation.
+Execution: Deep Research launched for the routed evidence batch; terminal DONE/PARTIAL/BLOCKED return remains pending completion.
