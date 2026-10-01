@@ -1,0 +1,124 @@
+STUDYGRID — LEARNING ENGINE DEEP RESEARCH
+FROM: ChatGPT General CF-0047
+TO: StudyGrid Research CF-0044
+TIMESTAMP: 2026-10-01 18:33 ET
+STATUS: OPEN / RESEARCH ONLY / NO IMPLEMENTATION
+
+OWNER INTENT
+Nathan wants StudyGrid to be a learning system that happens to have a website, not a collection of study buttons. The durable value should come from a proprietary, inspectable learning engine that can work across domains (law, forensics, engineering, policing, etc.), understand what a learner needs, decide the highest-value next learning action, teach effectively, update from evidence, and give instructors useful class-level evidence. The external experience should be simple because the system underneath is sophisticated.
+
+CURRENT OWNER DIRECTIONS TO PRESERVE
+- Black box to competitors; glass box internally. StudyGrid must be able to explain why it recommended an action.
+- Research first, architecture second, code third.
+- Study open-source implementations aggressively to learn from mature engineering, testing, failure modes, boundaries and architecture. Do not equate open source with copy/paste.
+- Do not reinvent proven standards or learning science merely for novelty.
+- The proprietary value should come from StudyGrid's combination of learner modelling, knowledge/course structure, memory/retrieval, assessment evidence, teaching choices and next-action policy, plus the data and feedback loops that improve those decisions.
+- AI is an assistant to the engine, not Course Truth and not the permanent memory/source of truth.
+- The adaptive experience must not be timer-centric. Time/effort can be an optional signal, but StudyGrid should primarily use course context, syllabus/assessment state, progress, weaknesses, prerequisites, deadlines and learning evidence.
+- StudyGrid must be good at teaching, not merely scheduling questions.
+- Instructor-facing product hypotheses must be validated with real instructors. Nathan expects a near-term beta with roughly 20 students plus at least one professor.
+- Domain-specific content must plug into a domain-neutral learning/assessment engine.
+
+AUTHORITATIVE CURRENT OWNER DELTAS
+Read these before research:
+1. routes/OWNER_REVIEW_DELTA_20261001_1756_ORDERED-INTERACTION_DOMAIN-AGNOSTIC-ASSESSMENT.txt @ cfe1071cd15faab19fe4195b30201f51aae42afd
+2. routes/OWNER_REVIEW_DELTA_20261001_1827_BETA-RESEARCH-AND-NON-TIMER-CENTRIC-ADAPTIVE-UX.txt @ 014280c9ef7c52341144f086a85df1a81d407da9
+3. routes/OWNER_REVIEW_DELTA_20261001_1811_BACKEND-MOAT-RESEARCH-FIRST-ENGINEERING.txt @ 4f9903535a6693911d3a0cd2f12587569c406d64 (if filename differs, resolve by commit/title)
+Also consume the completed product-flow research return and current source audit if useful, but do not let product-UI details dominate this task.
+
+CORE RESEARCH QUESTION
+What should StudyGrid own as a proprietary learning engine, what should it borrow from proven research/open-source systems/standards, and what evidence should drive its next-action decisions?
+
+RESEARCH SCOPE
+Build an evidence-grounded map of the problem before recommending an engine design. Cover at minimum:
+
+A. LEARNER STATE / KNOWLEDGE ESTIMATION
+- Bayesian Knowledge Tracing and interpretable variants
+- Performance Factors Analysis / learning-curve approaches
+- Item Response Theory and multidimensional/diagnostic variants where relevant
+- Cognitive Diagnosis Models / skill mastery models
+- Deep Knowledge Tracing / transformer-style approaches and their evidence, data requirements, calibration and interpretability trade-offs
+- uncertainty/calibration: how sure can the system reasonably be that a learner knows something?
+
+B. MEMORY / RETRIEVAL / FORGETTING
+- spacing effect, retrieval practice, interleaving where evidence supports it
+- modern spaced-repetition schedulers such as FSRS and established alternatives
+- how memory models should interact with course prerequisites and exam urgency rather than acting as a standalone flashcard scheduler
+
+C. KNOWLEDGE / CURRICULUM STRUCTURE
+- concept/skill graphs, prerequisite relations, curriculum sequencing, knowledge spaces, mastery learning
+- what should be authored, inferred, or learned from data
+- cold-start strategies when the course is new and little learner data exists
+
+D. NEXT-ACTION / ADAPTIVE POLICY
+Research how systems choose among TEACH / EXPLAIN / EXAMPLE / RETRIEVE / PRACTISE / REVIEW / REMEDIATE / ADVANCE / ASSESS / STOP/PAUSE.
+Compare rule-based policies, mastery thresholds, bandit/recommender approaches, reinforcement-learning approaches and hybrid systems. Pay special attention to causal validity: prediction accuracy alone does not prove a recommendation improves learning.
+
+E. ASSESSMENT EVIDENCE
+- interaction types and construct alignment
+- question/item difficulty, discrimination and partial credit where appropriate
+- error/misconception patterns
+- response time and why it can be misleading
+- confidence/metacognitive judgements and evidence on when they add useful signal
+- hints, retries, answer changes, explanation requests and other process data
+- distinguishing exposure/completion from actual learning
+
+F. TEACHING / FEEDBACK
+- worked examples, fading/scaffolding, feedback timing/content, example→practice progression, generation effects where relevant
+- when to teach before testing versus test first
+- how an engine can choose a teaching intervention rather than only choosing a question
+
+G. INSTRUCTOR / CLASS-LEVEL EVIDENCE
+Research what aggregated signals can responsibly support instructor decisions: misconceptions, prerequisite bottlenecks, weak concepts, content that appears ineffective, cohort trends, uncertainty, and intervention suggestions. Distinguish descriptive evidence from unsupported causal claims. Include research on learning analytics dashboards and what actually helps instructors versus adding noise.
+
+H. OPEN-SOURCE / EXISTING-SYSTEM STUDY
+Study mature systems/libraries/repos and standards where relevant. Include at least some of: ALEKS/Knowledge Space Theory literature; ASSISTments; Open edX adaptive/assessment architecture; Moodle/adaptive plugins if genuinely relevant; pyBKT or comparable knowledge-tracing implementations; FSRS/open-spaced-repetition; QTI; CASE; Caliper/xAPI if useful; open-source recommender/educational-data-mining implementations. For every codebase/library studied, report:
+- what problem it solves well;
+- architectural choice worth learning from;
+- testing/validation approach;
+- known limitations or ugly seams;
+- licence/IP implications;
+- whether StudyGrid should adopt, adapt, wrap, learn from only, or avoid.
+Do not treat popularity as proof of pedagogical effectiveness.
+
+I. DATA / PRIVACY / INSTITUTIONAL READINESS
+- minimum useful data for Engine v1
+- signals that are tempting but noisy/invasive
+- data provenance and model/version provenance
+- separation of individual and cohort data
+- explainability/auditability
+- privacy/fairness risks, institutional trust, student agency and instructor controls
+- what data should never be required simply because it could improve prediction
+
+J. FAILURE MODES / RED TEAM
+Find ways adaptive-learning engines fail: cold start, sparse data, overconfidence, mis-specified skill maps, content leakage, gaming, answer memorization, rapid guessing, confounding instruction with ability, poor calibration, cohort/domain shift, over-personalization, local optimum/trapping a learner, accessibility mismatch, bad source material, AI-generated content errors, and feedback loops that reinforce bad assumptions.
+
+K. BETA / EXPERIMENTATION
+Nathan expects real beta access soon. Recommend the smallest instrumentation and experiments that could falsify assumptions safely with ~20 students + one professor. Avoid pretending such a cohort proves long-term efficacy. Identify what can be learned from usability, behaviour, calibration and qualitative interviews versus what requires a larger/longer study.
+
+REQUIRED DELIVERABLE
+Return a research dossier, not implementation code. It must contain:
+1. Plain-English executive answer to the core question.
+2. Evidence map of major model families with strengths, weaknesses, data needs and interpretability.
+3. Recommended evidence/signals matrix: signal → what it might mean → reliability/confounds → privacy cost → whether Engine v1 should use it.
+4. Open-source/existing-system study table with adopt/adapt/learn-only/avoid judgement and licence notes.
+5. Recommended division between deterministic rules, statistical models, learned models and generative AI.
+6. Cold-start strategy for a brand-new course and brand-new learner.
+7. Candidate next-action decision framework, explicitly labelled RESEARCH-INFORMED HYPOTHESIS rather than production design.
+8. Instructor evidence/analytics findings and questions that must be validated with professors.
+9. Failure-mode/red-team list with mitigation principles.
+10. Beta measurement plan for ~20 students + professor.
+11. Unknowns / evidence gaps / claims that are vendor marketing rather than independent evidence.
+12. Sources with preference for primary research, systematic reviews/meta-analyses, standards bodies, official technical docs and actual repositories.
+
+QUALITY BAR
+- Research broadly and deeply; do not just summarize the first search results.
+- Separate established evidence, contested evidence, vendor claims, implementation observations and your own inference.
+- Prefer recent evidence where the field has moved, while retaining foundational research where still relevant.
+- Do not declare a single model 'best' without task/data context.
+- Do not design around policing examples.
+- Do not implement or mutate frontend/backend/Supabase/deploy state.
+- Preserve Nathan's current StudyGrid direction; do not silently replace it with a generic edtech template.
+
+LIFECYCLE
+Persist STARTED before substantive research, checkpoint if long-running, then terminal DONE/PARTIAL/BLOCKED return to General CF-0047 with exact artifact references.
