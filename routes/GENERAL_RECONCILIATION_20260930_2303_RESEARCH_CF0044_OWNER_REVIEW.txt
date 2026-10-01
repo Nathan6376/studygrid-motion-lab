@@ -1,0 +1,161 @@
+STUDYGRID — GENERAL RECONCILIATION / CF-0044 RESEARCH INTO OPEN OWNER REVIEW
+Timestamp: 2026-09-30 23:03 ET
+Coordinator: ChatGPT General CF-0040
+Status: RECONCILED INTO OPEN OWNER-REVIEW BATCH / NO IMPLEMENTATION RELEASE
+
+CONSUMED TERMINAL RETURN
+- routes/RESEARCH_CF0044_20260930_2257_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH_DONE.txt @ commit c9c5f93171ca286cda6968c2b730d56d63fd4344
+- Lifecycle: DONE — research/evidence only.
+- Owner-review batch remains OPEN by Nathan direct instruction.
+
+OTHER CURRENT INPUT/STATE RECONCILED
+- Architecture: routes/ARCHITECTURE_ADJUDICATION_20260930_2129_ADD_CLASS_ONBOARDING.txt + routes/ARCHITECTURE_20260930_2147_OWNER_REVIEW_SUPPLEMENT.txt.
+- Gemini 3.1 Pro: routes/GEMINI_RETURN_20260930_2209_SELECTRIC_BALL_MOTION.txt + routes/GENERAL_ADJUDICATION_20260930_2209_GEMINI_SELECTRIC_MOTION.txt.
+- Astra: staged tasks remain HOLD by owner instruction; no Astra return exists/was consumed in this reconciliation.
+- Sol CF-0043: ACTIVE, Q-SOL1 STARTED as of 22:48 ET; no terminal Sol return was found/consumed in this reconciliation.
+- Bob/Stuart/Kevin remain HELD; no wake or implementation release.
+
+RECONCILED PRODUCT CONTRACT DELTAS
+
+1. ONBOARDING / ADD CLASS — ARCHITECTURE NOW EVIDENCE-BACKED
+ADOPT:
+- First-run/context setup stores Institution -> Program -> Program Term once.
+- First branch offers `I have a class code` vs `Set up my school`.
+- Successful class code may short-circuit repeated context questions where the resolved class already supplies context.
+- Ordinary Add Class becomes a context-scoped course picker, not a repeat institution/program/term form.
+- Verified catalogue results appear first; manual fallback remains explicit and visually distinct.
+- Program Term and Academic Session remain separate fields/dimensions.
+- Owner/admin capability remains separate from default learner chrome.
+
+AMEND prior novice-decay idea:
+- Do NOT retire `Pick up where you left off` by raw login count.
+- Retire/collapse novice guidance based on demonstrated milestones: school/class context established, at least one class added/joined, valid resume target exists, and the learner has successfully resumed/re-entered the core context or completed the relevant first-use guidance. Tour/Help stays replayable.
+
+2. VERIFIED CATALOGUE / PFP 207 FIXTURE — SOURCE BOUNDARY
+Research verified current Humber 2026–27 program-level facts:
+- Institution display: Humber Polytechnic.
+- Program: Police Foundations.
+- Program code: 11071.
+- Program length: 4 semesters.
+- Campus indicator: Lakeshore.
+Research verified PFP 207 / Police Powers only from an official source-period 2023–24 course outline:
+- canonical_course_code = PFP 207
+- course_title = Police Powers
+- credit_value = 3
+- total_course_hours = 42
+- prerequisites/corequisites = none
+These course facts are historical-official/source-period evidence, not proof of a 2026–27 offering.
+
+HARD BOUNDARY:
+- Do NOT infer current program term for PFP 207.
+- Do NOT infer academic session, CRN, section, instructor, timetable or capacity.
+- Do NOT present historical-official data as current-official.
+- Canonical storage may retain full `PFP 207`; contextual UI may display `207` when Police Foundations context already establishes the prefix, without changing canonical identity.
+
+PROVENANCE CONTRACT:
+- Source family/adapter, authoritative URL/document, source period, retrieved_at, snapshot/hash, parser version, field locator where practical, and verification state must travel with imported data.
+- Runtime Add Class reads cached/versioned catalogue data; no live scrape dependency in the click path.
+
+3. FEEDBACK UX — RESEARCH CONTRACT
+ADOPT:
+- Small default flow: category + short description.
+- For `Problem`, progressively reveal Expected / Actual / reproduction details.
+- Optional screenshot with preview/removal/redaction path.
+- Show safe context before send: build/version, route/surface, viewport/device class, input mode, explicit UI anchor/selection when applicable.
+- Advanced diagnostics only via explicit include control.
+- Preserve unsent draft on accidental dismissal where practical.
+REJECT:
+- invisible screenshot/screen recording;
+- raw keystroke/pointer/clipboard capture;
+- automatic full-DOM/unrelated student-content capture;
+- mandatory giant diagnostics for suggestions;
+- hover-only access on touch/iPad.
+
+4. PAGE / ROUTE TRANSITIONS
+ADOPT:
+- Animation is progressive enhancement only; route correctness/history/focus/state must work with motion disabled.
+- Shared-element movement only when the same conceptual object persists.
+- Fade/crossfade for lateral replacement; directional slide only for ordered hierarchy/progression; scale only for local emergence/dismissal.
+- No spring/bounce/overshoot default, no animation queue backlog, no motion that delays interaction.
+Prototype ranges from Research (design ranges, not standards):
+- micro state: ~120–180 ms;
+- section/deep context: ~160–220 ms;
+- major page/route: ~180–260 ms, >300 ms only with strong spatial justification.
+- Reduced motion removes large spatial motion; interrupting navigation cancels/supersedes in-flight motion.
+- Deep-study chrome may quiet nonessential controls but must preserve current class/location, reliable Back/escape, and a clear way to restore full navigation.
+
+5. COMPLETION / RESOLVE / UNDO
+ADOPT:
+- Mark reviewed: local ~140–200 ms check/stroke/fill settle, subtle state change, no layout jump, focus preserved.
+- Mark resolved: local ~160–220 ms emphasis/settle; if list membership changes, retain a short exact Undo affordance tied to the item.
+- Undo restores the exact prior object/state and deterministic focus.
+REJECT:
+- confetti/streaks/oversized celebration/looping pulse/springy reflow/whole-page motion/web-haptic dependency.
+
+6. IPAD/SAFARI CURSOR + AUTOFILL
+UPGRADE owner report to strong source-backed diagnosis:
+- Broad `.annotatable-text { cursor:text; ... }` is a direct likely cause of the owner-observed iPad pointer becoming an I-beam over broad reading regions.
+- Text selection does not require forcing `cursor:text` over passive reading containers.
+Implementation direction later:
+- remove broad `cursor:text` from passive reading containers;
+- scope marking cursor/overlay only to active marking mode and exact target;
+- teardown overlays/listeners/pointer capture/transient cursor classes on cancel, submit, route change and unmount;
+- preserve native selectable text/long-press where intended.
+
+AUTOFILL:
+- Safari may ignore `autocomplete="off"`; that attribute cannot be accepted as proof the personal-name suggestion issue is fixed.
+- Course search must use real course/search semantics, valid HTML autocomplete semantics, and a product suggestion list separate from browser AutoFill.
+- Physical iPad/Safari with AutoFill/contact data enabled remains a downstream acceptance hold.
+
+7. BUTTON / BACK / NEXT / DESTINATION SEMANTICS
+ADOPT classification contract:
+- HISTORY BACK = restore meaningful prior entry/state.
+- HIERARCHY PARENT/UP = deterministic parent route, explicitly labelled (e.g. `Back to Classes` / `Classes`).
+- EXPLICIT DESTINATION = named destination link/navigation.
+- LINEAR PROGRESS = `Continue`/`Next` only when genuinely ordered/predictable.
+- COMMAND = button semantics for mutations/actions.
+- REVERSIBLE MUTATION = command + clear result + exact recovery/Undo where appropriate.
+Later Stuart matrix must assert label/destination agreement, semantic role, truthful enabled state, keyboard/focus order, prior state preservation where promised, no parent/history conflation, no ambiguous Next, double-activation safety, and identical logic with motion disabled.
+
+8. SELECTRIC / TYPEBALL WELCOME MOTION — GEMINI + RESEARCH RECONCILIATION
+ADOPT:
+- one implied physical rotor/typeball object;
+- semantic/native DOM text;
+- CSS 3D transform family with Web Animations orchestration as default;
+- compound coherent path, no visible globe, no WebGL/Canvas unless later requirements materially justify it;
+- three stable readable rest states;
+- hero/value proposition and Sign In remain primary;
+- no blur-heavy smear; no spring/bounce; no 360° flourish;
+- decorative moving copies may be aria-hidden only if an equivalent stable semantic representation exists.
+
+AMEND Gemini timing/autoplay:
+- Do not lock Gemini's 600–800 ms + endless 4.5–5 s loop.
+- Research-supported prototype range is ~450–650 ms per state transition.
+- If autoplay exists, test ~4–6 s dwell but prefer one bounded introductory cycle and stop, OR explicit next/previous/pause controls.
+- Hover/focus pauses continuing autoplay.
+- Reduced motion = static/instant or very small opacity state change; never the same spin slowed down.
+
+DEVICE HOLD:
+- Physical Safari/iPad transformed-text crispness/jitter and final AutoFill/cursor behaviour remain acceptance holds. Research does not clear them.
+
+9. ARCHITECTURE RECONCILIATION
+Architecture's onboarding/model decisions remain compatible with Research and are now strengthened by source evidence. One important constraint is newly explicit: PFP 207 may be a verified canonical/historical-source fixture, but current Term 1/2/3/4 applicability must remain UNKNOWN unless a current authoritative source states it.
+
+10. ASTRA / SOL CURRENT STATE
+ASTRA:
+- HOLD by Nathan direct instruction until explicit release near his reported future reset window.
+- Primary owner-review audit and backend-salvage tasks remain staged only; do not consume them as if completed.
+SOL CF-0043:
+- ACTIVE, Q-SOL1 STARTED as of 2026-09-30 22:48 ET.
+- No terminal Sol return found at this reconciliation checkpoint.
+- When terminal, consume only then and merge source-route findings into this open batch without waking Bob/Stuart/Kevin.
+
+11. CURRENT DOWNSTREAM HOLDS
+- Owner-review batch remains OPEN.
+- Bob / Stuart / Kevin remain HELD.
+- No StudyGrid product mutation, backend/auth/Supabase/provider mutation, deploy, canonical promotion or owner-review close is authorized by this reconciliation.
+- Physical iPad/Safari acceptance remains later.
+- Production-scale institutional ingestion/reuse terms remain unverified and are not approved by this research pass.
+
+TERMINAL STATUS
+GENERAL RECONCILIATION COMPLETE for CF-0044 research return. The owner-review batch remains OPEN and continues to accumulate Nathan's feedback. Research Q-R1 is consumed; Research should stop unless General publishes a new eligible task.
