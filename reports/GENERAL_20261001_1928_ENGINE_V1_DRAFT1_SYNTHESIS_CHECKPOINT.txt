@@ -1,0 +1,31 @@
+STUDYGRID ENGINE V1 — DRAFT 1 SYNTHESIS — CHECKPOINT
+FROM: ChatGPT General CF-0047
+TIMESTAMP: 2026-10-01 19:28 ET
+STATUS: CHECKPOINT / NO IMPLEMENTATION
+
+SOURCE INTEGRATION COMPLETE ENOUGH TO DRAFT
+- Draft 0 read in full.
+- Research adversarial return consumed, including minimal honest V1, hard invariants, non-inference list and D1-01..D1-23 change list.
+- Sol Q-SOL3 product-design synthesis consumed: context-workspace skeleton + bounded guided study journey + optional source/material continuity; implementation remains held.
+- Gemini creative return consumed and reconciled: quiet inline help, selective premium spatial language, bridge-style remediation, assessment shield; reject behavior-surveillance adaptation and timer-centric prompts.
+- Current owner direction preserved: build from first principles; use multiple agents adversarially; domain-neutral; inspectable proprietary next-action center; research-first; no implementation yet.
+
+PRIMARY ARCHITECTURE SHIFT FOR DRAFT 1
+Do not collapse raw behavior, evidence interpretation, learner estimate, pedagogical hypothesis and policy decision into one state object.
+
+TARGET V1 LAYERS
+1. source/curriculum truth
+2. learning claims / optional model components
+3. task + scoring contract
+4. immutable observations
+5. versioned evidence interpretation
+6. derived learner estimates + uncertainty
+7. context/policy constraints
+8. candidate pedagogical actions
+9. transparent next-action decision
+10. reason trace/replay
+11. minimal instructor evidence layer
+12. separate operational/privacy domains
+
+NEXT
+Write canonical Draft 1 design artifact and then update the queued Claude engineering-integrity challenge to attack Draft 1 after Claude's current backend lane terminates.
