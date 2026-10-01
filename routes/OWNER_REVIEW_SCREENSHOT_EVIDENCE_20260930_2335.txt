@@ -1,0 +1,58 @@
+STUDYGRID — OWNER REVIEW SCREENSHOT EVIDENCE APPENDIX
+Timestamp: 2026-09-30 23:35 ET
+From: Nathan direct screenshot evidence via General CF-0040
+Status: EVIDENCE APPENDIX TO OPEN OWNER-REVIEW BATCH / NO IMPLEMENTATION RELEASE
+
+PURPOSE
+These screenshots materially clarify the 23:24 owner-review tranche. They are not new product direction by themselves; they pin exact visual failure locations and confirm the owner’s verbal description.
+
+SCREENSHOT 1 — IMG_1622.jpeg
+Surface: instructor repeated-question / question-cluster demonstration.
+Observed evidence:
+- A large pale curved decorative arc/circle crosses the right-hand question-cluster card and visibly competes with the content.
+- This is the kind of unexplained line/circle Nathan called out. Treat it as a concrete visual target for exact source mapping/removal or redesign.
+- The screenshot also gives a concrete canvas for the requested adaptive-response animation: student questions remain structurally stable while the instructor response can adapt to the selected/changed question.
+
+SCREENSHOT 2 — IMG_1623.png
+Surface: student tour practice step, `What is 25% of 80?`.
+Observed evidence:
+- The practice card is visually compressed relative to the surrounding tour layout.
+- `Your answer: 20`, confidence prompt, `Guessing / Fairly sure / Very sure / Skip`, and the explanatory panel compete inside a narrow card.
+- The state does not make the distinction between learner answer and correct answer sufficiently obvious.
+- This confirms the need for clearer answer-state hierarchy, larger/easier-to-scan confidence controls, and simpler copy.
+
+SCREENSHOT 3 — IMG_1624.jpeg
+Surface: zoomed tour `Next` button.
+Observed evidence:
+- The button shows a stacked/double-outline or halo-like treatment along its upper edge, matching Nathan’s complaint about unexplained line/spacing around Next.
+- Exact component/focus/box-shadow/border source must be mapped before patching; do not simply delete accessibility focus styling.
+- Also confirms the owner’s sensitivity to excess vertical/visual space immediately around Next.
+
+SCREENSHOT 4 — IMG_1621.png
+Surface: instructor tour step 1, `Preview how course material could stay organised.`
+Observed evidence:
+- A bright blue rectangular outline appears directly around the large heading block.
+- This is stronger evidence than the verbal description alone that the current focus/selection/overlay treatment can look like a random browser/debug line rather than deliberate StudyGrid UI.
+- Required outcome remains: preserve visible keyboard focus where semantically needed, but use a deliberate StudyGrid-native focus language and prevent decorative/selection outlines from attaching to noninteractive hero copy.
+
+SCREENSHOT 5 — IMG_1618.png
+Surface: student tour support/context step.
+Observed evidence:
+- Current structure already has a stable `Example student question` card above an `Example instructor response` card.
+- This layout is a strong base for the requested adaptive-response demonstration: change the question, keep stable response text fixed where possible, animate only materially changed response words/phrases in StudyGrid green, then settle.
+- The screenshot supports evolving the existing two-card relationship rather than replacing the whole composition.
+
+SCREENSHOT 6 — IMG_1617.png
+Surface: student tour selection/tool step.
+Observed evidence:
+- Current instruction says `Select the underlined words, then try a tool.`
+- The target phrase is visibly underlined/selected and looks interaction-heavy rather than like normal lesson text.
+- `Explain`, `Highlight`, and `Ask teacher` are already present as compact controls, which supports the owner’s request to make them behave like miniature real product interactions instead of replacing the surface.
+- Confirms the redesign target: normal-reading text, subtle cue only, ghost cursor demonstrates drag-selection, disappears immediately on real interaction, Highlight toggles reversibly, Explain shows a real contextual explanation, Ask teacher opens a realistic demo composer.
+
+GENERAL RECONCILIATION NOTES
+- These screenshots reinforce, not supersede, routes/OWNER_REVIEW_DELTA_20260930_2324_INSTRUCTOR_TOUR_ALIVE_UI_MOTION.txt.
+- They should be consumed when General writes the eventual Bob/Stuart/Kevin batched implementation/acceptance packet.
+- No need to wake Bob/Stuart/Kevin now.
+- Research/Architecture/Gemini tasks may use the verbalized equivalents already routed; this appendix primarily preserves exact owner visual evidence for implementation and QA.
+- Physical iPad/Safari verification remains required because several failures are input/focus/cursor/rendering dependent.
