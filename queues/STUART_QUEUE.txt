@@ -1,6 +1,6 @@
 STUDYGRID — STUART WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-10-01 00:30 ET
+Updated: 2026-10-01 08:33 ET
 Queue owner: General
 Worker: Stuart
 
@@ -8,18 +8,25 @@ PULL RULE
 When Nathan tells Stuart to check routing, refresh lifecycle and this queue, then execute the first eligible unclaimed item. Prefer exact-candidate acceptance; never pre-approve or mutate product. Return durable technical results directly to General.
 
 CURRENT CONTEXT
-- Q-S11 Slice 2 acceptance: DONE / PASS.
-- Q-S12 backend acceptance prep: DONE / PREP PASS; not real backend acceptance.
 - Owner review pass closed at 2026-10-01 00:30 ET.
-- Closure: routes/OWNER_REVIEW_BATCH_20260930_CLOSED.txt @ 707194c337ea4eafd15b12e433c90ed45bc690ba.
-- Authoritative release: routes/GENERAL_RELEASE_20261001_0030_OWNER_REVIEW_BUILD.txt @ a4033b973d3efd19f2bd7f362a7af5cd769fb173.
+- Authoritative build release: routes/GENERAL_RELEASE_20261001_0030_OWNER_REVIEW_BUILD.txt.
+- Bob Q-B17R terminal DONE is consumed by General.
+- General independently provider-verified exact QB17R candidate identity.
+- Exact acceptance release: routes/GENERAL_RELEASE_20261001_0833_STUART_QS13R_QB17R_ACCEPTANCE.txt @ 6f0b9e7723a42b8d41550e72841a91309cc477fc.
 
 Q-S13RP — OWNER-FEEDBACK REFINEMENT ACCEPTANCE PREP
-Eligibility: AVAILABLE NOW.
-Prepare the independent acceptance harness/checklist against the fixed General release, including the activated held implementation/QA contract, Sol DELTA-MATRIX/TRANSITIONS/POINTER-SELECTION, Research Q-R3 constraints, Gemini motion constraints and screenshot defects. Do not mutate StudyGrid and do not mark anything PASS before an exact Bob candidate exists.
+Eligibility: AVAILABLE ONLY IF NOT ALREADY DURABLY DONE.
+If not already completed, perform the bounded prep against the fixed release, then continue directly into Q-S13R in the same activation.
 
 Q-S13R — OWNER-FEEDBACK REFINEMENT INDEPENDENT ACCEPTANCE
-Eligibility: BLOCKED until Bob publishes an exact candidate filename/hash/version/bytes and General releases that candidate to Stuart.
+Eligibility: AVAILABLE after Q-S13RP prep is satisfied.
+Exact candidate:
+StudyGrid-CF0042-QB17R-owner-feedback-refinement.html
+Drive 1gx9I7W1DOtQn9VRnjf5iAFiqQinYx_Bt
+1061386 bytes
+SHA-256 edf870009c769e8624de34d6356eb2c7bd3457e49f471b316b098820bb45fd2e
+APP_VERSION v7.19-cf0042-qb17r-owner-feedback-refinement
+Execute the exact General acceptance release. Do not mutate the product. Return PASS/PARTIAL/BLOCKED with exact tested identity and concrete defects.
 
 Q-S13 — SLICE 3 INDEPENDENT ACCEPTANCE
 Eligibility: BLOCKED until Q-S13R passes, Nathan reviews the corrected HTML, and General releases Slice 3.
@@ -28,4 +35,4 @@ Q-S14 — REAL BACKEND STAGING ACCEPTANCE
 Eligibility: BLOCKED until separately released staging exists.
 
 STOP CONDITION
-Do Q-S13RP only until General provides the exact Bob candidate.
+Finish Q-S13R and return to General. Do not advance Slice 3.
