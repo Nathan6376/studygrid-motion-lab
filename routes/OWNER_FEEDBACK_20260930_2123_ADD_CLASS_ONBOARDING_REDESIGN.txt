@@ -1,0 +1,72 @@
+STUDYGRID — OWNER FEEDBACK / ADD CLASS + ONBOARDING REDESIGN
+Timestamp: 2026-09-30 21:23 ET
+Coordinator: ChatGPT General CF-0040
+Authority: Nathan direct owner feedback with screenshots from exact current review build
+Baseline: StudyGrid-CF0042-QB15-professor-home-scale.html / SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf
+Status: DESIGN/ARCHITECTURE INTAKE — DO NOT IMPLEMENT UNTIL RELAY ARCHITECTURE CONSUMES/ADJUDICATES
+
+OWNER SCREENSHOT FINDINGS
+1. Feedback control: screenshot confirms hover/focus treatment produces an ugly rectangular/box-like green/grey surface around the compact Feedback control/count badge. Preserve accessibility but redesign the hover/focus geometry to fit the pill/compact control.
+2. Add a class form: current class/course-name field is triggering OS/browser personal-name autofill/suggestion in owner testing. This is wrong semantics for a course picker and creates confusion. Fix the field semantics/autofill behaviour, not just the placeholder.
+3. Current Institution + Term region is visually too wide/clumsy on tablet and forces repeated entry of information that should be profile/onboarding context.
+4. Current Term free-text example (Fall 2026, Winter 2027, Summer 2027) does not match owner intent. Owner wants a compact native-feeling Term 1 / Term 2 / Term 3 / Term 4 selector, plus Other for manual entry if needed.
+5. Current institution field should not default to arbitrary free typing if the institution is already known. Owner wants a curated/searchable institution selection during initial setup; manual fallback only when necessary.
+6. Current course-code example "PFP 207" is redundant once the user's program is Police Foundations. Program prefix should be contextual/implicit; user-facing code can be "207" while the stored canonical identity may remain PFP 207.
+7. Add Class should become contextual and smart: once school/program/term are known, course names and codes should be selectable/searchable from official institution/program catalogue data. Example: type/search Police Powers and StudyGrid should offer the corresponding official course; manual add remains available underneath.
+8. Institution/program/term should be established once at onboarding / school-year setup rather than repeated for every class.
+9. Ask during setup whether the instructor provided a class/join code; if so, code-first enrolment should shortcut manual class creation.
+10. Official institutional websites/catalogues should be the source for institution/program/course metadata. Do not fabricate catalog data. Research must verify current official source availability and update strategy before any live catalogue claim.
+
+GENERAL SOURCE INSPECTION OF EXACT BASELINE
+- renderAddClass currently uses free-text inputs with datalists for class name, course code, institution and term.
+- class-name input is autocomplete="off" but still triggers owner OS/browser name suggestion, so browser heuristics are overriding current intent; repair must be tested on the owner-relevant Safari/iPad class of browser, not assumed from markup alone.
+- institution and term are currently per-class fields.
+- course-code placeholder is "e.g. PFP 207".
+- term placeholder is "e.g. Fall 2026, Winter 2027, Summer 2027".
+- institution placeholder is "e.g. Humber Polytechnic".
+
+PROPOSED PRODUCT FLOW FOR ARCHITECTURE ADJUDICATION
+A. FIRST-RUN / SCHOOL-YEAR SETUP
+- Step 1: choose institution from curated searchable list; manual "My school isn't listed" fallback.
+- Step 2: choose program/credential (e.g. Police Foundations) from institution-specific options; manual fallback only if unavailable.
+- Step 3: choose current program term: Term 1 / Term 2 / Term 3 / Term 4 / Other.
+- Step 4: "Did your instructor give you a class code?" If yes, join by code; if no, continue to course selection.
+- Persist school/program/current-term context at user/profile level, editable later from Settings/Profile.
+
+B. ADD CLASS AFTER SETUP
+- Primary surface is a native-looking searchable course picker populated from verified institution+program context.
+- Search by course title or code. Selecting one fills both linked identity values.
+- Display program prefix separately/implicitly where already known: e.g. "Police Powers" and code "207" with PFP shown contextually, while canonical stored code remains PFP 207 where official.
+- Show courses relevant to current term first; allow "All courses" or search beyond term.
+- Manual add remains a secondary explicit action below the verified catalogue picker.
+- Do not ask institution/program/term again for each class unless user intentionally overrides context.
+
+C. DATA / SOURCE ARCHITECTURE
+- verified catalogue snapshot/read model sourced from official institution/program/course pages or supported official endpoints;
+- background refresh/versioning, provenance and last-verified timestamp;
+- no live web scrape in the critical click path if avoidable;
+- canonical institution/program/course IDs separate from display labels;
+- graceful fallback when source is unavailable or ambiguous;
+- class join code remains a separate local/instructor-issued identity from catalogue course identity.
+
+D. UX CONTRACT
+- minimal permanent fields; progressive disclosure;
+- picker first, manual typing second;
+- touch-friendly native-feeling scrolling/selection on iPad/mobile;
+- no personal-name autofill in course fields;
+- no horizontally cramped Term field; four standard options should feel like a compact selector/chips/list rather than a long text input;
+- preserve accessibility/keyboard navigation and manual fallback.
+
+ARCHITECTURE QUESTIONS TO ADJUDICATE BEFORE BOB IMPLEMENTS
+1. Placement/boundary between profile onboarding, Add Class, verified catalogue read model and later real backend.
+2. Whether current local demo should implement a clearly labelled static verified-fixture catalogue shell now, while official-source ingestion remains Research/backend work.
+3. Exact data model for institution_id, program_id, program_prefix, program_term, canonical_course_code, display_course_number, class_section_id and join_code.
+4. How to avoid conflating programme term (Term 1–4) with academic calendar/session (Fall/Winter/Summer) while retaining both when needed.
+5. Exact worker split after adjudication: Bob visible local prototype; Research official institution/catalogue source map; Stuart acceptance; backend lane later persistence/sync.
+6. Ensure this redesign composes with the active owner-feedback refinement rather than creating duplicate/rework lanes.
+
+BOUNDARIES
+- No implementation before Relay Architecture consumes/adjudicates this packet.
+- No live institution scraping, backend/auth/Supabase/network/provider/deploy/canonical mutation yet.
+- No fabricated institutional catalogue data.
+- Preserve already-liked Professor Home direction and prior owner feedback packet.
