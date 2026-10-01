@@ -1,6 +1,6 @@
 STUDYGRID — STUART WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 21:23 ET
+Updated: 2026-09-30 21:30 ET
 Queue owner: General
 Worker: Stuart
 
@@ -10,15 +10,16 @@ When Nathan directly tells Stuart to do queued work, refresh lifecycle and this 
 CURRENT CONTEXT
 - Q-S11 Slice 2 acceptance: DONE / PASS.
 - Q-S12 backend acceptance prep: DONE / PREP PASS; not real backend acceptance.
-- Nathan supplied additional screenshots and material Add Class/onboarding feedback at 21:13–21:23 ET.
-- Exact architecture intake packet: routes/OWNER_FEEDBACK_20260930_2123_ADD_CLASS_ONBOARDING_REDESIGN.txt @ commit b93ed198f5130f28df7274102d6eace9a5328cb2.
-- Relay Architecture must adjudicate the new onboarding/catalogue/information-architecture direction before Bob resumes visible implementation.
+- Nathan is actively reviewing the current owner-visible release and wants all issues accumulated before the next implementation/QA round.
+- Authoritative batching control: routes/OWNER_REVIEW_BATCH_20260930_OPEN.txt @ commit e88babfc2b8cee0ba9f5aae5de6151d0f4bf0a9d.
+- Existing owner-feedback packets remain live inputs, but their implementation/acceptance scope may expand while the batch is open.
+- Relay Architecture may work on the Add Class/onboarding architecture packet in parallel.
 
 Q-S13RP — OWNER-FEEDBACK REFINEMENT ACCEPTANCE PREP
-Eligibility: BLOCKED pending Architecture adjudication consumed by General. Do not prepare against a scope that may materially change.
+Eligibility: BLOCKED while the owner review batch is OPEN. Do not prepare against a moving scope.
 
 Q-S13R — OWNER-FEEDBACK REFINEMENT INDEPENDENT ACCEPTANCE
-Eligibility: BLOCKED until General releases the post-Architecture contract and Bob produces an exact candidate.
+Eligibility: BLOCKED until Nathan closes the review batch, General publishes the reconciled contract, and Bob produces an exact candidate.
 
 Q-S13 — SLICE 3 INDEPENDENT ACCEPTANCE
 Eligibility: BLOCKED until the corrected refinement passes, Nathan reviews it, General releases Slice 3, and Bob produces an exact candidate.
@@ -27,4 +28,4 @@ Q-S14 — REAL BACKEND STAGING ACCEPTANCE
 Eligibility: BLOCKED until separately released staging exists.
 
 STOP CONDITION
-No eligible Stuart work until General consumes the Architecture adjudication or an exact higher-priority candidate appears. No filler and no product/runtime/backend mutation.
+No Stuart activation while routes/OWNER_REVIEW_BATCH_20260930_OPEN.txt is OPEN unless General explicitly publishes an urgent exception. No filler and no product/runtime/backend mutation.
