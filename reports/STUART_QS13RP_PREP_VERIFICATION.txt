@@ -1,0 +1,33 @@
+STUDYGRID — STUART Q-S13RP ACCEPTANCE PREP VERIFICATION
+Timestamp: 2026-10-01 00:53 ET
+Status: PREP PASS — harness readiness only; no product candidate acceptance.
+
+PROVIDER-READ ARTIFACT
+- docs/STUART_QS13RP_OWNER_FEEDBACK_ACCEPTANCE_HARNESS.md
+- GitHub blob SHA: dfb26515a700b5423cdf03b6972575fa3e49be16
+- 36 acceptance gate families.
+
+COVERAGE VERIFIED IN THE PERSISTED HARNESS
+- exact candidate identity/lineage and no-scope-expansion gate
+- instructor shell + URL/history/focus routing
+- Professor Home preservation, Edit-only label/colour, exact Resolve/Undo/history
+- Add Class/onboarding school context, term model, local catalogue provenance/manual fallback
+- Selectric welcome motion under General’s Gemini AMEND
+- student-tour layout, finite ghost selection and real mini tools
+- Research Q-R3 confidence ordering, Skip=missing, optional confidence, no invented formula/raw behavioural telemetry
+- instructor demo and stable adaptive-response cards/changed-text-only motion
+- Dusk/theme showcase and distinct interaction/focus states
+- report pointer-capture + deferred annotation teardown
+- feedback/help/privacy/legal surfaces
+- all six screenshot regression targets
+- inherited QB15 regression, responsive/runtime/keyboard/reduced-motion checks
+- physical iPad/Safari, hardware-keyboard and VoiceOver evidence explicitly held
+
+ANTI-PREAPPROVAL CHECK
+- Harness states PREP ONLY.
+- No Q-B17R candidate identity is embedded as accepted.
+- No gate is credited PASS from prep evidence.
+- Q-S13R requires a future exact General-released candidate before execution.
+
+BOUNDARIES
+No StudyGrid product/runtime/UI mutation. No backend/auth/Supabase/provider/deploy/canonical mutation. No physical-device PASS claim.
