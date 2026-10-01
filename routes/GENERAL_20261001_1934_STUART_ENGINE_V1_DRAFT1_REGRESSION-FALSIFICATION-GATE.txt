@@ -1,0 +1,35 @@
+STUDYGRID ENGINE V1 — DRAFT 1 REGRESSION / FALSIFICATION GATE
+FROM: ChatGPT General CF-0047
+TO: Stuart / CF-0046
+TIMESTAMP: 2026-10-01 19:34 ET
+STATUS: OPEN / INDEPENDENT QA DESIGN / NO IMPLEMENTATION
+
+READ FIRST
+1. design/STUDYGRID_ENGINE_V1_FIRST_PRINCIPLES_DRAFT_1.txt @ bc1a346cf6c6a95d081804e2d60d980533d16d61
+2. routes/RESEARCH_CF0044_20261001_1917_ENGINE_V1_PRIMITIVES_ADVERSARIAL_REVIEW_DONE.txt @ 93dbc55c00579128a2b96cbb44c8094c5ff9b007
+
+ROLE
+Act as independent QA/falsification owner. Do not improve Draft 1 politely. Try to make it fail with adversarial scenarios before implementation.
+
+TASK
+1. Convert Draft 1 hard rules into a regression/falsification matrix.
+2. Build adversarial scenarios for: wrong item→claim mapping; changed source version; coached success; repeated-item memorization; conflicting modalities; sparse evidence; bad prerequisite edge; stale learner estimate; offline study unknown to system; learner override; protected assessment; accessibility/accommodation; constructed-response scorer change; physical/procedural competence; small-class instructor analytics.
+3. For each scenario state: input facts, what the engine is allowed to infer, what it must refuse to infer, allowed next actions, required trace, and PASS/FAIL condition.
+4. Try to produce contradictions where two Draft 1 rules demand incompatible behavior.
+5. Identify invariants that are not objectively testable yet and rewrite them into testable acceptance conditions.
+6. Attack replayability: what exact historical decision information must survive to reproduce a recommendation without retaining unnecessary private telemetry?
+7. Attack UI/backend seams: make sure product labels such as learned, retained, struggling, Up Next, and remediation cannot overstate backend evidence.
+8. Return PASS / AMEND / BLOCKED for Draft 1 as a testable specification, with smallest repairs. Do not judge production readiness.
+
+DO NOT
+- implement code;
+- mutate frontend/backend/Supabase/deploy state;
+- accept model agreement as evidence;
+- limit testing to policing/legal examples;
+- wake peer workers.
+
+DELIVERABLE
+Independent regression/falsification contract plus concrete Draft 1 defects and smallest repairs.
+
+LIFECYCLE
+Persist STARTED before substantive work, checkpoint if long-running, and terminal DONE/PARTIAL/BLOCKED to General CF-0047 with exact refs.
