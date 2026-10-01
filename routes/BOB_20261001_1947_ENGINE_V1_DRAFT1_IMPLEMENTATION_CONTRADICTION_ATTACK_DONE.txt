@@ -1,0 +1,427 @@
+STUDYGRID ENGINE V1 — DRAFT 1 IMPLEMENTATION-CONTRADICTION ATTACK — DONE
+From: StudyGrid Bob / CF-0042
+To: ChatGPT General CF-0047
+Timestamp: 2026-10-01 19:47 ET
+Lifecycle: DONE — IMPLEMENTATION ARCHITECTURE ATTACK / NO IMPLEMENTATION
+
+AUTHORITY / EXACT INPUTS
+- Nathan activation: “Check routing — Bob. Consume General CF-0047’s current StudyGrid Engine v1 Draft 1 implementation-contradiction attack. Try to prove Draft 1 would create tangled, brittle, duplicative or corrupt implementation. Return KEEP / REVISE / REMOVE / SPLIT / ADD with concrete failure cases. Do not implement.”
+- Exact route: routes/GENERAL_20261001_1934_BOB_ENGINE_V1_DRAFT1_IMPLEMENTATION-CONTRADICTION-ATTACK.txt @ b0e014e2552b10c1e97b3f8cfbcb02774cc5534d.
+- Exact Draft 1: design/STUDYGRID_ENGINE_V1_FIRST_PRINCIPLES_DRAFT_1.txt @ bc1a346cf6c6a95d081804e2d60d980533d16d61 / blob 6d0560091b587220609740970154e64541f4b7c4.
+- Research adversarial input: routes/RESEARCH_CF0044_20261001_1917_ENGINE_V1_PRIMITIVES_ADVERSARIAL_REVIEW_DONE.txt @ 93dbc55c00579128a2b96cbb44c8094c5ff9b007.
+- Current frontend/source architecture input: exact Q-B17R2 candidate SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab plus Bob implementation-feasibility return routes/BOB_20261001_1712_IMPLEMENTATION_FEASIBILITY_DONE.txt @ bce1a09fc6517163d57a5dd403b2619b7d7bc5a4.
+- No newer General supersession was present in the current StudyGrid traces at attack time.
+
+BOUNDARY
+No code, frontend, backend, auth, Supabase, deployment, canonical state or product candidate was changed. No peer worker was woken. This is implementation-safety review only.
+
+======================================================================
+BOTTOM LINE
+======================================================================
+
+Draft 1 is conceptually much safer than Draft 0, but it is NOT implementation-safe if engineers turn every named concept into a durable table/service and literally persist every layer.
+
+The dominant implementation risk is now the opposite of Draft 0:
+- Draft 0 collapsed epistemically different things.
+- Draft 1 separates them correctly in prose, but can be over-normalized into duplicate durable state, generic graph edges, overlapping version systems and replay machinery that disagree with one another.
+
+The smallest safe implementation is NOT “one table/service per Draft-1 noun.”
+It is one deployable application with a small number of hard boundaries:
+1. authority/catalog definitions;
+2. immutable learner observations + append-only score artifacts;
+3. derived inference/read models;
+4. a pure next-action decision function + durable decision record;
+5. product/application execution;
+6. derived instructor views.
+
+Draft 1 needs AMENDMENT before implementation release.
+
+======================================================================
+CONCRETE FAILURE CASES — HOW A NAIVE BUILD SILENTLY CORRUPTS STATE
+======================================================================
+
+F1 — “EVIDENCE CONTRACT” BECOMES A MUTATING GOD OBJECT
+Draft 1’s Evidence Contract currently lists both definition-time fields and runtime/model fields, including “observed response/artifact” and “learner-estimator/inference-rule version.”
+Failure:
+- contract is authored before an attempt;
+- learner answers;
+- implementation adds the response to the contract or clones the contract per attempt;
+- estimator changes later, so every contract now appears stale and requires another version.
+Result: task definition, learner event and inference model are duplicated in one object; re-versioning one layer fans out through unrelated layers.
+Smallest repair: Evidence Contract must be a DEFINITION only: task-version ↔ claim-version mapping, intended evidence role, validity/conditions semantics and mapping rationale/version. Runtime response belongs to Observation. Scorer belongs to ScoreResult. Inference/estimator version belongs to derived Interpretation/Estimate.
+
+F2 — IMMUTABLE ATTEMPT + LATE/REVISED SCORING IS INTERNALLY IMPOSSIBLE
+Draft 1 says observations are immutable but examples include “raw/scored result” and “rubric output.”
+Failure:
+- constructed response is committed at T0;
+- score arrives at T1 from human/AI scorer;
+- score is appealed/regraded at T2.
+A single immutable attempt cannot acquire or replace the later score without mutation.
+Smallest repair: split immutable ResponseObservation from append-only ScoreResult. ScoreResult references response ID + rubric/scorer/version and may supersede a prior score result. Learner inference consumes the effective score result, not a mutable attempt row.
+
+F3 — GENERIC RELATION EDGE BECOMES A SCHEMA-FREE GOD GRAPH
+Draft 1’s generic relation types include supports, assesses, requires/prerequisite, part-of, related-to, supersedes and derived-from.
+Failure:
+- Task→Claim “assesses” edge exists;
+- separate task→claim Evidence Mapping exists;
+- source “supersedes” edge exists;
+- separate version lineage also exists;
+- “derived-from” duplicates provenance.
+Two representations drift and disagree about which relation is authoritative.
+Smallest repair: REMOVE universal edge semantics where a dedicated contract already exists. Use bounded relation families with valid endpoint types:
+- curriculum outcome ↔ claim alignment;
+- claim → claim prerequisite with hard/soft/informational status;
+- source/content → claim support where needed;
+- task → claim evidence mapping as its own contract;
+- version lineage/supersession as dedicated revision metadata;
+- provenance/derived-from as provenance metadata.
+Do not let one edge table express all of these.
+
+F4 — ITEM REMAPPING CAN DOUBLE-COUNT OR MOVE COMPETENCE BETWEEN CLAIMS
+Failure:
+- item Q originally maps to Claim A;
+- learner answers Q correctly;
+- mapping is later corrected to Claim B;
+- recomputation creates a new interpretation for B but old A interpretation remains effective.
+Result: one attempt becomes evidence for both A and B.
+Opposite naive repair is also corrupt: moving old evidence to B automatically may claim competence for a construct the original mapping never validly represented.
+Smallest repair: every mapping revision needs explicit retrospective applicability semantics, e.g. FUTURE_ONLY / RETROACTIVE_SAFE / INVALIDATE_PRIOR_INTERPRETATION / HUMAN_REVIEW_REQUIRED. Current estimates select exactly one effective interpretation lineage. Historical decisions keep the mapping version they actually used.
+
+F5 — MULTI-CLAIM TASK FAILURE IS MISATTRIBUTED TO EVERY CLAIM
+Failure:
+- one engineering/law scenario maps to three claims;
+- learner gets the item wrong;
+- naive interpretation decrements all three estimates.
+The response may not identify which component failed.
+Smallest repair: mapping semantics must distinguish component-attributable evidence from JOINT/CONJUNCTIVE evidence. Per-claim negative evidence requires a score/rubric component that actually isolates that claim. Otherwise keep evidence joint/diagnostic and do not manufacture three independent failures.
+
+F6 — SOURCE REVISION CASCADE BECOMES A DESTRUCTIVE INVALIDATION STORM
+Draft 1 says source change must identify affected assertions, tasks, mappings, interpretations, estimates and prior recommendations.
+Failure:
+- instructor fixes punctuation/formatting in a source;
+- source version increments;
+- naive cascade invalidates every downstream task and learner estimate despite no semantic change.
+Opposite failure:
+- substantive legal/policy rule changes;
+- implementation treats it like cosmetic revision and preserves current evidence authority.
+Smallest repair: version lineage must carry change-impact scope or explicit affected dependency selections. Never “invalidate everything downstream by version number.” Historical observations stay under the old authority snapshot; current estimates decide whether old evidence remains comparable under the new semantic version.
+
+F7 — REPLAYABILITY FAILS AFTER MODEL/MAPPING CHANGE
+Draft 1 wants material recommendations reconstructable while derived interpretations may be invalidated/recomputed.
+Failure:
+- recommendation D used Estimate E under model M1 and mapping R1;
+- current system later recomputes E under M2/R2 and overwrites the cache;
+- decision trace references “learner estimate” but not exact input values/cursor.
+Result: old decision cannot be reconstructed.
+Smallest repair: decision record must capture exact as-of inputs: observation high-water mark/cursor, catalog/mapping revision, policy config version, model config version, evaluation instant, bounded estimate feature snapshot/digest, candidate shortlist/exclusion codes and random/tie-break seed where used. Derived caches are keyed by model+cursor; they are never silently overwritten as if they were historical truth.
+
+F8 — TWO TABS PRODUCE DUPLICATE “NEXT” DECISIONS
+Failure:
+- tab A and tab B read same recent recommendation history;
+- both generate same next action before either writes history;
+- both persist it.
+Anti-repetition and recommendation history are now wrong; later estimates may receive duplicated evidence.
+Smallest repair: decision request idempotency key + per learner/context monotonic decision sequence or optimistic concurrency token. A stale concurrent request returns the already-accepted decision or recomputes against the new sequence.
+
+F9 — RESPONSE RETRY/DOUBLE-SUBMIT OVERWEIGHTS ONE ANSWER
+Failure:
+- network retry or double click writes the same committed response twice;
+- learner estimator reads two successful observations;
+- confidence rises incorrectly.
+Smallest repair: client operation/response commit ID with uniqueness constraint; server assigns durable event identity. Idempotent retry returns the existing observation.
+
+F10 — CLIENT CLOCK CORRUPTS RECENCY/RETENTION
+Current prototype uses client-side Date/new Date()/Date.now() heavily. That is fine for a local preview, not authoritative Engine v1 chronology.
+Failure:
+- offline device clock is wrong or changed;
+- a newly synced attempt appears older than a prior attempt;
+- delayed-retrieval/recency logic produces false memory risk or false “later” evidence.
+Smallest repair: store client_occurred_at + clock/source metadata where useful, but also authoritative received_at/server sequence. Estimators define which clock they use. Deadlines carry canonical timezone/instant semantics.
+
+F11 — MISCONCEPTION HYPOTHESIS BECOMES SELF-CONFIRMING
+Failure:
+- two misses create misconception H;
+- policy chooses only tasks designed around H;
+- those tasks produce errors;
+- H strengthens because the engine selected evidence likely to confirm H.
+Smallest repair: hypothesis is DERIVED, never evidence. Persist/mark decision selection context on subsequent observations. Require competing explanations and a disconfirmation/probe path before high-confidence use. Estimator consumes observations/results, not its own prior hypothesis label.
+
+F12 — “PEDAGOGICAL ACTION” TAXONOMY CONTRADICTS ITS OWN BOUNDARY
+Draft 1 lists ADVANCE and PAUSE/COMPLETE as pedagogical action families, then states navigation/session control is separate from pedagogical actions.
+Failure:
+- policy selects PAUSE or ADVANCE as if they are learning interventions;
+- implementation now needs a second layer to decide what content/task actually occurs.
+Smallest repair: REMOVE session controls from pedagogical action taxonomy. Treat navigation/session operations separately. For beta, keep concrete learning-delivery actions small, e.g. INSTRUCTION/EXPLANATION, WORKED_EXAMPLE, GUIDED_PRACTICE, RETRIEVAL_PRACTICE, ASSESSMENT_PROBE. “Review/remediate/advance” can be intent/reason labels unless they identify a concrete deliverable.
+
+F13 — POLICY HARD CONSTRAINT ACCIDENTALLY BANS TEACHING CONTENT
+Draft 1 says item/task must have explicit current claim mapping. That is correct for evidence-producing tasks but not necessarily for an explanation or approved teaching resource.
+Failure:
+- approved explanation is available and source-grounded;
+- it is not an assessment task and has no task→claim Evidence Mapping;
+- generic hard constraint rejects it.
+Smallest repair: scope evidence-mapping requirements to EVIDENCE-PRODUCING actions. Teaching/resource actions require approved source/content authority + claim relevance, not an artificial assessment mapping.
+
+F14 — PERFECT “IMMUTABILITY” CONFLICTS WITH DELETION/PRIVACY
+Failure:
+- user/data-retention policy requires deletion of old learner evidence;
+- “immutable ledger” is interpreted as physically undeletable;
+- decision traces also copied raw response payloads to preserve replay.
+Result: privacy requirement cannot be honoured without database surgery.
+Smallest repair: “immutable” means append-only/no silent rewrite while retained. Define deletion/redaction/tombstone/cryptographic-erasure semantics. Decision traces store references and bounded derived values, not duplicate raw learner content. After lawful deletion, reconstruction may explicitly degrade rather than secretly retaining deleted evidence.
+
+F15 — CURRENT SINGLE-FILE STATE MODEL TEMPTS THE EXACT SHORTCUT DRAFT 1 FORBIDS
+Current prototype synchronously computes correctness and pushes mutable attempt records into local state; attempt objects include question/topic/objective identity and source IDs, and projection/summary code derives learner-facing state directly from those arrays.
+Failure if copied into Engine v1:
+- objective/claim mapping gets baked into the historical attempt as if factual;
+- later remap requires rewriting attempts or leaves stale interpretation embedded in history;
+- UI state becomes the learner model store;
+- late scorer/retry/concurrency cannot be represented safely.
+Smallest repair: future Engine observation stores the task/version and response facts. Claim/KC mapping is a separate versioned authority artifact. Current single-file state remains prototype/UI state; do not grow it into the Engine v1 persistence model and do not add another late sgBase* override layer as the engine boundary.
+
+F16 — DECISION TRACE STORAGE CAN EXPLODE
+Draft 1 says record candidates and exclusions for every material decision.
+Failure:
+- candidate generator sees hundreds/thousands of item/action combinations;
+- every recommendation copies every candidate payload and evidence reference.
+Storage/privacy costs explode and candidate traces become uninspectable.
+Smallest repair: define a bounded evaluated shortlist. Persist selected action, shortlist IDs/types, exclusion reason codes, generator/policy/catalog versions, input cursor/digest and deterministic candidate-generation metadata. Do not duplicate full content payloads per decision.
+
+======================================================================
+KEEP / REVISE / REMOVE / SPLIT / ADD
+======================================================================
+
+KEEP
+1. The core epistemic separation: OBSERVATION ≠ EVIDENCE INTERPRETATION ≠ LEARNER ESTIMATE ≠ PEDAGOGICAL NEED ≠ POLICY DECISION.
+2. Source/task/mapping/scoring provenance and explicit versions where they affect historical interpretation.
+3. Immutable historical observations as a logical contract; no retrospective “mastery weight” mutation.
+4. Channel-aware/conflict-aware learner estimation with uncertainty and abstention.
+5. Independent assessment-purpose / stakes / assistance / feedback / scoring / accommodation dimensions.
+6. Small transparent/lexicographic V1 next-action policy rather than fake expected-learning-value precision.
+7. Learner override as agency, not mastery/motivation evidence.
+8. Non-inference list, protected-assessment shield, AI authority boundary, beta falsification suite and model-challenger gate.
+9. Beta honesty: test coherence/reconstruction/UX/process; do not claim efficacy/fairness/scale.
+
+REVISE
+1. EVIDENCE CONTRACT: make it definition-time mapping/validity metadata only. Remove learner-specific observed response and estimator version from it.
+2. CONTENT ASSERTION: make it SPARSE. Create assertion/content-unit versions only when a source-derived unit is actually authority-bearing for teaching/tasks/claims; do not atomize every document sentence.
+3. LEARNER ESTIMATE: derived read model/cache keyed by input cursor + model config. Do not embed/duplicate full evidence history in each estimate.
+4. MISCONCEPTION HYPOTHESIS: derived hypothesis with competing explanations and selection-bias guard; durable only when used in a material decision or explicitly reviewed, not permanent learner truth.
+5. REPLAYABILITY: define reconstructability under exact as-of versions/cursors; allow explicit degradation after lawful deletion. Do not promise magical deterministic replay.
+6. SOURCE REVISION CASCADE: identify semantic impact precisely; append revisions, never rewrite history and never invalidate all descendants merely because a version changed.
+7. DATA DOMAINS: logical access/retention boundaries can live in one database/service. Draft 1 must not imply separate microservices/databases.
+8. INSTRUCTOR evidence: derived read model/consumer contract, not another authoritative state store.
+9. RETENTION: beta may use delayed-evidence/recency rules; do not require a durable memory model until a construct-valid model is chosen.
+
+SPLIT
+1. ResponseObservation from ScoreResult from EvidenceInterpretation.
+2. Definition-time evidence mapping from runtime evidence instance.
+3. Generic Relation Edge into bounded relation families plus separate version lineage and provenance.
+4. Action INTENT/reason from concrete learning-delivery action from session/navigation control.
+5. Authority/catalog versioning from learner-event history from derived inference caches.
+6. Decision calculation from action execution. The decision engine should be a pure function over a frozen input snapshot; execution creates later observations.
+7. Current/source context facts from policy configuration. A decision snapshot references them; do not build one mutable Context god object.
+
+REMOVE — FROM THE ENGINE DRAFT/BETA IMPLEMENTATION SURFACE BEFORE CLAUDE ENGINEERING RELEASE
+1. REMOVE `observed response/artifact` from the Evidence Contract definition.
+2. REMOVE `learner-estimator/inference-rule version` from the Evidence Contract definition; it belongs to inference/estimate runs.
+3. REMOVE `ADVANCE`, `PAUSE` and `COMPLETE` from PEDAGOGICAL ACTION TYPES; they are session/navigation controls.
+4. REMOVE generic RelationEdge uses `assesses`, `supersedes` and `derived-from` where they duplicate Evidence Mapping, version lineage and provenance.
+5. REMOVE KC as a REQUIRED beta data entity. Keep an extension point; create KC records only if the chosen learner model actually needs them.
+6. REMOVE a mandatory retention/memory model from beta. Delayed evidence/recency is enough until construct-valid retention modelling is justified.
+7. REMOVE mandatory external/physical-evidence ingestion from the first beta unless a selected beta claim genuinely requires it. Use explicit abstention instead.
+8. REMOVE optional BKT/PFA comparator from first implementation scope. Ship the transparent baseline first; challenger comparison comes after the baseline and enough data exist.
+9. REMOVE Section 14 PRODUCT SHELL IMPLICATION from the Engine architecture as an implementation authority. Keep it in the product/IA design spec and reference it; otherwise Engine state architecture becomes coupled to current UI navigation decisions.
+10. MOVE the example nudge copy/surface out of the Engine spec. Keep only the assistance-policy contract and action semantics in Engine v1; presentation/copy belongs to product design.
+
+ADD
+1. Idempotency keys and uniqueness rules for response commits, score writes and decision requests.
+2. Authoritative event ordering: server-received time/sequence plus optional client occurrence time/clock provenance.
+3. Append-only ScoreResult with scorer/rubric/model/version + supersession lineage for rescoring/regrade.
+4. Mapping retroactivity semantics and effective interpretation selection so item remaps cannot double-count or silently move competence.
+5. Joint/component evidence semantics for multi-claim tasks.
+6. Derivation-run/input-watermark semantics for interpretations/estimates.
+7. Decision concurrency token/monotonic learner-context sequence.
+8. Decision as-of contract: evaluation instant, catalog/mapping revision, observation cursor, estimator config, policy config, context/goal refs, bounded feature snapshot/digest, candidate shortlist/exclusion codes, random seed where relevant.
+9. Source revision impact semantics (semantic/non-semantic or explicit affected dependency set).
+10. Deletion/redaction/tombstone semantics for the “immutable” ledger and explicit reduced-reconstruction status after deletion.
+11. Invariant: learner estimator may consume observation/score/mapping artifacts, never prior policy outputs or misconception labels as if they were evidence.
+12. Link observations to the triggering decision/intervention where applicable, so policy-selected evidence and coached evidence are auditable without claiming causality.
+13. One-service-first architecture rule: domain boundaries are modules/contracts, not microservices. Do not create a service because Draft 1 named a noun.
+
+======================================================================
+MUST-BE-DURABLE vs DERIVED/RECOMPUTABLE vs UI-ONLY
+======================================================================
+
+MUST-BE-DURABLE / APPEND-ONLY OR VERSIONED WHEN USED
+- SourceArtifactVersion metadata/hash/reference.
+- Approved ContentAssertion/ContentUnitVersion only for material actually used as authority.
+- CurriculumOutcome external reference/alignment when the course supplies one.
+- LearningClaimVersion.
+- TaskVersion / interaction definition.
+- Rubric/ScorerDefinitionVersion where scoring semantics can change.
+- TaskClaimMappingVersion + evidence role/joint/component semantics + retroactivity policy.
+- Claim prerequisite/alignment relations that materially affect policy.
+- Assessment/assistance/scoring/accessibility policy versions used by decisions.
+- NextActionPolicy/config version.
+- ResponseObservation / support/intervention facts needed for interpretation.
+- ScoreResult artifacts where scoring is not trivially and permanently derivable.
+- Human approvals/reviews that confer authority.
+- Learner-declared goal/constraint only when it affects a material decision and purpose allows retention.
+- Learner override event as decision history/agency record, never mastery evidence.
+- Material DecisionRecord with exact input refs/cursors/config versions + selected action + bounded reason data.
+- Revision/provenance lineage and idempotency identifiers.
+
+DERIVED / RECOMPUTABLE (CACHE MAY EXIST; NOT LEARNER TRUTH)
+- EvidenceInterpretation contributions.
+- LearnerEstimate.
+- uncertainty/conflict/readiness status.
+- EXPOSED / DEMONSTRATED presentation status.
+- retention risk/retrievability estimate.
+- misconception hypothesis.
+- pedagogical need.
+- generated candidate set before selection.
+- instructor aggregates/hypotheses.
+- “needs teaching”, “ready to advance”, “weak topic” style labels.
+- human-readable recommendation reason text when stable reason codes/refs exist.
+
+UI / PRODUCT-ONLY
+- “Learning Target” umbrella label.
+- “Up Next” card/visual treatment.
+- signed-in shell, nav labels, Study/Materials/Progress tabs.
+- nudge wording, placement and animation.
+- badges/progress decoration.
+- selected tab/panel/open drawer state.
+- PAUSE/NEXT/COMPLETE button geometry.
+- premium/spatial motion treatment.
+
+SENSITIVE SPECIAL CASE
+Accommodation/accessibility declarations, if actually needed, are durable in a restricted purpose-specific domain. Observation/decision records should reference the minimum validity-relevant policy/context code, not copy sensitive declarations everywhere.
+
+======================================================================
+SMALLEST IMPLEMENTATION-SAFE SKELETON
+======================================================================
+
+ONE DEPLOYABLE APPLICATION / ONE RELATIONAL DATA STORE FIRST. Modules are logical boundaries, not services.
+
+A. AUTHORITY / CATALOG MODULE
+Durable versioned definitions only:
+- source_version
+- sparse approved_content_unit/assertion_version
+- learning_claim_version
+- optional curriculum outcome ref/alignment
+- task_version
+- rubric/scorer_definition_version
+- task_claim_mapping_version
+- bounded claim prerequisites/relations
+- assessment/assistance policy version
+- next-action policy config version
+Dedicated version/provenance lineage; no universal relation-edge god graph.
+KC is an extension point, not required beta schema.
+
+B. OBSERVATION MODULE
+Append-only facts:
+- response_commit(idempotency_key, learner/session, task_version_id, action/decision_id, client_occurred_at, server_received_at/sequence, response payload/reference, support/intervention facts)
+- score_result(response_id, rubric/scorer/version, score/output, status, supersedes_score_result_id)
+Simple deterministic MCQ scoring may be computed immediately but still has explicit scoring-version identity if used historically.
+No claim/objective mapping is baked into the observation as learner truth.
+
+C. INFERENCE / READ-MODEL MODULE
+Pure derivation over A+B:
+- interpret evidence under mapping/inference version;
+- emit atomic claim contributions or joint evidence records;
+- estimate learner state as-of observation cursor/model config;
+- cache by `(learner, claim, cursor, model_config)` if needed.
+No policy outputs feed back as evidence.
+Derived interpretation rows, if persisted for performance/audit, carry derivation_run_id and are replaceable caches, not primary truth.
+
+D. DECISION MODULE
+Pure decision request input:
+`{learner/context, evaluation_time, observation_cursor, catalog_revision, estimator_config, policy_config, learner_goal_ref, assessment_policy_ref, expected_decision_seq}`
+Pipeline:
+1. generate bounded available concrete action candidates;
+2. apply hard constraints;
+3. apply lexicographic/small priority rules;
+4. deterministic/tie-break selection;
+5. persist DecisionRecord atomically using request idempotency + expected sequence.
+DecisionRecord stores selected action version/ref, bounded shortlist + exclusion/reason codes, exact input version/cursor refs, feature digest/snapshot needed for reconstruction and random seed if used.
+
+E. APPLICATION / EXECUTION MODULE
+- renders/delivers the selected task/content;
+- owns session/navigation controls separately from the pedagogical action taxonomy;
+- user action creates new Observation referencing the triggering decision/intervention.
+Current StudyGrid shell/router can later call this boundary, but Engine v1 must not be implemented as another mutable global-state/late-render override layer.
+
+F. INSTRUCTOR READ MODEL
+Derived aggregation over authoritative catalog + observation/inference data.
+Observation → hypothesis → possible action presentation.
+Only instructor approvals/actions that confer new authority become durable writes back into A or explicit action records.
+
+======================================================================
+BETA SCOPE — CUT BEFORE BUILD
+======================================================================
+
+For the ~20-student + professor beta, keep:
+- source/version provenance;
+- sparse claims;
+- domain-neutral task definitions actually needed by the beta;
+- explicit mappings;
+- immutable/idempotent observations;
+- scoring provenance;
+- simple channel-aware estimate;
+- explicit policy dimensions;
+- small lexicographic next-action policy;
+- decision reconstruction;
+- quiet assistance rule;
+- minimal instructor derived view.
+
+Do NOT build yet:
+- KC graph unless the chosen estimator needs it;
+- memory/retention model service;
+- BKT/PFA challenger;
+- generalized external physical-assessment ingestion;
+- generic ontology/knowledge-graph service;
+- event-sourcing platform beyond the few append-only records actually required;
+- microservices/event bus;
+- full CASE/QTI integration adapters merely for standards purity;
+- durable misconception knowledge base;
+- generalized AI scoring pipeline if beta does not require constructed response;
+- giant candidate/reason snapshots;
+- product-shell/navigation architecture inside Engine v1.
+
+======================================================================
+ADDITIONAL FALSIFICATION TESTS TO ADD BEFORE IMPLEMENTATION RELEASE
+======================================================================
+
+1. IDEMPOTENT RESPONSE RETRY — same response commit sent 5x produces exactly one observation/evidence contribution.
+2. CONCURRENT NEXT ACTION — two tabs requesting “next” from same decision sequence cannot both create distinct accepted decisions from stale history.
+3. LATE SCORE — response exists before score; estimate changes only after effective score result arrives; observation row never mutates.
+4. REGRADE — new score supersedes old; current estimate counts one effective score lineage, old decision remains reconstructable under old score version.
+5. REMAP A→B — mapping correction cannot make one attempt count for both claims; retrospective applicability is explicit.
+6. MULTI-CLAIM WRONG ANSWER — failure without component rubric does not automatically lower every mapped claim.
+7. SOURCE COSMETIC REVISION — formatting-only source revision does not invalidate learner evidence.
+8. SOURCE SEMANTIC REVISION — affected tasks/mappings can be identified; old observations stay historical; current estimate applies explicit comparability/invalidation rule.
+9. MODEL UPGRADE — M2 estimate may differ from M1 without altering the M1 decision record/reason reconstruction.
+10. POLICY SELF-CONFIRMATION — misconception-guided probe does not treat the prior hypothesis/policy selection as independent evidence.
+11. CLOCK SKEW/OFFLINE SYNC — client timestamps cannot silently reorder authoritative evidence used for delayed-learning logic.
+12. PRIVACY DELETE — deleting retained learner evidence does not leave raw duplicate content in decision traces; old trace reports reduced reconstruction.
+13. STALE AUTHORITY DURING DECISION — source/mapping policy changes mid-request either produce an explicitly old-snapshot decision or trigger a retry under the new revision; never a hybrid.
+14. CANDIDATE TRACE BOUND — thousands of available tasks do not create unbounded duplicated decision payloads.
+15. CURRENT-PROTOTYPE SHORTCUT — future engine test proves raw observation does not persist current `objectiveId`/claim inference merely because the UI question object contains it.
+
+======================================================================
+FINAL DISPOSITION TO GENERAL CF-0047
+======================================================================
+
+AMEND DRAFT 1 BEFORE IMPLEMENTATION SPEC.
+
+KEEP the epistemic separation and conservative decision philosophy.
+REVISE the definition/runtime boundaries, replay semantics and beta scope.
+SPLIT response/scoring/inference, relation semantics, action/session semantics and decision/execution.
+REMOVE duplicate/generic/early-beta machinery listed above.
+ADD idempotency, concurrency, effective-version/remap semantics, input watermarks and deletion-aware reconstruction.
+
+No technical reason requires microservices, generalized event sourcing, a universal graph database or multiple learner-model families for Engine v1 beta.
+
+The smallest safe implementation is a single coherent application whose durable facts are few, whose derived state can be recomputed, and whose decisions carry enough exact lineage to explain what the system actually knew at the time.
+
+DONE — direct technical return ready for General CF-0047. No implementation performed.
