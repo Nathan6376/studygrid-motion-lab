@@ -1,0 +1,88 @@
+STUDYGRID — RESEARCH TASK / GUIDED TUTORIAL + MOTION + PLAIN LANGUAGE + POLICY UX
+Timestamp: 2026-09-30 23:24 ET
+From: General CF-0040
+To: StudyGrid Research CF-0044
+Priority: Q-R2 / AVAILABLE NOW
+Parent owner delta: routes/OWNER_REVIEW_DELTA_20260930_2324_INSTRUCTOR_TOUR_ALIVE_UI_MOTION.txt @ 87cef27fe6a52fae030467c41d6a569ac7805a1a
+Prior research baseline: routes/RESEARCH_CF0044_20260930_2257_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH_DONE.txt @ c9c5f93171ca286cda6968c2b730d56d63fd4344
+Status: RESEARCH/EVIDENCE ONLY — NO STUDYGRID MUTATION
+
+MISSION
+Do a bounded current-evidence pass only on the NEW questions introduced by Nathan's 23:24 ET review. Reuse Q-R1 evidence; do not redo catalogue/onboarding/feedback research already completed unless needed to support a new conclusion.
+
+WORKSTREAM 1 — GUIDED PRODUCT TOURS / COACHMARKS / LEARNING-BY-DOING
+Research current evidence and high-quality platform/design guidance for:
+- short guided tours that teach a real interface rather than detached slides;
+- coachmarks/spotlights/ghost demonstrations that point to actual controls;
+- when to use one-time walkthrough vs contextual progressive disclosure;
+- optimal/defensible tour length principles (not arbitrary step count);
+- Skip, replay, resume and dismissal behavior;
+- avoiding tooltip fatigue and blocking core use;
+- preserving keyboard/screen-reader/focus semantics during guided tours;
+- how to transition from fake/demo instructor workspace to real sign-up/setup without user confusion.
+Return concrete StudyGrid recommendations and reject conditions.
+
+WORKSTREAM 2 — INSTRUCTOR DEMO INFORMATION ARCHITECTURE EVIDENCE
+Research current product/design guidance relevant to:
+- separating instructor and learner workspaces instead of mixing learner Study chrome into instructor mode;
+- role/context switching when one account can hold multiple capabilities;
+- how a demo/sandbox should communicate fake data vs live data;
+- how `Find current class` or context-aware suggestions should communicate basis/confidence/correction.
+Do not invent StudyGrid architecture; provide evidence/generalizable guidance for Architecture/General.
+
+WORKSTREAM 3 — CONTEXTUAL HELP WITHOUT LAYOUT JUMP
+Research patterns for `How this works` / help reveals that preserve spatial orientation and avoid jarring reflow:
+- popover, anchored coachmark, disclosure, side sheet, inline expansion with reserved space, etc.;
+- CLS/layout-shift considerations where applicable;
+- touch/iPad behavior;
+- focus management and Escape/dismiss semantics.
+Return a decision matrix for StudyGrid's tour/help use cases.
+
+WORKSTREAM 4 — GHOST CURSOR / DEMONSTRATION CUES
+Research accessibility/usability implications of animated ghost cursors/pointers or gesture demonstrations:
+- when they help onboarding;
+- how quickly they should stop once the user interacts;
+- avoiding pointer confusion or interference with real input;
+- screen-reader/reduced-motion fallback;
+- how to demonstrate text selection/highlighting without turning content into fake links.
+Do not design final motion; Gemini handles creative direction. Research should define evidence-backed constraints.
+
+WORKSTREAM 5 — PLAIN LANGUAGE / STUDENT MICROCOPY
+Research current plain-language/readability guidance suitable for student-facing educational software:
+- short labels/instructions;
+- avoiding jargon while preserving accuracy;
+- how to explain confidence (`Guessing`, `Fairly sure`, `Very sure`, `Skip`) and correct-vs-user-answer state clearly;
+- button/action labels and error/help copy.
+Return a compact StudyGrid microcopy contract and examples for the exact current tour concepts.
+
+WORKSTREAM 6 — DUSK THEME DEMO / FLICKER SAFETY
+Research current accessibility standards/guidance for theme-change animation, flashing/flicker, photosensitive seizure risk and reduced motion.
+Need explicit constraints for Nathan's desired one-time Paper→Dusk→Paper theatrical demo:
+- what must be rejected;
+- maximum safe visual behavior when using staggered flicker-like effects;
+- how to preserve the intended drama without unsafe flashing;
+- reduced-motion/photosensitivity-safe fallback.
+Use primary standards/guidance where possible (WCAG/W3C/platform docs).
+
+WORKSTREAM 7 — HELP / PRIVACY POLICY / REQUIRED POLICY ACCESS
+Research product UX patterns for where privacy policy, terms, accessibility/help, data controls and related notices are commonly surfaced in apps.
+IMPORTANT: do not declare StudyGrid legally complete or state jurisdiction-specific legal obligations unless verified. Distinguish:
+- common product UX placement;
+- platform/store requirements if directly sourced;
+- legal questions that remain counsel/owner dependencies.
+Return an information-architecture recommendation only.
+
+OUTPUT
+Return one consolidated terminal package to General CF-0040 with:
+1. Executive recommendations.
+2. Evidence/source register with dates where relevant.
+3. Decision matrix: guided tour / contextual help / ghost demo / plain-language / Dusk-safety / policy placement.
+4. StudyGrid-specific acceptance/reject conditions.
+5. Any items that remain physical-device/user-test/legal holds.
+
+BOUNDARIES
+- No product/code/runtime changes.
+- No Bob/Stuart/Kevin wake.
+- No backend/auth/Supabase/provider/deploy/canonical changes.
+- Owner-review batch remains open until General/Nathan closes it.
+- Do not duplicate prior Q-R1 work unnecessarily.
