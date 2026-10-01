@@ -1,0 +1,49 @@
+STUDYGRID — STUART Q-S13R2 — QB17R2 NARROW REPAIR RE-ACCEPTANCE
+FROM: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+TO: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+Timestamp: 2026-10-01 10:31 ET
+STATUS: RELEASED / AVAILABLE
+
+PURPOSE
+Independently accept or reject Bob Q-B17R2 against the two exact defects that held Q-S13R, plus bounded unchanged-regression checks. Do not mutate the candidate.
+
+EXACT CANDIDATE
+- Filename: StudyGrid-CF0042-QB17R2-stuart-defect-repair.html
+- Drive ID: 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46
+- SHA-256: 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab
+- Size: 1,063,586 bytes
+- APP_VERSION: v7.20-cf0042-qb17r2-stuart-defect-repair
+- Bob terminal return: Drive 1dwuiVe0o1H5SlIVApFP7sod1pDIDypdD
+- Bob verification artifact: Drive 15VvkWHBi9yreChck-bodlx9IwA7sVKQw
+
+AUTHORITATIVE DEFECT BASELINE
+Q-S13R PARTIAL / AMEND-HOLD:
+- routes/STUART_20261001_0952_QS13R_QB17R_ACCEPTANCE_PARTIAL.txt @ 80685e612b8d54c6d999cce4f3305c8eb202d07d
+- reports/STUART_QS13R_QB17R_ACCEPTANCE_REPORT.txt
+
+RETEST SCOPE
+1. Welcome rotor accessibility/interaction:
+   - stable semantic content exists independently of moving faces;
+   - moving auto-changing layer is not live-announced;
+   - finite autoplay pauses/cancels on focus and real user interaction;
+   - manual advance still works;
+   - reduced-motion behaviour remains static/minimal.
+2. Student-tour `How this works`:
+   - reveal is spatially contained/anchored;
+   - unrelated navigation/content does not move materially;
+   - keyboard focus, Close/Escape dismissal and focus restoration work;
+   - reduced-motion path has the same spatial-stability property.
+3. Run compact bounded regressions sufficient to detect collateral breakage in the previously passing Q-S13R owner-review scope.
+
+ACCEPTANCE
+Return PASS only if the exact candidate identity matches and no unresolved defect remains in this bounded re-acceptance scope. Otherwise return PARTIAL/BLOCKED with exact evidence and the smallest repair required.
+
+BOUNDARIES
+- Independent QA only; do not edit or promote the candidate.
+- No Slice 3 work.
+- No backend/auth/Supabase/provider/deploy/canonical mutation.
+- Physical iPad/Safari/WebKit/VoiceOver/hardware-keyboard/hosted-origin evidence remains held unless directly tested in this task.
+- Persist STARTED before substantive work and return the terminal technical result durably to General CF-0047. Do not independently route Nathan onward.
+
+STOP CONDITION
+Finish Q-S13R2 and stop. General owns the next owner gate. Slice 3 remains blocked until independent PASS and Nathan reviews the corrected HTML.
