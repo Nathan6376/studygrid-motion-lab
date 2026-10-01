@@ -1,0 +1,914 @@
+STUDYGRID RESEARCH CF-0044 — LEARNING ENGINE DEEP RESEARCH — DONE
+Timestamp: 2026-10-01 18:52 ET
+From: SG Research / CF-0044
+To: ChatGPT General / CF-0047
+Lifecycle: DONE — RESEARCH DOSSIER / NO IMPLEMENTATION
+
+AUTHORITY / SCOPE
+- Exact task: routes/GENERAL_20261001_1833_RESEARCH_STUDYGRID-LEARNING-ENGINE-DEEP-RESEARCH.txt @ c50446a9d3704cf57802d0e13184621b87346a7b.
+- Owner delta: ordered interaction/domain-neutral assessment @ cfe1071cd15faab19fe4195b30201f51aae42afd.
+- Owner delta: backend moat/data ownership/research-first @ 4f9903535a6693911d3a0cd2f12587569c406d64.
+- Owner delta: beta research/non-timer-centric adaptive UX @ 014280c9ef7c52341144f086a85df1a81d407da9.
+- STARTED already persisted/read back @ 48a5624c3b4cdbe7b0a43055fb96113ca2f243e3.
+- CHECKPOINT persisted @ 442cf678db6156effd51eab867f2c58b07c0974c.
+- Pre-terminal recent-commit refresh found no newer exact CF-0044 Research supersession.
+
+BOUNDARY
+Research only. No frontend/backend/auth/Supabase/provider/deploy/3D/canonical mutation. No real learner telemetry inspection or collection. No peer-worker wake. All architecture below is labelled either ESTABLISHED EVIDENCE, IMPLEMENTATION OBSERVATION, or RESEARCH-INFORMED HYPOTHESIS. It is not a production architecture approval.
+
+======================================================================
+1. PLAIN-ENGLISH EXECUTIVE ANSWER
+======================================================================
+
+StudyGrid should NOT make one adaptive-learning model its moat. The strongest research direction is a HYBRID LEARNING ENGINE whose proprietary value is how it combines several evidence layers and chooses the next pedagogically useful action.
+
+StudyGrid should BORROW proven science and standards:
+- retrieval practice, spacing/distributed practice, mastery-learning principles and feedback;
+- interpretable learner-state baselines such as Bayesian Knowledge Tracing (BKT), Performance Factors Analysis (PFA), psychometric/IRT ideas and cognitive-diagnostic models where their assumptions fit;
+- memory/forgetting ideas such as FSRS/DSR-style stability-retrievability modelling for recall scheduling;
+- standards such as QTI for assessment-interaction concepts, CASE for competency/skill identifiers and relationships, and Caliper/xAPI only where event interoperability is actually valuable;
+- architecture/testing lessons from mature open-source systems.
+
+StudyGrid should OWN the integration layer:
+1. a versioned course/knowledge model;
+2. a learner evidence state with uncertainty rather than fake certainty;
+3. a retention/forgetting state;
+4. a domain-neutral assessment/interaction model;
+5. a teaching-intervention model, not just a question scheduler;
+6. a next-best-action policy that weighs readiness, weaknesses, prerequisites, recency/forgetting, assessment urgency and recent evidence;
+7. an instructor evidence loop that converts aggregated learning evidence into useful, uncertainty-labelled classroom signals;
+8. provenance/audit traces explaining why every important adaptive recommendation was made.
+
+The safest Engine v1 is INTERPRETABLE FIRST. BKT/PFA/IRT/CDM-like baselines plus deterministic pedagogic constraints are more appropriate than making deep/transformer knowledge tracing or reinforcement learning the decision authority at cold start. Deep models can later compete behind the scenes if they demonstrate incremental predictive and pedagogical value on StudyGrid data without destroying calibration, interpretability or fairness.
+
+Prediction is not the same as teaching. A model can predict the next answer well while choosing a bad educational intervention. Therefore StudyGrid must validate NEXT-ACTION decisions, not merely AUC/RMSE.
+
+The product should be EVENT/CONTEXT-DRIVEN, not timer-driven. Time can constrain a session, but the default recommendation should come from: course state + prerequisite structure + assessment/deadline context + learner evidence + retention risk + recent misconceptions + what has/has not been taught.
+
+======================================================================
+2. EVIDENCE MAP — MAJOR MODEL FAMILIES
+======================================================================
+
+A. BAYESIAN KNOWLEDGE TRACING (BKT)
+Evidence / idea:
+- Corbett & Anderson's Knowledge Tracing models a changing probability that a skill is learned as a learner responds to problems. Classical BKT is a hidden-state model with interpretable quantities such as prior mastery, learning transition, guess and slip.
+Strengths:
+- interpretable;
+- naturally sequential;
+- works with comparatively modest data;
+- produces a skill-level state that can be audited.
+Weaknesses / failure modes:
+- standard form assumes binary mastered/not-mastered latent state;
+- standard variants historically assume common parameters across learners and often omit forgetting;
+- sensitive to the quality of the skill/KC mapping;
+- can generate misleading certainty if model assumptions are wrong.
+Data needs:
+- ordered attempts tagged to reasonably valid knowledge components.
+StudyGrid judgement:
+- STRONG V1 BASELINE / candidate learner-state component, especially if extended carefully for forgetting/item/learner variation.
+Sources:
+- Corbett & Anderson, Knowledge tracing: Modeling the acquisition of procedural knowledge, User Modeling and User-Adapted Interaction, 1995, DOI 10.1007/BF01099821.
+- ACM Computing Surveys, Knowledge Tracing: A Survey (2023 online publication family), https://doi.org/10.1145/3569576
+- pyBKT implementation/paper, https://github.com/CAHLR/pyBKT
+
+B. PERFORMANCE FACTORS ANALYSIS / LOGISTIC LEARNING CURVES
+Evidence / idea:
+- PFA models student/skill performance with accumulated successes/failures and is easier to combine with multiple factors than classical BKT.
+Strengths:
+- simple, inspectable, strong baseline;
+- easy to include item/skill/student factors;
+- useful for learning-curve analysis and model comparison.
+Weaknesses:
+- state is less intuitively a single 'mastery probability' than BKT;
+- additive/logistic assumptions can miss richer temporal or prerequisite interactions;
+- still depends heavily on valid skill tagging.
+Data needs:
+- learner-skill response history with success/failure counts and optional covariates.
+StudyGrid judgement:
+- STRONG V1/OFFLINE BASELINE. Useful as a sanity check against more complex state estimators.
+Source:
+- Pavlik, Cen & Koedinger (2009), Performance Factors Analysis — A New Alternative to Knowledge Tracing, AIED, pp. 531–538, DOI 10.3233/978-1-60750-028-5-531.
+
+C. ITEM RESPONSE THEORY (IRT) / MULTIDIMENSIONAL IRT
+Evidence / idea:
+- IRT models the probability of responses as a function of latent ability/proficiency and item characteristics such as difficulty; extensions can model multiple dimensions.
+Strengths:
+- mature psychometric foundation;
+- useful for calibrated item difficulty/discrimination, assessment design and computerized adaptive testing;
+- separates item characteristics from learner ability more explicitly than raw percent-correct.
+Weaknesses:
+- classical unidimensional ability is often too coarse for teaching decisions;
+- parameter calibration can require substantial clean response data;
+- local independence/model-fit assumptions may fail in instructional sequences;
+- less natural than KT for rapid within-course learning transitions unless extended.
+Data needs:
+- sufficiently large, connected learner-item response matrix for stable calibration; more for multidimensional models.
+StudyGrid judgement:
+- ADAPT PRINCIPLES, especially item difficulty/discrimination and calibration; do not make one global IRT ability score the learner model.
+Source:
+- Annual Review of Statistics and Its Application (2021), Statistical Applications in Educational Measurement, DOI 10.1146/annurev-statistics-042720-104044.
+
+D. COGNITIVE DIAGNOSIS MODELS (CDMs)
+Evidence / idea:
+- CDMs estimate fine-grained mastery of attributes/skills based on item-to-skill mappings (often a Q-matrix), sometimes using discrete mastery states and sometimes partial mastery.
+Strengths:
+- aligned to diagnosis rather than one score;
+- interpretable skill-level profiles can map well to curriculum and instructor action;
+- useful when assessment items genuinely diagnose combinations of attributes.
+Weaknesses:
+- Q-matrix/skill mapping is a major source of model error;
+- binary mastery assumptions can be unrealistic;
+- diagnostic validity requires items designed for the claimed attributes, not arbitrary quiz questions.
+Data needs:
+- authored or validated item-to-attribute mapping and adequate diagnostic responses.
+StudyGrid judgement:
+- ADAPT for high-value diagnostic assessments and misconception/skill evidence; combine with dynamic learner-state models rather than forcing every interaction into a CDM.
+Sources:
+- de la Torre-style CDM family summarized in Cognitively Diagnostic Assessments and the Cognitive Diagnosis Model Framework (2014), https://doi.org/10.1016/j.pse.2014.11.001
+- Shang, Erosheva & Xu (2021), Partial-mastery cognitive diagnosis models, https://doi.org/10.1214/21-AOAS1439
+
+E. DEEP / TRANSFORMER KNOWLEDGE TRACING
+Evidence / idea:
+- DKT and successors learn sequence representations from large interaction histories without fully hand-specifying the state transition form.
+Strengths:
+- can capture nonlinear/multiskill patterns;
+- often improves next-response prediction on benchmark datasets.
+Weaknesses:
+- prediction gains are not consistently large and depend on preprocessing, metric, hyperparameters and datasets;
+- interpretability and calibration are harder;
+- published critiques show implausible/wavy skill-state behaviour and the possibility that models learn general ability or dataset structure rather than pedagogically meaningful mastery;
+- more data and stronger MLOps/reproducibility requirements;
+- high AUC does not prove better learning decisions.
+Data needs:
+- large, clean, representative sequences; versioned item/skill identifiers; enough data to validate across domains/cohorts.
+StudyGrid judgement:
+- LEARN / LATER CHALLENGER MODEL, not Engine v1 authority. Require comparison to BKT/PFA/IRT baselines, calibration, held-out cohort/domain tests, interpretation probes and incremental decision value.
+Sources:
+- Piech et al. (2015), Deep Knowledge Tracing, arXiv:1506.05908.
+- Sarsa, Leinonen & Hellas (2021), Empirical Evaluation of Deep Learning Models for Knowledge Tracing, arXiv:2112.15072.
+- Ding & Larson (2021), On the Interpretability of Deep Learning Based Models for Knowledge Tracing, arXiv:2101.11335.
+- Vie & Kashima (2023), Deep Knowledge Tracing is an implicit dynamic multidimensional item response theory model, arXiv:2309.12334.
+
+F. KNOWLEDGE / LEARNING SPACE THEORY
+Evidence / idea:
+- Knowledge Space Theory represents feasible states of what a learner may know and prerequisite/readiness relations rather than reducing competence to one score.
+Strengths:
+- explicit structure and readiness logic;
+- naturally supports 'what is this learner ready to learn next?';
+- ALEKS demonstrates a mature commercial application.
+Weaknesses:
+- constructing/maintaining a large valid domain structure is hard;
+- exact state spaces can become combinatorially large;
+- vendor claims about outcome efficacy must be separated from the mathematical theory itself.
+Data needs:
+- domain knowledge units plus prerequisite/feasibility relationships, then response evidence to infer current state.
+StudyGrid judgement:
+- LEARN STRONGLY from the readiness/knowledge-structure concept; do not clone ALEKS wholesale. Use versioned skill/concept graph + typed prerequisite relations as one component.
+Sources:
+- Doignon & Falmagne, Knowledge Spaces and Learning Spaces, arXiv:1511.06757.
+- ALEKS theory page (vendor explanation), https://www.aleks.com/about_aleks/knowledge_space_theory
+Vendor claim warning: McGraw Hill efficacy/grade claims are vendor claims unless independently validated for the relevant population.
+
+======================================================================
+3. MEMORY / RETRIEVAL / FORGETTING — WHAT IS STRONG ENOUGH TO USE
+======================================================================
+
+ESTABLISHED EVIDENCE
+- Distributed practice/spacing is robust. Cepeda et al. meta-analysis covered 317 experiments / 839 assessments and found optimal spacing depends jointly on inter-study interval and desired retention interval.
+- Retrieval practice has broad classroom evidence and is consistently beneficial across many applied studies.
+- Dunlosky et al. rated practice testing and distributed practice as high-utility learning techniques.
+- Interleaving has a moderate overall meta-analytic benefit but is strongly moderated by material/category similarity and task type; it is not universally better than blocking.
+- Mastery-learning programs have positive average effects, but self-paced mastery can carry completion/time costs.
+- Worked examples and fading are especially useful for novices; benefits can diminish/reverse as expertise rises.
+
+STUDYGRID IMPLICATION
+Memory scheduling should be a SUBSYSTEM, not the engine.
+A recall scheduler can estimate when previously learned material is at risk of being forgotten, but a course engine also needs to know:
+- prerequisite readiness;
+- whether material was ever meaningfully taught;
+- upcoming exam/assignment urgency;
+- whether the concept is foundational vs peripheral;
+- current misconceptions;
+- whether the learner is in acquisition, guided practice, retrieval, remediation or transfer.
+
+FSRS/DSR OBSERVATION
+FSRS models memory using difficulty, stability and retrievability and supports adaptive review scheduling. Its open reference implementation is MIT-licensed and useful to study/experiment with. It should not become StudyGrid's entire adaptive policy because its problem is fundamentally spaced repetition/review scheduling, not full pedagogical sequencing.
+Sources:
+- https://github.com/open-spaced-repetition/free-spaced-repetition-scheduler
+- Cepeda et al. (2006), Distributed practice in verbal recall tasks, DOI 10.1037/0033-2909.132.3.354.
+- Agarwal, Nunes & Blunt (2021), Retrieval Practice Consistently Benefits Student Learning, DOI 10.1007/s10648-021-09595-9.
+- Dunlosky et al. (2013), DOI 10.1177/1529100612453266.
+- Brunmair & Richter (2019), Similarity matters: meta-analysis of interleaved learning, DOI 10.1037/bul0000209.
+- Kulik, Kulik & Bangert-Drowns (1990), Effectiveness of Mastery Learning Programs, DOI 10.3102/00346543060002265.
+
+======================================================================
+4. RECOMMENDED EVIDENCE / SIGNAL MATRIX
+======================================================================
+
+Legend: CORE = Engine v1 default; OPTIONAL = useful if user supplies/setting enabled; SECONDARY = experimental or low weight; AVOID = not worth default collection.
+
+1. Current response correctness / score
+What it might mean: retrieval success on the exact item/construct.
+Reliability/confounds: item quality, guessing, ambiguous wording, accidental input, partial-credit validity.
+Privacy: low–moderate educational record.
+V1: CORE.
+
+2. Skill/concept mapping of item
+Meaning: what knowledge the response is evidence about.
+Confounds: bad Q-matrix/tagging contaminates every downstream model.
+Privacy: low.
+V1: CORE, with provenance/versioning and review.
+
+3. Repeated success/error history by concept
+Meaning: stability of performance and recurring weakness/misconception.
+Confounds: repeated item memorization; changes in item difficulty/source.
+Privacy: moderate longitudinal record.
+V1: CORE.
+
+4. Recency / spacing / prior exposure
+Meaning: retention risk and whether a concept is due for retrieval.
+Confounds: offline studying is unobserved.
+Privacy: low–moderate.
+V1: CORE.
+
+5. Prerequisite/readiness graph state
+Meaning: whether advancing is pedagogically plausible.
+Confounds: graph may be wrong, too rigid or domain-specific.
+Privacy: low.
+V1: CORE, authored/validated first.
+
+6. Upcoming assessment/deadline relevance
+Meaning: urgency/value of strengthening a skill soon.
+Confounds: deadline presence does not prove pedagogic importance; syllabus can change.
+Privacy: low–moderate course context.
+V1: CORE as context/priority, never sole driver.
+
+7. Item difficulty/discrimination estimates
+Meaning: how diagnostic/challenging an item is.
+Confounds: unstable with tiny samples; cohort/domain drift.
+Privacy: low aggregate.
+V1: CORE only after enough data; begin with authored priors/rough levels.
+
+8. Explicit PRE-FEEDBACK confidence
+Meaning: learner's metacognitive judgement of current answer.
+Confounds: systematic over/under-confidence; scale interpretation.
+Privacy: moderate self-report.
+V1: OPTIONAL HIGH-VALUE; missing/skip is missing, not low confidence.
+
+9. Error/misconception category
+Meaning: type of wrong reasoning rather than only wrong/correct.
+Confounds: requires valid rubric/content interpretation; AI classifications can be wrong.
+Privacy: moderate.
+V1: CORE where deterministic/rubric-supported; AI-proposed labels require review/provenance.
+
+10. Hints requested / explanation requested
+Meaning: need for support / self-regulation behaviour.
+Confounds: interface preference, curiosity, accessibility, strategic checking.
+Privacy: low–moderate.
+V1: SECONDARY contextual evidence, not mastery penalty by itself.
+
+11. Retries / answer changes / undo before commit
+Meaning: uncertainty, correction or accidental input.
+Confounds: interface problems and accessibility can dominate.
+Privacy: low if only bounded counts/events.
+V1: SECONDARY.
+
+12. Response latency
+Meaning: can indicate fluent retrieval vs struggle; very short times can flag rapid guessing in testing contexts.
+Confounds: reading speed, item length, disability/assistive tech, distraction, device latency, language, background tab.
+Privacy: low if coarse; higher if fine-grained traces.
+V1: SECONDARY / quality-control only; never fixed cross-user mastery threshold.
+
+13. Dwell time / scrolling / navigation patterns
+Meaning: engagement/reading behavior at best.
+Confounds: extremely non-specific; screen readers and interruptions distort it.
+Privacy: moderate.
+V1: generally SECONDARY or AVOID for adaptive authority.
+
+14. Raw pointer trajectory / keystroke dynamics
+Meaning: can reveal motor/behavioral signatures and sometimes decision conflict.
+Confounds: huge accessibility/device confounds; biometric-like identification risk.
+Privacy: high.
+V1: AVOID.
+
+15. Course-source provenance and content version
+Meaning: what authoritative material an explanation/item was based on.
+Confounds: source itself may be outdated/wrong.
+Privacy: usually low.
+V1: CORE.
+
+16. Learner goal / explicit exam priority
+Meaning: user-defined utility.
+Confounds: goals can be incomplete or change.
+Privacy: moderate.
+V1: OPTIONAL but important; should influence next-action value, not override learning prerequisites blindly.
+
+17. Completion / page viewed
+Meaning: exposure only.
+Confounds: not learning.
+Privacy: low–moderate.
+V1: CORE as workflow state, NEVER evidence of mastery by itself.
+
+======================================================================
+5. OPEN-SOURCE / EXISTING-SYSTEM STUDY
+======================================================================
+
+A. pyBKT — CAHLR/pyBKT
+Problem solved well:
+- practical implementation of BKT and variants for skill mastery estimation from sequential problem solving.
+Architecture lesson:
+- keep model fitting/prediction separable from product UI; support variants and reproducible parameter estimation.
+Testing/validation lesson:
+- library/paper emphasizes replication, runtime and data requirements.
+Known seams:
+- inherits BKT assumptions and depends on clean skill mapping; library is a modelling component, not a teaching policy.
+Licence:
+- MIT (verified repository LICENSE).
+StudyGrid disposition:
+- ADAPT/WRAP for experiments and baseline validation; do not expose library output directly as final adaptive truth.
+
+B. Free Spaced Repetition Scheduler (FSRS) / Open Spaced Repetition
+Problem solved well:
+- memory review scheduling using difficulty/stability/retrievability state and user review outcomes.
+Architecture lesson:
+- separate memory-state estimation from scheduling; optimize parameters using review history; make algorithm independently testable.
+Testing lesson:
+- open implementation ecosystem across languages enables cross-checking/benchmarks.
+Known seams:
+- primarily recall/repetition; does not solve curriculum prerequisites, teaching interventions, assessment validity or instructor analytics.
+Licence:
+- MIT (verified LICENSE in free-spaced-repetition-scheduler).
+Disposition:
+- ADAPT concepts; potentially WRAP/reference for retention submodel experiments after architecture review.
+
+C. Open edX / openedx-platform
+Problem solved well:
+- mature authoring/delivery platform, large-scale course state, integrations and extensibility.
+Architecture lesson:
+- explicit modular boundaries, central platform plus independently deployed apps/MFEs, stable APIs where possible.
+Testing/validation lesson:
+- mature project practices and separation of authoring/LMS concerns are worth studying.
+Known seams:
+- operational complexity is high; its general LMS architecture is much larger than StudyGrid's engine problem.
+Licence:
+- openedx-platform core is AGPLv3; Open edX ecosystem also uses Apache 2.0 for some API/tool repos.
+Disposition:
+- LEARN-ONLY for architecture patterns unless a specifically Apache-licensed component independently fits. Do not copy AGPL core code into proprietary StudyGrid without explicit legal/licence review.
+Sources:
+- https://docs.openedx.org/en/latest/developers/references/developer_guide/architecture.html
+- https://github.com/openedx/openedx-platform
+- https://openedx.org/trademark-licensing-details/
+
+D. ASSISTments
+Problem solved well:
+- classroom formative practice + immediate feedback + teacher assignment/data loop; unusually strong culture of randomized experiments via E-TRIALS.
+Architecture/research lesson:
+- make experimentation infrastructure part of the product; let researchers compare interventions in authentic use rather than relying only on offline prediction metrics.
+Testing/validation lesson:
+- RCT infrastructure and replication culture are more important for StudyGrid than copying UI.
+Known seams:
+- mathematics/homework context does not automatically generalize to every domain.
+Licence/IP:
+- treat as existing system/research reference; no code-copy assumption made in this pass.
+Disposition:
+- LEARN STRONGLY from experimentation + teacher loop.
+Sources:
+- https://www.assistments.org/research
+- https://www.assistments.org/e-trials
+
+E. ALEKS / Knowledge Space Theory
+Problem solved well:
+- structured domain knowledge states, adaptive assessment and readiness-based topic recommendations.
+Architecture lesson:
+- explicit knowledge structure can be a first-class engine object, not an incidental tag list.
+Known seams:
+- authoring/validating knowledge spaces is expensive; commercial implementation details are closed; vendor efficacy claims must not be treated as independent proof.
+Licence/IP:
+- proprietary commercial system; theory literature is research, not permission to reproduce proprietary implementation.
+Disposition:
+- LEARN-ONLY from theory/readiness patterns; build StudyGrid's own domain-neutral graph and evidence system.
+Sources:
+- https://www.aleks.com/about_aleks/knowledge_space_theory
+- Doignon & Falmagne, Knowledge Spaces and Learning Spaces.
+
+F. 1EdTech QTI
+Problem solved well:
+- portable assessment item/test content, interactions, results and adaptive-testing interoperability.
+Architecture lesson:
+- interaction type and scoring contract should be first-class and domain-neutral; ordering, selection and richer interactions are different constructs.
+Known seams:
+- full QTI is broad/complex; internal StudyGrid model need not mirror every field.
+Licence/IP:
+- standards-document licence; use concepts/interoperability carefully and check exact implementation/conformance terms when product integration begins.
+Disposition:
+- ADAPT data concepts; potentially support QTI import/export later rather than making QTI the proprietary internal engine.
+Source: https://www.1edtech.org/standards/qti
+
+G. 1EdTech CASE
+Problem solved well:
+- stable identifiers and exchange of competencies/learning outcomes plus parent-child/association relationships.
+Architecture lesson:
+- competency identity and graph relations should survive course/UI changes and support provenance/versioning.
+Known seams:
+- standard alignment does not prove prerequisite causality or learner mastery.
+Disposition:
+- ADAPT concepts; consider interoperability layer for institutional content later.
+Source: https://www.1edtech.org/standards/case
+
+H. Caliper / xAPI
+Problem solved well:
+- standardized learning-activity/event vocabulary and exchange across systems.
+Architecture lesson:
+- event schemas should be explicit and versioned.
+Known seams:
+- more events do not equal better pedagogy; indiscriminate telemetry creates privacy/noise costs.
+Disposition:
+- LEARN/ADAPT selectively. StudyGrid should define a minimal internal evidence-event model first; map to Caliper/xAPI only when institutional interoperability has a real consumer.
+Sources:
+- https://www.1edtech.org/standards/caliper
+- https://github.com/adlnet/xAPI-Spec
+
+======================================================================
+6. WHAT SHOULD BE DETERMINISTIC VS STATISTICAL VS LEARNED VS GENERATIVE AI
+======================================================================
+
+DETERMINISTIC RULES — SHOULD OWN SAFETY/SEMANTIC CONSTRAINTS
+Examples:
+- interaction/scoring semantics (single select, multi-select, sequence, numeric, rubric etc.);
+- course-source version/provenance;
+- hard prerequisite rules explicitly authored by the course/instructor;
+- cannot mark exposure as mastery;
+- confidence collected before correctness;
+- never recommend an inaccessible/unavailable item;
+- learner opt-outs/privacy settings;
+- deadline/assessment facts;
+- role/access permissions;
+- constraints such as do not repeat the identical item immediately merely to inflate mastery.
+Why: these are contracts, not probabilities.
+
+INTERPRETABLE STATISTICAL MODELS — V1 LEARNER/MEMORY EVIDENCE
+Candidates:
+- BKT/logistic KT/PFA for skill mastery dynamics;
+- IRT-ish item difficulty/discrimination when sample size supports it;
+- simple partial-mastery/CDM components for diagnostic tasks;
+- DSR/FSRS-like retention state for already-learned/retrieval material.
+Why: auditable, lower data burden, easier to calibrate/debug.
+
+LEARNED / DEEP MODELS — CHALLENGERS AFTER DATA
+Potential roles:
+- richer KT sequence prediction;
+- misconception classification from sufficiently labelled evidence;
+- recommendation ranking after causal/experimental validation.
+Gate:
+- must outperform interpretable baseline on calibration and pedagogically relevant held-out metrics, not only AUC;
+- must pass domain/cohort shift, fairness, missing-data and counterfactual/adversarial probes.
+
+GENERATIVE AI — ASSISTANT, NEVER COURSE TRUTH
+Safe roles:
+- draft explanations/examples/question variants from authoritative sources;
+- propose skill/item tagging for human/validation pipeline;
+- summarize evidence for instructors with links/provenance;
+- generate alternative wording/accessibility variants;
+- classify free-text responses only with rubric/provenance/uncertainty and fallback.
+Unsafe authority roles:
+- inventing course facts;
+- silently changing canonical skill graph;
+- creating permanent learner mastery state without structured evidence;
+- autonomously deciding high-stakes instructor claims;
+- being the only store of learner/course memory.
+
+======================================================================
+7. COLD-START STRATEGY
+======================================================================
+
+NEW COURSE, LITTLE/NO DATA
+1. Import/author canonical course structure: outcomes/concepts/skills, source provenance, module order, assessment dates, explicit prerequisite edges.
+2. Use authored priors rather than fake learned precision:
+   - rough difficulty tiers;
+   - expected prerequisites;
+   - criticality/assessment relevance;
+   - interaction/rubric type.
+3. Validate graph/content with instructor before claiming readiness/mastery relationships.
+4. Start with conservative deterministic teaching sequence + retrieval/spacing principles.
+5. Instrument attempts so later data can update item difficulty, skill-state model and graph assumptions without rewriting identities.
+
+NEW LEARNER, LITTLE/NO HISTORY
+1. Known context first: enrolled course, current syllabus point, upcoming assessments, source completion state.
+2. Optional lightweight diagnostic across high-value prerequisite/current concepts; use broad coverage, not a long exam.
+3. Maintain high uncertainty initially. Recommendations should say 'based on your course and first results' rather than implying deep personalization.
+4. Prefer high-value teach/retrieve actions that are useful across plausible states.
+5. Update quickly from actual responses/confidence/error evidence.
+6. Do not infer low ability from slowness, accessibility behavior or missing telemetry.
+
+COLD-START PRIORITY PRINCIPLE
+Uncertainty should alter the policy: when learner-state confidence is low, choose actions with both learning value and information value, but do not turn the learner into a diagnostic subject. Short, meaningful tasks can both teach and reduce uncertainty.
+
+======================================================================
+8. NEXT-ACTION DECISION FRAMEWORK — RESEARCH-INFORMED HYPOTHESIS, NOT PRODUCTION DESIGN
+======================================================================
+
+Candidate decision objects:
+- TEACH: introduce prerequisite/current concept;
+- EXPLAIN: repair misunderstanding with direct explanation;
+- EXAMPLE: worked example / model solution;
+- GUIDED_PRACTICE: scaffolded step-by-step application;
+- RETRIEVE: recall/application with minimal support;
+- REVIEW: spaced retrieval of previously learned content;
+- REMEDIATE: targeted response to repeated/high-confidence misconception;
+- ADVANCE: move to ready downstream concept;
+- ASSESS: diagnostic/sample evidence where state uncertainty is material;
+- STOP/PAUSE: completion or diminishing-return boundary.
+
+Candidate V1 value factors:
+A. readiness/prerequisite eligibility;
+B. expected learning value based on current state;
+C. retention risk / forgetting due;
+D. assessment urgency/importance;
+E. repeated misconception/error severity;
+F. undercoverage / uncertainty of evidence;
+G. learner goal/current course position;
+H. diversity/anti-repetition constraints;
+I. teaching-state constraint: do not retrieve something never introduced unless using an intentional pretest/test-first design;
+J. cost/friction: estimated effort only as a tie-breaker or optional constraint, not the product's core model.
+
+POLICY HYPOTHESIS
+1. Generate eligible actions with deterministic constraints.
+2. Score/rank them using interpretable features and uncertainty.
+3. Produce one primary recommendation + rationale trace.
+4. Allow learner override/secondary exploration.
+5. Log the reason/features/model version that produced the recommendation.
+6. Observe outcome and update learner/memory state.
+7. Experiment cautiously with policy weights only after a stable baseline exists.
+
+WHY NOT START WITH RL/BANDITS
+- contextual bandits/RL can optimize policies, but sparse rewards, delayed learning outcomes, confounding, exploration ethics and small beta data make cold-start policy learning unsafe/uninformative;
+- offline prediction datasets do not identify causal effects of unseen teaching actions;
+- optimizing clicks/accuracy can produce local traps or teach-to-the-model behaviour.
+Use bandit/RL methods later for bounded choices where outcomes are well-defined and safety constraints are fixed.
+
+======================================================================
+9. TEACHING / FEEDBACK ENGINE FINDINGS
+======================================================================
+
+StudyGrid must model INSTRUCTIONAL STATE, not only mastery score.
+
+Research-backed principles:
+- retrieval practice is powerful, but feedback improves correction and learning, especially when retrieval fails;
+- worked examples are useful for novices and can fade into problem solving as knowledge grows;
+- elaborated/correct-answer feedback is often stronger than binary response-only feedback;
+- interleaving is useful selectively, especially when discriminating similar categories, not as a universal shuffle rule;
+- repeated practice must avoid answer memorization by varying surface forms while preserving the construct;
+- high-confidence wrong responses are especially useful for misconception repair; low-confidence correct responses should not be treated as stable mastery automatically.
+
+Engine implication:
+A skill state might be 'not yet introduced', 'introduced/fragile', 'guided practice', 'retrievable but unstable', 'retained', 'misconception suspected', or similar workflow state alongside probabilistic evidence. This is a RESEARCH-INFORMED modelling direction, not a validated taxonomy.
+
+======================================================================
+10. INSTRUCTOR / CLASS-LEVEL EVIDENCE
+======================================================================
+
+SYSTEMATIC-REVIEW SIGNAL
+Teacher-facing learning-analytics dashboard reviews repeatedly find that many dashboards improve awareness but provide limited actionable insight; evaluation and theoretical grounding are often weak. Student-facing reviews similarly warn that dashboards are often analytics-heavy rather than learning-focused.
+Sources:
+- A checklist to guide planning/design/implementation/evaluation of learning analytics dashboards (2023), International Journal of Educational Technology in Higher Education, DOI 10.1186/s41239-023-00394-6.
+- Matcha et al., systematic review of empirical LAD studies (IEEE TLT, 2019), DOI 10.1109/TLT.2019.2916802.
+- Paulsen & Lindsay (2024), Learning analytics dashboards are increasingly becoming about learning and not just analytics.
+
+WHAT STUDYGRID MAY RESPONSIBLY SURFACE
+Descriptive/diagnostic candidates:
+- concepts with high rates of incorrect retrieval after sufficient exposure;
+- repeated misconception categories with sample size/uncertainty;
+- prerequisite bottlenecks where downstream errors co-occur with missing prerequisite evidence;
+- material/items with unusual error or confusion patterns;
+- distribution of confidence-vs-correctness mismatch;
+- progress/coverage toward explicitly defined outcomes;
+- concepts likely due for class review based on aggregated retention evidence;
+- students who have insufficient evidence/data as a separate state rather than labelling them weak.
+
+MUST NOT OVERCLAIM
+- 'This lecture caused the weakness.'
+- 'Student X is lazy/disengaged' from latency/dwell.
+- 'This content is ineffective' without comparison/context.
+- 'This student has mastered Y' when evidence is sparse/misaligned.
+
+ACTIONABILITY CONTRACT
+Every instructor signal should answer:
+1. What is observed?
+2. How many learners/items does this cover?
+3. How uncertain is it?
+4. What plausible instructional action could the instructor take?
+5. Is that action a recommendation/hypothesis rather than a causal fact?
+6. Can the instructor inspect the underlying evidence?
+
+PROFESSOR DISCOVERY QUESTIONS TO VALIDATE
+- What learning problems do you currently notice too late?
+- What evidence do you trust before reteaching or intervening?
+- What false-positive would make you stop trusting an analytics system?
+- Which decisions recur weekly vs only around assessments?
+- At what granularity is evidence useful: class, concept, item, student?
+- Which interventions must remain entirely instructor-controlled?
+- What would save time rather than create another dashboard to monitor?
+- How should uncertainty/sample size be communicated?
+- What should students themselves be able to see/correct?
+
+======================================================================
+11. PRIVACY / INSTITUTIONAL READINESS CONTRACT
+======================================================================
+
+ESTABLISHED GUIDANCE
+- NIST Privacy Framework: manage privacy risk across the data lifecycle and ecosystem; align system development with privacy outcomes.
+- Jisc learning-analytics code (updated 2026): transparency, consent where applicable, data minimization, validity, access controls, explainability, student autonomy, bias monitoring, retention/stewardship and positive-intervention purpose.
+
+STUDYGRID RESEARCH RECOMMENDATION
+MINIMUM-NECESSARY ENGINE DATA:
+- stable pseudonymous learner ID inside institution/account boundary;
+- course/context IDs and versioned source/skill/item IDs;
+- timestamped attempts/outcomes and interaction type;
+- confidence only if enabled/supplied;
+- bounded hint/retry events where needed;
+- derived learner/model state with model/version provenance;
+- recommendation + reason/features + model/policy version;
+- explicit course/deadline context needed for adaptive decisions.
+
+DO NOT REQUIRE BY DEFAULT:
+- raw cursor trajectories;
+- keystroke dynamics;
+- continuous screen recording;
+- background app/window behavior;
+- inferred disability/health/emotion/personality;
+- special-category/protected traits merely to improve prediction;
+- instructor-visible surveillance traces.
+
+ACCESS SEPARATION:
+- learner: meaningful view/correction of own relevant data/analytics;
+- instructor: pedagogically actionable course/class evidence, not raw behavior surveillance;
+- admin/support: least-privilege operational access;
+- model-development: de-identified/pseudonymized datasets with explicit approved purpose and lineage.
+
+PROVENANCE:
+Every derived state should preserve: data-window, model family/version, feature schema version, source/course version, last update, uncertainty/calibration information, and reason trace for material recommendations.
+
+Sources:
+- NIST Privacy Framework: https://www.nist.gov/privacy-framework
+- Jisc Code of Practice for Learning Analytics: https://www.jisc.ac.uk/guides/code-of-practice-for-learning-analytics
+
+======================================================================
+12. FAILURE MODES / RED TEAM
+======================================================================
+
+1. BAD SKILL MAP
+Failure: items tagged to wrong/overbroad concepts; engine learns nonsense accurately.
+Mitigation: provenance, instructor/content review, residual/error analysis, support multi-skill mappings, version graph.
+
+2. COLD-START FALSE PRECISION
+Failure: first few answers produce '83% mastery' style certainty.
+Mitigation: explicit uncertainty bands/states; conservative priors; wider diagnostics.
+
+3. ITEM MEMORIZATION
+Failure: repeated identical questions inflate apparent mastery.
+Mitigation: multiple validated items/transfer variants; item exposure tracking.
+
+4. CONTENT LEAKAGE / ANSWER CUES
+Failure: question wording/source context gives answer away.
+Mitigation: item-quality audits, leakage tests, instructor review.
+
+5. RAPID GUESSING / DISENGAGEMENT
+Failure: wrong responses treated as lack of knowledge when learner opted out of measurement.
+Mitigation: detect only with context-aware coarse indicators; mark low-quality evidence rather than penalizing mastery; do not infer motivation.
+Source: Wise (2017), Rapid-Guessing Behavior, DOI 10.1111/emip.12165.
+
+6. SLOW RESPONSE MISREAD
+Failure: assistive tech, reading, distraction or language difference interpreted as uncertainty.
+Mitigation: no fixed latency=low mastery rule; modality-aware/minimized use.
+
+7. OVERCONFIDENT MODEL
+Failure: model probabilities are treated as calibrated confidence when they are not.
+Mitigation: calibration curves/Brier/log-loss/ECE plus abstain/unknown states; compare by cohort/domain.
+
+8. DOMAIN SHIFT
+Failure: model trained on one course/discipline behaves poorly elsewhere.
+Mitigation: separate domain-neutral engine contract from domain data; per-course validation; holdout by course/instructor/time.
+
+9. COHORT SHIFT
+Failure: one year's item difficulty/behavior applied to different learners/instruction.
+Mitigation: drift monitoring, hierarchical/shrunk estimates, revalidation.
+
+10. MISCONCEPTION FEEDBACK LOOP
+Failure: early wrong classification causes repeated remediation on wrong issue, generating confirming evidence.
+Mitigation: competing hypotheses; diagnostic diversification; cap repetition; allow instructor/learner correction.
+
+11. LOCAL OPTIMUM / LEARNER TRAP
+Failure: algorithm keeps drilling weak skill and blocks motivating progress.
+Mitigation: exploration/diversity constraint; prerequisite vs optional distinction; forward-progression budget; user override.
+
+12. MASTERY THRESHOLD GAMING
+Failure: learners learn shortest path to threshold rather than durable knowledge.
+Mitigation: transfer/retention checks; item variety; delayed retrieval.
+
+13. COMPLETION=LEARNING
+Failure: pages viewed/lessons marked reviewed inflate model.
+Mitigation: exposure is workflow evidence only; mastery requires performance evidence.
+
+14. TEACHING-ABILITY CONFOUND
+Failure: weak outcomes attributed to learner when content/instruction was poor.
+Mitigation: item/content aggregate residuals; instructor evidence; avoid causal labels; compare before/after only with appropriate design.
+
+15. AI COURSE-TRUTH ERROR
+Failure: LLM-generated explanation becomes canonical rule.
+Mitigation: source-grounding, generated-vs-approved state, citations/provenance, validation workflow.
+
+16. DEEP-MODEL BENCHMARK ILLUSION
+Failure: higher AUC from leakage/preprocessing or ability signal interpreted as better mastery model.
+Mitigation: simple baselines, strict splits, reproducibility, calibration, interpretability probes and policy evaluation.
+
+17. PRIVACY CREEP
+Failure: telemetry expands because it is 'useful'.
+Mitigation: purpose registry; feature-level privacy cost; local derivation; retention limits; opt-out for optional signals.
+
+18. INSTRUCTOR DASHBOARD NOISE
+Failure: dozens of metrics create awareness but no action.
+Mitigation: design around instructor decisions; one evidence→interpretation→possible action chain; user research.
+
+19. CAUSALITY ERROR
+Failure: correlation between a behavior/content and outcomes becomes 'this causes success/failure'.
+Mitigation: label descriptive vs causal; require experiments/quasi-experiments for intervention claims.
+
+20. ALGORITHM OPTIMIZES THE WRONG REWARD
+Failure: next-action policy optimizes short-term answer accuracy, time-in-app or streaks instead of durable learning/transfer.
+Mitigation: multi-horizon outcome metrics; retention probes; explicit product objective; reward/recommendation audits.
+
+======================================================================
+13. BETA MEASUREMENT PLAN — ~20 STUDENTS + ONE PROFESSOR
+======================================================================
+
+WHAT THIS BETA CAN LEARN
+With ~20 students + one professor, StudyGrid CAN meaningfully test:
+- whether onboarding/course model and Up Next are understandable;
+- whether learners follow and trust recommendations;
+- whether interaction types work and evidence is recorded correctly;
+- whether confidence-before-feedback is understandable/usable;
+- whether explanation/teaching/retrieval transitions feel coherent;
+- whether model states/reason traces match obvious cases;
+- gross calibration problems and instrumentation bugs;
+- whether instructor evidence summaries align with real instructor decisions;
+- privacy/trust reactions and opt-out comprehension;
+- qualitative failure modes.
+
+IT CANNOT ESTABLISH
+- broad efficacy across domains;
+- long-term retention effects with confidence;
+- fairness across demographic/accessibility groups;
+- superiority of one KT algorithm;
+- causal value of a full adaptive policy;
+- institutional-scale reliability.
+
+MINIMUM BETA INSTRUMENTATION
+Event objects should be sparse and pedagogically meaningful:
+- session/context start/stop;
+- item presented + item/skill/source version;
+- answer committed + scored outcome;
+- confidence supplied/skipped;
+- hint/explanation requested;
+- teaching intervention shown;
+- recommendation produced + reason trace/model/policy version;
+- learner accepted/overrode recommendation;
+- next item/action;
+- terminal completion;
+- instructor opened/acted on a surfaced insight (only if feature exists).
+Avoid raw pointer/keystroke/screen telemetry.
+
+BETA BASELINE POLICY
+Use a simple, explicit deterministic/interpretable policy rather than an unvalidated learned policy. This gives a stable comparison target and makes failures diagnosable.
+
+MEASUREMENTS
+A. Usability/task completion:
+- can learner answer Where am I / why this / what next?
+- recommendation acceptance/override reasons;
+- interaction errors/drop-offs.
+
+B. Data/model integrity:
+- percent of attempts with valid source+skill+item provenance;
+- missing/contradictory state rate;
+- state updates that violate obvious invariants;
+- recommendation trace completeness.
+
+C. Calibration sanity checks:
+- bucket predicted mastery/retrievability vs later observed performance, with huge uncertainty because N is small;
+- do not optimize aggressively to this beta.
+
+D. Learning-process probes:
+- delayed mini-retrieval on a small subset to see whether 'mastered/retained' claims are obviously overconfident;
+- compare high-confidence-wrong / low-confidence-correct follow-up behavior.
+
+E. Instructor study:
+- weekly 20–30 minute interview or structured diary;
+- show 2–3 evidence summaries, ask what decision each supports;
+- ask which claims are misleading/useless;
+- record what instructor actually did next.
+
+F. Qualitative learner interviews:
+- ask why they thought an item was recommended;
+- whether recommendation felt repetitive/misguided;
+- when they wanted explanation vs practice;
+- what data collection felt surprising/invasive.
+
+SAFE EXPERIMENTS POSSIBLE AT N~20
+- UI/wording within-subject comparisons;
+- ordering of explanation vs retrieval on carefully bounded low-stakes material as exploratory usability/learning-process data;
+- alternative explanation styles or feedback presentation;
+- recommendation-rationale wording.
+Do not present these as definitive efficacy RCTs.
+
+LATER LARGER EXPERIMENTS
+- policy A/B tests with retention outcomes;
+- mastery-threshold comparisons;
+- scheduler variants;
+- teacher-intervention recommendations;
+- subgroup/fairness analyses;
+- cross-course/domain validation.
+
+======================================================================
+14. UNKNOWNS / EVIDENCE GAPS / VENDOR-CLAIM BOUNDARIES
+======================================================================
+
+UNKNOWNS REQUIRING STUDYGRID DATA OR DOMAIN RESEARCH
+- which learner-state model family best calibrates on StudyGrid's eventual item/course structures;
+- whether one skill graph representation is sufficient across law, engineering, forensics etc.;
+- how much instructor-authored prerequisite structure is feasible;
+- whether confidence adds enough incremental decision value in real StudyGrid use;
+- how to combine retention risk vs assessment urgency without cramming incentives;
+- best threshold/utility definition for ADVANCE vs REMEDIATE;
+- how much model uncertainty is understandable to learners/instructors;
+- what instructor analytics are actually acted upon;
+- institutional data-retention/consent requirements by jurisdiction and customer.
+
+CONTESTED / CONTEXT-DEPENDENT
+- interleaving benefits are moderated by material/task;
+- immediate vs delayed feedback depends on task/outcome and should not be reduced to one global rule;
+- deep KT often predicts well but interpretability/replicability/pedagogical value remain concerns;
+- response time is useful in some assessment contexts but highly confounded for general adaptive teaching.
+
+VENDOR CLAIMS — DO NOT TREAT AS INDEPENDENT EVIDENCE
+- ALEKS commercial performance/retention/grade claims from McGraw Hill marketing pages;
+- any LMS/adaptive-product 'AI personalization' claims without transparent independent study;
+- dashboard claims that equate engagement metrics with learning.
+
+======================================================================
+15. SOURCE REGISTER — HIGH-VALUE SOURCES USED
+======================================================================
+
+FOUNDATIONAL / PEER-REVIEWED
+1. Corbett, A.T. & Anderson, J.R. (1995). Knowledge tracing: Modeling the acquisition of procedural knowledge. User Modeling and User-Adapted Interaction 4:253–278. DOI 10.1007/BF01099821.
+2. Pavlik, P.I., Cen, H., Koedinger, K.R. (2009). Performance Factors Analysis — A New Alternative to Knowledge Tracing. AIED 2009:531–538. DOI 10.3233/978-1-60750-028-5-531.
+3. Piech et al. (2015). Deep Knowledge Tracing. arXiv:1506.05908.
+4. Knowledge Tracing: A Survey. ACM Computing Surveys. DOI 10.1145/3569576.
+5. Sarsa, Leinonen & Hellas (2021). Empirical Evaluation of Deep Learning Models for Knowledge Tracing. arXiv:2112.15072.
+6. Ding & Larson (2021). On the Interpretability of Deep Learning Based Models for Knowledge Tracing. arXiv:2101.11335.
+7. Cepeda et al. (2006). Distributed practice in verbal recall tasks. Psychological Bulletin 132(3):354–380. DOI 10.1037/0033-2909.132.3.354.
+8. Agarwal, Nunes & Blunt (2021). Retrieval Practice Consistently Benefits Student Learning. Educational Psychology Review. DOI 10.1007/s10648-021-09595-9.
+9. Dunlosky et al. (2013). Improving Students' Learning With Effective Learning Techniques. Psychological Science in the Public Interest. DOI 10.1177/1529100612453266.
+10. Brunmair & Richter (2019). Similarity matters: meta-analysis of interleaved learning. Psychological Bulletin. DOI 10.1037/bul0000209.
+11. Kulik, Kulik & Bangert-Drowns (1990). Effectiveness of Mastery Learning Programs: A Meta-Analysis. Review of Educational Research. DOI 10.3102/00346543060002265.
+12. Swart, Nielen & Sikkema-de Jong (2019). Supporting learning from text: meta-analysis on timing/content of feedback. Educational Research Review 28:100296.
+13. Wise (2017). Rapid-Guessing Behavior: Its Identification, Interpretation, and Implications. Educational Measurement: Issues and Practice. DOI 10.1111/emip.12165.
+14. Matcha, Uzir, Gašević & Pardo (2019). Systematic Review of Empirical Studies on Learning Analytics Dashboards. IEEE TLT. DOI 10.1109/TLT.2019.2916802.
+15. Teacher-facing LAD checklist/systematic review (2023). International Journal of Educational Technology in Higher Education. DOI 10.1186/s41239-023-00394-6.
+16. Paulsen & Lindsay (2024). Learning analytics dashboards are increasingly becoming about learning and not just analytics. Education and Information Technologies.
+17. Doignon & Falmagne. Knowledge Spaces and Learning Spaces. arXiv:1511.06757.
+18. Shang, Erosheva & Xu (2021). Partial-mastery cognitive diagnosis models. Annals of Applied Statistics. DOI 10.1214/21-AOAS1439.
+
+PRIMARY STANDARDS / TECHNICAL
+19. 1EdTech QTI: https://www.1edtech.org/standards/qti
+20. 1EdTech CASE: https://www.1edtech.org/standards/case
+21. 1EdTech Caliper: https://www.1edtech.org/standards/caliper
+22. ADL xAPI spec: https://github.com/adlnet/xAPI-Spec
+23. NIST Privacy Framework: https://www.nist.gov/privacy-framework
+24. Jisc Code of Practice for Learning Analytics, updated 2026: https://www.jisc.ac.uk/guides/code-of-practice-for-learning-analytics
+
+OPEN / EXISTING SYSTEMS
+25. pyBKT: https://github.com/CAHLR/pyBKT — MIT licence verified.
+26. Free Spaced Repetition Scheduler: https://github.com/open-spaced-repetition/free-spaced-repetition-scheduler — MIT licence verified.
+27. Open edX architecture: https://docs.openedx.org/en/latest/developers/references/developer_guide/architecture.html — openedx-platform core AGPLv3.
+28. ASSISTments Research: https://www.assistments.org/research ; E-TRIALS: https://www.assistments.org/e-trials
+29. ALEKS Knowledge Space Theory: https://www.aleks.com/about_aleks/knowledge_space_theory — vendor source for product/theory description, not independent efficacy proof.
+
+======================================================================
+16. RECOMMENDED RESEARCH GATE FOR GENERAL / ARCHITECTURE
+======================================================================
+
+Before implementation, General/Architecture should require decisions on these exact questions:
+1. What is the canonical versioned identity model for course -> concept/skill -> prerequisite relation -> item -> source?
+2. Which evidence events are CORE in v1 and which optional/experimental signals are prohibited by default?
+3. Which learner-state baseline(s) will be implemented first for transparent comparison: BKT, PFA/logistic KT, simple IRT/CDM components?
+4. How will uncertainty/calibration be represented and when will the engine say 'insufficient evidence'?
+5. What exactly qualifies as LEARNED vs RETAINED vs merely EXPOSED?
+6. What is the retention submodel boundary and how can course urgency/readiness override pure spaced-repetition due dates?
+7. What deterministic pedagogical constraints govern TEACH/EXAMPLE/PRACTISE/RETRIEVE/REMEDIATE/ADVANCE?
+8. What recommendation reason trace is stored for every material next action?
+9. How are model, policy, source and content versions replayable for audit?
+10. How will instructor analytics distinguish description from causal claims and surface uncertainty/sample size?
+11. What beta metrics falsify Engine v1 assumptions before more complexity is added?
+12. What exact legal/privacy/institutional review is required before learner analytics are used beyond the beta context?
+
+TERMINAL DISPOSITION
+DONE — research dossier complete and returned directly to General CF-0047. Research supports a hybrid, interpretable-first, domain-neutral StudyGrid learning engine with explicit knowledge structure, evidence state, retention model, teaching choices and audited next-action policy. No implementation authority inferred or exercised.
