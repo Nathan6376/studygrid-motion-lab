@@ -1,0 +1,58 @@
+STUDYGRID — GEMINI 3.1 PRO RETURN / INSTRUCTOR TOUR + MOTION / SCREENSHOT PASS
+Timestamp received by General: 2026-09-30 23:46 ET
+Source: Nathan pasted Gemini 3.1 Pro response directly into General CF-0040
+Status: EXTERNAL SPECIALIST RETURN / DESIGN INPUT ONLY / NO IMPLEMENTATION RELEASE
+Owner evidence parent: routes/OWNER_REVIEW_DELTA_20260930_2324_INSTRUCTOR_TOUR_ALIVE_UI_MOTION.txt
+Screenshot appendix: routes/OWNER_REVIEW_SCREENSHOT_EVIDENCE_20260930_2335.txt
+
+GEMINI RETURN — SOURCE-DERIVED CONTENT
+
+1. Instructor repeated-question / cluster surface
+- Remove the large pale decorative arc crossing the question cluster because it competes with text.
+- Preserve the underlying grouped-question layout.
+- Demonstrate adaptive response through localized typography changes rather than new abstract shapes.
+- Temporarily highlight only dynamically changing variables/phrases in StudyGrid green.
+
+2. Student practice / confidence step
+- Separate learner answer from correct-answer feedback.
+- Use distinct typographic treatment or a dedicated feedback banner so correctness is immediately legible.
+- Remove Skip from the confidence segmented control; present it as a separate secondary action.
+- Gemini suggested subtle tooltip/inline microcopy explaining confidence purpose.
+
+3. Button states and focus visuals
+- Replace the accidental-looking Next double-edge/halo with explicit state-specific treatment.
+- Keyboard focus: high-contrast offset ring separated from the physical button boundary.
+- Hover/pressed: subtle elevation/scale change.
+- Tutorial target should not reuse static border focus styling; Gemini suggested soft transient glow/beacon-type attention cue.
+
+4. Instructor-tour heading focus
+- Reject the bright blue rectangular box around noninteractive hero copy.
+- Use a transient tutorial-attention cue rather than a form-field-style focus ring.
+
+5. Student question / instructor response
+- Preserve the existing two-card composition and spatial stability.
+- When the question changes, change only the response phrases that genuinely adapt.
+- Localized crossfade on changed phrase(s); changed text briefly StudyGrid green then settles to normal color.
+- Do not rebuild/slide the whole card.
+
+6. Student selection / tool step
+- Remove permanent underlined/preselected target styling; return to normal-reading text.
+- Use a ghost cursor that demonstrates natural drag selection.
+- Ghost demonstration vanishes immediately on real pointer/touch interaction.
+- Explain should open an in-context explanation surface.
+- Highlight should toggle a persistent yellow highlight on/off.
+- Ask teacher should open a miniature in-card composer rather than navigate away.
+
+GENERAL PROVISIONAL ADJUDICATION NOTES — NOT YET FINAL
+- Strongly aligned with Nathan on decorative-arc removal, stable adaptive-response cards, changed-phrase-only green emphasis, separating Skip from confidence values, state-specific focus language, ghost-selection handoff, and real miniature tool behaviors.
+- AMEND Gemini's suggestion that Explain use an inline accordion if that causes the layout jump Nathan explicitly rejected; prefer anchored/contained help behavior after Research Q-R2 evidence is consumed.
+- DO NOT adopt the claim that confidence ratings 'dictate future practice frequency' unless StudyGrid's actual product logic later establishes that. Research may support explanatory wording, but product behavior must not be invented.
+- Hover/pressed scale/elevation values and tutorial-glow/beacon choreography remain creative suggestions, not locked implementation requirements.
+- Final motion/accessibility contract waits for Research Q-R2 + Sol exact-source audit and General reconciliation.
+
+PROCESS STATE
+- Research CF-0044 Q-R2 remains the evidence lane.
+- Sol CF-0043 Q-SOL1 remains the exact-source lane until terminal return.
+- Relay Architecture is not a StudyGrid product-design lane.
+- Astra remains held by owner direction.
+- Bob/Stuart/Kevin remain held until one reconciled batched implementation round.
