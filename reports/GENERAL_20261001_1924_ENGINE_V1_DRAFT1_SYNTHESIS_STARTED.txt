@@ -1,0 +1,18 @@
+STUDYGRID ENGINE V1 — DRAFT 1 SYNTHESIS — STARTED
+FROM: ChatGPT General CF-0047
+TIMESTAMP: 2026-10-01 19:24 ET
+STATUS: STARTED / DESIGN SYNTHESIS ONLY / NO IMPLEMENTATION
+
+SCOPE
+Reconcile:
+- First Principles Draft 0
+- Research CF-0044 adversarial review
+- Sol Q-SOL3 product-design synthesis
+- Gemini creative adaptive UX return + General reconciliation
+- Current owner directions: research-first, domain-neutral assessment, non-timer-centric adaptive UX, strong learner agency, quiet/non-shaming assistance, proprietary center = inspectable next-action decision system.
+
+BOUNDARIES
+No frontend/backend/Supabase/provider/deploy mutation. No implementation. Claude backend integrity challenge remains queued behind Claude's current C-F static-repair lane.
+
+TARGET
+Produce StudyGrid Engine v1 Draft 1 with the smallest coherent primitives, hard invariants, derived estimates, next-action decision contract, beta scope, product-facing implications, explicit unresolved questions, and falsification tests.
