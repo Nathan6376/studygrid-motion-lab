@@ -1,6 +1,6 @@
 STUDYGRID — OWNER REVIEW BATCH OPEN
 Timestamp opened: 2026-09-30 21:30 ET
-Last reconciled: 2026-09-30 22:18 ET
+Last reconciled: 2026-09-30 22:45 ET
 Coordinator: ChatGPT General CF-0040
 Authority: Nathan direct owner instruction
 Status: OPEN — ACCUMULATE FEEDBACK; DO NOT WAKE BOB/STUART/KEVIN YET
@@ -9,9 +9,10 @@ OWNER PROCESS
 - Nathan wants to inspect the current owner-review release thoroughly and give all visible/interaction/product feedback before implementation workers are reactivated.
 - Do not repeatedly send Bob, Stuart or Kevin small incremental batches. Accumulate the release feedback first, reconcile it into one coherent implementation/acceptance package, then activate the workers once Nathan explicitly indicates the review batch is complete / ready to build.
 - Relay Architecture and dedicated Research may work in parallel while Nathan continues reviewing. Gemini is an external specialist lane and, in the currently tested Gemini 3.1 Pro environment, does NOT have direct shared Drive/routing access; any Gemini task must therefore be supplied as a self-contained copyable code-box prompt unless a future environment proves direct access.
-- Astra may perform high-leverage adjudication/integration and the dedicated Sol source-audit lane may perform non-mutating exact-source preparation while the owner review remains open. Neither lane may implement StudyGrid or close the owner batch.
+- Astra tasks are staged but HELD. Nathan explicitly does not want to burn Astra allocation now; he intends to use it near his reported upcoming reset window (roughly 2026-10-03 evening ET based on his current 2d22h statement). Do not activate Astra until Nathan explicitly says to do so. This is an owner-reported usage window, not independently verified account quota metadata.
+- The dedicated Sol source-audit lane may perform non-mutating exact-source preparation while the owner review remains open after owner activation. Neither Sol nor any specialist lane may implement StudyGrid or close the owner batch.
 - New owner feedback during this review is appended/reconciled into the open review batch. Material architecture deltas are propagated to Relay Architecture under the peer-coordinator sync rule without making Nathan repeat them.
-- When the batch closes: General reconciles Architecture + Research + Gemini + Astra/Sol + Claude-if-available returns with the complete owner feedback; publishes exact worker-specific shared routes; then Nathan receives only short exact activations and one paired return-to-General continuation block.
+- When the batch closes: General reconciles Architecture + Research + Gemini + any completed Astra/Sol + Claude-if-available returns with the complete owner feedback; publishes exact worker-specific shared routes; then Nathan receives only short exact activations and one paired return-to-General continuation block.
 
 CURRENT FEEDBACK IN BATCH
 1. routes/OWNER_FEEDBACK_20260930_2113_SLICE2_REFINEMENT.txt
@@ -48,11 +49,11 @@ CURRENT FEEDBACK IN BATCH
 ARCHITECTURE / RESEARCH / SPECIALIST STATE
 - Relay Architecture returned routes/ARCHITECTURE_ADJUDICATION_20260930_2129_ADD_CLASS_ONBOARDING.txt; General consumed it as design input only. It authorizes Research source verification but does NOT override the owner batch hold on Bob/Stuart/Kevin.
 - Architecture supplement: routes/ARCHITECTURE_20260930_2147_OWNER_REVIEW_SUPPLEMENT.txt.
-- Dedicated Research batch: routes/RESEARCH_20260930_2147_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH.txt. Research is still pending by owner report at 22:09 ET.
+- Dedicated Research successor CF-0044 carries the unfinished routes/RESEARCH_20260930_2147_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH.txt after CF-0031 became too long. Owner activation is required for the fresh chat.
 - Gemini 3.1 Pro motion return has been received and persisted at routes/GEMINI_RETURN_20260930_2209_SELECTRIC_BALL_MOTION.txt.
 - General's provisional AMEND adjudication of Gemini is at routes/GENERAL_ADJUDICATION_20260930_2209_GEMINI_SELECTRIC_MOTION.txt. Core implied-sphere/CSS-3D direction is strong, but easing/angles/blur/accessibility/manual-control details remain non-final pending Research and owner review.
-- Astra primary high-leverage owner-review audit is available now at routes/ASTRA_20260930_2218_STUDYGRID_OWNER_REVIEW_DEEP_AUDIT.txt @ commit 9898661b6ea9599da9897a5849be623e4e8d7546. It is the product/system audit and should run first.
-- Astra second task, after the primary audit, is backend salvage/resume adjudication at routes/ASTRA_20260930_STUDYGRID_OWNER_REVIEW_ADJUDICATION.txt @ commit 4c0dc3a16b21ba73497ded068c92c5bf9da6f2c4. It is limited to Claude C-A..C-E salvage/resume and staging-readiness judgment; no backend mutation.
+- Astra primary high-leverage owner-review audit is STAGED/HOLD at routes/ASTRA_20260930_2218_STUDYGRID_OWNER_REVIEW_DEEP_AUDIT.txt @ commit 9898661b6ea9599da9897a5849be623e4e8d7546. Do not activate yet.
+- Astra second task is STAGED/HOLD at routes/ASTRA_20260930_STUDYGRID_OWNER_REVIEW_ADJUDICATION.txt @ commit 4c0dc3a16b21ba73497ded068c92c5bf9da6f2c4. It is limited to Claude C-A..C-E salvage/resume and staging-readiness judgment; no backend mutation. Do not activate yet.
 - New Sol worker CF-0043 is reserved for heavy exact-source audit/prep. Queue: queues/SOL_QUEUE.txt @ c86e77840529cdef772871722c37e5054fc8a8de. First task: routes/SOL_20260930_RELEASE_INTERACTION_SOURCE_AUDIT.txt @ 9f94b1cd3067d9330ae09a4a76c34c3e7c75d6a8. Owner activation is required; reservation does not prove a host chat/model selection.
 - Claude post-reset QA staged only: routes/CLAUDE_20260930_POSTRESET_CURRENT_RELEASE_QA.txt.
 
@@ -60,11 +61,11 @@ WORKER HOLD / ALLOWED PARALLEL LANES
 - Bob: HOLD all product mutation until owner review batch closes and General publishes the reconciled build contract.
 - Stuart: HOLD acceptance prep/acceptance until exact reconciled candidate exists after batch close.
 - Kevin: HOLD Q-K1F activation until owner review batch closes; Nathan wants one batched worker activation round.
-- Research: MAY RUN NOW because it is evidence gathering for the open batch, not implementation.
+- Research CF-0044: MAY RUN ON OWNER ACTIVATION because it is evidence gathering for the open batch, not implementation.
 - Gemini: CURRENT MOTION TASK COMPLETE; do not send another Gemini task unless Nathan requests it or General has a materially new specialist question.
-- Astra: MAY RUN NOW on the primary deep-audit route, then the backend-salvage route if capacity remains; adjudication/integration only.
+- Astra: HOLD. Do not wake or send the staged tasks until Nathan explicitly releases Astra near the reset window.
 - Sol CF-0043: MAY RUN ON OWNER ACTIVATION on Q-SOL1; source audit/prep only.
 - Claude: HOLD until credit reset and General release.
 
 CLOSE CONDITION
-Only Nathan closes this batch by indicating he is done reviewing / ready to send the complete package to workers. Until then, General should listen, inspect, accumulate, delegate research/specialist work where useful, and clarify only where necessary.
+Only Nathan closes this batch by indicating he is done reviewing / ready to send the complete package to workers. Until then, General should listen, inspect, accumulate, delegate Research/Sol work where useful, and preserve Astra for the owner-designated later window.
