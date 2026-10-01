@@ -1,6 +1,6 @@
 STUDYGRID — SOL WORK QUEUE
 Coordinator: ChatGPT General CF-0047
-Updated: 2026-10-01 17:50 ET
+Updated: 2026-10-01 17:57 ET
 Queue owner: General
 Worker: CHAT-CGPT-20260930-STUDYGRID-SOL-01 / CF-0043
 
@@ -21,10 +21,12 @@ Result: exact-source audit/isolated reproduction complete; product unchanged; br
 Q-SOL3 — PRODUCT-DESIGN SYNTHESIS / DIVERGENCE GATE
 Status: AVAILABLE NOW — OWNER ACTIVATION REQUIRED
 Task: routes/GENERAL_20261001_1750_SOL_PRODUCT-DESIGN-SYNTHESIS-GATE.txt @ b2ba8a35d1b001db8bbd07c795cbf8ef845a35fe
+Required supplement: routes/GENERAL_20261001_1757_SOL_QSOL3_SUPPLEMENT_ORDERED-INTERACTION_DOMAIN-AGNOSTIC-ASSESSMENT.txt @ c03aaf3eab25c3ab5e4fe2989f1434905934e9ff
+Owner delta: routes/OWNER_REVIEW_DELTA_20261001_1756_ORDERED-INTERACTION_DOMAIN-AGNOSTIC-ASSESSMENT.txt @ cfe1071cd15faab19fe4195b30201f51aae42afd
 Coordinator checkpoint: routes/GENERAL_20261001_1749_PRODUCT-DESIGN-RECONCILIATION_CHECKPOINT.txt @ 3c51b11776d2268a3809aeb4ce2959230a1e0308
 Owner successor correction: routes/OWNER_REVIEW_DELTA_20261001_1748_SUCCESSOR-CORRECTION.txt @ 18c3f30159717dfe971fb0ae8c4cf63756ba0adb
 Mode: design synthesis only / no implementation.
-Required terminal: three materially different complete signed-in product systems, comparison, recommended synthesis, navigation/motion/learning contracts, remove-merge-retain audit, owner decisions and prototype/QA acceptance checklist.
+Required terminal: three materially different complete signed-in product systems, comparison, recommended synthesis, navigation/motion/learning contracts, domain-agnostic assessment interaction architecture including ordered-response UX, remove-merge-retain audit, owner decisions and prototype/QA acceptance checklist.
 
 QUEUE STATE
-Q-SOL3 is the first eligible item. On Nathan activation, refresh lifecycle/latest return, persist STARTED, execute Q-SOL3, then stop at terminal design-gate return to General CF-0047. Do not implement, mutate product/backend/auth/Supabase/deploy/3D state, or wake peers.
+Q-SOL3 is the first eligible item. On Nathan activation, refresh lifecycle/latest return, consume both the base task and required supplement, persist STARTED, execute Q-SOL3, then stop at terminal design-gate return to General CF-0047. Do not implement, mutate product/backend/auth/Supabase/deploy/3D state, or wake peers.
