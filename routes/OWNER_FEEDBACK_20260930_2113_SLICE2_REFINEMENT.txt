@@ -1,0 +1,42 @@
+STUDYGRID — OWNER VISUAL FEEDBACK / SLICE 2 REFINEMENT
+Timestamp: 2026-09-30 21:13 ET
+Coordinator: ChatGPT General CF-0040
+Authority: Nathan direct owner feedback on exact accepted Slice 2 candidate
+Baseline: StudyGrid-CF0042-QB15-professor-home-scale.html
+SHA-256: 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf
+
+OWNER FEEDBACK — ACCEPT / PRESERVE
+- Professor Home overall: owner likes it a lot.
+- "Your classes" section: owner likes it very much.
+- Students / active classes presentation: owner likes it.
+- "Pick up where you left off" presentation: owner likes it, but learner-only surfaces must not leak into instructor mode.
+- Paper/Dusk concept itself is liked.
+
+OWNER FEEDBACK — FIX BEFORE FURTHER VISIBLE PRODUCT EXPANSION
+1. Global Feedback control hover/focus visual is wrong: green treatment reads as a rectangular box. Preserve accessibility/focus visibility, but remove the ugly box-like hover treatment and make the hover state visually coherent with the rounded compact control.
+2. Dusk button cannot be pressed in the owner-tested build. Diagnose actual interaction path and fix; do not merely restyle it. Paper/Dusk must both work via pointer and keyboard and persist correctly.
+3. Course label and colour controls are too persistently visible. Default course cards should show only useful current information. Move label/colour editing behind a compact explicit Edit action. Keep current chosen label/colour visible only when it adds useful meaning; do not show redundant "Label: None" or persistent form controls.
+4. Course colours should pop more. Add a restrained richer accent/hover response, including a subtle shine/lift when the user hovers/focuses a course card. Do not make it gaudy; preserve readability, reduced-motion handling and colour-not-sole-identifier rule.
+5. "Mark resolved" needs an undo path. Owner preference: one Undo control at the lower-right / bottom of the relevant Professor Home surface after a resolution action, with resolved history still available. Undo must restore the exact item and not create duplicate/mutated history.
+6. Instructor mode must be instructor-only. Student/learner navigation/surfaces such as global Study and learner "Your classes" / "Pick up where you left off" must not remain available simply because the same shell is reused. The instructor path should present instructor navigation/content only, while preserving an intentional explicit route out if product design requires one. Do not silently mix learner and instructor information architectures.
+7. Keep information density disciplined: information that is editable but not continuously decision-relevant should live behind Edit rather than occupy every card all the time.
+
+SOURCE INSPECTION NOTES FROM GENERAL
+- Current .report-launch hover/focus CSS adds background + border around the whole control; later tactile/material treatment also applies globally. The owner-observed boxiness is consistent with the current CSS surface and should be tested visually, not patched blindly.
+- Dusk buttons are rendered as [data-theme-choice="paper|dusk"] and have click handlers that persist/apply/rerender. Because owner reports Dusk is not clickable in the delivered build, implementation must reproduce the failure under the owner-visible route and inspect overlay/pointer/route interaction rather than assuming the handler is sufficient.
+- Current Professor Home renders persistent colour and label <select> controls per course card and a "Label: None" stat. This directly conflicts with owner feedback.
+- Current resolved history has no undo command/control. Add bounded local fixture undo semantics through the accepted gateway/command boundary.
+- Current shared top shell always renders Courses / Study / Profile and Feedback. Instructor route currently swaps workspace rendering but does not replace the global learner navigation. This directly conflicts with owner feedback.
+
+IMPLEMENTATION ORDER
+A. Bounded owner-feedback refinement candidate on exact accepted Slice 2.
+B. Independent QA/acceptance of that candidate.
+C. Owner gets a click-open HTML review attachment.
+D. Only after owner accepts the refined direction should Slice 3 visible product expansion proceed.
+
+BOUNDARIES
+- No real backend/auth/Supabase/network/provider/deploy.
+- No Slice 3 feature expansion in this refinement.
+- No Blender/A-C/motion-lane work.
+- No canonical promotion.
+- Preserve accepted Slice 1 gateway/command/state architecture, Q-B13 focus fixes and Q-B15 Professor Home behaviours not contradicted by owner feedback.
