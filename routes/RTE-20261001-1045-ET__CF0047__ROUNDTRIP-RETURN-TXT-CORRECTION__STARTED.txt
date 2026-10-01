@@ -1,0 +1,6 @@
+STATUS: STARTED
+Timestamp: 2026-10-01 10:45 ET
+Actor: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+Trigger: Nathan reported that the Stuart activation response omitted the return-to-General TXT and asked whether this issue was already logged.
+Current authority: RELAY-BUG-0007 already records this exact round-trip continuation omission family; AC-0008 requires same-response return/continuation TXT when return is expected; AC-0017 temporarily overrode that for delayed completions.
+Success condition: record the Oct 1 recurrence against the existing bug rather than creating a duplicate; retire AC-0017 under Nathan's current correction so AC-0008 controls again; read back the writes; consume Stuart Q-S13R2 terminal PASS and continue the owner review gate.
