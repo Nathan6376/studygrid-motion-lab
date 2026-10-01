@@ -1,5 +1,5 @@
 STUDYGRID RESEARCH QUEUE
-Updated: 2026-09-30 23:39 ET
+Updated: 2026-09-30 23:53 ET
 Coordinator: General CF-0040
 Consumer: StudyGrid Research successor CF-0044
 
@@ -10,7 +10,7 @@ Terminal return: routes/RESEARCH_CF0044_20260930_2257_STUDYGRID_CURRENT_RELEASE_
 General reconciliation: routes/GENERAL_RECONCILIATION_20260930_2303_RESEARCH_CF0044_OWNER_REVIEW.txt @ fab98022bdfe5852109f87eb52fa8493ff9c1381
 
 Q-R2 — GUIDED TUTORIAL / MOTION UX / PLAIN LANGUAGE / POLICY PLACEMENT
-Status: AVAILABLE NOW / HIGHEST PRIORITY
+Status: AVAILABLE / MAY ALREADY BE IN-FLIGHT BY OWNER REPORT — DO NOT RESTART IF STARTED
 Task: routes/RESEARCH_20260930_2324_GUIDED_TOUR_MOTION_PLAIN_LANGUAGE_POLICY_UX.txt @ 094c1d540e745f622f2ea5b1ad6dc27d88d83ddf
 Owner delta: routes/OWNER_REVIEW_DELTA_20260930_2324_INSTRUCTOR_TOUR_ALIVE_UI_MOTION.txt @ 87cef27fe6a52fae030467c41d6a569ac7805a1a
 Screenshot evidence: routes/OWNER_REVIEW_SCREENSHOT_EVIDENCE_20260930_2335.txt @ d2e1e5e5bb21b3f20003dffc0b5312850f13f4bc
@@ -21,10 +21,22 @@ Execution:
 3. Use current primary/platform/standards sources where possible.
 4. Return one consolidated terminal package to General CF-0040 through shared state.
 
+Q-R3 — ADAPTIVE CONFIDENCE / BEHAVIORAL SIGNALS / PRIVACY
+Status: ELIGIBLE AFTER Q-R2 TERMINAL; DO NOT INTERRUP Q-R2
+Task: routes/RESEARCH_20260930_2353_ADAPTIVE_CONFIDENCE_BEHAVIORAL_PRIVACY.txt @ 9c88eaffa636066cfcdbdd0660083189366dbd39
+Owner delta: routes/OWNER_REVIEW_DELTA_20260930_2353_ADAPTIVE_CONFIDENCE_BEHAVIORAL_SIGNALS_PRIVACY.txt @ 3cd292e355e5d40dfa1cc22a6b1831b8bc11f51d
+Purpose:
+- pre-feedback confidence timing and contamination;
+- confidence-driven adaptive scheduling;
+- evidence/limits for latency, pointer-directness, hesitation and related interaction signals;
+- privacy-preserving/local feature extraction and data minimization;
+- accessibility/device confounds;
+- user transparency/control and explainability.
+
 HOLD / DO NOT DO
 - No StudyGrid implementation/runtime mutation.
 - No Bob/Stuart/Kevin activation.
 - No backend/auth/Supabase/provider/network/deploy/canonical mutation.
 - Do not close owner review.
 
-After Q-R2 terminal, stop unless General publishes another eligible research task.
+After each terminal task, refresh this queue. If a later task is eligible and no newer higher-priority route supersedes it, continue; otherwise stop. Do not invent filler.
