@@ -1,0 +1,31 @@
+STUDYGRID — GEMINI NARROW CREATIVE/TECHNICAL REVIEW / SELECTRIC-BALL WELCOME MOTION
+Timestamp: 2026-09-30 21:47 ET
+Coordinator: ChatGPT General CF-0040
+Consumer: General / open owner review batch
+Authority: Nathan direct request: ask Gemini how to implement this concept
+Status: RESEARCH/DESIGN ONLY / NO STUDYGRID MUTATION
+
+OWNER INTENT
+Current welcome panel shows three stacked static steps:
+1. Add or open a class
+2. Study from class materials
+3. Ask and follow up
+Owner wants these represented as ONE compact animated bar/control, not three bars.
+Mental model: an IBM Selectric/typeball / spherical typewriter head. Imagine the three messages occupying positions around a virtual sphere. The control rotates through 3D space so one message comes into the readable/front position while the previous one rolls away around the sphere. It should feel like the same physical object rotating, not three cards crossfading or vertically sliding.
+
+ASK GEMINI
+Act as a senior web motion/product designer and front-end animation engineer.
+1. Translate the owner mental model into a precise motion/choreography contract.
+2. Recommend the strongest browser-native implementation for a small production web UI: CSS 3D transforms/perspective, Web Animations API, Canvas/WebGL, or another approach. Explain tradeoffs.
+3. Describe the DOM/geometry model: how to place three faces/messages around the virtual sphere/cylinder/typeball, rotation axis, perspective, depth, occlusion, easing and settle behavior.
+4. Specify timing/easing and whether rotation should autoplay, respond to hover/focus/click, or combine them.
+5. Preserve text readability; no upside-down/mirrored text, awkward foreshortening or cheap carousel feel.
+6. Define reduced-motion fallback and keyboard/screen-reader semantics.
+7. Define reject conditions for anything that looks like a normal card carousel, slot machine, crossfade or flat vertical ticker.
+8. Give a minimal implementation sketch/pseudocode if useful, but do not modify StudyGrid or create a production candidate.
+9. If the owner analogy maps better to a partial sphere/cylinder than a literal sphere, say so and explain why while preserving the perceived Selectric/typeball behavior.
+
+BOUNDARIES
+- Research/design only.
+- No StudyGrid product mutation, repository mutation beyond this return, backend/auth/Supabase/deploy/canonical work.
+- Return recommendation directly to General/shared StudyGrid routing.
