@@ -1,0 +1,43 @@
+STUDYGRID — GENERAL → BOB — IMPLEMENTATION FEASIBILITY / PROTOTYPE ARCHITECTURE OPTIONS
+From: ChatGPT General / CF-0047
+To: SG Bob / CF-0042
+Status: AVAILABLE — OWNER ACTIVATION REQUIRED
+Mode: TECHNICAL FEASIBILITY / NO PRODUCT MUTATION
+
+READ FIRST
+1. routes/OWNER_REVIEW_DELTA_20261001_1657_PRODUCT-FLOW-STUDY-MODE.txt @ 9e44452c4687b03fe62a1bc6faee387cc2713c6d
+2. Exact current candidate: StudyGrid-CF0042-QB17R2-stuart-defect-repair.html | Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46 | SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab | v7.20-cf0042-qb17r2-stuart-defect-repair
+3. Current Base + Active Corrections + Bob queue/lifecycle.
+
+PURPOSE
+Nathan explicitly does not want “Bob the Builder” behaviour. This assignment is NOT to edit the HTML. It is to tell General, from the exact current source, how the eventual selected product design could be implemented cleanly, what architectural seams exist, and which approaches are safest/most maintainable.
+
+WORK
+1. Inspect current route/render/shell/state architecture and identify feasible seams for a stable signed-in shell with changing local content rather than full-screen remount/jumps.
+2. Produce 2–3 implementation architecture options for:
+   - stable global/local navigation hierarchy;
+   - parent/child vs sibling transitions;
+   - preserving scroll/focus/state and browser Back semantics;
+   - reducing duplicated chrome;
+   - signed-in Home vs onboarding/public boundary;
+   - learner/instructor/general-study context markers;
+   - stable repetitive-action controls such as Approve and next;
+   - explicit terminal/finalisation state after review queues;
+   - simplified study-session state machine;
+   - teaching → practice → feedback → completion flow;
+   - automatic reward/seed collection with graceful disconnected state;
+   - continuous welcome 1→2→3 animation with reduced-motion/user-interaction handling;
+   - consistent :focus-visible/on-brand focus treatment without removing accessibility.
+3. Research/assess web implementation primitives already feasible in this single-file architecture: View Transition API with fallback, Navigation/history/hash strategy, CSS transitions vs WAAPI, persistent DOM shells, FLIP/shared-element techniques if needed, focus/scroll restoration, event delegation/state isolation.
+4. For each option, estimate implementation risk, blast radius, test burden, browser/iPad/Safari caveats and reversibility.
+5. Identify which current components can be retained/refactored vs which likely need replacement. Do not preserve a bad abstraction merely because it exists.
+6. Define a future implementation sequence in bounded slices after General selects a design: shell/IA first, then motion, then study workflow, then polish/regression. No code now.
+
+IMPORTANT
+- Do not choose final product design; Astra/General own synthesis.
+- Do not mutate HTML, branch product bytes, backend, auth, Supabase, deploy or canonical state.
+- If a tiny throwaway experiment is genuinely needed to test browser/API feasibility, it must be isolated outside product bytes and clearly labelled feasibility-only; prefer static/source reasoning first.
+
+DELIVERABLE
+Technical feasibility report to General CF-0047: architecture options, source seams, risk matrix, browser/accessibility implications, and a proposed bounded implementation plan contingent on design selection.
+Persist STARTED before work and return terminal result directly to General.
