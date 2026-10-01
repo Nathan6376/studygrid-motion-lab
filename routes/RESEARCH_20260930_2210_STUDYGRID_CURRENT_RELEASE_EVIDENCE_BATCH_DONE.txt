@@ -1,0 +1,555 @@
+STUDYGRID — RESEARCH / CURRENT RELEASE EVIDENCE BATCH — DONE
+From: StudyGrid Research
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 22:10 ET
+Lifecycle: DONE — RESEARCH / EVIDENCE ONLY
+
+ACTIVATED AUTHORITY
+- routes/RESEARCH_20260930_2147_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH.txt @ commit 5fc4d543f882537d1e231c3d5ff23fd01756f014
+- route blob SHA: a89388ce1a8591bcffcf5bcc941ad0076ef0cd1a
+- STARTED return: routes/RESEARCH_20260930_2202_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH_STARTED.txt @ commit e95ccb06c264e9850e8a728a72064bbb52255b5c
+
+PRIMARY STUDYGRID INPUTS CONSUMED EXACTLY AS ROUTED
+- routes/OWNER_REVIEW_BATCH_20260930_OPEN.txt @ 5fc4d543f882537d1e231c3d5ff23fd01756f014
+- routes/OWNER_FEEDBACK_20260930_2113_SLICE2_REFINEMENT.txt @ 5fc4d543f882537d1e231c3d5ff23fd01756f014
+- routes/OWNER_FEEDBACK_20260930_2123_ADD_CLASS_ONBOARDING_REDESIGN.txt @ 5fc4d543f882537d1e231c3d5ff23fd01756f014
+- routes/ARCHITECTURE_ADJUDICATION_20260930_2129_ADD_CLASS_ONBOARDING.txt @ 5fc4d543f882537d1e231c3d5ff23fd01756f014
+- routes/OWNER_REVIEW_DELTA_20260930_2147_HOME_STUDY_MOTION_NAV.txt @ 012bbdc5e2fb96c5be35b714517601462387f7ed
+
+BOUNDARY
+The owner-review batch remains OPEN. This package does not mutate StudyGrid HTML/runtime, worker queues, backend/auth/Supabase/network/deployment/canonical state and does not wake Bob, Stuart or Kevin. Recommendations below distinguish evidence from StudyGrid-specific inference. Institutional fields that official sources did not establish remain UNKNOWN rather than inferred.
+
+EXECUTIVE DECISION PACKAGE
+1. Verified catalogue: StudyGrid can safely seed a Humber / Police Foundations / PFP 207 fixture now, but only with the fields directly supported by official Humber sources and with source-period metadata attached. Current program-term placement, academic session, live section/CRN and seat availability remain unknown/authenticated concerns.
+2. Onboarding: keep first run short and progressive. Let “I have a class code” short-circuit the longer path; otherwise establish institution → program → program term once, then enter the app/course picker. Make the tour optional/replayable and teach uncommon actions in context.
+3. Novice guidance: retire “Pick up where you left off” by demonstrated product milestones, not an arbitrary sign-in count. Once a stable resume target exists and the learner has successfully resumed core work, collapse it to a compact Continue target; keep Help/Tour replayable.
+4. Feedback: use a persistent lightweight Feedback entry plus contextual task-adjacent entry points. Ask after a task, not before. Default form = category + short description; reveal Expected/Actual, screenshot, reproduction and safe diagnostics only when relevant.
+5. Route transitions: progressive enhancement only. View Transitions are now viable on current Safari/iPad-class browsers, but fallback must be instant and correct. Most StudyGrid motion should stay in the 70–240 ms productive range; larger route continuity can reach ~240–320 ms only when it clarifies hierarchy. No bounce/overshoot by default.
+6. Deep-study chrome: compact/hide only nonessential chrome. Keep current class/location, Back/escape and a reliable way to restore navigation. Do not hide top-level orientation merely for visual minimalism.
+7. Completion microinteractions: restrained check/settle feedback plus exact Undo semantics. No web-haptic dependency and no noisy gamification.
+8. Cursor/selection: the owner-reported I-beam is plausibly caused by StudyGrid’s broad `.annotatable-text { cursor:text; user-select:text }` application. Preserve text selection but stop forcing `cursor:text` across broad containers; constrain it to explicit selectable text if needed. Feedback-marking overlays must teardown completely on cancel/submit/route/unmount.
+9. Autofill: `autocomplete="off"` is a hint, not a guaranteed Safari/iPad fix. Use course/search semantics, neutral field names/IDs, no bogus autocomplete tokens, and physical-device QA with saved personal/contact data present.
+10. Navigation semantics: classify every control as history Back, hierarchy Up/parent, explicit destination, local command or reversible mutation. A generic Back must restore the meaningful prior context/state; “Back to Classes” is an explicit destination and should not masquerade as history Back.
+11. Welcome “full loop”: for three short textual faces, prefer semantic DOM + CSS 3D transforms + Web Animations API. It gives real 3D typeball-like motion while retaining crisp accessible text. Canvas/WebGL is disproportionate unless later visual requirements demand actual mesh lighting. Avoid endless autoplay; run a short bounded cycle or give explicit next/previous/pause control. Reduced-motion state is static/non-spinning.
+
+WORKSTREAM A — OFFICIAL INSTITUTION / PROGRAM / COURSE SOURCES
+
+A1. HUMBER SOURCE MAP — CONFIRMED OFFICIAL EVIDENCE
+PRIMARY — Humber 2026–27 Viewbook:
+https://humber.ca/brand/sites/default/files/publications/2026-27_Humber_Viewbook.pdf
+Supported facts: Police Foundations; official program code 11071; four semesters; Lakeshore indicator “L”; current admission/career metadata in the 2026–27 viewbook.
+
+PRIMARY — Humber Police Powers course outline:
+https://humber.ca/transferoptions/index.php?code=PFP+207&q=course-outlines%2Foutline.html&view=1&year=2023
+Supported facts for academic period 2023–24: course title Police Powers; code PFP 207; associated program Police Foundations (11071) and part-time 1107E; credit value 3; total course hours 42; no prerequisites; no corequisites; course description/outcomes/assessment structure. LIMIT: this is explicitly a 2023–24 outline, so its detailed outline fields must carry that period and must not be represented as a 2026–27 term offering without newer evidence.
+
+PRIMARY — Humber Police Foundations Pathway for Professionals application/course list, current official PDF surfaced in 2026 search:
+https://communityservices.humber.ca/assets/files/pdf/PFP%20P4P%20Fillable%20Application%20Form%20and%20Instructions.pdf
+Supported fact: PFP 207 Police Powers remains present in an official Police Foundations course list. This supports current course identity continuity, not a specific program-term/session placement.
+
+PRIMARY — Humber registration road map / course-based planning:
+https://humber.ca/admissions/office-of-the-registrar/registration/registration-road-map/step1/build-a-course-based-plan.html
+https://humber.ca/admissions/office-of-the-registrar/registration/registration-road-map/step2/course-based-registration.html
+Supported boundary: students use authenticated MyHumber Academic Progress to determine currently required courses/semester; live registration searches use Subject + Course Number; CRN is unique to a course section. Therefore public catalogue/course identity must remain separate from live `class_section_id`, CRN, schedule and seat state.
+
+BOUNDARY FINDING
+This research pass did not identify a documented public Humber catalogue API suitable for a production dependency. That is a bounded search finding, not a claim that none exists. Treat official HTML/PDF/course-outline sources as source adapters/snapshots until Humber supplies or documents a supported endpoint.
+
+A2. SOURCE-CITED VERIFIED FIXTURE FOR THE LOCAL ADAPTER
+Evidence fields only:
+- institution_display_name: Humber Polytechnic
+- institution_fixture_key: humber-polytechnic  [STUDYGRID INTERNAL FIXTURE KEY; not an official Humber identifier]
+- official_program_name: Police Foundations
+- official_program_code: 11071
+- program_length_semesters: 4
+- program_prefix: PFP  [derived from the verified official course code family]
+- course_title: Police Powers
+- canonical_course_code: PFP 207
+- display_course_number: 207  [presentation derivation from canonical code]
+- credit_value: 3  [source period 2023–24]
+- total_course_hours: 42  [source period 2023–24]
+- prerequisites: none  [source period 2023–24]
+- corequisites: none  [source period 2023–24]
+- program_term: UNKNOWN — do not infer Term 1/2/3/4
+- academic_session_id: UNKNOWN
+- class_section_id / CRN / schedule / capacity: UNKNOWN / NOT PUBLIC-FIXTURE DATA
+- verification_status: OFFICIAL_SOURCE_VERIFIED_WITH_PERIOD_LIMITS
+- provenance: exact source URLs above + source academic period/publication identity + retrieved_at + content hash/snapshot version
+
+This is sufficient for Bob to demonstrate the verified-vs-manual catalogue read-model shell without fabricating a current term, section or schedule.
+
+A3. PORTABILITY FINDINGS
+PRIMARY — Sheridan course-outline search:
+https://www.sheridancollege.ca/programs/courses/course-outline-search
+Sheridan exposes an official searchable outline database by course code OR program plus term/year and explicitly warns that outlines are not updated every term. This is strong evidence that StudyGrid needs source-period/version fields instead of equating “official” with “current offering.”
+
+PRIMARY — George Brown current program pages / course-outline guidance:
+https://www.georgebrown.ca/programs/general-arts-and-science-one-year-program-certificate-r104?year=2027
+https://www.georgebrown.ca/ask-george-brown/where-can-i-find-course-outlines-1661375027514
+George Brown program pages can expose semester course tables, while its April 2026 guidance says public search is for past outlines and current outlines should come from the instructor. Adapter capability therefore differs by institution and data class.
+
+PRIMARY — Seneca archived/current programme/course information:
+https://students.senecapolytechnic.ca/spaces/290/catalogue/home
+Seneca exposes programme catalogues by academic year and course/subject-outline repositories, including a syllabus repository from Winter 2025 onward. Again, version/year are intrinsic to provenance.
+
+PORTABILITY RECOMMENDATION — INFERENCE
+Use a provider/adapter model, not one scraper schema. Minimum source receipt per record: institution adapter ID; authoritative URL/document ID; source publication/academic year/term if present; retrieved_at; content hash; parser version; exact field-level source locator; verification status. Refresh should be background/versioned and source-specific. Trigger refresh at new academic-year/term publications and when source-change detection fires; optionally run a configurable periodic diff during catalogue-preparation periods. Do not put live scraping on the Add Class click path. Never invent a fixed refresh cadence when an institution publishes irregularly.
+
+WORKSTREAM B — ONBOARDING / TIME-TO-VALUE
+
+EVIDENCE
+PRIMARY Apple Onboarding:
+https://developer.apple.com/design/human-interface-guidelines/onboarding
+Apple recommends fast, optional onboarding; teaching through interaction; contextual tips rather than one large front-loaded flow; and postponing nonessential setup/customization.
+
+PRIMARY Apple Launching:
+https://developer.apple.com/design/human-interface-guidelines/launching
+Apple recommends starting quickly and restoring previous state so returning users can continue without retracing steps.
+
+PRIMARY Apple Disclosure controls:
+https://developer.apple.com/design/human-interface-guidelines/disclosure-controls
+Hide advanced/secondary detail until relevant; keep the most-used essential choices immediately available.
+
+SECONDARY HIGH-QUALITY UX RESEARCH — Nielsen Norman Group:
+https://www.nngroup.com/articles/mobile-app-onboarding/
+https://www.nngroup.com/articles/onboarding-tutorials/
+NN/g warns that long/tutorial-first onboarding adds interaction/memory cost and that contextual help is often more effective. Their controlled mobile-tutorial study found deck-of-cards tutorials did not make users faster/more successful and increased perceived difficulty.
+
+RECOMMENDED STUDYGRID FIRST-RUN SEQUENCE — PRODUCT INFERENCE
+0. Welcome / Sign in where account is required.
+1. “Choose how to start”: primary options “I have a class code” and “Set up my school.” This respects the later owner delta while preserving Architecture’s code-shortcut intent.
+2A. Class code: enter/resolve code. Where a real resolver later provides institution/program/class context, use that context rather than asking the learner to retype it. Local demo remains a clearly local shell.
+2B. Guided setup: Institution → Program → Program term (Term 1/2/3/4/Other), one-time profile/school context.
+3. Course picker scoped to known context; manual fallback beneath verified results.
+4. Land in useful app state immediately. Offer “Take a quick tour” as optional/replayable, not a gate.
+5. Teach novel actions in context on first encounter and let the same Tour/guide control toggle the treatment off.
+
+NOVICE-GUIDANCE DECAY — RECOMMENDATION
+Do not use “three sign-ins” or another arbitrary count as the primary trigger. Collapse the explanatory “Pick up where you left off” module to `Continue · <course> · <target>` only after observable milestone evidence exists:
+- school/class context is established;
+- at least one real class has been joined/added;
+- a stable resume target exists; and
+- the user has successfully resumed/re-entered that core context at least once OR completed the associated first-run tip.
+Keep the Help/Tour route replayable. If the resume target disappears, fall back gracefully instead of reviving unrelated onboarding clutter.
+
+OWNER/ADMIN CAPABILITY — RECOMMENDATION
+One account can carry owner/admin capability without rendering admin chrome in the normal learner mode. Default everyday experience to the active learner/instructor role context; expose administration through an explicit role/context switch or dedicated destination. Never infer that capability means the user wants admin UI on every page.
+
+ACCEPTANCE IMPLICATIONS
+- No repeated institution/program/program-term on ordinary Add Class.
+- No tour required to use the product.
+- Same tour control can end the current coach/highlight state.
+- Back preserves entered setup choices.
+- Help appears at point-of-need, not as a memorization deck.
+- Returning users get a stable Continue target rather than permanent novice prose once milestone condition is met.
+- Admin capability never leaks admin navigation into normal learner surfaces by default.
+
+WORKSTREAM C — FEEDBACK CAPTURE
+
+EVIDENCE
+SECONDARY HIGH-QUALITY UX — NN/g “User-Feedback Requests: 5 Guidelines”:
+https://www.nngroup.com/articles/user-feedback/
+Core finding: “task, then ask”; do not interrupt before/during the primary task; keep requests short; retain an on-demand feedback entry point.
+
+PRIMARY PLATFORM PRECEDENTS
+Apple TestFlight tester feedback:
+https://developer.apple.com/help/app-store-connect/test-a-beta-version/view-tester-feedback
+https://developer.apple.com/help/app-store-connect/reference/testflight/beta-tester-feedback/
+TestFlight connects feedback to build/device context and supports screenshots/comments.
+
+Microsoft Feedback Hub:
+https://support.microsoft.com/en-us/windows/apps/send-feedback-to-microsoft-with-the-feedback-hub-app
+Microsoft separates problem/suggestion flow and makes screenshots/files/reproduction recording optional with explicit inclusion choices.
+
+RECOMMENDED STUDYGRID FLOW
+Persistent compact global Feedback control remains available. Add contextual feedback entry only where it can carry useful page/component/selection context.
+
+Default sheet/panel:
+1. Category: Something went wrong / Something is confusing / Idea or suggestion / Other.
+2. One short required description: “What happened?” or “What would you change?”
+3. If “went wrong”: progressively reveal optional Expected result + Actual result / steps.
+4. Optional screenshot. Never capture/send one invisibly; preview it first and permit removal/redaction workflow later.
+5. Safe auto-context shown before send: StudyGrid build/version, current route/surface ID, viewport class, input mode and explicit UI anchor/selection if the user invoked feedback from one. Do not duplicate raw user text or full DOM into telemetry merely because it is available.
+6. Advanced diagnostics hidden behind “Include technical details” and bounded by the existing privacy/diagnostic contract.
+7. Confirmation after send with a compact reference/status; preserve draft on accidental sheet dismissal where practical.
+
+PRIVACY / FRICTION CONTRACT
+- Do not auto-record screen, raw pointer trails, keystrokes or clipboard.
+- No hidden attachment of unrelated filenames/local paths.
+- Tell the user what context will be included.
+- Make screenshot and reproduction capture opt-in.
+- Mobile/iPad: full-height/bottom-sheet layout, large touch targets, keyboard-safe composer, no hover-only affordance, preserve draft across rotation/resizing.
+
+HIDE UNTIL USEFUL
+Expected-vs-Actual, reproduction steps, screenshot, diagnostics, contact permission and advanced categorization should be conditional rather than a mandatory giant form.
+
+ACCEPTANCE IMPLICATIONS
+- Feedback never blocks first entry or a critical task.
+- Global entry exists after contextual prompt is dismissed.
+- Problem branch can attach screenshot/context; idea branch stays lightweight.
+- User sees included technical context before sending.
+- Keyboard/touch/screen-reader complete submission path works.
+
+WORKSTREAM D — NAVIGATION / ROUTE TRANSITIONS / CONTEXTUAL CHROME
+
+CURRENT PLATFORM EVIDENCE
+MDN View Transition API:
+https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API
+https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition
+MDN marks the core ViewTransition interface Baseline 2025 / newly available since October 2025; non-supporting browsers can simply perform the DOM update without animation.
+
+WebKit:
+https://webkit.org/blog/15865/webkit-features-in-safari-18-0/
+https://webkit.org/blog/16301/webkit-features-in-safari-18-2/
+https://webkit.org/blog/17818/announcing-interop-2026/
+Safari 18 shipped same-document View Transitions; Safari/iPadOS 18.2 added cross-document View Transitions. Interop 2026 continues cross-browser work, so feature detection/fallback still matters.
+
+Carbon motion system, updated Aug 2026:
+https://www.carbondesignsystem.com/building-blocks/foundations/motion/overview
+Carbon’s current duration tokens: 70 ms button/toggle microinteraction; 110 ms fade; 150 ms small expansion/short movement; 240 ms expansion/system communication; 400 ms large/important expansion; 700 ms background dimming. It explicitly recommends purposeful, unobtrusive motion and places common microinteraction feedback around 90–120 ms.
+
+Focus-management reference:
+https://design.va.gov/accessibility/focus-management
+For SPA route changes, VA’s accessibility guidance moves focus to the first unique heading/new contextual element and warns against gratuitous focus movement.
+
+PRIMARY orientation/chrome references — Apple:
+https://developer.apple.com/design/human-interface-guidelines/toolbars
+https://developer.apple.com/design/human-interface-guidelines/tab-bars
+https://developer.apple.com/design/human-interface-guidelines/going-full-screen
+Toolbars orient/navigate; temporary hiding can support distraction-free content only when users can reliably restore it and essential navigation remains available. Top-level tab navigation should stay predictable.
+
+STUDYGRID TRANSITION CONTRACT — RECOMMENDATION
+- Feature-detect `document.startViewTransition`; if unavailable/fails/reduced-motion, update instantly/correctly.
+- Local hover/press/check/toggle: 70–120 ms.
+- Local content reveal/filter/small panel: ~110–150 ms.
+- Same-context card→detail/shared object: ~150–240 ms using shared-element continuity only when it is genuinely the same object.
+- Parent/child route: ~180–240 ms with small directional translation + fade if hierarchy is spatially meaningful.
+- Unrelated top-level route: 110–200 ms cross-fade; no fake directional slide.
+- Large special transition: target 240–320 ms first; exceed ~400 ms only if owner-tested motion itself carries meaning. Never make routine navigation wait for decorative animation.
+- Easing: restrained productive entrance/standard/exit curves; no spring/bounce/overshoot for routine StudyGrid navigation.
+- Shared-element is rejected when the source/target are not the same conceptual object.
+
+REDUCED MOTION
+W3C Animation from Interactions / C39:
+https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions
+https://www.w3.org/WAI/WCAG22/Techniques/css/C39
+When `prefers-reduced-motion: reduce`, remove significant translation/scale/3D movement. Prefer instantaneous state replacement or brief opacity/color feedback. The new semantic state must remain identical.
+
+FOCUS / ACCESSIBILITY CONTRACT
+- Route change updates page/title context.
+- After SPA navigation, focus the first unique heading or other element that best identifies the destination; ensure sticky chrome does not obscure it.
+- Never leave focus attached to an outgoing snapshot/removed control.
+- Local mutations do not steal focus unnecessarily; use a polite status message for success where visual change alone is insufficient.
+- Browser Back/Forward must remain coherent even when animation is skipped.
+
+CONTEXTUAL CHROME RECOMMENDATION
+In deep study, compact or hide secondary branding/actions, not orientation. Preserve: route/class identity, Back/escape, and a reliable navigation restoration control. Do not permanently hide top-level navigation just because the page scrolls. Test tablet split-view and keyboard focus with compact chrome.
+
+REJECT CONDITIONS
+- transition delays content readiness;
+- animation is the only indication of destination/state;
+- reduced-motion still performs large slide/zoom/3D motion;
+- Back/Forward changes semantics to make animation easier;
+- focus remains on stale/outgoing DOM;
+- unrelated pages use shared-element morphs;
+- deep-study mode hides the only escape/current-location affordance;
+- non-supporting Safari/browser gets broken navigation instead of a static fallback.
+
+WORKSTREAM E — MICROINTERACTIONS / SATISFYING STATE CHANGES
+
+EVIDENCE
+Apple Motion:
+https://developer.apple.com/design/human-interface-guidelines/motion
+Motion should be purposeful, brief/precise, realistic to the action, optional and cancellable where possible; frequently repeated interactions should avoid needless motion.
+
+Apple Undo and redo:
+https://developer.apple.com/design/human-interface-guidelines/undo-and-redo
+Users need to predict what Undo will affect, and the result of Undo should be visible/highlighted.
+
+Apple haptics:
+https://developer.apple.com/design/human-interface-guidelines/playing-haptics
+Haptics should be short, causal, consistent and optional on supported hardware.
+
+Web haptics limit:
+https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API
+The web Vibration API remains limited availability, so StudyGrid’s web UX cannot depend on haptic feedback, especially on the owner’s iPad/Safari target.
+
+RECIPE 1 — MARK REVIEWED
+- immediate 90–120 ms checkmark/check-stroke or icon state;
+- 110–150 ms subtle tint/settle on the exact row/card; no confetti, bouncing or page-wide animation;
+- text/status becomes “Reviewed” so colour/motion are never sole indicators;
+- preserve item in place long enough for the learner to understand what changed.
+Reduced motion: instant check + text/tint only.
+
+RECIPE 2 — MARK RESOLVED + UNDO
+- 90–120 ms local acknowledgement;
+- if the active queue removes the item, use a restrained ~150–240 ms settle/collapse after the acknowledgement, while keeping resolved history accessible;
+- surface one contextual `Resolved · Undo` control at the owner-requested lower-right/bottom relevant surface. Prefer a control that persists until the next meaningful resolution/navigation rather than an aggressive short timeout that disappears while the user is reading;
+- Undo restores the exact item, original order/state and history relationship; it must not clone or regenerate the item.
+Reduced motion: instant state move + status message.
+
+RECIPE 3 — UNDO RESTORE
+- brief 110–150 ms local restore highlight/opacity settle on the restored item;
+- announce a polite status such as “Restored <item>”; do not steal focus unless the restored content must become the next task;
+- do not replay the full forward animation backwards if that makes the interface feel theatrical.
+
+AUDIO/HAPTIC RECOMMENDATION
+No sound or vibration in the baseline web experience. If a future native wrapper supports high-quality haptics, treat them as optional complementary feedback bound to discrete actions, never required meaning.
+
+WORKSTREAM F — TEXT SELECTION / CURSOR / IPAD-SAFARI / AUTOFILL
+
+PLATFORM EVIDENCE
+MDN `cursor`:
+https://developer.mozilla.org/docs/Web/CSS/cursor
+`cursor:text` explicitly communicates “text can be selected” and normally renders an I-beam.
+
+MDN `user-select`:
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/user-select
+`user-select:text` permits selection. MDN also documents WebKit/Chromium inheritance quirks, so broad ancestor use can affect larger regions than intended.
+
+MDN autocomplete guidance:
+https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/Turning_off_form_autocompletion
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete
+`autocomplete="off"` is the standard hint, but browsers can continue offering suggestions in some cases; invalid/made-up tokens are not a standards-safe fix. MDN explicitly notes changing a neutral `name` can help when unwanted generic suggestions persist.
+
+LIKELY STUDYGRID CAUSE — EVIDENCE + SOURCE INSPECTION INFERENCE
+The owner build applies `.annotatable-text { cursor:text; user-select:text; ... }` to lesson paragraphs, note bullets and quiz explanations. Since `cursor:text` intentionally displays the I-beam, broad annotatable wrappers are a strong likely contributor to the reported “forced text mode.” This does not prove every iPad symptom; physical owner-relevant testing remains required.
+
+RECOMMENDED MITIGATION
+- Preserve normal text selectability using standard browser behaviour / `user-select:auto` or narrowly scoped text selection.
+- Do not force `cursor:text` on broad lesson/note/card containers. If a special selection affordance truly needs it, attach it only to the exact text region while the relevant feature is active.
+- Selection popover appears only for a non-collapsed selection wholly inside whitelisted study content; anchor to the Range geometry and dismiss on selection collapse, route change, outside pointer/touch, Escape and invalidated content.
+- Never block native touch long-press/copy selection merely to force a custom annotation UX.
+
+FEEDBACK-MARKING TEARDOWN CONTRACT
+On cancel, submit, route change, component unmount, Escape and error cleanup:
+- release any pointer capture;
+- remove crosshair/pointer mode classes;
+- remove overlay hit targets and route-level listeners;
+- restore normal `touch-action`/selection/cursor rules;
+- clear pending selected region/annotation state unless intentionally persisted.
+Stale marking mode after exit is an acceptance failure.
+
+COURSE-SEARCH AUTOFILL CONTRACT
+- Use semantic searchable combobox/search UI; course fields are not personal-name fields.
+- Prefer neutral identifiers such as `course-search` / `course-code-search`; avoid `name`, `full-name`, `given-name`-like names/IDs.
+- Use `autocomplete="off"` only for the non-personal search field where unwanted browser history/autofill is a problem.
+- Do not invent autocomplete tokens as a workaround.
+- `spellcheck="false"` and `autocapitalize="none"` are appropriate for canonical code search where helpful, but not a substitute for autofill testing.
+- No claim of a Safari fix until the physical/iPad-class matrix passes.
+
+EXACT QA MATRIX
+Devices/browsers:
+1. Current supported iPadOS Safari — touch only.
+2. Same iPad Safari — hardware keyboard + trackpad/pointer.
+3. iPad Safari split view / resized viewport.
+4. Current iPhone Safari — touch/long press.
+5. macOS Safari — mouse/trackpad.
+6. Current desktop Chrome/Edge as control.
+
+Profiles:
+A. clean profile/no saved contact/form history;
+B. profile with saved personal Contact/name/address and prior form history.
+
+Scenarios:
+- hover/move across ordinary study card, paragraph, note bullet, quiz explanation, blank card space;
+- long-press/drag/select text, collapse selection, copy, scroll with selection, rotate/resplit;
+- open/dismiss selection popover via outside tap/Escape/route change;
+- enter feedback mark mode → cancel; enter → submit; enter → route away; repeat twice;
+- assert no crosshair/overlay/pointer capture remains after every exit path;
+- focus Add Class course-title/course-code search, type, select suggestion, clear, Back/Forward, reload;
+- inspect whether OS/browser personal-name suggestions appear with saved contact data; capture actual behaviour rather than inferring from markup;
+- keyboard Tab/Arrow/Enter/Escape through combobox; VoiceOver/screen-reader semantics where available.
+
+Pass criteria:
+- I-beam only where text-select intent is locally appropriate; no page-wide forced text cursor;
+- native selection remains usable;
+- marking mode fully tears down;
+- no stale custom popover;
+- course input never silently adopts a personal-name value;
+- any remaining browser-owned suggestion limitation is documented per device instead of falsely labeled fixed.
+
+WORKSTREAM G — BUTTON / BACK / NAVIGATION SEMANTICS
+
+EVIDENCE
+GOV.UK Back link:
+https://design-system.service.gov.uk/components/back-link/
+A Back link should return the user to the previous page in the state last seen; user research should determine when a different pattern is more helpful.
+
+W3C link-purpose guidance:
+https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-link-only.html
+https://www.w3.org/WAI/WCAG21/Techniques/general/G91
+Link purpose should be understandable and should agree with the landing destination/context.
+
+Apple Toolbars/navigation:
+https://developer.apple.com/design/human-interface-guidelines/toolbars
+Standard Back is expected to retrace the hierarchy/steps; Close closes a modal state. Consistency matters.
+
+STUDYGRID ROUTE/BUTTON AUDIT RUBRIC
+For every actionable control record:
+1. `control_id / visible_label / accessible_name`
+2. control class: HISTORY_BACK | PARENT_UP | EXPLICIT_DESTINATION | FORWARD_NEXT | OPEN_CONTEXT | LOCAL_COMMAND | REVERSIBLE_MUTATION | DESTRUCTIVE_MUTATION
+3. source route/state
+4. expected destination/state
+5. actual destination/state
+6. history-stack effect
+7. state to preserve: filters/scroll/selection/draft/focus/class context
+8. keyboard/touch behaviour
+9. focus after action
+10. recovery/Undo semantics if state mutates
+
+RULES
+- HISTORY_BACK: uses meaningful prior app history and restores the last-seen state when possible. Direct-entry/no-meaningful-history needs an explicit safe fallback.
+- PARENT_UP: routes to the product hierarchy parent and should say where appropriate (`Back to Classes`, class name, etc.) rather than pretending to be browser history.
+- EXPLICIT_DESTINATION: label names/predicts its target; `Profile`, `Classes`, `Study` never rely on a generic Back icon to change meaning.
+- NEXT/CONTINUE: destination/next task must be inferable from nearby context; accessible name can add target context when visible label is short.
+- CLOSE: closes current overlay/modal/detail, not an unrelated parent page.
+- REVERSIBLE MUTATION: state feedback + bounded Undo/restore; exact previous entity/revision restored, no duplicate history.
+- DESTRUCTIVE/irreversible: confirmation only where consequence merits it; do not force confirmations for easy-to-undo routine actions.
+
+ADVERSARIAL ROUTE TESTS FOR STUART
+- direct deep-link with no prior StudyGrid history;
+- landing → setup → Add Class → Back at each step;
+- learner Classes → class detail → Study → note/lesson → Back repeatedly;
+- browser Back/Forward vs in-app Back produce coherent, non-looping route history;
+- instructor mode never lands in learner Profile/Study merely because a shared hardcoded Back exists;
+- quick tour on/off then Back;
+- feedback sheet open/close does not corrupt route history;
+- local mutation + Undo then browser Back/Forward;
+- reload at deep route;
+- iPad swipe/back gesture where browser exposes it;
+- keyboard-only and screen-reader navigation.
+
+REJECT CONDITIONS
+- generic Back hardcodes Profile/Courses independent of entry context;
+- label predicts one destination and lands elsewhere;
+- direct entry traps user due empty history;
+- repeated Back loops between synthetic history entries;
+- route changes discard necessary draft/state without warning;
+- controls are clickable but not keyboard-operable or focus lands in stale content.
+
+WORKSTREAM H — WELCOME “FULL LOOP” TYPEBALL / 3D SELECTOR
+
+EVIDENCE / PLATFORM CONSTRAINTS
+CSS 3D is mature:
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/perspective
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transform-style
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/rotate3d
+`perspective`, `preserve-3d`, transforms and `rotate3d()` are widely available and allow real DOM faces to occupy/rotate in 3D space.
+
+Web Animations API:
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API
+https://developer.mozilla.org/en-US/docs/Web/API/Element/animate
+Widely available playback/timing controls make pause/reverse/reduced-motion handling straightforward while keeping semantic DOM text.
+
+Canvas accessibility tradeoff:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/canvas
+Canvas does not expose semantic content to accessibility tools like HTML; it requires separate fallback/semantic handling. WebGL uses the same canvas boundary and is excessive for three short text faces unless true 3D mesh/material effects later become essential.
+
+W3C carousel precedent:
+https://www.w3.org/WAI/tutorials/carousels/
+https://www.w3.org/WAI/ARIA/apg/patterns/carousel/
+Auto-rotating one-at-a-time content needs keyboard-operable controls and user control over movement; screen-reader visibility must match what is actually shown.
+
+Apple Reduced Motion evaluation:
+https://developer.apple.com/help/app-store-connect/manage-app-accessibility/reduced-motion-evaluation-criteria
+Spinning, depth simulation and auto-advancing content are specifically called out as motion that may need to stop/change under Reduce Motion.
+
+RECOMMENDATION — NOT FINAL IMPLEMENTATION
+Use a semantic DOM rotor, not Canvas/WebGL, for the first prototype:
+- one compact rotor container with CSS `perspective` and `transform-style: preserve-3d`;
+- three text faces positioned around one virtual axis/typeball shell;
+- animate only the rotor transform with WAAPI/CSS transform; faces remain actual HTML text;
+- visible item has normal contrast and reading orientation; hidden/back faces are visually hidden and removed from the accessibility tree/interaction until active;
+- one stable accessible group label such as “StudyGrid loop” and explicit next/previous controls if the user can manipulate it;
+- if labels themselves are navigation choices, each active face becomes a real link/button with destination-specific accessible name. Do not make off-axis hidden faces keyboard-focusable.
+
+AUTOPLAY CONTRACT
+Best default for StudyGrid: a short bounded demonstration, not an endless spinner. On initial welcome it may rotate through the three messages once, then settle. If General/owner chooses continuous auto-rotation, it must include pause/stop and pause on focus/interaction; do not rely on users reading moving text indefinitely. User interaction should immediately take priority over autoplay.
+
+MOTION STARTING VALUES — OWNER-QA INFERENCE
+- each 120° face change: ~220–320 ms, restrained ease-in/out; enough to perceive physical continuity but not enough to become a spectacle;
+- dwell long enough to read the active label; do not rotate while the pointer/keyboard focus is inside the control;
+- no wobble, spring or multi-axis orbit; one coherent axis like a typeball/Selectric head;
+- perspective moderate; text should not become tiny/skewed for long portions of the cycle.
+Exact timing is art-direction/QA, not a platform standard.
+
+REDUCED-MOTION ALTERNATIVE
+When `prefers-reduced-motion: reduce`:
+- no 3D spin/depth traversal;
+- show the three-step meaning statically (for example active text with quiet next/previous, or three compact labels) OR cross-fade one-at-a-time without spatial movement;
+- retain the same information/destinations and keyboard semantics.
+
+WHY CSS DOM + WAAPI WINS THIS PARTICULAR ELEMENT
+- preserves crisp live text and native semantics;
+- minimal GPU/asset/pipeline burden;
+- easy to stop, scrub, skip and reduce;
+- naturally responsive to text/font changes;
+- progressive fallback is simple.
+Use Canvas/WebGL only if later owner direction requires real surface lighting/mesh deformation that cannot be represented convincingly with CSS 3D. That would need a separate semantic control layer and additional iPad/Safari performance QA.
+
+WELCOME SELECTOR REJECT CONDITIONS
+- endless rotation with no pause/control;
+- reduced-motion still spins/scales in depth;
+- hidden faces remain focusable/announced as though visible;
+- text becomes unreadable during most of the dwell cycle;
+- Canvas/WebGL adopted only for novelty while duplicating DOM semantics;
+- rotor blocks Sign in or delays first-use path;
+- motion implies the three messages are buttons when they are not, or vice versa.
+
+CROSS-WORKSTREAM RELEASE ACCEPTANCE IMPLICATIONS
+1. VERIFIED DATA
+- Any “verified” Humber row carries exact official provenance and source period.
+- PFP 207 fixture shows no invented program term/session/CRN.
+- verified/manual states are visually/semantically distinct.
+
+2. FIRST RUN
+- code shortcut + guided school-context path both work;
+- institution/program/program-term asked once and reused;
+- tour is optional, reversible/toggleable and replayable;
+- novice prose decays by demonstrated milestones, not arbitrary login count.
+
+3. FEEDBACK
+- task not interrupted by unsolicited form;
+- contextual/global feedback works on iPad and keyboard;
+- diagnostic/screenshot inclusion is transparent and optional.
+
+4. MOTION/NAV
+- all route motion can be skipped without breaking state/history;
+- reduced-motion removes significant spatial motion;
+- View Transition unsupported path remains fully functional;
+- SPA focus lands in correct destination context;
+- contextual chrome never removes sole escape/location affordance.
+
+5. MICROINTERACTIONS
+- Reviewed/Resolved states give clear visual+text confirmation;
+- Undo restores exact item/state with no duplication;
+- no haptic/audio dependency.
+
+6. CURSOR/AUTOFILL
+- no broad I-beam/crosshair leakage;
+- marking mode teardown verified on all exit paths;
+- physical iPad/Safari test with saved contact/profile is required before declaring personal-name autofill fixed.
+
+7. BUTTON/ROUTE SEMANTICS
+- Stuart can enumerate every actionable control against the route/button rubric;
+- direct-entry, Back/Forward and role-context cases pass;
+- no hardcoded learner destination leaks into instructor path.
+
+8. FULL LOOP
+- compact 3D rotor stays semantic DOM, keyboard-readable and reduced-motion-safe in first design test;
+- it does not delay Sign in / onboarding time-to-value.
+
+SOURCE QUALITY / UNCERTAINTY
+- Humber/Sheridan/George Brown/Seneca findings above are from institution-controlled sources. Official does not automatically mean current live section state; publication/academic period remains part of every receipt.
+- This pass did not find a documented public Humber catalogue API; that is not proof of nonexistence.
+- PFP 207’s detailed public outline source is 2023–24; current official P4P material supports course identity continuity but not exact current term/session placement.
+- Onboarding/feedback recommendations combine primary platform guidance with NN/g usability evidence; milestone thresholds still require StudyGrid usability validation.
+- Carbon motion durations are a high-quality design-system convention, not a universal human-factors law. Treat recommended timing as prototype starting values.
+- Safari/iPad autocomplete and pointer behaviour cannot be certified from documentation alone. Physical-device QA is a hard gate.
+- The typeball selector recommendation is an implementation-architecture inference from web platform/accessibility constraints; visual quality still requires owner QA.
+
+RETURN DISPOSITION
+DONE — all routed Workstreams A–H are research-covered enough for General CF-0040 to reconcile into the still-open owner-review batch and, only after Nathan closes that batch, into the eventual single Bob implementation + Stuart acceptance package. Research produced one bounded source-cited Humber/PFP 207 fixture, onboarding/time-to-value contract, feedback flow, route-transition/contextual-chrome contract, three completion microinteraction recipes, Safari/iPad cursor/autofill mitigations + QA matrix, route/button audit rubric and typeball-selector constraints/recommendation.
+
+No StudyGrid product/runtime mutation performed. No Bob/Stuart/Kevin wake. Owner review remains open until Nathan explicitly closes it.
