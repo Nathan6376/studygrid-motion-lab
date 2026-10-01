@@ -1,0 +1,35 @@
+STUDYGRID RESEARCH CF-0044 — ENGINE V1 PRIMITIVES ADVERSARIAL REVIEW — CHECKPOINT
+Timestamp: 2026-10-01 19:16 ET
+Lifecycle: CHECKPOINT
+
+Completed:
+- exact General CF-0047 adversarial route consumed;
+- full 481-line First Principles Draft 0 consumed at exact commit e980050f5d73dc0ef189288f11dc9ff1d1337689;
+- prior deep-research dossier and effective owner direction reused;
+- adversarial evidence pass completed across assessment validity/ECD, CASE/QTI standards, knowledge-component granularity, knowledge-tracing limitations, retention/memory models, cold start, causal recommendation limits, accessibility/accommodations, privacy, and instructor-learning-analytics evidence.
+
+Material defects already established:
+1. `Learning Target` is too overloaded to be the single atomic backend primitive. Draft 1 should separate curriculum outcome/competency, operational learning claim, optional model-level knowledge component, and content/source assertions. CASE can inform interoperability but does not prove one universal atom.
+2. `Evidence Event` mixes observation with interpretation. Draft 1 should separate immutable Observation/Attempt from Evidence Interpretation/Link. Evidence quality/weight is model- and claim-dependent, not an intrinsic property of the raw event.
+3. Learner State currently mixes estimates, evidence, misconception hypotheses and policy outputs. Instructional state (`needs teaching`, `ready to advance`) is partly a decision/policy conclusion and must not be stored as learner truth.
+4. LEARNED vs RETAINED should not be durable categorical engine states. Exposure is an event; current competence is a claim under conditions; retention is better represented as time-indexed uncertainty/evidence or a memory estimate where the construct supports one.
+5. Evidence Contract is directionally strong but insufficiently rigorous. Replace arbitrary weights with an ECD-like Claim → Evidence → Task/Scoring structure, with validity/fairness/accommodation assumptions and scorer/rubric provenance. QTI should provide interaction/scoring interoperability; CASE should provide competency/outcome identifiers/relations where useful.
+6. Activity taxonomy conflates pedagogy, assessment purpose and navigation/control. Split pedagogic interventions from assessment/measurement actions and route/session control.
+7. Practice / diagnostic / graded / review is not a safe single `mode` enum. Split assessment purpose, stakes/consequences, assistance policy and accommodations; these dimensions can combine in ways the current enum cannot represent.
+8. `Context` is a catch-all and should be decomposed into versioned curriculum context, obligation/deadline facts, learner-declared goals, policy permissions, session constraints and history.
+9. Next-action ranking cannot legitimately contain an unvalidated scalar `expected learning value`; prediction/relevance is not causal benefit. V1 should separate hard eligibility/integrity constraints from interpretable heuristic priority and treat ranking weights as falsifiable hypotheses.
+10. Conflicting evidence must remain separately auditable; do not average heterogeneous evidence channels. Derived estimates should preserve model uncertainty/conflict and channel/construct distinctions.
+11. Reason trace should support decision reconstruction rather than promising byte-identical replay of nondeterministic AI/model behavior; preserve IDs/versions/seeds/artifact hashes/references without duplicating privacy-heavy raw data.
+12. `Insufficient evidence` needs reason codes: unmeasured, sparse, contradictory, invalid/low-quality, out-of-distribution/model-unsupported. Each needs a different safe fallback.
+13. Learner agency, AI boundary and data minimization are important invariants/policies, but not all belong as learner-engine entity primitives.
+14. Instructor analytics must avoid causal language such as `prerequisite bottleneck` unless the evidence supports it; small cohorts amplify re-identification and overinterpretation risks. Professor-facing metrics remain discovery hypotheses.
+15. Data minimization must split learning evidence from short-retention operational telemetry and restricted accommodation/accessibility declarations; `do not infer disability` is compatible with explicitly storing necessary accommodations under tighter controls.
+
+Next:
+- complete per-section KEEP / REVISE / REMOVE / SPLIT adjudication for Draft 0 sections 0–17;
+- answer all seven special questions;
+- define hard invariants vs tunable empirical hypotheses;
+- propose the smallest coherent beta-honest Engine v1 and explicit Draft 1 change list;
+- refresh routing once before terminal return and persist/read back DONE directly to General CF-0047.
+
+Boundaries preserved: no implementation, no product/backend/Supabase/deploy mutation, no architecture approval, no peer-worker wake.
