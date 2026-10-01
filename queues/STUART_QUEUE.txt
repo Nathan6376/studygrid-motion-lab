@@ -1,16 +1,16 @@
 STUDYGRID — STUART WORK QUEUE
-Coordinator: ChatGPT General CF-0040
-Updated: 2026-10-01 10:00 ET
+Coordinator: ChatGPT General CF-0047
+Updated: 2026-10-01 10:32 ET
 Queue owner: General
-Worker: Stuart / successor CF-0046 once owner activates fresh chat
+Worker: Stuart / CF-0046
 
 PULL RULE
 When Nathan tells Stuart to check routing, refresh lifecycle and this queue, then execute the first eligible unclaimed item. Prefer exact-candidate independent acceptance; never pre-approve or mutate product. Return durable technical results directly to General.
 
 ROLLOVER
-Fresh successor reserved:
+Fresh successor active:
 - CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
-- owner-visible title: SG Stuart - October 1
+- owner-visible title: SG Stuart — October 1
 - rollover: routes/STUART_ROLLOVER_20261001_TO_CF0046.txt @ 727b252d6d85a55eeeeb402988a6bbbf73eccf8c
 The owner-visible predecessor `SG Stuart — September 28` became too long. Its material terminal continuity is durable; no old-chat checkpoint is required.
 
@@ -25,12 +25,21 @@ Exact tested candidate:
 Two defects blocked PASS: welcome rotor accessibility/interaction; How-this-works layout shift.
 
 Q-S13R2 — QB17R NARROW REPAIR RE-ACCEPTANCE
-Eligibility: BLOCKED until Bob returns a new exact repaired candidate and General publishes/releases its exact pointer.
-Expected scope when released:
+Eligibility: AVAILABLE NOW.
+Authoritative release:
+- routes/GENERAL_20261001_1031_STUART_QS13R2_QB17R2_REACCEPTANCE.txt @ 5be1818d845fa01206a460ea522a4eb216aa3a73
+Exact candidate:
+- StudyGrid-CF0042-QB17R2-stuart-defect-repair.html
+- Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46
+- 1,063,586 bytes
+- SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab
+- APP_VERSION v7.20-cf0042-qb17r2-stuart-defect-repair
+Acceptance scope:
 1. Re-test rotor stable semantic content + non-live/decorative moving layer + focus/interaction autoplay pause/cancel + reduced-motion behaviour.
-2. Re-test How-this-works spatial stability, focus/dismissal, and no unrelated Next movement.
+2. Re-test How-this-works spatial stability, focus/dismissal, and no unrelated navigation movement.
 3. Run bounded regressions needed to ensure the repair did not break previously passing QB17R owner-review scope.
 4. Do not mutate the candidate.
+Return PASS only if exact identity matches and no unresolved defect remains in this bounded scope; otherwise return PARTIAL/BLOCKED with exact evidence and smallest repair.
 
 Q-S13 — SLICE 3 INDEPENDENT ACCEPTANCE
 Eligibility: BLOCKED until Q-S13R2 passes, Nathan reviews the corrected HTML, and General releases Slice 3.
@@ -39,4 +48,4 @@ Q-S14 — REAL BACKEND STAGING ACCEPTANCE
 Eligibility: BLOCKED until separately released staging exists.
 
 STOP CONDITION
-If no exact repaired candidate has been released by General, remain idle. Do not invent work and do not restart the already-terminal Q-S13R.
+Finish Q-S13R2 and return durably to General CF-0047. Do not advance Slice 3 or mutate the candidate.
