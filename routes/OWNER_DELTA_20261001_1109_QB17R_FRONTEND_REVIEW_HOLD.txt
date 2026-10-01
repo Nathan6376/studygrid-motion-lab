@@ -10,7 +10,7 @@ EXACT CURRENT CANDIDATE
 - v7.20-cf0042-qb17r2-stuart-defect-repair
 
 OWNER DELTA
-1. The landing/welcome 1 → 2 → 3 sequence must keep cycling continuously rather than stopping after a finite run. Preserve reduced-motion behaviour and do not create an accessibility regression; exact interaction-pause/restart choreography is for the next frontend implementation/QA pass.
+1. The landing/welcome 1 → 2 → 3 sequence must keep cycling continuously rather than stopping after a finite run. Preserve reduced-motion behaviour and do not create an accessibility regression; exact interaction-pause/restart choreography is for the next frontend implementation/QA pass. This current owner direction supersedes the earlier Research recommendation against endless autoplay for this specific landing sequence; reduced-motion and user-control protections still apply.
 2. Nathan said, verbatim from speech input, “The laryngoplasty audit test. I like that in the middle.” The exact intended noun phrase is uncertain and MUST NOT be silently normalized or guessed. Treat this as a preserved owner note to resolve against the visual during Nathan’s next frontend review.
 3. Nathan wants the “StudyGrid loop” positioned underneath that middle element / middle visual in the next frontend composition pass.
 4. Do not mutate the current accepted repair candidate from this note alone. Nathan is temporarily deferring frontend review while General advances backend work.
