@@ -1,0 +1,68 @@
+STUDYGRID — STUART Q-S13R QB17R INDEPENDENT ACCEPTANCE REPORT
+Timestamp: 2026-10-01 09:52 ET
+Worker: Stuart
+Disposition: PARTIAL — AMEND-HOLD
+
+EXACT TESTED CANDIDATE
+StudyGrid-CF0042-QB17R-owner-feedback-refinement.html
+Drive 1gx9I7W1DOtQn9VRnjf5iAFiqQinYx_Bt
+1061386 bytes
+SHA-256 edf870009c769e8624de34d6356eb2c7bd3457e49f471b316b098820bb45fd2e
+APP_VERSION / SG_R6_BUILD v7.19-cf0042-qb17r-owner-feedback-refinement
+Verified parent QB15 SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf
+
+INDEPENDENT EVIDENCE
+- Exact provider bytes independently rehashed and size/version matched General release.
+- Parent QB15 independently rehashed.
+- QB15→QB17R diff is bounded to 5 hunks: new Q-B17R style block, APP_VERSION, SG_R6_BUILD, new Q-B17R implementation block, component-registry build update.
+- 4 executable inline JS blocks passed node --check.
+- Component registry parses and has 237/237 unique component IDs.
+- Static acceptance: 32/34 checks PASS. The two failures are both rotor accessibility/autoplay defects below.
+- Chromium 144 in-memory runtime on the exact verified HTML bytes covered changed flows. After correcting selector/test artefacts, all tested product flows passed except the two defect families below.
+- Positive runtime coverage included: instructor role-shell separation; Professor Home Edit-only organisation controls; exact Resolve→Undo identity/revision/focus behaviour; instructor class/tab URL updates; first-run code vs school split; Term 1/2/3/4 + Other; local source-backed PFP 207 picker + manual fallback; student tour Explain/Highlight/Ask Teacher; answer→optional confidence→feedback order; Skip confidence as missing; Dusk button; instructor demo truth; adaptive phrase-only update; Help/Privacy/Legal; teardown state; no horizontal overflow at 320/390/820/1024 on tested welcome/Professor surfaces; reduced-motion rotor/ghost behaviour; no unexpected external HTTP(S) resources in this runtime.
+- Bob verification artifact was independently rehashed to 9305797ea7d67b3cfe9739b8d66206312b91a498cc811d62ca4c011b7298aaa6 and is corroboration only. It reports 112/112 PASS but did not catch the defects below.
+
+DEFECT 1 — WELCOME SELECTRIC ROTOR ACCESSIBILITY / AUTOPLAY CONTRACT
+Observed on exact QB17R:
+1. Moving rotor container is `aria-live="polite"` while the three faces auto-advance.
+2. There is no stable semantic list/summary outside the changing visual faces; inactive faces are hidden/aria-hidden.
+3. Autoplay continues while the manual `Show next step` control has focus. Independent runtime: visible face changed 0→1 while that control remained focused.
+
+Why this fails release contract:
+General’s adopted Gemini constraints require stable semantic text independent of decorative moving text; autoplay must not create repeated screen-reader announcements; and autoplay, if retained, pauses on interaction/focus.
+
+Smallest repair:
+- Make the moving visual rotor non-live (`aria-live="off"` or decorative/AT-hidden as appropriate).
+- Add one stable semantic summary/list containing all three loop meanings outside the animated visual layer.
+- Keep a clear manual advance control if desired.
+- Store the autoplay timer and cancel/pause it on focus/interaction; do not resume automatically while the user remains engaged.
+- Preserve the current reduced-motion static path.
+
+DEFECT 2 — `HOW THIS WORKS` REVEAL MOVES UNRELATED TOUR NAVIGATION
+Observed on exact QB17R student Learn tour step:
+- `#tourHowWorks` is a normal-flow `position:relative` block toggled from hidden.
+- Opening Explain reveals this block and moves the unrelated `Next` control substantially downward.
+- Independent reduced-motion document-coordinate measurement: Next top changed from approximately 669.2 px to 896.5 px, a shift of about 227.2 px.
+
+Why this fails release contract:
+The activated contract explicitly requires `How this works` to be anchored/contained and not make unrelated text jump.
+
+Smallest repair:
+- Convert the disclosure to an anchored overlay/popover or a pre-reserved fixed disclosure region so revealing it does not change the position of tour navigation or unrelated content.
+- Preserve keyboard focus visibility and make the disclosure reachable/dismissible without obscuring the selected text/tools.
+
+CORRECTED FALSE-POSITIVE RETESTS
+- Professor Edit controls: PASS; 6 Edit controls present and organisation controls appear only after Edit.
+- Resolve/Undo: PASS; revision r1→r2 on resolve and r2→r3 on undo; Undo receives focus, then exact restored item receives focus.
+- Adaptive response marker: PASS; changed phrase receives `qb17r-adaptive-changed`.
+- How-this-works shift is NOT a scroll artefact; retest used document coordinates with reduced motion and still measured ~227 px layout movement.
+- Earlier synthetic-document pointer event errors were caused by the test stimulus targeting `document`, not by the product. Retest with an actual element target produced no runtime window errors.
+
+HOLDS / NOT CLAIMED
+- Physical iPad/Safari, native AutoFill, Pencil/touch selection, physical pointer-capture feel, CSS3D Safari text crispness/compositing.
+- VoiceOver and physical hardware-keyboard acceptance.
+- Hosted-origin/reload/localStorage persistence acceptance. Current Chromium evidence loaded exact bytes through Page.setDocumentContent because local file/localhost navigation is administratively blocked; this is not hosted-origin evidence.
+- Backend/auth/Supabase/live AI/OCR/real roster/provider/deploy/canonical promotion.
+
+TERMINAL RECOMMENDATION
+PARTIAL / AMEND-HOLD. Do not release QB17R to Nathan as independently accepted yet. Repair the two bounded owner-release defects above, publish a new exact candidate identity, then rerun only the changed rotor/help seams plus a compact unchanged-regression confirmation. Do not advance Slice 3.
