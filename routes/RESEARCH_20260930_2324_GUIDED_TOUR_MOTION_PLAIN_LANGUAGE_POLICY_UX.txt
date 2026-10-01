@@ -1,14 +1,26 @@
 STUDYGRID — RESEARCH TASK / GUIDED TUTORIAL + MOTION + PLAIN LANGUAGE + POLICY UX
 Timestamp: 2026-09-30 23:24 ET
+Updated with screenshot evidence: 2026-09-30 23:39 ET
 From: General CF-0040
 To: StudyGrid Research CF-0044
 Priority: Q-R2 / AVAILABLE NOW
 Parent owner delta: routes/OWNER_REVIEW_DELTA_20260930_2324_INSTRUCTOR_TOUR_ALIVE_UI_MOTION.txt @ 87cef27fe6a52fae030467c41d6a569ac7805a1a
+Screenshot evidence appendix: routes/OWNER_REVIEW_SCREENSHOT_EVIDENCE_20260930_2335.txt @ d2e1e5e5bb21b3f20003dffc0b5312850f13f4bc
 Prior research baseline: routes/RESEARCH_CF0044_20260930_2257_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH_DONE.txt @ c9c5f93171ca286cda6968c2b730d56d63fd4344
 Status: RESEARCH/EVIDENCE ONLY — NO STUDYGRID MUTATION
 
 MISSION
 Do a bounded current-evidence pass only on the NEW questions introduced by Nathan's 23:24 ET review. Reuse Q-R1 evidence; do not redo catalogue/onboarding/feedback research already completed unless needed to support a new conclusion.
+
+MANDATORY SCREENSHOT CLARIFICATIONS
+Consume the screenshot evidence appendix as visual grounding for the exact problems being researched. It confirms:
+- instructor question-cluster demo has a large pale decorative arc/circle crossing the card and competing with content;
+- student practice card is visibly compressed, with answer state + confidence controls competing inside a narrow panel;
+- Next button shows a stacked/double-edge or halo-like treatment along its upper edge;
+- instructor tour heading has a bright blue rectangular outline around noninteractive hero copy that reads like accidental browser/debug chrome rather than deliberate StudyGrid UI;
+- student support step already has a stable example-question / example-response two-card relationship suitable for adaptive-response demonstration;
+- student selection/tool step currently uses visibly underlined/selected target text plus Explain / Highlight / Ask teacher controls, confirming the exact surface that should become normal-reading text + ghost-selection guidance + miniature real tool behavior.
+Treat these as concrete evidence targets, not abstract examples.
 
 WORKSTREAM 1 — GUIDED PRODUCT TOURS / COACHMARKS / LEARNING-BY-DOING
 Research current evidence and high-quality platform/design guidance for:
@@ -20,6 +32,7 @@ Research current evidence and high-quality platform/design guidance for:
 - avoiding tooltip fatigue and blocking core use;
 - preserving keyboard/screen-reader/focus semantics during guided tours;
 - how to transition from fake/demo instructor workspace to real sign-up/setup without user confusion.
+Use the screenshot-confirmed instructor-tour surfaces as concrete StudyGrid examples when forming recommendations.
 Return concrete StudyGrid recommendations and reject conditions.
 
 WORKSTREAM 2 — INSTRUCTOR DEMO INFORMATION ARCHITECTURE EVIDENCE
@@ -45,6 +58,7 @@ Research accessibility/usability implications of animated ghost cursors/pointers
 - avoiding pointer confusion or interference with real input;
 - screen-reader/reduced-motion fallback;
 - how to demonstrate text selection/highlighting without turning content into fake links.
+The current screenshot shows the exact anti-pattern to move away from: target text already looks underlined/selected before the learner acts.
 Do not design final motion; Gemini handles creative direction. Research should define evidence-backed constraints.
 
 WORKSTREAM 5 — PLAIN LANGUAGE / STUDENT MICROCOPY
@@ -53,7 +67,7 @@ Research current plain-language/readability guidance suitable for student-facing
 - avoiding jargon while preserving accuracy;
 - how to explain confidence (`Guessing`, `Fairly sure`, `Very sure`, `Skip`) and correct-vs-user-answer state clearly;
 - button/action labels and error/help copy.
-Return a compact StudyGrid microcopy contract and examples for the exact current tour concepts.
+Use the screenshot-confirmed cramped `What is 25% of 80?` practice card as the concrete example. Return a compact StudyGrid microcopy contract and examples for the exact current tour concepts.
 
 WORKSTREAM 6 — DUSK THEME DEMO / FLICKER SAFETY
 Research current accessibility standards/guidance for theme-change animation, flashing/flicker, photosensitive seizure risk and reduced motion.
@@ -72,12 +86,21 @@ IMPORTANT: do not declare StudyGrid legally complete or state jurisdiction-speci
 - legal questions that remain counsel/owner dependencies.
 Return an information-architecture recommendation only.
 
+WORKSTREAM 8 — FOCUS / OUTLINE / DECORATIVE-CHROME EVIDENCE
+Because the screenshots materially sharpen this issue, add a bounded evidence pass on:
+- accessible focus-indicator requirements and current platform guidance;
+- how to distinguish keyboard focus from selected/active/tutorial-target states;
+- avoiding accidental focus/selection/debug-looking outlines on noninteractive headings;
+- preserving visible focus without browser-default styling visually colliding with branded UI;
+- when decorative arcs/circles/lines harm readability or target comprehension in guided tours.
+Do NOT prescribe final art direction; return constraints and reject conditions for Gemini/General/Stuart.
+
 OUTPUT
 Return one consolidated terminal package to General CF-0040 with:
 1. Executive recommendations.
 2. Evidence/source register with dates where relevant.
-3. Decision matrix: guided tour / contextual help / ghost demo / plain-language / Dusk-safety / policy placement.
-4. StudyGrid-specific acceptance/reject conditions.
+3. Decision matrix: guided tour / contextual help / ghost demo / plain-language / Dusk-safety / policy placement / focus-state semantics.
+4. StudyGrid-specific acceptance/reject conditions tied where possible to the screenshot-confirmed failure surfaces.
 5. Any items that remain physical-device/user-test/legal holds.
 
 BOUNDARIES
