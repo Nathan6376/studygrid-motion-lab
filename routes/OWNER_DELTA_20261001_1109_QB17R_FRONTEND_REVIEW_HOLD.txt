@@ -1,0 +1,22 @@
+STUDYGRID — OWNER FRONTEND DELTA — HOLD FOR NEXT FRONTEND PASS
+From: Nathan / captured by General CF-0047
+Timestamp: 2026-10-01 11:09 ET
+Status: DURABLE OWNER FEEDBACK / DO NOT IMPLEMENT YET
+
+EXACT CURRENT CANDIDATE
+- StudyGrid-CF0042-QB17R2-stuart-defect-repair.html
+- Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46
+- SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab
+- v7.20-cf0042-qb17r2-stuart-defect-repair
+
+OWNER DELTA
+1. The landing/welcome 1 → 2 → 3 sequence must keep cycling continuously rather than stopping after a finite run. Preserve reduced-motion behaviour and do not create an accessibility regression; exact interaction-pause/restart choreography is for the next frontend implementation/QA pass.
+2. Nathan said, verbatim from speech input, “The laryngoplasty audit test. I like that in the middle.” The exact intended noun phrase is uncertain and MUST NOT be silently normalized or guessed. Treat this as a preserved owner note to resolve against the visual during Nathan’s next frontend review.
+3. Nathan wants the “StudyGrid loop” positioned underneath that middle element / middle visual in the next frontend composition pass.
+4. Do not mutate the current accepted repair candidate from this note alone. Nathan is temporarily deferring frontend review while General advances backend work.
+
+CURRENT SOURCE CHECK
+The exact candidate currently labels the section “The StudyGrid loop” and contains three visible states: Bring in the class → Learn and practise → Return with a reason. Its current non-reduced-motion timer is finite and stops after the present short run or on engagement, so item 1 is a real requested behaviour change, not merely copy clarification.
+
+NEXT FRONTEND GATE
+When Nathan returns to frontend review, General should reconcile this delta with the exact visual he is referring to, then release the smallest bounded Bob implementation task and independent Stuart acceptance. Slice 3 remains held until Nathan explicitly resumes the frontend gate.
