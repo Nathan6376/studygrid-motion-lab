@@ -1,0 +1,174 @@
+STUDYGRID — RELAY ARCHITECTURE ADJUDICATION / ADD CLASS + ONBOARDING
+Recorded: 2026-09-30 21:29 ET
+From: Relay Architecture CF-0041
+To: ChatGPT General CF-0040
+Source consumed exactly: routes/OWNER_FEEDBACK_20260930_2123_ADD_CLASS_ONBOARDING_REDESIGN.txt @ commit b93ed198f5130f28df7274102d6eace9a5328cb2
+Source blob SHA: c9f89ef7bcba8f824fe139664edb85560ff65d9c
+Disposition: ADJUDICATED FOR GENERAL / DESIGN-ARCHITECTURE ONLY / NO STUDYGRID IMPLEMENTATION PERFORMED
+
+SOURCE-BOUND BASIS
+This adjudication is grounded in the owner-feedback route above. Where the source gives a product requirement, this packet treats it as controlling. Where the source asks an architecture question, the decisions below are Architecture's resolution of that question. No outside institutional catalogue facts are asserted here.
+
+1. INFORMATION ARCHITECTURE — ADOPT WITH BOUNDARY CLARIFICATION
+A. FIRST-RUN / SCHOOL CONTEXT SETUP owns persistent user-level academic context:
+1) Institution — searchable curated selection; explicit "My school isn't listed" manual fallback.
+2) Program / credential — institution-scoped selection; manual fallback only when unavailable.
+3) Current PROGRAM TERM — Term 1 / Term 2 / Term 3 / Term 4 / Other.
+4) Join-code branch — ask whether an instructor supplied a class/join code. If yes, code-first enrolment is the primary path and bypasses manual class creation/course selection where the code resolves successfully. If no, continue to course selection.
+The school/program/current-program-term context is persisted at profile/school-context level and editable later from Settings/Profile. It is not re-requested on every Add Class flow.
+
+B. ADD CLASS AFTER SETUP owns class enrolment/creation only:
+- Primary surface: searchable course picker scoped by the persisted institution + program context.
+- Search accepts course title or code and resolves one canonical course identity.
+- Current program-term-relevant courses are ranked/shown first; an explicit All Courses/search-beyond-term path remains available.
+- Program prefix is contextual/implicit when already known. UI may show "207" while canonical storage remains the verified full official code such as "PFP 207" only when that official identity has actually been verified.
+- Manual Add remains a secondary explicit fallback, visually and semantically distinct from verified catalogue selection.
+- Add Class must not repeat institution/program/program-term fields unless the user intentionally invokes a context override/change.
+- Course-name fields must use course/search semantics and be tested against the owner-relevant Safari/iPad browser class; autocomplete markup alone is not accepted as proof that personal-name autofill is fixed.
+
+C. SETTINGS / PROFILE owns changing persistent school context. Changing institution/program/current program term is a context change, not an ordinary per-class edit.
+
+2. PROGRAM TERM VS ACADEMIC SESSION — KEEP THEM ORTHOGONAL
+Architecture decision: PROGRAM TERM and ACADEMIC SESSION are different dimensions and must never share one field or label.
+
+PROGRAM TERM
+- Meaning: progression position inside the program.
+- Canonical values for the current owner requirement: TERM_1 | TERM_2 | TERM_3 | TERM_4 | OTHER.
+- If OTHER is selected, a separate manual label/value may be stored.
+- This is the control that replaces the current free-text "Fall 2026 / Winter 2027 / Summer 2027" Term field.
+
+ACADEMIC SESSION
+- Meaning: calendar/session occurrence used when needed for offerings, scheduling or historical placement (for example a Fall/Winter/Summer-labelled session if the institution uses one).
+- Store separately as academic_session_id plus display metadata supplied by a verified source or explicit manual context.
+- Do not expose it as the primary "Term" selector in the redesigned onboarding.
+- The local prototype may omit the academic-session selector from the main path until a real use case/source requires it; it must not fake session data by stuffing seasons/years into program_term.
+
+3. DATA MODEL — ACCEPTED MINIMUM SEPARATION
+Persistent school/profile context:
+- institution_id — canonical StudyGrid identity for the selected institution; display name is separate.
+- program_id — canonical StudyGrid identity for the selected program/credential, scoped to institution.
+- program_prefix — contextual program/course prefix where verified (for example PFP); not the user's primary typed course-code field.
+- program_term — TERM_1 | TERM_2 | TERM_3 | TERM_4 | OTHER.
+- program_term_other_label — nullable; only for OTHER.
+- academic_session_id — nullable/separate; never aliases program_term.
+
+Verified catalogue read model:
+- catalogue_course_id — canonical StudyGrid course metadata identity.
+- institution_id.
+- program_id / applicable_program_ids.
+- canonical_course_code — full official code exactly as verified from the official source.
+- display_course_number — presentation convenience only, derived/contextual when safe; never replaces canonical_course_code as identity.
+- course_title.
+- program_term applicability metadata where the official source supports it; absence must remain unknown rather than fabricated.
+- source_url / source reference.
+- source/snapshot version identity.
+- last_verified_at.
+- verification/provenance status sufficient to distinguish verified official data from manual/local fallback.
+
+Class/enrolment identity:
+- class_section_id — StudyGrid class/section instance identity; separate from catalogue_course_id.
+- join_code — instructor/class-issued enrolment identity that resolves to a class_section_id; it is not a course-catalogue ID and must not be used as one.
+- A manually added class/course is marked manual/unverified and must not masquerade as verified catalogue metadata.
+
+4. OFFICIAL-CATALOGUE SOURCE MODEL — APPROVED ARCHITECTURE, RESEARCH GATE REQUIRED
+- Official institutional websites/catalogues and supported official endpoints are the only allowed sources for verified institution/program/course metadata under this owner requirement.
+- No institutional catalogue entry may be presented as verified merely because it is plausible, present in a local prototype, or inferred from the owner's examples.
+- Research must first map which current official sources/endpoints actually exist, their fields/stability, and a viable refresh/update strategy. This packet does not claim any specific institution source availability because the consumed route does not verify it.
+- Runtime Add Class must read from a local/backend catalogue snapshot/read model; do not place live web scraping in the critical click path if avoidable.
+- Every verified snapshot requires provenance/version/last-verified evidence and graceful unavailable/ambiguous fallback.
+- Later backend ingestion may normalize official sources into canonical IDs, but the UI contract must not depend on one specific scraping implementation.
+
+5. LOCAL DEMO VS BACKEND — HARD BOUNDARY
+LOCAL DEMO MAY IMPLEMENT NOW, after General routes Bob:
+- onboarding/profile-context UI and local state shell;
+- Term 1–4 / Other selector;
+- join-code decision branch and local interaction shell;
+- contextual Add Class picker UI, search/filter mechanics, All Courses path, manual fallback, context override affordance;
+- course-code display behavior with implicit prefix;
+- Safari/iPad-focused field semantics/autofill mitigation and accessibility/touch behavior;
+- a catalogue adapter/interface that can consume a static fixture.
+
+LOCAL DEMO MUST NOT:
+- claim live official catalogue coverage;
+- perform live institutional scraping/network ingestion;
+- add backend/auth/Supabase persistence or sync;
+- fabricate Humber/other institutional course rows and label them verified;
+- collapse join-code identity into catalogue-course identity.
+
+STATIC FIXTURE RULE
+- Bob may wire the UI against a static fixture shell immediately.
+- Real institution/program/course rows shown as "verified" require a Research-produced, source-cited verified fixture first.
+- Until that fixture exists, use an empty/no-verified-data state or clearly non-institutional demo mechanics; do not invent real catalogue content.
+
+BACKEND LATER OWNS:
+- user/profile school-context persistence and sync;
+- official-source ingestion/refresh/versioning/provenance storage;
+- canonical institution/program/course persistence;
+- academic-session/offering persistence where required;
+- class_section_id persistence and join_code resolution/enrolment;
+- authentication/authorization/network/provider concerns.
+No backend implementation is authorized by this adjudication.
+
+6. EXACT WORKER SPLIT — NO DUPLICATE LANES
+GENERAL / CF-0040
+- Sole StudyGrid coordinator and integration/owner-review surface.
+- Owns sequencing, baseline acceptance and reconciliation with the active owner-feedback refinement.
+
+RESEARCH
+- First-class official-source lane.
+- Deliver: institution/program/course official-source map, exact official URLs/endpoints where available, source limitations, update/refresh strategy, provenance requirements, and at least one source-cited verified fixture suitable for Bob's local read-model adapter if available.
+- Must explicitly mark unknown/unavailable fields instead of filling gaps.
+
+BOB
+- Owns the visible local prototype only.
+- Implement the accepted IA/UI shell and local fixture adapter against the existing accepted StudyGrid baseline after General routes it.
+- May proceed on structure/interactions before Research finishes, but may not insert purportedly verified institutional catalogue rows until Research supplies verified fixture evidence.
+- Must preserve the already-liked Professor Home direction and compose with current owner-feedback refinements rather than fork a competing page/build.
+
+STUART
+- Owns acceptance/adversarial QA, not primary implementation.
+- Acceptance matrix must include: onboarding context persistence in local demo state; Term 1–4/Other behavior; program_term vs academic_session non-conflation; code-first branch; catalogue/manual distinction; no fabricated verified data; canonical-vs-display course code; context not repeated per class; iPad/Safari autofill behavior; touch/keyboard accessibility; no network/backend/auth/Supabase leakage; join_code distinct from catalogue identity.
+- Final catalogue-content acceptance must consume Research provenance/fixture evidence.
+
+KEVIN
+- No independent Add Class/onboarding implementation lane from this adjudication. Keep Kevin on already-assigned non-overlapping work unless General explicitly reassigns a bounded independent subtask. This prevents duplicate/rework lanes while the same owner-feedback refinement is active.
+
+BACKEND LANE — LATER
+- Begins only after General has an accepted visible/product contract and Research has verified the official-source model enough to specify persistence/ingestion safely.
+- Owns persistence/sync/ingestion/join-code backend semantics described above.
+
+7. EXECUTION ORDER / DEPENDENCIES
+P0: General consumes this adjudication and keeps the current accepted StudyGrid baseline intact.
+P1 parallel:
+- Research performs official-source map + verified fixture work.
+- Bob implements onboarding/Add Class shell, local context state, picker mechanics and manual fallback WITHOUT verified institutional rows unless supplied by Research.
+- Stuart prepares the acceptance matrix/scaffold only; final content checks wait for Research/Bob outputs.
+P2: Research verified fixture is bound into Bob's local catalogue adapter without changing the IA contract.
+P3: Stuart runs acceptance against the exact integrated local build + source evidence.
+P4: General performs owner review/adjudication and only then considers the later backend lane.
+
+8. UX DETAILS FROM OWNER PACKET THAT REMAIN REQUIRED
+- Feedback hover/focus geometry should fit the compact control while retaining accessibility. This is a visible refinement, not part of the catalogue data model.
+- Institution/program/current program term are setup context, not repeated Add Class fields.
+- Term selector is compact/native-feeling and touch-friendly.
+- Picker first, manual typing second.
+- Course title/code search resolves linked identity values.
+- Program prefix may be implicit in display but canonical code remains full where officially verified.
+- Manual fallback and accessibility/keyboard navigation remain mandatory.
+
+9. REJECT CONDITIONS
+Reject any implementation/proposal that:
+- labels Fall/Winter/Summer as program_term or stores both dimensions in one term field;
+- re-asks institution/program/program term for each class by default;
+- treats display_course_number as canonical identity;
+- treats join_code as a catalogue course ID;
+- shows fabricated/uncited institutional metadata as verified;
+- depends on live scrape success in the Add Class click path;
+- starts backend/auth/Supabase/network work in the local-demo slice;
+- creates a second competing Bob/Kevin implementation lane for the same redesign;
+- claims personal-name autofill is fixed without owner-relevant Safari/iPad-class verification;
+- removes manual fallback or accessibility to simplify the picker.
+
+10. DISPOSITION TO GENERAL
+ADOPT the owner-proposed flow with the model/boundary decisions above.
+General may now route the visible local shell to Bob, official-source verification to Research, and acceptance prep to Stuart in parallel. Keep backend work held. No StudyGrid implementation was performed by Relay Architecture.
