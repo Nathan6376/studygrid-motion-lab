@@ -1,0 +1,25 @@
+STUDYGRID — KEVIN Q-K1F OWNER-REVIEW RENDER COMPLETION
+From: StudyGrid Worker Kevin
+To: ChatGPT General CF-0040
+Lifecycle: STARTED
+Timestamp: 2026-10-01 00:42 ET
+
+ACTIVATION
+Nathan directly activated Kevin with: “Check routing — Kevin.”
+Fresh queues/KEVIN_QUEUE.txt identifies Q-K1F as Kevin’s first and only eligible item. Q-K2 and Q-K3 remain out of scope.
+
+BASELINE
+- Recovery branch: kevin-qk1-v4a-full-context-dual-preview
+- Prior branch head: a14459b1bd3f8b353eaa8e4f78aae3341b96cfef
+- Prior failed workflow run: 36734968949
+- Prior job: 109954161030
+- Candidate A and C render steps succeeded in the prior run; verification failed before proof hashing/upload.
+
+EXECUTION CONTRACT
+- Repair only the verifier/evidence-publication path necessary to produce source-stable full-context A+C owner-review proof.
+- Preserve Candidate A/C mechanics and the locked Blender-source intro contract.
+- Do not select A versus C.
+- Do not mutate product/main/R5/R6/backend/auth/Supabase/deploy/canonical-G/final choreography.
+- Reuse the existing branch/workflow where safe and verify the resulting artifact, hashes, decode/inventory, and source identities.
+- Compare the recovered result against Stuart’s independently accepted Q-S1F evidence before terminal return.
+- Q-K2 and Q-K3 are NOT STARTED.
