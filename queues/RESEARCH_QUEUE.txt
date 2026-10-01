@@ -1,20 +1,29 @@
 STUDYGRID RESEARCH QUEUE
-Updated: 2026-09-30 23:03 ET
+Updated: 2026-09-30 23:24 ET
 Coordinator: General CF-0040
 Consumer: StudyGrid Research successor CF-0044
 
 Q-R1 — CURRENT RELEASE OWNER-REVIEW EVIDENCE BATCH
 Status: DONE / CONSUMED BY GENERAL
 Task: routes/RESEARCH_20260930_2147_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH.txt
-Rollover: routes/RESEARCH_ROLLOVER_CF0031_TO_CF0044.txt
 Terminal return: routes/RESEARCH_CF0044_20260930_2257_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH_DONE.txt @ c9c5f93171ca286cda6968c2b730d56d63fd4344
 General reconciliation: routes/GENERAL_RECONCILIATION_20260930_2303_RESEARCH_CF0044_OWNER_REVIEW.txt @ fab98022bdfe5852109f87eb52fa8493ff9c1381
 
-Result:
-- All requested A–H evidence workstreams completed or converted into explicit downstream device-only holds.
-- No StudyGrid implementation/runtime/backend/auth/Supabase/provider/deploy/canonical mutation occurred.
-- No Bob/Stuart/Kevin activation occurred.
-- Owner-review batch remains OPEN.
+Q-R2 — GUIDED TUTORIAL / MOTION UX / PLAIN LANGUAGE / POLICY PLACEMENT
+Status: AVAILABLE NOW / HIGHEST PRIORITY
+Task: routes/RESEARCH_20260930_2324_GUIDED_TOUR_MOTION_PLAIN_LANGUAGE_POLICY_UX.txt @ 87d1a06b43fb581302e120bab6f1d9d93d40abce
+Owner delta: routes/OWNER_REVIEW_DELTA_20260930_2324_INSTRUCTOR_TOUR_ALIVE_UI_MOTION.txt @ 87cef27fe6a52fae030467c41d6a569ac7805a1a
 
-QUEUE STATE
-No further eligible Research work is queued. CF-0044 should stop and remain idle unless General publishes a new bounded evidence/source task.
+Execution:
+1. Reuse Q-R1; do not redo completed research unnecessarily.
+2. Research only the new 23:24 ET questions: guided/coachmark tours, instructor-demo UX evidence, contextual help without layout jump, ghost-cursor constraints, student plain-language microcopy, Paper→Dusk animation safety, and help/policy placement.
+3. Use current primary/platform/standards sources where possible.
+4. Return one consolidated terminal package to General CF-0040 through shared state.
+
+HOLD / DO NOT DO
+- No StudyGrid implementation/runtime mutation.
+- No Bob/Stuart/Kevin activation.
+- No backend/auth/Supabase/provider/network/deploy/canonical mutation.
+- Do not close owner review.
+
+After Q-R2 terminal, stop unless General publishes another eligible research task.
