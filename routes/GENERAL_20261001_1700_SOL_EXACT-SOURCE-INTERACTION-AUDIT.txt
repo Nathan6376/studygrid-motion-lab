@@ -1,0 +1,59 @@
+STUDYGRID — GENERAL → SOL — EXACT SOURCE / INTERACTION / ROUTE AUDIT
+From: ChatGPT General / CF-0047
+To: SG Sol / CF-0043
+Status: AVAILABLE — OWNER ACTIVATION REQUIRED
+Mode: SOURCE AUDIT / REPRODUCTION ONLY — NO PRODUCT MUTATION
+
+READ FIRST
+1. routes/OWNER_REVIEW_DELTA_20261001_1657_PRODUCT-FLOW-STUDY-MODE.txt @ 9e44452c4687b03fe62a1bc6faee387cc2713c6d
+2. Exact current candidate: StudyGrid-CF0042-QB17R2-stuart-defect-repair.html | Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46 | SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab | v7.20-cf0042-qb17r2-stuart-defect-repair
+3. Current Base + Active Corrections + Sol queue/lifecycle.
+
+PURPOSE
+Give General a precise map of what the current accepted HTML actually does so the design team solves the real system rather than Nathan’s speech transcript alone. Reproduce/locate every owner-observed issue where possible. Do not edit the candidate.
+
+AUDIT SCOPE
+A. ROUTES / HIERARCHY
+- Public welcome, sign-in/new-user preview, Your Classes, first-class setup, selected course, learner Study/Learn/Test/Support, instructor Home/Overview/Students/Study Sets/etc., profile/settings, feedback.
+- Map each visible nav control to exact route/state/handler and classify global, local, parent/up, sibling, cross-role/cross-mode, command, or dead/placeholder.
+- Identify every path where Back can escape signed-in context into onboarding/public surfaces.
+- Identify duplicate navigation/chrome and where layout shells remount/reflow.
+
+B. OWNER-REPORTED REPRODUCTION
+Locate and, when environment permits, reproduce with static/headless tests:
+- feedback square/count/highlight treatment;
+- Professor Home label;
+- full-surface gloss behaviour;
+- class-code green square/focus treatment;
+- Your Classes emptiness/back route;
+- Learn/Test/Support layout jump/moving controls;
+- Quick/Focus/Deep session controls and their actual handlers/state/purpose encoded in source;
+- Mark as reviewed effects;
+- Study Set Approve and next target movement + final-item no-op;
+- Draft/Ready/Published/Held/All state wiring;
+- practice question confidence treatment;
+- multi-select question that cannot multi-select;
+- answer-leak wording where question text contains the case/name clue;
+- seeds collection flow, failure path and whether collection is manual or automatic;
+- session-end actions and route directionality;
+- welcome 1→2→3 timer/animation loop current behaviour.
+
+C. STATE / STABILITY
+- Inventory elements whose geometry/position changes across repeated actions, including button target relocation.
+- Identify scroll reset/preservation and focus restoration on major/same-surface transitions.
+- Identify where current shell persists vs rebuilds.
+- Find current use of history/hash routing and any View Transition/WAAPI/CSS animation machinery already present.
+
+D. COPY / TERMINOLOGY
+- Find exact strings: “Your class, easy to learn” or predecessor wording; “One common path from class material to useful practice”; “Professor Home”; Quick/Focus/Deep; “Your Classes”; “Mark as reviewed”; seed/error strings; confidence copy; Study Set status labels.
+- Do not correct legal/course terminology from speech. Report source strings exactly.
+
+DELIVERABLE
+1. Exact route/control/state inventory.
+2. Owner-observation reproduction table: CONFIRMED IN SOURCE / RUNTIME-REPRODUCED / NOT REPRODUCED / AMBIGUOUS.
+3. Root causes at code/surface level only where mechanically evidenced; no invented self-diagnosis.
+4. Minimal source seams likely affected by later redesign.
+5. Explicit list of current behaviours that should be preserved because Nathan liked them.
+6. No code changes.
+
+Persist STARTED before work. Return terminal package directly to General CF-0047.
