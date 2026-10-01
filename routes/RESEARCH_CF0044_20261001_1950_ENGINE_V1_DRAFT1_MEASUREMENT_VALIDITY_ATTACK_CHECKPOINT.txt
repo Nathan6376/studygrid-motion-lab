@@ -1,0 +1,23 @@
+STUDYGRID RESEARCH CF-0044 — ENGINE V1 DRAFT 1 MEASUREMENT / VALIDITY ATTACK — CHECKPOINT
+Timestamp: 2026-10-01 19:50 ET
+Lifecycle: CHECKPOINT — TARGETED VALIDITY ATTACK IN PROGRESS
+
+Completed so far:
+- Exact General CF-0047 route consumed @ bddc418e52b67db83add47b1a2c99871ff5ad293.
+- Full Draft 1 consumed @ bc1a346cf6c6a95d081804e2d60d980533d16d61 / blob 6d0560091b587220609740970154e64541f4b7c4.
+- Prior Research Draft 0 adversarial review consumed @ 93dbc55c00579128a2b96cbb44c8094c5ff9b007.
+- Targeted external validity evidence refreshed: ETS Evidence-Centered Design; AERA/APA/NCME Testing Standards validity argument; ETS accommodation-validity ECD; 2023/2026 varied-item transfer studies; 2024/2025 constructed-response automated scoring studies; 2024/2025 multilingual/DIF evidence; 2024–2026 adaptive-policy/off-policy and adaptive-testing missingness/calibration evidence; 2024 ETS small-sample calibration research.
+
+Material findings established:
+1. Draft 1 materially fixes Draft 0's category-collapse problem, but the five-layer chain is still incomplete because observations are policy/task-generated rather than neutral. Draft 1 needs an explicit MEASUREMENT DESIGN / WARRANT layer before interpretation and an ACTION-OUTCOME / SELECTION-MECHANISM record around policy execution.
+2. Learning Claim needs explicit generalization boundary/conditions; task→claim mapping plus rationale is not itself a validity argument.
+3. Raw response, score/rubric output, and evidence interpretation must remain distinct. Constructed-response scores—human or AI—are scored interpretations with scorer uncertainty/provenance, not observation facts.
+4. Transfer cannot be inferred from task-family diversity; it requires novel/generalization evidence. Repeated identical/near-identical items are dependent observations and must not be counted as independent confirmation.
+5. Coached/scaffolded success is a different evidence channel from unaided performance. Accommodation and language conditions must be represented as validity context without becoming competence penalties or trait inferences.
+6. Retention should remain construct-specific and time-indexed; Engine v1 cannot scientifically fit learner-specific memory parameters from a ~20-student beta.
+7. Rule-based next-action policy can be beta-tested as transparent decision logic, but several priorities are only plausible hypotheses. `introduced` cannot be a universal gate because bounded pretesting/diagnostic use can be pedagogically valid; `diversity` is not universally beneficial; `urgency` is a curriculum priority signal, not learning-effect evidence.
+8. Adaptive selection makes later training data policy-dependent. Candidate set, selected action, behavior-policy version, support/feedback exposure, task-family exposure, source/mapping/scorer versions and—where randomized—selection propensity must be logged or later causal/off-policy claims become unsafe.
+9. A ~20-student + one-professor beta can test data/ontology coherence, mapping disagreements, scorer agreement, explanation comprehension, usability/trust, override behavior, item/accessibility failures and descriptive within-beta patterns. It cannot establish efficacy, calibrated mastery thresholds, fairness, stable psychometrics, causal policy superiority or institutional generalizability.
+10. Scientifically unsafe areas are being isolated for terminal return: universal mastery/sufficiency thresholds, inferred hard prerequisites, universal retention models, AI-scored learner updates without validated scoring, causal instructor labels, timing/accommodation/language penalties, learned policy/RL, naive model training from adaptive logs, and fairness/efficacy claims from the beta.
+
+Boundaries preserved: no implementation, no backend/frontend/Supabase/deploy mutation, no peer wake, no architecture approval.
