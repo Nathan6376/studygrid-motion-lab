@@ -1,0 +1,384 @@
+STUDYGRID ENGINE V1 — DRAFT 1 REGRESSION / FALSIFICATION REPORT
+Timestamp: 2026-10-01 19:47 ET
+Worker: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+Coordinator: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+Disposition: AMEND
+Scope: TESTABLE SPECIFICATION ONLY / NO IMPLEMENTATION / NO PRODUCTION-READINESS JUDGEMENT
+
+EXACT AUTHORITY CONSUMED
+- General gate: routes/GENERAL_20261001_1934_STUART_ENGINE_V1_DRAFT1_REGRESSION-FALSIFICATION-GATE.txt @ bc94ece786f5d43cfb867fd1750150c8c24f3777
+- Draft 1: design/STUDYGRID_ENGINE_V1_FIRST_PRINCIPLES_DRAFT_1.txt @ bc1a346cf6c6a95d081804e2d60d980533d16d61
+- Required Research adversarial baseline: routes/RESEARCH_CF0044_20261001_1917_ENGINE_V1_PRIMITIVES_ADVERSARIAL_REVIEW_DONE.txt @ 93dbc55c00579128a2b96cbb44c8094c5ff9b007
+- Pre-terminal currentness refresh: no newer Stuart Engine-v1 Draft-1 route/supersession found; Research measurement-validity attack is a parallel lane.
+
+EXECUTIVE VERDICT
+AMEND.
+
+Draft 1 survives the architectural red-team better than Draft 0. Its central separation — observation -> evidence interpretation -> learner estimate -> pedagogical need -> policy decision — is coherent, and several dangerous inferences are explicitly forbidden. However, Draft 1 is not yet a fully falsifiable/testable specification because several hard invariants stop at intent instead of defining the deterministic acceptance condition that an implementation or QA harness could evaluate.
+
+The failures are localized. They do not require replacing the architecture. The smallest repair is to add explicit validity/freshness/sufficiency/precedence/replay/UI-binding contracts around the existing primitives.
+
+======================================================================
+A. CONCRETE DRAFT-1 DEFECTS + SMALLEST REPAIRS
+======================================================================
+
+D1 — WRONG-BUT-CURRENT ITEM->CLAIM MAPPING CAN STILL AUTHORIZE FALSE LEARNER STATE
+Failure:
+Draft 1 requires an explicit versioned mapping and stores mapping rationale/validity flags, but the next-action hard constraints only require a current explicit mapping. A mapping can therefore be current, versioned and wrong. Repeated correct responses can still support the wrong claim until somebody notices.
+Smallest repair:
+Add mapping eligibility state: APPROVED_VALID / UNDER_REVIEW / INVALID / SUPERSEDED. Only APPROVED_VALID mappings may support strong learner claims or advancement. If a mapping is challenged, affected evidence interpretations/estimates become QUARANTINED/STALE until recomputed; raw attempts remain immutable.
+Acceptance test:
+Flag a previously current mapping as invalid. PASS only if the historical attempts remain unchanged, old interpretations no longer support the mapped claim, confidence does not increase from them, and the policy cannot ADVANCE on that claim from quarantined evidence.
+
+D2 — SOURCE/MODEL/POLICY VERSION CHANGES HAVE NO ATOMIC STALENESS BARRIER
+Failure:
+Draft 1 has a good source-revision cascade, but does not say what happens between the source change and completion of the recomputation. The policy can race against a stale learner estimate or stale mapping.
+Smallest repair:
+Every estimate/interpretation used by a material decision carries an evidence cutoff plus dependency versions. Any relevant source/assertion/mapping/scorer/model/policy change immediately marks affected derived records STALE before they can be reused. A material recommendation must fail closed to recompute/diagnose/abstain if a required dependency is stale.
+Acceptance test:
+Change an assertion version immediately before recommendation selection. PASS only if the old estimate cannot be consumed during the recomputation window.
+
+D3 — EVIDENCE SUFFICIENCY / COMPARABILITY IS AN OPEN QUESTION, SO SEVERAL HARD CLAIMS ARE NOT TESTABLE
+Failure:
+Draft 1 correctly distinguishes coached evidence, repeated items, conflicting channels and sparse evidence, but does not provide a claim-family sufficiency contract. “Distinguishable” is not enough to decide whether DEMONSTRATED or ADVANCE is permitted.
+Smallest repair:
+Require each learning claim/evidence contract to specify, in machine-testable terms:
+- admissible evidence channels;
+- whether unaided evidence is required;
+- minimum task-family diversity rule;
+- repeated-family devaluation/cap rule;
+- conflict-resolution/abstention rule;
+- sufficiency predicate for strong claims/ADVANCE.
+No universal numeric threshold is required. If a claim has no approved sufficiency predicate, strong state labels and ADVANCE must abstain.
+Acceptance test:
+A coached success, one correct item, or ten repeats of one item family cannot satisfy a claim whose contract requires unaided/diverse evidence.
+
+D4 — “HARD PREREQUISITE” CONFLATES CURRICULUM/POLICY ORDER WITH COGNITIVE DEPENDENCY
+Failure:
+Draft 1 distinguishes hard/soft/informational edges, but “hard/explicitly required” can mean an administrative course sequence while “prerequisite/readiness” can mean a cognitive learning hypothesis. Treating both as one edge type permits a policy requirement to masquerade as evidence that the learner cognitively cannot proceed.
+Smallest repair:
+Split at least:
+- POLICY_SEQUENCE_REQUIRED — explicit course/assessment availability rule; may block availability when authoritative;
+- LEARNING_PREREQUISITE_HYPOTHESIS — cognitive dependency hypothesis; may prioritize diagnosis/remediation but cannot hard-block merely because inferred.
+Both need provenance, version, approval and correction state.
+Acceptance test:
+A learner who can validly demonstrate downstream competence is not labelled cognitively unready merely because an administrative sequence edge exists.
+
+D5 — OVERRIDE IS CORRECTLY “NOT EVIDENCE,” BUT ITS POLICY EFFECT IS UNDEFINED
+Failure:
+Draft 1 says learner override must not alter mastery/motivation/engagement, while also promising escape from misguided/repetitive recommendations. Without a separate policy-context effect, the engine can recommend the same rejected action on the next turn forever.
+Smallest repair:
+Represent override as a bounded DECISION CONSTRAINT / RECOMMENDATION HISTORY event, separate from learner evidence. It may suppress/deprioritize the same recommendation for a defined scope/expiry when policy permits, but cannot alter learner estimates.
+Acceptance test:
+Override a review recommendation. PASS only if no learner-state field changes from the override alone and the policy can avoid immediate nagging/repetition according to a recorded bounded rule.
+
+D6 — PROTECTED-ASSESSMENT VS ACCOMMODATION PRECEDENCE IS UNDER-SPECIFIED
+Failure:
+Draft 1 correctly separates assistance policy from accessibility/accommodation policy, but does not define the intersection when the same capability could be either authorized access support or construct-changing coaching.
+Smallest repair:
+Gate each assistance capability through an explicit intersection:
+ALLOWED = assessment_policy permits capability OR an authorized accommodation explicitly permits it for this task/construct; if the accommodation changes the intended construct, the evidence contract must mark comparability/validity accordingly. Store capability/authorization, not diagnosis.
+Acceptance test:
+Read-aloud can be allowed for a math item when authorized but rejected/flagged as construct-changing for a reading-decoding item, without inferring disability or penalizing the learner.
+
+D7 — IMMUTABLE OBSERVATION + “SCORED RESULT/RUBRIC OUTPUT” CONFLICTS WITH RESCORING
+Failure:
+Draft 1 puts raw/scored result and rubric output in the immutable observation, while also requiring scorer/rubric versioning and reinterpretation. When a constructed-response scorer/rubric changes, either the immutable observation must be rewritten or current evidence must remain tied to obsolete scoring.
+Smallest repair:
+Split:
+- immutable RESPONSE/ATTEMPT OBSERVATION (task, raw response/artifact, support/access conditions, time/provenance);
+- append-only SCORING EVENT (rubric/scorer/version, score/output, time, status).
+Evidence interpretations reference a scoring-event version. Rescoring adds a new scoring event; it never rewrites the response or old score event.
+Acceptance test:
+Score one response under scorer v1 and v2. PASS only if both scoring records survive, old decisions replay with v1, and current estimates may explicitly use v2 without history rewrite.
+
+D8 — REPLAYABILITY LACKS AN EXACT DECISION-INPUT SNAPSHOT
+Failure:
+Draft 1 versions many objects and records candidates/exclusions, but exact replay can still diverge if candidate availability changes, a tie-break is nondeterministic, time/urgency changes, or the learner estimate was recomputed from a different observation set.
+Smallest repair:
+A material decision trace must preserve or content-address:
+- exact candidate action IDs/versions and eligibility snapshot;
+- exact evidence-interpretation IDs or immutable evidence cutoff/hash;
+- learner-estimate snapshot ID/hash;
+- relevant source/assertion/task/mapping/scorer/model/policy/config versions;
+- decision-relevant context facts and effective time;
+- tie-break rule plus random seed if nondeterministic;
+- selected action and exclusions/reasons;
+- generated artifact/model/hash if it materially affected the decision.
+Do not retain raw high-intrusion telemetry merely for replay if it was not an authorized decision input.
+Acceptance test:
+Replay a historical recommendation after content/source/model changes. PASS only if the original recommendation is reproducible from the historical capsule while a new current recommendation can differ without rewriting history.
+
+D9 — SMALL-CLASS INSTRUCTOR ANALYTICS LACK SUFFICIENCY + PRIVACY SUPPRESSION
+Failure:
+Draft 1 says instructor output separates observation/hypothesis/action, but “enough evidence across different learners/items/tasks” is not operationalized. In a class of 2–4 learners, a class-level “struggling” pattern can be statistically weak, misleading and effectively identifying.
+Smallest repair:
+Every instructor aggregate/hypothesis needs an approved sufficiency rule and privacy-release rule. If either fails, surface bounded raw observations or “insufficient class evidence,” not a class-level learner/problem label. Do not infer instructor quality.
+Acceptance test:
+Two of three learners miss one flawed item. PASS only if the system refuses a confident class-struggle claim and does not expose a re-identifying aggregate as if it were safe.
+
+D10 — UI LABELS ARE NOT NORMATIVELY BOUND TO BACKEND EVIDENCE STATES
+Failure:
+The backend semantics are conservative, but no hard UI binding prevents product copy from converting SPARSE/CONFLICTING evidence into “Learned,” a time-indexed memory estimate into categorical “Retained,” or a pedagogical hypothesis into “Struggling.” “Up Next” can also read as authoritative rather than a policy recommendation.
+Smallest repair:
+Add a UI_EVIDENCE_BINDING contract. At minimum:
+- “Learned” is prohibited unless explicitly defined by a claim-specific evidence contract; prefer bounded “Demonstrated … under … at …”.
+- categorical “Retained” is prohibited; show delayed-evidence/review-due language tied to the valid memory model.
+- “Struggling” is a hypothesis/action cue, never learner fact; show evidence + uncertainty/competing explanation.
+- “Up Next” is a policy recommendation with reason/override, not a truth state.
+- “Remediation” is an action type, not proof of a misconception.
+Acceptance test:
+Inject SPARSE, CONFLICTING, model-unsupported and stale states into the UI adapter. PASS only if no stronger label is emitted than the backend evidence authorizes.
+
+D11 — GENERAL “NO DEFENSIBLE ACTION” / ABSTENTION OUTPUT IS NOT EXPLICIT ENOUGH
+Failure:
+Draft 1 strongly prefers one primary next action and explicitly allows abstention for physical-evidence insufficiency, but there is no general policy-level no-recommendation state for stale, unmapped, invalid or wholly insufficient evidence. This can pressure the policy to choose something merely because the product contract expects one primary action.
+Smallest repair:
+Add POLICY_ABSTAIN / NEED_MORE_CONTEXT as a first-class policy output. It is valid when no candidate survives hard validity/policy constraints. The UI may turn that into one safe action such as “Check this first” or “Choose what changed,” but must not fabricate a pedagogical preference.
+Acceptance test:
+All mappings invalid + no valid diagnostic task available. PASS only if the policy abstains rather than selecting an unsupported TEACH/REVIEW/ADVANCE action.
+
+D12 — OFFLINE LEARNING REPORT PATH IS SEMANTICALLY UNDERDEFINED
+Failure:
+Draft 1 correctly refuses to infer offline learning unless learner/instructor supplies evidence, but does not define whether a learner’s “I studied this elsewhere” statement is evidence, context, or both. Treating it as mastery is unsafe; ignoring it defeats learner agency and can cause repetitive recommendations.
+Smallest repair:
+Create a purpose-limited external declaration path:
+- learner self-report defaults to context/recommendation constraint, not competence evidence;
+- validated instructor/assessor evidence may enter the external evidence path under a claim-specific contract;
+- optional quick check may convert unknown offline learning into StudyGrid-observed evidence.
+Acceptance test:
+Learner says “I already studied this elsewhere.” PASS only if the engine can reduce repetition/offer a check without directly increasing mastery/demonstrated state.
+
+======================================================================
+B. ADVERSARIAL REGRESSION / FALSIFICATION MATRIX
+======================================================================
+
+1. WRONG ITEM->CLAIM MAPPING
+Input facts: item I is current and mapped to C1, but content actually tests C2; learner answers I correctly several times.
+Allowed inference: immutable performance on I under recorded conditions.
+Must refuse: C1 demonstrated/learned once mapping validity is challenged or invalid.
+Allowed next actions: quarantine mapping; independent diagnostic for C1; mapping review; safe abstention.
+Required trace: item/version, mapping/version/status, validity flag, score event, interpretation IDs, exclusions.
+PASS: invalid mapping cannot support C1 or ADVANCE; history survives.
+
+2. CHANGED SOURCE VERSION
+Input facts: source assertion v1 supported answer X; v2 now supports Y; old learner attempts were correct under v1.
+Allowed inference: learner performed correctly under v1 at that time.
+Must refuse: current-v2 competence from v1 evidence unless an explicit cross-version interpretation permits it.
+Allowed next actions: recompute/invalidate derived state; reassess v2; explain source change.
+Required trace: old/new source/assertion versions, effective time, impact set, old/new interpretation IDs.
+PASS: stale derived state is barred immediately; old decisions remain replayable.
+
+3. COACHED SUCCESS
+Input facts: learner sees worked example/hint, then solves same-family item correctly.
+Allowed inference: supported/coached success on that item/family.
+Must refuse: unaided retrieval, transfer, durable retention.
+Allowed next actions: novel/delayed unaided retrieval; further guided practice.
+Required trace: support used, timing/order, family/variant, sufficiency rule.
+PASS: coached evidence cannot satisfy an unaided requirement.
+
+4. REPEATED-ITEM MEMORIZATION
+Input facts: learner succeeds on identical or near-identical variants repeatedly.
+Allowed inference: performance on that repeated family.
+Must refuse: transfer/general competence solely from repetition.
+Allowed next actions: novel family/representation; delayed retrieval; explain/review if needed.
+Required trace: task-family/variant lineage, repetition history, diversity rule.
+PASS: repetition alone cannot satisfy transfer/diversity sufficiency.
+
+5. CONFLICTING MODALITIES
+Input facts: strong recognition MCQs; weak novel constructed application.
+Allowed inference: channel-specific strength/weakness; CONFLICTING evidence.
+Must refuse: arbitrary average into mastery; strong “learned” label.
+Allowed next actions: targeted diagnostic on required channel; explain/practice; abstain from ADVANCE where contract requires application.
+Required trace: evidence channel, comparability, contract-required channels, conflict reason.
+PASS: confidence does not increase merely because total event count rises while conflict worsens.
+
+6. SPARSE EVIDENCE
+Input facts: one valid correct answer or a tiny mixed sample.
+Allowed inference: bounded observation + SPARSE uncertainty.
+Must refuse: durable competence/retention or prerequisite clearance unless claim contract explicitly permits it.
+Allowed next actions: collect evidence; diagnostic; safe neutral action.
+Required trace: claim sufficiency predicate and unmet clauses.
+PASS: no strong claim or ADVANCE without satisfied sufficiency.
+
+7. BAD PREREQUISITE EDGE
+Input facts: soft cognitive edge A->B is wrong, or course sequence requires A before B administratively while learner can perform B.
+Allowed inference: explicit policy order if authoritative; hypothesis only for cognitive dependency.
+Must refuse: causal “A weakness causes B weakness” from the edge alone; hard cognitive block from a soft edge.
+Allowed next actions: diagnose B; review relation; obey separate course availability policy if required.
+Required trace: edge type, authority, approval/version, evidence/rationale.
+PASS: policy sequence and cognitive hypothesis cannot be silently interchanged.
+
+8. STALE LEARNER ESTIMATE
+Input facts: estimate E was computed before a newer observation/source/mapping/scorer/policy change.
+Allowed inference: none from E for a current material decision if affected.
+Must refuse: current recommendation based on stale E.
+Allowed next actions: recompute; diagnose; POLICY_ABSTAIN.
+Required trace: evidence cutoff/hash, dependency versions, stale reason.
+PASS: stale estimate is rejected before candidate ranking.
+
+9. OFFLINE STUDY UNKNOWN TO SYSTEM
+Input facts: learner says they studied topic C externally; no validated external performance artifact exists.
+Allowed inference: learner-declared context; possible recommendation preference.
+Must refuse: mastery/demonstrated state solely from self-report.
+Allowed next actions: skip/deprioritize temporarily; quick check; learner-selected alternative.
+Required trace: declaration source, scope/expiry, whether it is context or evidence.
+PASS: repetition can change without competence estimate changing.
+
+10. LEARNER OVERRIDE
+Input facts: system recommends REVIEW; learner selects ADVANCE/other allowed action.
+Allowed inference: decision choice/recommendation history only.
+Must refuse: motivation, laziness, confidence, mastery, disengagement.
+Allowed next actions: honor allowed override; bounded suppression/deprioritization of repeated recommendation.
+Required trace: original recommendation, chosen alternative, policy constraints, override scope/expiry.
+PASS: estimate unchanged from override alone; policy does not immediately nag contrary to bounded rule.
+
+11. PROTECTED ASSESSMENT
+Input facts: graded/protected item; tutoring hint requested.
+Allowed inference: request occurred; assessment policy governs capability.
+Must refuse: unauthorized coaching.
+Allowed next actions: deny/disable tutoring; permitted accessibility capability; delayed post-submission feedback if policy allows.
+Required trace: assessment purpose/stakes, assistance policy, accommodation capability/authorization, exclusion reason.
+PASS: tutoring cannot bypass protected policy through UI or generic accessibility channel.
+
+12. ACCESSIBILITY / ACCOMMODATION
+Input facts: authorized support is needed; support may or may not alter the target construct.
+Allowed inference: performance under recorded authorized conditions.
+Must refuse: disability/health inference; automatic invalidation; automatic equivalence.
+Allowed next actions: accessible equivalent; mark evidence comparable/non-comparable per claim contract.
+Required trace: capability code, authorization, construct-validity rule; no diagnosis required.
+PASS: access works without sensitive-trait inference and validity semantics are explicit.
+
+13. CONSTRUCTED-RESPONSE SCORER CHANGE
+Input facts: identical raw response; scorer/rubric v1 says pass, v2 says fail.
+Allowed inference: both historical scoring outputs with their versions; current interpretation according to explicit active rule.
+Must refuse: rewriting raw attempt or silently replacing historical score in old decision trace.
+Allowed next actions: append new scoring event; recompute current interpretation/estimate.
+Required trace: response artifact ID, score-event IDs, scorer/rubric versions, active interpretation version.
+PASS: old decision replays with v1 and current decision can use v2.
+
+14. PHYSICAL / PROCEDURAL COMPETENCE
+Input facts: learner sequences a real-world procedure correctly on-screen but has no observed field performance.
+Allowed inference: screen-based sequencing/procedural-knowledge evidence only.
+Must refuse: real-world execution/field competence.
+Allowed next actions: external assessor evidence path; abstain/insufficient evidence; additional safe theory practice.
+Required trace: modality/evidence role and claim scope.
+PASS: screen evidence never silently becomes physical-performance competence. Draft 1 already states this clearly; retain it.
+
+15. SMALL-CLASS INSTRUCTOR ANALYTICS
+Input facts: 3 learners; 2 miss one item; one has different authorized support; item quality is uncertain.
+Allowed inference: exact bounded observations/counts.
+Must refuse: “class is struggling,” causal bottleneck, instructor-quality conclusion, or privacy-unsafe aggregate without sufficiency/privacy rule.
+Allowed next actions: inspect item/material; collect additional evidence; present uncertainty/competing explanations.
+Required trace: n, learner/item/task-family diversity, item-quality/validity status, privacy-release result, hypothesis uncertainty.
+PASS: class-level hypothesis is suppressed/qualified until both evidentiary and privacy release rules pass.
+
+======================================================================
+C. HARD-INVARIANT ACCEPTANCE REWRITE
+======================================================================
+
+Draft 1’s hard invariants should be executable as tests, not only principles:
+
+I1 Observation immutability: mapping/scorer/model changes create new records; the original observation ID/content never changes.
+I2 Provenance/version: every evidence-authorizing assertion/task/mapping resolves to an exact current or historical version.
+I3 AI canonicality: unapproved AI artifacts are excluded from canonical instruction/evidence candidate generation.
+I4 Mapping: evidence cannot support a claim unless mapping state is APPROVED_VALID for the relevant decision version.
+I5 Assessment/access: every assistance capability is admitted/rejected by explicit policy intersection; accommodation capability is not generic tutoring.
+I6 Override: an override event alone produces zero learner-estimate delta.
+I7 Sensitive inference: prohibited traits have no inference output path from ordinary behavior telemetry.
+I8 Telemetry optionality: disabling optional high-intrusion telemetry does not disable core learner-state/policy operation.
+I9 Decision trace: exact historical decision can be replayed from content-addressed inputs + deterministic tie-break state.
+I10 Version change: affected derived records become stale before reuse.
+I11 Insufficient/conflicting/invalid evidence: strong labels/ADVANCE require a satisfied claim sufficiency predicate; otherwise abstain/diagnose.
+I12 Exposure: exposure/completion-only observations cannot satisfy competence sufficiency.
+I13 Coaching: coached evidence cannot satisfy an unaided requirement unless the claim contract explicitly says it can.
+I14 Repetition: repeated same-family evidence cannot satisfy a diversity/transfer requirement.
+I15 Protected assessment: unauthorized tutoring capability is absent from the eligible action set.
+
+======================================================================
+D. REPLAYABILITY / DATA-MINIMIZATION ATTACK
+======================================================================
+
+Minimum replay capsule for a material recommendation:
+- decision ID + effective timestamp;
+- course/context ID/version;
+- candidate action IDs/versions + availability/eligibility snapshot;
+- exclusions + exact rule IDs/reasons;
+- selected action ID/version;
+- learner-estimate snapshot ID/hash;
+- exact evidence-interpretation IDs or immutable evidence cutoff/hash;
+- source/assertion/claim/KC/relation/task/mapping/scoring versions actually relied on;
+- learner-estimator and next-action policy/config versions;
+- decision-relevant learner-declared goal/constraint/override state only;
+- decision-relevant assessment/accessibility policy references;
+- deterministic tie-break rule and random seed when required;
+- generated artifact/model/config/hash when material;
+- degraded/outage flag when relevant.
+
+Do NOT retain raw hover/pointer/keystroke/research telemetry for replay unless it was an authorized decision input. If it was not an input, it is unnecessary private telemetry and must not be dragged into the decision record.
+
+Replay has two distinct jobs and both must work:
+1. HISTORICAL REPLAY — reconstruct what the system recommended then, using then-current versions.
+2. CURRENT RE-EVALUATION — recompute what the system would recommend now, using current versions.
+These must never be conflated.
+
+======================================================================
+E. UI / BACKEND SEAM FALSIFICATION
+======================================================================
+
+FAIL fixtures:
+- backend SPARSE -> UI “Learned”;
+- backend CONFLICTING -> UI “Mastered” or “Ready” without the claim contract allowing it;
+- time-indexed retention estimate -> persistent categorical “Retained”;
+- instructor hypothesis -> “This student is struggling” as fact;
+- policy-selected recommendation -> “You need to do this next” when override is allowed;
+- REMEDIATE action -> UI states a misconception as proven fact;
+- stale estimate -> UI emits current-progress label;
+- physical screen-only evidence -> UI says field/procedural competence.
+
+PASS condition:
+Every learner/instructor-facing evidence label must have an explicit backend predicate and maximum-claim-strength mapping. If the backend state is stale, sparse, conflicting, invalid, unsupported or hypothesis-only, the UI cannot emit a stronger semantic claim.
+
+======================================================================
+F. WHAT SURVIVED THE ATTACK
+======================================================================
+
+These Draft-1 choices should be retained:
+- observation / interpretation / estimate / need / policy separation;
+- source/assertion distinction and revision-cascade concept;
+- immutable-history intent;
+- explicit channel conflict rather than arbitrary averaging;
+- no categorical universal retained=true;
+- protected-assessment shield;
+- override not learner-trait/mastery evidence;
+- explicit prohibition on sensitive behavioral inference;
+- physical/procedural screen-proxy refusal;
+- optional telemetry is non-authoritative and core engine must work without it;
+- simple interpretable baseline before complex model challengers;
+- reason trace and one-primary-action product intent, once general abstention is added.
+
+======================================================================
+TERMINAL ADJUDICATION
+======================================================================
+
+AMEND — Draft 1 is a viable architecture candidate but not yet a fully testable specification.
+
+Not PASS because the 12 defects above allow two implementations to both claim Draft-1 compliance while behaving materially differently on validity, stale state, evidence sufficiency, accommodation precedence, rescoring, replay and UI semantics.
+
+Not BLOCKED because the faults are repairable as bounded normative contracts around the existing architecture. No ontology restart is required.
+
+Smallest Draft-2 repair package:
+1. mapping eligibility/quarantine state;
+2. derived-state freshness/stale barrier + evidence cutoff;
+3. per-claim evidence sufficiency/comparability contract;
+4. split policy sequencing vs cognitive prerequisite hypothesis;
+5. bounded override-as-policy-context semantics;
+6. assistance/accommodation precedence/intersection;
+7. append-only scoring-event split;
+8. exact replay capsule + deterministic tie-break state;
+9. instructor analytics sufficiency/privacy release rule;
+10. normative UI evidence-binding table;
+11. first-class policy abstention;
+12. external learner self-report vs validated external evidence semantics.
+
+No implementation or product/backend/auth/Supabase/deploy/canonical mutation performed.
