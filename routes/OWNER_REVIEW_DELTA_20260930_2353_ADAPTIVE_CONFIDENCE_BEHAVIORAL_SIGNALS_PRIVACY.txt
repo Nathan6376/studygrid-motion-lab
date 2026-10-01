@@ -1,0 +1,49 @@
+STUDYGRID — OWNER REVIEW DELTA / ADAPTIVE CONFIDENCE + BEHAVIORAL SIGNALS + PRIVACY
+Timestamp: 2026-09-30 23:53 ET
+From: Nathan direct owner feedback via General CF-0040
+Status: OWNER REQUIREMENTS — ADD TO OPEN REVIEW BATCH / NO IMPLEMENTATION RELEASE YET
+
+OWNER INTENT
+- Confidence is a real adaptive-learning signal and may affect future practice frequency/scheduling.
+- Confidence collection is optional at the user level: the learner may skip an individual confidence response and should be able to disable confidence collection if desired.
+- Confidence must be collected BEFORE correctness is revealed. Showing the correct answer first would contaminate the confidence signal and defeat the intended metacognitive value.
+- Practice flow target: learner answers -> optional confidence input -> correctness/correct answer/explanation reveal -> adaptive model update.
+- `Skip` is not a confidence level; it remains a separate action.
+
+ADAPTIVE SIGNAL VISION
+Nathan wants StudyGrid to use multiple low-level interaction signals to improve adaptive learning without sacrificing privacy/security. Candidate signals may include, subject to research/validation and privacy constraints:
+- response latency / time to commit an answer;
+- time-to-first-interaction;
+- hesitation or reversals before commit;
+- pointer/cursor path efficiency or directness;
+- corrections/undos/answer changes;
+- dwell time around answer choices or source material;
+- confidence selection;
+- correctness and repeated-error patterns;
+- prior exposure / spacing history.
+These signals are evidence inputs, not truth. Cursor/latency behavior can be affected by device, motor style, accessibility tools, fatigue, distraction, connection/input lag and other non-confidence causes. Do not infer certainty from any single signal.
+
+PRIVACY / SECURITY DIRECTION
+- Data minimization is a hard requirement.
+- Prefer deriving coarse features locally/on-device (for example elapsed time, path-efficiency score, reversal count) and discarding raw pointer trajectories whenever raw traces are not strictly necessary.
+- Do not record raw screen contents, keystrokes, arbitrary pointer trails or background activity merely because they are technically available.
+- No hidden surveillance semantics. The learner must be able to understand what categories of adaptive signals are used and why.
+- Confidence collection and optional behavioral/adaptive signals need clear settings/controls where appropriate; disabling an optional signal must not break core study functionality.
+- Keep raw/derived telemetry separated by purpose, minimize retention, protect access, and do not expose raw behavioral traces to instructors as punitive/diagnostic surveillance.
+- No sensitive-trait, disability, health, identity or biometric inference from interaction behavior.
+- Security/privacy design must be verified before any backend telemetry implementation; no backend/auth/Supabase mutation is authorized by this delta.
+
+MODEL / PRODUCT CONTRACT TO RESEARCH
+- Treat each behavioral feature as a weak, uncertainty-bearing signal.
+- Prefer per-user calibration/baselines over simplistic cross-user assumptions where evidence supports it.
+- Research whether pre-feedback confidence materially improves calibration/adaptive scheduling and how best to phrase it.
+- Research privacy-preserving interaction telemetry patterns, local feature extraction, retention/minimization, consent/transparency and accessibility/device confounds.
+- Research which interaction features have enough evidence to be worth collecting versus which are noisy/invasive and should be rejected.
+- Adaptive decisions should be explainable at a useful product level (e.g. `we're showing this again because you were unsure and missed it`) without exposing opaque surveillance-like scoring.
+
+CURRENT PROCESS
+- Research Q-R2 is already available/in-flight by owner report; do not interrupt or restart it.
+- Queue a bounded follow-on evidence task after Q-R2 rather than waking another worker or fragmenting the current round.
+- Bob/Stuart/Kevin remain held until the one reconciled implementation/QA round.
+- Astra remains held until Nathan explicitly releases it.
+- Sol remains the exact-source lane.
