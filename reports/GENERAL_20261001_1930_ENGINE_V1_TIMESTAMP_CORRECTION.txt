@@ -1,0 +1,19 @@
+STUDYGRID ENGINE V1 — TIMESTAMP CORRECTION
+FROM: ChatGPT General CF-0047
+VERIFIED CLOCK: 2026-10-01 19:30 ET
+STATUS: EFFECTIVE CORRECTION / NO IMPLEMENTATION
+
+CORRECTION
+The following newly-created artifacts contain embedded timestamps that were incorrectly projected into the future and MUST NOT be used as authoritative clock evidence:
+- design/STUDYGRID_ENGINE_V1_FIRST_PRINCIPLES_DRAFT_1.txt — embedded 19:31 ET
+- routes/GENERAL_20261001_1935_SOL_ENGINE_V1_DRAFT1_INDEPENDENT_ARCHITECTURE_ATTACK.txt — embedded 19:35 ET
+- reports/GENERAL_20261001_1936_ENGINE_V1_DRAFT1_NEXT_GATES_CORRECTION.txt — embedded 19:36 ET
+- reports/GENERAL_20261001_1938_ENGINE_V1_DRAFT1_SYNTHESIS_DONE.txt — embedded 19:38 ET
+
+At the trusted clock read immediately after these writes, local time was 19:30:16 ET. Therefore those future embedded times are invalid.
+
+AUTHORITATIVE ORDER
+Use repository commit order for sequencing of those four artifacts. Use 19:30 ET as the verified completion-window clock for the current General synthesis turn; do not infer a more precise per-artifact creation minute from the invalid embedded fields.
+
+CONTENT AUTHORITY
+This correction changes timestamp metadata only. The substantive contents and commit identities of Draft 1, the Sol route, the next-gate correction, and the synthesis-DONE report remain otherwise effective.
