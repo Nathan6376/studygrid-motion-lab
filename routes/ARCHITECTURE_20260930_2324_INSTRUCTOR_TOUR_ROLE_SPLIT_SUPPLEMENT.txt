@@ -1,0 +1,51 @@
+STUDYGRID — GENERAL → RELAY ARCHITECTURE SUPPLEMENT / INSTRUCTOR TOUR + ROLE SPLIT + DEMO IA
+Timestamp: 2026-09-30 23:24 ET
+From: General CF-0040
+To: Relay Architecture CF-0041 / successor
+Owner source: routes/OWNER_REVIEW_DELTA_20260930_2324_INSTRUCTOR_TOUR_ALIVE_UI_MOTION.txt @ 87cef27fe6a52fae030467c41d6a569ac7805a1a
+Prior Architecture adjudication: routes/ARCHITECTURE_ADJUDICATION_20260930_2129_ADD_CLASS_ONBOARDING.txt
+Status: PEER-COORDINATOR DESIGN/ARCHITECTURE ADJUDICATION REQUEST — NO IMPLEMENTATION
+
+NEEDS ARCHITECTURE DECISION
+1. Instructor vs learner shell boundary
+- Owner wants instructor mode to become a distinct instructor product shell; learner Study and learner-only navigation must not leak into instructor context.
+- One account may have learner/instructor/owner capabilities, but capability must not equal always-visible mixed chrome.
+- Define explicit role/context switching and what state/navigation should survive the switch.
+
+2. Instructor demo → real setup transition
+- Demo should use fake example classes and a short guided walkthrough with Skip.
+- After the walkthrough, user should move naturally to real signup/setup rather than being trapped in a sandbox.
+- Define durable separation between demo data/state and real authenticated data/state so no fake class can masquerade as a real class.
+
+3. `Find current class`
+- Owner wants a context-aware action that can use known institution/program/program-term/section/schedule context to surface the likely current class.
+- Define safe basis/explanation/correction contract. Never fabricate certainty.
+- Decide what counts as `current`: user-selected active class, time/calendar context, known schedule, or other verified signals; preserve manual correction.
+
+4. Help / policy IA
+- Owner wants Privacy Policy and other required policies/notices accessible from Help.
+- Define product IA placement only; do not claim legal completeness. Identify which items are product-surface decisions vs legal/content dependencies.
+
+5. Tutorial / progressive guidance state
+- Decide where tutorial state lives, what is remembered, how replay works, and how contextual guidance retires after demonstrated use without becoming permanent clutter.
+- Tutorial must never be required for core use.
+
+6. Motion as shared product primitive
+- Owner wants coherent animation language across Selectric/full-loop, instructor adaptive-response demo, contextual help reveals, ghost-cursor demonstrations and appearance showcase.
+- Architecture should define shared motion-system boundary and state semantics, while Gemini/Research define choreography/evidence. Do not adjudicate exact easing/art direction beyond system-level constraints.
+
+CURRENT PROCESS BOUNDARY
+- Owner review pass is still being reconciled. Do not wake Bob/Stuart/Kevin or mutate StudyGrid.
+- Astra remains HOLD by owner direction.
+- Sol CF-0043 is performing exact-source audit.
+- Research CF-0044 is being assigned a new bounded Q-R2 evidence pass.
+- General will reconcile Architecture + Research + Gemini + Sol before the batched implementation release.
+
+RETURN
+Publish a concise adjudication to General with:
+- role/shell decision;
+- demo-vs-real state boundary;
+- current-class inference contract;
+- tutorial/progressive-guidance state contract;
+- help/policy IA boundary;
+- worker-facing implementation constraints / reject conditions.
