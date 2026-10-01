@@ -1,0 +1,28 @@
+STUDYGRID — GENERAL CF-0047 — PRODUCT DESIGN PROCESS / OWNER REVIEW ORCHESTRATION — STARTED
+Time: 2026-10-01 16:57 ET
+Actor: ChatGPT General / CF-0047
+Status: STARTED
+
+OWNER INTENT
+Nathan explicitly rejected build-first UI development. For StudyGrid product/UI work the process must begin with purpose/problem definition, research, multiple design alternatives, comparison/selection, then bounded implementation and independent QA. He explicitly directed General to use four agents in parallel on distinct non-overlapping feeder tasks.
+
+CURRENT EXACT FRONTEND BASE
+StudyGrid-CF0042-QB17R2-stuart-defect-repair.html
+Drive: 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46
+SHA-256: 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab
+Version: v7.20-cf0042-qb17r2-stuart-defect-repair
+Independent Stuart acceptance: PASS on prior bounded repair. Owner review is still open; no new frontend mutation is authorised by this STARTED record.
+
+SUCCESS CONDITION FOR THIS ORCHESTRATION CYCLE
+1. Preserve the full new owner review tranche durably without silently normalising ambiguous speech.
+2. Research a durable StudyGrid product/UI development method that starts from purpose and evidence rather than implementation.
+3. Split four parallel, non-overlapping feeder tasks across current StudyGrid workers: Research, Astra, Sol, Bob. No one mutates the accepted HTML in this phase.
+4. Require each feeder to return evidence/options/constraints to General; General later synthesises and only then releases implementation after Nathan closes the current owner review batch.
+5. Preserve accessibility, source truth, current backend boundaries and the signed-in navigation/root problem as explicit requirements.
+
+BOUNDARIES
+- NO frontend HTML mutation in this phase.
+- NO Supabase/live backend mutation from this route.
+- NO canonical promotion/deploy.
+- Stuart remains independent acceptance downstream, not one of the four design-feeder agents.
+- Kevin 3D lane remains separate unless a later product decision explicitly depends on it.
