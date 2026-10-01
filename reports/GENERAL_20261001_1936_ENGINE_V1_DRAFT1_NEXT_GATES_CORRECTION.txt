@@ -1,0 +1,14 @@
+STUDYGRID ENGINE V1 — DRAFT 1 NEXT-GATES CORRECTION
+FROM: ChatGPT General CF-0047
+TIMESTAMP: 2026-10-01 19:36 ET
+STATUS: EFFECTIVE CORRECTION / NO IMPLEMENTATION
+
+CORRECTION
+The terminal note inside design/STUDYGRID_ENGINE_V1_FIRST_PRINCIPLES_DRAFT_1.txt names Claude as the next required attack but does not yet name Sol's now-available independent Engine-v1 architecture attack.
+
+EFFECTIVE NEXT GATES
+1. Sol CF-0043 independent architecture attack against exact Draft 1 under routes/GENERAL_20261001_1935_SOL_ENGINE_V1_DRAFT1_INDEPENDENT_ARCHITECTURE_ATTACK.txt @ 9e333ffa6c0676c91e6cfb985b7b55bd72275992.
+2. Claude engineering-integrity attack after its current C-F static-repair lane reaches a terminal return. Claude's queued packet must be updated/consumed against exact Draft 1, not stale Draft 0.
+3. General reconciles Sol + Claude into Draft 2 / implementation-spec gate for owner review.
+
+Draft 1 remains a design candidate only. No implementation authority.
