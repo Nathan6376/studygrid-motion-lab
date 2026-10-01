@@ -1,0 +1,60 @@
+STUDYGRID — SOL CF-0043 — Q-SOL3 PRODUCT-DESIGN SYNTHESIS / DIVERGENCE — DONE
+From: CHAT-CGPT-20260930-STUDYGRID-SOL-01 / CF-0043
+To: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+Lifecycle: DONE — DESIGN PACKAGE / IMPLEMENTATION HELD
+Transaction: TX-0271
+STARTED provider-read: 2026-10-01 17:58 ET, WORKER row65, EVT-0270 / WR-0259.
+CHECKPOINT provider-read: 2026-10-01 18:16 ET, report complete and exact provider bytes, EVT-0271 / WR-0260.
+
+EXACT TASK CONSUMED
+Base gate routes/GENERAL_20261001_1750_SOL_PRODUCT-DESIGN-SYNTHESIS-GATE.txt @ b2ba8a35d1b001db8bbd07c795cbf8ef845a35fe
+Required supplement routes/GENERAL_20261001_1757_SOL_QSOL3_SUPPLEMENT_ORDERED-INTERACTION_DOMAIN-AGNOSTIC-ASSESSMENT.txt @ c03aaf3eab25c3ab5e4fe2989f1434905934e9ff
+Supplement-aware queue @ c384c4aed34c290039b0856b2a74d7a153d1f82b
+All READ FIRST owner/reconciliation/Research/Bob/Sol inputs exact-read; identities/blobs in input-provenance.json. Current Base/Active Corrections and registry46/50 verified. Current owner instruction makes Sol primary; no Astra wait.
+
+DELIVERABLES
+reports/SOL_20261001_QSOL3_PRODUCT_DESIGN_GATE/DECISION_BRIEF.md — compact decision surface
+reports/SOL_20261001_QSOL3_PRODUCT_DESIGN_GATE/REPORT.md — full A-I + F2 supplement
+reports/SOL_20261001_QSOL3_PRODUCT_DESIGN_GATE/{README.md,coverage.json,input-provenance.json,integrity.json,package-manifest.json}
+
+Drive report:
+https://drive.google.com/file/d/14cCtuFsiC8gpbhjD1JcBqkV6WB682WP9/view
+SHA256 37e4daa285989ec28766d598e57bf44ea08de77da24cee3a9986609b0b247583 / 81737 bytes
+Drive full package:
+https://drive.google.com/file/d/1YUxkjMfbJUcBRMCb0gYibggNfdAFPLp4/view
+SHA256 96636b7e2cc8fdb697b27a2481ca312989dc50804ea8b9720b36618cd14dbf7c / 37136 bytes / 7 files
+Both provider raw downloads matched exact local bytes. Original accepted HTML excluded from package.
+
+RECOMMENDATION — DESIGN JUDGEMENT
+A. Context workspace: context/class/personal is organising object.
+B. Guided work queue: task/learning plan is organising object.
+C. Material library/canvas: source/topic is organising object.
+Each complete system covers14 requested dimensions. Compare11 criteria without false measured scores.
+Recommend A's Home→context→Study/Materials/Progress IA with B's bounded guided session inside Study and C's optional source drawer. One primary navigation model; no new cross-context algorithmic planner or mandatory split screen.
+Collapse Quick/Focused/Deep pending real distinct content plans. Explicit Study/Teach role with read-only learner-preview return. Persistent shell/context controls/action docks, separate Back/Up/Home/Sign out.
+Welcome: fixed-stage ordered shared-axis continuous idle1→2→3→1, explicit Pause/Play, engagement pause, static semantic list and static/manual reduced motion.
+Review: preserve15item workflow, explicit final summary, real revision-bound states, separate publication.
+Learner: orient/teach→retrieve→optional confidence→concise feedback/error review→completion/forward next; automatic eligible idempotent Seeds with truthful rollback/save scope.
+
+ASSESSMENT FOUNDATION
+Domain-neutral interaction/scoring/accessibility/evidence separated from course data.
+Types: single, unordered multi, sequence/order, matching, categorisation, constructed response.
+Ordered UX visibly numbered/inspectable, Move up/down and position chooser, optional drag; keyboard and click/tap acceptance separately required.
+Source/construct→type choice; AI proposes with source/rubric, qualified content reviewer approves domain truth; no profession branches or implemented generator.
+
+OPEN DEPENDENCIES / EXACT DEFECT COVERAGE
+SOL-F01…F06 and default-vs-review pool divergence all covered. Preserve owner native multi-select failure despite successful isolated callback; geometry/paint/native input remain browser/device-unverified.
+Current q4m membership model and source metadata inspected; cited primary PFP207 pages16/20/23 not recovered in attached material/bounded search. No ordered conversion or legal-content correction. Convert only after authoritative construct/source review, version attempts/reviews accordingly.
+Source spelling Macooh preserved; McCue/Canascape/middle-visual ambiguity remains.
+Owner selects main synthesis, taxonomy/role-navigation consolidation, welcome treatment/visual placement and bounded prototype scope through General. Recommendation is not implementation release.
+DG01…DG26 are draft future acceptance tasks, not PASS results.
+
+BOUNDARY / INTEGRITY
+Accepted candidate874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab /1063586bytes unchanged.
+Report-only branch; main/product/backend/auth/Supabase/network features/deploy/3D/canonical promotion untouched. No peer wake. Current gate instructs stop after package.
+Package coverage verifies A-I/F2,3x14 dimensions,26 future checklist entries; it is document coverage, not product acceptance.
+Premise lineage: USER-DIRECT activation, SHARED-PRIMARY candidate, INHERITED-FROM-ROUTE Research/Bob; same Sol source-audit lane/shared framing, not less-correlated independent QA.
+Private operational incidents: initial malformed Drive filter corrected (400 before any write); Library save succeeded but JS assumed nested result and raised TypeError before xattr helper. Reused actual successful returned identity and applied xattrs successfully; no duplicate save, lost file or design-output change. This is repaired transport/helper handling, not product defect/new rule.
+
+NEXT
+General CF-0047 consumes brief/report directly and owns selection/prototype/implementation release. Publication proves availability, not General adoption or peer wake. Sol stops.

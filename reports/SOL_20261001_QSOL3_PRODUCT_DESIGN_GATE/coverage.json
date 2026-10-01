@@ -1,0 +1,65 @@
+{
+  "document_sections": {
+    "A": true,
+    "B": true,
+    "C": true,
+    "D": true,
+    "E": true,
+    "F1": true,
+    "F2": true,
+    "G": true,
+    "H": true,
+    "I": true
+  },
+  "system_coverage_counts": {
+    "A": 14,
+    "B": 14,
+    "C": 14
+  },
+  "acceptance_ids": [
+    "DG01",
+    "DG02",
+    "DG03",
+    "DG04",
+    "DG05",
+    "DG06",
+    "DG07",
+    "DG08",
+    "DG09",
+    "DG10",
+    "DG11",
+    "DG12",
+    "DG13",
+    "DG14",
+    "DG15",
+    "DG16",
+    "DG17",
+    "DG18",
+    "DG19",
+    "DG20",
+    "DG21",
+    "DG22",
+    "DG23",
+    "DG24",
+    "DG25",
+    "DG26"
+  ],
+  "acceptance_status": "FUTURE REQUIREMENTS; NO PRODUCT PASS",
+  "comparison_criteria": 11,
+  "source_defects": [
+    "SOL-F01",
+    "SOL-F02",
+    "SOL-F03",
+    "SOL-F04",
+    "SOL-F05",
+    "SOL-F06"
+  ],
+  "supplement_types": [
+    "single_select",
+    "multi_select_unordered",
+    "sequence_order",
+    "matching",
+    "categorisation",
+    "constructed_response"
+  ]
+}

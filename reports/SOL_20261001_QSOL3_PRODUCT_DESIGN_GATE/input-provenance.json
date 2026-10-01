@@ -1,0 +1,81 @@
+{
+  "actor": "CHAT-CGPT-20260930-STUDYGRID-SOL-01 / CF-0043",
+  "consumer": "CHAT-CGPT-20261001-GENERAL-01 / CF-0047",
+  "transaction": "TX-0271",
+  "started": "2026-10-01 17:58 ET",
+  "repository": "Nathan6376/studygrid-motion-lab",
+  "inputs": [
+    {
+      "key": "owner1657",
+      "path": "routes/OWNER_REVIEW_DELTA_20261001_1657_PRODUCT-FLOW-STUDY-MODE.txt",
+      "ref": "9e44452c4687b03fe62a1bc6faee387cc2713c6d",
+      "blob": "87f8f141cf0bdf482a70c314b916689ddac99cf6"
+    },
+    {
+      "key": "owner1748",
+      "path": "routes/OWNER_REVIEW_DELTA_20261001_1748_SUCCESSOR-CORRECTION.txt",
+      "ref": "18c3f30159717dfe971fb0ae8c4cf63756ba0adb",
+      "blob": "9d5e9fb219cbbd58e623b9c8fa7da903d379ae61"
+    },
+    {
+      "key": "checkpoint",
+      "path": "routes/GENERAL_20261001_1749_PRODUCT-DESIGN-RECONCILIATION_CHECKPOINT.txt",
+      "ref": "3c51b11776d2268a3809aeb4ce2959230a1e0308",
+      "blob": "f74e7a228d0131bea62246ae96c744f5a189bee7"
+    },
+    {
+      "key": "research",
+      "path": "routes/RESEARCH_CF0044_20261001_1712_PRODUCT_FLOW_MOTION_STUDY_UX_DONE.txt",
+      "ref": "1b8d4e5bc401adeb3a97c6823e6c9455130de92b",
+      "blob": "096fc75c4de66b2a5305a6597fcbec3fe49dd8b1"
+    },
+    {
+      "key": "bob",
+      "path": "routes/BOB_20261001_1712_IMPLEMENTATION_FEASIBILITY_DONE.txt",
+      "ref": "bce1a09fc6517163d57a5dd403b2619b7d7bc5a4",
+      "blob": "e74869865e7dded6c2f6e9a29480eb4322615495"
+    },
+    {
+      "key": "audit",
+      "path": "reports/SOL_20261001_INTERACTION_SOURCE_AUDIT/REPORT.md",
+      "ref": "3b99d279360b61e67c27ee1cbfa632239083e8b3",
+      "blob": "d787bd9d7d7d707094658e9d717b8935005d3e92"
+    },
+    {
+      "key": "task",
+      "path": "routes/GENERAL_20261001_1750_SOL_PRODUCT-DESIGN-SYNTHESIS-GATE.txt",
+      "ref": "b2ba8a35d1b001db8bbd07c795cbf8ef845a35fe",
+      "blob": "d579f5774a4bc7e12a23817565fa8e82cc7c5d39"
+    },
+    {
+      "key": "supplement",
+      "path": "routes/GENERAL_20261001_1757_SOL_QSOL3_SUPPLEMENT_ORDERED-INTERACTION_DOMAIN-AGNOSTIC-ASSESSMENT.txt",
+      "ref": "c03aaf3eab25c3ab5e4fe2989f1434905934e9ff",
+      "blob": "eaebf7d78d1a487fae58f17f800cbdb01c401083"
+    },
+    {
+      "key": "owner-order",
+      "path": "routes/OWNER_REVIEW_DELTA_20261001_1756_ORDERED-INTERACTION_DOMAIN-AGNOSTIC-ASSESSMENT.txt",
+      "ref": "cfe1071cd15faab19fe4195b30201f51aae42afd",
+      "blob": "3dd362dfe83d9d3455090d9860ad53b3184d54da"
+    },
+    {
+      "key": "queue",
+      "path": "queues/SOL_QUEUE.txt",
+      "ref": "c384c4aed34c290039b0856b2a74d7a153d1f82b",
+      "blob": "02ee9ded2534d398c4d4f80fc70ff93018b4fd3d"
+    }
+  ],
+  "candidate": {
+    "drive": "1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46",
+    "sha256": "874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab",
+    "bytes": 1063586,
+    "version": "v7.20-cf0042-qb17r2-stuart-defect-repair"
+  },
+  "limitations": [
+    "no native browser/geometry/task usability testing in this gate",
+    "q4m primary course source not recovered; no conversion",
+    "recommendation is judgement, not implementation approval",
+    "same Sol lane/shared framing; no less-correlated independent QA"
+  ]
+}

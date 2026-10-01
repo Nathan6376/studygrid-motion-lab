@@ -1,0 +1,35 @@
+{
+  "files": [
+    {
+      "file": "DECISION_BRIEF.md",
+      "sha256": "a0bfb5a9b20a0680d3875b6122d8ded11d804eb34ce9d6781c08654572614ce4",
+      "bytes": 4460
+    },
+    {
+      "file": "README.md",
+      "sha256": "8962ed15fb092764c2458cdb0df92bc416563a3081f93c235c02a981dc409bb3",
+      "bytes": 1140
+    },
+    {
+      "file": "REPORT.md",
+      "sha256": "37e4daa285989ec28766d598e57bf44ea08de77da24cee3a9986609b0b247583",
+      "bytes": 81737
+    },
+    {
+      "file": "coverage.json",
+      "sha256": "6524a1cc8272b29c259f8b53efd4255f69bde4b6744c46322a36ea2728bf485b",
+      "bytes": 970
+    },
+    {
+      "file": "input-provenance.json",
+      "sha256": "7f639fd30738732a85dd82e649042f229172ffe9fc4201264c39261400e947a3",
+      "bytes": 3140
+    },
+    {
+      "file": "integrity.json",
+      "sha256": "cf0b8cded7ad8f4ddffb80f3311be8862e0ef081bb968b3098fad517fa20b772",
+      "bytes": 384
+    }
+  ],
+  "original_candidate_excluded": true
+}

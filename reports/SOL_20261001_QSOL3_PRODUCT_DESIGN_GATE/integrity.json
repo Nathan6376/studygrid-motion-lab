@@ -1,0 +1,8 @@
+{
+  "candidate_sha256": "874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab",
+  "candidate_bytes": 1063586,
+  "candidate_unchanged": true,
+  "report_sha256": "37e4daa285989ec28766d598e57bf44ea08de77da24cee3a9986609b0b247583",
+  "document_coverage_checks": "PASS: A-I/F2,3x14 coverage,26 future checks",
+  "scope": "DESIGN DOCUMENTS ONLY; NO IMPLEMENTATION/PRODUCT QA"
+}
