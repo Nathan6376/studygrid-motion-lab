@@ -1,0 +1,154 @@
+STUDYGRID — HELD COHERENT IMPLEMENTATION / QA RELEASE
+Prepared: 2026-10-01 00:02 ET
+Coordinator: General CF-0040
+Status: HOLD — PREPARED ONLY — DO NOT WAKE BOB/STUART/KEVIN
+Reason: Nathan has not yet explicitly closed/released the owner-review tranche; Research Q-R3 is also pending for adaptive telemetry/scheduling details.
+
+BASELINE
+Exact accepted source candidate:
+StudyGrid-CF0042-QB15-professor-home-scale.html
+SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf
+996820 bytes
+APP_VERSION v7.18-cf0042-qb15-professor-home-scale
+Do not patch a visually similar older build. Preserve exact baseline and final effective renderer chain.
+
+INPUTS
+- Full open owner-review batch through 2026-09-30 23:53 ET.
+- Screenshot evidence appendix.
+- Research Q-R1 + Q-R2 terminal evidence.
+- Gemini 3.1 Pro Selectric and instructor-tour/motion returns, subject to General amendments.
+- Sol Q-SOL1 frozen exact-source return @ 4bd3a16e95aa344c730b5b2c18aa9b3614ff2462.
+- General reconciliation routes/GENERAL_RECONCILIATION_20261001_0002_QR2_SOL_OWNER_REVIEW.txt @ 975db3d18c520f994c3e79e68a2cb42589862ada.
+
+TRACK A — BOB / INTEGRATED PRODUCT CANDIDATE
+One exact candidate from the accepted QB15 baseline. No piecemeal owner wakes.
+
+A1. GLOBAL SHELL / ROLE CONTEXT
+- Instructor mode becomes a distinct instructor shell. Remove learner Study / Your Classes / learner-only continuation chrome from instructor context.
+- Preserve Feedback/Help and accessibility affordances where appropriate.
+- Keep owner/admin capability explicit and context-switched, not ambient.
+- Fix instructor All classes/current class routing so visible class/tab, URL/history/reload and navigation labels agree.
+
+A2. PROFESSOR HOME REFINEMENT
+- Preserve liked Professor Home/class-card direction.
+- Move label/colour controls behind Edit; omit empty `Label: None` state.
+- Richer but restrained course-card colour/hover/shine; no gratuitous animation.
+- Resolve remains history-backed and gains exact Undo tied to the resolved item/revision; no index guessing.
+- Remove unexplained decorative arcs/lines/circles that compete with content.
+
+A3. FIRST-RUN / ADD CLASS
+- First-run: `I have a class code` OR school setup.
+- Institution -> program -> program term once; Term 1/2/3/4 + Other exception.
+- Institution/program/course picker uses verified approved local catalogue snapshot/provenance; no live scrape/network dependency.
+- Context-scoped course identity can display `207` while canonical verified identity remains `PFP 207`.
+- Manual fallback remains available and clearly manual.
+- Add Class no longer asks institution/term repeatedly.
+- Personal-name AutoFill workaround must use real search/combobox semantics; `autocomplete=off` alone is insufficient.
+
+A4. WELCOME / ONBOARDING HIERARCHY
+- Slightly larger StudyGrid mark without overpowering the user goal.
+- `Learn the class. Be ready for the test.` remains primary and more centered.
+- Sign in is promoted above secondary tour/start choices.
+- Replace three static “full loop” bars with one bounded Selectric-style implied rotor using semantic native text + CSS3D/WAAPI, restrained compound motion, no visible globe, no 360 flourish, no blur-heavy smear, no spring/bounce default.
+- Reduced-motion version is static/instant/minimal.
+- Returning-user novice copy decays by demonstrated use, not arbitrary login count.
+
+A5. STUDENT TOUR / ALIVE UI
+- Keep liked Next transition but fix spacing and accidental/double-edge appearance.
+- `How this works` uses anchored/contained help; unrelated text must not jump.
+- Normal lesson text; no permanent underline pretending to be a link.
+- Finite ghost cursor demonstrates native drag-selection and tears down immediately on real input.
+- Explain shows a real contextual explanation.
+- Highlight toggles on/off.
+- Ask Teacher opens an in-context miniature composer; example question change is one finite transition or explicit user-controlled change, not endless 4-second autoplay.
+- Plain student-facing English; concise concrete labels.
+
+A6. PRACTICE / ADAPTIVE CONFIDENCE UI
+OWNER-LOCKED sequence:
+answer -> optional confidence -> reveal correctness/correct answer/explanation -> adaptive update.
+- Keep `Guessing / Fairly sure / Very sure` as confidence group; `Skip` is separate.
+- Confidence must be collected before correctness reveal.
+- Correctness uses explicit textual hierarchy, not green alone.
+- If answer is correct, a compact `Correct` state can accompany `Your answer`; if wrong, show distinct Your answer vs Correct answer rows.
+- Controls wrap/stack on narrow/iPad layouts; no squeezed segmented row.
+- Confidence may affect future practice frequency.
+- Q-R3-PENDING: do not implement raw pointer-path telemetry, derived behavioral scoring, retention, backend persistence or instructor exposure in this candidate until Q-R3 + privacy/security/backend release exists. UI may reserve transparent optional-signal settings only if General later includes them.
+
+A7. INSTRUCTOR DEMO
+- Open into real fake-data instructor shell with calm persistent Demo/Example data context.
+- Short guided walkthrough points at real controls and core loop only; Skip visible; Replay from Help.
+- Suggested sequence: orient to current class -> show item/student needing attention -> inspect/review question/content -> preview/take meaningful instructor action -> show where to continue.
+- No arbitrary fixed step count; no detached slide deck.
+- Completion/Skip returns to demo shell with explicit `Set up your workspace`/equivalent; fake data never silently becomes live data.
+- `Find current class` can suggest from actual known context but must say why and offer correction.
+
+A8. ADAPTIVE RESPONSE DEMO
+- Preserve stable question + instructor-response cards.
+- Question changes without rebuilding/sliding full card.
+- Only materially changed response phrases crossfade/replace, briefly StudyGrid green, then settle to normal.
+- Green is attention emphasis, not sole semantic meaning.
+
+A9. DUSK / THEME SHOWCASE
+- Fix actual Dusk hit target on the exact owner tour route; note Sol found tour samples are spans while Settings uses real theme buttons.
+- One-time Paper -> Dusk -> Paper showcase via safe staggered material/color/state transformation and orb motion.
+- Product target: zero flash events; no repeated luminance strobe/flicker.
+- Reduced-motion path removes large spatial/3D motion and theatrical flashing-like behavior.
+- Stay Paper afterward unless user explicitly changes preference.
+
+A10. FOCUS / INTERACTION STATE SYSTEM
+Create distinct StudyGrid-native states for:
+keyboard focus; hover; pressed; selected/active; tutorial target; adaptive changed-text emphasis; saved study highlight.
+- Do not remove keyboard focus visibility.
+- Noninteractive hero copy must not look like a focused form control.
+- Focus treatment must meet contrast/visibility requirements and remain separate from tutorial decoration.
+
+A11. ROUTES / TRANSITIONS / CLEANUP
+- Audit every meaningful button/Back/Next/destination against Sol TRANSITIONS map.
+- Fix class/tab URL-history mismatch and duplicate/ambiguous instructor exits.
+- Preserve one route/state commit boundary; motion cannot delay or obscure focus/scroll cleanup.
+- Repair note-review and professor-resolve focused successor behavior.
+- Add shared idempotent teardown for report gesture state and deferred annotation state before context switch/close where needed.
+- Do not globally disable text selection or pointer behavior.
+
+A12. FEEDBACK / HELP
+- Fix Feedback hover geometry without breaking hit target/focus.
+- Feedback capture stays progressive/privacy-bounded.
+- Help contains How StudyGrid works, Replay tour, Accessibility & input help, Send feedback.
+- Separate Privacy & data and Legal destinations; do not claim legal completeness.
+
+TRACK B — KEVIN / NON-OVERLAPPING MOTION INTRO PIPELINE
+- Keep Kevin on Q-K1F verifier recovery + source-stable A/C proof publication for the independent Blender intro contract.
+- This work remains nonblocking for Track A teacher-facing candidate.
+- Do not assign Kevin the CSS/WAAPI product-tour motion that Bob integrates; avoid duplicate implementation.
+- Q-K2/Q-K3 remain dependency-gated by valid A+C proof and Nathan's later A/C selection.
+
+TRACK C — STUART / INDEPENDENT ACCEPTANCE
+Stuart starts only after Bob publishes exact candidate hash/version/bytes and General releases acceptance.
+Required acceptance includes:
+- exact baseline lineage / no stale renderer edits;
+- instructor shell has no learner Study leakage;
+- All classes/class/tab URL/history/reload semantics coherent;
+- Add Class setup-once/course picker/manual fallback semantics;
+- no personal-name AutoFill regression on physical iPad/Safari hold;
+- no unexplained decorative arc/circle/blue heading box/Next halo;
+- keyboard focus remains visible and distinct from tutorial target;
+- How-this-works reveal causes no unrelated layout jump;
+- ghost selection stops immediately on real input;
+- Explain/Highlight/Ask Teacher behave as specified; Highlight toggles off;
+- practice order answer -> confidence -> feedback; Skip separate; correct-vs-user answer clear; touch targets readable;
+- Dusk target clickable on exact owner route; one-time safe showcase; reduced-motion behavior;
+- adaptive response changes only relevant phrases and keeps card layout stable;
+- Resolve Undo exact and history-consistent;
+- mark-reviewed/resolve transitions restore sensible focus;
+- report circle close/reopen has no stale pointer/capture state;
+- deferred annotation cannot reopen after close/route change;
+- every button/Back/Next route matches visible label and expected hierarchy;
+- no perpetual auto-updating examples without user control;
+- physical iPad/Safari matrix for cursor/selection/AutoFill/Dusk/transformed text/pointer capture remains explicit and cannot be marked PASS without device evidence.
+
+RELEASE GATES
+This file is NOT an activation.
+Do not publish worker queues as AVAILABLE until:
+1. Nathan explicitly says the owner-review tranche is ready to build; and
+2. Research Q-R3 is terminal and reconciled OR General explicitly excludes adaptive telemetry/scoring from the candidate while preserving only the locked answer-confidence-feedback UI order.
+Astra remains HOLD.
