@@ -1,0 +1,24 @@
+STUDYGRID — GENERAL CF-0047 — PRODUCT-DESIGN RECONCILIATION — STARTED
+Timestamp: 2026-10-01 17:43 ET
+Actor: ChatGPT General / CF-0047
+Transaction: TX-0270
+Lifecycle: STARTED
+
+Owner request:
+- consume completed Research, Astra, Sol and Bob StudyGrid product-design returns;
+- reconcile them with Nathan's continuing owner review;
+- continue the design process before any implementation release;
+- use Sol 6.1 heavily today, with Astra reserved for work Sol cannot replace.
+
+Current controlling owner-review source:
+- routes/OWNER_REVIEW_DELTA_20261001_1657_PRODUCT-FLOW-STUDY-MODE.txt @ 9e44452c4687b03fe62a1bc6faee387cc2713c6d
+- exact accepted frontend candidate remains StudyGrid-CF0042-QB17R2-stuart-defect-repair.html | SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab
+
+Success condition:
+1. Verify and consume terminal returns from Research CF-0044, Astra CF-0017 if it actually completed the routed task, Sol CF-0043, and Bob CF-0042.
+2. Distinguish worker evidence, design judgement, implementation feasibility and unresolved owner choices.
+3. Produce one reconciled pre-implementation design direction / next design gate.
+4. Do not release implementation until the design gate is satisfied.
+5. Prefer Sol for follow-on reasoning/design work; Astra is exception-only unless a specific gap justifies it.
+
+No frontend/backend/auth/Supabase/deploy mutation is authorized by this STARTED record.
