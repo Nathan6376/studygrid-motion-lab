@@ -1,0 +1,26 @@
+STUDYGRID — OWNER REVIEW SUCCESSOR CORRECTION / ROUTING PREFERENCE
+Captured by: ChatGPT General / CF-0047
+Owner source: Nathan direct, 2026-10-01 17:06–17:43 ET
+Status: EFFECTIVE SUCCESSOR DELTA / NO PRODUCT MUTATION
+Transaction: TX-0270
+
+This file does not rewrite the frozen 16:57 owner delta. It corrects and extends it prospectively.
+
+1. EXACT CANDIDATE POINTER CORRECTION
+The frozen owner delta accidentally printed Drive ID:
+1k0d69ZOrgs4NRRORKBmIwOR1Q0mE46
+That pointer returned provider 404 during Sol's exact-source audit.
+The verified candidate pointer is:
+1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46
+Candidate identity remains:
+StudyGrid-CF0042-QB17R2-stuart-defect-repair.html
+SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab
+1,063,586 bytes
+v7.20-cf0042-qb17r2-stuart-defect-repair
+No candidate bytes changed.
+
+2. SOL / ASTRA WORK ALLOCATION
+Nathan wants heavy use of SG Sol / Sol 6.1 today and does not want Astra used routinely because Astra is materially more expensive. General should use Sol first for StudyGrid analysis, design synthesis, adjudication and other work Sol can perform. Astra is exception-only where a concrete capability/authority gap means Sol cannot reasonably substitute. Do not hold the StudyGrid critical path waiting for Astra merely because an earlier route existed.
+
+3. CURRENT PRODUCT PROCESS
+The 16:57 purpose→research→diverge→compare/select→implement→independent-QA process remains controlling for this review cycle. Implementation remains held while the current design synthesis is unresolved.
