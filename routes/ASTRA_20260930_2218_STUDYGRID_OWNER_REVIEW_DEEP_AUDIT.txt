@@ -1,0 +1,150 @@
+STUDYGRID — ASTRA DEEP OWNER-REVIEW / PRODUCT-SYSTEM ADJUDICATION
+Timestamp: 2026-09-30 22:18 ET
+Coordinator: ChatGPT General CF-0040
+Consumer: General CF-0040
+Worker: Astra
+Status: AVAILABLE NOW — HIGH-VALUE AUDIT / SYNTHESIS ONLY
+
+OWNER INTENT
+Nathan wants to use remaining Astra allocation before its upcoming reset. Use Astra for high-value product/system reasoning, integration, red-team audit and adjudication — not bulk implementation that Sol/Bob/Stuart/Research can handle.
+
+CRITICAL PROCESS STATE
+- The current StudyGrid owner-review batch is OPEN.
+- Nathan is still reviewing the current release and does NOT want Bob, Stuart or Kevin reactivated until he explicitly says the review batch is complete.
+- Research is active/pending and will return separately.
+- Gemini 3.1 Pro has already returned on the Selectric/typeball welcome-motion concept; General provisionally AMENDed that return pending Research and owner review.
+- This Astra task must not implement, mutate StudyGrid, close the owner-review batch, wake workers, deploy, promote canonical state, touch backend/auth/Supabase, or pre-empt Nathan's remaining feedback.
+
+AUTHORITATIVE INPUTS — CONSUME EXACTLY
+1. routes/OWNER_REVIEW_BATCH_20260930_OPEN.txt
+2. routes/OWNER_FEEDBACK_20260930_2113_SLICE2_REFINEMENT.txt
+3. routes/OWNER_FEEDBACK_20260930_2123_ADD_CLASS_ONBOARDING_REDESIGN.txt
+4. routes/ARCHITECTURE_ADJUDICATION_20260930_2129_ADD_CLASS_ONBOARDING.txt
+5. routes/OWNER_REVIEW_DELTA_20260930_2147_HOME_STUDY_MOTION_NAV.txt
+6. routes/RESEARCH_20260930_2147_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH.txt — task definition only; Research result may still be pending. Do not fabricate its return.
+7. routes/GEMINI_RETURN_20260930_2209_SELECTRIC_BALL_MOTION.txt
+8. routes/GENERAL_ADJUDICATION_20260930_2209_GEMINI_SELECTRIC_MOTION.txt
+9. Current exact owner-review candidate: StudyGrid-CF0042-QB15-professor-home-scale.html / Drive ID 1CSN0jYJHnYbk2kpLAz8HNg4BSYELbe6U / SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf / 996820 bytes / APP_VERSION v7.18-cf0042-qb15-professor-home-scale.
+10. General accepted Slice 2 pointer: routes/GENERAL_ACCEPTED_SLICE2_QB15.txt.
+
+MISSION
+Act as senior product/system adjudicator and red-team reviewer. Do a deep independent audit of the current StudyGrid release and the accumulated owner-review direction so that, when Nathan finally closes the review batch, General can issue one coherent implementation/acceptance round instead of many incremental patches.
+
+Do not merely restate owner feedback. Find structure, contradictions, hidden dependencies, likely regressions, and decisions that would otherwise cause rework.
+
+WORKSTREAM A — CURRENT RELEASE DEEP AUDIT
+Inspect the exact current candidate itself where tools permit. Audit screen-by-screen and route-by-route, with special attention to:
+- learner vs instructor information architecture separation;
+- welcome / first-run / quick-tour / sign-in hierarchy;
+- Add Class / school context / course selection path;
+- Classes / Study / Profile / Notes / lessons / professor surfaces;
+- feedback entry and feedback-marking modes;
+- cursor/text-selection/pointer-capture behavior;
+- Paper/Dusk and other global controls;
+- Back / Next / Continue / Open / Close / route destination semantics;
+- information density and permanent vs edit-only controls;
+- state continuity and recovery/undo;
+- touch/iPad/Safari risk, keyboard/focus, reduced-motion/accessibility;
+- visual hierarchy, layout stability and likely mobile/tablet breakpoints.
+
+Separate:
+1) confirmed defect from source/observable behavior;
+2) owner-reported behavior requiring reproduction;
+3) design preference / product direction;
+4) inference or risk not yet proven.
+
+WORKSTREAM B — NORMALIZE THE OWNER REVIEW INTO A PRODUCT CONTRACT
+Convert all current owner feedback into a coherent system, not a bag of patches.
+Produce a proposed contract covering:
+- what StudyGrid learner mode permanently shows;
+- what instructor mode permanently shows;
+- what is progressive/temporary novice guidance and when it retires;
+- what is editable but hidden behind Edit;
+- onboarding context that is profile-level vs class-level;
+- verified catalogue vs manual fallback semantics;
+- join-code path;
+- route/navigation invariants;
+- undo/reversibility rules;
+- motion/microinteraction principles;
+- feedback capture principles;
+- owner/admin capability separation from Nathan's normal learner account.
+
+Flag any current owner requests that conflict with each other or with accepted architecture. Prefer a reconciliation, not a forced choice, where possible.
+
+WORKSTREAM C — GEMINI MOTION ADJUDICATION
+Independently review Gemini 3.1 Pro's Selectric/typeball proposal and General's provisional AMEND.
+Decide what should be:
+- ADOPTED;
+- AMENDED;
+- HELD pending Research/device evidence;
+- REJECTED.
+
+Pay particular attention to:
+- whether implied sphere + CSS 3D native text is the right abstraction;
+- compound X/Y motion vs a simpler tilted-axis/prism model;
+- risk of spring/overshoot feeling cheap;
+- transformed-text sharpness on Safari/iPad;
+- blur/filter risks;
+- autoplay/manual-control hierarchy;
+- reduced-motion semantics;
+- accessible DOM/control structure;
+- how to keep the hero and Sign In primary.
+
+Do not lock exact timing/angles without basis. Give prototype ranges and reject conditions instead.
+
+WORKSTREAM D — RESEARCH-INTEGRATION FRAME
+Research is still pending. Define exactly how General should consume the later Research return without redoing this audit.
+Create a slot/matrix mapping likely Research outputs to decisions, for example:
+- official catalogue evidence → verified fixture/data-contract decision;
+- onboarding evidence → first-run sequence/novice-guidance retirement;
+- feedback research → feedback UX contract;
+- transition research → motion contract;
+- iPad/Safari research → cursor/autofill/device acceptance;
+- button/back research → route audit contract.
+For each slot, state what evidence would be strong enough to change the current recommendation.
+
+WORKSTREAM E — BUILD/QA BATCH DESIGN
+Design the eventual single implementation round once Nathan closes review.
+Do NOT release it now.
+Propose the cleanest worker split and dependency order across:
+- Bob: visible product implementation;
+- Stuart: acceptance/adversarial QA;
+- Kevin: separate motion/Blender lane only where non-overlapping;
+- StudyGrid Research: evidence/source lane;
+- Claude after reset: deep clickable-flow/system QA and/or backend hardening where useful;
+- Sol: bulk prep/implementation support where lower-cost work is appropriate;
+- Astra: final integration/adjudication only where high-value.
+
+Identify what can safely run in parallel and what must serialize to avoid rework.
+
+WORKSTREAM F — OWNER DECISION MINIMIZATION
+Nathan does not want to be turned into the product manager for every reversible detail.
+List only decisions that genuinely require Nathan because they materially affect:
+- product identity/taste;
+- irreversible architecture;
+- privacy/trust/legal implications;
+- meaningful cost/lock-in;
+- surprising user behavior.
+Everything else should be delegated with a recommended default.
+
+OUTPUT
+Persist a durable Astra return in the shared StudyGrid route surface and return directly to General.
+Use this structure:
+1. EXECUTIVE SYNTHESIS — concise
+2. RELEASE AUDIT — confirmed / owner-reported / inferred
+3. RECONCILED PRODUCT CONTRACT
+4. GEMINI MOTION ADJUDICATION
+5. RESEARCH-INTEGRATION MATRIX
+6. EVENTUAL BUILD + QA BATCH PLAN
+7. NATHAN-ONLY DECISIONS (minimal)
+8. REJECT CONDITIONS / REGRESSION TRAPS
+9. OPEN QUESTIONS / EVIDENCE GAPS
+10. DONE / PARTIAL / BLOCKED with exact consumed sources and any artifact IDs
+
+QUALITY BAR
+- Be critical; do not rubber-stamp General, Architecture, Gemini, or prior worker output.
+- Avoid generic UX advice.
+- Do not invent current institutional facts or Research conclusions.
+- Preserve the owner-review hold.
+- Prefer fewer, stronger principles over a giant patch list.
+- Flag anything likely to create expensive rework before implementation.
