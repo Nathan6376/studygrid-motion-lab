@@ -1,0 +1,51 @@
+STUDYGRID — GENERAL / BOB NARROW REPAIR AFTER STUART Q-S13R
+Timestamp: 2026-10-01 10:00 ET
+Coordinator: ChatGPT General CF-0040
+Status: RELEASED TO BOB ONLY
+
+SOURCE / ACCEPTANCE RESULT
+Stuart terminal return:
+- routes/STUART_20261001_0952_QS13R_QB17R_ACCEPTANCE_PARTIAL.txt
+- commit 80685e612b8d54c6d999cce4f3305c8eb202d07d
+- lifecycle PARTIAL / AMEND-HOLD
+
+Exact candidate under repair:
+- StudyGrid-CF0042-QB17R-owner-feedback-refinement.html
+- Drive 1gx9I7W1DOtQn9VRnjf5iAFiqQinYx_Bt
+- 1061386 bytes
+- SHA-256 edf870009c769e8624de34d6356eb2c7bd3457e49f471b316b098820bb45fd2e
+- APP_VERSION v7.19-cf0042-qb17r-owner-feedback-refinement
+
+STUART FOUND EXACTLY TWO BOUNDED RELEASE DEFECTS
+1. Welcome rotor accessibility/interaction
+   - auto-changing moving text uses aria-live=polite;
+   - there is no stable semantic list/summary outside the moving faces;
+   - autoplay does not pause/cancel on focus or real interaction.
+
+2. Student-tour `How this works` spatial stability
+   - reveal changes document layout;
+   - unrelated Next control moved by about 227 px in Stuart's reduced-motion retest.
+
+SMALLEST AUTHORIZED REPAIR
+A. Rotor
+- Make the moving visual layer non-live/decorative for assistive announcement purposes while retaining meaningful accessible content.
+- Add a stable semantic summary/list representing the rotor's three messages outside the moving visual faces.
+- Pause/cancel finite autoplay on focus or real pointer/touch/keyboard interaction.
+- Preserve reduced-motion static/minimal behavior.
+- Do not redesign the rotor or change unrelated welcome hierarchy.
+
+B. How this works
+- Use an anchored overlay/popover or genuinely pre-reserved contained reveal so unrelated tour content and navigation do not move.
+- Preserve keyboard focus and dismissal behavior.
+- Do not redesign unrelated tour steps.
+
+BOUNDARY
+- Patch only these two defects plus strictly necessary supporting code/tests.
+- Do not advance Slice 3.
+- Do not change backend/auth/Supabase/deploy/canonical state.
+- Do not alter unrelated owner-approved UI.
+- Produce a new non-canonical repair candidate with exact SHA/bytes/version and focused regression evidence.
+- Return terminal DONE/PARTIAL/BLOCKED directly to General.
+
+NEXT GATE
+General routes the exact repair candidate to fresh Stuart successor for independent re-acceptance. Nathan receives the HTML only after independent acceptance passes.
