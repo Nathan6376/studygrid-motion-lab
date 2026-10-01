@@ -1,6 +1,6 @@
 STUDYGRID — BOB WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-10-01 08:33 ET
+Updated: 2026-10-01 10:00 ET
 Queue owner: General
 Worker: Bob / CF-0042
 
@@ -11,14 +11,23 @@ CURRENT CONTEXT
 - Accepted parent baseline: StudyGrid-CF0042-QB15-professor-home-scale.html / SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf.
 - Q-B17R terminal DONE is consumed by General.
 - Exact Q-B17R candidate: StudyGrid-CF0042-QB17R-owner-feedback-refinement.html / Drive 1gx9I7W1DOtQn9VRnjf5iAFiqQinYx_Bt / 1061386 bytes / SHA-256 edf870009c769e8624de34d6356eb2c7bd3457e49f471b316b098820bb45fd2e / v7.19-cf0042-qb17r-owner-feedback-refinement.
-- General independently provider-verified candidate bytes/hash/version and Bob's 112/112 verification artifact.
-- General released the exact candidate to Stuart Q-S13R for independent acceptance.
+- Stuart Q-S13R independently returned PARTIAL / AMEND-HOLD at routes/STUART_20261001_0952_QS13R_QB17R_ACCEPTANCE_PARTIAL.txt @ 80685e612b8d54c6d999cce4f3305c8eb202d07d.
+- Exactly two bounded release defects remain.
 
 Q-B17R — INTEGRATED OWNER-FEEDBACK REFINEMENT
-Status: DONE / CONSUMED BY GENERAL / INDEPENDENT ACCEPTANCE IN PROGRESS.
+Status: DONE / CONSUMED BY GENERAL / INDEPENDENT ACCEPTANCE PARTIAL.
+
+Q-B17R2 — NARROW STUART-DEFECT REPAIR
+Eligibility: AVAILABLE NOW.
+Authoritative repair route:
+- routes/GENERAL_20261001_1000_BOB_QB17R_NARROW_REPAIR_FROM_STUART.txt @ 652385ffe16a519ca9cbe2537f528feac844ff74
+Repair exactly:
+1. Welcome rotor accessibility/interaction: stable semantic summary/list, moving layer non-live/decorative for announcements, pause/cancel finite autoplay on focus/real interaction, preserve reduced motion.
+2. Student-tour `How this works`: anchored/contained reveal so unrelated content/navigation does not move, preserving keyboard focus/dismissal.
+Return a NEW non-canonical repair candidate with exact identity and focused regression evidence. Do not redesign unrelated surfaces.
 
 Q-B17 — SLICE 3
-Eligibility: BLOCKED until Stuart Q-S13R independently accepts Q-B17R and Nathan reviews the corrected HTML, followed by a newer General release.
+Eligibility: BLOCKED until Stuart successor independently passes Q-S13R2, Nathan reviews the corrected HTML, and General releases Slice 3.
 
 STOP CONDITION
-No new Bob product work. Wait for independent acceptance and Nathan's next owner review.
+Finish Q-B17R2 and return to General. Do not advance Slice 3.
