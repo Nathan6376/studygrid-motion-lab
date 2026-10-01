@@ -1,9 +1,11 @@
 STUDYGRID — GEMINI 3.1 PRO RETURN / INSTRUCTOR TOUR + MOTION / SCREENSHOT PASS
 Timestamp received by General: 2026-09-30 23:46 ET
+Owner correction reconciled: 2026-09-30 23:53 ET
 Source: Nathan pasted Gemini 3.1 Pro response directly into General CF-0040
 Status: EXTERNAL SPECIALIST RETURN / DESIGN INPUT ONLY / NO IMPLEMENTATION RELEASE
 Owner evidence parent: routes/OWNER_REVIEW_DELTA_20260930_2324_INSTRUCTOR_TOUR_ALIVE_UI_MOTION.txt
 Screenshot appendix: routes/OWNER_REVIEW_SCREENSHOT_EVIDENCE_20260930_2335.txt
+Adaptive-confidence correction: routes/OWNER_REVIEW_DELTA_20260930_2353_ADAPTIVE_CONFIDENCE_BEHAVIORAL_SIGNALS_PRIVACY.txt @ 3cd292e355e5d40dfa1cc22a6b1831b8bc11f51d
 
 GEMINI RETURN — SOURCE-DERIVED CONTENT
 
@@ -43,15 +45,20 @@ GEMINI RETURN — SOURCE-DERIVED CONTENT
 - Highlight should toggle a persistent yellow highlight on/off.
 - Ask teacher should open a miniature in-card composer rather than navigate away.
 
-GENERAL PROVISIONAL ADJUDICATION NOTES — NOT YET FINAL
+GENERAL ADJUDICATION NOTES — CURRENT, STILL SUBJECT TO RESEARCH/SOURCE RECONCILIATION
 - Strongly aligned with Nathan on decorative-arc removal, stable adaptive-response cards, changed-phrase-only green emphasis, separating Skip from confidence values, state-specific focus language, ghost-selection handoff, and real miniature tool behaviors.
 - AMEND Gemini's suggestion that Explain use an inline accordion if that causes the layout jump Nathan explicitly rejected; prefer anchored/contained help behavior after Research Q-R2 evidence is consumed.
-- DO NOT adopt the claim that confidence ratings 'dictate future practice frequency' unless StudyGrid's actual product logic later establishes that. Research may support explanatory wording, but product behavior must not be invented.
+- OWNER CORRECTION: StudyGrid DOES intend confidence to be an adaptive-learning signal that may affect future practice frequency/scheduling. This is now product direction, not a speculative Gemini claim.
+- Confidence must be collected BEFORE correctness/correct-answer feedback is shown so the confidence signal is not contaminated by revealed outcome.
+- Flow target: learner answers -> optional confidence input -> correctness/correct answer/explanation reveal -> adaptive update.
+- Learners may skip an individual confidence response and should be able to disable optional confidence collection; core study functionality must remain usable.
+- StudyGrid may consider additional privacy-bounded behavioral signals such as response latency, hesitation/reversals, pointer-path efficiency/directness, answer changes, dwell/revisit behavior and spacing history. These are weak/contextual signals, not ground truth.
+- General rejects raw-surveillance implementation as a default. Prefer data minimization and local/derived features over retaining raw pointer trajectories where feasible; research Q-R3 will validate evidence, confounds, privacy/security and accessibility constraints.
 - Hover/pressed scale/elevation values and tutorial-glow/beacon choreography remain creative suggestions, not locked implementation requirements.
-- Final motion/accessibility contract waits for Research Q-R2 + Sol exact-source audit and General reconciliation.
+- Final motion/accessibility/adaptive-telemetry contract waits for Research Q-R2/Q-R3 + Sol exact-source audit and General reconciliation.
 
 PROCESS STATE
-- Research CF-0044 Q-R2 remains the evidence lane.
+- Research CF-0044 Q-R2 remains the current evidence lane; Q-R3 is queued after Q-R2 terminal for adaptive confidence/behavioral-signals/privacy evidence.
 - Sol CF-0043 Q-SOL1 remains the exact-source lane until terminal return.
 - Relay Architecture is not a StudyGrid product-design lane.
 - Astra remains held by owner direction.
