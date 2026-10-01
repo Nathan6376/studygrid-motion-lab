@@ -1,0 +1,25 @@
+STUDYGRID — STUART Q-S12 BACKEND ACCEPTANCE PREP — STARTED
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 20:46 ET
+Lifecycle: STARTED
+
+CURRENT QUEUE / ELIGIBILITY
+- Refreshed queues/STUART_QUEUE.txt at main SHA 1277bdf3770377459cd7faa3e0bfdf7d8cae367e.
+- Q-S11 is terminal PASS. Q-S13 remains owner-review/dependency blocked. No newer Stuart task is STARTED in the checked shared lifecycle state.
+- Q-S12 is therefore the first eligible unclaimed Stuart item.
+
+AUTHORITATIVE INPUTS CONSUMED
+- ChatGPT Base CGPTBASE-R0004-N8V6 read in full.
+- Claude C-A backend implementation-readiness contract: Drive 1Tii11WZH9MhdKY3c8NrAOg9FTnRKTvzY, 21,128 bytes.
+- Claude C-A executable non-applied SQL/test attachment: Drive 1nZe0lyT9QzoP49nIlGCiSZCYjrueT7kR, 58,936 bytes.
+
+PURPOSE
+Build a table-driven RLS/leakage/concurrency acceptance plan and reusable non-mutating scaffolding for the future real Supabase staging implementation.
+
+NAMED DOWNSTREAM CONSUMER
+Primary: future Stuart real-Supabase staging acceptance after General explicitly releases a staging target.
+Secondary consumers: Claude backend implementation/hardening and Bob frontend adapter integration where shared gateway-contract parity is required.
+
+BOUNDARIES
+Prep only. No Supabase/database mutation. No product/runtime/UI mutation. No Slice 3 pre-approval. No backend acceptance claim. No deployment/canonical promotion. Physical-device/hosted/full-accessibility holds are unaffected.
