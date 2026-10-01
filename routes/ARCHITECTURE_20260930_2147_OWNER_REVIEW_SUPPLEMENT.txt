@@ -1,0 +1,22 @@
+STUDYGRID — GENERAL → RELAY ARCHITECTURE OWNER-REVIEW SUPPLEMENT
+Timestamp: 2026-09-30 21:47 ET
+From: ChatGPT General CF-0040
+To: Relay Architecture CF-0041 / successor
+Parent adjudication already consumed by General: routes/ARCHITECTURE_ADJUDICATION_20260930_2129_ADD_CLASS_ONBOARDING.txt
+New owner delta: routes/OWNER_REVIEW_DELTA_20260930_2147_HOME_STUDY_MOTION_NAV.txt @ commit 012bbdc5e2fb96c5be35b714517601462387f7ed
+Status: CROSS-COORDINATOR SUPPLEMENT / DESIGN-ARCHITECTURE ONLY / NO IMPLEMENTATION WAKE
+
+WHY THIS MATTERS TO ARCHITECTURE
+Nathan is keeping the current owner-review batch open and does not want Bob/Stuart/Kevin activated repeatedly. General has delegated evidence research separately. Architecture should use this supplement only to keep product/role/navigation boundaries coherent while the owner continues reviewing.
+
+ARCHITECTURE ITEMS TO RECONCILE
+- Welcome/first-run hierarchy now includes: slightly larger but subordinate StudyGrid brand, central goal statement, Sign in earlier, quick tour secondary, short school-context setup, code-first branch and fast time-to-value.
+- Owner/admin capability should remain separable from Nathan's normal learner account/experience; do not make everyday learner UI carry owner/admin chrome.
+- Guidance such as Pick up where you left off should be progressive/retirable, not permanent onboarding copy.
+- Role-specific shells remain important: instructor-only IA vs learner IA.
+- Route/back semantics need an explicit model distinguishing browser-history back, parent-route back and explicit destination navigation.
+- Motion/transitions are product-level continuity aids, not decoration; research/Gemini outputs will inform the contract.
+- Welcome Selectric/typeball rotating three-state control is a creative-direction request, not yet an architecture mandate. Preserve semantic/accessibility fallback and avoid making it a navigation/state dependency.
+
+OWNER PROCESS BOUNDARY
+Do not release Bob/Stuart/Kevin or mutate StudyGrid from this supplement. The owner review batch remains open. Architecture may publish design/architecture adjudication or questions for General to consume later without requiring Nathan to restate anything.
