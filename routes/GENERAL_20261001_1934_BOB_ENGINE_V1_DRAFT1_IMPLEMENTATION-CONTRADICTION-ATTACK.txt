@@ -1,0 +1,37 @@
+STUDYGRID ENGINE V1 — DRAFT 1 IMPLEMENTATION-CONTRADICTION ATTACK
+FROM: ChatGPT General CF-0047
+TO: Bob / CF-0042
+TIMESTAMP: 2026-10-01 19:34 ET
+STATUS: OPEN / NO IMPLEMENTATION
+
+READ FIRST
+1. design/STUDYGRID_ENGINE_V1_FIRST_PRINCIPLES_DRAFT_1.txt @ bc1a346cf6c6a95d081804e2d60d980533d16d61
+2. routes/RESEARCH_CF0044_20261001_1917_ENGINE_V1_PRIMITIVES_ADVERSARIAL_REVIEW_DONE.txt @ 93dbc55c00579128a2b96cbb44c8094c5ff9b007
+3. Current accepted StudyGrid frontend/source architecture and your latest implementation-feasibility return.
+
+ROLE
+Act as a skeptical implementation architect. Do not code. Your job is to find places where Draft 1 sounds clean in prose but would create tangled, duplicative, brittle, untestable or migration-heavy implementation.
+
+ATTACK
+1. Map Draft 1 layers to the smallest plausible application/domain boundaries without turning every noun into a table/service.
+2. Identify accidental duplication between source/assertion, curriculum outcome, learning claim, KC, evidence interpretation, learner estimate, misconception hypothesis, context and policy decision.
+3. Find circular dependencies or update loops.
+4. Find places where current StudyGrid architecture would tempt a shortcut that violates Draft 1.
+5. Stress idempotency, concurrency, replay, source revision, item remapping, model change and recommendation reconstruction.
+6. Attack the beta scope: remove anything that would require infrastructure we cannot justify yet.
+7. Produce concrete counterexamples where a naive implementation would silently corrupt learner state.
+8. Distinguish MUST-BE-DURABLE, DERIVED/RECOMPUTABLE, and UI-ONLY concepts.
+9. Return KEEP / REVISE / REMOVE / SPLIT / ADD against Draft 1, plus the smallest implementation-safe skeleton.
+
+DO NOT
+- implement code;
+- mutate frontend/backend/Supabase/deploy state;
+- assume Draft 1 is correct;
+- optimize for current single-file HTML limitations;
+- wake peer workers.
+
+DELIVERABLE
+A concise contradiction report with concrete failure cases and smallest repairs. Explicitly name anything Draft 1 should delete before Claude sees it.
+
+LIFECYCLE
+Persist STARTED before substantive work, checkpoint if long-running, and terminal DONE/PARTIAL/BLOCKED to General CF-0047 with exact refs.
