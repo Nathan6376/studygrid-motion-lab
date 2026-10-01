@@ -1,0 +1,101 @@
+STUDYGRID — GENERAL → SG SOL — PRODUCT-DESIGN SYNTHESIS / DIVERGENCE GATE
+From: ChatGPT General / CF-0047
+To: SG Sol / CF-0043
+Timestamp: 2026-10-01 17:50 ET
+Status: AVAILABLE — OWNER ACTIVATION REQUIRED
+Mode: PRODUCT / IA / INTERACTION DESIGN SYNTHESIS ONLY — NO IMPLEMENTATION
+Transaction: TX-0270
+
+OWNER ALLOCATION
+Nathan wants heavy use of Sol 6.1 today. Sol is the primary reasoning/design lane for this work. Astra is exception-only where Sol cannot reasonably substitute. Do not wait for a new Astra return.
+
+READ FIRST
+1. routes/OWNER_REVIEW_DELTA_20261001_1657_PRODUCT-FLOW-STUDY-MODE.txt @ 9e44452c4687b03fe62a1bc6faee387cc2713c6d
+2. routes/OWNER_REVIEW_DELTA_20261001_1748_SUCCESSOR-CORRECTION.txt @ 18c3f30159717dfe971fb0ae8c4cf63756ba0adb
+3. routes/GENERAL_20261001_1749_PRODUCT-DESIGN-RECONCILIATION_CHECKPOINT.txt @ 3c51b11776d2268a3809aeb4ce2959230a1e0308
+4. Research terminal: routes/RESEARCH_CF0044_20261001_1712_PRODUCT_FLOW_MOTION_STUDY_UX_DONE.txt @ 1b8d4e5bc401adeb3a97c6823e6c9455130de92b
+5. Bob terminal: routes/BOB_20261001_1712_IMPLEMENTATION_FEASIBILITY_DONE.txt @ bce1a09fc6517163d57a5dd403b2619b7d7bc5a4
+6. Your own exact-source audit: reports/SOL_20261001_INTERACTION_SOURCE_AUDIT/REPORT.md @ 3b99d279360b61e67c27ee1cbfa632239083e8b3
+7. Exact accepted frontend candidate: StudyGrid-CF0042-QB17R2-stuart-defect-repair.html | Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46 | SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab | 1,063,586 bytes | v7.20-cf0042-qb17r2-stuart-defect-repair
+8. Existing StudyGrid Design Adjudication / Big Creative Return / prior Astra packages may be consulted as historical design evidence. They do not override Nathan's current review or the new exact-source findings.
+
+PURPOSE CONTRACT
+StudyGrid currently feels like disconnected pages and controls. The selected product model must make a person understand where they are, what context/role they are in, why a surface exists, what the strongest next action is, what just happened, and how navigation/motion relates one state to the next. It must preserve class-based study while supporting personal/general study without requiring a formal class.
+
+HARD INPUTS FROM OWNER / FEEDERS
+- Signed-in product needs a meaningful Home/current-workspace root; onboarding/public is not a parent of signed-in work; account exit is Sign out.
+- “Your class, easy to learn.” and “One common path from class material to useful practice.” are high-value copy directions, not slogans to repeat everywhere.
+- One recommended next step should lead; secondary exploration remains available.
+- Avoid duplicate top/left/course chrome and unnecessary controls.
+- Role/context transitions must make learner vs instructor vs personal study explicit without becoming banner-heavy.
+- Learn/Test/Support or any peer modes must keep the shell and targets stable.
+- Study Set review keeps a stable Approve & next target and ends in a real finalisation state.
+- Draft/Ready/Published/Held/All must be glanceable and tied to real state.
+- Learning must teach/orient when needed, then practice/retrieve, optional confidence, concise feedback/error review, progress, and a forward next step.
+- Quick/Focused/Deep survive only if each has a distinct job/content plan/outcome; otherwise collapse them.
+- Seeds should be automatic when earned, using truthful idempotent persistence semantics.
+- Continuous welcome 1→2→3 loop is required; exact motion choice still needs design selection and accessibility controls.
+- Feedback count/square, Professor Home, full-surface gloss, hard focus squares, duplicate chrome, moving targets and forward-flow complaints must be addressed as systems, not isolated patches.
+- Sol exact-source defects SOL-F01…F06 and question-pool divergence remain in scope; owner-reported geometry/native-input observations not mechanically reproduced remain observations to preserve for later browser/device QA.
+
+DIVERGENCE REQUIREMENT
+Create THREE materially different complete signed-in product systems. They must differ in interaction/IA model, not just colour, radius or spacing.
+Each system must cover:
+1. Signed-in Home/current-workspace.
+2. Class-based study entry and personal/general study entry.
+3. Selected-class shell and class switching.
+4. Learner journey: orient/teach → practice → feedback/error review → completion/next.
+5. Instructor Home/workspace and transition into learner/material preview/study contexts.
+6. Study Set queue/review/finalisation and publication separation.
+7. Home / browser Back / semantic Up / Sign out semantics.
+8. What persistent chrome remains and what is removed/merged/contextual.
+9. Same-level switching and parent/child spatial behaviour.
+10. Welcome 1→2→3 loop treatment using the Research candidates or a justified synthesis.
+11. Focus/accessibility/reduced-motion behaviour.
+12. Responsive behaviour for desktop/tablet/phone.
+13. How the system maps onto Bob's persistent-shell/outlet feasibility without prematurely coding it.
+14. What current source behaviours/copy owner likes and must be preserved.
+
+COMPARE / SELECT
+Compare all three against:
+- purpose/task clarity;
+- orientation/wayfinding;
+- spatial target stability;
+- cognitive/choice load;
+- class + personal-study coherence;
+- learner/instructor role coherence;
+- learning-flow clarity;
+- accessibility/reduced motion;
+- implementation feasibility and rollback risk;
+- visual beauty / product coherence / restraint;
+- owner review requirements and exact-source defects.
+
+Return a recommended synthesis direction, but distinguish:
+- evidence-backed constraints;
+- source-confirmed defects/seams;
+- design judgement;
+- unresolved owner choices.
+Do not treat your recommendation as implementation approval.
+
+VISUAL / INTERACTION EXPECTATION
+Nathan's standard is not merely functional. The system should feel intentional, premium, coherent and beautiful. Buttons and transitions should communicate why an action exists and where it leads. Motion must explain hierarchy/continuity, not decorate confusion. Remove UI that does not earn its place.
+
+DELIVERABLE
+A compact but complete design-gate package to General CF-0047 containing:
+A. Three complete systems.
+B. Side-by-side comparison and explicit tradeoffs.
+C. Recommended synthesis with a screen/surface hierarchy map.
+D. Navigation/back/up/home/sign-out contract.
+E. Motion contract including the continuous 1→2→3 recommendation.
+F. Learner study-state model and Study Set review-state model.
+G. Remove / Merge / Retain table for current destinations/controls.
+H. Exact owner decisions still needed before implementation.
+I. Draft acceptance checklist for the later prototype/QA gate.
+
+BOUNDARIES
+- NO HTML/product mutation.
+- NO backend/auth/Supabase/deploy/3D mutation.
+- NO canonical promotion/release.
+- NO peer-worker wake.
+- Persist STARTED before work, checkpoint if material, and terminal return directly to General CF-0047.
+- Stop after the design-gate package. General/Nathan own implementation release.
