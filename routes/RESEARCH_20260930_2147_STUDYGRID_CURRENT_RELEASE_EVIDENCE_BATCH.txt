@@ -1,0 +1,93 @@
+STUDYGRID — RESEARCH BATCH / CURRENT RELEASE OWNER REVIEW
+Timestamp: 2026-09-30 21:47 ET
+Coordinator: ChatGPT General CF-0040
+Consumer: General → eventual single Bob/Stuart implementation+acceptance batch after owner review closes
+Authority: Nathan direct owner instruction to research broadly and delegate research to the dedicated Research lane
+Primary inputs:
+- routes/OWNER_REVIEW_BATCH_20260930_OPEN.txt
+- routes/OWNER_FEEDBACK_20260930_2113_SLICE2_REFINEMENT.txt
+- routes/OWNER_FEEDBACK_20260930_2123_ADD_CLASS_ONBOARDING_REDESIGN.txt
+- routes/ARCHITECTURE_ADJUDICATION_20260930_2129_ADD_CLASS_ONBOARDING.txt
+- routes/OWNER_REVIEW_DELTA_20260930_2147_HOME_STUDY_MOTION_NAV.txt @ commit 012bbdc5e2fb96c5be35b714517601462387f7ed
+Status: AVAILABLE NOW / RESEARCH ONLY / NO PRODUCT MUTATION
+
+MISSION
+Research every material UX/product choice in the open owner-review batch so the eventual build has evidence behind its interaction design rather than taste-only decisions. Use current authoritative/primary sources where possible; distinguish evidence, convention, inference and recommendation. Do not fabricate institutional data. Return concise recommendations plus source links/citations and implementation-relevant acceptance implications directly to General.
+
+WORKSTREAM A — OFFICIAL INSTITUTION / PROGRAM / COURSE SOURCES
+Architecture made this a hard gate for any "verified" catalogue fixture.
+- Map current official institution/program/course sources/endpoints, starting with Humber Polytechnic / Police Foundations because that is the current owner example, then note portability to other institutions.
+- Verify exact program/course metadata that official sources expose; do not infer missing fields.
+- Identify source stability, update cadence/refresh strategy, provenance/versioning needs and legal/technical access constraints.
+- Produce at least one source-cited verified fixture suitable for a local catalogue adapter if official evidence supports it.
+- Keep program term (Term 1–4) distinct from academic session/calendar labels.
+
+WORKSTREAM B — ONBOARDING / TIME-TO-VALUE
+Research evidence and patterns for:
+- progressive onboarding vs long front-loaded signup;
+- asking institution/program/term once and reusing context;
+- join/class-code first branch vs course search/manual add;
+- when/how to show a quick tour;
+- how to retire novice guidance such as "Pick up where you left off" into a compact Continue target without arbitrary clutter;
+- account/role design where the product owner can still use a normal learner account without admin chrome contaminating everyday UX.
+Return a recommended minimal first-run sequence and evidence-based triggers for progressive disclosure.
+
+WORKSTREAM C — FEEDBACK CAPTURE
+Research effective beta/in-product feedback capture patterns:
+- contextual lightweight feedback vs dedicated form;
+- categories, expected-vs-actual, screenshots/selection/page context, open text;
+- how much structure improves diagnostic value before completion rates fall;
+- confirmation/undo/privacy cues;
+- mobile/tablet considerations.
+Return a recommended StudyGrid feedback flow and what should stay hidden until useful.
+
+WORKSTREAM D — NAVIGATION / ROUTE TRANSITIONS / CONTEXTUAL CHROME
+Research:
+- modern web/SPAs route transitions that improve continuity rather than add latency;
+- View Transitions API support/fallback as of 2026, including Safari/iPad and reduced-motion;
+- practical duration/easing bands and when to use shared-element, fade, slide, scale or no animation;
+- focus management/accessibility during transitions;
+- contextual/collapsing navigation/header patterns during deep study without hiding critical escape/navigation.
+Return a transition contract and reject conditions.
+
+WORKSTREAM E — MICROINTERACTIONS / SATISFYING STATE CHANGES
+Research evidence-informed patterns for low-noise completion feedback for actions such as Mark reviewed / Mark resolved / Undo:
+- visual acknowledgment, spatial continuity, check/sweep/settle patterns;
+- optional haptic/audio only where appropriate and controllable;
+- reduced-motion and accessibility;
+- avoid manipulative/gamified excess.
+Return 2–3 strong interaction recipes suitable for StudyGrid.
+
+WORKSTREAM F — TEXT SELECTION / CURSOR / IPAD-SAFARI
+Research and reproduce where possible:
+- Safari/iPad pointer/text-selection cursor behavior with user-select:text and cursor:text;
+- broad annotatable-text regions and whether cursor:text should be limited to explicit selectable study content;
+- selection popovers/touch long-press patterns;
+- stale pointer/crosshair layers after feedback-marking tools;
+- course/search input autocomplete semantics that avoid personal-name autofill as reliably as web platform permits.
+Return likely causes, platform limitations, recommended mitigations and exact QA matrix. Do not claim a Safari/iPad fix without evidence.
+
+WORKSTREAM G — BUTTON / BACK / NAVIGATION SEMANTICS
+Build a research-backed heuristic/QA rubric for every actionable control in this release:
+- destination must match label and user mental model;
+- Back should prefer the meaningful prior context rather than hardcoded Profile/Courses when inappropriate;
+- distinguish browser-history Back, parent-route Back and explicit destination controls;
+- destructive/reversible actions need clear recovery where appropriate.
+Return a concise route/button audit rubric Stuart can later turn into acceptance tests.
+
+WORKSTREAM H — WELCOME "FULL LOOP" MOTION
+Do not duplicate Gemini's narrow creative/implementation answer; instead research interaction precedents and constraints for a single compact rotating 3D selector that cycles three messages around a virtual sphere/typeball/Selectric-like axis.
+- accessibility semantics;
+- reduced-motion static alternative;
+- autoplay vs user-controlled timing;
+- legibility and motion-sickness risk;
+- CSS 3D/Web Animations/Canvas/WebGL tradeoffs for this small UI element.
+Return constraints and recommendation, not final implementation.
+
+GENERAL EXPECTATIONS
+- Research broadly; Nathan explicitly prefers over-research to taste-only guessing.
+- Prioritize primary sources/specs/platform docs and high-quality UX research. Community evidence can supplement but not override stronger evidence.
+- Cite every current/factual external claim.
+- Clearly mark evidence vs recommendation/inference.
+- No StudyGrid code mutation, worker queue mutation, backend/auth/Supabase/deploy or canonical promotion.
+- Persist STARTED then DONE/PARTIAL/BLOCKED and return direct to General.
