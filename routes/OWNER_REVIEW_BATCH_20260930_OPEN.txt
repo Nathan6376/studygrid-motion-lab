@@ -1,5 +1,6 @@
 STUDYGRID — OWNER REVIEW BATCH OPEN
 Timestamp opened: 2026-09-30 21:30 ET
+Last reconciled: 2026-09-30 21:47 ET
 Coordinator: ChatGPT General CF-0040
 Authority: Nathan direct owner instruction
 Status: OPEN — ACCUMULATE FEEDBACK; DO NOT WAKE BOB/STUART/KEVIN YET
@@ -7,11 +8,11 @@ Status: OPEN — ACCUMULATE FEEDBACK; DO NOT WAKE BOB/STUART/KEVIN YET
 OWNER PROCESS
 - Nathan wants to inspect the current owner-review release thoroughly and give all visible/interaction/product feedback before implementation workers are reactivated.
 - Do not repeatedly send Bob, Stuart or Kevin small incremental batches. Accumulate the release feedback first, reconcile it into one coherent implementation/acceptance package, then activate the workers once Nathan explicitly indicates the review batch is complete / ready to build.
-- Relay Architecture may work in parallel on the already-routed Add Class/onboarding architecture packet while Nathan continues reviewing the release.
-- New owner feedback during this review is appended/reconciled into the open review batch. Material architecture deltas may be persisted for later Architecture reconciliation, but do not interrupt Nathan with repeated worker activations.
-- When the batch closes: General reconciles Architecture return + complete owner feedback; publishes exact worker-specific shared routes; then Nathan receives only short exact activations and one paired return-to-General continuation block.
+- Relay Architecture and dedicated Research may work in parallel while Nathan continues reviewing. Gemini may answer narrow owner-requested creative/technical research. None of those returns authorizes product mutation.
+- New owner feedback during this review is appended/reconciled into the open review batch. Material architecture deltas are propagated to Relay Architecture under the peer-coordinator sync rule without making Nathan repeat them.
+- When the batch closes: General reconciles Architecture + Research + Gemini/Claude-if-available returns with the complete owner feedback; publishes exact worker-specific shared routes; then Nathan receives only short exact activations and one paired return-to-General continuation block.
 
-CURRENT FEEDBACK ALREADY IN BATCH
+CURRENT FEEDBACK IN BATCH
 1. routes/OWNER_FEEDBACK_20260930_2113_SLICE2_REFINEMENT.txt
    - Feedback hover geometry
    - Dusk interaction
@@ -30,11 +31,33 @@ CURRENT FEEDBACK ALREADY IN BATCH
    - join-code shortcut
    - manual fallback
    - program-term vs academic-session separation
+3. routes/OWNER_REVIEW_DELTA_20260930_2147_HOME_STUDY_MOTION_NAV.txt
+   - Selectric/typeball-style single rotating full-loop control
+   - welcome composition/logo/sign-in hierarchy
+   - fast onboarding/tutorial and code-first start choices
+   - normal learner account vs owner/admin separation
+   - tour/highlight toggle semantics
+   - retire novice copy into compact Continue destination
+   - satisfying Mark reviewed microinteraction
+   - page/route transitions and contextual chrome research
+   - intrusive text-selection/I-beam cursor investigation
+   - full button/back/next/destination audit
+   - feedback-capture evidence research
+
+ARCHITECTURE / RESEARCH STATE
+- Relay Architecture returned routes/ARCHITECTURE_ADJUDICATION_20260930_2129_ADD_CLASS_ONBOARDING.txt; General has consumed it as design input only. It authorizes Research source verification but does NOT override the owner batch hold on Bob/Stuart/Kevin.
+- New architecture supplement: routes/ARCHITECTURE_20260930_2147_OWNER_REVIEW_SUPPLEMENT.txt.
+- Dedicated Research batch: routes/RESEARCH_20260930_2147_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH.txt.
+- Gemini narrow motion packet: routes/GEMINI_20260930_2147_SELECTRIC_BALL_MOTION_RESEARCH.txt.
+- Claude post-reset QA staged only: routes/CLAUDE_20260930_POSTRESET_CURRENT_RELEASE_QA.txt.
 
 WORKER HOLD
 - Bob: HOLD all product mutation until owner review batch closes and General publishes the reconciled build contract.
-- Stuart: HOLD acceptance prep/acceptance until exact reconciled candidate/contract exists.
-- Kevin: HOLD Q-K1F activation until owner review batch closes, even though motion work is technically separable, because Nathan wants a single batched worker activation round.
+- Stuart: HOLD acceptance prep/acceptance until exact reconciled candidate/contract exists after batch close.
+- Kevin: HOLD Q-K1F activation until owner review batch closes; Nathan wants one batched worker activation round.
+- Research: MAY RUN NOW because it is evidence gathering for the open batch, not implementation.
+- Gemini: MAY RUN NOW only on the narrow Selectric/typeball research packet.
+- Claude: HOLD until credit reset and General release.
 
 CLOSE CONDITION
-Only Nathan closes this batch by indicating he is done reviewing / ready to send the complete package to workers. Until then, General should listen, inspect, accumulate, and clarify only where necessary.
+Only Nathan closes this batch by indicating he is done reviewing / ready to send the complete package to workers. Until then, General should listen, inspect, accumulate, delegate research/specialist work where useful, and clarify only where necessary.
