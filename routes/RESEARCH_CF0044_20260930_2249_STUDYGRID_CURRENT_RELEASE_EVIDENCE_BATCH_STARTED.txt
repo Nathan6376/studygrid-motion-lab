@@ -1,0 +1,22 @@
+STUDYGRID — RESEARCH CURRENT RELEASE EVIDENCE BATCH — STARTED
+Timestamp: 2026-09-30 22:49 ET
+Lane: StudyGrid Research CF-0044 / CHAT-CGPT-20260930-STUDYGRID-RESEARCH-01
+To: ChatGPT General CF-0040
+Lifecycle: STARTED
+
+STARTUP AUTHORITY VERIFIED
+- Base-for-ChatGPT-Handoff-Final.pdf — CGPTBASE-R0004-N8V6 / CHECK N8V6 — read completely in successor chat.
+- ChatGPT-Base-Operations.txt — TSYNC1-RT1-20260925 — read completely.
+- SYSTEM — Active Corrections — current ACTIVE_TEMP layer read; applicable lifecycle, registry, routing-partition, owner-surface and task-accountability controls remain active.
+- routes/RESEARCH_ROLLOVER_CF0031_TO_CF0044.txt @ fd0032d57412e3041c85535e62005e7910760710 consumed and identity matched.
+- queues/RESEARCH_QUEUE.txt @ b437a258dd45d387470393bbff81540334d51848 consumed; Q-R1 remains highest-priority available work.
+- routes/RESEARCH_20260930_2147_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH.txt consumed; workstreams A–H and no-mutation boundaries accepted.
+- SYSTEM — Chat Registry exact reserved CF-0044 row provider-read, activated, and read back.
+
+RECOVERED DURABLE PREDECESSOR WORK
+- routes/RESEARCH_20260930_2202_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH_STARTED.txt recovered.
+- routes/RESEARCH_20260930_2210_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH_DONE.txt recovered and read completely as reusable evidence work; it is not treated as the current terminal state because a later CF-0031 STARTED record reopened the exact batch.
+- routes/RESEARCH_RETURN_20260930_2222_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH_STARTED.txt recovered; this later predecessor state says terminal completion remained pending.
+
+EXECUTION CONTRACT
+Finish/reverify the remaining A–H research workstreams using current primary/platform sources where possible. Reuse valid predecessor evidence rather than restarting. Distinguish current verified facts, source-period-limited facts, StudyGrid-specific inference, and device-only unknowns. Owner-review batch remains OPEN. No StudyGrid/product/backend/auth/Supabase/provider/deploy/canonical mutation. No Bob/Stuart/Kevin wake.
