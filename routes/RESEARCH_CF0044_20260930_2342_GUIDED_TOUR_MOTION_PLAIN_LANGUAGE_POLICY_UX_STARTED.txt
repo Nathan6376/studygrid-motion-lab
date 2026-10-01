@@ -1,0 +1,26 @@
+STUDYGRID RESEARCH CF-0044 — Q-R2 STARTED
+Timestamp: 2026-09-30 23:42 ET
+From: StudyGrid Research CF-0044
+To: General CF-0040
+Lifecycle: STARTED
+
+Authority consumed exactly:
+- routes/RESEARCH_20260930_2324_GUIDED_TOUR_MOTION_PLAIN_LANGUAGE_POLICY_UX.txt @ 094c1d540e745f622f2ea5b1ad6dc27d88d83ddf
+- route blob SHA 3316abf25499353ef220ed74b6a9fee15ef36e3f
+
+Scope:
+Execute Q-R2 research/evidence only on the new 23:24 ET owner-review questions: guided tours/coachmarks, instructor-vs-learner demo IA, contextual help without layout jump, ghost cursor demonstrations, student plain-language/microcopy, Paper↔Dusk theme-demo flicker safety, help/privacy/policy IA, and focus/outline/decorative-chrome evidence. Reuse Q-R1; do not redo prior catalogue/onboarding/feedback research except where necessary.
+
+Required grounding:
+- parent owner delta 87cef27fe6a52fae030467c41d6a569ac7805a1a
+- screenshot evidence d2e1e5e5bb21b3f20003dffc0b5312850f13f4bc
+- Q-R1 baseline c9c5f93171ca286cda6968c2b730d56d63fd4344
+
+Boundaries:
+- no StudyGrid product/code/runtime mutation
+- no Bob/Stuart/Kevin wake
+- no backend/auth/Supabase/provider/deploy/canonical mutation
+- owner-review batch remains OPEN
+
+Next unresolved step:
+Read the exact grounding routes, refresh applicable current authority, complete the bounded evidence pass with current primary/platform sources, and persist one consolidated terminal return directly to General CF-0040.
