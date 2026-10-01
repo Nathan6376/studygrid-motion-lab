@@ -1,0 +1,12 @@
+STATUS: CHECKPOINT
+Timestamp: 2026-10-01 10:28 ET
+Actor: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+Startup continuity is activated and acknowledged.
+New terminal consumed: Bob Q-B17R2 DONE from Drive 1dwuiVe0o1H5SlIVApFP7sod1pDIDypdD.
+Exact repaired candidate: StudyGrid-CF0042-QB17R2-stuart-defect-repair.html / Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46 / SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab / 1,063,586 bytes / v7.20-cf0042-qb17r2-stuart-defect-repair.
+Bob focused verification: 42/42 PASS; independent acceptance not claimed.
+Stuart CF-0046 is ACTIVE and Q-S13R2 is dependency-blocked only on General publishing the exact repaired-candidate route.
+Next unresolved step: publish Q-S13R2 exact acceptance route, update Stuart queue, read both back, then owner activates Stuart.
+Kevin Q-K1F remains STARTED / terminal return pending in current durable queue.
+Claude C-E terminal build pack consumed; 1223/1223 local PostgreSQL tests reported PASS, but real Supabase/staging remains separately gated.
+Slice 3 and Astra remain HOLD.
