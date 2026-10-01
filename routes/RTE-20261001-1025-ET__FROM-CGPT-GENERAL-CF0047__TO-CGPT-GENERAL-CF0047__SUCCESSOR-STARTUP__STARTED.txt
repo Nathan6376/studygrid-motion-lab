@@ -1,0 +1,6 @@
+STATUS: STARTED
+Timestamp: 2026-10-01 10:25 ET
+Actor: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+Task: Resume the closed General lane from CF-0040 using the verified rollover.
+Current baseline: CF-0047 registry reservation verified unique; Base CGPTBASE-R0004-N8V6 read in full; SYSTEM — Active Corrections read; transition routes/GENERAL_ROLLOVER_CF0040_TO_CF0047_20261001.txt @ 016e6a6ece715698779169fc7b62e2ebecadec67 read in full.
+Success condition: recipient-side transition acknowledgement persisted/read back; CF-0047 activated with provider readback; Bob Q-B17R2, Stuart CF-0046, Kevin Q-K1F and Claude C-E states refreshed before continuity-dependent owner routing.
