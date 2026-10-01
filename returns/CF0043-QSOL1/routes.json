@@ -1,0 +1,224 @@
+[
+  {
+    "line": 1588,
+    "owner": "nav",
+    "callee": "history.replaceState",
+    "code": "history.replaceState({},'',`#${route}`)"
+  },
+  {
+    "line": 1739,
+    "owner": "renderWelcome",
+    "callee": "nav",
+    "code": "nav('/start')"
+  },
+  {
+    "line": 1740,
+    "owner": "renderWelcome",
+    "callee": "nav",
+    "code": "nav('/tour')"
+  },
+  {
+    "line": 1923,
+    "owner": "onComplete",
+    "callee": "nav",
+    "code": "nav('/start')"
+  },
+  {
+    "line": 1924,
+    "owner": "afterMount",
+    "callee": "nav",
+    "code": "nav('/start')"
+  },
+  {
+    "line": 1933,
+    "owner": "onComplete",
+    "callee": "nav",
+    "code": "nav('/workspace/instructor')"
+  },
+  {
+    "line": 1995,
+    "owner": "back",
+    "callee": "nav",
+    "code": "nav('/courses')"
+  },
+  {
+    "line": 2006,
+    "owner": "renderAddClass",
+    "callee": "nav",
+    "code": "nav(`/course/${id}/overview`)"
+  },
+  {
+    "line": 2008,
+    "owner": "renderLocalCourseRoute",
+    "callee": "nav",
+    "code": "nav('/courses')"
+  },
+  {
+    "line": 2011,
+    "owner": "renderLocalMaterial",
+    "callee": "nav",
+    "code": "nav(`/course/${c.id}/overview`)"
+  },
+  {
+    "line": 2017,
+    "owner": "renderFirstStart",
+    "callee": "nav",
+    "code": "nav('/welcome')"
+  },
+  {
+    "line": 2018,
+    "owner": "renderFirstStart",
+    "callee": "nav",
+    "code": "nav(b.dataset.startRoute)"
+  },
+  {
+    "line": 2122,
+    "owner": "renderCourses",
+    "callee": "nav",
+    "code": "nav(`/course/${c.id}/overview`)"
+  },
+  {
+    "line": 2122,
+    "owner": "renderCourses",
+    "callee": "nav",
+    "code": "nav(`/course/${state.activeCourseId}/overview`)"
+  },
+  {
+    "line": 2122,
+    "owner": "renderCourses",
+    "callee": "nav",
+    "code": "nav('/start')"
+  },
+  {
+    "line": 2129,
+    "owner": "renderCourseRoute",
+    "callee": "nav",
+    "code": "nav('/courses',true)"
+  },
+  {
+    "line": 2132,
+    "owner": "renderCourseRoute",
+    "callee": "nav",
+    "code": "nav('/courses')"
+  },
+  {
+    "line": 2142,
+    "owner": "renderOverview",
+    "callee": "nav",
+    "code": "nav(`/course/${c.id}/tree/${b.dataset.recordTopic}`)"
+  },
+  {
+    "line": 2157,
+    "owner": "renderTree",
+    "callee": "nav",
+    "code": "nav(`/course/${c.id}/tree/${b.dataset.recordTopic}`)"
+  },
+  {
+    "line": 2246,
+    "owner": "renderClassNotes",
+    "callee": "nav",
+    "code": "nav(`/course/${c.id}/study/test`)"
+  },
+  {
+    "line": 2285,
+    "owner": "renderStudyStart",
+    "callee": "history.pushState",
+    "code": "history.pushState({},'',href)"
+  },
+  {
+    "line": 2287,
+    "owner": "renderStudyStart",
+    "callee": "nav",
+    "code": "nav(`/course/${c.id}/notes/${b.dataset.openClassNote}`)"
+  },
+  {
+    "line": 2288,
+    "owner": "renderStudyStart",
+    "callee": "nav",
+    "code": "nav(`/course/${c.id}/notes/${b.dataset.calendarId}`)"
+  },
+  {
+    "line": 2288,
+    "owner": "renderStudyStart",
+    "callee": "nav",
+    "code": "nav(`/course/${c.id}/study/test`)"
+  },
+  {
+    "line": 2295,
+    "owner": "openStudyMode",
+    "callee": "nav",
+    "code": "nav(`/course/${c.id}/scenario`)"
+  },
+  {
+    "line": 2359,
+    "owner": "resumePausedQuiz",
+    "callee": "nav",
+    "code": "nav(`/course/${s.courseId}/study/test`)"
+  },
+  {
+    "line": 2360,
+    "owner": "restartCurrentQuiz",
+    "callee": "nav",
+    "code": "nav(`/course/${courseId}/study/test`)"
+  },
+  {
+    "line": 2511,
+    "owner": "renderSessionSummary",
+    "callee": "nav",
+    "code": "nav('/profile')"
+  },
+  {
+    "line": 3042,
+    "owner": "sgDecorateDemoSession",
+    "callee": "nav",
+    "code": "nav(sgPersonaDestination(state.previewPersona))"
+  },
+  {
+    "line": 3043,
+    "owner": "sgDecorateDemoSession",
+    "callee": "nav",
+    "code": "nav('/welcome')"
+  },
+  {
+    "line": 3057,
+    "owner": "renderTree",
+    "callee": "nav",
+    "code": "nav(`/course/${c.id}/tree/${b.dataset.recordTopic}`)"
+  },
+  {
+    "line": 3396,
+    "owner": "renderWelcome",
+    "callee": "nav",
+    "code": "nav('/start')"
+  },
+  {
+    "line": 3396,
+    "owner": "renderWelcome",
+    "callee": "nav",
+    "code": "nav('/tour')"
+  },
+  {
+    "line": 3405,
+    "owner": "back",
+    "callee": "nav",
+    "code": "nav('/courses')"
+  },
+  {
+    "line": 3405,
+    "owner": "renderAddClass",
+    "callee": "nav",
+    "code": "nav(`/course/${id}/overview`)"
+  },
+  {
+    "line": 3411,
+    "owner": "renderCourseRoute",
+    "callee": "nav",
+    "code": "nav('/courses')"
+  },
+  {
+    "line": 3451,
+    "owner": "(script)",
+    "callee": "nav",
+    "code": "nav(returningLearnerRoute(),true)"
+  }
+]

@@ -1,0 +1,422 @@
+[
+  {
+    "line": 25,
+    "selector": "button",
+    "declarations": "cursor:pointer"
+  },
+  {
+    "line": 35,
+    "selector": ".btn[disabled]",
+    "declarations": "opacity:.55;cursor:not-allowed;transform:none"
+  },
+  {
+    "line": 91,
+    "selector": ".answer.locked",
+    "declarations": "cursor:default"
+  },
+  {
+    "line": 91,
+    "selector": ".answer.answer-exit",
+    "declarations": "opacity:0;transform:translateX(-8px);pointer-events:none"
+  },
+  {
+    "line": 91,
+    "selector": ".confidence-host button",
+    "declarations": "min-height:42px;border:0;border-radius:9px;background:transparent;color:var(--text);font-weight:650;padding:7px 5px;cursor:pointer"
+  },
+  {
+    "line": 91,
+    "selector": ".source-drawer summary",
+    "declarations": "cursor:pointer;color:var(--link);font-weight:600"
+  },
+  {
+    "line": 148,
+    "selector": ".session-option.locked",
+    "declarations": "opacity:.66;cursor:not-allowed;background:var(--soft)"
+  },
+  {
+    "line": 150,
+    "selector": ".overview-guide summary",
+    "declarations": "cursor:pointer;color:var(--link);font-weight:600"
+  },
+  {
+    "line": 235,
+    "selector": ".plan-vine",
+    "declarations": "position:absolute;inset:-22px;z-index:4;width:calc(100% + 44px);height:calc(100% + 44px);pointer-events:none;overflow:visible;transform:translateZ(24px);filter:drop-shadow(0 5px 6px color-mix(in srgb,var(--leaf3) 15%,transparent))"
+  },
+  {
+    "line": 261,
+    "selector": "/* study timer + garden micro-moments */\n.study-timer-shell",
+    "declarations": "position:fixed;right:16px;top:72px;z-index:180;width:min(178px,calc(100vw - 28px));pointer-events:none"
+  },
+  {
+    "line": 265,
+    "selector": ".study-timer-card",
+    "declarations": "position:relative;pointer-events:auto;border:1px solid var(--divider);border-radius:14px;background:color-mix(in srgb,var(--canvas) 94%,transparent);backdrop-filter:blur(10px);padding:8px 9px 7px;box-shadow:0 10px 28px rgba(30,48,38,.09)"
+  },
+  {
+    "line": 281,
+    "selector": ".feedback-text-link",
+    "declarations": "border:0;background:transparent;padding:2px 0;color:var(--action);font:inherit;font-weight:700;cursor:pointer;position:relative;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:color-mix(in srgb,var(--action) 35%,transparent)"
+  },
+  {
+    "line": 301,
+    "selector": ".report-mark-shell",
+    "declarations": "position:fixed;inset:0;z-index:420;pointer-events:none"
+  },
+  {
+    "line": 302,
+    "selector": ".report-mark-frame",
+    "declarations": "position:absolute;inset:7px;border:2px solid color-mix(in srgb,var(--action) 82%,white);border-radius:16px;box-shadow:0 0 0 2px color-mix(in srgb,var(--action) 12%,transparent),inset 0 0 26px color-mix(in srgb,var(--action) 8%,transparent);animation:markPulse 2.2s ease-in-out infinite;pointer-events:none"
+  },
+  {
+    "line": 302,
+    "selector": ".report-mark-toolbar",
+    "declarations": "position:fixed;z-index:424;left:50%;bottom:16px;top:auto;transform:translateX(-50%);display:flex;align-items:center;gap:7px;flex-wrap:wrap;justify-content:center;max-width:calc(100vw - 28px);padding:8px;border:1px solid var(--divider);border-radius:14px;background:color-mix(in srgb,var(--canvas) 95%,transparent);backdrop-filter:blur(9px);box-shadow:0 12px 36px rgba(28,48,38,.16);pointer-events:auto"
+  },
+  {
+    "line": 302,
+    "selector": ".report-mark-canvas",
+    "declarations": "position:fixed;inset:0;z-index:422;width:100vw;height:100vh;pointer-events:none;touch-action:none"
+  },
+  {
+    "line": 302,
+    "selector": ".report-mark-shell[data-mode=\"circle\"] .report-mark-canvas",
+    "declarations": "pointer-events:auto;cursor:crosshair"
+  },
+  {
+    "line": 302,
+    "selector": ".report-mark-shell[data-mode=\"item\"]",
+    "declarations": "cursor:crosshair"
+  },
+  {
+    "line": 302,
+    "selector": ".report-target-outline",
+    "declarations": "position:fixed;z-index:423;border:2px solid var(--action);border-radius:12px;background:color-mix(in srgb,var(--leaf1) 8%,transparent);box-shadow:0 0 0 4px color-mix(in srgb,var(--action) 10%,transparent);pointer-events:none"
+  },
+  {
+    "line": 302,
+    "selector": ".report-mark-bubble",
+    "declarations": "position:fixed;z-index:425;padding:8px;border:1px solid var(--divider);border-radius:12px;background:var(--canvas);box-shadow:0 12px 30px rgba(28,48,38,.18);pointer-events:auto"
+  },
+  {
+    "line": 317,
+    "selector": ".toast",
+    "declarations": "position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translate(-50%,14px);opacity:0;pointer-events:none;background:var(--text);color:var(--canvas);padding:10px 14px;border-radius:12px;font-size:14px;z-index:100;transition:opacity .16s,transform .16s"
+  },
+  {
+    "line": 336,
+    "selector": ".report-target-multi",
+    "declarations": "position:fixed;z-index:423;border:2px solid var(--action);border-radius:13px;background:color-mix(in srgb,var(--leaf1) 7%,transparent);box-shadow:0 0 0 4px color-mix(in srgb,var(--action) 10%,transparent),0 6px 22px rgba(43,74,57,.10);pointer-events:none;animation:multiTargetIn .24s cubic-bezier(.22,.68,0,1) both"
+  },
+  {
+    "line": 374,
+    "selector": ".chapter-drill>summary,.class-update summary",
+    "declarations": "min-height:44px;display:flex;align-items:center;cursor:pointer"
+  },
+  {
+    "line": 379,
+    "selector": ".settings-more>summary",
+    "declarations": "min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 14px;cursor:pointer;font-weight:760"
+  },
+  {
+    "line": 395,
+    "selector": ".shop-item:before",
+    "declarations": "content:\"\";position:absolute;width:100px;height:100px;right:-45px;top:-50px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--leaf1) 16%,transparent),transparent 68%);pointer-events:none"
+  },
+  {
+    "line": 398,
+    "selector": "/* v7.15 product-5 owner feedback polish */\n.report-selection-chip",
+    "declarations": "appearance:none;cursor:pointer;font:inherit;color:var(--text);background:color-mix(in srgb,var(--leaf1) 9%,var(--surface));border:1px solid var(--divider);border-radius:999px;padding:7px 10px;transition:background .18s,box-shadow .18s,transform .18s"
+  },
+  {
+    "line": 401,
+    "selector": ".report-mark-active-cue",
+    "declarations": "position:fixed;z-index:424;left:50%;bottom:78px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;max-width:calc(100vw - 30px);padding:7px 11px;border-radius:999px;border:1px solid color-mix(in srgb,var(--action) 40%,var(--divider));background:color-mix(in srgb,var(--canvas) 97%,transparent);box-shadow:0 10px 30px rgba(28,48,38,.14);pointer-events:none;font-size:12px;animation:markCueIn .32s ease-out both"
+  },
+  {
+    "line": 402,
+    "selector": ".report-selected-panel",
+    "declarations": "position:fixed;z-index:426;left:50%;bottom:82px;transform:translateX(-50%);width:min(440px,calc(100vw - 28px));max-height:min(44vh,360px);overflow:auto;padding:12px;border:1px solid var(--divider);border-radius:16px;background:var(--canvas);box-shadow:0 18px 48px rgba(28,48,38,.18);pointer-events:auto"
+  },
+  {
+    "line": 412,
+    "selector": ".drag-card",
+    "declarations": "display:flex;align-items:center;gap:10px;padding:13px 14px;border:1px solid var(--divider);border-radius:13px;background:var(--surface);cursor:grab;user-select:none;transition:transform .18s,box-shadow .18s,border-color .18s"
+  },
+  {
+    "line": 412,
+    "selector": ".drag-card:active",
+    "declarations": "cursor:grabbing"
+  },
+  {
+    "line": 429,
+    "selector": ".study-mode-card",
+    "declarations": "cursor:pointer;text-align:left;width:100%;font:inherit;color:inherit"
+  },
+  {
+    "line": 439,
+    "selector": ".drag-card",
+    "declarations": "touch-action:none;outline:none"
+  },
+  {
+    "line": 479,
+    "selector": ".tree-home-depth",
+    "declarations": "position:absolute;inset:0;pointer-events:none;opacity:.55"
+  },
+  {
+    "line": 490,
+    "selector": ".chapter-card summary",
+    "declarations": "list-style:none;cursor:pointer;padding:16px;display:flex;align-items:center;justify-content:space-between;gap:16px"
+  },
+  {
+    "line": 492,
+    "selector": ".drag-card",
+    "declarations": "touch-action:none;user-select:none;-webkit-user-select:none"
+  },
+  {
+    "line": 502,
+    "selector": "/* v7.15 Step 6 — complete control/touch-target visual pass */\nbutton",
+    "declarations": "font:inherit;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent"
+  },
+  {
+    "line": 505,
+    "selector": "button[disabled]",
+    "declarations": "cursor:not-allowed"
+  },
+  {
+    "line": 530,
+    "selector": ".study-timer-shell.docked",
+    "declarations": "position:static;right:auto;top:auto;z-index:auto;width:auto;pointer-events:auto"
+  },
+  {
+    "line": 537,
+    "selector": ".scenario-note-disclosure summary",
+    "declarations": "min-height:44px;display:flex;align-items:center;cursor:pointer;color:var(--muted);font-weight:650"
+  },
+  {
+    "line": 538,
+    "selector": ".drag-card",
+    "declarations": "grid-template-columns:auto minmax(0,1fr) auto!important;align-items:center!important;gap:10px!important;padding:10px!important;touch-action:auto!important"
+  },
+  {
+    "line": 539,
+    "selector": ".drag-grip",
+    "declarations": "min-width:48px;min-height:48px;border:1px solid var(--divider);border-radius:10px;background:var(--soft);color:var(--muted);font-size:20px;touch-action:none"
+  },
+  {
+    "line": 543,
+    "selector": ".overview-plan-variant",
+    "declarations": "grid-area:1/1;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .22s cubic-bezier(.2,.7,.2,1)"
+  },
+  {
+    "line": 544,
+    "selector": ".overview-plan-variant.active",
+    "declarations": "visibility:visible;opacity:1;pointer-events:auto"
+  },
+  {
+    "line": 562,
+    "selector": ".annotation-chip button",
+    "declarations": "border:0;background:transparent;color:var(--muted);cursor:pointer;font:inherit;padding:2px"
+  },
+  {
+    "line": 571,
+    "selector": ".annotation-hint .selection-tools-fallback",
+    "declarations": "appearance:none;border:1px solid color-mix(in srgb,var(--action) 24%,var(--divider));border-radius:9px;background:color-mix(in srgb,var(--action) 4%,var(--surface));color:var(--action);font:inherit;font-weight:750;min-height:36px;padding:6px 9px;margin-left:6px;text-decoration:none;cursor:pointer"
+  },
+  {
+    "line": 572,
+    "selector": ".related-questions>summary",
+    "declarations": "cursor:pointer;font-weight:750;color:var(--text);min-height:44px;display:flex;align-items:center"
+  },
+  {
+    "line": 586,
+    "selector": ".report-mark-canvas",
+    "declarations": "touch-action:none"
+  },
+  {
+    "line": 587,
+    "selector": ".annotatable-text",
+    "declarations": "-webkit-user-select:text;user-select:text;touch-action:pan-y"
+  },
+  {
+    "line": 595,
+    "selector": ".study-more summary",
+    "declarations": "min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:700"
+  },
+  {
+    "line": 604,
+    "selector": "/* Step 11 — reliable annotation tools, confidence pacing, upcoming assessments */\n.annotatable-text",
+    "declarations": "cursor:text;-webkit-user-select:text;user-select:text;-webkit-touch-callout:default;touch-action:pan-y"
+  },
+  {
+    "line": 607,
+    "selector": ".annotation-highlight",
+    "declarations": "box-decoration-break:clone;-webkit-box-decoration-break:clone;cursor:pointer"
+  },
+  {
+    "line": 608,
+    "selector": ".annotation-circle",
+    "declarations": "cursor:pointer"
+  },
+  {
+    "line": 611,
+    "selector": ".annotation-swatch",
+    "declarations": "width:34px;height:34px;min-width:34px;border-radius:10px;border:1px solid color-mix(in srgb,var(--text) 18%,var(--divider));box-shadow:inset 0 0 0 2px color-mix(in srgb,white 55%,transparent);cursor:pointer"
+  },
+  {
+    "line": 624,
+    "selector": ".question-review-group>summary",
+    "declarations": "cursor:pointer;list-style:none;padding:13px 14px;font-weight:780;display:flex;justify-content:space-between;gap:12px;align-items:center"
+  },
+  {
+    "line": 624,
+    "selector": ".question-review-card>summary",
+    "declarations": "list-style:none;cursor:pointer;padding:13px 14px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:start"
+  },
+  {
+    "line": 628,
+    "selector": ".chapter-drill>summary,.feed details>summary",
+    "declarations": "min-height:44px!important;display:flex!important;align-items:center!important;cursor:pointer"
+  },
+  {
+    "line": 656,
+    "selector": ".auth-instructor summary",
+    "declarations": "cursor:pointer;font-weight:760;min-height:44px;display:flex;align-items:center"
+  },
+  {
+    "line": 663,
+    "selector": ".class-note-view-toggle button",
+    "declarations": "border:0;background:transparent;border-radius:9px;padding:7px 11px;font-weight:780;cursor:pointer"
+  },
+  {
+    "line": 665,
+    "selector": ".study-calendar>summary",
+    "declarations": "cursor:pointer;min-height:48px;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:800"
+  },
+  {
+    "line": 665,
+    "selector": ".calendar-day.has-event",
+    "declarations": "border-color:var(--divider);background:color-mix(in srgb,var(--leaf1) 5%,var(--surface));cursor:pointer"
+  },
+  {
+    "line": 674,
+    "selector": ".tour-step-dot",
+    "declarations": "appearance:none;border:0;padding:0;width:44px;height:44px;border-radius:12px;background:transparent;cursor:pointer;position:relative;transition:background .12s ease,transform .08s ease"
+  },
+  {
+    "line": 679,
+    "selector": ".tour-demo-phrase",
+    "declarations": "font:inherit;border:0;border-radius:5px;padding:1px 3px;background:color-mix(in srgb,var(--accentSoft) 42%,transparent);color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer"
+  },
+  {
+    "line": 725,
+    "selector": ".tour-demo-phrase",
+    "declarations": "font:inherit;font-weight:850;color:var(--text);background:transparent;border:0;border-bottom:3px solid color-mix(in srgb,var(--action) 62%,transparent);padding:1px 3px 3px;cursor:pointer;border-radius:5px"
+  },
+  {
+    "line": 731,
+    "selector": ".tour-quiz-option",
+    "declarations": "width:100%;text-align:left;border:1px solid var(--divider);background:var(--surface);border-radius:12px;padding:11px 12px;font:inherit;color:var(--text);cursor:pointer"
+  },
+  {
+    "line": 762,
+    "selector": ".teacher-source-details>summary",
+    "declarations": "list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:12px;align-items:center;padding:14px 16px;font-weight:750"
+  },
+  {
+    "line": 762,
+    "selector": ".student-share-box details>summary",
+    "declarations": "cursor:pointer;font-weight:700"
+  },
+  {
+    "line": 768,
+    "selector": ".report-selected-panel .selection-jump",
+    "declarations": "appearance:none;border:0;background:transparent;color:var(--text);font:inherit;text-align:left;min-width:0;padding:4px 5px;border-radius:9px;cursor:pointer"
+  },
+  {
+    "line": 775,
+    "selector": ".report-review-jump",
+    "declarations": "appearance:none;border:0;background:transparent;text-align:left;color:var(--text);font:inherit;padding:5px 6px;border-radius:9px;cursor:pointer;min-width:0"
+  },
+  {
+    "line": 788,
+    "selector": ".context-tip-icon",
+    "declarations": "width:44px;height:44px;min-width:44px;padding:0;border:1px solid var(--divider);border-radius:999px;background:transparent;color:var(--muted);font-weight:800;cursor:pointer"
+  },
+  {
+    "line": 789,
+    "selector": ".question-options>summary",
+    "declarations": "cursor:pointer;color:var(--muted);font-size:12px;font-weight:700;list-style:none"
+  },
+  {
+    "line": 800,
+    "selector": ".feedback-example summary",
+    "declarations": "cursor:pointer;font-size:12px;font-weight:750;color:var(--muted)"
+  },
+  {
+    "line": 801,
+    "selector": ".annotation-more>summary",
+    "declarations": "list-style:none;cursor:pointer;min-height:38px;display:inline-flex;align-items:center;padding:7px 10px;border:1px solid var(--control);border-radius:10px;background:var(--surface);font-weight:700;font-size:13px"
+  },
+  {
+    "line": 822,
+    "selector": ".tour-how>summary",
+    "declarations": "min-height:44px;display:flex;align-items:center;cursor:pointer;color:var(--link);font-weight:750"
+  },
+  {
+    "line": 824,
+    "selector": ".class-board-compose-disclosure>summary",
+    "declarations": "min-height:44px;display:flex;align-items:center;color:var(--link);font-weight:750;cursor:pointer"
+  },
+  {
+    "line": 833,
+    "selector": ".tour-page[data-sg-swapping] [data-sg-swap]",
+    "declarations": "pointer-events:none"
+  },
+  {
+    "line": 895,
+    "selector": "/* Applied by the non-intercepting controller only to eligible controls. */\nbody[data-vt] .sg-tactile",
+    "declarations": "\n touch-action:manipulation;-webkit-tap-highlight-color:transparent;\n transition:scale var(--sg-release-ms) var(--sg-ease),translate var(--sg-release-ms) var(--sg-ease),box-shadow 130ms ease,background-color 130ms ease;\n transform-origin:center;scale:1;translate:0 0;\n"
+  },
+  {
+    "line": 918,
+    "selector": "body[data-vt] .vt-help-dialog summary",
+    "declarations": "min-height:44px;cursor:pointer;display:flex;align-items:center"
+  },
+  {
+    "line": 978,
+    "selector": "body[data-vt] .sg-local-back",
+    "declarations": "\n  min-height:40px;padding:7px 9px;border:0;border-radius:10px;\n  background:transparent;color:var(--muted);font:inherit;font-size:13px;font-weight:700;\n  cursor:pointer;\n"
+  },
+  {
+    "line": 1024,
+    "selector": ".courses-demo-disclosure>summary",
+    "declarations": "min-height:44px;display:flex;align-items:center;cursor:pointer;color:var(--muted);font-size:13px;font-weight:700"
+  },
+  {
+    "line": 1028,
+    "selector": ".first-start-secondary summary",
+    "declarations": "cursor:pointer;font-weight:700;color:var(--link);min-height:44px;display:flex;align-items:center"
+  },
+  {
+    "line": 1028,
+    "selector": ".onboard-details summary",
+    "declarations": "min-height:48px;display:flex;align-items:center;cursor:pointer;font-weight:700"
+  },
+  {
+    "line": 1065,
+    "selector": ".coin-collect:before",
+    "declarations": "content:\"\";position:absolute;width:140px;height:140px;right:-55px;top:-72px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--leaf2) 22%,transparent),transparent 70%);pointer-events:none"
+  },
+  {
+    "line": 1091,
+    "selector": ".r6-history summary",
+    "declarations": "cursor:pointer;font-weight:700;color:var(--link)"
+  },
+  {
+    "line": 1104,
+    "selector": ".prof-history summary",
+    "declarations": "min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:700"
+  }
+]

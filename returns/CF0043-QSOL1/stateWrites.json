@@ -1,0 +1,938 @@
+[
+  {
+    "line": 1397,
+    "owner": "persist",
+    "target": "state.currentSession.lastSavedAt",
+    "code": "state.currentSession.lastSavedAt=new Date().toISOString()"
+  },
+  {
+    "line": 1436,
+    "owner": "captureAnalytics",
+    "target": "state.analyticsEvents",
+    "code": "state.analyticsEvents=Array.isArray(state.analyticsEvents)?state.analyticsEvents:[]"
+  },
+  {
+    "line": 1472,
+    "owner": "(script)",
+    "target": "state.contextTipsDismissed",
+    "code": "state.contextTipsDismissed=[...new Set([...(state.contextTipsDismissed||[]),key])]"
+  },
+  {
+    "line": 1473,
+    "owner": "(script)",
+    "target": "state.contextTipsEnabled",
+    "code": "state.contextTipsEnabled=false"
+  },
+  {
+    "line": 1491,
+    "owner": "applyPrefs",
+    "target": "document.body.dataset.theme",
+    "code": "document.body.dataset.theme=state.theme"
+  },
+  {
+    "line": 1588,
+    "owner": "nav",
+    "target": "location.hash",
+    "code": "location.hash=route"
+  },
+  {
+    "line": 1608,
+    "owner": "renderBetaSessionReview",
+    "target": "state.websiteReports",
+    "code": "state.websiteReports=(state.websiteReports||[]).filter(r=>r.id!==id)"
+  },
+  {
+    "line": 1609,
+    "owner": "renderBetaSessionReview",
+    "target": "state.analyticsEvents",
+    "code": "state.analyticsEvents=(state.analyticsEvents||[]).filter(e=>e.id!==id)"
+  },
+  {
+    "line": 1632,
+    "owner": "renderSiteReportList",
+    "target": "state.websiteReports",
+    "code": "state.websiteReports=state.websiteReports.filter(r=>r.id!==b.dataset.deleteSiteReport)"
+  },
+  {
+    "line": 1658,
+    "owner": "setReportMarkMode",
+    "target": "shell.dataset.mode",
+    "code": "shell.dataset.mode=mode"
+  },
+  {
+    "line": 1730,
+    "owner": "noteUserActivity",
+    "target": "state.currentSession.activeTickAt",
+    "code": "state.currentSession.activeTickAt=Date.now()"
+  },
+  {
+    "line": 1923,
+    "owner": "onComplete",
+    "target": "state.onboarding.productTourSeen",
+    "code": "state.onboarding.productTourSeen=true"
+  },
+  {
+    "line": 1923,
+    "owner": "onComplete",
+    "target": "state.onboarding.productTourSkipped",
+    "code": "state.onboarding.productTourSkipped=false"
+  },
+  {
+    "line": 1923,
+    "owner": "onComplete",
+    "target": "state.onboarding.productTourCompleted",
+    "code": "state.onboarding.productTourCompleted=true"
+  },
+  {
+    "line": 1924,
+    "owner": "afterMount",
+    "target": "state.onboarding.productTourSeen",
+    "code": "state.onboarding.productTourSeen=true"
+  },
+  {
+    "line": 1924,
+    "owner": "afterMount",
+    "target": "state.onboarding.productTourSkipped",
+    "code": "state.onboarding.productTourSkipped=true"
+  },
+  {
+    "line": 1924,
+    "owner": "afterMount",
+    "target": "state.onboarding.productTourCompleted",
+    "code": "state.onboarding.productTourCompleted=false"
+  },
+  {
+    "line": 1987,
+    "owner": "syncStudentOnboardingPhase",
+    "target": "state.studentOnboarding",
+    "code": "state.studentOnboarding={...state.studentOnboarding,phase:studentOnboardingPhase()}"
+  },
+  {
+    "line": 1991,
+    "owner": "bindStudentCoach",
+    "target": "state.studentOnboarding.coachDismissed",
+    "code": "state.studentOnboarding.coachDismissed=[...new Set([...(state.studentOnboarding.coachDismissed||[]),key])]"
+  },
+  {
+    "line": 2006,
+    "owner": "renderAddClass",
+    "target": "state.localClasses",
+    "code": "state.localClasses=[...(state.localClasses||[]),c]"
+  },
+  {
+    "line": 2006,
+    "owner": "renderAddClass",
+    "target": "state.activeCourseId",
+    "code": "state.activeCourseId=id"
+  },
+  {
+    "line": 2006,
+    "owner": "renderAddClass",
+    "target": "state.studentOnboarding",
+    "code": "state.studentOnboarding={...state.studentOnboarding,role:'student',lastCreatedClassId:id,lastOpenedClassId:id,phase:'class_empty'}"
+  },
+  {
+    "line": 2008,
+    "owner": "renderLocalCourseRoute",
+    "target": "state.activeCourseId",
+    "code": "state.activeCourseId=c.id"
+  },
+  {
+    "line": 2008,
+    "owner": "renderLocalCourseRoute",
+    "target": "state.studentOnboarding",
+    "code": "state.studentOnboarding={...state.studentOnboarding,role:'student',lastOpenedClassId:c.id}"
+  },
+  {
+    "line": 2010,
+    "owner": "renderLocalOverview",
+    "target": "state.studentOnboarding",
+    "code": "state.studentOnboarding={...state.studentOnboarding,phase:'class_empty'}"
+  },
+  {
+    "line": 2012,
+    "owner": "renderLocalStudy",
+    "target": "state.studentOnboarding",
+    "code": "state.studentOnboarding={...state.studentOnboarding,firstStudyLoopAt:state.studentOnboarding.firstStudyLoopAt||c.lastStudiedAt}"
+  },
+  {
+    "line": 2018,
+    "owner": "renderFirstStart",
+    "target": "state.studentOnboarding",
+    "code": "state.studentOnboarding={...state.studentOnboarding,role:'student'}"
+  },
+  {
+    "line": 2022,
+    "owner": "rememberLearnerRoute",
+    "target": "state.lastLearnerRoute",
+    "code": "state.lastLearnerRoute=route"
+  },
+  {
+    "line": 2039,
+    "owner": "(script)",
+    "target": "state.annotationPrefs",
+    "code": "state.annotationPrefs={...(state.annotationPrefs||{}),highlightColor:color}"
+  },
+  {
+    "line": 2055,
+    "owner": "(script)",
+    "target": "state.websiteReports",
+    "code": "state.websiteReports=state.websiteReports.filter(r=>r.id!==report.id)"
+  },
+  {
+    "line": 2059,
+    "owner": "(script)",
+    "target": "state.websiteReports",
+    "code": "state.websiteReports=[]"
+  },
+  {
+    "line": 2104,
+    "owner": "(script)",
+    "target": "location.hash",
+    "code": "location.hash=href"
+  },
+  {
+    "line": 2122,
+    "owner": "renderCourses",
+    "target": "state.activeCourseId",
+    "code": "state.activeCourseId=c.id"
+  },
+  {
+    "line": 2122,
+    "owner": "renderCourses",
+    "target": "state.studentOnboarding",
+    "code": "state.studentOnboarding={...state.studentOnboarding,role:'student',lastOpenedClassId:c.id}"
+  },
+  {
+    "line": 2122,
+    "owner": "renderCourses",
+    "target": "state.activeCourseId",
+    "code": "state.activeCourseId=b.dataset.openCourse"
+  },
+  {
+    "line": 2129,
+    "owner": "renderCourseRoute",
+    "target": "state.activeCourseId",
+    "code": "state.activeCourseId=courseId"
+  },
+  {
+    "line": 2141,
+    "owner": "renderOverview",
+    "target": "state.plan.duration",
+    "code": "state.plan.duration=Number(b.dataset.overviewDuration)"
+  },
+  {
+    "line": 2157,
+    "owner": "renderTree",
+    "target": "state.onboarding.treeHintSeen",
+    "code": "state.onboarding.treeHintSeen=true"
+  },
+  {
+    "line": 2241,
+    "owner": "renderClassNotes",
+    "target": "state.lastClassNoteId",
+    "code": "state.lastClassNoteId=note.id"
+  },
+  {
+    "line": 2244,
+    "owner": "renderClassNotes",
+    "target": "state.classNoteViewMode",
+    "code": "state.classNoteViewMode=btn.dataset.classNoteView==='summary'?'summary':'detail'"
+  },
+  {
+    "line": 2245,
+    "owner": "renderClassNotes",
+    "target": "state.classNoteProgress",
+    "code": "state.classNoteProgress={...(state.classNoteProgress||{}),[nid]:[...set]}"
+  },
+  {
+    "line": 2245,
+    "owner": "renderClassNotes",
+    "target": "state.lastClassNoteId",
+    "code": "state.lastClassNoteId=nid"
+  },
+  {
+    "line": 2248,
+    "owner": "renderClassNotes",
+    "target": "state.studentClassNotes",
+    "code": "state.studentClassNotes={...(state.studentClassNotes||{}),[note.id]:{text,updatedAt:new Date().toISOString()}}"
+  },
+  {
+    "line": 2249,
+    "owner": "renderClassNotes",
+    "target": "state.classNoteAttachments",
+    "code": "state.classNoteAttachments={...(state.classNoteAttachments||{}),[note.id]:files}"
+  },
+  {
+    "line": 2265,
+    "owner": "startAssessmentSession",
+    "target": "state.plan.duration",
+    "code": "state.plan.duration=30"
+  },
+  {
+    "line": 2266,
+    "owner": "startChapterDrill",
+    "target": "state.plan.duration",
+    "code": "state.plan.duration=15"
+  },
+  {
+    "line": 2291,
+    "owner": "renderStudyStart",
+    "target": "state.plan.duration",
+    "code": "state.plan.duration=Number(b.dataset.studyDuration)"
+  },
+  {
+    "line": 2293,
+    "owner": "renderStudyStart",
+    "target": "state.classBoardPosts",
+    "code": "state.classBoardPosts=[...(state.classBoardPosts||[]),{id:'board-'+Date.now(),courseId:c.id,type:document.getElementById('classBoardType').value,text,createdAt:new Date().toISOString()}].slice(-30)"
+  },
+  {
+    "line": 2321,
+    "owner": "finishGate",
+    "target": "state.activityCompletions[`canopy-chase:${c.id}`]",
+    "code": "state.activityCompletions[`canopy-chase:${c.id}`]={completedAt:new Date().toISOString(),clean:true}"
+  },
+  {
+    "line": 2352,
+    "owner": "renderBranchline",
+    "target": "state.activityCompletions[`branchline:${c.id}`]",
+    "code": "state.activityCompletions[`branchline:${c.id}`]={completedAt:new Date().toISOString(),clean:true}"
+  },
+  {
+    "line": 2354,
+    "owner": "startSession",
+    "target": "state.currentSession",
+    "code": "state.currentSession={sessionId:'session-'+Date.now(),courseId,activityId:opts.activityId||`${courseId}:review-5`,assessmentId:opts.assessmentId||null,targetLabel:opts.targetLabel||null,planDuration:state.plan.duration,questionIds,presentations,index:0,attemptEventIds:[],startedAt:new Date().toISOString(),status:'active',pausedAt:null,accumulatedPauseMs:0,activeMs:0,activeTickAt:Date.now(),lastSavedAt:new Date().toISOString(),beforeProjection:before}"
+  },
+  {
+    "line": 2354,
+    "owner": "startSession",
+    "target": "state.lastSummary",
+    "code": "state.lastSummary=null"
+  },
+  {
+    "line": 2360,
+    "owner": "restartCurrentQuiz",
+    "target": "state.currentSession",
+    "code": "state.currentSession=null"
+  },
+  {
+    "line": 2361,
+    "owner": "quitCurrentQuiz",
+    "target": "state.currentSession",
+    "code": "state.currentSession=null"
+  },
+  {
+    "line": 2450,
+    "owner": "undoLastAnnotationChange",
+    "target": "state.annotations",
+    "code": "state.annotations=undo.annotations.map(a=>({...a}))"
+  },
+  {
+    "line": 2450,
+    "owner": "undoLastAnnotationChange",
+    "target": "state.annotations",
+    "code": "state.annotations=after"
+  },
+  {
+    "line": 2454,
+    "owner": "deletePendingAnnotation",
+    "target": "state.annotations",
+    "code": "state.annotations=(state.annotations||[]).filter(a=>a.id!==id)"
+  },
+  {
+    "line": 2478,
+    "owner": "bindAnnotationSurfaces",
+    "target": "state.annotations",
+    "code": "state.annotations=(state.annotations||[]).filter(a=>a.id!==b.dataset.deleteAnnotation)"
+  },
+  {
+    "line": 2505,
+    "owner": "finishSession",
+    "target": "state.lastSummary",
+    "code": "state.lastSummary={courseId:c.id,sessionId:s.sessionId,activityId:s.activityId,planDuration:s.planDuration||15,correct,total:attempts.length,growth,milestone,recordedAt:new Date().toISOString(),milestoneAlreadyPresented:existing,seedMilestoneKey:reward?candidate.key:null,seedRewardLabel:candidate.label,coinReward:reward,coinsCollected:false,missedQuestionIds:[...new Set(attempts.filter(a=>!a.correct).map(a=>a.questionId))]}"
+  },
+  {
+    "line": 2505,
+    "owner": "finishSession",
+    "target": "state.currentSession",
+    "code": "state.currentSession=null"
+  },
+  {
+    "line": 2510,
+    "owner": "renderSessionSummary",
+    "target": "state.coinBalance",
+    "code": "state.coinBalance=beforeBalance+sum.coinReward"
+  },
+  {
+    "line": 2510,
+    "owner": "renderSessionSummary",
+    "target": "state.coinAwards",
+    "code": "state.coinAwards=(state.coinAwards||[]).filter(a=>a.id!==award.id)"
+  },
+  {
+    "line": 2510,
+    "owner": "renderSessionSummary",
+    "target": "state.coinBalance",
+    "code": "state.coinBalance=beforeBalance"
+  },
+  {
+    "line": 2640,
+    "owner": "purchaseAvatarItem",
+    "target": "state.coinBalance",
+    "code": "state.coinBalance=beforeBalance-item.cost"
+  },
+  {
+    "line": 2640,
+    "owner": "purchaseAvatarItem",
+    "target": "state.avatarInventory",
+    "code": "state.avatarInventory=[...beforeInventory,item.id]"
+  },
+  {
+    "line": 2640,
+    "owner": "purchaseAvatarItem",
+    "target": "state.coinBalance",
+    "code": "state.coinBalance=beforeBalance"
+  },
+  {
+    "line": 2640,
+    "owner": "purchaseAvatarItem",
+    "target": "state.avatarInventory",
+    "code": "state.avatarInventory=beforeInventory"
+  },
+  {
+    "line": 2656,
+    "owner": "renderProfileNotes",
+    "target": "state.annotations",
+    "code": "state.annotations=(state.annotations||[]).filter(a=>a.id!==b.dataset.notesDelete)"
+  },
+  {
+    "line": 2665,
+    "owner": "renderProfileSettings",
+    "target": "state.theme",
+    "code": "state.theme=b.dataset.themeChoice"
+  },
+  {
+    "line": 2666,
+    "owner": "renderProfileSettings",
+    "target": "state.lessMotion",
+    "code": "state.lessMotion=!state.lessMotion"
+  },
+  {
+    "line": 2667,
+    "owner": "renderProfileSettings",
+    "target": "state.onboarding",
+    "code": "state.onboarding={...state.onboarding,answerHintCount:0,treeHintSeen:false,laterHintSeen:false,scenarioSeen:false}"
+  },
+  {
+    "line": 2668,
+    "owner": "renderProfileSettings",
+    "target": "state.showStudyTimer",
+    "code": "state.showStudyTimer=!state.showStudyTimer"
+  },
+  {
+    "line": 2668,
+    "owner": "renderProfileSettings",
+    "target": "state.contextTipsEnabled",
+    "code": "state.contextTipsEnabled=state.contextTipsEnabled===false"
+  },
+  {
+    "line": 2669,
+    "owner": "renderProfileSettings",
+    "target": "state.materialPreferences",
+    "code": "state.materialPreferences={...(state.materialPreferences||{}),teacherMaterialMode:e.target.value}"
+  },
+  {
+    "line": 2670,
+    "owner": "renderProfileSettings",
+    "target": "state.materialPreferences",
+    "code": "state.materialPreferences={...(state.materialPreferences||{}),teacherNotifications:state.materialPreferences?.teacherNotifications===false}"
+  },
+  {
+    "line": 2671,
+    "owner": "renderProfileSettings",
+    "target": "state.interfaceSounds",
+    "code": "state.interfaceSounds=state.interfaceSounds===false"
+  },
+  {
+    "line": 2672,
+    "owner": "renderProfileSettings",
+    "target": "state.annotationPrefs",
+    "code": "state.annotationPrefs={...(state.annotationPrefs||{}),highlightColor:safeHighlightColor(document.getElementById('profileHighlightColor')?.value)}"
+  },
+  {
+    "line": 2673,
+    "owner": "renderProfileSettings",
+    "target": "state.gardenCues",
+    "code": "state.gardenCues=!state.gardenCues"
+  },
+  {
+    "line": 2674,
+    "owner": "renderProfileSettings",
+    "target": "state.showAdaptiveReason",
+    "code": "state.showAdaptiveReason=!state.showAdaptiveReason"
+  },
+  {
+    "line": 2675,
+    "owner": "renderProfileSettings",
+    "target": "state.sessionFeedbackPrompts",
+    "code": "state.sessionFeedbackPrompts=!state.sessionFeedbackPrompts"
+  },
+  {
+    "line": 2676,
+    "owner": "renderProfileSettings",
+    "target": "state.showExampleHistory",
+    "code": "state.showExampleHistory=!state.showExampleHistory"
+  },
+  {
+    "line": 2682,
+    "owner": "renderInventory",
+    "target": "state.equippedAvatarItems",
+    "code": "state.equippedAvatarItems=state.equippedAvatarItems||[]"
+  },
+  {
+    "line": 2682,
+    "owner": "renderInventory",
+    "target": "state.equippedAvatarItems",
+    "code": "state.equippedAvatarItems=state.equippedAvatarItems.includes(id)?state.equippedAvatarItems.filter(x=>x!==id):[...state.equippedAvatarItems,id]"
+  },
+  {
+    "line": 2686,
+    "owner": "equipAppearance",
+    "target": "state.equippedAppearance",
+    "code": "state.equippedAppearance=id"
+  },
+  {
+    "line": 2705,
+    "owner": "renderScenario",
+    "target": "state.onboarding.scenarioSeen",
+    "code": "state.onboarding.scenarioSeen=true"
+  },
+  {
+    "line": 2707,
+    "owner": "startScenario",
+    "target": "state.activeScenario",
+    "code": "state.activeScenario=s"
+  },
+  {
+    "line": 2736,
+    "owner": "renderScenarioStep",
+    "target": "state.activeScenario",
+    "code": "state.activeScenario=s"
+  },
+  {
+    "line": 2736,
+    "owner": "renderScenarioStep",
+    "target": "state.activeScenario",
+    "code": "state.activeScenario=null"
+  },
+  {
+    "line": 2736,
+    "owner": "renderScenarioStep",
+    "target": "state.activeScenario",
+    "code": "state.activeScenario=s"
+  },
+  {
+    "line": 2736,
+    "owner": "renderScenarioStep",
+    "target": "state.activeScenario",
+    "code": "state.activeScenario=s"
+  },
+  {
+    "line": 2763,
+    "owner": "renderDebrief",
+    "target": "state.scenarioRuns",
+    "code": "state.scenarioRuns=[...(state.scenarioRuns||[]),JSON.parse(JSON.stringify(s))].slice(-20)"
+  },
+  {
+    "line": 2763,
+    "owner": "renderDebrief",
+    "target": "state.activeScenario",
+    "code": "state.activeScenario=null"
+  },
+  {
+    "line": 2841,
+    "owner": "renderWorkspace",
+    "target": "state.analyticsEvents",
+    "code": "state.analyticsEvents=[]"
+  },
+  {
+    "line": 2942,
+    "owner": "renderInstructorWorkspace",
+    "target": "state.questionReviews",
+    "code": "state.questionReviews=state.questionReviews||{}"
+  },
+  {
+    "line": 2942,
+    "owner": "renderInstructorWorkspace",
+    "target": "state.questionReviews[qid]",
+    "code": "state.questionReviews[qid]={status,sectionId:chosen.id,updatedAt:new Date().toISOString()}"
+  },
+  {
+    "line": 2953,
+    "owner": "closeTour",
+    "target": "state.onboarding.teacherTourSeen",
+    "code": "state.onboarding.teacherTourSeen=true"
+  },
+  {
+    "line": 2960,
+    "owner": "renderInstructorWorkspace",
+    "target": "state.instructorClassSetups[chosen.id]",
+    "code": "state.instructorClassSetups[chosen.id]={cohort:document.getElementById('setupCohort').value.trim(),section:document.getElementById('setupSection').value.trim(),days:[...document.querySelectorAll('input[name=\"setupDay\"]:checked')].map(x=>x.value),startTime:document.getElementById('setupStartTime').value,endTime:document.getElementById('setupEndTime').value,location:document.getElementById('setupLocation').value.trim(),syllabusName:syllabus?.name||classSetup.syllabusName||'',scheduleName:schedule?.name||classSetup.scheduleName||'',updatedAt:new Date().toISOString()}"
+  },
+  {
+    "line": 2969,
+    "owner": "renderInstructorWorkspace",
+    "target": "state.questionDrafts[qid]",
+    "code": "state.questionDrafts[qid]={note,updatedAt:new Date().toISOString(),sectionId:chosen.id}"
+  },
+  {
+    "line": 2984,
+    "owner": "renderInstructorWorkspace",
+    "target": "state.instructorClassNotes",
+    "code": "state.instructorClassNotes={...(state.instructorClassNotes||{}),[noteId]:text}"
+  },
+  {
+    "line": 3027,
+    "owner": "(script)",
+    "target": "state.previewPersona",
+    "code": "state.previewPersona=['learner','instructor','owner'].includes(state.previewPersona)?state.previewPersona:'learner'"
+  },
+  {
+    "line": 3028,
+    "owner": "(script)",
+    "target": "state.demoSignedIn",
+    "code": "state.demoSignedIn=state.demoSignedIn!==false"
+  },
+  {
+    "line": 3029,
+    "owner": "(script)",
+    "target": "state.practiceImmediateReview",
+    "code": "state.practiceImmediateReview=state.practiceImmediateReview!==false"
+  },
+  {
+    "line": 3042,
+    "owner": "sgDecorateDemoSession",
+    "target": "state.previewPersona",
+    "code": "state.previewPersona=b.dataset.previewPersona"
+  },
+  {
+    "line": 3042,
+    "owner": "sgDecorateDemoSession",
+    "target": "state.demoSignedIn",
+    "code": "state.demoSignedIn=true"
+  },
+  {
+    "line": 3043,
+    "owner": "sgDecorateDemoSession",
+    "target": "state.demoSignedIn",
+    "code": "state.demoSignedIn=false"
+  },
+  {
+    "line": 3088,
+    "owner": "startSession",
+    "target": "state.currentSession",
+    "code": "state.currentSession={sessionId:'session-'+Date.now(),courseId,activityId:opts.activityId||`${courseId}:review-5`,assessmentId:opts.assessmentId||null,targetLabel:opts.targetLabel||null,planDuration:state.plan.duration,mode:opts.mode||'practice',immediateReview:opts.mode==='assessment'?false:(opts.immediateReview??state.practiceImmediateReview!==false),questionIds,presentations,index:0,attemptEventIds:[],startedAt:new Date().toISOString(),status:'active',pausedAt:null,accumulatedPauseMs:0,activeMs:0,activeTickAt:Date.now(),lastSavedAt:new Date().toISOString(),beforeProjection:before}"
+  },
+  {
+    "line": 3089,
+    "owner": "startSession",
+    "target": "state.lastSummary",
+    "code": "state.lastSummary=null"
+  },
+  {
+    "line": 3091,
+    "owner": "startAssessmentSession",
+    "target": "state.plan.duration",
+    "code": "state.plan.duration=30"
+  },
+  {
+    "line": 3124,
+    "owner": "finishSession",
+    "target": "state.lastSummary",
+    "code": "state.lastSummary={courseId:c.id,sessionId:s.sessionId,activityId:s.activityId,assessmentId:s.assessmentId||null,mode:s.mode||'practice',immediateReview:s.immediateReview!==false,planDuration:s.planDuration||15,correct,total:attempts.length,growth,milestone,recordedAt:new Date().toISOString(),milestoneAlreadyPresented:existing,seedMilestoneKey:reward?candidate.key:null,seedRewardLabel:candidate.label,coinReward:reward,coinsCollected:false,attemptEventIds:[...s.attemptEventIds],missedQuestionIds:[...new Set(attempts.filter(a=>!a.correct).map(a=>a.questionId))]}"
+  },
+  {
+    "line": 3125,
+    "owner": "finishSession",
+    "target": "state.currentSession",
+    "code": "state.currentSession=null"
+  },
+  {
+    "line": 3138,
+    "owner": "renderStudyStart",
+    "target": "state.practiceImmediateReview",
+    "code": "state.practiceImmediateReview=state.practiceImmediateReview===false"
+  },
+  {
+    "line": 3207,
+    "owner": "sgBindStudySetDetail",
+    "target": "state.questionDrafts[key]",
+    "code": "state.questionDrafts[key]={seq,revisionId:`${q.id}-v${q.version}-local${seq}`,text:stem,explanation:rat,sourceVersionIds:[...(q.sourceVersionIds||[])],updatedAt:new Date().toISOString(),baseVersion:q.version}"
+  },
+  {
+    "line": 3208,
+    "owner": "sgBindStudySetDetail",
+    "target": "state.questionReviews",
+    "code": "state.questionReviews=state.questionReviews||{}"
+  },
+  {
+    "line": 3208,
+    "owner": "sgBindStudySetDetail",
+    "target": "state.questionReviews[sgReviewKey(chosen.id,set.revisionId,m.rev)]",
+    "code": "state.questionReviews[sgReviewKey(chosen.id,set.revisionId,m.rev)]={status:action,classId:chosen.id,setRevisionId:set.revisionId,questionRevisionId:m.rev.revisionId,contentBinding:sgContentBinding(m.rev),reason,updatedAt:new Date().toISOString()}"
+  },
+  {
+    "line": 3346,
+    "owner": "sgR6History",
+    "target": "sgR6.history.length",
+    "code": "sgR6.history.length=12"
+  },
+  {
+    "line": 3365,
+    "owner": "sgR6MaybeAdvanceDemo",
+    "target": "sgR6.demoStep",
+    "code": "sgR6.demoStep=Math.min(3,sgR6.demoStep+1)"
+  },
+  {
+    "line": 3365,
+    "owner": "sgR6MaybeAdvanceDemo",
+    "target": "sgR6.demoActive",
+    "code": "sgR6.demoActive=false"
+  },
+  {
+    "line": 3366,
+    "owner": "sgR6BindDemo",
+    "target": "sgR6.demoActive",
+    "code": "sgR6.demoActive=true"
+  },
+  {
+    "line": 3366,
+    "owner": "sgR6BindDemo",
+    "target": "sgR6.demoStep",
+    "code": "sgR6.demoStep=0"
+  },
+  {
+    "line": 3366,
+    "owner": "sgR6BindDemo",
+    "target": "sgR6.demoActive",
+    "code": "sgR6.demoActive=false"
+  },
+  {
+    "line": 3366,
+    "owner": "sgR6BindDemo",
+    "target": "sgR6.demoStep",
+    "code": "sgR6.demoStep=Math.max(0,sgR6.demoStep-1)"
+  },
+  {
+    "line": 3377,
+    "owner": "sgR6RenderStudentPreview",
+    "target": "sgR6.studentFeedback.jordan",
+    "code": "sgR6.studentFeedback.jordan='answered'"
+  },
+  {
+    "line": 3377,
+    "owner": "sgR6RenderStudentPreview",
+    "target": "sgR6.studentFeedback.jordan",
+    "code": "sgR6.studentFeedback.jordan='still_help'"
+  },
+  {
+    "line": 3382,
+    "owner": "sgR6BindOverview",
+    "target": "sgR6.view",
+    "code": "sgR6.view=id.startsWith('student-')?'questions':id"
+  },
+  {
+    "line": 3382,
+    "owner": "sgR6BindOverview",
+    "target": "sgR6.view",
+    "code": "sgR6.view='questions'"
+  },
+  {
+    "line": 3382,
+    "owner": "sgR6BindOverview",
+    "target": "sgR6.view",
+    "code": "sgR6.view='home'"
+  },
+  {
+    "line": 3382,
+    "owner": "sgR6BindOverview",
+    "target": "sgR6.assessmentDraftSaved",
+    "code": "sgR6.assessmentDraftSaved=true"
+  },
+  {
+    "line": 3382,
+    "owner": "sgR6BindOverview",
+    "target": "sgR6.assessmentConfirmed",
+    "code": "sgR6.assessmentConfirmed=true"
+  },
+  {
+    "line": 3382,
+    "owner": "sgR6BindOverview",
+    "target": "sgR6.questionGroup",
+    "code": "sgR6.questionGroup='confirmed'"
+  },
+  {
+    "line": 3382,
+    "owner": "sgR6BindOverview",
+    "target": "sgR6.questionGroup",
+    "code": "sgR6.questionGroup='split'"
+  },
+  {
+    "line": 3382,
+    "owner": "sgR6BindOverview",
+    "target": "sgR6.questionGroup",
+    "code": "sgR6.questionGroup='proposed'"
+  },
+  {
+    "line": 3382,
+    "owner": "sgR6BindOverview",
+    "target": "sgR6.sharedAnswerApproved",
+    "code": "sgR6.sharedAnswerApproved=true"
+  },
+  {
+    "line": 3382,
+    "owner": "sgR6BindOverview",
+    "target": "sgR6.exceptionResolved",
+    "code": "sgR6.exceptionResolved=true"
+  },
+  {
+    "line": 3388,
+    "owner": "sgR6PaintStudents",
+    "target": "sgR6.studentSort",
+    "code": "sgR6.studentSort=e.target.value"
+  },
+  {
+    "line": 3388,
+    "owner": "sgR6PaintStudents",
+    "target": "sgR6.studentFilter",
+    "code": "sgR6.studentFilter=e.target.value"
+  },
+  {
+    "line": 3389,
+    "owner": "sgR6PaintSources",
+    "target": "sgR6.view",
+    "code": "sgR6.view='assessment'"
+  },
+  {
+    "line": 3390,
+    "owner": "sgR6PaintSources",
+    "target": "sgR6.view",
+    "code": "sgR6.view='assessment'"
+  },
+  {
+    "line": 3391,
+    "owner": "sgR6ApplyInstructor",
+    "target": "sgR6.activeClassId",
+    "code": "sgR6.activeClassId=chosen.id"
+  },
+  {
+    "line": 3405,
+    "owner": "renderAddClass",
+    "target": "state.localClasses",
+    "code": "state.localClasses=[...(state.localClasses||[]),c]"
+  },
+  {
+    "line": 3405,
+    "owner": "renderAddClass",
+    "target": "state.activeCourseId",
+    "code": "state.activeCourseId=id"
+  },
+  {
+    "line": 3405,
+    "owner": "renderAddClass",
+    "target": "state.studentOnboarding",
+    "code": "state.studentOnboarding={...state.studentOnboarding,role:'student',lastCreatedClassId:id,lastOpenedClassId:id,phase:'class_empty'}"
+  },
+  {
+    "line": 3438,
+    "owner": "reset",
+    "target": "sgR6.assessmentConfirmed",
+    "code": "sgR6.assessmentConfirmed=false"
+  },
+  {
+    "line": 3438,
+    "owner": "reset",
+    "target": "sgR6.history",
+    "code": "sgR6.history=[]"
+  },
+  {
+    "line": 3446,
+    "owner": "setStudentFeedback",
+    "target": "sgR6.studentFeedback[id]",
+    "code": "sgR6.studentFeedback[id]=value"
+  },
+  {
+    "line": 3447,
+    "owner": "reset",
+    "target": "sgR6.assessmentConfirmed",
+    "code": "sgR6.assessmentConfirmed=false"
+  },
+  {
+    "line": 3447,
+    "owner": "reset",
+    "target": "sgR6.assessmentDraftSaved",
+    "code": "sgR6.assessmentDraftSaved=false"
+  },
+  {
+    "line": 3447,
+    "owner": "reset",
+    "target": "sgR6.questionGroup",
+    "code": "sgR6.questionGroup='proposed'"
+  },
+  {
+    "line": 3447,
+    "owner": "reset",
+    "target": "sgR6.sharedAnswerApproved",
+    "code": "sgR6.sharedAnswerApproved=false"
+  },
+  {
+    "line": 3447,
+    "owner": "reset",
+    "target": "sgR6.exceptionResolved",
+    "code": "sgR6.exceptionResolved=false"
+  },
+  {
+    "line": 3447,
+    "owner": "reset",
+    "target": "sgR6.studentFeedback",
+    "code": "sgR6.studentFeedback={jordan:'pending',aaliyah:'pending',marcus:'pending'}"
+  },
+  {
+    "line": 3447,
+    "owner": "reset",
+    "target": "sgR6.studentSort",
+    "code": "sgR6.studentSort='name'"
+  },
+  {
+    "line": 3447,
+    "owner": "reset",
+    "target": "sgR6.studentFilter",
+    "code": "sgR6.studentFilter='all'"
+  },
+  {
+    "line": 3447,
+    "owner": "reset",
+    "target": "sgR6.view",
+    "code": "sgR6.view='home'"
+  },
+  {
+    "line": 3447,
+    "owner": "reset",
+    "target": "sgR6.history",
+    "code": "sgR6.history=[]"
+  },
+  {
+    "line": 3447,
+    "owner": "reset",
+    "target": "sgR6.demoActive",
+    "code": "sgR6.demoActive=false"
+  },
+  {
+    "line": 3447,
+    "owner": "reset",
+    "target": "sgR6.demoStep",
+    "code": "sgR6.demoStep=0"
+  }
+]

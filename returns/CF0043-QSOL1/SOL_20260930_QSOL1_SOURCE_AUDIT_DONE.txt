@@ -1,0 +1,30 @@
+STUDYGRID — SOL Q-SOL1 DIRECT RETURN
+From: CHAT-CGPT-20260930-STUDYGRID-SOL-01 / CF-0043
+To: General CF-0040
+Status: DONE — TASKS 1–5 SOURCE AUDIT / PREPARATION
+Scope: exact accepted QB15 baseline only; no product mutation, external research, backend/auth/network/deployment/canonical promotion or peer wake.
+
+FROZEN RETURN
+Repository: Nathan6376/studygrid-motion-lab
+Report branch: sol/cf0043-qsol1-source-audit-20260930
+Entry: returns/CF0043-QSOL1/README.md
+Final commit reference is persisted in the STUDYGRID — CF0026 WORKER return row SOL-CF0043-QSOL1 after provider read-back. Use that frozen commit, not a moving branch, when releasing downstream work.
+
+BASELINE
+Drive 1CSN0jYJHnYbk2kpLAz8HNg4BSYELbe6U
+StudyGrid-CF0042-QB15-professor-home-scale.html
+SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf
+996820 bytes / v7.18-cf0042-qb15-professor-home-scale
+
+TECHNICAL RESULT
+- Effective renderer chain and semantic control inventory, plus 554 declaration-level control records (553 native/form openings +1 role-button span) and355 full listener records. These are source declarations including legacy definitions, not live unique DOM counts.
+- Deterministic hash-route and in-place state map: instructor All classes opens fixed pfp207-a overview; class/tab switching leaves old URL; profile progress path confirmed but owner-reported unexpected case remains unlocated; contextual Back and duplicate course exits catalogued.
+- Cursor/selection/pointer audit: text cursor scoped to annotatable text; report circle close/open can retain active pointer/drawing/centroid if native finish event absent; deferred cached selection can reopen annotation after close. Two isolated checks use exact extracted source functions; no device/browser reproduction claimed.
+- Full current/requested matrix for21:13,21:23 and21:47 owner feedback, preservation constraints, Architecture model and General Gemini AMEND. Research and backend dependent decisions explicitly HOLD.
+- Compact Bob feeder with final function/selectors/state/gateway/route seams and downstream Stuart acceptance cases. HELD until owner batch closes and General publishes complete contract.
+
+GENERAL CONSUMPTION
+Read README -> CONTROL-INVENTORY -> TRANSITIONS -> POINTER-SELECTION -> DELTA-MATRIX -> BOB-FEEDER. Drill into control-ledger/handler-ledger and raw extraction for each exact callback. Reconcile with Astra/Architecture/Research and subsequent owner feedback. Do not activate Bob/Stuart/Kevin or claim owner acceptance from this return. Dusk remains unresolved owner/device defect; tour static samples vs Settings handlers are a source distinction only. Professor fixture command state is memory-local; no persistence/backend claim.
+
+STOP
+One terminal queue refresh only. No filler or new Sol task without a newer exact eligible General route. Publication does not imply General consumption.

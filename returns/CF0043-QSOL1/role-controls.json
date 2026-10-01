@@ -1,0 +1,19 @@
+[
+  {
+    "audit_id": "C0554",
+    "line": 1752,
+    "tag": "span",
+    "id": "tourDemoPhrase",
+    "role": "button",
+    "tabindex": 0,
+    "owner": "tourVisualMarkup",
+    "label": "spread across several days",
+    "visible_route_state": "/tour; learn step",
+    "actual_destination_or_mutation": "bindTourDemo1758; click/Enter/Space selectPhrase1761 opens tools and aria-expanded=true; repeat does not toggle off.",
+    "raw": "<span class=\"tour-demo-phrase\" id=\"tourDemoPhrase\" role=\"button\" tabindex=\"0\" aria-controls=\"tourDemoTools\" aria-expanded=\"false\">spread across several days</span>",
+    "definition_status": "SOURCE_DECLARATION__RUNTIME_VISIBILITY_NOT_ASSERTED",
+    "review_findings": [
+      "F08"
+    ]
+  }
+]

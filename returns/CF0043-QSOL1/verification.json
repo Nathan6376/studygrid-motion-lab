@@ -1,0 +1,22 @@
+{
+  "sourceSha256": "48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf",
+  "bytes": 996820,
+  "executableScriptParses": 4,
+  "checks": [
+    {
+      "name": "Source identity preserved",
+      "result": "PASS"
+    },
+    {
+      "name": "Report close/open exact functions leave drawing/pointer/centroid when native finish event absent",
+      "result": "CONFIRMED_SOURCE_STATE",
+      "browserReproduction": false
+    },
+    {
+      "name": "Annotation cached delayed callback survives exact close function with connected source range",
+      "result": "CONFIRMED_SOURCE_STATE",
+      "browserReproduction": false
+    }
+  ],
+  "limits": "DOM is stubbed; no native event dispatch, pointer capture delivery, CSS geometry, Safari/iPad, screen reader, theme hit-test or runtime acceptance is verified."
+}

@@ -36,7 +36,5 @@
     "supplementaryRoleControls": 1,
     "controlLedgerRecords": 554
   },
-  "scope": "Static exhaustive parse; declarations include replaced legacy functions; runtime/device reproduction not performed.",
-  "status": "DONE",
-  "checkpointCommit": "bae51be2c6209412357e4ae9e6a639b1b44109bb"
+  "scope": "Static exhaustive parse; declarations include replaced legacy functions; runtime/device reproduction not performed."
 }

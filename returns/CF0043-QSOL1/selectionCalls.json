@@ -1,0 +1,38 @@
+[
+  {
+    "line": 2076,
+    "owner": "(script)",
+    "callee": "markCanvas.setPointerCapture",
+    "code": "markCanvas.setPointerCapture?.(e.pointerId)"
+  },
+  {
+    "line": 2080,
+    "owner": "(script)",
+    "callee": "markCanvas.releasePointerCapture",
+    "code": "markCanvas.releasePointerCapture?.(reportCirclePointer)"
+  },
+  {
+    "line": 2350,
+    "owner": "renderBranchline",
+    "callee": "handle.setPointerCapture",
+    "code": "handle.setPointerCapture?.(e.pointerId)"
+  },
+  {
+    "line": 2439,
+    "owner": "closeAnnotationPopover",
+    "callee": "window.getSelection()?.removeAllRanges",
+    "code": "window.getSelection()?.removeAllRanges()"
+  },
+  {
+    "line": 2439,
+    "owner": "closeAnnotationPopover",
+    "callee": "window.getSelection",
+    "code": "window.getSelection()"
+  },
+  {
+    "line": 2470,
+    "owner": "currentAnnotationRange",
+    "callee": "window.getSelection",
+    "code": "window.getSelection()"
+  }
+]
