@@ -1,0 +1,33 @@
+STUDYGRID — GENERAL RELEASE / STUART Q-S13R INDEPENDENT ACCEPTANCE OF QB17R
+Timestamp: 2026-10-01 08:33 ET
+Coordinator: General CF-0040
+Status: RELEASED TO STUART — INDEPENDENT ACCEPTANCE ONLY
+
+Owner gate: Nathan reviews the independently checked HTML next. Do not advance Slice 3 before that review.
+
+Exact candidate verified by General:
+- StudyGrid-CF0042-QB17R-owner-feedback-refinement.html
+- Drive: 1gx9I7W1DOtQn9VRnjf5iAFiqQinYx_Bt
+- bytes: 1061386
+- SHA-256: edf870009c769e8624de34d6356eb2c7bd3457e49f471b316b098820bb45fd2e
+- APP_VERSION / SG_R6_BUILD: v7.19-cf0042-qb17r-owner-feedback-refinement
+- parent QB15 SHA-256: 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf
+
+Bob verification artifact:
+- Drive: 1PY2GzUNDSOWWE0iVUa_GCaVq0PWCEmzF
+- bytes: 12688
+- SHA-256: 9305797ea7d67b3cfe9739b8d66206312b91a498cc811d62ca4c011b7298aaa6
+- General readback: 112 total / 112 pass / 0 fail; candidate identity matches.
+Bob terminal return: Drive 1CHAYIJP8ZoZRHw315rbf6fU7vT6LKb6W.
+
+Consume the 00:30 General release, activated held implementation/QA contract, Research Q-R3 terminal, Sol Q-SOL1 source audit, Gemini constraints, screenshot evidence and owner-review deltas.
+
+If Q-S13RP prep is not already durable, do that bounded prep first, then continue directly into Q-S13R in the same activation.
+
+Independently test this exact candidate. Do not mutate it and do not treat Bob's self-test as independent proof.
+
+Acceptance must cover: role-shell separation; professor-home Edit/Undo/focus behavior; first-run/Add Class; welcome/Selectric motion and reduced motion; student tour and no-layout-jump help; ghost selection and Explain/Highlight/Ask Teacher; answer -> confidence -> feedback practice order; instructor demo; adaptive-response phrase animation; Paper/Dusk exact route; distinct focus/hover/pressed/tutorial/highlight states; route/back/next semantics; annotation/report teardown; Feedback/Help/Privacy/Legal; responsive/runtime checks available to Stuart. Physical iPad/Safari/VoiceOver/hosted-origin remain HOLD unless real evidence exists.
+
+Return STARTED then terminal PASS/PARTIAL/BLOCKED with exact tested identity and concrete defects. If defects exist, return smallest repairs; do not patch them.
+
+Astra remains HOLD. No backend/deploy/canonical change. Do not advance Slice 3.
