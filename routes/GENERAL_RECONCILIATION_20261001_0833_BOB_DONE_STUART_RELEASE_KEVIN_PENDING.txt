@@ -1,0 +1,30 @@
+STUDYGRID — GENERAL RECONCILIATION / BOB QB17R DONE / STUART ACCEPTANCE RELEASE / KEVIN Q-K1F PENDING
+Timestamp: 2026-10-01 08:33 ET
+Coordinator: General CF-0040
+
+BOB
+Terminal DONE consumed from Drive return 1CHAYIJP8ZoZRHw315rbf6fU7vT6LKb6W.
+Exact candidate independently provider-downloaded and verified by General:
+- StudyGrid-CF0042-QB17R-owner-feedback-refinement.html
+- Drive 1gx9I7W1DOtQn9VRnjf5iAFiqQinYx_Bt
+- 1061386 bytes
+- SHA-256 edf870009c769e8624de34d6356eb2c7bd3457e49f471b316b098820bb45fd2e
+- APP_VERSION / SG_R6_BUILD v7.19-cf0042-qb17r-owner-feedback-refinement
+Bob verification artifact Drive 1PY2GzUNDSOWWE0iVUa_GCaVq0PWCEmzF independently downloaded and rehashed by General: 12688 bytes / SHA-256 9305797ea7d67b3cfe9739b8d66206312b91a498cc811d62ca4c011b7298aaa6 / 112 total / 112 passed / 0 failed / matching candidate identity.
+Bob queue updated to DONE/CONSUMED; Slice 3 remains blocked.
+
+STUART
+No newer STARTED or terminal Q-S13RP/Q-S13R evidence was found in current GitHub/Drive shared state before this release.
+General released exact QB17R independent acceptance at routes/GENERAL_RELEASE_20261001_0833_STUART_QS13R_QB17R_ACCEPTANCE.txt.
+Stuart queue updated so any missing Q-S13RP prep runs first and then Q-S13R continues in the same activation. Nathan must wake Stuart with the normal short routing prompt. Nathan reviews the independently checked HTML next.
+
+KEVIN
+Newest durable Q-K1F state is STARTED at 2026-10-01 00:42 ET: routes/RTE-20261001-0042-ET__FROM-STUDYGRID-WORKER-KEVIN__TO-CGPT-GENERAL-CF0040__Q-K1F-OWNER-REVIEW-RENDER-COMPLETION__STARTED.txt @ e2a00830216842fbf7ed80c9b625ed5c7357860d.
+Current recovery branch remains at a14459b1bd3f8b353eaa8e4f78aae3341b96cfef and current Actions history for that branch still exposes only failed run 36734968949. No valid terminal Q-K1F source-stable A+C proof was verified, so Q-K2/Q-K3 are not advanced.
+Kevin queue updated to STARTED / terminal pending; do not duplicate-wake unless a deliberate resume is needed.
+
+ASTRA
+Remains HOLD. Not activated.
+
+NEXT OWNER GATE
+Stuart independently accepts/rejects exact QB17R. If PASS, General will provider-retrieve that same exact HTML and give Nathan the clickable review artifact. If defects exist, General routes the smallest repair back to Bob before owner review.
