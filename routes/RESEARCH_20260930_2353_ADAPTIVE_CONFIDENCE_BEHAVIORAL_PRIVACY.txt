@@ -1,0 +1,83 @@
+STUDYGRID — RESEARCH TASK / ADAPTIVE CONFIDENCE + BEHAVIORAL SIGNALS + PRIVACY
+Timestamp: 2026-09-30 23:53 ET
+From: General CF-0040
+To: StudyGrid Research CF-0044
+Priority: Q-R3 / ELIGIBLE AFTER Q-R2 TERMINAL
+Parent owner delta: routes/OWNER_REVIEW_DELTA_20260930_2353_ADAPTIVE_CONFIDENCE_BEHAVIORAL_SIGNALS_PRIVACY.txt @ 3cd292e355e5d40dfa1cc22a6b1831b8bc11f51d
+Status: RESEARCH/EVIDENCE ONLY — NO STUDYGRID MUTATION
+
+MISSION
+Do a bounded evidence pass on StudyGrid adaptive-learning confidence and behavioral interaction signals. Do not restart or interrupt Q-R2; execute only after Q-R2 is terminal and only if no newer higher-priority General route supersedes this task.
+
+WORKSTREAM 1 — CONFIDENCE TIMING / CONTAMINATION
+Research evidence for collecting learner confidence BEFORE correctness/feedback versus after feedback.
+Need concrete guidance on:
+- metacognitive calibration;
+- contamination/anchoring from revealed correctness;
+- whether pre-feedback confidence is the stronger signal for adaptive scheduling;
+- wording/scales that reduce ambiguity;
+- treatment of skipped confidence responses.
+
+WORKSTREAM 2 — ADAPTIVE SCHEDULING USE
+Research how confidence can responsibly influence future practice frequency/spacing alongside correctness, retrieval history and repeated-error patterns.
+Do not invent a StudyGrid algorithm. Return evidence-backed feature/decision principles and reject conditions.
+
+WORKSTREAM 3 — BEHAVIORAL INTERACTION SIGNALS
+Research evidence and limitations for using interaction features such as:
+- response latency;
+- time-to-first-action;
+- pointer/cursor path efficiency/directness;
+- reversals/hesitation;
+- answer changes/undos;
+- dwell time;
+- revisit behavior;
+- confidence selection.
+For each candidate signal, classify:
+A. evidence-supported/useful;
+B. weak/noisy/context-dependent;
+C. too invasive or not worth collecting.
+Explicitly address device/input/accessibility/fatigue/distraction confounds. No single interaction signal should be treated as ground-truth confidence.
+
+WORKSTREAM 4 — PRIVACY-PRESERVING TELEMETRY
+Research current privacy/security engineering guidance for adaptive interaction telemetry, especially:
+- data minimization;
+- local/on-device feature extraction;
+- retaining derived features instead of raw pointer trajectories where feasible;
+- purpose limitation;
+- retention limits;
+- user transparency and settings/opt-out;
+- role/access separation;
+- encryption/access-control expectations;
+- whether raw traces should ever be visible to instructors/admins;
+- avoiding sensitive-trait/health/disability/biometric inference.
+Prefer primary standards/platform/privacy-engineering sources where possible.
+
+WORKSTREAM 5 — ACCESSIBILITY / FAIRNESS
+Research how pointer/latency signals can disadvantage users with motor impairments, assistive technology, touch input, trackpads, alternative keyboards, high-latency devices or different interaction styles.
+Return product constraints that prevent the adaptive system from mistaking access method or motor behavior for uncertainty/low ability.
+
+WORKSTREAM 6 — EXPLAINABILITY / USER CONTROL
+Research practical UX patterns for explaining adaptive scheduling without surveillance feel.
+Need guidance for statements such as:
+- `We're showing this again because you missed it and marked yourself unsure.`
+- how much detail should be surfaced;
+- how to expose/disable optional signal categories;
+- how to preserve core study functionality when optional telemetry is off.
+
+OUTPUT
+Return one consolidated terminal package to General CF-0040 with:
+1. Executive recommendations.
+2. Evidence/source register with dates.
+3. Signal matrix: feature -> evidence -> confounds -> privacy cost -> recommended disposition.
+4. Recommended confidence-before-feedback flow.
+5. Privacy/security/minimization contract.
+6. Accessibility/fairness reject conditions.
+7. User-control/explainability recommendations.
+8. Remaining legal/privacy/security/backend holds.
+
+BOUNDARIES
+- Research only; no code/product/runtime mutation.
+- No Bob/Stuart/Kevin wake.
+- No backend/auth/Supabase/provider/deploy/canonical changes.
+- Do not collect or inspect real user telemetry.
+- Do not claim legal compliance without jurisdiction-specific verified authority.
