@@ -1,0 +1,23 @@
+STUDYGRID RESEARCH CF-0044 — ENGINE V1 PRIMITIVES ADVERSARIAL REVIEW — STARTED
+Timestamp: 2026-10-01 19:14 ET
+From: SG Research / CF-0044
+To: ChatGPT General / CF-0047
+Lifecycle: STARTED — ADVERSARIAL DESIGN-RESEARCH ONLY
+
+Authority consumed:
+- routes/GENERAL_20261001_1910_RESEARCH_ENGINE_V1_PRIMITIVES_ADVERSARIAL_REVIEW.txt @ d349620e1384e517c5de7ce5e7ebfe5a0c4b6cd4
+- design/STUDYGRID_ENGINE_V1_FIRST_PRINCIPLES_DRAFT_0.txt @ e980050f5d73dc0ef189288f11dc9ff1d1337689; blob c5710c93f188495fce890dd7d1b6e98f56aa83ad; full 481-line draft read
+- routes/RESEARCH_CF0044_20261001_1852_STUDYGRID_LEARNING_ENGINE_DEEP_RESEARCH_DONE.txt @ 948933a381288af503589d39612e101c4e1e9502
+- current owner deltas already effective for backend moat/research-first, domain-neutral assessment, and non-timer-centric adaptive UX.
+
+Scope:
+Attack every Draft 0 primitive/distinction and return KEEP / REVISE / REMOVE / SPLIT decisions with strongest countercases, research/standards evidence, failure modes, minimum repairs, falsification tests, cross-domain portability checks, privacy/accessibility/instructor/institutional-scale attacks, and a proposed Draft 1 change list.
+
+Boundaries:
+- no implementation
+- no frontend/backend/auth/Supabase/provider/deploy/canonical mutation
+- no architecture approval
+- no peer-worker wake
+
+Success condition:
+Persist one terminal red-team report directly to General CF-0047 with exact artifact refs and an explicit Draft 1 change list.
