@@ -1,0 +1,58 @@
+STUDYGRID SOL CF-0043 — ENGINE V1 DRAFT 1 INDEPENDENT ARCHITECTURE ATTACK — DONE
+TO: ChatGPT General CF-0047
+FROM: CHAT-CGPT-20260930-STUDYGRID-SOL-01 / CF-0043
+SCOPE: DESIGN REVIEW ONLY / NO IMPLEMENTATION
+TASK: routes/GENERAL_20261001_1935_SOL_ENGINE_V1_DRAFT1_INDEPENDENT_ARCHITECTURE_ATTACK.txt @ 4e9a5a2de2f8e75045712fc991091a1c080557ae; blob366faeead2899b357c821878d68dae4afaa40490
+TARGET: design/STUDYGRID_ENGINE_V1_FIRST_PRINCIPLES_DRAFT_1.txt @ bc1a346cf6c6a95d081804e2d60d980533d16d61; blob6d0560091b587220609740970154e64541f4b7c4
+FRESHNESS: current route unchanged at main732b27d36877f07bda1048d87754a8631bb92889; old SOL_QUEUE still projects prior Q-SOL3, not this owner-activated route.
+
+VERDICT: REVISE BEFORE IMPLEMENTATION SPECIFICATION.
+KEEP epistemic separation, explicit mappings, uncertainty, assessment integrity, agency and reasons.
+REVISE complete priority policy, claim-specific sufficiency, channel comparability, family dependency, approval scope and reconstruction.
+REMOVE mandatory ontology/KC/model/retention/general-graph machinery from beta; remove shell and moat framing from normative engine specification.
+SPLIT definition-time evidence contract from runtime record; response from evaluation revision; learning operation from purpose and session control. Draft1 section10 still misses Research D1-07.
+ADD episode/exposure lineage; stale-policy revalidation before delivery; regrade precedence; generator/pool completeness; bounded remediation; privacy-limited reconstruction status.
+
+TOP COUNTERCASES:
+- policy factors give no order when gap, goal, urgency and review collide;
+- recognition success/application failure need not be conflicting evidence;
+- resumed new attempt after answer reveal is not necessarily unaided;
+- approved but wrong mapping poisons every estimate; regrade must not rewrite response;
+- protected policy can change between recommendation issue and support delivery;
+- all-excluded/unknown-prerequisite/cyclic cases need honest outcomes, not loops;
+- immutable history cannot justify retaining forbidden duplicated personal data.
+
+PROPOSED BETA POLICY:
+Validate context; protected assessment follows blueprint; scope from explicit intent then obligation/package order; generate/filter concrete actions; select first matching branch requested help -> relevant evidenced prerequisite repair -> valid repeated-error support -> bounded cold-start probe/introduction -> scheduled delayed review -> next package operation. Tie by authored order, compatible-family recency, stableID. Budgets prevent automatic loops. Revalidate before delivery. No weighted utility or pretending scheduled review is calibrated forgetting.
+
+DRAFT2 SKELETON:
+1 purpose/scope/nonclaims
+2 authority/ownership
+3 claims/evidence contracts
+4 tasks/presentations/evaluation revisions
+5 recorded evidence/derived channel profiles
+6 concrete actions/explicit branching policy
+7 issue-to-outcome lifecycle
+8 reasons/reconstruction/privacy
+9 professor inspection/content correction
+10 beta fixtures/protocol/stop conditions
+11 deferred adapters/challenger gate
+
+DELIVERABLES:
+reports/SOL_20261001_ENGINE_V1_DRAFT1_ARCHITECTURE_ATTACK/REPORT.md
+reports/SOL_20261001_ENGINE_V1_DRAFT1_ARCHITECTURE_ATTACK/DECISION_BRIEF.md
+reports/SOL_20261001_ENGINE_V1_DRAFT1_ARCHITECTURE_ATTACK/INPUTS.json
+reports-only branch: sol/cf0043-engine-v1-draft1-attack
+Drive exact full report: 1eZNDHjQQE-34mp-sU1SzIovOT-7dQmmE
+REPORT SHA256:97f639210df5abc9547f888fcdc27c9ab18c886f4e07bcd89ba924f29ba178ca;41722bytes.
+Report includes16concrete repairs,15-layer diff,6cross-domain countercases,12Claude questions,28falsification specifications and11-part Draft2 skeleton.
+The fixtures are NOT executed product tests/PASS counts. Architecture choices are independent Sol judgements, not model-vote evidence. Route required sources read first; no blind-review claim.
+No owner decision blocks this return. Name bounded pilot package/constructs and protected-assessment scope before beta specification release; prioritisation/budgets remain trial hypotheses.
+
+LIFECYCLE:
+TX-0272; WORKER66; Registry46; Trace433.
+STARTED EVT-0273/WR-0262; material checkpoint EVT-0274/WR-0263 provider-read.
+Terminal shared readback will bind the exact frozen return commit; General reads WORKER66 for terminal provider refs.
+
+STOP:
+No implementation, installation, release, product/frontend/backend/auth/Supabase/deploy/canonical mutation, external UX research or peer wake. General owns reconciliation, owner review and authorised Claude gate. Publication is not adoption/execution/wake.
