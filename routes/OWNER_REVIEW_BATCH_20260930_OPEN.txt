@@ -51,17 +51,18 @@ ARCHITECTURE / RESEARCH / SPECIALIST STATE
 - Dedicated Research batch: routes/RESEARCH_20260930_2147_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH.txt. Research is still pending by owner report at 22:09 ET.
 - Gemini 3.1 Pro motion return has been received and persisted at routes/GEMINI_RETURN_20260930_2209_SELECTRIC_BALL_MOTION.txt.
 - General's provisional AMEND adjudication of Gemini is at routes/GENERAL_ADJUDICATION_20260930_2209_GEMINI_SELECTRIC_MOTION.txt. Core implied-sphere/CSS-3D direction is strong, but easing/angles/blur/accessibility/manual-control details remain non-final pending Research and owner review.
-- Astra high-leverage adjudication route is available now at routes/ASTRA_20260930_STUDYGRID_OWNER_REVIEW_ADJUDICATION.txt @ commit 520f7c16ef719361d9c07b5737b5b7581afd1f91. It includes owner-review systems adjudication plus Claude C-E partial-backend salvage/resume adjudication; no implementation authority.
+- Astra primary high-leverage owner-review audit is available now at routes/ASTRA_20260930_2218_STUDYGRID_OWNER_REVIEW_DEEP_AUDIT.txt @ commit 9898661b6ea9599da9897a5849be623e4e8d7546. It is the product/system audit and should run first.
+- Astra second task, after the primary audit, is backend salvage/resume adjudication at routes/ASTRA_20260930_STUDYGRID_OWNER_REVIEW_ADJUDICATION.txt @ commit 4c0dc3a16b21ba73497ded068c92c5bf9da6f2c4. It is limited to Claude C-A..C-E salvage/resume and staging-readiness judgment; no backend mutation.
 - New Sol worker CF-0043 is reserved for heavy exact-source audit/prep. Queue: queues/SOL_QUEUE.txt @ c86e77840529cdef772871722c37e5054fc8a8de. First task: routes/SOL_20260930_RELEASE_INTERACTION_SOURCE_AUDIT.txt @ 9f94b1cd3067d9330ae09a4a76c34c3e7c75d6a8. Owner activation is required; reservation does not prove a host chat/model selection.
 - Claude post-reset QA staged only: routes/CLAUDE_20260930_POSTRESET_CURRENT_RELEASE_QA.txt.
 
 WORKER HOLD / ALLOWED PARALLEL LANES
 - Bob: HOLD all product mutation until owner review batch closes and General publishes the reconciled build contract.
-- Stuart: HOLD acceptance prep/acceptance until exact reconciled candidate/contract exists after batch close.
+- Stuart: HOLD acceptance prep/acceptance until exact reconciled candidate exists after batch close.
 - Kevin: HOLD Q-K1F activation until owner review batch closes; Nathan wants one batched worker activation round.
 - Research: MAY RUN NOW because it is evidence gathering for the open batch, not implementation.
 - Gemini: CURRENT MOTION TASK COMPLETE; do not send another Gemini task unless Nathan requests it or General has a materially new specialist question.
-- Astra: MAY RUN NOW on the exact adjudication route above; adjudication/integration only.
+- Astra: MAY RUN NOW on the primary deep-audit route, then the backend-salvage route if capacity remains; adjudication/integration only.
 - Sol CF-0043: MAY RUN ON OWNER ACTIVATION on Q-SOL1; source audit/prep only.
 - Claude: HOLD until credit reset and General release.
 
