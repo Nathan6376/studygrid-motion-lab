@@ -1,10 +1,22 @@
 STUDYGRID — GENERAL → RELAY ARCHITECTURE SUPPLEMENT / INSTRUCTOR TOUR + ROLE SPLIT + DEMO IA
 Timestamp: 2026-09-30 23:24 ET
+Updated with screenshot evidence: 2026-09-30 23:39 ET
 From: General CF-0040
 To: Relay Architecture CF-0041 / successor
 Owner source: routes/OWNER_REVIEW_DELTA_20260930_2324_INSTRUCTOR_TOUR_ALIVE_UI_MOTION.txt @ 87cef27fe6a52fae030467c41d6a569ac7805a1a
+Screenshot evidence appendix: routes/OWNER_REVIEW_SCREENSHOT_EVIDENCE_20260930_2335.txt @ d2e1e5e5bb21b3f20003dffc0b5312850f13f4bc
 Prior Architecture adjudication: routes/ARCHITECTURE_ADJUDICATION_20260930_2129_ADD_CLASS_ONBOARDING.txt
 Status: PEER-COORDINATOR DESIGN/ARCHITECTURE ADJUDICATION REQUEST — NO IMPLEMENTATION
+
+SCREENSHOT-GROUNDED CONTEXT
+The visual evidence confirms several requirements that should influence the system-level contract:
+- a large pale decorative arc/circle crosses the instructor question-cluster card and competes with content;
+- the instructor tour heading can receive a bright blue rectangular outline that looks accidental/debug-like rather than like deliberate StudyGrid state;
+- the student tour Next control has a stacked/double-edge or halo-like treatment that visually reads as unexplained state;
+- the practice/confidence card is cramped enough that hierarchy/readability is materially affected;
+- the selection/tool step is already structurally close to the desired demo but currently uses underlined/preselected text rather than a guidance layer over normal reading content;
+- the support step already has separate example-question and example-response cards that can support an adaptive-response demonstration without replacing the composition.
+Architecture should use these as concrete state/semantic examples, not as art-direction instructions.
 
 NEEDS ARCHITECTURE DECISION
 1. Instructor vs learner shell boundary
@@ -29,16 +41,27 @@ NEEDS ARCHITECTURE DECISION
 5. Tutorial / progressive guidance state
 - Decide where tutorial state lives, what is remembered, how replay works, and how contextual guidance retires after demonstrated use without becoming permanent clutter.
 - Tutorial must never be required for core use.
+- Define the semantic/state separation between: keyboard focus, selected/active state, tutorial target/spotlight, decorative adaptive-response emphasis, saved study highlight, hover and pressed state. The screenshot-confirmed blue box/halo failures show why these cannot share ambiguous styling/state.
 
 6. Motion as shared product primitive
 - Owner wants coherent animation language across Selectric/full-loop, instructor adaptive-response demo, contextual help reveals, ghost-cursor demonstrations and appearance showcase.
 - Architecture should define shared motion-system boundary and state semantics, while Gemini/Research define choreography/evidence. Do not adjudicate exact easing/art direction beyond system-level constraints.
+- Motion/decorative layers must not capture focus, alter navigation semantics, become the sole carrier of meaning, or attach selection/focus-looking chrome to noninteractive hero copy.
+
+7. Decorative visual layer boundary
+- Define whether decorative arcs/orbs/lines live in a nonsemantic presentation layer so they cannot interfere with focus, hit targets, reading order or tutorial target state.
+- Decorative elements that cross instructional text or look like state indicators need explicit reject conditions.
+- Preserve the liked StudyGrid orb/ball as an intentional branded primitive while preventing unrelated arcs/circles from becoming noise.
+
+8. Practice-state hierarchy contract
+- Architecture does not need to design the card, but it should define semantic separation between learner answer, correct answer, confidence selection, explanation/help, and completion state so Bob cannot collapse all of them into one visual/state container.
+- `Skip` is an action distinct from a confidence value even if presented in the same interaction group; preserve that distinction in state and analytics semantics.
 
 CURRENT PROCESS BOUNDARY
 - Owner review pass is still being reconciled. Do not wake Bob/Stuart/Kevin or mutate StudyGrid.
 - Astra remains HOLD by owner direction.
 - Sol CF-0043 is performing exact-source audit.
-- Research CF-0044 is being assigned a new bounded Q-R2 evidence pass.
+- Research CF-0044 is assigned bounded Q-R2 evidence work.
 - General will reconcile Architecture + Research + Gemini + Sol before the batched implementation release.
 
 RETURN
@@ -47,5 +70,8 @@ Publish a concise adjudication to General with:
 - demo-vs-real state boundary;
 - current-class inference contract;
 - tutorial/progressive-guidance state contract;
+- focus/selected/tutorial/decorative-state semantic separation;
+- decorative presentation-layer boundary;
+- practice answer/correctness/confidence state separation;
 - help/policy IA boundary;
 - worker-facing implementation constraints / reject conditions.
