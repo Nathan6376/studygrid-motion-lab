@@ -1,0 +1,59 @@
+STUDYGRID — GENERAL ADJUDICATION / GEMINI SELECTRIC-TYPEBALL MOTION
+Recorded: 2026-09-30 22:09 ET
+Coordinator: ChatGPT General CF-0040
+Input: routes/GEMINI_RETURN_20260930_2209_SELECTRIC_BALL_MOTION.txt @ commit 6902e1f7faf1948d2c940edcb17de990cd039969
+Parent owner-review batch: routes/OWNER_REVIEW_BATCH_20260930_OPEN.txt
+Disposition: AMEND / STRONG INPUT / RESEARCH PENDING / NO IMPLEMENTATION RELEASE
+
+SUMMARY
+Gemini's core direction is strong and consistent with Nathan's stated mental model: one compact, physically coherent, implied spherical/Selectric-like rotor using native text and CSS 3D rather than three independent cards or a heavy 3D renderer. Do not treat Gemini's numeric values or accessibility mechanics as final until Research returns and the eventual implementation is tested on owner-relevant Safari/iPad.
+
+PROVISIONALLY ADOPT
+1. One coherent rotor/object, not three stacked bars/cards.
+2. Implied geometry: no visible globe/wireframe/tech-demo treatment.
+3. Compound X/Y spatial motion so it does not read as a slot machine or ordinary carousel.
+4. Native HTML text + CSS 3D transforms as the default technical direction; WebGL/Canvas/Three.js are presumptively disproportionate for this small element unless later testing disproves CSS viability.
+5. Active phrase ends front-facing and visually crisp; incoming/outgoing phrases never compete with it.
+6. Motion is supporting communication, not the landing-page focal point. Hero/value proposition and Sign In stay ahead in hierarchy.
+7. Reduced-motion experience must be intentionally designed rather than a broken rotor.
+8. Autoplay, if retained, must pause on interaction/focus and must not create repeated screen-reader announcements.
+9. Prism/three-face rotor is a legitimate fallback if spherical compound geometry produces unstable responsive or Safari rendering.
+
+AMEND BEFORE BUILD
+A. EASING / OVERSHOOT
+- Do not lock in Gemini's spring example cubic-bezier(0.34,1.56,0.64,1). It may feel playful/bouncy rather than premium/mechanical and can amplify motion. Default direction is a damped snap-and-settle with little or no visible overshoot. If any settle exists, keep it extremely small and validate visually.
+
+B. ROTATION NUMBERS
+- Do not hardcode 90–120deg or -35deg/+120deg as the contract yet. Those are useful prototype seeds, not accepted geometry. The final angles should be derived from the chosen three-position spatial layout and shortest coherent path, then tuned for legibility and perceived physical continuity.
+
+C. BLUR
+- Treat blur as optional/minimal. CSS filters on transformed text can become visually soft or expensive, especially in Safari/iPad-class rendering. Prefer depth, opacity and perspective first; use only a very small transient blur if testing proves it improves depth without harming crispness/performance.
+
+D. ACCESSIBILITY STRUCTURE
+- Do not aria-hide an entire interactive component if it contains usable controls. If the rotor itself is decorative, hide only the visual moving text from AT and provide a stable semantic summary/list plus separately accessible controls where manual advance/pause exists.
+- For prefers-reduced-motion, default to static/instantaneous state change or a very subtle non-spatial transition. Do not assume crossfade is always appropriate for users asking for reduced motion.
+
+E. INTERACTION
+- Do not make the active phrase a clickable navigation target merely because Gemini suggested click-to-advance. The phrase is explanatory content unless owner/product intent assigns an action. Manual advance, if needed, should have clear semantics and not add clutter. Research should weigh autoplay-only, pause control, subtle dots, or tap-to-advance.
+
+F. RETURNING USER ADAPTATION
+- Gemini's suggestion to hide the full-loop explainer for recognized/returning users is directionally compatible with Nathan's desire to retire novice guidance, but trigger/heuristic remains Research-owned. Do not hardcode cookie/sign-in counts yet.
+
+SOURCE INSPECTION OF CURRENT BASELINE
+- Current exact build renders the full-loop content as three static `.r6-welcome-path` blocks inside `.r6-welcome-paths` in the welcome panel.
+- Current welcome action order in the exact build is Try StudyGrid -> Take a quick tour -> Sign in, which matches Nathan's feedback that Sign in should be moved earlier/more prominent.
+- Therefore the rotor concept can be implemented as a bounded replacement for the existing three-path explainer rather than a new page architecture.
+
+OPEN RESEARCH QUESTIONS
+1. Safari/iPad CSS 3D transformed text crispness/compositing and filter behavior.
+2. Best reduced-motion fallback for this explanatory component.
+3. Evidence for autoplay dwell/duration and pause behavior.
+4. Whether manual controls improve or clutter this specific landing context.
+5. Exact novice-guidance retirement trigger.
+6. View Transitions/WAAPI relationship to surrounding landing/page transitions; rotor itself should remain independently understandable.
+
+BOUNDARIES
+- No Bob/Stuart/Kevin activation from this adjudication.
+- No product mutation while owner review batch remains open.
+- Research return remains required before General publishes the final motion/UX contract.
+- Architecture may consume this as peer-coordinator context; publication does not wake Architecture.
