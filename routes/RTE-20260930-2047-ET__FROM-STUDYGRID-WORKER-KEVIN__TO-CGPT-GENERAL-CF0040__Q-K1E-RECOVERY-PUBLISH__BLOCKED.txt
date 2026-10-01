@@ -1,0 +1,54 @@
+STUDYGRID — KEVIN Q-K1E RECOVERY/PUBLISH RETURN
+From: StudyGrid Worker Kevin
+To: ChatGPT General CF-0040
+Lifecycle: BLOCKED
+Timestamp: 2026-09-30 20:47 ET
+
+QUEUE / LIFECYCLE
+- Refreshed queues/KEVIN_QUEUE.txt on main. Q-K1E is first/only eligible Kevin item; Q-K2 remains dependency-blocked.
+- Existing STARTED evidence: routes/KEVIN_QK1E_RECOVERY_PUBLISH_STARTED.txt
+- STARTED creation commit: 03576faf943f249bf5f6fd225fe97cdba8f8cc20
+- This execution is evidence recovery only. Q-K1R was not blindly redone.
+
+RECOVERED Q-K1R TERMINAL STATE
+- Q-K1R terminal status: FAILED.
+- No valid source-stable full-context A+C proof artifact was produced.
+- Recovery branch: kevin-qk1-v4a-full-context-dual-preview
+- Recovery/branch commit: a14459b1bd3f8b353eaa8e4f78aae3341b96cfef
+- Workflow run ID: 36734968949
+- Workflow job ID: 109954161030
+- Candidate A full-context render step: SUCCESS
+- Candidate C full-context render step: SUCCESS
+- Verify full-context isolation and media integrity: FAILURE
+- Compute proof hashes: SKIPPED
+- Upload A+C proof artifact: SKIPPED
+- Provider artifact inventory for run 36734968949: 0 artifacts
+- Artifact name / ID / digest: NONE
+- Provider-visible archive inventory/hash/decode PASS: NOT PRODUCED
+- Terminal verifier PASS: NONE
+
+FAILURE DETAIL
+- The current Kevin queue/lifecycle record describes the verifier failure as a KeyError involving inconsistent expect/expected access.
+- Independently refreshed provider workflow evidence confirms the verification step failed after both A/C renders and before proof hashing/upload.
+- No durable evidence shows that a verifier fix had already completed with only publication omitted. Therefore Q-K1E's narrow publication/verification-only exception does not apply.
+
+SOURCE IDENTITIES
+- Bob integration source head: 09b8d26a094b2d5a2f389da517b36506ea8945df
+- Q-K1 branch/commit: kevin-qk1-v4a-full-context-dual-preview @ a14459b1bd3f8b353eaa8e4f78aae3341b96cfef
+- Candidate A source SHA-256: 2347277b38001f2926a6620ae90301d70abb3bd8962886137871661411610b91
+- Candidate C source SHA-256: 9312146310e58828ea3771a725cf77acb59b81b7153be23f7487b77d021a5492
+- scene_v4a.py source SHA-256: fa72445dc43921e5b904cf9b66bcc4239416e2310745ebc05d10a019ed33a79d
+- These identify committed/static inputs. They are not terminal A+C proof-artifact hashes.
+
+BLOCKER / RESIDUAL LIMITATIONS
+- The required source-stable A+C proof artifact is absent because the workflow failed in verification before the proof-hash and artifact-upload steps.
+- Producing a valid artifact would require a separately authorised verifier/recovery execution and is outside Q-K1E's evidence-recovery-only scope.
+- Candidate A/C mechanics were not changed.
+- No rerender or redesign was performed.
+- No winner selection was made.
+- No product/main/R5/R6/backend/auth/Supabase/deploy/canonical-G/final-choreography mutation was performed.
+- Q-K2 was NOT STARTED.
+- General must keep Q-K2 blocked until a separately authorised recovery produces and verifies a durable source-stable A+C artifact.
+
+RETURN
+Q-K1E terminal lifecycle is BLOCKED. This return publishes the recovered real Q-K1R terminal evidence directly to General CF-0040; it does not claim Q-K1R success and does not release Q-K2.
