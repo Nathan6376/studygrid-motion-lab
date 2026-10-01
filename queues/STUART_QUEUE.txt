@@ -1,38 +1,42 @@
 STUDYGRID — STUART WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-10-01 08:33 ET
+Updated: 2026-10-01 10:00 ET
 Queue owner: General
-Worker: Stuart
+Worker: Stuart / successor CF-0046 once owner activates fresh chat
 
 PULL RULE
-When Nathan tells Stuart to check routing, refresh lifecycle and this queue, then execute the first eligible unclaimed item. Prefer exact-candidate acceptance; never pre-approve or mutate product. Return durable technical results directly to General.
+When Nathan tells Stuart to check routing, refresh lifecycle and this queue, then execute the first eligible unclaimed item. Prefer exact-candidate independent acceptance; never pre-approve or mutate product. Return durable technical results directly to General.
 
-CURRENT CONTEXT
-- Owner review pass closed at 2026-10-01 00:30 ET.
-- Authoritative build release: routes/GENERAL_RELEASE_20261001_0030_OWNER_REVIEW_BUILD.txt.
-- Bob Q-B17R terminal DONE is consumed by General.
-- General independently provider-verified exact QB17R candidate identity.
-- Exact acceptance release: routes/GENERAL_RELEASE_20261001_0833_STUART_QS13R_QB17R_ACCEPTANCE.txt @ 6f0b9e7723a42b8d41550e72841a91309cc477fc.
-
-Q-S13RP — OWNER-FEEDBACK REFINEMENT ACCEPTANCE PREP
-Eligibility: AVAILABLE ONLY IF NOT ALREADY DURABLY DONE.
-If not already completed, perform the bounded prep against the fixed release, then continue directly into Q-S13R in the same activation.
+ROLLOVER
+Fresh successor reserved:
+- CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+- owner-visible title: SG Stuart — October 1
+- rollover: routes/STUART_ROLLOVER_20261001_TO_CF0046.txt @ 2a7c181c98dd9f5f23df222a80bf69d1df547883
+The owner-visible predecessor `SG Stuart — September 28` became too long. Its material terminal continuity is durable; no old-chat checkpoint is required.
 
 Q-S13R — OWNER-FEEDBACK REFINEMENT INDEPENDENT ACCEPTANCE
-Eligibility: AVAILABLE after Q-S13RP prep is satisfied.
-Exact candidate:
-StudyGrid-CF0042-QB17R-owner-feedback-refinement.html
-Drive 1gx9I7W1DOtQn9VRnjf5iAFiqQinYx_Bt
-1061386 bytes
-SHA-256 edf870009c769e8624de34d6356eb2c7bd3457e49f471b316b098820bb45fd2e
-APP_VERSION v7.19-cf0042-qb17r-owner-feedback-refinement
-Execute the exact General acceptance release. Do not mutate the product. Return PASS/PARTIAL/BLOCKED with exact tested identity and concrete defects.
+Status: TERMINAL PARTIAL / AMEND-HOLD / CONSUMED BY GENERAL.
+Return: routes/STUART_20261001_0952_QS13R_QB17R_ACCEPTANCE_PARTIAL.txt @ 80685e612b8d54c6d999cce4f3305c8eb202d07d
+Exact tested candidate:
+- StudyGrid-CF0042-QB17R-owner-feedback-refinement.html
+- Drive 1gx9I7W1DOtQn9VRnjf5iAFiqQinYx_Bt
+- 1061386 bytes
+- SHA-256 edf870009c769e8624de34d6356eb2c7bd3457e49f471b316b098820bb45fd2e
+Two defects blocked PASS: welcome rotor accessibility/interaction; How-this-works layout shift.
+
+Q-S13R2 — QB17R NARROW REPAIR RE-ACCEPTANCE
+Eligibility: BLOCKED until Bob returns a new exact repaired candidate and General publishes/releases its exact pointer.
+Expected scope when released:
+1. Re-test rotor stable semantic content + non-live/decorative moving layer + focus/interaction autoplay pause/cancel + reduced-motion behavior.
+2. Re-test How-this-works spatial stability, focus/dismissal, and no unrelated Next movement.
+3. Run bounded regressions needed to ensure the repair did not break previously passing QB17R owner-review scope.
+4. Do not mutate the candidate.
 
 Q-S13 — SLICE 3 INDEPENDENT ACCEPTANCE
-Eligibility: BLOCKED until Q-S13R passes, Nathan reviews the corrected HTML, and General releases Slice 3.
+Eligibility: BLOCKED until Q-S13R2 passes, Nathan reviews the corrected HTML, and General releases Slice 3.
 
 Q-S14 — REAL BACKEND STAGING ACCEPTANCE
 Eligibility: BLOCKED until separately released staging exists.
 
 STOP CONDITION
-Finish Q-S13R and return to General. Do not advance Slice 3.
+If no exact repaired candidate has been released by General, remain idle. Do not invent work and do not restart the already-terminal Q-S13R.
