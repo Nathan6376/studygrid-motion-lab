@@ -1,39 +1,30 @@
 STUDYGRID — STUART WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 21:14 ET
+Updated: 2026-09-30 21:23 ET
 Queue owner: General
 Worker: Stuart
 
 PULL RULE
-When Nathan directly tells Stuart to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Prefer executable critical-path acceptance. If a target candidate does not yet exist, pull only bounded acceptance-preparation/adversarial QA with a named downstream consumer. Do not invent filler, duplicate another active lane, or mutate product/runtime. Persist STARTED/PARTIAL/BLOCKED/DONE for each consumed item and return durable technical results directly to General.
+When Nathan directly tells Stuart to do queued work, refresh lifecycle and this queue, then execute the first eligible unclaimed item. Prefer exact-candidate acceptance; never pre-approve unreconciled design direction. Return durable technical results directly to General.
 
 CURRENT CONTEXT
-- Q-S11 Slice 2 independent acceptance: DONE / PASS 145/145 within tested scope.
-- Exact accepted Slice 2 baseline: StudyGrid-CF0042-QB15-professor-home-scale.html / SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf.
-- Q-S12 backend acceptance prep: DONE / PREP PASS. 23/23 app tables and 12/12 API commands covered; leakage/concurrency/static/adapter gates prepared. This is readiness only, not backend acceptance.
-- Nathan completed visual review at 21:13 ET and likes the Professor Home direction, but requires bounded corrections before further visible Slice 3 work.
-- Authoritative owner-feedback packet: routes/OWNER_FEEDBACK_20260930_2113_SLICE2_REFINEMENT.txt @ 0e49c95a943656da544c3ab3313bf3987dc45c89.
-- Bob Q-B17R is the active product correction lane.
+- Q-S11 Slice 2 acceptance: DONE / PASS.
+- Q-S12 backend acceptance prep: DONE / PREP PASS; not real backend acceptance.
+- Nathan supplied additional screenshots and material Add Class/onboarding feedback at 21:13–21:23 ET.
+- Exact architecture intake packet: routes/OWNER_FEEDBACK_20260930_2123_ADD_CLASS_ONBOARDING_REDESIGN.txt @ commit b93ed198f5130f28df7274102d6eace9a5328cb2.
+- Relay Architecture must adjudicate the new onboarding/catalogue/information-architecture direction before Bob resumes visible implementation.
 
 Q-S13RP — OWNER-FEEDBACK REFINEMENT ACCEPTANCE PREP
-Eligibility: AVAILABLE NOW only while Bob Q-B17R has no durable exact candidate and no newer Stuart item is STARTED.
-Purpose: build a bounded implementation-independent acceptance checklist for the seven owner-feedback requirements: Feedback hover geometry; Dusk pointer/keyboard/persistence; edit-only label/colour controls and information density; restrained course-card accent/hover with reduced-motion; resolve/undo lifecycle with no duplicate history; instructor-only navigation/surface isolation; inherited gateway/focus/responsive/registry behaviour.
-No product/runtime mutation and no pre-approval of an unseen candidate.
+Eligibility: BLOCKED pending Architecture adjudication consumed by General. Do not prepare against a scope that may materially change.
 
 Q-S13R — OWNER-FEEDBACK REFINEMENT INDEPENDENT ACCEPTANCE
-Eligibility: BLOCKED until Bob Q-B17R produces a durable exact candidate. Once available, verify exact identity and independently accept/reject against the owner-feedback packet plus inherited accepted Slice 2 behaviours. Physical-device/hosted/full-accessibility remain HOLD unless direct evidence exists.
+Eligibility: BLOCKED until General releases the post-Architecture contract and Bob produces an exact candidate.
 
 Q-S13 — SLICE 3 INDEPENDENT ACCEPTANCE
-Eligibility: BLOCKED until Q-B17R passes, Nathan reviews the corrected HTML, General releases Bob Q-B17, and Bob produces a durable exact Slice 3 candidate.
+Eligibility: BLOCKED until the corrected refinement passes, Nathan reviews it, General releases Slice 3, and Bob produces an exact candidate.
 
 Q-S14 — REAL BACKEND STAGING ACCEPTANCE
-Eligibility: BLOCKED until General separately releases real staging and an exact backend candidate/environment exists. Q-S12 prep is the acceptance harness input, not staging acceptance itself.
-
-Q-S2 — FULL-CONTEXT A/C VARIANT FIDELITY AUDIT
-Eligibility: BLOCKED until Kevin produces a durable valid full-context A+C proof artifact.
-
-Q-S3 — EXPORT/RUNTIME ACCEPTANCE
-Eligibility: BLOCKED until Kevin produces candidate GLB export-smoke or later selected-candidate runtime artifacts.
+Eligibility: BLOCKED until separately released staging exists.
 
 STOP CONDITION
-If Bob Q-B17R candidate exists at refresh, skip prep and execute Q-S13R. Otherwise Q-S13RP may run as bounded named-consumer prep. No filler and no product/runtime mutation.
+No eligible Stuart work until General consumes the Architecture adjudication or an exact higher-priority candidate appears. No filler and no product/runtime/backend mutation.
