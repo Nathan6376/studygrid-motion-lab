@@ -1,0 +1,47 @@
+OWNER WORKFLOW DELTA — MULTI-AGENT UTILIZATION + BATCH RETURN
+Owner: Nathan
+Coordinator: ChatGPT General CF-0047
+Timestamp: 2026-10-01 19:42 ET
+Status: EFFECTIVE OWNER WORKFLOW DELTA
+
+PROBLEM OBSERVED
+General repeatedly over-serialized StudyGrid work despite multiple idle/available workers. It also produced one return-to-General activation block per worker during a batched multi-agent dispatch, creating unnecessary owner courier work.
+
+ROOT CAUSE
+This was not a random formatting mistake. General over-weighted three constraints:
+1. avoiding duplicated/overlapping work;
+2. preserving each worker's historical specialization/queue;
+3. applying the synchronous round-trip return pattern mechanically per worker.
+
+That combination produced a bad local policy: only the most obvious specialist was used, idle capable workers were left unused, and the owner got repetitive return prompts. The missing control was a portfolio-level utilization check: before serializing a substantial design/research/QA task, ask whether idle workers can attack the same artifact from genuinely different failure perspectives without creating conflicting implementation.
+
+CORRECTION
+For substantial non-implementation StudyGrid design/research/QA work:
+- First identify all currently available relevant workers.
+- Use parallel workers when they can contribute materially different adversarial perspectives (e.g. science/validity, architecture, implementation contradiction, regression/falsification, product/UX), rather than reserving them only for their historical narrow job.
+- Do not duplicate the same assignment across workers; each worker gets a distinct attack surface.
+- Do not hold the critical path waiting for a premium/specialist model when a suitable free worker can produce useful independent pressure now.
+- Worker specialization is a default strength, not an exclusive permission boundary, unless an authoritative route/tool/permission says otherwise.
+- Before declaring a worker free, refresh its current queue/lifecycle. If a prior task is STARTED and nonterminal, do not stack a conflicting task on it.
+
+BATCH OWNER RETURN RULE
+When Nathan is activating multiple workers as one coordinated batch and explicitly intends to return only after the batch completes:
+- Give the required activation prompt for each worker.
+- Give ONE aggregate return-to-General prompt for the entire batch, not one return prompt per worker.
+- General must be able to consume each worker's durable terminal return from shared routing; Nathan should not courier each technical result individually.
+- If some workers finish earlier, Nathan may wait for the batch; General should not require separate intermediate return prompts unless a material blocker needs owner action.
+
+CURRENT ENGINE V1 APPLICATION
+For Draft 1, current distinct lanes are:
+- Sol: independent first-principles systems architecture attack.
+- Bob: implementation contradiction / data-boundary attack.
+- Stuart: regression/falsification attack.
+- Research: measurement/scientific-validity attack.
+- Claude: engineering-integrity/code-data transaction attack after its current C-F backend work becomes terminal.
+- Gemini: creative adaptive UX challenger already completed.
+- Kevin: do not assume free while Q-K1F remains STARTED/nonterminal; refresh before reuse.
+
+SUCCESS TEST
+General fails this correction if it serializes a substantial attack that could safely use idle distinct workers, or if it gives Nathan multiple redundant return-to-General prompts for one explicitly batched dispatch.
+
+This delta does not authorize implementation or bypass worker permissions/active-task conflicts.
