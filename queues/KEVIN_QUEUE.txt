@@ -1,27 +1,28 @@
 STUDYGRID — KEVIN WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 21:30 ET
+Updated: 2026-10-01 00:30 ET
 Queue owner: General
 Worker: Kevin
 
 PULL RULE
-When Nathan directly tells Kevin to do queued work, refresh lifecycle and this queue, then execute the first eligible unclaimed item. Persist lifecycle and return durable technical results directly to General. Do not invent filler or pull peer work.
+When Nathan tells Kevin to check routing, refresh lifecycle and this queue, then execute the first eligible unclaimed item. Persist lifecycle and return durable technical results directly to General. Do not invent filler or pull peer work.
 
 CURRENT CONTEXT
 - Q-K1E evidence recovery/publish: TERMINAL BLOCKED. Recovered real Q-K1R state is FAILED; no valid source-stable full-context A+C proof artifact exists yet.
-- Existing Q-K1 branch remains kevin-qk1-v4a-full-context-dual-preview @ a14459b1bd3f8b353eaa8e4f78aae3341b96cfef.
-- Q-K1F bounded verifier recovery remains the next technically valid Kevin task.
-- Nathan is currently conducting a full owner review of the visible StudyGrid release and wants one batched worker activation round after he finishes, rather than repeatedly waking Bob/Stuart/Kevin for incremental changes.
-- Authoritative batching control: routes/OWNER_REVIEW_BATCH_20260930_OPEN.txt @ commit e88babfc2b8cee0ba9f5aae5de6151d0f4bf0a9d.
+- Existing Q-K1 branch: kevin-qk1-v4a-full-context-dual-preview @ a14459b1bd3f8b353eaa8e4f78aae3341b96cfef.
+- Owner review pass closed at 2026-10-01 00:30 ET.
+- Closure: routes/OWNER_REVIEW_BATCH_20260930_CLOSED.txt @ 707194c337ea4eafd15b12e433c90ed45bc690ba.
+- Parallel release: routes/GENERAL_RELEASE_20261001_0030_OWNER_REVIEW_BUILD.txt @ a4033b973d3efd19f2bd7f362a7af5cd769fb173.
 
 Q-K1F — BOUNDED VERIFIER RECOVERY + SOURCE-STABLE A/C PROOF PUBLICATION
-Eligibility: BLOCKED by owner batching preference while routes/OWNER_REVIEW_BATCH_20260930_OPEN.txt is OPEN. Technical scope remains unchanged; General will release it with the next batched worker round unless Nathan changes direction.
+Eligibility: AVAILABLE NOW.
+Recover/fix the failed verifier path and publish a valid source-stable full-context A+C proof artifact for the locked Blender intro contract. Preserve exact A/C semantics. Do not choose A or C for Nathan. Do not modify Bob's StudyGrid HTML/CSS/WAAPI scope. Return durable proof metadata directly to General.
 
 Q-K2 — DUAL-CANDIDATE GLB EXPORT SMOKE
-Eligibility: BLOCKED until General verifies the durable valid source-stable A+C proof artifact from Q-K1F.
+Eligibility: BLOCKED until General verifies the valid Q-K1F full-context A+C proof.
 
 Q-K3 — SELECTED-CANDIDATE FINAL RENDER / ROUND-TRIP
 Eligibility: BLOCKED until Nathan selects A or C after independent full-context acceptance and General publishes the selected integration source.
 
 STOP CONDITION
-Do not start Q-K1F while the owner review batch is OPEN. Wait for General's batched release. No filler.
+Do Q-K1F only unless a newer General release explicitly advances the dependency chain.
