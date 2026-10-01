@@ -1,0 +1,43 @@
+STUDYGRID — GENERAL RELEASE / OWNER REVIEW BUILD ROUND
+Timestamp: 2026-10-01 00:30 ET
+Coordinator: General CF-0040
+Owner authority: Nathan explicitly ended the current owner-review pass and instructed General to start fixing the product so he can inspect the next build and make further changes.
+Status: RELEASED FOR BOUNDED WORKER EXECUTION
+
+BASELINE
+StudyGrid-CF0042-QB15-professor-home-scale.html
+Drive 1CSN0jYJHnYbk2kpLAz8HNg4BSYELbe6U
+SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf
+996820 bytes
+APP_VERSION v7.18-cf0042-qb15-professor-home-scale
+
+COMPLETE CONTRACT
+Consume routes/HELD_IMPLEMENTATION_QA_RELEASE_20261001_OWNER_REVIEW.txt in full. It is now activated by this release, subject to the Q-R3 overrides below.
+Also consume Sol Q-SOL1 frozen exact-source return @ 4bd3a16e95aa344c730b5b2c18aa9b3614ff2462 and Research Q-R3 terminal routes/RESEARCH_CF0044_20261001_0027_ADAPTIVE_CONFIDENCE_BEHAVIORAL_PRIVACY_DONE.txt.
+
+Q-R3 OVERRIDES
+- Practice order remains: answer commit -> optional confidence -> correctness/correct-answer/explanation reveal -> adaptive update.
+- Confidence is a real optional feature but not authoritative. Preserve correctness, repeated retrieval/error history and spacing/recency/exposure as core evidence.
+- Skip confidence = missing value, not low confidence. Disabling confidence removes the step without breaking core study.
+- Do not invent a confidence-weighting or spacing formula in this candidate. Preserve confidence in the attempt/adaptive state for later validated scheduling.
+- Secondary interaction timing/revision/dwell signals are not approved as production adaptation inputs in this candidate.
+- Pointer-path directness/efficiency is not approved for current production adaptive use.
+- Do not add fine-grained raw interaction tracing for adaptive learning in this candidate.
+- Instructor-facing information stays pedagogically interpretable; no surveillance-like behavioral traces or opaque hesitation scores.
+- Explain adaptation with strong human-readable reasons, not speculative behavioral claims.
+- No backend/auth/Supabase telemetry implementation is authorized by this release.
+
+BOB — Q-B17R RELEASED
+Build ONE integrated owner-feedback candidate from the exact QB15 baseline using the full activated contract. Cover the role shell, Professor Home cleanup, first-run/Add Class, welcome/Selectric motion, student tour, practice-confidence UI, instructor demo, adaptive-response animation, Paper/Dusk showcase, focus/state language, routes/cleanup, Feedback/Help and all screenshot-confirmed defects. Patch final effective renderer seams, not stale legacy definitions. Publish exact filename/bytes/SHA/APP_VERSION and self-test. Return DONE/PARTIAL/BLOCKED to General. Do not claim independent acceptance.
+
+KEVIN — Q-K1F RELEASED IN PARALLEL
+Recover/fix the failed verifier path and publish valid source-stable full-context A+C proof evidence for the locked Blender intro contract. Do not choose A or C for Nathan. Do not touch Bob's product HTML/CSS/WAAPI scope. Q-K2 remains dependency-gated until General verifies the proof.
+
+STUART — Q-S13RP RELEASED IN PARALLEL
+Prepare independent acceptance coverage against this fixed release using the activated contract, Sol DELTA-MATRIX/TRANSITIONS/POINTER-SELECTION, Research/Gemini constraints and screenshot evidence. Do not pre-approve or mutate product. Exact candidate acceptance Q-S13R waits for Bob's published candidate hash/version/bytes and General release.
+
+BOUNDARIES
+- Astra remains HOLD.
+- No backend/auth/Supabase/provider/deploy/canonical promotion from this release.
+- Physical iPad/Safari acceptance remains evidence-gated.
+- Nathan's next visible gate is to inspect the resulting verified HTML himself, then give the next change round.
