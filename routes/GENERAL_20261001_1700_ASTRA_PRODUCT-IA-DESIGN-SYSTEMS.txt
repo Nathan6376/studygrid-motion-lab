@@ -1,0 +1,56 @@
+STUDYGRID — GENERAL → ASTRA — PRODUCT / IA DESIGN SYSTEMS
+From: ChatGPT General / CF-0047
+To: Astra / CF-0017
+Status: AVAILABLE — OWNER ACTIVATION REQUIRED
+Mode: DESIGN SYNTHESIS / DIVERGENCE ONLY — NO IMPLEMENTATION
+
+OWNER RELEASE
+Nathan explicitly directed General to use the available parallel agents for this product-design problem. This current instruction releases Astra from the prior StudyGrid hold for this bounded design-only assignment. It does NOT authorize implementation, deploy, backend mutation or canonical promotion.
+
+READ FIRST
+1. routes/OWNER_REVIEW_DELTA_20261001_1657_PRODUCT-FLOW-STUDY-MODE.txt @ 9e44452c4687b03fe62a1bc6faee387cc2713c6d
+2. Exact current candidate identity in that delta.
+3. Current applicable Base + Active Corrections + Astra role file.
+4. Existing StudyGrid Design Adjudication / Big Creative Return / Instructor Workspace architecture as prior evidence, but do not treat prior selections as immune from Nathan’s new critique.
+
+PURPOSE
+Act as senior product architect / interaction designer. Nathan’s central complaint is not isolated defects; it is that StudyGrid feels like separate pages and controls rather than one coherent product with clear hierarchy, purpose, chronology and spatial continuity.
+
+WORK
+1. Reframe the product around explicit user jobs and mental models: signed-out/public, first-start, signed-in home, class-based study, general/self-directed study, learner course workspace, instructor workspace, review queues, settings/profile.
+2. Define what “Home” means once signed in. Resolve where Your Classes belongs, if at all. Define back/up/home/sign-out semantics instead of using generic Back everywhere.
+3. Define role/context model so instructor → study does not become ambiguous. Show how a person knows whether they are managing a class, studying as learner, or studying general material.
+4. Define a chronological study journey that answers: Where am I? Why am I here? What should I do next? What did I finish? What is optional?
+5. Re-evaluate Quick / Focus / Deep sessions from first principles. Keep only distinct jobs with explicit outcomes; otherwise collapse/remove.
+6. Re-evaluate information architecture and persistent chrome. Determine which global/local controls must remain visible versus contextual/secondary/removed.
+7. Create THREE materially different complete design systems for the signed-in product, not cosmetic variants. Each must include:
+   - signed-in Home/root
+   - class/general-study entry
+   - selected-class shell
+   - instructor shell
+   - learner Learn/Practice flow
+   - Study Set review/finalisation
+   - completion/next-step model
+   - Back/up/home/sign-out semantics
+   - motion/spatial-transition philosophy
+   - responsive behaviour
+8. Compare the three systems against Nathan’s current owner requirements and known research/design constraints. Recommend a synthesis direction, but make tradeoffs explicit.
+9. Include a “remove / merge / retain” audit for current controls/destinations. Nathan explicitly authorises removal of unnecessary UI.
+
+IMPORTANT DETAILS TO ADDRESS
+- “Your class, easy to learn.” and “One common path from class material to useful practice.” as high-value copy, not repeated slogans.
+- continuously cycling welcome 1→2→3 with purposeful animation, pending Research evidence.
+- signed-in Back-to-onboarding problem; Sign out is distinct.
+- general study path without formal class.
+- feedback nav square/count treatment.
+- Professor Home → Home.
+- edge gloss only / restrained hover.
+- stable Approve and next target, terminal finalisation page.
+- clear Draft/Ready/Published/Held/All states.
+- avoid duplicate top+left navigation and oversized course identity.
+- stable layout on Learn/Test/Support switching.
+- teach vs quiz distinction; simplified post-answer hierarchy; confidence redesign; auto-earned seeds.
+- completion should feel forward, not like “back to course”.
+
+DELIVERABLE
+Return a product architecture/design adjudication package to General CF-0047. No HTML/code mutation. No backend/auth/Supabase/3D implementation. Persist STARTED before work. General will reconcile with Research/Sol/Bob and Nathan’s continuing review before any build release.
