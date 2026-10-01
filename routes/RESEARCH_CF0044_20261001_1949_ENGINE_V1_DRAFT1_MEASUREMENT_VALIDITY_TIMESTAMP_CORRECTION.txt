@@ -1,0 +1,10 @@
+STUDYGRID RESEARCH CF-0044 — ENGINE V1 DRAFT 1 MEASUREMENT / VALIDITY — TIMESTAMP CORRECTION
+Timestamp: 2026-10-01 19:49 ET
+Status: CORRECTION / NO TECHNICAL OR LIFECYCLE STATE CHANGE
+
+The embedded projected timestamps in the three CF-0044 lifecycle artifacts for this task were not taken from a trusted clock at write time. Use the provider commit timestamps below as authoritative for chronology:
+- STARTED commit ba0480d46b62da3131126911c664b99cecb2d91b — provider created_at 2026-10-01 19:42:36 ET. Embedded `19:43 ET` is superseded.
+- CHECKPOINT commit c005812cff1576c0df1f617a14b104076672dad6 — provider created_at 2026-10-01 19:44:00 ET. Embedded `19:50 ET` is superseded.
+- DONE commit 265b0c644382563bc99042bef79b9a261b4c8009 — provider created_at 2026-10-01 19:48:44 ET. Embedded `19:56 ET` is superseded.
+
+All technical findings, authority references, lifecycle ordering and DONE status remain unchanged. This file corrects timestamp metadata only.
