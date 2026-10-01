@@ -1,0 +1,636 @@
+STUDYGRID RESEARCH CF-0044 — Q-R2 GUIDED TOUR / MOTION / PLAIN LANGUAGE / POLICY UX — DONE
+Timestamp: 2026-09-30 23:50 ET
+From: StudyGrid Research CF-0044
+To: ChatGPT General CF-0040
+Lifecycle: DONE — RESEARCH / EVIDENCE ONLY
+
+AUTHORITY / RECOVERY
+- Exact task consumed: routes/RESEARCH_20260930_2324_GUIDED_TOUR_MOTION_PLAIN_LANGUAGE_POLICY_UX.txt @ 094c1d540e745f622f2ea5b1ad6dc27d88d83ddf; blob 3316abf25499353ef220ed74b6a9fee15ef36e3f.
+- Parent owner delta consumed: routes/OWNER_REVIEW_DELTA_20260930_2324_INSTRUCTOR_TOUR_ALIVE_UI_MOTION.txt @ 87cef27fe6a52fae030467c41d6a569ac7805a1a.
+- Screenshot evidence consumed: routes/OWNER_REVIEW_SCREENSHOT_EVIDENCE_20260930_2335.txt @ d2e1e5e5bb21b3f20003dffc0b5312850f13f4bc.
+- Prior Q-R1 baseline reused rather than repeated: routes/RESEARCH_CF0044_20260930_2257_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH_DONE.txt @ c9c5f93171ca286cda6968c2b730d56d63fd4344.
+- STARTED persisted/read back: routes/RESEARCH_CF0044_20260930_2342_GUIDED_TOUR_MOTION_PLAIN_LANGUAGE_POLICY_UX_STARTED.txt @ 1883e08c8bbdda1cd50ba1b5ca4e01728fc64c37.
+- Material checkpoint persisted: routes/RESEARCH_CF0044_20260930_2348_GUIDED_TOUR_MOTION_PLAIN_LANGUAGE_POLICY_UX_CHECKPOINT.txt @ 80e67571492413c57f6bf6f8912055099cd8c226.
+
+BOUNDARY
+The owner-review batch remains OPEN. This package does not modify StudyGrid HTML/runtime/product, worker queues, backend/auth/Supabase/provider/deployment/canonical state and does not wake Bob, Stuart or Kevin. It supplies current evidence, constraints and StudyGrid-specific recommendations for General/Architecture/Gemini/Stuart to consume. Physical-device and legal holds are preserved explicitly.
+
+EVIDENCE CLASSIFICATION
+- CONFIRMED / CURRENT: directly supported by a current primary/platform source retrieved in this pass.
+- PLATFORM PRECEDENT: current product/platform behaviour that is useful evidence but not a universal rule.
+- RECOMMENDATION: StudyGrid-specific inference from evidence + Nathan's current owner requirements.
+- HOLD: cannot be closed truthfully without device/user/legal/implementation evidence.
+
+======================================================================
+1. EXECUTIVE RECOMMENDATIONS
+======================================================================
+
+1) TEACH THE REAL PRODUCT, NOT A SLIDE DECK.
+RECOMMENDATION — the instructor demo should be a real fake-data instructor shell using actual StudyGrid controls and states. Tour guidance points to the live demo interface; each step exists to teach one meaningful action or decision. The tour ends when the instructor can understand the core loop, not after an arbitrary number of cards.
+Evidence: Apple says help should relate directly to the action/task being performed; simple features can use tips, while complex/multistep tasks may use a tutorial. Apple also says tips should be short/actionable and that features requiring more than three actions are generally too complex for a tip.
+Source: https://developer.apple.com/design/human-interface-guidelines/offering-help
+
+2) THERE IS NO DEFENSIBLE UNIVERSAL “BEST” TOUR STEP COUNT.
+RECOMMENDATION — do not bake an arbitrary 4/5/6-step rule into StudyGrid. Keep the first instructor walkthrough bounded to the smallest sequence that explains the core instructor loop. Split optional/advanced capabilities into contextual tips later. `Skip` stays available; replay lives in Help; voluntary Skip does not trigger forced auto-resume.
+Evidence: Apple differentiates simple tips from larger-goal tutorials and advises help that is contextual, dismissible and avoidable. Q-R1 already established optional/replayable onboarding.
+
+3) KEEP INSTRUCTOR, LEARNER AND ADMIN/OWNER CONTEXTS EXPLICITLY DISTINCT.
+RECOMMENDATION — one account can possess multiple capabilities, but current role/context should control shell/navigation. `Open instructor demo` should show an instructor shell with clearly labelled example data. Learner Study chrome should not leak into instructor mode. Administration remains an explicit context/destination rather than ambient chrome.
+Platform precedents: current Google Classroom exposes a View Switcher for Teaching / Enrolled / Admin when an account has multiple roles. Brightspace separates Role Switch, Preview and Impersonate and keeps the active role visible.
+Sources:
+- https://support.google.com/edu/classroom/answer/9849192
+- https://support.google.com/edu/classroom/answer/6084551
+- https://community.d2l.com/brightspace/kb/articles/35011
+
+4) DEMO DATA MUST BE VISIBLY DEMO DATA.
+RECOMMENDATION — use a persistent but calm `Demo` / `Example data` context indicator in the instructor sandbox. Demo actions must not imply live student impact, delivery, saved production history or institutional connection. Transition out through an explicit CTA such as `Set up your workspace` / `Create your instructor workspace`; do not silently convert fake classes, fake students or fake activity into live records.
+Evidence: Brightspace distinguishes role preview from actions that create real learner activity; Google PAIR recommends sandbox experiences for low-commitment exploration and transparent capability/limitation framing.
+Sources:
+- https://community.d2l.com/brightspace/kb/articles/35011
+- https://pair.withgoogle.com/guidebook-v2/chapter/explainability-trust/
+
+5) `FIND CURRENT CLASS` SHOULD EXPLAIN ITS BASIS, NOT DISPLAY MYSTERIOUS CERTAINTY.
+RECOMMENDATION — if StudyGrid suggests a likely current class, show the relevant basis in plain language (for example, institution/program/term/section context actually available) and provide `Not this class?` / `Choose another` correction. Avoid a numeric confidence score unless later user research proves it helps decisions. Do not infer unavailable fields.
+Evidence: Google PAIR recommends explaining data sources and tying explanations to the resulting recommendation; it warns confidence displays can confuse or mislead. Microsoft HAX recommends explanations and efficient correction when the system may be wrong.
+Sources:
+- https://pair.withgoogle.com/guidebook-v2/chapter/explainability-trust/
+- https://www.microsoft.com/en-us/haxtoolkit/guideline/make-clear-why-the-system-did-what-it-did/
+
+6) `HOW THIS WORKS` SHOULD NOT SHOVE THE READING SURFACE AROUND.
+RECOMMENDATION — for the screenshot-confirmed student-tour help, default to an anchored popover/coachmark on roomy layouts and a nonmodal sheet/side-sheet treatment when more space is needed. Use inline disclosure only when the disclosed content genuinely belongs in the reading flow and the composition reserves/absorbs the movement deliberately. A simple help reveal should not cause unrelated text to jump.
+Evidence: Apple explicitly recommends popover tips to preserve content flow; popovers should point to their source and avoid covering essential context. iPadOS sheets can be nonmodal for supplementary work while preserving the parent context. WAI APG defines disclosure semantics; focusable help belongs in a dialog/popover rather than a tooltip.
+Sources:
+- https://developer.apple.com/design/human-interface-guidelines/offering-help
+- https://developer.apple.com/design/human-interface-guidelines/popovers/
+- https://developer.apple.com/design/human-interface-guidelines/sheets
+- https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/
+- https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/
+
+7) GHOST GUIDANCE IS A FINITE SECONDARY CUE, NOT AN AUTOPLAY LAYER.
+RECOMMENDATION — normal lesson text remains normal. A ghost pointer may briefly demonstrate the selection gesture over the real demo surface, but it disappears immediately when the person uses pointer/touch/keyboard/selection and never captures real input. Reduced-motion/screen-reader mode uses a static instruction/cue, not a moving ghost.
+Evidence: Apple recommends animation/graphics for unusual interactions instead of long explanations. WCAG 2.2 requires controls for automatically moving content that lasts more than five seconds alongside other content, and interaction-triggered nonessential motion should be disableable under the AAA animation criterion. StudyGrid should simply avoid a repeating autonomous loop.
+Sources:
+- https://developer.apple.com/design/human-interface-guidelines/offering-help
+- https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions
+- https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide
+
+8) DO NOT AUTO-ROTATE `ASK TEACHER` EXAMPLE QUESTIONS FOREVER EVERY ~4 SECONDS.
+RECOMMENDATION — use one finite example transition or an explicit `Show another example` control. If an automatically updating example remains in parallel with other content, WCAG 2.2.2 requires a way to pause/stop/hide or control update frequency; unlike moving content, auto-updating has no five-second exception. The requested “alive” quality can be achieved without a perpetual ticker.
+
+9) PRACTICE STATE NEEDS TEXTUAL HIERARCHY, NOT GREEN-ONLY MEANING.
+RECOMMENDATION — distinguish `Your answer` from `Correct answer` with explicit labels/state, not colour alone. If the learner answered correctly, a compact `Correct` text badge next to `Your answer: 20` is clearer than redundantly presenting the same number as a separate green answer. If wrong, show two separate rows: `Your answer: …` and `Correct answer: …`.
+Evidence: WCAG 1.4.1 prohibits colour as the only visual means of conveying information.
+Source: https://www.w3.org/WAI/WCAG22/Understanding/use-of-color
+
+10) CONFIDENCE IS ONE QUESTION; `SKIP` IS A DIFFERENT ACTION.
+RECOMMENDATION — keep the confidence choices as a coherent group (`Guessing`, `Fairly sure`, `Very sure`) and style `Skip` as a secondary action rather than a fourth confidence value. On narrow cards/iPad, wrap or stack controls instead of squeezing them into one row. Aim for comfortably touchable controls; WCAG 2.5.8 AA requires at least 24×24 CSS px or qualifying spacing, while larger targets are a safer product target for iPad.
+Source: https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum
+
+11) THE DUSK DEMO SHOULD CREATE DRAMA WITHOUT ACTUAL FLICKER.
+RECOMMENDATION — achieve the owner’s theatrical Paper→Dusk→Paper moment through a one-way staggered restyle: colour/material settle, controlled component compression, one orb transformation/rotation and deliberate sequencing. Do not make elements repeatedly switch bright/dark or on/off. Product target should be ZERO flash events for this decorative feature, rather than relying on threshold exceptions.
+Evidence: WCAG 2.3.1 Level A limits flashing to no more than three flashes in one second unless below defined thresholds; 2.3.2 AAA is stricter. W3C advises analysing ambiguous flashing with a tool and states warnings are not a substitute for safe content. Apple says Reduce Motion should avoid large animation, especially simulated 3D.
+Sources:
+- https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold
+- https://www.w3.org/WAI/WCAG22/Understanding/three-flashes
+- https://www.w3.org/WAI/WCAG22/Techniques/general/G15
+- https://www.w3.org/WAI/WCAG22/Understanding/seizures-and-physical-reactions
+- https://developer.apple.com/documentation/appkit/nsworkspace/accessibilitydisplayshouldreducemotion
+
+12) FOCUS, SELECTION, ACTIVE AND TUTORIAL-TARGET STATES MUST NOT SHARE ONE MYSTERY BLUE BOX.
+RECOMMENDATION — retain visible keyboard focus. Replace the generic-looking presentation only after Sol/source audit confirms the exact source. Give keyboard focus its own component-aware visual token; selected/active/tutorial target states use separate visuals. Noninteractive hero copy should not show a control-like focus rectangle at rest. If a heading is intentionally made a programmatic focus destination for orientation, use a non-control focus treatment and test that keyboard users can still understand where focus moved.
+Evidence: WCAG 2.4.7 requires visible keyboard focus for keyboard-operable UI; 2.4.11 prevents author content from entirely hiding focused controls; 1.4.11 requires meaningful UI-state indicators to meet non-text contrast; WAI APG explicitly says focus and selection are different and must be visually distinguishable.
+Sources:
+- https://www.w3.org/WAI/WCAG22/Understanding/focus-visible
+- https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum
+- https://www.w3.org/WAI/WCAG22/understanding/non-text-contrast.html
+- https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/
+
+13) THE LARGE PALE ARC/CIRCLE IS NOT A USEFUL TUTORIAL SIGNAL IN ITS CURRENT SCREENSHOT ROLE.
+RECOMMENDATION — reject decoration that crosses text/content, looks like focus/selection/navigation, or competes with the action being taught. Decorative motion/geometry can remain only when clearly subordinate and nonsemantic. The screenshot-confirmed arc over the question-cluster card should be treated as a concrete source-audit target, not merely “style preference.”
+
+14) POLICY ACCESS SHOULD BE EASY TO FIND, BUT LEGAL COMPLETENESS IS NOT A RESEARCH VERDICT.
+RECOMMENDATION — Help should contain `How StudyGrid works`, `Replay tour`, `Accessibility & input help`, and `Send feedback`. A separate `Privacy & data` group should expose the Privacy Policy and user data/account controls actually supported; `Legal` should expose Terms/other notices actually adopted. Accessibility statements should be easy to find from multiple places if StudyGrid publishes one.
+Evidence: W3C recommends accessibility statements be easy to find from places such as footer, help, sitemap and about. Google Play currently requires a privacy policy within the app and in Play Console for apps distributed through Play, and account deletion paths when the app supports account creation. Apple account guidance says deletion should be directly discoverable and not buried inside Privacy Policy/Terms. These platform requirements are conditional on the distribution context; they do not establish StudyGrid’s complete legal obligations.
+Sources:
+- https://www.w3.org/WAI/planning/statements/
+- https://support.google.com/googleplay/android-developer/answer/10144311
+- https://support.google.com/googleplay/android-developer/answer/13327111
+- https://developer.apple.com/design/human-interface-guidelines/managing-accounts
+
+======================================================================
+2. WORKSTREAM FINDINGS
+======================================================================
+
+WORKSTREAM 1 — GUIDED PRODUCT TOURS / COACHMARKS / LEARNING-BY-DOING
+
+CONFIRMED / CURRENT
+- Apple Offering Help: help should match the immediate task; popover tips preserve content flow; inline/annotation tips can point to UI; simple features suit tips, while larger goals may suit tutorials; tips should be short, actionable and dismissible.
+- Apple Design Principles: guided flows should preserve agency and recovery; users should be able to escape/skip rather than become trapped.
+- WAI APG: interactive overlays require explicit focus behaviour. Tooltips do not take focus; interactive content should use a dialog/nonmodal-dialog pattern instead.
+
+STUDYGRID RECOMMENDATION
+- Instructor demo opens directly into the fake instructor shell, not a detached tutorial page.
+- Step target is the actual control/content being taught.
+- Teach the core instructor loop only: orient to current class/context → identify what needs attention → inspect/review student question or content → take/preview the relevant action → understand where to go next. This is a semantic sequence, not a mandated fixed count.
+- Keep `Skip` visible and predictable.
+- `Replay tour` is available from Help.
+- If a user voluntarily skips, do not automatically force the same full tour later. Contextual tips can still appear for genuinely unseen unusual features.
+- If a user simply closes/pauses mid-tour without choosing Skip, a later lightweight `Resume tour` offer is acceptable; do not auto-open it over live work.
+- Every step has a no-motion equivalent and a meaningful accessible name/description.
+
+DEMO→REAL SETUP HANDOFF
+- Demo remains clearly labelled throughout.
+- At completion or Skip, return to the demo shell with a clear CTA to set up/sign up; do not trap the person in a modal ending screen.
+- Explain what will happen before leaving demo (for example, example data will not carry into a real workspace unless a future explicit import feature exists).
+
+REJECT CONDITIONS
+- Full-screen slide deck explaining controls that are not visible.
+- Mandatory tour before core use.
+- No Skip.
+- Skip that later silently auto-resumes.
+- Tooltip chain requiring repeated dismissal before the UI is usable.
+- Spotlight/coachmark that blocks the very target it describes.
+- Focus placed behind an overlay or lost to BODY after step changes.
+- Tutorial completion that implies demo actions were live/persisted when they were not.
+
+WORKSTREAM 2 — INSTRUCTOR DEMO INFORMATION ARCHITECTURE
+
+PLATFORM PRECEDENTS
+- Google Classroom currently presents distinct Teaching / Enrolled / Admin views through a view switcher when an account has multiple roles.
+- Brightspace distinguishes quick `Role Switch`, scoped Preview and full Impersonate; role-switch state is visible, and different modes have explicit limitations.
+
+STUDYGRID RECOMMENDATION
+- Distinct instructor shell/navigation; do not merely add instructor tabs to learner Study chrome.
+- Explicit current context/role indicator when an account has multiple capabilities.
+- Fake instructor demo uses fake classes/students/activity only and labels that truth.
+- `Find current class` is a context-aware suggestion, not an invisible auto-selection.
+- Suggestion copy pattern: `Suggested from your Humber Polytechnic · Police Foundations · Term 3 context` + `Choose another` / `Not this class?`.
+- If evidence is incomplete, say so in the UI (`We could not confirm a section`), rather than fabricating certainty.
+- Numeric model confidence is not recommended by default; Google PAIR notes confidence displays can distract or be misinterpreted.
+
+REJECT CONDITIONS
+- Learner navigation visible by default in instructor context.
+- Owner/admin tools appear simply because the account has capability.
+- Demo records appear indistinguishable from live records.
+- Suggested current class with no explanation or correction path.
+- “Verified/current” wording when underlying context is partial or historical.
+
+WORKSTREAM 3 — CONTEXTUAL HELP WITHOUT LAYOUT JUMP
+
+DECISION MATRIX
+
+| Need | Preferred StudyGrid pattern | Why | Avoid |
+| --- | --- | --- | --- |
+| 1–2 sentence explanation tied to one control | Anchored popover/coachmark | Preserves surrounding layout; source relationship is visible | Inline block that pushes nearby tour copy |
+| Small help with links/actions | Nonmodal popover/dialog | Can contain focusable controls with explicit focus/Escape behaviour | Tooltip, because tooltip should not receive focus |
+| Medium supplementary help while keeping parent usable | Nonmodal side/bottom sheet; on roomy iPad a side/anchored presentation | Keeps context and gives more space | Full modal for low-stakes explanation |
+| Content genuinely part of reading flow | Disclosure (`aria-expanded`) | Correct semantic show/hide pattern | Expanding content inserted above unrelated text without reserved composition |
+| Critical focused decision/task | Modal dialog/sheet | Appropriate only when task needs exclusive attention | Stacked modals and modal help for simple explanation |
+
+TOUCH/IPAD
+- Popover arrow/source relationship should remain clear and avoid covering target/essential content.
+- On compact width, convert roomy popover/sidecar patterns to a sheet rather than squeeze a tiny floating card.
+- Provide explicit Close when it adds clarity; Escape/keyboard dismissal and touch outside/light-dismiss behaviour must not discard work unexpectedly.
+
+FOCUS CONTRACT
+- Opening an interactive help surface moves focus only when the chosen pattern requires it.
+- Closing returns focus to the trigger unless the action logically moves context elsewhere.
+- Escape closes dialogs/tooltips/popovers where the pattern supports it.
+- Do not make Help content keyboard-inaccessible merely to preserve a light visual treatment.
+
+WORKSTREAM 4 — GHOST CURSOR / DEMONSTRATION CUES
+
+EVIDENCE BOUNDARY
+No primary accessibility standard prescribes a “ghost cursor” as a preferred onboarding device. Apple’s help guidance supports animation/graphics for teaching unfamiliar interactions; WCAG supplies the constraints. Therefore the ghost-cursor recommendation below is StudyGrid-specific inference, not a standard.
+
+RECOMMENDED CONTRACT
+- Lesson phrase looks like normal text. No permanent underline that reads as a link.
+- A subtle static cue can indicate the practice target without pretending it is selected.
+- Ghost pointer is decorative-only to accessibility APIs and never becomes the user’s focus target.
+- Ghost layer never captures pointer/touch events.
+- Demonstration is finite and short; it does not endlessly sweep the content.
+- Any real user activity relevant to the step — pointer down, touch, keyboard selection, actual text selection/tool activation — cancels the ghost immediately for the rest of that attempt.
+- Reduced-motion path uses static copy + target emphasis, no moving pointer.
+- Screen-reader path explains the action and exposes actual controls/selection semantics; it does not narrate fake pointer coordinates.
+- If StudyGrid implements its own drag-dependent selection/highlight operation, provide an equivalent single-pointer way to achieve the function unless dragging is essential. Native browser text selection controlled by the user agent is outside WCAG 2.5.7’s author-interpreted dragging scope.
+Source: https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements
+
+MINIATURE TOOL BEHAVIOUR
+- Explain: opens a real contextual explanation in the same kind of surface the product uses.
+- Highlight: toggles the actual demo highlight on/off; reversible and deterministic.
+- Ask teacher: opens a realistic small composer. Use a finite sample transition or explicit `Show another example`; do not run an indefinite four-second auto-rotation without a pause/stop/frequency control.
+
+REJECT CONDITIONS
+- Fake cursor remains after the user tries to interact.
+- Pointer image blocks/captures input.
+- Text is pre-underlined/preselected and therefore looks like a link/action before user selection.
+- Endless cursor loop.
+- Auto-updating example text that cannot be paused/stopped.
+- Motion-only instruction with no static/AT equivalent.
+
+WORKSTREAM 5 — PLAIN LANGUAGE / STUDENT MICROCOPY
+
+CONFIRMED GUIDANCE
+W3C Writing for Web Accessibility recommends clear instructions, simple language, short sentences/paragraphs, avoiding unnecessarily complex words and defining unfamiliar terms. Apple’s help guidance similarly asks for short actionable language in context.
+Source: https://www.w3.org/WAI/tips/writing/
+
+STUDYGRID MICROCOPY CONTRACT
+- State the action/result first.
+- One idea per sentence.
+- Prefer common concrete verbs (`Choose`, `Open`, `Try`, `Ask`, `Review`).
+- Avoid internal terms such as “confidence calibration”, “retrieval signal”, “contextual provenance” on student surfaces.
+- Do not use colour as the only meaning.
+- Buttons describe the action/destination, not a vague state (`Open question`, not `Proceed`).
+- Error/help copy says what happened and what the student can do next.
+- Avoid repeating information already obvious from the UI.
+
+PRACTICE CARD — RECOMMENDED EXAMPLES
+Question:
+`What is 25% of 80?`
+
+Correct learner answer:
+`Your answer: 20`  [adjacent text badge: `Correct`]
+Then: `How sure were you?`
+Confidence controls: `Guessing` · `Fairly sure` · `Very sure`
+Separate secondary action: `Skip`
+Optional help: `Tell us how sure you felt.`
+Only add causal copy such as “This helps StudyGrid choose what to practise next” if that behaviour is actually implemented and verified.
+
+Incorrect learner answer:
+`Your answer: 18`
+`Correct answer: 20`
+Then a short explanation or next teaching step.
+
+WHY THIS IS STRONGER
+- Answer ownership and correctness are explicit in text.
+- Green can reinforce Correct, but does not carry the meaning alone.
+- Confidence options form one conceptual set; Skip is not falsely treated as a confidence level.
+- Controls can wrap/stack at narrow widths instead of being compressed.
+
+OTHER CURRENT TOUR COPY EXAMPLES
+Instead of: `Select the underlined words, then try a tool.`
+Use: `Select a few words, then try a tool.`
+Optional second sentence: `You can explain them, highlight them, or ask your teacher.`
+
+Instructor adaptive-response demo:
+`See how the suggested reply changes with the question.`
+Avoid: `Observe context-aware adaptive-response generation.`
+
+WORKSTREAM 6 — DUSK THEME DEMO / FLICKER SAFETY
+
+CONFIRMED STANDARDS
+- WCAG 2.3.1 Level A: web content must not flash more than three times in any one-second period unless it is below the general/red flash thresholds.
+- WCAG 2.3.2 Level AAA: nothing flashes more than three times in any one-second period.
+- W3C G15 describes using video/flash-analysis tools when relying on flash thresholds.
+- W3C states warnings are not an adequate substitute for avoiding hazardous flashing.
+- WCAG 2.2.2 requires pause/stop/hide when automatically moving/blinking/scrolling content lasts more than five seconds alongside other content; auto-updating content requires control regardless of the five-second moving-content exception.
+- Apple Reduce Motion guidance says to avoid large animations, especially simulated 3D, when the setting is on.
+
+SAFE STUDYGRID DIRECTION
+Normal motion:
+1. One intentional Paper baseline.
+2. Components shift theme once, in staged sequence, without toggling back-and-forth.
+3. Orb may perform one bounded transformation/rotation.
+4. Dusk rests long enough to read.
+5. One smooth transition returns to Paper and stops.
+
+The “slightly eerie / broken-light” feeling should come from timing, shadow/material changes, sequencing and contrast staging — NOT repeated luminance flashes, strobe, blinking text or on/off control visibility.
+
+REDUCED-MOTION / PHOTOSENSITIVITY PATH
+- No flicker/strobe.
+- No large spatial rotation or 3D simulation.
+- Use immediate theme substitution or a minimal opacity/colour settle; keep content readable throughout.
+- The feature remains understandable without the animation.
+
+HARD REJECTS
+- Any decorative sequence intentionally exceeding three flashes in one second.
+- Saturated-red flash effects.
+- Repeated light/dark/on/off oscillation merely for atmosphere.
+- Rapid full-screen or large-area luminance changes.
+- Warning screen used as a substitute for safe output.
+- Motion continues indefinitely.
+- Reduced-motion merely slows the same dramatic 3D/flicker effect.
+- Button clickability/focus disabled while the theme effect plays.
+
+QA REQUIREMENT
+If implementation contains any transition that a reviewer could reasonably describe as a flash, capture the exact rendered video and run a flash-analysis tool before acceptance. For this decorative demo, passing should not depend on using a small-area/low-brightness exception; redesign toward no flashing instead.
+
+WORKSTREAM 7 — HELP / PRIVACY POLICY / REQUIRED POLICY ACCESS
+
+COMMON PRODUCT IA — RECOMMENDATION
+Help
+- How StudyGrid works
+- Replay tour
+- Accessibility / keyboard / touch help
+- Send feedback / contact support
+
+Privacy & data
+- Privacy Policy
+- Data controls actually implemented
+- Account/data deletion and export controls, if/when implemented
+- AI/data-use explanations relevant to the product
+
+Legal
+- Terms of Service / Terms of Use actually adopted
+- Other notices actually adopted (for example acceptable-use or AI notice if the final product has one)
+
+About
+- Build/version
+- Accessibility statement link if published
+- Licences/open-source notices if applicable
+
+DISCOVERABILITY
+- Privacy/Terms/Accessibility should also be reachable from stable global/account/footer/help locations as appropriate, not only from one hidden tour screen.
+- Account deletion should be directly discoverable from account/data settings if StudyGrid supports account creation; Apple explicitly says not to bury it in Privacy Policy/Terms.
+
+PLATFORM/STORE BOUNDARIES
+- Google Play currently requires a privacy policy in Play Console and within the app for Play-distributed apps, and an in-app + external deletion-request path if the app supports account creation.
+- Apple account guidance requires an in-app/account deletion path for apps that create accounts and says the deletion link/process should be easy to discover; App Store privacy requirements must be reverified when/if StudyGrid ships there.
+- These are conditional platform requirements. They do not decide StudyGrid’s Canadian/Ontario/Humber legal obligations.
+
+LEGAL HOLD
+Counsel/product owner/institutional review still owns: exact Terms content; jurisdiction-specific privacy notices; age/minor requirements; Humber/institution-specific wording; retention/deletion obligations; AI disclosures; accessibility statutory obligations; consent bases; whether any native-store policies apply to the actual shipping channel. Research does NOT declare legal completeness.
+
+WORKSTREAM 8 — FOCUS / OUTLINE / DECORATIVE-CHROME EVIDENCE
+
+CONFIRMED STANDARDS
+- WCAG 2.4.7: keyboard-operable UI needs visible keyboard focus.
+- WCAG 2.4.11 AA: focused components cannot be entirely hidden by author-created content.
+- WCAG 1.4.11 AA: visual information needed to identify UI components/states, including focus/selection where author-styled, needs sufficient non-text contrast.
+- WCAG 2.4.13 AAA gives a stronger focus-appearance target and recognizes author-supplied visible focus indicators as a valid technique.
+- WAI APG says focus and selection are different; visible focus must stay discernible and selected state must look distinct from focus.
+
+STUDYGRID STATE SEMANTICS
+Keyboard focus:
+- answers `Where will my next keyboard action go?`
+- appears only on the true focused target / deliberate programmatic destination.
+
+Selected/active state:
+- answers `Which tab/item/mode is currently chosen?`
+- persists independently from keyboard focus where appropriate.
+
+Tutorial target:
+- answers `What is the tour explaining right now?`
+- must not masquerade as keyboard focus.
+
+Hover/pointer state:
+- answers `What is under the pointer?`
+- cannot be the only way to reveal essential information.
+
+RECOMMENDATION
+Do not remove the current global focus rule blindly. Sol must map exact selectors and why the screenshot heading receives the blue rectangle. Then replace the one-size-fits-all presentation with component-aware focus styling while preserving visible keyboard focus. If a noninteractive heading is intentionally focused for route/tour orientation, treat it as a distinct programmatic-orientation state so it does not look like a selected blue button/card.
+
+DECORATIVE CHROME
+- Any arc/circle/line that overlaps copy, reduces contrast, resembles a state indicator or distracts from the tutorial target fails StudyGrid’s information hierarchy even if technically decorative.
+- The pale arc crossing the instructor question-cluster card is a concrete reject target unless redesigned to stay clearly behind/subordinate to content.
+- Mystery separators/dots/circles should be removed unless they communicate progress/navigation/status that a user can understand.
+
+======================================================================
+3. CONSOLIDATED DECISION MATRIX
+======================================================================
+
+| Area | Preferred StudyGrid pattern | Mandatory accessibility/behaviour | Reject |
+| --- | --- | --- | --- |
+| Instructor guided tour | Actual fake-data instructor shell + coachmarks on real controls | Skip, replay, stable focus, no learner chrome, demo truth | Detached slide deck; mandatory tour; no escape |
+| Contextual help | Anchored popover; nonmodal sheet for more space; reserved-flow disclosure only when semantically inline | Keyboard/touch, Escape/dismiss, trigger relationship, focus return | Unrelated layout jump; interactive tooltip |
+| Ghost demo | Short finite decorative pointer over real interaction; static AT/reduced-motion alternative | Cancels on first real interaction; pointer never captures input | Looping ghost; pre-underlined fake-link text |
+| Adaptive-response demo | Stable question/response cards; animate only truly changed response phrases; settle | Non-colour cue/text that response updated; AT status if needed | Green-only meaning; whole paragraph constantly morphing |
+| Practice answer | Explicit Your answer / Correct answer or Correct text state | No colour-only correctness; readable/touchable confidence controls | Green number without clear ownership/state |
+| Confidence | Three confidence choices + separate Skip | Wrap/stack on narrow view; clear group label | Four cramped same-weight chips; Skip treated as confidence |
+| Dusk showcase | One staged Paper→Dusk→Paper transformation | Zero-flash design target; reduced-motion static/minimal; skip/interaction safety | Strobe; rapid luminance toggle; repeated flicker |
+| Policy/help | Help + Privacy & data + Legal + About, with stable global discovery | Only claim policies/controls actually adopted/implemented | “Legally complete” claim from UX research |
+| Keyboard focus | Component-aware visible `:focus-visible` treatment | Focus ≠ selected ≠ tutorial target; visible/not obscured | Removing focus; blue debug-like box on noninteractive hero copy at rest |
+| Decorative geometry | Subordinate, nonsemantic visual only | Never obscure or compete with text/controls | Arc/circle crossing key card/content without meaning |
+
+======================================================================
+4. SCREENSHOT-TIED ACCEPTANCE / REJECT CONDITIONS
+======================================================================
+
+SCREENSHOT 1 — instructor question-cluster / pale arc
+ACCEPT:
+- Question and response cards remain the dominant readable objects.
+- Any decorative geometry stays outside/behind readable content and cannot be mistaken for focus/selection/progress.
+- Adaptive response changes only materially changed phrases; stable language stays spatially stable.
+- Changed text does not communicate “changed” by green alone; add a persistent text/structural cue or clear labelled state.
+- If update is a status message without focus change, verify AT announcement strategy where applicable.
+REJECT:
+- Arc crosses text/card content.
+- Whole response flashes/morphs for decoration.
+- Green-only change meaning.
+
+SCREENSHOT 2 — `What is 25% of 80?` compressed practice card
+ACCEPT:
+- `Your answer` and correctness are obvious on first scan.
+- Wrong-answer case separately labels `Your answer` and `Correct answer`.
+- Confidence choices do not clip, crowd or become tiny at tested widths.
+- `Skip` is visually secondary/separate from the confidence scale.
+- Help copy is one short, concrete sentence.
+REJECT:
+- A lone green `20` is expected to explain the state.
+- Guessing/Fairly sure/Very sure/Skip remain squeezed into an unreadable single row.
+- Colour alone conveys correct/wrong.
+
+SCREENSHOT 3 — Next button stacked/double-edge
+ACCEPT:
+- Rest state has one deliberate border/elevation treatment.
+- Keyboard focus adds one deliberate clearly visible focus state; it is distinguishable from border/shadow/selected state.
+- No extra upper-edge halo at rest.
+- Surrounding vertical space is consistent with the tour control row.
+REJECT:
+- “Fix” removes keyboard-visible focus.
+- Two simultaneous outline/shadow/border systems create a false double button.
+
+SCREENSHOT 4 — bright blue rectangle around instructor hero heading
+ACCEPT:
+- Noninteractive hero copy has no control-like outline at rest.
+- If it is intentionally used as a programmatic orientation target, the visual treatment is distinct from clickable focus and verified with keyboard/screen-reader flows.
+- Tour target highlight, selected state and focus state are separate tokens.
+REJECT:
+- Generic global focus style paints a browser/debug-looking rectangle around passive copy.
+- Focus is hidden globally to remove the rectangle.
+
+SCREENSHOT 5 — example question + example instructor response
+ACCEPT:
+- Preserve the stable two-card relationship.
+- Example question can change; response updates preserve unchanged words spatially where practical.
+- Materially changed phrases receive brief StudyGrid-green emphasis plus a non-colour cue/state.
+- Animation stops/settles and does not loop indefinitely.
+REJECT:
+- Response replacement appears as unrelated card swap with no causal continuity.
+- Endless automatic change loop.
+
+SCREENSHOT 6 — selected/underlined target text + Explain / Highlight / Ask teacher
+ACCEPT:
+- Text initially reads as ordinary lesson text.
+- Ghost cue is subtle, finite and immediately cancelled on real user input.
+- Explain shows a real contextual explanation.
+- Highlight visibly toggles on/off.
+- Ask teacher opens a realistic demo composer; example substitution is finite or user-controlled.
+- Equivalent non-drag path exists if StudyGrid itself requires a drag operation for a custom function.
+REJECT:
+- Permanent underline makes target look like a link.
+- Ghost cursor competes with or blocks actual pointer/touch.
+- Ask teacher cycles text indefinitely without control.
+
+======================================================================
+5. SOURCE REGISTER — CURRENT PRIMARY / PLATFORM EVIDENCE
+======================================================================
+
+Retrieved for Q-R2 on 2026-09-30 unless an explicit update date is stated.
+
+APPLE
+- Human Interface Guidelines — Offering Help
+  https://developer.apple.com/design/human-interface-guidelines/offering-help
+  Evidence: contextual help, popover/inline/annotation tips, simple tips vs larger tutorial, short/actionable tips.
+- Human Interface Guidelines — Popovers
+  https://developer.apple.com/design/human-interface-guidelines/popovers/
+  Evidence: small transient information/functionality, arrow/source relationship, avoid covering essential context, one popover, smooth size changes.
+- Human Interface Guidelines — Sheets (guidance page updated 2026-03-24 in retrieved version)
+  https://developer.apple.com/design/human-interface-guidelines/sheets
+  Evidence: scoped task close to parent context; iPadOS modal/nonmodal sheets; Back/Cancel semantics.
+- Human Interface Guidelines — Modality
+  https://developer.apple.com/design/human-interface-guidelines/modality
+  Evidence: modal use for focused/narrow tasks; avoid unnecessary modal interruption.
+- Human Interface Guidelines — Managing Accounts
+  https://developer.apple.com/design/human-interface-guidelines/managing-accounts
+  Evidence: account deletion must be directly discoverable where Apple app-account requirements apply; do not bury link in policy/terms.
+- AppKit accessibilityDisplayShouldReduceMotion
+  https://developer.apple.com/documentation/appkit/nsworkspace/accessibilitydisplayshouldreducemotion
+  Evidence: when Reduce Motion is enabled, avoid large animation, especially simulated 3D.
+
+W3C / WAI
+- Writing for Web Accessibility
+  https://www.w3.org/WAI/tips/writing/
+  Evidence: short clear sentences, simple language, avoid unnecessary complexity, clear instructions.
+- APG Disclosure Pattern
+  https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/
+  Evidence: button + aria-expanded; Enter/Space toggles.
+- APG Tooltip Pattern
+  https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/
+  Evidence: tooltip does not receive focus; Escape dismisses; interactive hover content should use nonmodal dialog. Caveat: APG itself marks tooltip pattern work-in-progress/no task-force consensus.
+- APG Modal Dialog Example
+  https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/dialog/
+  Evidence: contained focus and Escape dismissal.
+- APG Developing a Keyboard Interface
+  https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/
+  Evidence: visible focus, predictable focus movement, focus and selection are distinct.
+- WCAG 2.2 — Use of Color 1.4.1
+  https://www.w3.org/WAI/WCAG22/Understanding/use-of-color
+  Evidence: colour cannot be the only visual means of conveying information/state.
+- WCAG 2.2 — Non-text Contrast 1.4.11
+  https://www.w3.org/WAI/WCAG22/understanding/non-text-contrast.html
+  Evidence: UI component/state visual information needs adequate contrast.
+- WCAG 2.2 — Focus Visible 2.4.7
+  https://www.w3.org/WAI/WCAG22/Understanding/focus-visible
+  Evidence: keyboard focus indicator visible.
+- WCAG 2.2 — Focus Not Obscured 2.4.11
+  https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum
+  Evidence: focused component not entirely hidden by author content.
+- WCAG 2.2 — Focus Appearance 2.4.13 (AAA)
+  https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance
+  Evidence: stronger focus appearance target; author-supplied visible focus techniques.
+- WCAG 2.2 — Target Size (Minimum) 2.5.8 AA
+  https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum
+  Evidence: minimum 24×24 CSS px or defined exceptions/spacing.
+- WCAG 2.2 — Dragging Movements 2.5.7 AA
+  https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements
+  Evidence: author-interpreted dragging requires single-pointer alternative unless essential/user-agent exception.
+- WCAG 2.2 — Animation from Interactions 2.3.3 AAA
+  https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions
+  Evidence: nonessential interaction motion can be disabled; Reduce Motion is an accepted technique.
+- WCAG — Pause, Stop, Hide 2.2.2
+  https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide
+  Evidence: moving/blinking/scrolling >5 s needs control; auto-updating content needs control without the 5 s exception.
+- WCAG 2.2 — Seizures and Physical Reactions (page updated 2026-01-12 in retrieved version)
+  https://www.w3.org/WAI/WCAG22/Understanding/seizures-and-physical-reactions
+- WCAG 2.2 — Three Flashes or Below Threshold 2.3.1
+  https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold
+- WCAG 2.2 — Three Flashes 2.3.2 AAA
+  https://www.w3.org/WAI/WCAG22/Understanding/three-flashes
+- WCAG Technique G15 — flash analysis
+  https://www.w3.org/WAI/WCAG22/Techniques/general/G15
+- W3C Developing an Accessibility Statement
+  https://www.w3.org/WAI/planning/statements/
+  Evidence: easy-to-find placement; links from footer/help/sitemap/about; simple language.
+
+GOOGLE
+- Google Classroom teacher screen-reader/help page
+  https://support.google.com/edu/classroom/answer/9849192
+  Evidence: current View Switcher between Teacher/Enrolled/Admin for multi-role accounts.
+- Google Classroom student screen-reader/help page
+  https://support.google.com/edu/classroom/answer/6084551
+  Evidence: same multi-role view-switcher concept from enrolled/student context.
+- Google People + AI Guidebook — Explainability + Trust
+  https://pair.withgoogle.com/guidebook-v2/chapter/explainability-trust/
+  Evidence: explain data sources/basis, tie explanations to outputs/actions, sandbox trial, correction/control, caution around confidence displays.
+- Google Play User Data policy
+  https://support.google.com/googleplay/android-developer/answer/10144311
+  Evidence: for Play-distributed apps, privacy policy within app and Play Console; account deletion requirements where account creation is supported.
+- Google Play account deletion requirements
+  https://support.google.com/googleplay/android-developer/answer/13327111
+  Evidence: in-app and external account deletion request paths when the policy applies.
+
+D2L BRIGHTSPACE
+- Preview your course — Last Updated 2026-09-03 in retrieved source
+  https://community.d2l.com/brightspace/kb/articles/35011
+  Evidence: distinct Role Switch / Preview / Impersonate modes, visible role state, different truth/side-effect boundaries.
+- About roles and permissions — Last Updated 2026-05-09 in retrieved source
+  https://community.d2l.com/brightspace/kb/articles/4451-about-roles-and-permissions
+  Evidence: role-specific permissions and `Switch to`/impersonation separation.
+
+MICROSOFT
+- HAX Toolkit — Make clear why the system did what it did
+  https://www.microsoft.com/en-us/haxtoolkit/guideline/make-clear-why-the-system-did-what-it-did/
+  Evidence: explanation access when system output/action needs clarification; avoid assuming explanation always improves trust.
+
+======================================================================
+6. REMAINING HOLDS
+======================================================================
+
+PHYSICAL-DEVICE / RUNTIME HOLD
+Must still be tested on the actual target iPad/Safari/WebKit path:
+- focus ring/outline rendering and whether the blue rectangle comes from focus, selection, overlay or combined CSS;
+- popover/sheet placement at target breakpoints;
+- touch text selection and ghost-guide teardown;
+- transformed/animated text crispness;
+- Dusk clickability while animation runs;
+- Reduce Motion and increased-contrast behaviour;
+- VoiceOver announcement/focus order;
+- actual touch target comfort beyond minimum conformance;
+- browser selection handles and any product-owned highlight layer interactions.
+
+USER-TEST HOLD
+No source establishes the best tour length for StudyGrid’s actual instructors. Validate:
+- whether instructors understand the core loop after the bounded tutorial;
+- whether coachmarks are noticed without obscuring controls;
+- whether `Find current class` explanation is sufficient and correction is obvious;
+- whether adaptive-response green emphasis reads as “this changed because the question changed,” not merely decoration;
+- whether student confidence choices are understood quickly.
+
+SOURCE-AUDIT HOLD
+Sol/source audit still owns exact selectors/components causing:
+- instructor heading blue rectangle;
+- Next double-edge/halo;
+- decorative arcs/circles/lines;
+- exact layout/spacing around practice controls;
+- whether any current tour overlays accidentally inherit global focus styling.
+Do not patch from screenshot inference alone.
+
+LEGAL / POLICY HOLD
+Research does not determine StudyGrid’s final Canadian/Ontario/Humber legal obligations. Counsel/product owner/institutional review must decide final policy text, age/minor treatment, retention, deletion, consent, accessibility/legal statements, AI/data notices and distribution-specific obligations. Reverify App Store / Google Play policies at actual shipping time if those channels are used.
+
+======================================================================
+7. TERMINAL DISPOSITION
+======================================================================
+
+Q-R2 is complete within research scope. The screenshot-confirmed visual failures now have evidence-backed constraints and acceptance implications. No implementation is released from Research.
+
+General CF-0040 can now reconcile this package with:
+- Gemini’s creative motion return;
+- Architecture’s role/IA/system adjudication;
+- Sol’s exact-source audit;
+- Nathan’s still-open owner-review batch;
+then issue one coherent implementation/acceptance tranche when the owner-review gate is ready.
+
+STOP CONDITION
+Research CF-0044 should not wake Bob/Stuart/Kevin or mutate StudyGrid. Await the next explicitly eligible General research route after this terminal return.
