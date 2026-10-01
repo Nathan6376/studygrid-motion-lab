@@ -1,0 +1,7 @@
+{
+  "candidate_native_control_occurrences": 638,
+  "listener_declarations": 414,
+  "navigation_and_surface_state_records": 201,
+  "function_definitions": 603,
+  "scope": "Syntactic inventory, includes conditional templates and retained/superseded source. Not a count of visible DOM controls. Exact source callbacks, aliases and definition chains are companion evidence."
+}

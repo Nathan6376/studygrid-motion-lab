@@ -1,0 +1,281 @@
+{
+  "sourceSha256": "874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab",
+  "engine": "Node vm exact-source functions/callbacks; DOM/storage/time stubs",
+  "browserEngineAvailable": false,
+  "geometryCSSNativeInteractionVerified": false,
+  "externalRequestsPerformed": 0,
+  "tests": [
+    {
+      "name": "Welcome autoplay stops after 1→2→3, manual wraps; reduced motion/focus stop survive",
+      "result": "PASS",
+      "evidenceClass": "ISOLATED_JAVASCRIPT_RUNTIME__NOT_BROWSER",
+      "lines": [
+        3598,
+        3599,
+        3600,
+        3601
+      ],
+      "detail": {
+        "normal": [
+          1,
+          2,
+          3,
+          3,
+          3,
+          1
+        ],
+        "reduced": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "focused": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "autoTicksOnly": 2,
+        "manualWrap": true
+      }
+    },
+    {
+      "name": "Three multi-select options remain selected and commit exact answer array",
+      "result": "PASS",
+      "evidenceClass": "ISOLATED_JAVASCRIPT_RUNTIME__NOT_BROWSER",
+      "lines": [
+        3088,
+        3091,
+        3092,
+        3093,
+        3103,
+        3114,
+        3127,
+        3657
+      ],
+      "detail": {
+        "selected": [
+          0,
+          1,
+          2
+        ],
+        "ariaPressed": [
+          "true",
+          "true",
+          "true",
+          null
+        ],
+        "committedAnswer": [
+          0,
+          1,
+          2
+        ],
+        "correct": true
+      }
+    },
+    {
+      "name": "Confidence OFF is bypassed by multi-select sgConfidenceHost",
+      "result": "PASS",
+      "evidenceClass": "ISOLATED_JAVASCRIPT_RUNTIME__NOT_BROWSER",
+      "lines": [
+        3103,
+        3649,
+        3663
+      ],
+      "detail": {
+        "setting": false,
+        "confidenceStillRendered": true,
+        "stageHTML": "<div class=\"confidence-host\" aria-label=\"How sure were you?\"><div class=\"confidence-copy\"><span>How sure were you?</span><button class=\"context-tip-icon\" type=\"button\" data-context-tip=\"confidence\" aria-label=\"Why does StudyGrid ask how sure I was?\">?</button></div><div class=\"confidence-choices\"><button data-confidence=\"0\">Guessing</button><button data-confidence=\"1\">Fairly sure</button><button data-confidence=\"2\">Very sure</button><button data-confidence=\"skip\">Skip</button></div></div>"
+      }
+    },
+    {
+      "name": "Multi-select answer receipt uses scalar indexes and displays 0,1,2",
+      "result": "PASS",
+      "evidenceClass": "ISOLATED_JAVASCRIPT_RUNTIME__NOT_BROWSER",
+      "lines": [
+        3653
+      ],
+      "detail": {
+        "receiptHTML": "<div><span>Your answer</span><strong>0,1,2</strong><b class=\"qb17r-correct-tag\">Correct</b></div><div><span>Confidence</span><strong>Skipped</strong></div>",
+        "expectedAnswerLabels": [
+          "Identify as police",
+          "State the purpose",
+          "Request entry"
+        ]
+      }
+    },
+    {
+      "name": "Approve & next advances all 15, then remains on final approved question",
+      "result": "PASS",
+      "evidenceClass": "ISOLATED_JAVASCRIPT_RUNTIME__NOT_BROWSER",
+      "lines": [
+        3170,
+        3185,
+        3212
+      ],
+      "detail": {
+        "questions": 15,
+        "path": [
+          "q1",
+          "q2",
+          "q3s",
+          "q4m",
+          "q5",
+          "q6",
+          "q7",
+          "q8",
+          "q9",
+          "q10",
+          "q11",
+          "q12",
+          "q13",
+          "q14",
+          "q15",
+          "q15"
+        ],
+        "afterRepeatedFinal": "q15",
+        "approvalCount": 15,
+        "renderCount": 16
+      }
+    },
+    {
+      "name": "Study Set statuses: quiz derives readiness, three fixed seeds override review",
+      "result": "PASS",
+      "evidenceClass": "ISOLATED_JAVASCRIPT_RUNTIME__NOT_BROWSER",
+      "lines": [
+        3185
+      ],
+      "detail": {
+        "allApprovedStatuses": [
+          "draft",
+          "published",
+          "held",
+          "ready"
+        ],
+        "heldReview": "held",
+        "needsChanges": "needs_review"
+      }
+    },
+    {
+      "name": "Manual Seed collect failure rolls state back; success awards once; repeat is idempotent",
+      "result": "PASS",
+      "evidenceClass": "ISOLATED_JAVASCRIPT_RUNTIME__NOT_BROWSER",
+      "lines": [
+        2521
+      ],
+      "detail": {
+        "failureRolledBack": true,
+        "failureCopy": "Could not save Seeds yet. Nothing was collected.",
+        "successBalance": 8,
+        "awardCount": 1,
+        "manualActionRequired": true
+      }
+    },
+    {
+      "name": "Quick/Focused/Deep share question ordering and differ only in ordinary session limit and duration",
+      "result": "PASS",
+      "evidenceClass": "ISOLATED_JAVASCRIPT_RUNTIME__NOT_BROWSER",
+      "lines": [
+        1568,
+        2628,
+        3095
+      ],
+      "detail": {
+        "durationMinutes": [
+          15,
+          30,
+          60
+        ],
+        "questionCounts": [
+          5,
+          10,
+          15
+        ],
+        "sharedOrderFunction": "buildQuestionOrder",
+        "noTimedStopInStartSession": true
+      }
+    },
+    {
+      "name": "Signed-in Back controls do not guard demoSignedIn",
+      "result": "PASS",
+      "evidenceClass": "ISOLATED_JAVASCRIPT_RUNTIME__NOT_BROWSER",
+      "lines": [
+        2133,
+        3609
+      ],
+      "detail": {
+        "demoSignedIn": true,
+        "destinations": [
+          "/start",
+          "/welcome"
+        ],
+        "sourceLines": [
+          2133,
+          3610
+        ]
+      }
+    },
+    {
+      "name": "Mark reviewed toggles stored section and advances Continue target; does not create retrieval evidence",
+      "result": "PASS",
+      "evidenceClass": "ISOLATED_JAVASCRIPT_RUNTIME__NOT_BROWSER",
+      "lines": [
+        2195,
+        2196,
+        2197,
+        2198,
+        2210,
+        3666
+      ],
+      "detail": {
+        "before": "foundations",
+        "after": "sources",
+        "reviewedSectionsAfterFirst": 1,
+        "attemptEventsAdded": 0,
+        "toggleBack": true,
+        "focusRestoreInvoked": true
+      }
+    },
+    {
+      "name": "Same context excludes course view changes; instructor class and tab routes share context",
+      "result": "PASS",
+      "evidenceClass": "ISOLATED_JAVASCRIPT_RUNTIME__NOT_BROWSER",
+      "lines": [
+        1592,
+        1593,
+        1594
+      ],
+      "detail": {
+        "studyPurpose": true,
+        "studyToNotes": false,
+        "instructorDifferentClass": true,
+        "profileToSettings": false
+      }
+    },
+    {
+      "name": "Study purpose pushState leaves lastSettledRoute stale, so first Back can skip rerender",
+      "result": "PASS",
+      "evidenceClass": "ISOLATED_JAVASCRIPT_RUNTIME__NOT_BROWSER",
+      "lines": [
+        2297,
+        2127
+      ],
+      "detail": {
+        "sourceClickLine": 2296,
+        "hashAfterBack": "#/course/pfp207/study/learn",
+        "renderedPurposeAfterBack": "test",
+        "routeRenderCountAfterBack": 0,
+        "browserEventsSimulated": true
+      }
+    }
+  ],
+  "summary": {
+    "passed": 12,
+    "failed": 0
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "source_sha256": "874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab",
+  "source_unchanged": true,
+  "files": [
+    {
+      "name": "README.md",
+      "bytes": 2418,
+      "sha256": "55520db8c0b0fe1c61718cd18fd6a9e1a2cdf51e257d24a0f2dff9cb0a12c993"
+    },
+    {
+      "name": "REPORT.md",
+      "bytes": 36947,
+      "sha256": "b5d0d5826bb2689aa732b497bd39743681184b16a0a1038435616c6d335a5cff"
+    },
+    {
+      "name": "bindings.json",
+      "bytes": 900273,
+      "sha256": "282af70660059ca29a8560f734457ac73183ef9b3acfcd385a72e5cf3d19021a"
+    },
+    {
+      "name": "build_inventory.py",
+      "bytes": 6045,
+      "sha256": "3eea294a04551b961b6948ca3e50e014b31bfe5941febf519fea82e74728aef0"
+    },
+    {
+      "name": "control-ledger.json",
+      "bytes": 671964,
+      "sha256": "7b9ed38f9b44b424623ae92a4620984472b74b824d1feb63216c065e213a0d7d"
+    },
+    {
+      "name": "controls.json",
+      "bytes": 238218,
+      "sha256": "cec5993fe3eff804e15a6d4d06b2cbe394f2bea4d42a6de5655aa9243e484e39"
+    },
+    {
+      "name": "cursorCSS.json",
+      "bytes": 23576,
+      "sha256": "1e02faa8e824e8ffffc2d36984a6f154d2b443781a6840cc0eb13d91d1b2134a"
+    },
+    {
+      "name": "definition-chains.json",
+      "bytes": 63480,
+      "sha256": "1205863fd9aff2fb9cba4e24c458dcf6d48277bea83ea8f0aa1f25dc6b829b91"
+    },
+    {
+      "name": "extract_source.cjs",
+      "bytes": 4988,
+      "sha256": "dd09749560fdd79c87af7358199a8c75b149caa4fcce6114f2c39e720559c1d6"
+    },
+    {
+      "name": "fixture-data.json",
+      "bytes": 27103,
+      "sha256": "c97119faa5fbc2286a02b432bdcc7bff4dd10796d001a4ab0862692994266d5a"
+    },
+    {
+      "name": "functions.json",
+      "bytes": 630501,
+      "sha256": "9d6687c94c891f95aecf13362735338608abd24040e1a1dfad52759eaf789f1f"
+    },
+    {
+      "name": "handler-ledger.json",
+      "bytes": 487993,
+      "sha256": "792cbbb02d0996338f85e87e8e5deacbb1374b8109cce00a8aadfbc329dd3427"
+    },
+    {
+      "name": "handlers.json",
+      "bytes": 408311,
+      "sha256": "19a0f6cce98020f37f8fdc39e463717efe289a4ff5325ebf21d0de78e22650f7"
+    },
+    {
+      "name": "input-provenance.json",
+      "bytes": 1062,
+      "sha256": "8ede77fc2765e3959f37014ff7d34e568c18d697432af9a4c8e732f8c5775ba8"
+    },
+    {
+      "name": "inventory-coverage.json",
+      "bytes": 373,
+      "sha256": "de5b6dde837dcea8a97f1e93356e75d70eb2bc447f3e51dda0240a1061883adb"
+    },
+    {
+      "name": "isolate_behaviour.cjs",
+      "bytes": 15581,
+      "sha256": "e7b28194a8eb7f88226cd3163d5d8b449a82159812eae940c6dc9e7d2710b94d"
+    },
+    {
+      "name": "isolated-results.json",
+      "bytes": 7256,
+      "sha256": "c78056ace1041a9a9abd037cf6b97cf867d055003e3027ff25eed41e411e6f97"
+    },
+    {
+      "name": "manifest.json",
+      "bytes": 902,
+      "sha256": "407d63325126d3b102dd05d8c0d8069a8a80f1a4af5813c34397f0185b62ec13"
+    },
+    {
+      "name": "registry.json",
+      "bytes": 275617,
+      "sha256": "832bc431aec63f0fd8b1b127ed8f0f6d695a626f0697039ff894b637b2b7c8a6"
+    },
+    {
+      "name": "route-control-inventory.csv",
+      "bytes": 100953,
+      "sha256": "7c3a119ff5b6ec841f78e98dfefd247bc9fc6a9b848d0258363114de98440bb2"
+    },
+    {
+      "name": "routes.json",
+      "bytes": 6664,
+      "sha256": "368e66722136e5c0eda6705478e794ff3c14d1bf1495ec477e7e90693d83831b"
+    },
+    {
+      "name": "selectionCalls.json",
+      "bytes": 1115,
+      "sha256": "8cca8f0aa8ed6d0466a6f30923e9e861a725901bab154f74ee6b699d5a30d8db"
+    },
+    {
+      "name": "source_inspection.cjs",
+      "bytes": 2786,
+      "sha256": "778d3e2f2b2f13e5bd1116f93d5ae69b5d121e6530304e76483fd9d3d26f6681"
+    },
+    {
+      "name": "stateWrites.json",
+      "bytes": 30427,
+      "sha256": "0849022bfe309e35631ea48fafcc34383b768c06ffbce90a23b926bd0d35f739"
+    },
+    {
+      "name": "visual-seams.json",
+      "bytes": 14931,
+      "sha256": "98c6b66319fe67fdd2b105fa919e9d9cf2c77d9b6bd23881ffd9a8452a9294f2"
+    }
+  ],
+  "product_changes": 0,
+  "scope": "read-only source inspection / report-only publication"
+}

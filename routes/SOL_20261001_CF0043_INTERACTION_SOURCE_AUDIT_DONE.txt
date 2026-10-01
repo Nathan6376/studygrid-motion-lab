@@ -1,0 +1,58 @@
+STUDYGRID — SOL EXACT-SOURCE INTERACTION AUDIT — DIRECT GENERAL RETURN
+FROM: CHAT-CGPT-20260930-STUDYGRID-SOL-01 / CF-0043
+TO: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+STATUS: DONE — SOURCE AUDIT / ISOLATED JS REPRODUCTION / BROWSER GEOMETRY UNVERIFIED
+
+CONSUMED
+routes/GENERAL_20261001_1700_SOL_EXACT-SOURCE-INTERACTION-AUDIT.txt @ d17644b81fa64a968f844c58d3cf58004fcea3c7
+Owner delta @ 9e44452c4687b03fe62a1bc6faee387cc2713c6d
+Current Base CGPTBASE-R0004-N8V6 + Active Corrections + CF0043/CF0047 registry + current queue/lifecycle.
+Owner activation: Check routing — Sol.
+STARTED persisted/read back before interaction inspection: STUDYGRID — CF0026 WORKER row63; TX-0269; RT-20261001-1713-CF0043-INTERACTION-AUDIT-STARTED. Checkpoint persisted/read back under EVT-0267 / WR-0256.
+
+EXACT SOURCE VERIFIED AND UNCHANGED
+StudyGrid-CF0042-QB17R2-stuart-defect-repair.html
+Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46
+1063586 bytes
+SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab
+v7.20-cf0042-qb17r2-stuart-defect-repair
+
+PACKAGE — PROVIDER EXACT-BYTE READBACK VERIFIED
+Report: https://drive.google.com/file/d/1so83iqz97-Xckj4h13qSiPjPdJW6kssy/view
+Report SHA-256 b5d0d5826bb2689aa732b497bd39743681184b16a0a1038435616c6d335a5cff / 36947 bytes.
+Full evidence ZIP: https://drive.google.com/file/d/1xlwR-EcpeObfRRemWl17rHtjhge187D6/view
+ZIP SHA-256 063e06a01edf5a78e1325f3037c0ddd5ae47cfc53451737d615320a5362b9f05 / 564652 bytes.
+Report-only GitHub branch: sol/cf0043-20261001-interaction-source-audit
+Report path: reports/SOL_20261001_INTERACTION_SOURCE_AUDIT/REPORT.md
+Inventory path: reports/SOL_20261001_INTERACTION_SOURCE_AUDIT/route-control-inventory.csv
+No original product HTML is copied or changed in this return branch.
+
+RESULT
+All six requested deliverables completed: hierarchy/control/state inventory; owner-observation table with explicit classifications; mechanically evidenced causes only; minimal later source seams; preserve list; no product code changes.
+Four executable scripts parsed. 603 function definitions, 414 listener declarations, 638 native-control source occurrences, 237 unique registry components. 201 navigation/surface-state records. Counts include conditional/retired source, not simultaneous visible controls.
+12/12 exact-function/callback detector scenarios passed with explicit dependency/DOM/storage/time stubs. Passing detectors include confirmed defects; not product acceptance.
+
+PRIORITY FINDINGS FOR SYNTHESIS
+SOL-F01: signed-in preview Back chain still /courses → /start → /welcome without clearing demoSignedIn; course/add/local class paths feed that chain.
+SOL-F02: Approve & next advances 15 items then retains q15 and repeated final action retains it. Ready status can update, but no explicit terminal selection/completion state. Button relocation remains unmeasured.
+SOL-F03: q14 pre-answer example says Macooh while the correct choice is R. v. Macooh. McCue and Canascape are absent literal strings; do not correct legal terminology from speech.
+SOL-F04: multi-select confidence host ignores confidence-Off setting respected by single-answer handler.
+SOL-F05: multi-select receipt uses scalar indexes: correct selected [0,1,2] prints 0,1,2; incorrect receipt's correct answer omits other correct choices.
+SOL-F06: Study purpose pushState does not update lastSettledRoute; simulated Learn→Test→Back produces Learn hash with Test view because history handler early-returns. Native browser reproduction pending.
+Additional: default practice pool includes 17 original/replacement entries while Quiz1 review/assessment uses 15 mapped questions.
+
+OWNER CLAIMS RECONCILED
+Multi-select inability was NOT reproduced: exact multi listeners select all three and commit the correct array. Preserve owner observation for native/target reconciliation.
+Mark reviewed is more than a border: toggles local section state, counts, next Continue target and labels; does not create retrieval/later-memory evidence.
+Seeds collection is manual. Forced local persist=false rolls award/balance back and emits exact failure copy; successful award dedupes. Owner's actual storage failure cause is unknown, not diagnosed as backend disconnection.
+Welcome autoplay is bounded 1→2→3 then stops. Continuous loop is newer owner requirement; preserve earlier accepted semantic summary, engagement pause and reduced motion.
+Test mode prepends truth content before shared mode tabs; source reflow seam confirmed, pixel shifts unverified.
+Professor Home strings, full-card gloss sweep, green confidence CSS and layered navigation located exactly. Specific painted square/geometry remains unverified.
+
+ROUTING POINTER DEFECT
+Owner delta prints 1k0d69ZOrgs4NRRORKBmIwOR1Q0mE46 (missing L); that exact ID provider404. Sol route's 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46 verifies exact source. General should correct one pointer in a successor delta; original frozen input preserved.
+
+HOLD / CONSUMER ACTION
+General CF0047 owns synthesis. Keep implementation held while owner review is open. Carry source seams and unverified browser/geometry observations into bounded redesign and later QA; this is not design adjudication, implementation approval or release. No worker wake issued.
+No external UX research, product mutation, backend/auth/Supabase/network feature work, deploy, install or canonical promotion.
+Publication proves durable availability, not General adoption/background wake.
