@@ -1,0 +1,29 @@
+STUDYGRID RESEARCH CF-0044 — Q-R2 CHECKPOINT
+Timestamp: 2026-09-30 23:48 ET
+Lifecycle: CHECKPOINT / STARTED
+
+Completed:
+- Exact Q-R2 route consumed at 094c1d540e745f622f2ea5b1ad6dc27d88d83ddf.
+- Parent owner delta consumed at 87cef27fe6a52fae030467c41d6a569ac7805a1a.
+- Screenshot evidence appendix consumed at d2e1e5e5bb21b3f20003dffc0b5312850f13f4bc.
+- Prior Q-R1 terminal baseline consumed/reused at c9c5f93171ca286cda6968c2b730d56d63fd4344.
+- Current Active Corrections refreshed; AC-0006 durable lifecycle/recovery applies.
+- Current primary/platform evidence pass completed across all eight Q-R2 workstreams: guided tours/help; role/demo IA; contextual help without reflow; ghost demonstrations; plain-language/touch controls; flicker/theme safety; policy/help IA; focus/outline/decorative chrome.
+
+Key evidence families completed:
+- Apple HIG Onboarding, Offering Help, Popovers, Sheets, Modality, Managing Accounts, Reduce Motion.
+- W3C/WAI WCAG 2.2 and APG: Disclosure, Dialog, Tooltip caveat, Focus Visible/Not Obscured/Non-text Contrast/Use of Color, Dragging Movements, Target Size, Animation from Interactions, Pause/Stop/Hide, Seizure/flash criteria, plain-language writing, accessibility-statement placement.
+- Google Classroom current multi-role View Switcher precedent.
+- D2L Brightspace current Role Switch / Preview / Impersonate distinctions.
+- Google PAIR and Microsoft HAX explainability/correction guidance for context-aware suggestions.
+- Google Play current privacy-policy/account-deletion product requirements, conditional on Play distribution.
+
+Material bounded conclusions:
+- No defensible universal tour step count found; tour length should be task-complete, optional, skippable/replayable, with contextual tips for isolated features.
+- Ghost guidance is a finite secondary cue, must cease on real interaction, and has a static reduced-motion/screen-reader path.
+- Paper→Dusk→Paper should create drama through one-way staged restyling, not actual flashing; decorative demo target should be zero flash events rather than relying on threshold exceptions.
+- Focus, selection, tutorial-target and active states must be visually distinct; visible keyboard focus must remain.
+- Policy/legal IA can be recommended, but StudyGrid legal completeness remains owner/counsel/distribution-dependent.
+
+Next unresolved step:
+Write and persist one consolidated Q-R2 terminal evidence package directly to General CF-0040 with executive recommendations, source register, decision matrix, screenshot-tied acceptance/reject conditions, and device/user-test/legal holds. No product or worker mutation.
