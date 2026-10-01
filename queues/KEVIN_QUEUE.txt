@@ -1,6 +1,6 @@
 STUDYGRID — KEVIN WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 21:06 ET
+Updated: 2026-09-30 21:14 ET
 Queue owner: General
 Worker: Kevin
 
@@ -11,21 +11,26 @@ CURRENT CONTEXT
 - Q-K1E evidence recovery/publish: TERMINAL BLOCKED on commit 94be99b582a21eccab0ce708fd467f23b6d8f482. The recovered real Q-K1R state is FAILED, not DONE.
 - Existing Q-K1 branch: kevin-qk1-v4a-full-context-dual-preview @ a14459b1bd3f8b353eaa8e4f78aae3341b96cfef.
 - Workflow run 36734968949 rendered Candidate A and Candidate C successfully but failed during verification before proof hashing/upload. Provider artifact inventory: 0.
-- No valid source-stable full-context A+C proof artifact exists yet.
-- Q-K2 and Stuart Q-S2 remain blocked until a separately released recovery produces and verifies that durable artifact.
+- Durable return identifies the verifier failure as inconsistent expect/expected access; no evidence shows a completed fix or publish-only omission.
 - Candidate A/C mechanics remain unchanged; no winner selected.
 
 Q-K1F — BOUNDED VERIFIER RECOVERY + SOURCE-STABLE A/C PROOF PUBLICATION
-Eligibility: BLOCKED pending General release after consuming Q-K1E and confirming the smallest repair scope.
-Purpose once released: repair only the failed verification/publication path from the existing A/C full-context run, preserving the already-rendered candidate mechanics and source identities; then produce the durable source-stable A+C proof artifact required for independent audit.
-Boundaries: no redesign, no A/C winner selection, no product/main/R5/R6/backend/auth/Supabase/deploy/canonical-G/final-choreography mutation.
+Eligibility: AVAILABLE NOW if no newer Kevin item is STARTED.
+Purpose: repair only the failed verification/publication path from the existing A/C full-context run and produce the durable source-stable A+C proof artifact required for independent audit.
+Requirements:
+- start from the exact existing branch/source identities; do not redesign or alter A/C mechanics;
+- reproduce the verifier failure first, then correct only the verifier defect(s), including the expect/expected mismatch if confirmed;
+- rerun the smallest full-context proof path necessary to generate source-stable proof hashes and a provider-visible A+C proof artifact;
+- verify artifact inventory, digest/hash, decode/inventory integrity and source identity binding;
+- return exact branch/commit/run/artifact ID/name/digest and residual limitations directly to General.
+Boundaries: no A/C winner selection; no product/main/R5/R6/backend/auth/Supabase/deploy/canonical-G/final-choreography mutation.
 
 Q-K2 — DUAL-CANDIDATE GLB EXPORT SMOKE
-Eligibility: BLOCKED until General verifies a durable valid source-stable A+C full-context proof artifact from Q-K1F or an equivalent authorised recovery.
-Purpose: prove that the two candidate hinge structures can survive the Blender→GLB boundary with transform hierarchy intact before the owner choice.
+Eligibility: BLOCKED until General verifies the durable valid source-stable A+C proof artifact from Q-K1F.
+Purpose: prove that the two candidate hinge structures survive the Blender→GLB boundary with transform hierarchy intact before owner choice.
 
 Q-K3 — SELECTED-CANDIDATE FINAL RENDER / ROUND-TRIP
 Eligibility: BLOCKED until Nathan selects A or C after independent full-context acceptance and General publishes the selected integration source.
 
 STOP CONDITION
-Do not start Q-K1F or Q-K2 until General explicitly releases the bounded recovery after current reconciliation. No filler.
+Execute Q-K1F now. Do not start Q-K2 until General verifies the new proof artifact. No filler.
