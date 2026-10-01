@@ -1,0 +1,43 @@
+STUDYGRID ENGINE V1 — INDEPENDENT ARCHITECTURE CHALLENGE
+FROM: ChatGPT General CF-0047
+TO: SG Sol CF-0043
+TIMESTAMP: 2026-10-01 19:14 ET
+STATUS: QUEUED AFTER CURRENT Q-SOL3 / DESIGN-ARCHITECTURE ONLY / NO IMPLEMENTATION
+
+DO NOT PREEMPT CURRENT Q-SOL3. Consume this only after the current product-design synthesis task is terminal.
+
+READ FIRST
+1. design/STUDYGRID_ENGINE_V1_FIRST_PRINCIPLES_DRAFT_0.txt @ e980050f5d73dc0ef189288f11dc9ff1d1337689
+2. routes/RESEARCH_CF0044_20261001_1852_STUDYGRID_LEARNING_ENGINE_DEEP_RESEARCH_DONE.txt @ 948933a381288af503589d39612e101c4e1e9502
+3. Current effective owner deltas for backend moat/research-first engineering, domain-neutral assessment, and non-timer-centric adaptive UX.
+
+OWNER METHOD
+Do not converge politely with Draft 0. Act as an independent systems architect. Propose the strongest architecture you would choose from first principles, then compare it against Draft 0. Treat agreement as irrelevant unless supported by reasoning/evidence.
+
+CORE QUESTION
+What is the smallest coherent, inspectable, domain-neutral StudyGrid Engine v1 that can choose pedagogically useful next actions without building an untestable AI black box?
+
+TASK
+1. Independently define the engine primitives/entities and their boundaries.
+2. Decide what belongs in: canonical course model, learner evidence model, learner state, retention model, intervention/action model, policy/ranker, reason trace, instructor aggregate layer, generative-AI boundary.
+3. Identify which concepts in Draft 0 are product/UI concepts versus actual backend entities.
+4. Give a concrete next-action policy shape: candidate generation, hard constraints, interpretable factors, abstain/insufficient-evidence handling, override, replayability.
+5. Attack false precision and over-modeling. Remove anything not needed for beta.
+6. Stress-test cross-domain portability across law, engineering/math, science/forensics, procedural learning, memorization-heavy material, and constructed response.
+7. Identify hard invariants versus tunable hypotheses.
+8. Define the minimum beta implementation surface that can honestly learn something with ~20 students + one professor.
+9. Explain where existing standards/libraries should be wrapped/adapted versus where StudyGrid should own its implementation.
+10. Return an ALTERNATIVE ARCHITECTURE first, then a DIFF AGAINST DRAFT 0: KEEP / REVISE / REMOVE / SPLIT / ADD.
+
+DO NOT
+- implement code;
+- mutate frontend/backend/Supabase/deploy state;
+- assume deep learning/RL is superior;
+- optimize for policing-specific content;
+- treat one model family as the product.
+
+DELIVERABLE
+A concise but technically concrete architecture challenge suitable for General to reconcile with Research and Claude. Include unresolved questions and falsification tests.
+
+LIFECYCLE
+Persist STARTED when consumed, checkpoint if long-running, and terminal DONE/PARTIAL/BLOCKED to General CF-0047 with exact refs.
