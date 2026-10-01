@@ -1,0 +1,40 @@
+STUDYGRID — OWNER REVIEW BATCH OPEN
+Timestamp opened: 2026-09-30 21:30 ET
+Coordinator: ChatGPT General CF-0040
+Authority: Nathan direct owner instruction
+Status: OPEN — ACCUMULATE FEEDBACK; DO NOT WAKE BOB/STUART/KEVIN YET
+
+OWNER PROCESS
+- Nathan wants to inspect the current owner-review release thoroughly and give all visible/interaction/product feedback before implementation workers are reactivated.
+- Do not repeatedly send Bob, Stuart or Kevin small incremental batches. Accumulate the release feedback first, reconcile it into one coherent implementation/acceptance package, then activate the workers once Nathan explicitly indicates the review batch is complete / ready to build.
+- Relay Architecture may work in parallel on the already-routed Add Class/onboarding architecture packet while Nathan continues reviewing the release.
+- New owner feedback during this review is appended/reconciled into the open review batch. Material architecture deltas may be persisted for later Architecture reconciliation, but do not interrupt Nathan with repeated worker activations.
+- When the batch closes: General reconciles Architecture return + complete owner feedback; publishes exact worker-specific shared routes; then Nathan receives only short exact activations and one paired return-to-General continuation block.
+
+CURRENT FEEDBACK ALREADY IN BATCH
+1. routes/OWNER_FEEDBACK_20260930_2113_SLICE2_REFINEMENT.txt
+   - Feedback hover geometry
+   - Dusk interaction
+   - edit-only label/colour controls
+   - restrained course-card colour/hover
+   - resolve undo
+   - instructor-only navigation/surfaces
+   - information-density cleanup
+2. routes/OWNER_FEEDBACK_20260930_2123_ADD_CLASS_ONBOARDING_REDESIGN.txt
+   - course-field personal-name autofill problem
+   - school/program/term setup once
+   - Term 1/2/3/4 + Other selector
+   - curated/searchable institution/program selection
+   - contextual course number/prefix handling
+   - verified official catalogue-backed course picker
+   - join-code shortcut
+   - manual fallback
+   - program-term vs academic-session separation
+
+WORKER HOLD
+- Bob: HOLD all product mutation until owner review batch closes and General publishes the reconciled build contract.
+- Stuart: HOLD acceptance prep/acceptance until exact reconciled candidate/contract exists.
+- Kevin: HOLD Q-K1F activation until owner review batch closes, even though motion work is technically separable, because Nathan wants a single batched worker activation round.
+
+CLOSE CONDITION
+Only Nathan closes this batch by indicating he is done reviewing / ready to send the complete package to workers. Until then, General should listen, inspect, accumulate, and clarify only where necessary.
