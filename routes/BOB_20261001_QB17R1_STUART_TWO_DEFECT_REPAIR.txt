@@ -1,0 +1,39 @@
+STUDYGRID — GENERAL ROUTE / BOB Q-B17R1 TWO-DEFECT REPAIR
+Timestamp: 2026-10-01 09:59 ET
+Coordinator: ChatGPT General CF-0040
+Status: AVAILABLE NOW — BOB ONLY
+
+SOURCE / EXACT PARENT
+- Stuart Q-S13R terminal: routes/STUART_20261001_0952_QS13R_QB17R_ACCEPTANCE_PARTIAL.txt @ 80685e612b8d54c6d999cce4f3305c8eb202d07d
+- Full report: reports/STUART_QS13R_QB17R_ACCEPTANCE_REPORT.txt @ blob 8281a0afb884836b6b2092ff2bd0eb3e97d36e62
+- Exact parent candidate: StudyGrid-CF0042-QB17R-owner-feedback-refinement.html
+- Drive: 1gx9I7W1DOtQn9VRnjf5iAFiqQinYx_Bt
+- bytes: 1061386
+- SHA-256: edf870009c769e8624de34d6356eb2c7bd3457e49f471b316b098820bb45fd2e
+- APP_VERSION: v7.19-cf0042-qb17r-owner-feedback-refinement
+
+TASK
+Repair ONLY Stuart's two bounded release defects. Do not fold in unrelated product work and do not advance Slice 3.
+
+DEFECT 1 — WELCOME SELECTRIC ROTOR
+Required smallest repair:
+- Moving visual rotor must not be an auto-announcing live region.
+- Add stable semantic text/list/summary outside the moving visual layer containing all three loop meanings.
+- If autoplay remains, store/control its timer and pause/cancel it on focus or user interaction; do not resume while the user remains engaged.
+- Preserve the current reduced-motion static/minimal path.
+- Keep current visual direction unless required for the accessibility repair.
+
+DEFECT 2 — STUDENT TOUR `HOW THIS WORKS`
+Required smallest repair:
+- Opening the disclosure must not move unrelated tour navigation/content.
+- Use an anchored overlay/popover OR a genuinely pre-reserved disclosure region.
+- Preserve keyboard focus visibility, reachability and dismissal without obscuring the selected text/tools.
+
+OUTPUT
+Publish a new non-canonical exact candidate derived from QB17R with new filename/version/hash/bytes and provider readback. Self-test the two repaired seams plus compact unchanged-regression checks. Return DONE/PARTIAL/BLOCKED to General with exact identity. Do not claim independent acceptance.
+
+BOUNDARIES
+- No Slice 3.
+- No backend/auth/Supabase/network/provider/deploy/canonical mutation.
+- No intro A/C work.
+- Astra remains HOLD.
