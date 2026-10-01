@@ -1,0 +1,14 @@
+STUDYGRID — STUART Q-S13R QB17R INDEPENDENT ACCEPTANCE — STARTED
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-10-01 09:38 ET
+Lifecycle: STARTED
+
+Exact released candidate consumed:
+StudyGrid-CF0042-QB17R-owner-feedback-refinement.html
+Drive 1gx9I7W1DOtQn9VRnjf5iAFiqQinYx_Bt
+Expected bytes 1061386
+Expected SHA-256 edf870009c769e8624de34d6356eb2c7bd3457e49f471b316b098820bb45fd2e
+Expected APP_VERSION v7.19-cf0042-qb17r-owner-feedback-refinement
+
+Q-S13RP prep is already durable. Executing Q-S13R only against the exact General 08:33 acceptance release. Independent static/runtime/regression checks will be run; Bob self-test is corroboration only. No product mutation. Physical iPad/Safari/VoiceOver/hosted-origin remain HOLD unless real evidence exists.
