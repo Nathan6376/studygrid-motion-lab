@@ -10,8 +10,8 @@ When Nathan tells Stuart to check routing, refresh lifecycle and this queue, the
 ROLLOVER
 Fresh successor reserved:
 - CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
-- owner-visible title: SG Stuart — October 1
-- rollover: routes/STUART_ROLLOVER_20261001_TO_CF0046.txt @ 2a7c181c98dd9f5f23df222a80bf69d1df547883
+- owner-visible title: SG Stuart - October 1
+- rollover: routes/STUART_ROLLOVER_20261001_TO_CF0046.txt @ 727b252d6d85a55eeeeb402988a6bbbf73eccf8c
 The owner-visible predecessor `SG Stuart — September 28` became too long. Its material terminal continuity is durable; no old-chat checkpoint is required.
 
 Q-S13R — OWNER-FEEDBACK REFINEMENT INDEPENDENT ACCEPTANCE
@@ -27,7 +27,7 @@ Two defects blocked PASS: welcome rotor accessibility/interaction; How-this-work
 Q-S13R2 — QB17R NARROW REPAIR RE-ACCEPTANCE
 Eligibility: BLOCKED until Bob returns a new exact repaired candidate and General publishes/releases its exact pointer.
 Expected scope when released:
-1. Re-test rotor stable semantic content + non-live/decorative moving layer + focus/interaction autoplay pause/cancel + reduced-motion behavior.
+1. Re-test rotor stable semantic content + non-live/decorative moving layer + focus/interaction autoplay pause/cancel + reduced-motion behaviour.
 2. Re-test How-this-works spatial stability, focus/dismissal, and no unrelated Next movement.
 3. Run bounded regressions needed to ensure the repair did not break previously passing QB17R owner-review scope.
 4. Do not mutate the candidate.
