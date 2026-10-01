@@ -1,0 +1,53 @@
+GENERAL — ROLLOVER CF-0040 → CF-0047
+Timestamp: 2026-10-01 10:14 ET
+Source: CHAT-CGPT-20260930-GENERAL-01 / CF-0040
+Successor: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+Owner-visible successor title: General — October 1
+Status: CLOSE TRANSITION — SUCCESSOR RESERVATION REQUIRED
+
+AUTHORITY / STARTUP
+- Current ChatGPT Base verified in source chat as CGPTBASE-R0004-N8V6 from project file Base for ChatGPT — Handoff System.pdf.pdf.
+- Fresh successor must read the full current Base, current SYSTEM — Active Corrections, exact registry row for CF-0047, this transition, and current live StudyGrid shared state before continuity-dependent substance.
+- Registry/shared-state updates do not prove host UI archive/title mutation.
+
+CRITICAL NOW — STUDYGRID PRODUCT
+1. Nathan closed the owner-review pass and authorized implementation.
+2. Bob Q-B17R produced non-canonical candidate StudyGrid-CF0042-QB17R-owner-feedback-refinement.html / Drive 1gx9I7W1DOtQn9VRnjf5iAFiqQinYx_Bt / 1,061,386 bytes / SHA-256 edf870009c769e8624de34d6356eb2c7bd3457e49f471b316b098820bb45fd2e / v7.19-cf0042-qb17r-owner-feedback-refinement.
+3. Stuart Q-S13R independently returned PARTIAL / AMEND-HOLD at routes/STUART_20261001_0952_QS13R_QB17R_ACCEPTANCE_PARTIAL.txt @ 80685e612b8d54c6d999cce4f3305c8eb202d07d.
+4. Exactly two bounded defects block owner HTML review:
+   A. Welcome rotor accessibility/interaction: moving auto-changing text is aria-live=polite; no stable semantic summary/list; autoplay does not pause/cancel on focus/real interaction.
+   B. Student-tour How this works reveal moves unrelated layout/navigation; Stuart measured about 227 px Next movement in reduced-motion retest.
+5. Bob narrow repair Q-B17R2 is RELEASED/AVAILABLE via routes/GENERAL_20261001_1000_BOB_QB17R_NARROW_REPAIR_FROM_STUART.txt @ 652385ffe16a519ca9cbe2537f528feac844ff74 and queues/BOB_QUEUE.txt @ 2694e7bb6e55af7baa23a71f1d78abd38534c1f7. Patch only those two defects, produce new non-canonical candidate, do not redesign unrelated surfaces.
+6. Fresh Stuart successor is CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046, owner-visible title SG Stuart — October 1. Rollover routes/STUART_ROLLOVER_20261001_TO_CF0046.txt @ 727b252d6d85a55eeeeb402988a6bbbf73eccf8c. Current registry says ACTIVE. Stuart's next product acceptance is blocked until Bob returns Q-B17R2, then General must route exact repaired candidate for independent Q-S13R2 retest.
+7. Nathan's next owner gate: only after independent Stuart PASS, give Nathan the exact verified HTML so he can open/review it himself. Do not advance Slice 3 before that owner review.
+
+3D INTRO / KEVIN
+- Kevin Q-K1F remains STARTED with no verified terminal A+C proof yet as of source-chat close.
+- Last durable start: routes/RTE-20261001-0042-ET__FROM-STUDYGRID-WORKER-KEVIN__TO-CGPT-GENERAL-CF0040__Q-K1F-OWNER-REVIEW-RENDER-COMPLETION__STARTED.txt @ e2a00830216842fbf7ed80c9b625ed5c7357860d.
+- Do not advance Q-K2 until valid source-stable full-context A+C proof exists and is independently verified. General does not choose A vs C; Nathan chooses after valid proof.
+
+BACKEND / CLAUDE
+- New terminal Claude C-E backend build-pack return exists and was not fully adjudicated by CF-0040 before close: Drive 1bocM5RBVoM-mN6NapytYQ5nF7jmvSAML, title RTE-20261001-0842-ET__FROM-CLAUDE-GENERAL__TO-CGPT-GENERAL-CF0040__STUDYGRID-CE-BACKEND-BUILD-PACK__DONE.txt.
+- Reported local-only PostgreSQL result: 1223/1223 PASS, with fixes to C-A race/idempotency/RLS/exposure issues. No real Supabase project/auth/provider/deploy/canonical mutation occurred. Real staging remains separately gated.
+- Successor must consume/adjudicate this terminal return before any backend staging release.
+
+OTHER LANES
+- Research CF-0044: Q-R1/Q-R2/Q-R3 completed/consumed for current review cycle; no fresh research work implied by this close.
+- Sol CF-0043: Q-SOL1 source audit DONE/consumed; no fresh task implied.
+- Astra remains HOLD until Nathan explicitly releases it.
+- Relay Architecture remains separate Relay/system coordinator; do not route StudyGrid product design into Architecture.
+
+OWNER PREFERENCES / CONTINUITY
+- StudyGrid worker titles are compact SG names; screenshot-confirmed owner surface includes SG Bob — September 30, SG Research — September 30, SG Kevin — September 28, prior SG Stuart — September 28; successor Stuart is SG Stuart — October 1.
+- Nathan wants minimal activation prompts for established workers: Check routing — Bob/Kevin/Stuart.
+- When more than two messages pass after a return-to-General block while a return is still expected, surface the return block again.
+- Nathan wants corrected HTML quickly, then another owner review pass; Monday Oct 5 teacher-facing review remains planning priority, not a guaranteed completion claim.
+
+SUCCESSOR FIRST ACTION
+- Validate and acknowledge this transition and CF-0047 registry row.
+- Refresh Bob Q-B17R2 terminal state, Stuart CF-0046 state, Kevin Q-K1F state, and Claude C-E terminal return.
+- If Bob has not been activated on Q-B17R2, the first useful owner action is the short Bob activation; if Bob is already terminal, consume it and route exact repair to Stuart successor.
+- Preserve Astra HOLD and Slice 3 HOLD.
+
+END
+This transition carries unresolved work as durable pointers. No claim is made that the source host UI chat was archived or that separate chats were woken by publication alone.
