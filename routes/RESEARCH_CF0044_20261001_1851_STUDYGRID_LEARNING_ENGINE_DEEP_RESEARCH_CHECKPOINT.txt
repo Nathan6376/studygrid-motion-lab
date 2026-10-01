@@ -1,0 +1,29 @@
+STUDYGRID RESEARCH CF-0044 — LEARNING ENGINE DEEP RESEARCH — CHECKPOINT
+Timestamp: 2026-10-01 18:51 ET
+From: SG Research / CF-0044
+To: ChatGPT General / CF-0047
+Lifecycle: CHECKPOINT
+
+Completed since STARTED:
+- Re-read the exact General CF-0047 deep-research route and all three controlling owner deltas.
+- Confirmed owner direction: domain-neutral engine; research-first; internally inspectable/explainable; non-timer-centric; AI not Course Truth; beta hypotheses must be tested with real students/instructor.
+- Bounded literature/system pass completed across: BKT/PFA/IRT/CDM/deep-KT; uncertainty/calibration; spacing/retrieval/interleaving/mastery learning; knowledge spaces/prerequisite structures; next-action policies; response-time/process evidence; worked examples/feedback; instructor learning-analytics dashboards; privacy/analytics ethics; QTI/CASE/Caliper/xAPI; ALEKS/ASSISTments/Open edX/pyBKT/FSRS.
+- Licence checks completed for pyBKT (MIT), Free Spaced Repetition Scheduler / FSRS reference implementation (MIT), and Open edX core repository (AGPLv3; Open edX also uses Apache 2.0 across other repositories).
+
+Material directions established:
+1. Engine v1 should be a hybrid evidence engine, not a single-model product. Separate course/skill graph, learner evidence state, memory/retention state, assessment evidence, deterministic safety/eligibility rules, and next-action policy.
+2. BKT/PFA/IRT/CDM families remain strong interpretable baselines; deep KT can improve prediction on some datasets but demands more data, is harder to interpret/calibrate, and should not be the v1 decision authority merely because AUC is higher.
+3. Prediction accuracy is not causal evidence that a recommendation improves learning. Next-action policy needs explicit pedagogic constraints and later experimentation; contextual-bandit/RL approaches belong behind a validated baseline rather than at cold start.
+4. Retrieval practice + distributed practice have strong evidence; interleaving is conditional; worked examples/fading help especially for novices; feedback quality/timing matters. A StudyGrid engine must choose teaching interventions as well as questions.
+5. FSRS/DSR-style memory scheduling is useful as a retention submodel, not the whole engine. Course prerequisites, assessment urgency, conceptual weakness and current instructional state must constrain/override pure flashcard due dates.
+6. Interaction evidence should be ordered by validity/privacy: correctness, repeated retrieval history, source-aligned skill/item mappings, spacing/recency, explicit pre-feedback confidence, hint/retry/error pattern; response time is conditional; raw pointer/keystroke traces remain unjustified/invasive.
+7. Instructor dashboards must lead from evidence to plausible action and expose uncertainty; literature repeatedly finds many dashboards stop at awareness and lack actionability/theoretical grounding.
+8. ~20 students + one professor can falsify usability, comprehension, instrumentation, calibration and workflow assumptions, but cannot establish long-term efficacy or generalize adaptive-policy effects.
+
+Next unresolved:
+- synthesize the 12-part terminal research dossier;
+- include evidence/model matrix, signal matrix, open-source/system table with licence/IP notes, deterministic/statistical/learned/AI split, cold-start plan, research-informed next-action hypothesis, instructor analytics findings, red-team failure modes, beta plan, unknowns/vendor claims, and dated source register;
+- refresh repository for superseding exact Research route before terminal return;
+- persist/read back DONE directly to General CF-0047.
+
+Boundaries remain: research only; no frontend/backend/auth/Supabase/provider/deploy/3D/canonical mutation; no real learner telemetry inspection; no peer wake.
