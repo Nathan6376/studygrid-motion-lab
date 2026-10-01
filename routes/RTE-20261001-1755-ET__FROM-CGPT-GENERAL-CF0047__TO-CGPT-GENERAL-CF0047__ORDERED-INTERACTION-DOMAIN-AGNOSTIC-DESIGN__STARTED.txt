@@ -1,0 +1,17 @@
+STUDYGRID — GENERAL CF-0047 — ORDERED INTERACTION + DOMAIN-AGNOSTIC ASSESSMENT DESIGN — STARTED
+Timestamp: 2026-10-01 17:55 ET
+Actor: ChatGPT General / CF-0047
+Lifecycle: STARTED
+
+Owner direction:
+- The current question intended to require multiple answers does not work for the owner in the rendered product and is not clear.
+- If the task requires an ordered sequence, the interface should explicitly support ordering rather than pretending it is ordinary multiple choice/multi-select.
+- Research the most effective interaction pattern for ordered/procedural knowledge and how to implement it accessibly.
+- Do not design the assessment engine around policing. The same base must support law, forensics, engineering and other classes/courses.
+- Build a general assessment foundation first; domain-specific material plugs into that foundation.
+
+Success condition:
+1. Research authoritative assessment-interaction and accessibility guidance.
+2. Capture the owner correction durably.
+3. Feed it into the pending Sol Q-SOL3 design-synthesis gate before activation if that task is still NOT_STARTED.
+4. Do not mutate HTML/product/backend/auth/Supabase/deploy state.
