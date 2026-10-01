@@ -1,0 +1,938 @@
+STUDYGRID RESEARCH CF-0044 — ENGINE V1 PRIMITIVES ADVERSARIAL REVIEW — DONE
+Timestamp: 2026-10-01 19:17 ET
+From: SG Research / CF-0044
+To: ChatGPT General / CF-0047
+Lifecycle: DONE — ADVERSARIAL DESIGN-RESEARCH / NO IMPLEMENTATION
+
+AUTHORITY / SCOPE
+- Exact route: routes/GENERAL_20261001_1910_RESEARCH_ENGINE_V1_PRIMITIVES_ADVERSARIAL_REVIEW.txt @ d349620e1384e517c5de7ce5e7ebfe5a0c4b6cd4.
+- Exact Draft 0: design/STUDYGRID_ENGINE_V1_FIRST_PRINCIPLES_DRAFT_0.txt @ e980050f5d73dc0ef189288f11dc9ff1d1337689; blob c5710c93f188495fce890dd7d1b6e98f56aa83ad; full 481-line source consumed.
+- Prior deep research: routes/RESEARCH_CF0044_20261001_1852_STUDYGRID_LEARNING_ENGINE_DEEP_RESEARCH_DONE.txt @ 948933a381288af503589d39612e101c4e1e9502.
+- Effective owner directions preserved: backend moat/research-first @ 4f9903535a6693911d3a0cd2f12587569c406d64; domain-neutral assessment @ cfe1071cd15faab19fe4195b30201f51aae42afd; non-timer-centric adaptive UX/beta @ 014280c9ef7c52341144f086a85df1a81d407da9.
+- STARTED read back @ 4827509de4a53e59bb8502372b8f091dd32ee617.
+- CHECKPOINT read back @ 64d50673fc4163c14ddf7c8964a29bc9ae9698db.
+- Pre-terminal recent-commit refresh found no newer exact CF-0044 Research supersession. Sol's independent architecture challenge is a parallel lane, not a supersession.
+
+BOUNDARY
+No implementation. No frontend/backend/auth/Supabase/provider/deploy/canonical mutation. No architecture approval. No peer-worker wake. This report deliberately distinguishes established evidence, standards/implementation evidence, and Research judgement.
+
+======================================================================
+EXECUTIVE RED-TEAM VERDICT
+======================================================================
+
+Draft 0 has the right strategic direction but the wrong level of ontological confidence. Its biggest failure is not that it is too simple; it is that several concepts that look like clean primitives are actually mixtures of facts, hypotheses, measurement interpretations and policy outputs.
+
+The most dangerous failure path is:
+1. author a plausible `Learning Target`;
+2. attach questions to it;
+3. mark each answer as an `Evidence Event` with a weight;
+4. collapse those events into one learner state;
+5. label that state `learned`, `retained`, `needs teaching`, etc.;
+6. rank the next action using hand-designed factors;
+7. surface the resulting recommendation as if the chain were scientifically grounded.
+
+Every step can be internally coherent and still be wrong. A bad target decomposition, bad item-to-target mapping, invalid response format, accommodation effect, poor scoring rubric, repeated-item memorization or mistaken prerequisite edge can make the engine confidently learn nonsense.
+
+Draft 1 should therefore make one major architectural move before anything else:
+
+OBSERVATIONS ARE FACTS; EVIDENCE IS AN INTERPRETATION; LEARNER STATE IS A DERIVED ESTIMATE; PEDAGOGICAL NEED IS A HYPOTHESIS; NEXT ACTION IS A POLICY DECISION.
+
+Those layers must not collapse into one another.
+
+Draft 1 should also stop pretending there is one universal atomic learning entity. Curriculum outcomes, assessment claims, cognitive/knowledge components, source propositions and procedures serve different jobs. They can be related without being forced into one `Learning Target` atom.
+
+The smallest honest Engine v1 is therefore an interpretable evidence-and-decision system with conservative claims, not a generalized mastery oracle.
+
+======================================================================
+SUMMARY ADJUDICATION — DRAFT 0 SECTIONS 0–17
+======================================================================
+
+0 PRODUCT PURPOSE — REVISE
+1 LEARNING TARGET — SPLIT
+2 SOURCE / COURSE TRUTH — SPLIT
+3 EVIDENCE EVENT — SPLIT
+4 LEARNER STATE — SPLIT
+5 LEARNED vs RETAINED vs EXPOSED — SPLIT; REMOVE categorical RETAINED as durable state
+6 EVIDENCE CONTRACT / CONSTRUCT ALIGNMENT — REVISE
+7 ACTIVITY / INTERVENTION — SPLIT
+8 ACTIVITY MODE / INTERVENTION PERMISSION — SPLIT
+9 CONTEXT — SPLIT
+10 NEXT-ACTION POLICY — REVISE; REMOVE unvalidated scalar `expected learning value`
+11 REASON TRACE / REPLAYABILITY — REVISE
+12 ABSTAIN / INSUFFICIENT EVIDENCE — SPLIT
+13 LEARNER AGENCY — REVISE; move from backend primitive to product/policy invariant
+14 INSTRUCTOR EVIDENCE — REVISE
+15 AI BOUNDARY — REVISE
+16 DATA MINIMIZATION — SPLIT
+17 V1 SUCCESS DEFINITION — REVISE
+
+======================================================================
+0. PRODUCT PURPOSE — REVISE
+======================================================================
+
+CLAIM
+StudyGrid chooses and delivers the next pedagogically useful action.
+
+STRONGEST COUNTERCASE
+There may be no uniquely best action, and the engine cannot directly observe durable learning utility at decision time. Optimizing a proxy such as next-question accuracy, completion or recommendation acceptance can make a policy look good while worsening long-term learning.
+
+EVIDENCE
+Educational recommender-system reviews report that recommendation relevance is commonly optimized while actual learning outcomes are measured far less often. Causal-recommender literature separately warns that correlation-based recommendation does not establish treatment benefit.
+- Askarbekuly & Luković, Learning Outcomes, Assessment, and Evaluation in Educational Recommender Systems: A Systematic Review, 2024, arXiv:2407.09500.
+- Xu et al., Causal Inference for Recommendation: Foundations, Methods and Applications, 2023/2024 family; arXiv:2301.04016 and published survey literature.
+
+FAILURE MODE
+The engine repeatedly selects easy retrieval items because they maximize short-term correctness and recommendation acceptance, crowding out difficult transfer practice.
+
+DECISION
+REVISE.
+
+MINIMUM REPAIR
+Define the engine's purpose as constrained decision support: choose a defensible next action from eligible options under explicit pedagogical, curricular, assessment-integrity, accessibility and learner-agency constraints. Do not claim `best` unless an experiment actually supports comparative benefit.
+
+FALSIFICATION TEST
+Construct two policies: one that maximizes next-item accuracy and one that deliberately schedules harder delayed retrieval. If Draft 1 would call the first policy superior without delayed learning evidence, the purpose contract is still wrong.
+
+======================================================================
+1. LEARNING TARGET — SPLIT
+======================================================================
+
+CLAIM
+One versioned `Learning Target` is the atomic entity for knowledge, procedures, explanation, calculation, diagnosis and application.
+
+STRONGEST COUNTERCASE
+This collapses curriculum semantics, assessment claims and cognitive-model units. A course outcome can be broad and institution-authored; an assessment claim can be narrower; a knowledge component (KC) is a model hypothesis inferred from performance on related tasks; a proposition/procedure is content. They are not interchangeable.
+
+EVIDENCE
+- 1EdTech CASE 1.1 explicitly exchanges academic standards, competencies, skills, framework items and associations; it does not declare one universal cognitive atom: https://www.1edtech.org/standards/case
+- Evidence-Centered Design (ECD) separates claims about what learners know/can do, evidence supporting those claims and tasks that elicit evidence: Mislevy, Almond & Lukas, ETS RR-03-16 (2003).
+- Cen, Koedinger & Junker, Learning Factors Analysis (2006), demonstrates that initial cognitive/skill models are hypotheses that can be statistically improved.
+- Pelánek, Adaptive Learning is Hard: Challenges, Nuances, and Trade-offs in Modeling (Int J AI in Education, 2025 issue / online 2024) documents the practical tradeoff between fine KC granularity, mapping burden, parameter fitting and student-facing interpretability.
+
+FAILURE MODE
+An engineering objective such as `solve AC circuit problems` is split into source sentences that fit data well but do not represent transferable competence; alternatively a broad law-learning objective is used as a BKT skill even though each item actually requires multiple distinct reasoning components.
+
+DECISION
+SPLIT.
+
+MINIMUM REPAIR
+Draft 1 should distinguish at least:
+1. CURRICULUM OUTCOME / COMPETENCY — externally/institutionally authored, CASE-compatible where useful.
+2. LEARNING CLAIM — StudyGrid's operational statement of what performance it may infer from evidence.
+3. KNOWLEDGE COMPONENT — optional model-level latent/hypothesized unit used only where a learner model needs it; never assumed to be identical to a curriculum outcome.
+4. CONTENT ASSERTION / PROCEDURE — source-grounded material being taught.
+
+Do not require a 1:1 relationship among them. Relations must be many-to-many and versioned.
+
+FALSIFICATION TEST
+Use one open-ended engineering problem that requires algebra, unit conversion and domain reasoning. If Draft 1 must mark the whole response equally correct/incorrect for every linked primitive, the ontology is still too collapsed.
+
+======================================================================
+2. SOURCE / COURSE TRUTH — SPLIT
+======================================================================
+
+CLAIM
+Every material claim traces to an authoritative source or approved instructor assertion.
+
+STRONGEST COUNTERCASE
+A source can be authoritative to a course without being universally true; multiple course sources can conflict; policies/law/science can change; prerequisite knowledge may come from outside the assigned source. `Source` and `claim` therefore cannot be the same primitive.
+
+EVIDENCE
+ECD and assessment-validity traditions treat the intended claim, supporting evidence and contextual warrants as distinct. CASE similarly distinguishes framework items and associations rather than embedding truth in a document blob.
+
+FAILURE MODE
+A superseded policy PDF remains marked authoritative, so all downstream questions, explanations and learner-state updates are internally traceable but wrong for the current term.
+
+DECISION
+SPLIT.
+
+MINIMUM REPAIR
+Separate SOURCE ARTIFACT from ASSERTION/PROPOSITION. Assertions carry source span(s), authority class, jurisdiction/scope where relevant, effective dates/version, instructor approval state and supersession. `Course truth` should mean `canonical-for-this-course/version`, not metaphysical truth.
+
+FALSIFICATION TEST
+Load two source versions with a changed rule. If evidence generated under the old rule cannot be identified, invalidated/reinterpreted or scoped separately, the model fails.
+
+======================================================================
+3. EVIDENCE EVENT — SPLIT
+======================================================================
+
+CLAIM
+An Evidence Event is an observed learner interaction carrying scoring/result, evidence quality and diagnostic weight.
+
+STRONGEST COUNTERCASE
+`Evidence quality` and `weight` are not properties of the raw observation. They depend on the claim, task validity, scorer, model, response conditions and inference rule. Baking them into the event makes interpretation look factual and makes later model changes unreplayable.
+
+EVIDENCE
+ECD explicitly separates observations/tasks from the inference about proficiency. The Standards for Educational and Psychological Testing likewise frame validity as evidence supporting interpretations and uses, not a property inherent in the raw score.
+- AERA/APA/NCME Standards (2014), open access via NCME/APA.
+- ETS RR-03-16, ECD.
+
+FAILURE MODE
+A correct multiple-choice response is stored as `0.8 evidence for application`. Later the team realizes the item only measured recognition, but the historical event already contains the invalid interpretation.
+
+DECISION
+SPLIT.
+
+MINIMUM REPAIR
+1. OBSERVATION / ATTEMPT — immutable fact: task version, response, score/rubric output, supports used, accommodation context, timing needed for provenance, scorer/version.
+2. EVIDENCE INTERPRETATION / LINK — versioned inference mapping an observation to one or more learning claims/KCs, with role, assumptions, quality/confound status and inference-model version.
+
+REMOVE a universal freehand `diagnostic_weight` from the event itself.
+
+FALSIFICATION TEST
+Change the scoring rubric or claim mapping and recompute learner estimates without rewriting the historical attempt. If impossible, observation and interpretation are still mixed.
+
+======================================================================
+4. LEARNER STATE — SPLIT
+======================================================================
+
+CLAIM
+One per-target learner state contains exposure, performance, retention, uncertainty, misconception suspicion and instructional state.
+
+STRONGEST COUNTERCASE
+Several listed fields are different epistemic types. `Correctness evidence` is historical evidence. `Retention` is a time-dependent estimate. `Misconception` is a hypothesis. `Needs teaching` is a policy conclusion. Storing them together invites circular updates.
+
+EVIDENCE
+Knowledge-tracing literature explicitly treats learner knowledge as latent and model-dependent; surveys show multiple model families with different assumptions. Classical BKT itself is a probabilistic hidden-state model, and model misspecification can create implausible certainty. Current 2025/2026 work on multi-session learning/forgetting also shows popular models can fit retrospective data while failing future-session prediction.
+- Abdelrahman, Wang & Nunes, Knowledge Tracing: A Survey, ACM Computing Surveys 55(11), 2023, DOI 10.1145/3569576.
+- Capturing Session-to-Session Dynamics of Learning and Forgetting: Testing the Limits of Knowledge Tracing Models, Int J AI in Education / 2025–26 publication family, DOI 10.1007/s40593-025-00508-3.
+
+FAILURE MODE
+`needs teaching` is stored because the learner missed two items; the policy then selects teaching because state says `needs teaching`; subsequent success after teaching is used to validate the original state. The system has built a self-confirming loop.
+
+DECISION
+SPLIT.
+
+MINIMUM REPAIR
+Maintain distinct layers:
+- immutable observation ledger;
+- DERIVED LEARNER ESTIMATE per claim/KC with model/version/time and uncertainty;
+- MISCONCEPTION HYPOTHESES with explicit evidence and competing explanations;
+- POLICY/INSTRUCTIONAL NEED as a decision-time output, not learner truth.
+
+FALSIFICATION TEST
+Swap the policy while keeping identical evidence/model estimates. If `instructional state` changes without rewriting learner truth, the split works.
+
+======================================================================
+5. LEARNED vs RETAINED vs EXPOSED — SPLIT
+======================================================================
+
+CLAIM
+Backend state should distinguish EXPOSED, LEARNED/CURRENTLY DEMONSTRATED and RETAINED.
+
+STRONGEST COUNTERCASE
+Exposure is an event. `Learned` is a claim under task/condition. `Retained` is not a timeless binary state; forgetting/retrievability changes continuously with time and differs by construct. FSRS/DSR-style memory models explicitly model retrievability as time-dependent and stability as a parameter rather than a durable `retained=true` flag.
+
+EVIDENCE
+- Open Spaced Repetition FSRS algorithm documentation (implementation/model evidence, not universal learning law): retrievability R(t,S) varies with time and stability; https://github.com/open-spaced-repetition/awesome-fsrs/wiki/The-Algorithm
+- KT survey literature notes forgetting as a modeled transition/feature rather than a permanent retained class.
+
+FAILURE MODE
+A learner is marked RETAINED after delayed recall on day 7 and remains retained on day 90 without further evidence.
+
+DECISION
+SPLIT; REMOVE categorical RETAINED as durable backend state.
+
+MINIMUM REPAIR
+- EXPOSED = derived from observed instructional exposure event(s), never mastery.
+- DEMONSTRATED = bounded claim: demonstrated X, under Y conditions, at time T, with uncertainty.
+- RETENTION/MEMORY = time-indexed estimate or delayed-evidence history where a memory model is valid; no universal retained flag.
+
+For performance/transfer targets, delayed authentic performance may matter more than a recall curve; do not force all targets through FSRS-like memory state.
+
+FALSIFICATION TEST
+Advance simulated time without new evidence. If retention confidence cannot change, the representation is wrong.
+
+======================================================================
+6. EVIDENCE CONTRACT / CONSTRUCT ALIGNMENT — REVISE
+======================================================================
+
+CLAIM
+Each target has an Evidence Contract specifying what performance demonstrates it; events can map to targets with weights/roles.
+
+STRONGEST COUNTERCASE
+A contract can still be invalid if its tasks elicit construct-irrelevant skills, its scorer is unreliable, accommodations change the intended interpretation, or it underrepresents the capability. `A knowledgeable instructor would be convinced` is necessary but not sufficient validity evidence.
+
+EVIDENCE
+- ETS Evidence-Centered Design: student/claim model, evidence model and task model must cohere; assessment is an evidentiary argument from limited observations to broader claims.
+- AERA/APA/NCME Standards emphasize validity, reliability and fairness for intended interpretations/uses.
+- ETS research on accommodations shows accessibility features can affect validity and must be reasoned about at construct/task level.
+- QTI 3 provides interoperable item/response/scoring/accommodation structures; it should be reused rather than recreating every interaction primitive.
+
+FAILURE MODE
+A learner passes three text-heavy scenario tasks; the engine claims domain mastery even though reading/language load, not the target skill, dominated the score.
+
+DECISION
+REVISE.
+
+MINIMUM REPAIR
+Replace the loose contract with a minimal ECD-style structure:
+- CLAIM / intended inference;
+- REQUIRED EVIDENCE pattern(s);
+- TASK/INTERACTION family and modality;
+- SCORING/RUBRIC/scorer provenance;
+- conditions/support/accommodation assumptions;
+- validity threats / construct-irrelevant variance;
+- sufficiency/coverage rule;
+- model/inference version.
+
+Use QTI for assessment-item/interactions/results interoperability where it fits, CASE for external competency identifiers/relations, and StudyGrid-specific inference logic only where standards intentionally stop.
+
+REMOVE arbitrary cross-modal numeric weights unless validated. Preserve channel-specific evidence when comparability is unknown.
+
+FALSIFICATION TEST
+Administer equivalent-construct tasks in two modalities. If large modality effects appear and the contract still merges them as equivalent evidence, the contract fails.
+
+======================================================================
+7. ACTIVITY / INTERVENTION — SPLIT
+======================================================================
+
+CLAIM
+Action families are TEACH, EXPLAIN, WORKED_EXAMPLE, GUIDED_PRACTICE, RETRIEVE, REVIEW, REMEDIATE, ASSESS, ADVANCE, PAUSE/COMPLETE.
+
+STRONGEST COUNTERCASE
+The list mixes pedagogical treatment, measurement purpose and navigation/session control. `ADVANCE` is not the same ontological category as `WORKED_EXAMPLE`; `REVIEW` is ambiguous between retrieval practice, rereading and session review.
+
+EVIDENCE
+Learning-science evidence differentiates worked examples, retrieval practice, feedback, scaffolding/fading and testing because they have different mechanisms and expertise/task interactions. Draft 0's flat list loses those distinctions.
+
+FAILURE MODE
+The policy ranks `ADVANCE` against `EXPLAIN` as if they were comparable treatments and later analytics report both as intervention types.
+
+DECISION
+SPLIT.
+
+MINIMUM REPAIR
+Separate:
+1. PEDAGOGICAL INTERVENTION: instruction/explanation/example/guided practice/retrieval practice/feedback/remediation.
+2. MEASUREMENT ACTION: formative probe/diagnostic/assessment task.
+3. SESSION/NAVIGATION CONTROL: continue/advance/pause/complete/switch context.
+4. CONTENT/TASK INSTANCE: the actual resource/question/example delivered.
+
+FALSIFICATION TEST
+Can the same assessment task be embedded in a learning intervention, a diagnostic assessment and a self-test without changing the task entity? If not, action type and task instance remain conflated.
+
+======================================================================
+8. ACTIVITY MODE / INTERVENTION PERMISSION — SPLIT
+======================================================================
+
+CLAIM
+Modes are learning/practice, diagnostic, graded/high-stakes, review/self-test.
+
+STRONGEST COUNTERCASE
+These dimensions are not mutually exclusive. A diagnostic placement test may be graded or high stakes. A low-stakes graded quiz can allow feedback. Accessibility accommodations are not coaching and should not be disabled simply because stakes are high.
+
+EVIDENCE
+QTI 3 explicitly integrates assessment accommodation support; ETS accommodation research shows the relevant question is construct/validity impact, not simply `help allowed vs help forbidden`.
+
+FAILURE MODE
+A screen reader, extended-time accommodation or alternate response mechanism is blocked because the activity is marked HIGH_STAKES and the engine treats all assistance as coaching.
+
+DECISION
+SPLIT.
+
+MINIMUM REPAIR
+Represent separately:
+- ASSESSMENT PURPOSE: learning/formative, diagnostic, summative, practice/self-test;
+- STAKES/CONSEQUENCE level;
+- ASSISTANCE/FEEDBACK POLICY;
+- SCORING POLICY;
+- ACCESSIBILITY/ACCOMMODATION PROFILE and construct-preserving rules;
+- instructor/course overrides where authorized.
+
+Hard rule: accessibility accommodations are governed by validity/accessibility policy, not by the generic tutoring-assistance switch.
+
+FALSIFICATION TEST
+Build an ungraded diagnostic with no hints, and a graded low-stakes quiz with post-response feedback. If the model cannot express both cleanly, the split is incomplete.
+
+======================================================================
+9. CONTEXT — SPLIT
+======================================================================
+
+CLAIM
+A broad Context primitive contains syllabus position, course outcomes, deadline relevance, prerequisites, goals, allowed activities, history and time constraints.
+
+STRONGEST COUNTERCASE
+This is an anti-primitive: unrelated facts with different owners, lifecycles and trust levels are grouped together. `Course position` is also not meaningful in many non-linear courses.
+
+FAILURE MODE
+A stale exam date, learner-entered goal and system-inferred prerequisite state live in one context object and are treated as equally authoritative.
+
+DECISION
+SPLIT.
+
+MINIMUM REPAIR
+Use versioned/owned inputs:
+- CURRICULUM CONTEXT / course structure;
+- ASSESSMENT OBLIGATIONS / deadlines / weights if known;
+- LEARNER-DECLARED GOALS/PREFERENCES;
+- SESSION CONSTRAINTS (optional time/effort, device/modality);
+- POLICY PERMISSIONS;
+- recent activity/decision history;
+- graph readiness estimate derived from learner evidence.
+
+FALSIFICATION TEST
+Change only a syllabus deadline. If that requires rewriting learner-state or policy-permission objects, context remains too entangled.
+
+======================================================================
+10. NEXT-ACTION POLICY — REVISE
+======================================================================
+
+CLAIM
+Generate eligible actions, apply hard constraints, rank with interpretable factors including `expected learning value`, return one primary recommendation and alternatives.
+
+STRONGEST COUNTERCASE
+`Expected learning value` is a causal quantity. With observational data, the engine generally cannot know how much learning a not-yet-delivered action will cause for this learner. A weighted sum can create false precision by comparing incommensurate signals such as urgency, uncertainty and retention risk.
+
+EVIDENCE
+Educational recommender-system review shows learning outcomes are often not the optimized/evaluated target. Causal recommender literature explicitly distinguishes predictive correlation from counterfactual treatment effect.
+
+FAILURE MODE
+The policy assigns 0.72 expected learning value to remediation, 0.68 to retrieval, and treats that difference as meaningful despite no experiment establishing either number.
+
+DECISION
+REVISE. REMOVE `expected learning value` as a numeric V1 factor unless explicitly defined as a hypothesis/proxy rather than estimated causal effect.
+
+MINIMUM REPAIR
+Use a staged policy:
+1. HARD CONSTRAINTS / eligibility: assessment integrity, source validity, accessibility, content availability, explicit locked prerequisites where genuinely hard.
+2. PEDAGOGICAL PRIORITY RULES: transparent, versioned hypotheses such as prerequisite weakness, overdue retention probe, repeated supported misconception, syllabus relevance.
+3. HEURISTIC RANKING / tie-breaking: explicitly non-causal scores.
+4. SAFE EXPLORATION/DIAGNOSTIC action when evidence is insufficient.
+5. learner override.
+
+Prefer rule/lexicographic priority for early V1 where factors cannot be meaningfully put on one scale. Later learned policies must prove incremental learning benefit, not only prediction accuracy.
+
+FALSIFICATION TEST
+Swap two heuristic weights by a plausible amount. If recommendations change often but there is no empirical way to decide which version is better, the ranking is overparameterized for V1.
+
+======================================================================
+11. REASON TRACE / REPLAYABILITY — REVISE
+======================================================================
+
+CLAIM
+Every material decision is replayable from state snapshot, evidence window, candidates, constraints, model/policy versions and uncertainty.
+
+STRONGEST COUNTERCASE
+Byte-identical replay may be impossible for nondeterministic model calls, changing external services or deleted privacy-sensitive data. Duplicating full evidence snapshots inside every trace also creates retention/privacy debt.
+
+FAILURE MODE
+To make decisions replayable, the system copies raw learner interactions and free-text into every decision trace, multiplying sensitive data across storage.
+
+DECISION
+REVISE.
+
+MINIMUM REPAIR
+Require DECISION RECONSTRUCTION, not magical deterministic replay:
+- immutable IDs/references to source evidence and state snapshot or version;
+- exact policy/model/config versions;
+- candidate IDs and exclusion reasons;
+- selected action and rationale codes;
+- random seed where relevant;
+- generated/scored artifact hash and stored approved artifact reference where nondeterminism matters;
+- privacy-preserving references rather than data duplication.
+
+Define retention/deletion behavior: if underlying personal evidence is lawfully deleted, a trace may become non-reconstructable; it must not silently retain forbidden copies to preserve replay.
+
+FALSIFICATION TEST
+Delete an allowed old evidence record under a simulated retention policy. Verify traces do not contain hidden duplicate PII while clearly reporting reduced reconstruction ability.
+
+======================================================================
+12. ABSTAIN / INSUFFICIENT EVIDENCE — SPLIT
+======================================================================
+
+CLAIM
+Insufficient evidence is one valid engine output; choose robust useful actions when uncertainty is high.
+
+STRONGEST COUNTERCASE
+Not all uncertainty is the same. `No observations yet`, `two high-quality observations conflict`, `item invalid`, and `learner is out-of-distribution for this model` require different behavior.
+
+FAILURE MODE
+A broken question produces contradictory evidence. The engine labels this generic `insufficient evidence` and gives another question from the same broken item family.
+
+DECISION
+SPLIT.
+
+MINIMUM REPAIR
+Use uncertainty/abstention reason codes at minimum:
+- UNMEASURED / cold start;
+- SPARSE;
+- CONFLICTING;
+- INVALID_OR_LOW_QUALITY_EVIDENCE;
+- MODEL_UNSUPPORTED / out-of-distribution;
+- SOURCE_OR_MAPPING_UNCERTAIN.
+
+Fallback policy differs by reason. Cold start may use syllabus-driven introduction or bounded diagnostic. Invalid evidence should trigger item/content review rather than learner probing.
+
+FALSIFICATION TEST
+Feed the same sparse learner history once with valid items and once with flagged invalid items. If fallback is identical, the uncertainty model is too coarse.
+
+======================================================================
+13. LEARNER AGENCY — REVISE / MOVE TO INVARIANT
+======================================================================
+
+CLAIM
+One recommended action is strong guidance, with alternatives/override and cautious learning from override behavior.
+
+STRONGEST COUNTERCASE
+`Learner agency` is not learner state and should not become another model feature. Override behavior can reflect offline context, accessibility, boredom, bad recommendation quality or immediate obligations.
+
+FAILURE MODE
+Frequent overrides are learned as a user trait and later reduce challenge or are surfaced to instructors as disengagement.
+
+DECISION
+REVISE. Keep as a product/policy invariant, not a core learner-state primitive.
+
+MINIMUM REPAIR
+Hard invariant: learner overrides do not directly update mastery, motivation or engagement. If optional override reason is collected, treat it as user-declared context with purpose limitation.
+
+FALSIFICATION TEST
+A learner overrides 10 recommendations because they already studied offline. Learner mastery should not decrease and instructor analytics should not label them disengaged.
+
+======================================================================
+14. INSTRUCTOR EVIDENCE, NOT SURVEILLANCE — REVISE
+======================================================================
+
+CLAIM
+Instructor analytics can surface repeated errors, misconceptions, prerequisite bottlenecks, confusing content, coverage gaps, insufficient evidence and retention candidates.
+
+STRONGEST COUNTERCASE
+Even an aggregate can overclaim. `Prerequisite bottleneck` implies mechanism; `content is ineffective` implies causality. With 20 students, a class aggregate can also be easy to re-identify, and noisy items can create false cohort signals.
+
+EVIDENCE
+- Kaliisa, Jivet & Prinsloo (2023) systematic review of 50 teacher-facing learning-analytics dashboard studies found many systems increase awareness but provide limited actionable insight and weak stakeholder involvement after early design stages.
+- Matcha et al. (2020) systematic review found learning analytics dashboards were rarely grounded in learning theory and had major evaluation limitations.
+- 2023/2024 systematic review literature finds limited strong evidence that dashboards themselves improve academic achievement.
+
+FAILURE MODE
+Four of six students miss the same badly worded item; dashboard reports `prerequisite bottleneck in concept X`, prompting unnecessary reteaching.
+
+DECISION
+REVISE.
+
+MINIMUM REPAIR
+Every instructor-facing insight must have three layers:
+1. OBSERVATION: what happened, sample size, task/item families, timing.
+2. INTERPRETATION/HYPOTHESIS: possible explanation with uncertainty and alternatives.
+3. ACTION OPTION: what the instructor might inspect/do, never an unsupported causal command.
+
+Small cohorts require explicit suppression/individual-vs-cohort rules and institution-specific access policy. Instructor product hypotheses must be validated with real professors before broad surface expansion.
+
+FALSIFICATION TEST
+Inject one flawed item that creates a class-wide error spike. The system should be able to flag possible item/content quality rather than diagnosing learner weakness as the only explanation.
+
+======================================================================
+15. AI BOUNDARY — REVISE
+======================================================================
+
+CLAIM
+Generative AI assists authoring/explanation/scoring but does not own course truth, learner truth or core decision state; engine should continue deterministically without AI.
+
+STRONGEST COUNTERCASE
+`Deterministically` is too strong: statistical learner models and randomized diagnostic policies may be legitimate. The important boundary is traceable authority, not determinism. AI scoring of constructed responses can also contaminate learner state if treated as direct truth.
+
+FAILURE MODE
+An LLM rubric scorer silently changes after provider/model update; learner estimates shift even though the task/rubric appears unchanged.
+
+DECISION
+REVISE.
+
+MINIMUM REPAIR
+Hard boundary:
+- generative output cannot become canonical course/assertion data without approval rule;
+- generated/scored artifacts affecting learner state require model/version/prompt-or-config provenance and validation status;
+- high-stakes constructed-response inference requires a validated scoring process and, where appropriate, human review/appeal;
+- core policy must have a safe fallback when generative service is unavailable, but need not be mathematically deterministic.
+
+FALSIFICATION TEST
+Change the LLM model version while keeping rubric/task constant. If historical learner state cannot identify which scorer produced each score, provenance is inadequate.
+
+======================================================================
+16. DATA MINIMIZATION — SPLIT
+======================================================================
+
+CLAIM
+Collect pedagogically meaningful events; avoid raw cursor paths, keystroke dynamics, screen recording, inferred emotion/personality/health/disability.
+
+STRONGEST COUNTERCASE
+Learning evidence, operational telemetry and accommodation data have different purposes and retention/access rules. An explicit accommodation can be necessary even though inferring disability from behavior should be prohibited. Operational interaction telemetry may be needed briefly to diagnose a UI/accessibility defect without becoming learner-model data.
+
+EVIDENCE
+- NIST Privacy Framework emphasizes predictability, manageability and disassociability; privacy risk depends on processing purpose and system design.
+- 1EdTech Learning Data & Analytics principles state privacy/security are fundamental and individuals should understand reasons, methods and purposes for learning-data collection/use/transformation.
+- Prior Q-R3 evidence established raw pointer dynamics as privacy-expensive and accessibility-confounded.
+
+FAILURE MODE
+A single event store keeps learning responses, cursor traces, accessibility declarations and debug logs indefinitely because all are `events`.
+
+DECISION
+SPLIT.
+
+MINIMUM REPAIR
+Separate data domains:
+1. LEARNING EVIDENCE — purpose-limited, provenance-rich educational record.
+2. OPERATIONAL/DEBUG TELEMETRY — short retention, access-separated, not used for mastery by default.
+3. ACCESSIBILITY/ACCOMMODATION DECLARATIONS — explicit user/institution-provided data with restricted access; never inferred from interaction behavior.
+4. OPTIONAL RESEARCH TELEMETRY — separate consent/governance and no silent migration into production learner state.
+
+FALSIFICATION TEST
+Turn off optional telemetry. Core adaptation must still work. Delete debug telemetry after retention window without damaging learner evidence or accommodations.
+
+======================================================================
+17. V1 SUCCESS DEFINITION — REVISE
+======================================================================
+
+CLAIM
+V1 success is coherence, inspectability, usefulness and falsifiability, with replayable traces, appropriate teaching/testing interventions and useful instructor evidence.
+
+STRONGEST COUNTERCASE
+`Useful`, `appropriate` and `actionable` are not acceptance criteria. A ~20-person beta cannot establish broad efficacy, model fairness, stable psychometrics or institutional reliability.
+
+DECISION
+REVISE.
+
+MINIMUM REPAIR
+For the first beta, define observable process/measurement outcomes rather than efficacy claims:
+- source/claim/task mappings are reviewable and disagreements can be logged;
+- no unsupported mastery/retention claim is emitted when evidence contract is unmet;
+- every learner-state estimate names evidence/model version and uncertainty status;
+- every next action can be reconstructed with reason codes;
+- learners can correctly explain `why this next` in qualitative testing and can override safely;
+- item/interaction failures are distinguishable from learner weakness;
+- professor can identify which instructor insights are useful, misleading or missing;
+- data collection matches declared purpose/retention/access;
+- delayed follow-up provides descriptive calibration evidence but is not represented as proof of product efficacy.
+
+FALSIFICATION TEST
+Predefine several failure thresholds/stop criteria (e.g., repeated wrong-source claims, inability to reconstruct decisions, professor judges analytics misleading, high rate of recommendations contradicted by explicit course policy). If beta can only report success metrics, it is not falsifiable.
+
+======================================================================
+SPECIAL QUESTION 1 — WHAT IS THE ATOMIC PRIMITIVE?
+======================================================================
+
+ANSWER
+`Learning Target` is useful product/editor language but should NOT be the one atomic backend ontology.
+
+Draft 1 minimum semantic layers:
+- CURRICULUM OUTCOME/COMPETENCY: official/instructor course expectation; CASE-compatible identifier/associations where useful.
+- LEARNING CLAIM: operational inference StudyGrid may make, such as `can solve linear equation with one variable under condition X`.
+- KNOWLEDGE COMPONENT: optional model hypothesis used for KT/cognitive modelling; it may be finer than a claim and may change when learning data show the initial decomposition is poor.
+- CONTENT ASSERTION/PROCEDURE: versioned proposition/step/rule drawn from source material.
+
+One task can support multiple claims/KCs; one claim can require multiple tasks/modalities. There is no universal single atom across all domains.
+
+======================================================================
+SPECIAL QUESTION 2 — LEARNED vs RETAINED
+======================================================================
+
+ANSWER
+The semantic distinction is real; the categorical backend states are not.
+
+Keep the distinction in language:
+- immediate/current demonstrated performance is not durable retention;
+- exposure is not evidence of competence.
+
+But represent them as:
+- exposure events;
+- time/condition-bounded demonstration claims;
+- delayed evidence and, when valid, a time-indexed memory/retrievability estimate.
+
+`RETAINED=true` should not exist as a durable universal field.
+
+======================================================================
+SPECIAL QUESTION 3 — CONFLICTING EVIDENCE
+======================================================================
+
+DO NOT ARBITRARILY AVERAGE.
+
+Minimum Draft 1 rule:
+1. Preserve each observation immutably.
+2. Preserve which claim/KC, modality, task/rubric, support/accommodation and model version interprets it.
+3. Keep evidence channels separate when they are not demonstrably comparable (e.g., recognition vs constructed application).
+4. Let the learner estimator combine evidence only through an explicit, versioned inference model/validated rule.
+5. Conflict should widen uncertainty or create a `conflicting evidence` status, not mechanically cancel into a middle score.
+6. New high-quality delayed evidence may legitimately dominate old weak evidence, but this is a model rule that must be testable, not an event weight entered by hand.
+
+For Engine v1, a conservative channel-aware estimator is preferable to a universal Bayesian-looking number whose likelihood assumptions have not been validated.
+
+======================================================================
+SPECIAL QUESTION 4 — MINIMUM CROSS-DOMAIN EVIDENCE CONTRACT
+======================================================================
+
+The smallest useful contract is not `interaction type + score`. It is:
+- CLAIM ID + version;
+- TASK/ITEM ID + version;
+- intended evidence role (direct/partial/supporting/diagnostic only);
+- RESPONSE/ARTIFACT observed;
+- SCORING/RUBRIC + scorer/version;
+- response conditions (attempt number, feedback/hints/support, delay where relevant);
+- accessibility/accommodation context only as needed to interpret validity, not as deficit evidence;
+- source/course version;
+- mapping from task evidence to claim/KC with versioned rationale;
+- known validity/confound flags;
+- learner-estimator/inference rule version.
+
+This is abstract enough to span law, engineering, forensics, recall and constructed response, while concrete enough to audit.
+
+======================================================================
+SPECIAL QUESTION 5 — SMALLEST HONEST ENGINE V1 FOR ~20 + PROFESSOR
+======================================================================
+
+DO NOT launch BKT + IRT + FSRS + CDM + bandits as one beta engine. Twenty students cannot calibrate that stack honestly.
+
+Smallest coherent V1:
+1. VERSIONED SOURCES + ASSERTIONS.
+2. CURRICULUM OUTCOMES / LEARNING CLAIMS + typed relations.
+3. TASK/ITEM model using QTI-inspired interaction/scoring primitives and explicit claim mappings.
+4. IMMUTABLE ATTEMPT/OBSERVATION ledger.
+5. VERSIONED EVIDENCE INTERPRETATION layer.
+6. SIMPLE, TRANSPARENT LEARNER ESTIMATE: channel-aware counts/history/recency + uncertainty status; optionally one conservative BKT/PFA-style baseline only where the data structure really fits.
+7. EXPLICIT COURSE/ASSESSMENT POLICY constraints.
+8. RULE-BASED / LEXICOGRAPHIC NEXT-ACTION policy with a very small number of falsifiable priorities, not a fake-precise weighted optimizer.
+9. DECISION TRACE/reconstruction.
+10. MINIMAL instructor evidence view: observations/flags/uncertainty, not causal diagnoses.
+
+Beta goal: find ontology, mapping, evidence, policy and UX errors; test whether explanations and recommendations are understandable; gather professor job-to-be-done evidence. Do not claim personalized-learning efficacy.
+
+======================================================================
+SPECIAL QUESTION 6 — PRODUCT CONCEPTS vs BACKEND ENTITIES
+======================================================================
+
+PRODUCT / POLICY CONCEPTS (do not store as learner truth simply because product uses the phrase)
+- Up Next / recommended action
+- learner agency / override
+- `learned` / `retained` badges
+- `needs teaching`, `ready to advance`
+- instructor insight cards
+- abstention presentation
+- session completion
+
+BACKEND ENTITIES / DERIVED OBJECTS
+- source artifact
+- assertion/proposition
+- curriculum outcome/competency
+- learning claim
+- optional knowledge component model node
+- relation edge + type/version/author
+- task/item + QTI-like interaction/scoring definition
+- attempt/observation
+- evidence interpretation/link
+- learner estimate + uncertainty/model version/time
+- misconception hypothesis
+- assessment/assistance policy
+- action candidate / intervention instance
+- policy decision + reason trace
+- derived instructor aggregate/hypothesis view
+
+======================================================================
+SPECIAL QUESTION 7 — HARD INVARIANTS vs TUNABLE HYPOTHESES
+======================================================================
+
+HARD / DETERMINISTIC CONTRACTS
+- raw observations are immutable facts; interpretations are separate/versioned.
+- source/assertion provenance and versions are preserved.
+- generated AI output never silently becomes canonical course truth.
+- an item/task cannot be treated as evidence for a claim without explicit versioned mapping.
+- assistance policy for graded/diagnostic contexts is explicit; accessibility accommodations are not generic tutoring assistance.
+- learner override is not mastery/motivation/disengagement evidence.
+- no behavior-based inference of disability, health, emotion, personality, intelligence or laziness.
+- optional high-intrusion telemetry is not required for core adaptation and does not silently enter learner state.
+- every material policy decision records its version, candidates/exclusions and selected action.
+- course/source/model/policy changes are versioned; historical decisions retain version references.
+- `insufficient/invalid/conflicting evidence` can block a strong claim.
+
+EMPIRICAL / TUNABLE HYPOTHESES
+- learner-state estimator family and parameters.
+- what counts as sufficient evidence for a specific learning claim.
+- forgetting/retention parameters and whether an FSRS-like model applies to that construct.
+- prerequisite-edge strength/readiness thresholds.
+- misconception rules.
+- confidence-judgement weighting.
+- urgency/importance/undercoverage priority.
+- action ranking/tie-breaking.
+- when to teach vs retrieve vs remediate.
+- item difficulty/discrimination.
+- instructor alert thresholds.
+
+======================================================================
+CROSS-DOMAIN STRESS TEST
+======================================================================
+
+LAW / POLICY-HEAVY DOMAIN
+- source/version/effective-date provenance is critical;
+- multiple defensible reasoning paths can exist;
+- a single `correct answer` may underrepresent the construct;
+- changed authority can invalidate old content without invalidating learner ability generally.
+
+ENGINEERING / MATHEMATICS
+- one task commonly exercises multiple KCs;
+- partial-credit/scoring process matters;
+- surface correctness can hide algebra/unit mistakes;
+- transfer to novel problems cannot be inferred from repeated templates.
+
+FORENSICS / SCIENCE
+- procedural order, interpretation and evidence-quality judgment can all be distinct claims;
+- simulations may not establish physical-lab competence;
+- source uncertainty and competing explanations matter.
+
+PROCEDURAL / PHYSICAL PERFORMANCE
+- screen-based sequence recognition is not evidence of real-world execution;
+- Engine v1 needs a way to accept external instructor/assessor evidence or explicitly abstain.
+
+MEMORIZATION-HEAVY CONTENT
+- spaced-repetition/memory models are most directly applicable;
+- nevertheless item repetition can create memorization of the prompt rather than the underlying proposition.
+
+CONSTRUCTED RESPONSES
+- scoring uncertainty and rater/model version must be first-class;
+- AI scorer output is evidence-producing machinery, not truth;
+- fairness/DIF and language load can alter interpretation.
+
+======================================================================
+ADDITIONAL RED-TEAM FAILURE MODES DRAFT 0 UNDERSTATES
+======================================================================
+
+1. GRAPH POISONING
+One incorrect prerequisite edge can trap learners in remediation or block valid advancement. Edge provenance/confidence and override/review are required.
+
+2. CONTENT-MAPPING POISONING
+A wrong item→claim mapping is more dangerous than a bad learner-model parameter because every response updates the wrong thing.
+
+3. TREATMENT-CONFOUNDED EVIDENCE
+Responses after hints, worked examples or immediate corrective feedback are not equivalent to unaided retrieval. Support context must travel with evidence.
+
+4. REPEATED-ITEM MEMORIZATION
+High correctness on recycled items can masquerade as mastery. Task-family/variant identity and transfer probes matter.
+
+5. MEASUREMENT/INSTRUCTION FEEDBACK LOOP
+Adaptive policy controls what evidence gets observed; the learner model is therefore trained on policy-selected experiences, not neutral samples. Later correlations can reflect the policy itself.
+
+6. MISSING-NOT-AT-RANDOM DATA
+Learners skip, quit, override or avoid topics for reasons the engine does not observe. Missing evidence is not equivalent to low mastery.
+
+7. ACCOMMODATION CONFOUND
+Response time, interaction patterns and modality may reflect assistive technology rather than competence. Never normalize all users against one timing baseline.
+
+8. LANGUAGE / CULTURAL LOAD
+Task wording can measure language familiarity or context familiarity rather than the intended content construct. Fairness review and alternate modalities are required where material.
+
+9. SOURCE REVISION CASCADES
+Changing one source assertion can invalidate tasks, explanations, claim mappings and historical recommendation logic. Draft 1 needs explicit dependency/version migration semantics.
+
+10. SMALL-N AGGREGATE OVERCLAIM
+With ~20 beta students, item-level class trends can be dominated by one badly authored item or a few learners. Beta analytics should be descriptive and inspectable, not population inference.
+
+11. POLICY LOCK-IN
+If early hand-authored ranking rules generate the training data for a later learned policy, the learned system may simply reproduce old policy bias. Any later challenger model needs evaluation against alternative actions/outcomes, not only logged-policy prediction.
+
+12. PRIVACY-REPRODUCIBILITY COLLISION
+A perfect audit trail conflicts with deletion/minimization if implemented as data duplication. Traces need references/versioning and explicit degradation after lawful deletion.
+
+======================================================================
+WHAT STUDYGRID SHOULD INTENTIONALLY REFUSE TO INFER
+======================================================================
+
+Default refusal absent explicit validated need and proper governance:
+- intelligence, aptitude or `ability` as a broad personal trait from ordinary course interactions;
+- motivation, laziness, diligence or engagement from clicks, latency, overrides or absence;
+- disability, health, emotion, personality or mental state from interaction patterns;
+- dishonesty/cheating from response timing alone;
+- durable mastery from one correct answer;
+- lack of mastery from non-use/non-response;
+- causal content effectiveness from cohort correlation;
+- causal prerequisite bottlenecks from co-occurring errors;
+- instructor quality from learner outcomes;
+- demographic or sensitive characteristics from behavioral traces;
+- offline learning state unless the learner/instructor explicitly supplies evidence;
+- physical/procedural competence from screen-only proxies when transfer has not been validated.
+
+======================================================================
+DRAFT 1 — REQUIRED CHANGE LIST
+======================================================================
+
+D1-01 SPLIT `Learning Target` into curriculum outcome/competency, learning claim, optional knowledge component, and source assertion/procedure. Keep `Learning Target` only as optional product/editor umbrella language.
+
+D1-02 ADD typed many-to-many relations with provenance/version/author and relation strength/status. Prerequisite must support hard, soft/hypothesized and informational relations.
+
+D1-03 SPLIT immutable OBSERVATION/ATTEMPT from EVIDENCE INTERPRETATION/LINK. Remove `diagnostic_weight` as an intrinsic event field.
+
+D1-04 SPLIT evidence ledger from derived learner estimates, misconception hypotheses and policy outputs.
+
+D1-05 REMOVE categorical durable `RETAINED`; replace with time-indexed retention evidence/model where valid. Keep `EXPOSED` as event-derived and `DEMONSTRATED` as bounded claim.
+
+D1-06 REBUILD Evidence Contract around ECD-style Claim → Evidence → Task/Scoring/Conditions. Add validity, fairness, accommodation, scoring and confound metadata. Use QTI interaction/scoring semantics where practical and CASE identifiers/associations where practical.
+
+D1-07 SPLIT pedagogy/intervention type, measurement/assessment action, content/task instance and navigation/session control.
+
+D1-08 REPLACE single Activity Mode enum with independent assessment purpose, stakes/consequence, assistance/feedback policy, scoring policy and accommodation/accessibility policy.
+
+D1-09 DECOMPOSE Context into versioned curriculum facts, assessment/deadline facts, learner-declared goals, session constraints, policy permissions and history.
+
+D1-10 REPLACE weighted `expected learning value` V1 ranking with hard constraints + small transparent pedagogical priority rules + non-causal heuristic tie-breakers. Label every ranking factor as hypothesis unless experimentally validated.
+
+D1-11 ADD explicit policy-decision schema: candidate actions, exclusions, rationale codes, policy/model/config versions, selected action, uncertainty reason, reconstruction references.
+
+D1-12 DEFINE uncertainty reason codes: unmeasured, sparse, conflicting, invalid/low-quality, mapping/source uncertain, model unsupported/OOD.
+
+D1-13 MOVE learner agency to a hard product/policy invariant; override does not update mastery/motivation/engagement by itself.
+
+D1-14 REDEFINE instructor analytics as Observation → Interpretation/Hypothesis → Possible Action. Add sample/uncertainty and item-quality alternative explanation. Do not surface causal labels by default.
+
+D1-15 REVISE AI boundary around authority/provenance/validation/fallback, not strict determinism. Add scorer/generator artifact hash, model/version and approval status when output affects evidence.
+
+D1-16 SPLIT data governance into learning evidence, operational/debug telemetry, restricted accommodation declarations and optional research telemetry. Define purpose/access/retention per class.
+
+D1-17 ADD source/claim/task/mapping dependency versioning so a source revision can identify affected downstream artifacts and learner-estimate interpretations.
+
+D1-18 ADD external-evidence pathway for instructor/assessor observations of procedural/physical performance; otherwise abstain rather than proxy from screen activity.
+
+D1-19 ADD repeated-item/task-family identity and support context so immediate coached success is not treated like delayed unaided transfer.
+
+D1-20 ADD beta-honest acceptance criteria and stop conditions; explicitly prohibit efficacy/fairness/institutional-scale claims from the ~20-person beta.
+
+D1-21 DEFINE the minimal V1 learner estimator before choosing BKT/PFA/etc. Require baseline comparison and do not introduce multiple model families solely because research names them.
+
+D1-22 DEFINE model-challenger gate: any more complex learner model or learned policy must beat the interpretable baseline on calibration/decision usefulness and relevant learning outcomes, not just next-response prediction.
+
+D1-23 ADD explicit non-inference list from this report as a durable design constraint for Draft 1 review.
+
+======================================================================
+SOURCE REGISTER — MATERIAL NEW/REUSED EVIDENCE
+======================================================================
+
+STANDARDS / PRIMARY TECHNICAL GUIDANCE
+- 1EdTech CASE 1.1, Competencies and Academic Standards Exchange, current final specification family: https://www.1edtech.org/standards/case
+- 1EdTech QTI 3, Question & Test Interoperability, final release family: https://www.1edtech.org/standards/qti/index
+- AERA / APA / NCME, Standards for Educational and Psychological Testing (2014; current open-access edition while revision work proceeds): https://ncme.org/resources/books/testing-standards/
+- W3C WCAG 2.2, including input modality / dragging alternatives and focus requirements: https://www.w3.org/TR/WCAG22/
+- NIST Privacy Framework, privacy-risk engineering: https://www.nist.gov/privacy-framework
+- 1EdTech Learning Data & Analytics Key Principles, transparency/security/privacy principles: https://www.1edtech.org/specs/caliper/learning-data-analytics-key-principles
+
+ASSESSMENT / VALIDITY
+- Mislevy, Almond & Lukas (2003), A Brief Introduction to Evidence-Centered Design, ETS RR-03-16.
+- Hansen, Mislevy & Steinberg (2008), Evidence-Centered Assessment Design for Reasoning About Accommodations, ETS RR-08-38.
+- Messick (1992), The Interplay of Evidence and Consequences in the Validation of Performance Assessments, ETS RR-92-39.
+
+LEARNER / COGNITIVE MODELING
+- Abdelrahman, Wang & Nunes (2023), Knowledge Tracing: A Survey, ACM Computing Surveys 55(11), DOI 10.1145/3569576.
+- Cen, Koedinger & Junker (2006), Learning Factors Analysis — cognitive-model evaluation/improvement, DOI 10.1007/11774303_17.
+- Pelánek, Adaptive Learning is Hard: Challenges, Nuances, and Trade-offs in Modeling, International Journal of Artificial Intelligence in Education (2024 online / 2025 volume).
+- Open Spaced Repetition / FSRS algorithm documentation: https://github.com/open-spaced-repetition/awesome-fsrs/wiki/The-Algorithm — implementation/model evidence, not a universal claim of pedagogical optimality.
+- Capturing Session-to-Session Dynamics of Learning and Forgetting: Testing the Limits of Knowledge Tracing Models, DOI 10.1007/s40593-025-00508-3.
+
+RECOMMENDATION / CAUSALITY
+- Askarbekuly & Luković (2024), Learning Outcomes, Assessment, and Evaluation in Educational Recommender Systems: A Systematic Review, arXiv:2407.09500.
+- Xu et al. (2023/2024), causal inference for recommendation survey family, arXiv:2301.04016 / related publication.
+
+INSTRUCTOR ANALYTICS
+- Kaliisa, Jivet & Prinsloo (2023), A checklist to guide planning/design/implementation/evaluation of learning analytics dashboards, International Journal of Educational Technology in Higher Education 20:28, DOI 10.1186/s41239-023-00394-6.
+- Matcha, Uzir, Gašević & Pardo (2020), A Systematic Review of Empirical Studies on Learning Analytics Dashboards, IEEE TLT 13(2), DOI 10.1109/TLT.2019.2916802.
+
+EVIDENCE-QUALITY NOTE
+- CASE/QTI/NIST/WCAG/Testing Standards are standards/guidance, not efficacy evidence.
+- FSRS repository documentation is open implementation/model evidence, not proof that its memory model transfers to every StudyGrid construct.
+- Vendor claims (including ALEKS product efficacy) are not used here as independent proof of educational effect.
+- The recommended Draft 1 ontology and minimal V1 are Research judgements synthesized from the evidence; they are not independently validated production architecture.
+
+TERMINAL STATUS
+DONE — DRAFT 0 ADVERSARIALLY REVIEWED / ALL SECTIONS 0–17 ADJUDICATED / SPECIAL QUESTIONS ANSWERED / DRAFT 1 CHANGE LIST PRODUCED / NO IMPLEMENTATION OR ARCHITECTURE APPROVAL.
