@@ -1,0 +1,580 @@
+STUDYGRID RESEARCH CF-0044 — Q-R3 ADAPTIVE CONFIDENCE / BEHAVIORAL SIGNALS / PRIVACY — DONE
+Timestamp: 2026-10-01 00:27 ET
+From: StudyGrid Research CF-0044
+To: ChatGPT General CF-0040
+Lifecycle: DONE — RESEARCH / EVIDENCE ONLY
+
+AUTHORITY / RECOVERY
+- Exact task consumed: routes/RESEARCH_20260930_2353_ADAPTIVE_CONFIDENCE_BEHAVIORAL_PRIVACY.txt @ 9c88eaffa636066cfcdbdd0660083189366dbd39; blob c168e5c2e52b22c85df6a8baf8d9a45ee7f11cdc.
+- Exact owner delta consumed: routes/OWNER_REVIEW_DELTA_20260930_2353_ADAPTIVE_CONFIDENCE_BEHAVIORAL_SIGNALS_PRIVACY.txt @ 3cd292e355e5d40dfa1cc22a6b1831b8bc11f51d; blob bb469336aa6092f62ab67c92c2a1b1962bb7416d.
+- Current queues/RESEARCH_QUEUE.txt was read at task start and refreshed before terminal synthesis; it still showed Q-R2 DONE/CONSUMED and Q-R3 AVAILABLE NOW / HIGHEST PRIORITY, with no newer exact Research supersession.
+- Q-R1/Q-R2 evidence was reused rather than restarted.
+- STARTED provider-read: routes/RESEARCH_CF0044_20261001_0024_ADAPTIVE_CONFIDENCE_BEHAVIORAL_PRIVACY_STARTED.txt @ 2110e8b650ef855f37bb6fe476a408b02a2fd1b2.
+- CHECKPOINT provider-read: routes/RESEARCH_CF0044_20261001_0026_ADAPTIVE_CONFIDENCE_BEHAVIORAL_PRIVACY_CHECKPOINT.txt @ 838567d8bd7b84a71c7f00c763d67fd5bbdb9135.
+
+BOUNDARY
+Owner-review remains OPEN. No StudyGrid code/product/runtime change, no worker queue mutation, no Bob/Stuart/Kevin wake, no backend/auth/Supabase/provider/deploy/canonical mutation, and no real user telemetry collection/inspection occurred. This is research/evidence + StudyGrid-specific recommendation only. Jurisdiction-specific legal compliance is NOT asserted.
+
+EVIDENCE CLASSES USED BELOW
+- CONFIRMED EVIDENCE: directly supported by cited peer-reviewed research or current standards/platform guidance.
+- RECOMMENDATION: StudyGrid-specific product/engineering inference from that evidence plus Nathan’s owner requirements.
+- HOLD: requires StudyGrid-specific device/user/security/legal/backend validation before release.
+
+======================================================================
+1. EXECUTIVE RECOMMENDATIONS
+======================================================================
+
+1) COLLECT CONFIDENCE AFTER THE ANSWER IS COMMITTED, BEFORE CORRECTNESS OR FEEDBACK.
+CONFIRMED EVIDENCE — retrospective confidence about a just-made response is a meaningful metacognitive measure; feedback can change the information available to the learner and can reduce the metacognitive monitoring benefit of the preceding test. Studies also show that confidence following retrieval can predict later performance and that low-confidence correct responses are a distinct learning state that benefits from feedback. [E1][E2][E3][E4][E5][E6]
+RECOMMENDATION — Nathan’s target flow is evidence-aligned:
+`answer -> optional confidence -> correctness/correct answer/explanation -> adaptive update`.
+Do not ask for the same confidence judgment after revealing correctness and treat it as equivalent. A post-feedback judgment answers a different question.
+
+2) TREAT CONFIDENCE AS A REAL BUT NON-AUTHORITATIVE FEATURE.
+CONFIRMED EVIDENCE — confidence can discriminate future memory performance and can improve study decisions, but metacognitive judgments are imperfect, cue-dependent and sometimes miscalibrated. Repeated responding can even increase confidence without increasing accuracy. [E2][E5][E6][E7]
+RECOMMENDATION — combine confidence with correctness, retrieval/repetition history and spacing; never let confidence alone decide mastery or frequency. High-confidence wrong and low-confidence correct are especially informative combinations, but they should trigger pedagogic follow-up rather than punishment.
+
+3) DO NOT INVENT A CONFIDENCE-WEIGHTING OR SPACING ALGORITHM FROM THIS RESEARCH.
+CONFIRMED EVIDENCE — adaptive and spaced retrieval can improve learning, but optimal intervals depend on item/learner state and evidence does not establish a universal production weighting for StudyGrid confidence. Learners’ own spacing choices are often imperfect. [E8][E9][E10]
+RECOMMENDATION — architecture should expose confidence as one feature to a later validated scheduler, not hard-code a rule such as “low confidence = exactly N extra repetitions.” Require offline/controlled validation against a core baseline before any behavioral feature changes scheduling.
+
+4) KEEP STRONG PEDAGOGIC SIGNALS CORE; KEEP BEHAVIORAL SIGNALS SECONDARY.
+RECOMMENDATION — core scheduling evidence should be correctness, repeated retrieval history/error pattern, recency/spacing and prior exposure. Explicit pre-feedback confidence is a strong optional metacognitive feature. Latency, dwell, reversals, answer changes and revisit behavior are weaker/context-dependent secondary features. Pointer-path efficiency/directness is not justified as a default production signal now.
+
+5) DO NOT TREAT SLOW, INDIRECT OR REVISED INPUT AS LOW ABILITY OR LOW CONFIDENCE.
+CONFIRMED EVIDENCE — timing and movement metrics vary materially across mouse vs trackpad, touchscreen, device/browser latency and motor/accessibility conditions. W3C explicitly notes that many users with disabilities or assistive technologies need more time and/or different input mechanisms. [E11][E12][E13][E14]
+RECOMMENDATION — no fixed cross-user threshold such as “>X seconds = unsure” or “curved pointer path = uncertain.” B-class behavior features must be modality-aware, sparse-safe and ideally compared only against that learner’s own compatible interaction baseline after enough samples.
+
+6) RAW POINTER TRAJECTORIES ARE NOT A JUSTIFIED PRODUCTION DATASET FOR STUDYGRID.
+CONFIRMED EVIDENCE — mouse/cursor dynamics can carry highly user-specific information and have been used as behavioral biometrics for identification/authentication; lab mouse-tracking can also expose decision conflict/uncertainty. [E15][E16]
+RECOMMENDATION — do not persist or transmit raw trajectories, velocity streams, hover trails or fine-grained keystroke timing for adaptive learning. If a weak interaction feature is later validated, derive a coarse event-bounded feature locally/on-device and discard raw events immediately.
+
+7) PRIVACY CONTRACT: PURPOSE -> MINIMIZE -> LOCAL DERIVE -> RESTRICT -> EXPIRE.
+CONFIRMED EVIDENCE — NIST privacy engineering emphasizes purpose specification/use limitation, minimization, predictability, manageability and disassociability; NIST security controls emphasize least privilege and protection of stored/transmitted information. [E17][E18][E19][E20][E21][E22]
+RECOMMENDATION — each signal must have a named adaptive-study purpose, the smallest data shape necessary, a defined retention/deletion policy, and narrow role access. Optional behavioral telemetry must be removable/disableable without breaking core study.
+
+8) INSTRUCTORS SHOULD NOT RECEIVE RAW OR SURVEILLANCE-LIKE BEHAVIOR TRACES.
+RECOMMENDATION — instructor-facing information, if any, should stay pedagogically interpretable: e.g. `missed twice`, `marked unsure`, `has not practised recently`. Do not expose cursor paths, hesitation scores, latency traces, motor patterns or pseudo-clinical labels. Internal administrators should not get such data by default either; access to any derived telemetry must be least-privilege and audited.
+
+9) EXPLAIN ADAPTATION WITH THE STRONGEST HUMAN-READABLE REASONS.
+CONFIRMED PLATFORM GUIDANCE — Microsoft HAX recommends local explanations that map actual user behaviors/inputs to system outputs, warns against vague/overwhelming explanations, and recommends global controls over what the system monitors. [E23][E24][E25]
+RECOMMENDATION — preferred local explanations are factual and sparse, e.g. `We’re showing this again because you missed it and marked yourself unsure.` Avoid `Your mouse movement suggested hesitation.` The latter is both noisier and more surveillance-like.
+
+10) OPTIONALITY MUST BE REAL.
+RECOMMENDATION — `Skip` is missing confidence, not a low-confidence value. Disabling confidence collection should remove the confidence step. Disabling optional interaction telemetry should leave core studying/adaptation functioning from correctness + retrieval/spacing history. Never degrade a learner for opting out.
+
+======================================================================
+2. RECOMMENDED CONFIDENCE-BEFORE-FEEDBACK FLOW
+======================================================================
+
+A. ANSWER
+- Learner selects/types and commits an answer.
+- No correctness, correct answer, explanation, colour-coded right/wrong state or other outcome cue is shown yet.
+
+B. OPTIONAL CONFIDENCE
+Recommended prompt wording:
+`How sure are you that your answer is correct?`
+This keeps the construct about the current response, not general self-efficacy or future memory.
+
+Current compact StudyGrid option set is defensible as a LOW-FRICTION PRODUCT CHOICE, not as a literature-proven optimum:
+- `Guessing`
+- `Fairly sure`
+- `Very sure`
+- separate secondary action: `Skip confidence`
+
+Important measurement note:
+- Research does not establish one universally optimal number of confidence categories.
+- Very coarse dichotomies lose resolution; adding categories can improve discrimination but can also increase rating complexity/miscalibration. [E26]
+- Therefore do not claim the three-level scale is psychometrically optimal. Pilot it for comprehension/calibration; if StudyGrid later needs finer probability calibration, compare against a labelled 4–5 point or continuous scale in controlled testing.
+- Do not display pseudo-precise probabilities such as `80%` unless users understand the mapping and the model genuinely uses calibrated probabilities.
+
+C. REVEAL
+After confidence is selected OR skipped:
+- reveal right/wrong;
+- show the correct answer when needed;
+- show explanation/feedback;
+- preserve the learner’s selected confidence state so the metacognitive contrast is legible.
+
+D. ADAPTIVE UPDATE
+Store/use:
+- correctness;
+- retrieval/attempt history;
+- spacing/recency/exposure history;
+- confidence only if voluntarily supplied;
+- any later validated optional secondary feature only if its privacy/accessibility gates pass.
+
+E. SKIP / DISABLED
+- Per-attempt Skip = MISSING, not zero confidence, not “guessing,” and not evidence of disengagement.
+- Confidence collection disabled globally = no confidence prompt and no penalty; scheduler falls back to core signals.
+
+F. ACCESSIBILITY
+- No time limit for confidence.
+- Full keyboard/touch/screen-reader operability.
+- Do not require fine pointer movement.
+- Confidence meaning cannot be conveyed by colour alone.
+
+======================================================================
+3. ADAPTIVE-SCHEDULING DECISION PRINCIPLES
+======================================================================
+
+A. CORE FEATURES
+Use as the primary evidence layer:
+- correctness of the current retrieval;
+- repeated error/success history for the item/skill;
+- number and timing of prior retrievals/exposures;
+- recency/spacing since successful retrieval;
+- explicit confidence when supplied.
+
+B. STATE COMBINATIONS WORTH PRESERVING
+RECOMMENDATION — preserve combinations, do not collapse everything to one score too early:
+- correct + very sure: stronger mastery evidence than correct + guessing;
+- correct + guessing/fairly sure: likely merits feedback and later verification rather than immediate “mastered” status; low-confidence correct responses are known to benefit from feedback [E4];
+- incorrect + very sure: indicates a metacognitive mismatch/misconception candidate; prioritise corrective feedback and later retrieval, not punishment;
+- incorrect + low confidence: ordinary weak-retrieval evidence;
+- skipped confidence: use correctness/history only.
+
+C. SECONDARY BEHAVIOR FEATURES
+- May refine uncertainty only after showing incremental predictive value beyond core features.
+- Must never override correctness or be presented as ground-truth mental state.
+- Must be ignored when modality/context validity is weak.
+- Do not change scheduling materially from one anomalous event; require repeated/validated evidence.
+
+D. VALIDATION GATE BEFORE PRODUCTION WEIGHTING
+Any B-class feature must prove, on StudyGrid-like tasks:
+1. incremental predictive value beyond correctness + history + spacing + explicit confidence;
+2. calibration across mouse/trackpad/touch/keyboard/assistive-tech cohorts;
+3. no material performance degradation when the feature is missing;
+4. no adverse adaptation simply from slow motor/input behavior;
+5. understandable user explanation or safe invisibility as a minor feature;
+6. privacy benefit proportionate to data cost.
+
+======================================================================
+4. SIGNAL MATRIX
+======================================================================
+
+Classification:
+A = evidence-supported/useful enough to be a candidate production input, still requiring StudyGrid validation.
+B = potentially useful but weak/noisy/context-dependent; experimental/secondary only.
+C = too invasive, too confounded or not worth collecting for current adaptive production use.
+
+1. CORRECTNESS
+Class: A
+Evidence: direct retrieval outcome; central to retrieval-practice/adaptive-spacing literature. [E8][E10]
+Confounds: item ambiguity, accidental taps, poorly authored questions.
+Privacy cost: LOW–MODERATE as ordinary learning record.
+Disposition: CORE.
+
+2. REPEATED-ERROR / SUCCESS HISTORY
+Class: A
+Evidence: retrieval history is a standard indicator of learning strength and adaptive spacing state. [E8][E10]
+Confounds: content changes/item quality.
+Privacy cost: MODERATE because longitudinal learning record.
+Disposition: CORE; purpose-limit to learning/adaptation.
+
+3. PRIOR EXPOSURE / SPACING / RECENCY
+Class: A
+Evidence: spacing and repeated retrieval materially affect retention; adaptive schedules can outperform fixed schedules. [E8][E10]
+Confounds: StudyGrid may not observe offline studying.
+Privacy cost: LOW–MODERATE.
+Disposition: CORE, with honest “within StudyGrid” scope.
+
+4. EXPLICIT PRE-FEEDBACK CONFIDENCE
+Class: A
+Evidence: retrospective confidence after response can predict future memory and help identify items needing study; confidence and retrieval fluency both carry information. [E2][E5][E6]
+Confounds: over/under-confidence, wording/scale, response repetition, learner interpretation.
+Privacy cost: MODERATE; explicit self-report.
+Disposition: OPTIONAL BUT HIGH-VALUE. Ask before feedback. Never infer if skipped.
+
+5. RESPONSE LATENCY / TIME TO COMMIT
+Class: B
+Evidence: response time relates to confidence/uncertainty in memory models and can contribute information alongside explicit confidence. [E6][E7]
+Confounds: reading speed, motor speed, device/input latency, interruptions, accessibility tools, fatigue, distraction, item length.
+Privacy cost: LOW if coarse/event-bounded; higher if raw stream.
+Disposition: EXPERIMENTAL SECONDARY ONLY. Prefer local active-time derivation; no fixed cross-user threshold.
+
+6. TIME TO FIRST ACTION
+Class: B
+Evidence: initiation time can reflect processing but is especially device/input-dependent; trackpad vs mouse differences are material. [E11]
+Confounds: reading/comprehension time, scrolling, input device, window focus, distraction.
+Privacy cost: LOW–MODERATE.
+Disposition: EXPERIMENTAL ONLY; exclude background/hidden-tab time; never equate delay with uncertainty.
+
+7. ANSWER CHANGES / UNDOS BEFORE COMMIT
+Class: B
+Evidence: answer revision is related to metacognitive monitoring, but revisions often improve scores and can reflect correction rather than uncertainty. [E27]
+Confounds: accidental input, reconsideration, UI error, accessibility interaction.
+Privacy cost: LOW if event count only.
+Disposition: SECONDARY COUNT MAY BE WORTH TESTING; never treat a change itself as negative.
+
+8. REVISIT BEHAVIOR
+Class: B
+Evidence: plausibly related to self-regulated study but not a direct confidence measure.
+Confounds: navigation habits, interruptions, rereading strategy, accessibility.
+Privacy cost: MODERATE as longitudinal behavior.
+Disposition: only use if the revisit is semantically defined (e.g. reopening the same practice item/lesson), not general browsing surveillance.
+
+9. DWELL TIME
+Class: B
+Evidence: duration can reflect processing effort but is not specific to uncertainty.
+Confounds: reading speed, complexity, breaks, screen reader speech duration, tab inactivity, distraction.
+Privacy cost: MODERATE.
+Disposition: if ever used, only coarse active-on-task duration with hidden/background time excluded; no instructor exposure.
+
+10. REVERSALS / HESITATION COUNT
+Class: B
+Evidence: mouse-tracking research has used directional reversals/x-flips as markers of instability/uncertainty in controlled tasks. [E15]
+Confounds: target layout, trackpad/touch/motor style, tremor, accessibility tools, corrections, unfamiliar UI.
+Privacy cost: MODERATE–HIGH if raw; lower if one locally derived bounded count.
+Disposition: RESEARCH-ONLY until incremental value/fairness is demonstrated. If tested, derive locally and discard raw path.
+
+11. POINTER/CURSOR PATH EFFICIENCY OR DIRECTNESS
+Class: C FOR CURRENT PRODUCTION USE
+Evidence: lab work can extract decision-process signals, but online movement metrics change significantly with mouse vs trackpad and other input properties. [E11][E15]
+Confounds: extremely high — input modality, motor impairment, target geometry, screen size, pointer acceleration, touch, stylus, tremor, accessibility software.
+Privacy cost: HIGH; raw motion has behavioral-biometric potential. [E16]
+Disposition: DO NOT ADD TO DEFAULT ADAPTIVE MODEL. Revisit only in a separately consented research protocol with a strong incremental-value case.
+
+12. RAW POINTER TRAJECTORY / VELOCITY STREAM / HIGH-FREQUENCY CURSOR EVENTS
+Class: C
+Evidence: raw mouse dynamics can support behavioral identification/authentication. [E16]
+Confounds: same as #11.
+Privacy cost: VERY HIGH relative to proposed learning benefit.
+Disposition: REJECT FOR NORMAL STUDYGRID ADAPTATION; do not persist/transmit.
+
+13. SKIPPED CONFIDENCE RESPONSE AS A “SIGNAL”
+Class: C
+Evidence: owner intent defines confidence as optional; interpreting skip would undermine that choice.
+Confounds: privacy preference, speed, fatigue, accidental skip.
+Privacy cost: LOW, but semantic cost high.
+Disposition: MISSING ONLY. Do not infer low confidence/disengagement.
+
+======================================================================
+5. PRIVACY / SECURITY / MINIMIZATION CONTRACT
+======================================================================
+
+P1. PURPOSE SPECIFICATION
+Every collected feature needs a documented adaptive-learning purpose before collection. Do not repurpose interaction telemetry for discipline, instructor evaluation, advertising, identity verification, health/disability inference, behavioral profiling or unrelated analytics without separate authority/review. NIST purpose limitation supports this boundary. [E18]
+
+P2. DATA MINIMIZATION
+Collect/retain only what is directly necessary for that purpose and only as long as necessary. [E17]
+StudyGrid recommendation:
+- correctness/history: ordinary pedagogic event data;
+- confidence: explicit ordinal value only when supplied;
+- optional behavioral feature: derived bounded feature, not raw high-frequency event stream;
+- no screen contents, clipboard, arbitrary keystrokes, background app activity or unrelated pointer trails.
+
+P3. LOCAL / ON-DEVICE FEATURE EXTRACTION
+Where a B-class feature is validated, compute the smallest useful representation locally:
+- active response latency or coarse bucket;
+- answer-change count;
+- bounded reversal count if ever approved;
+- semantic revisit event.
+Discard raw timestamps/coordinates/velocity samples before network transmission wherever operationally feasible.
+This is a StudyGrid engineering recommendation derived from NIST minimization/disassociability, not a NIST-mandated architecture. [E17][E19]
+
+P4. DISASSOCIABILITY / SEPARATION
+Use identifiable linkage only where personalization genuinely requires it. Aggregate evaluation/analytics should be disassociated where possible. Avoid copying learner identifiers into telemetry stores that do not need them. [E19]
+
+P5. RETENTION
+Do not invent a fixed retention period in this research pass.
+Required design state before release:
+- each feature class has an owner, purpose and expiry/deletion rule;
+- raw pointer/keystroke traces = no persistent retention by default because not collected;
+- optional derived telemetry expires sooner than durable academic history unless a documented adaptive purpose requires otherwise;
+- learner deletion/reset controls and institutional retention dependencies are reconciled with legal/product requirements.
+
+P6. USER TRANSPARENCY
+Provide a plain-language `How StudyGrid adapts practice` surface:
+Core examples:
+- answers/right-wrong history;
+- how recently an item was practised;
+- repeated retrieval history.
+Optional examples:
+- confidence selections;
+- any validated coarse interaction-timing category if enabled.
+Explicitly state important non-collection boundaries such as raw cursor paths/keystrokes/screen recording if that remains the implementation.
+NIST predictability/manageability and HAX explanation/control guidance support this approach. [E20][E23][E24]
+
+P7. USER CONTROL
+At minimum separate:
+- `Ask me how sure I am` — on/off;
+- `Use optional interaction signals to tune practice timing` — on/off IF such signals are ever released.
+Optional signals off must not disable core study or core adaptation. HAX explicitly recommends global controls over what an AI system monitors. [E24]
+
+P8. ROLE / ACCESS SEPARATION
+Learner:
+- can see own confidence history/adaptation explanation if StudyGrid surfaces it;
+- can change optional controls.
+Instructor:
+- may receive pedagogically relevant outcomes only if product/legal policy permits (e.g. practice status, errors, learner-provided confidence);
+- MUST NOT receive raw pointer trails, motor/hesitation scores or inferred disability/health states.
+Admin/operations:
+- no raw trajectories because default design does not retain them;
+- derived telemetry access limited to named operational roles with least privilege and auditability. [E21]
+
+P9. SECURITY
+If derived telemetry is stored/transmitted:
+- protect confidentiality/integrity in transit and at rest;
+- least-privilege service/role access;
+- separation between production app access and analytics/engineering access;
+- audited privileged access;
+- incident/deletion procedures consistent with the eventual backend design.
+NIST SP 800-53 includes transmission confidentiality/integrity and protection of information at rest; current NIST control catalog remains applicable as risk-management guidance, not as a claim of StudyGrid compliance. [E21][E22]
+
+P10. SENSITIVE / BIOMETRIC INFERENCE PROHIBITION
+Do not use StudyGrid interaction behavior to infer or label:
+- disability or motor impairment;
+- health/mental-health state;
+- fatigue/anxiety;
+- identity/authentication biometrics;
+- age/gender/handedness/ethnicity or other sensitive traits.
+Raw mouse/keystroke dynamics are capable of biometric/profiling use in research, which is exactly why StudyGrid should not create that dataset for a learning-timing feature. [E16]
+
+======================================================================
+6. ACCESSIBILITY / FAIRNESS REJECT CONDITIONS
+======================================================================
+
+REJECT any implementation that:
+1. equates slower response with lower confidence/ability using a population-wide threshold;
+2. equates a curved/indirect cursor path with uncertainty;
+3. penalizes keyboard, touch, switch, voice, eye-gaze, screen-reader or other assistive-tech users because pointer metrics are absent/different;
+4. converts missing optional telemetry into a negative feature;
+5. includes hidden-tab/background waiting time in learner response latency;
+6. keeps the same motor/timing baseline after the user changes input modality/device without revalidation;
+7. uses fine motor features to make instructor-facing statements about ability, effort, attention or disability;
+8. requires timed interaction to answer/confidence-select when timing is not essential;
+9. materially changes scheduling from a single slow/revised event without repeated evidence;
+10. fails to test model/calibration performance separately across real input/device/accessibility cohorts before release.
+
+CONFIRMED ACCESSIBILITY BASIS
+- W3C Guideline 2.2 notes that many users with disabilities require more time to read/respond or use assistive technology. [E13]
+- W3C input-modality guidance requires support across different pointer/input mechanisms and notes that touch is coarser and motor impairments change pointing difficulty. [E14]
+- Independent web-research evidence shows mouse vs trackpad substantially changes initiation time, movement time and trajectory measures, and device type/latency changes measured reaction time. [E11][E12]
+
+RECOMMENDED MODEL GATE
+If B-class timing/reversal features are later tested:
+- segment/validate by input modality;
+- prefer within-learner compatible-device baselines to cross-user norms;
+- require sufficient repeated observations before using a baseline;
+- treat sparse/changed-modality data as unavailable rather than low confidence;
+- report fairness/performance with and without optional telemetry.
+
+======================================================================
+7. USER CONTROL / EXPLAINABILITY
+======================================================================
+
+A. LOCAL EXPLANATIONS
+Use the smallest true explanation tied to actual factors.
+Good examples:
+- `We’re showing this again because you missed it and marked yourself unsure.`
+- `We’re showing this again because you missed it last time and it’s been a while.`
+- `This one is coming back because you’ve had trouble with it more than once.`
+
+Reject:
+- `Your mouse movement suggested uncertainty.`
+- `You hesitated, so StudyGrid thinks you don’t know this.`
+- fake precision such as `You are 63% uncertain` unless the system has a genuinely calibrated interpretation and user research supports showing it.
+
+B. GLOBAL EXPLANATION
+`How StudyGrid adapts practice` should explain:
+1. the strong/core signals;
+2. optional confidence;
+3. any optional behavior category only if it actually ships;
+4. user controls;
+5. limits — signals can be wrong/noisy and do not grade ability/personality.
+HAX recommends explanations that map inputs/behaviors to system outputs and global controls over monitoring. [E23][E24][E25]
+
+C. CORRECTION / CONTROL
+Recommended controls:
+- confidence skip per attempt;
+- global confidence on/off;
+- optional interaction-signals on/off if implemented;
+- `Why am I seeing this again?` local explanation;
+- later consider a simple correction such as `Too soon` / `I already know this` only if it can alter scheduling safely and transparently. This last item is a product recommendation, not required by current evidence.
+
+D. CORE FUNCTION WITHOUT OPTIONAL TELEMETRY
+With optional confidence/behavior disabled, StudyGrid must still support:
+- answering;
+- feedback;
+- retrieval history;
+- spacing/recency;
+- correctness-driven adaptation;
+- manual/replay study controls.
+
+======================================================================
+8. EVIDENCE / SOURCE REGISTER
+======================================================================
+
+Academic / learning science
+[E1] Testing and metacognition: retrieval practise effects on metacognitive monitoring in learning from text. Published 2018. PubMed PMID 30074864.
+https://pubmed.ncbi.nlm.nih.gov/30074864/
+Finding used: retrieval practice improved confidence-judgment accuracy/bias in the studied school sample.
+
+[E2] Confidence ratings are better predictors of future performance than delayed judgments of learning. Published 2022. PubMed PMID 35037570.
+https://pubmed.ncbi.nlm.nih.gov/35037570/
+Finding used: retrospective confidence after retrieval had a small predictive advantage over delayed JOLs in preregistered experiments/meta-analysis.
+
+[E3] Feedback reduces the metacognitive benefit of tests. Published 2013. PubMed PMID 23544472.
+https://pubmed.ncbi.nlm.nih.gov/23544472/
+Finding used: feedback before later metacognitive judgments reduced the monitoring benefit/accuracy of test-based judgments in the reported experiments.
+
+[E4] Correcting a metacognitive error: feedback increases retention of low-confidence correct responses. Published 2008. PubMed PMID 18605878.
+https://pubmed.ncbi.nlm.nih.gov/18605878/
+Finding used: low-confidence correct answers form a meaningful state; feedback improved retention for them.
+
+[E5] Making Retrospective Confidence Judgments Improves Learners’ Ability to Decide What Not to Study. Published 2017. PubMed PMID 28934588.
+https://pubmed.ncbi.nlm.nih.gov/28934588/
+Finding used: confidence after retrieval better identified items needing additional study than JOLs in the reported task.
+
+[E6] Retrieval Practice Facilitates Judgments of Learning Through Multiple Mechanisms: Simultaneous and Independent Contribution of Retrieval Confidence and Retrieval Fluency. Published 2019. PubMed PMID 31130901.
+https://pubmed.ncbi.nlm.nih.gov/31130901/
+Finding used: both retrieval confidence and retrieval reaction time contributed information related to later JOL/final accuracy.
+
+[E7] Answering a factual question today increases one’s confidence in the same answer tomorrow — independent of fluency. Published 2021. PubMed PMID 33547629.
+https://pubmed.ncbi.nlm.nih.gov/33547629/
+Finding used: repeated answering increased confidence without accuracy, cautioning that confidence can be miscalibrated by repetition cues.
+
+[E8] A comparison of adaptive and fixed schedules of practice. Published 2016. PubMed PMID 27123574 / PMCID PMC6028005.
+https://pubmed.ncbi.nlm.nih.gov/27123574/
+Finding used: adaptive adjustment of spacing to learner/item performance can outperform fixed scheduling under studied conditions.
+
+[E9] Metacognitive control over the distribution of retrieval practice with and without feedback and the efficacy of learners’ spacing choices. Published 2021. PubMed PMID 33006078.
+https://pubmed.ncbi.nlm.nih.gov/33006078/
+Finding used: learners’ own spacing choices were influenced by JOL/item difficulty and were not always effective, so confidence should not directly become a scheduling formula.
+
+[E10] Optimizing schedules of retrieval practice for durable and efficient learning: how much is enough? Published 2011. PubMed PMID 21707204.
+https://pubmed.ncbi.nlm.nih.gov/21707204/
+Finding used: repeated retrieval/relearning across spaced sessions is a strong core learning signal; not specific to StudyGrid weighting.
+
+Interaction / device evidence
+[E11] Input device matters for measures of behaviour in online experiments. Published 2024 (PMC current record retrieved 2026-10-01), PMCID PMC11604694.
+https://pmc.ncbi.nlm.nih.gov/articles/PMC11604694/
+Finding used: mouse vs trackpad materially changed initiation/movement/trajectory metrics and could create spurious demographic effects if device is ignored.
+
+[E12] Cognitive test scores vary with choice of personal digital device. Published 2021, PMCID PMC8568735 / PMID 33954913.
+https://pmc.ncbi.nlm.nih.gov/articles/PMC8568735/
+Finding used: device/input latency and touchscreen vs mouse can materially affect measured reaction time/performance.
+
+[E13] W3C WAI — Understanding Guideline 2.2 Enough Time. Updated 15 July 2025; retrieved 2026-10-01.
+https://www.w3.org/WAI/WCAG22/Understanding/enough-time.html
+Finding used: users with disabilities/assistive technology may require more time; timing must not be treated as ability/confidence without caution.
+
+[E14] W3C WAI — Understanding Guideline 2.5 Input Modalities. Updated 11 May 2026; retrieved 2026-10-01.
+https://www.w3.org/WAI/WCAG22/Understanding/input-modalities
+Finding used: pointer/touch/alternative input mechanisms differ; touch is coarser and motor impairments affect pointing.
+
+[E15] Making decisions about health information on social media: a mouse-tracking study. Published 2022, PMCID PMC9306418.
+https://pmc.ncbi.nlm.nih.gov/articles/PMC9306418/
+Finding used: controlled mouse-tracking research uses directional reversals/x-flips as an uncertainty/instability measure; this is lab-context evidence, not direct StudyGrid production validation.
+
+[E16] A behaviour biometrics dataset for user identification and authentication. Published 2022, PubMed PMID 36426040 / PMCID PMC9679689.
+https://pubmed.ncbi.nlm.nih.gov/36426040/
+Finding used: keystroke/mouse behavior can be sufficiently user-specific for behavioral biometric identification/authentication, increasing privacy cost of raw traces.
+
+Privacy / security standards
+[E17] NIST CSRC glossary — Minimization. Current page retrieved 2026-10-01; sourced to CNSSI 4009-2022 / OMB A-130.
+https://csrc.nist.gov/glossary/term/minimization
+Finding used: limit collection/use/storage/disclosure to what is relevant/necessary and retain only as necessary.
+
+[E18] NIST CSRC glossary — Purpose Specification and Use Limitation. Current page retrieved 2026-10-01.
+https://csrc.nist.gov/glossary/term/purpose_specification_and_use_limitation
+Finding used: specify purpose and restrict incompatible secondary use.
+
+[E19] NIST Privacy Engineering — Disassociability. Updated 29 Aug 2025; retrieved 2026-10-01.
+https://www.nist.gov/itl/applied-cybersecurity/privacy-engineering/collaboration-space/focus-areas/disassociability
+Finding used: process events without associating to individuals/devices beyond operational need.
+
+[E20] NIST Privacy Framework / NISTIR 8062 privacy-engineering objectives. Privacy Framework 1.0 published Jan 2020; current framework page retrieved 2026-10-01.
+https://www.nist.gov/privacy-framework/privacy-framework
+https://nvlpubs.nist.gov/nistpubs/ir/2017/NIST.IR.8062.pdf
+Finding used: predictability, manageability and disassociability as privacy-engineering objectives.
+
+[E21] NIST CSRC — Least privilege; SP 800-53 Rev. 5 control catalog. Current pages retrieved 2026-10-01.
+https://csrc.nist.gov/glossary/term/least_privilege
+https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final
+Finding used: restrict access/resources to minimum necessary; current catalog covers access/privacy/security controls.
+
+[E22] NIST SP 800-53 Rev. 5 / OSCAL-derived control text — SC-28 Protection of Information at Rest and SC-8 Transmission Confidentiality/Integrity. Current publication record notes Release 5.2.0 Aug 2025; retrieved 2026-10-01.
+https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final
+Finding used: stored/transmitted telemetry requires confidentiality/integrity protections appropriate to risk.
+
+Explainability / user control
+[E23] Microsoft HAX Toolkit — Make clear why the system did what it did / local explanations. Current living guidance retrieved 2026-10-01.
+https://www.microsoft.com/en-us/haxtoolkit/guideline/make-clear-why-the-system-did-what-it-did/
+Finding used: users should be able to access explanations tied to actual system behavior; explanations can increase trust and must be designed carefully.
+
+[E24] Microsoft HAX Toolkit — Provide global controls. Current living guidance retrieved 2026-10-01.
+https://www.microsoft.com/en-us/haxtoolkit/guideline/provide-global-controls/
+Finding used: users should be able to globally customize what the system monitors/how it behaves.
+
+[E25] Microsoft HAX Toolkit — Pattern 11E Map user behaviors to system outputs. Current living guidance retrieved 2026-10-01.
+https://www.microsoft.com/en-us/haxtoolkit/pattern/g11-e-map-user-behaviors-to-system-outputs/
+Finding used: explain relevant user behaviors when they actually drive an output; limit collected behavior and give users control over monitoring.
+
+Measurement / revision notes
+[E26] What are confidence judgments made of? Students’ explanations for their confidence ratings and what that means for calibration. Learning and Instruction, 2013.
+https://www.sciencedirect.com/science/article/pii/S0959475212000424
+Finding used: confidence-scale design/measurement is not trivial; students use multiple cues; categorical/dichotomous scales trade information/resolution against usability.
+
+[E27] Changing test answers: A scoping review. Published 2024, PubMed PMID 38039886.
+https://pubmed.ncbi.nlm.nih.gov/38039886/
+Finding used: answer changes often produced net score improvements in reviewed studies, so revision count cannot be treated as a simple negative/uncertainty signal.
+
+======================================================================
+9. REMAINING HOLDS
+======================================================================
+
+HOLD — USER/LEARNING VALIDATION
+- Validate the exact 3-level confidence wording for comprehension, calibration, friction and skip rate in StudyGrid-like tasks.
+- Validate whether confidence adds measurable predictive/adaptive benefit above correctness/history/spacing.
+- Any B-class behavior feature must show incremental value and no adverse effects by device/input/accessibility cohort before release.
+
+HOLD — PHYSICAL DEVICE / ACCESSIBILITY
+- Real iPad/Safari touch/pointer timing behavior.
+- Trackpad vs mouse vs touch vs keyboard and screen-reader/assistive-tech sessions.
+- Background-tab/visibility handling and device latency.
+
+HOLD — PRIVACY / SECURITY
+- Formal StudyGrid privacy-risk assessment/threat model for any telemetry schema.
+- Exact data dictionary, purpose, retention/deletion rules, access roles and audit controls.
+- Encryption/key/access implementation verification in the eventual backend.
+- Confirm raw pointer/keystroke/screen data is technically absent, not merely hidden from UI.
+
+HOLD — LEGAL / INSTITUTIONAL
+No legal completeness claim is made. Before production telemetry, owner/counsel must verify applicable requirements for the actual jurisdictions, learner ages, institutional/educational-record context, notice/consent/legal basis, data-subprocessor/cross-border arrangements, retention/deletion and instructor/admin access.
+
+HOLD — BACKEND / MODEL
+- No Supabase/RLS/schema/event-store change is authorised by this research.
+- No adaptive weighting/threshold model has been validated.
+- No model should infer sensitive traits/health/disability/biometric identity from behavior.
+
+======================================================================
+10. ACCEPTANCE / REJECT SUMMARY FOR GENERAL + STUART
+======================================================================
+
+ACCEPT if eventual implementation:
+- captures optional confidence before correctness/feedback;
+- keeps Skip separate/missing;
+- still works with confidence disabled;
+- uses correctness/history/spacing as strong core signals;
+- exposes confidence as optional explicit input;
+- does not collect raw pointer trajectories or keystroke streams for adaptation;
+- keeps optional behavior features local/coarse until validated;
+- provides global controls and truthful local explanations;
+- keeps instructor surfaces free of raw behavior surveillance;
+- protects stored/transmitted telemetry and enforces least privilege;
+- treats device/input/assistive-tech differences as validity conditions, not ability signals.
+
+REJECT if eventual implementation:
+- shows correctness before asking confidence and still calls it the same signal;
+- maps Skip to low confidence;
+- uses one slow response / curved path / reversal as proof of uncertainty;
+- applies fixed cross-user motor/timing thresholds;
+- uploads raw cursor trails, arbitrary keystrokes, screen content or background activity;
+- infers disability, health, identity or sensitive traits from interaction behavior;
+- exposes raw/derived motor traces to instructors for monitoring or discipline;
+- breaks study/adaptation when optional telemetry is off;
+- claims legal/privacy compliance from this research package alone.
+
+TERMINAL DISPOSITION
+DONE — Q-R3 research/evidence package complete and returned to General CF-0040 through shared GitHub state. Owner-review remains OPEN. No implementation, backend mutation or worker wake occurred.
