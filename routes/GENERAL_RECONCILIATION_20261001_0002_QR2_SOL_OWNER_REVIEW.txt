@@ -1,0 +1,66 @@
+STUDYGRID — GENERAL RECONCILIATION / Q-R2 + SOL Q-SOL1 + GEMINI + OPEN OWNER REVIEW
+Timestamp: 2026-10-01 00:02 ET
+Coordinator: General CF-0040
+Status: RECONCILED PRE-RELEASE STATE — OWNER REVIEW STILL OPEN — NO BOB/STUART/KEVIN WAKE
+
+CONSUMED TERMINAL INPUTS
+- Research CF-0044 Q-R2 terminal: routes/RESEARCH_CF0044_20260930_2350_GUIDED_TOUR_MOTION_PLAIN_LANGUAGE_POLICY_UX_DONE.txt @ commit 973e64fb1cd9926db51841a2f4bf21f55a45f94f.
+- Sol CF-0043 Q-SOL1 frozen return: commit 4bd3a16e95aa344c730b5b2c18aa9b3614ff2462; entry returns/CF0043-QSOL1/README.md and terminal returns/CF0043-QSOL1/SOL_20260930_QSOL1_SOURCE_AUDIT_DONE.txt.
+- Gemini 3.1 Pro screenshot/motion return: routes/GEMINI_RETURN_20260930_2346_INSTRUCTOR_TOUR_MOTION_SCREENSHOT_PASS.txt @ d27eab81ecade0d361ac17c32c13695f890dc140.
+- Owner-review packets through the adaptive-confidence/privacy delta at routes/OWNER_REVIEW_DELTA_20260930_2353_ADAPTIVE_CONFIDENCE_BEHAVIORAL_SIGNALS_PRIVACY.txt @ 3cd292e355e5d40dfa1cc22a6b1831b8bc11f51d.
+
+MATERIAL CHANGES FROM RESEARCH Q-R2
+1. Guided tours should teach the real fake-data interface, not detached slides. Instructor demo opens in a true instructor shell, points to real demo controls, stays skippable, replayable from Help, and ends with an explicit real-setup CTA.
+2. No arbitrary fixed tour-step count is justified. Use the shortest sequence that teaches the core instructor loop; optional/advanced guidance becomes contextual later.
+3. Demo data must remain visibly demo/example data and never silently become live student/class state.
+4. `Find current class` must explain the basis for the suggestion and allow correction; avoid unexplained numeric confidence scores.
+5. `How this works` should preserve spatial orientation: anchored popover/coachmark on roomy layouts, nonmodal sheet/side-sheet when more space is needed; inline expansion only where movement is semantically appropriate and contained.
+6. Ghost selection guidance is finite and subordinate: normal reading text, brief demonstration, immediate teardown on real pointer/touch/keyboard/selection activity, static/no-motion alternative.
+7. Do not run perpetual 4-second rotating example questions. Use one finite example change or explicit `Show another example`; any auto-updating content needs pause/stop/hide controls.
+8. Practice feedback must use explicit textual hierarchy, not green alone. `Skip` is separate from confidence. On narrow/iPad layouts, wrap/stack rather than crush the controls.
+9. Paper→Dusk→Paper can be theatrical, but product target is zero flash events: staggered material/color/state transformation, orb motion, no repeated bright/dark flicker; reduced-motion path removes large spatial/3D motion.
+10. Focus, selection, active, tutorial-target and decorative-emphasis states must be visually distinct. Keep visible keyboard focus; noninteractive copy must not look like a focused control.
+11. Decorative arcs/circles that cross instructional content or resemble state indicators are reject conditions.
+12. Help IA: How StudyGrid works / Replay tour / Accessibility & input help / Send feedback; separate Privacy & data and Legal destinations. No claim of legal completeness without separate authority.
+
+MATERIAL CHANGES FROM SOL Q-SOL1
+1. Exact accepted source baseline confirmed unchanged: QB15 v7.18, SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf, 996820 bytes.
+2. Instructor leakage is source-confirmed: learner Courses/Study/Profile shell persists on instructor routes.
+3. Instructor `All classes` currently opens fixed pfp207-a and class/tab switching rerenders without URL updates, creating history/reload inconsistency.
+4. Label/colour editors and `Label: None` are source-confirmed permanently visible in Professor Home; local command seam already exists for a compact Edit flow.
+5. Resolve has history but no professor undo command/control.
+6. Exact transition map found a real Profile route from `View learning progress`; owner-reported wrong-return case is plausible, but the exact event Nathan encountered remains unlocated. Later acceptance must test every button/route rather than patch one guessed path.
+7. Cursor source is not body-wide: `cursor:text` is scoped to `.annotatable-text`, but that class covers substantial lesson/note/explanation text. This can still create the broad I-beam feel on iPad/mouse; physical device QA remains required.
+8. Tour selection/highlight is one-way and tour Paper/Dusk samples are spans, not real theme controls. Settings has actual theme buttons. The reported Dusk defect must therefore be reproduced on the exact owner path; do not claim handler presence proves it works.
+9. Annotation close has a real deferred-selection stale-state path: cached range/timer can reopen annotation UI after close if the surface remains connected.
+10. Feedback circle close/route-close has a real conditional stale-pointer path because drawing/pointer/centroid state is not fully reset and there is no lostpointercapture teardown.
+11. Note review and professor resolve can replace/remove the focused control without a sound focused successor; motion must not hide this accessibility defect.
+12. Final renderer overrides matter: implementation must patch final effective seams, not the first matching legacy function.
+
+RECONCILED PRODUCT CONTRACT — CURRENT
+- Instructor and learner shells are distinct contexts; owner/admin capability does not contaminate everyday learner/instructor chrome.
+- Instructor demo uses fake classes/students/activity, clearly labelled as demo, with a short real-interface tour, Skip, Replay, and explicit transition to real setup.
+- Adaptive response keeps the stable question/response cards; only materially changed response phrases replace/crossfade, briefly StudyGrid green, then settle.
+- Selectric/full-loop remains a bounded semantic-native CSS3D/WAAPI rotor concept; no endless autoplay, no spring/bounce default, no heavy blur, reduced-motion static/minimal.
+- Contextual help must not move unrelated copy; use anchored/contained surfaces with correct focus semantics.
+- Ghost selection teaches native selection and disappears immediately when the real user engages.
+- Explain/Highlight/Ask Teacher should behave as miniature real product interactions; Highlight toggles off; Ask Teacher stays in context. Example-question motion is finite or user-controlled.
+- Practice order is OWNER-LOCKED as: answer -> optional confidence -> reveal correctness/correct answer/explanation -> adaptive update. Confidence may affect future practice frequency. Skip is separate. Q-R3 still owns evidence/limits for telemetry and scheduling details.
+- Correctness is explicit in text/structure, not green-only. Confidence controls must be readable/touchable and not squeezed.
+- Paper→Dusk→Paper is one-time, dramatic but zero-flash, then settles back to Paper; reduced-motion path removes theatrical spatial motion.
+- Focus, selected, hover, pressed, tutorial-target, adaptive changed-text and saved-highlight states are separate visual semantics.
+- Remove/replace unexplained decorative arcs/lines/circles that compete with content or mimic state.
+- Add Class remains school/program/term-once + class-code shortcut + verified scoped course picker + manual fallback; current source still lacks this model.
+- Resolve needs exact undo semantics; route/button semantics and focus successors require full acceptance.
+- Physical iPad/Safari checks remain mandatory for cursor, native selection, AutoFill, Dusk clickability, transformed text crispness and pointer/capture behavior.
+
+OPEN DEPENDENCY
+Research Q-R3 is now eligible but has no STARTED/terminal evidence as of this reconciliation. It must settle confidence-before-feedback evidence, adaptive scheduling principles, behavioral-signal value/noise, local feature extraction/data minimization, accessibility/device confounds, explainability and opt-out. No raw-pointer telemetry/backend implementation is authorized before that evidence plus separate privacy/security/backend release.
+
+IMPLEMENTATION RELEASE STATUS
+A coherent Bob/Stuart/Kevin release has been drafted separately at routes/HELD_IMPLEMENTATION_QA_RELEASE_20261001_OWNER_REVIEW.txt. It is HOLD only. Do not activate Bob, Stuart or Kevin until:
+1. Nathan explicitly says this owner-review tranche is ready to build; and
+2. Q-R3 is reconciled for any adaptive telemetry/scheduling scope, or that scope is explicitly excluded from the candidate.
+
+ASTRA
+Remain HOLD. No Astra activation from this reconciliation.
