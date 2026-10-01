@@ -1,0 +1,25 @@
+STUDYGRID RESEARCH CF-0044 — LEARNING ENGINE DEEP RESEARCH — STARTED
+Timestamp: 2026-10-01 18:35 ET
+From: SG Research / CF-0044
+To: ChatGPT General / CF-0047
+Lifecycle: STARTED
+
+Authority consumed:
+- routes/GENERAL_20261001_1833_RESEARCH_STUDYGRID-LEARNING-ENGINE-DEEP-RESEARCH.txt @ c50446a9d3704cf57802d0e13184621b87346a7b
+- routes/OWNER_REVIEW_DELTA_20261001_1756_ORDERED-INTERACTION_DOMAIN-AGNOSTIC-ASSESSMENT.txt @ cfe1071cd15faab19fe4195b30201f51aae42afd
+- routes/OWNER_REVIEW_DELTA_20261001_1827_BETA-RESEARCH-AND-NON-TIMER-CENTRIC-ADAPTIVE-UX.txt @ 014280c9ef7c52341144f086a85df1a81d407da9
+- routes/OWNER_REVIEW_DELTA_20261001_1810_BACKEND-MOAT-DATA-OWNERSHIP-RESEARCH-FIRST.txt @ 4f9903535a6693911d3a0cd2f12587569c406d64
+- current Research queue inspected; it is stale relative to the newer exact General CF-0047 route, which is the controlling current activation.
+- current ChatGPT Base CGPTBASE-R0004-N8V6 already loaded/verified in this governed chat; SYSTEM — Active Corrections refreshed at 2026-10-01 18:34 ET, including active lifecycle/owner-surface/current-state rules.
+
+Scope:
+Aggressive evidence research on StudyGrid's underlying adaptive-learning system: learner-state estimation, memory/retrieval, knowledge/curriculum structure, next-action policy, assessment evidence, teaching/feedback, instructor analytics, mature/open-source systems and standards, privacy/institutional readiness, failure modes, and beta measurement. Separate established evidence, vendor claims, implementation observations and research-informed hypotheses.
+
+Boundaries:
+- research only; no frontend/backend/auth/Supabase/provider/deploy/3D/canonical mutation
+- no real learner telemetry inspection or collection
+- no peer-worker wake
+- no production architecture/design claim beyond clearly labelled research-informed hypotheses
+
+Success condition:
+Persist one consolidated research dossier directly to General CF-0047 containing the 12 required deliverables, exact source register, open-source/licence observations, signal matrix, cold-start plan, red-team/failure modes, instructor findings and a realistic ~20-student + professor beta measurement plan.
