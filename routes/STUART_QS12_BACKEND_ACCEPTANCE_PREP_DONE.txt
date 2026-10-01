@@ -1,0 +1,33 @@
+STUDYGRID — STUART Q-S12 BACKEND ACCEPTANCE PREP — DONE
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 20:58 ET
+Lifecycle: DONE
+Disposition: PREP PASS. This is not backend/Supabase acceptance.
+
+RESULT
+- Consumed Claude C-A implementation-readiness contract and its exact current non-applied SQL/test attachment.
+- Built a future real-Supabase staging acceptance plan covering all 23 current app tables and all 12 current api.cmd_* commands.
+- Defined 12 leakage/privacy gates, 9 concurrency/idempotency gates, 10 static fail-closed gates and 10 adapter-parity gates.
+- Built and provider-read a SELECT-only static staging inspection scaffold. No SQL was applied anywhere.
+- Strengthened Claude's two explicitly weak tests: non-vacuous source-state isolation fixtures for T08, and sentinel free-text leakage + canonical audit payload-hash validation for T31.
+
+FOUR SOURCE-BOUND CONTRACT AMBIGUITIES HELD FOR FUTURE RELEASE BINDING
+1. Whether an unverified co-instructor loses staff reads as well as editor commands.
+2. Which self-history a removed member may retain after class access is revoked.
+3. Whether ai_worker is deliberately globally trusted for ai_jobs/source_blocks or must be job/section scoped.
+4. Parallel same-key idempotency semantics; sequential replay tests do not prove race safety.
+
+DURABLE ARTIFACTS
+- docs/STUART_QS12_BACKEND_ACCEPTANCE_PLAN.md
+- tests/backend/STUART_QS12_STATIC_STAGING_SCAFFOLD.sql
+- reports/STUART_QS12_BACKEND_ACCEPTANCE_PREP_VERIFICATION.txt
+- routes/STUART_QS12_BACKEND_ACCEPTANCE_PREP_STARTED.txt
+- this DONE return
+- branch stuart-qs12-backend-acceptance-prep
+
+BOUNDARIES
+No product/runtime/UI mutation. No Supabase/database/auth mutation. No backend target acceptance claim. No Slice 3 validation/pre-approval. No deployment/canonical promotion. Physical-device/hosted/full-accessibility holds are unchanged.
+
+NEXT / DEPENDENCY
+General CF-0040 can consume this prep for the future staging acceptance/release contract. Q-S13 remains blocked until Nathan completes the owner review checkpoint, General releases Bob Q-B17 and Bob produces a durable exact Slice 3 candidate. Stuart must not pre-approve unreleased Slice 3 UI.
