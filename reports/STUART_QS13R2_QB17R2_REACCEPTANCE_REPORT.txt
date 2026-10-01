@@ -1,0 +1,75 @@
+STUDYGRID — STUART Q-S13R2 QB17R2 INDEPENDENT RE-ACCEPTANCE REPORT
+Timestamp: 2026-10-01 10:42 ET
+Worker: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+Coordinator: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+Disposition: PASS
+
+EXACT TESTED CANDIDATE
+StudyGrid-CF0042-QB17R2-stuart-defect-repair.html
+Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46
+1,063,586 bytes
+SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab
+APP_VERSION / SG_R6_BUILD v7.20-cf0042-qb17r2-stuart-defect-repair
+
+AUTHORITATIVE BASELINE
+Prior Q-S13R was terminal PARTIAL / AMEND-HOLD on exact QB17R because of two bounded defects:
+1. Welcome rotor accessibility/autoplay contract.
+2. Student-tour `How this works` reveal moving unrelated navigation.
+
+INDEPENDENT IDENTITY / STATIC EVIDENCE
+- Exact current Drive bytes independently downloaded and rehashed: size and SHA-256 match General CF-0047 release exactly.
+- APP_VERSION and SG_R6_BUILD both match v7.20-cf0042-qb17r2-stuart-defect-repair.
+- 4 executable inline JavaScript blocks independently passed `node --check`.
+- Component registry parses with registry_rev 11 and 237/237 unique component IDs; registry build matches v7.20-cf0042-qb17r2-stuart-defect-repair.
+- QB17R→QB17R2 line diff is bounded to 8 replacement regions: one QB17R CSS line, three build/version identifiers, learn-tour markup, learn-tour disclosure binding, welcome/rotor implementation, and registry build identity. No unrelated broad rewrite was observed.
+
+GATE 1 — WELCOME ROTOR ACCESSIBILITY / INTERACTION
+PASS.
+Independent Chromium on the exact verified HTML bytes confirmed:
+- Stable semantic content exists separately as `#qb17rRotorSummary`, an ordered 3-item summary containing all three loop meanings.
+- Moving visual layer `#qb17rRotor` is `aria-hidden="true"` and has no `aria-live`; the manual button references the stable summary with `aria-describedby="qb17rRotorSummary"`.
+- Normal-motion autoplay still advances when the user has not engaged: visible face 0→1 after about 1.12 s.
+- Focusing `#qb17rRotorNext` before autoplay fires cancels autoplay: visible face stayed 0→0 for 2.2 s while focus remained on the button.
+- Pointer interaction with the rotor panel cancels autoplay: visible face stayed 0→0 for 2.2 s.
+- Manual advance still works after engagement: visible face 0→1 on button activation.
+- Reduced-motion context remains static under autoplay: visible face stayed 0→0 after 1.12 s, while manual advance still worked 0→1.
+
+GATE 2 — `HOW THIS WORKS` SPATIAL / FOCUS CONTRACT
+PASS.
+Independent Chromium on the exact verified HTML bytes confirmed at 1024 px, 820 px, 390 px and 320 px widths:
+- Disclosure is a fixed-position dialog (`#tourHowWorks`) rather than a normal-flow reveal.
+- Opening it caused 0.0 px document-coordinate movement of unrelated `#tourNext` navigation at every tested width.
+- Normal 1024 px: Next top 749.890625→749.890625 px.
+- Reduced-motion 1024 px: same 0.0 px shift.
+- 390 px: Next top 1231.34375→1231.34375 px.
+- 320 px and 820 px: 0.0 px shift.
+- Dialog stayed within the tested viewport bounds.
+- Explain control exposes `aria-controls="tourHowWorks"` and `aria-expanded` correctly.
+- Opening moves focus to the dialog.
+- Escape dismisses the dialog, sets `aria-expanded="false"`, and restores focus to `#tourDemoExplain`.
+- Close button dismissal also restores focus to `#tourDemoExplain`.
+- Reduced-motion path preserves the same zero-shift/focus behaviour.
+
+BOUNDED UNCHANGED-REGRESSION CONFIRMATION
+PASS.
+- Exact in-memory runtime produced no page errors and no console errors during the tested flows.
+- No unexpected network requests were emitted by the exact in-memory candidate during the tested routes.
+- Representative unchanged routes remained renderable without horizontal overflow at tested 1024 px and 390 px widths: Courses, Start, Instructor workspace, Instructor tour, PFP207 Overview and Profile Settings.
+- Welcome also had 0 px horizontal overflow at 320 px and 820 px.
+- Previously fixed Q-S13R false-positive areas were not changed by QB17R2 outside the bounded repair regions; the diff did not introduce unrelated product logic changes.
+
+INDEPENDENCE
+Bob's terminal 42/42 verification was not used as acceptance authority. The disposition above comes from Stuart's independent provider-byte identity check, static checks and Chromium runtime probes against the exact General-released candidate.
+
+HOLDS / NOT CLAIMED
+- Physical iPad/Safari/WebKit behaviour.
+- VoiceOver and physical hardware-keyboard acceptance.
+- Native touch/Pencil/pointer feel.
+- Hosted-origin/reload/localStorage persistence.
+- Backend/auth/Supabase/live AI/OCR/real roster/provider/deploy/canonical promotion.
+
+TERMINAL RESULT
+PASS for Q-S13R2 bounded re-acceptance. Both defects that held Q-S13R are cleared on the exact released QB17R2 candidate, and the compact unchanged-regression scope found no new blocker.
+
+BOUNDARY
+This PASS does not advance Slice 3 by itself. Per current General release/queue, Slice 3 remains blocked until Nathan reviews the corrected HTML and General issues a newer Slice 3 release. Stuart performed no product mutation, promotion, backend/auth/Supabase/provider/deploy/canonical action.
