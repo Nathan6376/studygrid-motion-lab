@@ -1,36 +1,25 @@
 STUDYGRID — BOB WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-09-30 21:14 ET
+Updated: 2026-09-30 21:23 ET
 Queue owner: General
 Worker: Bob / CF-0042
 
 PULL RULE
-When Nathan directly tells Bob to do his queued work, refresh current lifecycle and this queue, then execute the first eligible unclaimed item and continue through additional eligible items in order until the next item is dependency-blocked, requires Nathan's decision, overlaps active work, or crosses a safety/authority boundary. Prefer executable critical-path work; then named-consumer feeder prep. Do not create filler, duplicate another active lane, mutate an unaccepted product baseline, or do research without a named downstream consumer. Persist STARTED/PARTIAL/BLOCKED/DONE and return durable technical results directly to General.
+When Nathan directly tells Bob to do queued work, refresh lifecycle and this queue, then execute the first eligible unclaimed item. Never invent filler or mutate an unreconciled product direction. Return durable technical results directly to General.
 
 CURRENT CONTEXT
-- Exact accepted Slice 2 baseline: StudyGrid-CF0042-QB15-professor-home-scale.html / Drive 1CSN0jYJHnYbk2kpLAz8HNg4BSYELbe6U / SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf / 996820 bytes / v7.18-cf0042-qb15-professor-home-scale.
-- Stuart Q-S11: DONE / PASS 145/145 within tested scope.
-- Q-B16P Slice 3 prep: DONE / 17/17 self-test / no product mutation.
-- Nathan completed the first owner visual review at 21:13 ET. He likes Professor Home, Your classes, students/active classes and the overall direction, but identified bounded visible/interaction corrections that must land before further visible Slice 3 expansion.
-- Authoritative owner-feedback packet: routes/OWNER_FEEDBACK_20260930_2113_SLICE2_REFINEMENT.txt @ commit 0e49c95a943656da544c3ab3313bf3987dc45c89.
+- Accepted Slice 2 baseline remains StudyGrid-CF0042-QB15-professor-home-scale.html / SHA-256 48b16df1c05b1a62cf7af174d3a48b3609ae79c2b39edfbe8c6046cbe48c46cf.
+- Nathan likes Professor Home / Your classes / active-class direction but supplied additional screenshots and material Add Class/onboarding corrections at 21:13–21:23 ET.
+- Exact new architecture intake packet: routes/OWNER_FEEDBACK_20260930_2123_ADD_CLASS_ONBOARDING_REDESIGN.txt @ commit b93ed198f5130f28df7274102d6eace9a5328cb2.
+- Relay Architecture must consume/adjudicate that packet before visible implementation resumes, because it changes onboarding, institution/program/term ownership, catalogue source boundaries and Add Class information architecture.
 
 Q-B17R — OWNER-FEEDBACK SLICE 2 REFINEMENT
-Eligibility: AVAILABLE NOW if no newer Bob item is STARTED.
-Purpose: implement only Nathan's 21:13 ET owner-feedback corrections on the exact accepted Slice 2 baseline before any Slice 3 expansion.
-Required scope: consume the owner-feedback packet exactly. Fix the Feedback hover/focus boxiness; reproduce and fix the non-clickable Dusk control; move persistent label/colour controls behind Edit and reduce redundant card information; enrich course-card accents/hover subtly; add gateway-backed undo for resolved attention; make instructor mode instructor-only rather than exposing learner Study/classes/pick-up surfaces; preserve accepted behaviours not contradicted by owner feedback.
-Verification: pointer+keyboard theme switching and persistence; feedback hover/focus visual bounds; edit open/close/focus; colour/label persistence without permanent form clutter; reduced-motion-safe card hover; resolve→undo→resolve lifecycle with no duplicate history; instructor navigation/surface isolation; inherited focus/responsive/registry/gateway regression smoke.
-Return: NEW provider-visible non-canonical candidate with exact ID/SHA/bytes/version and evidence directly to General.
-Boundaries: no Slice 3 feature expansion, backend/auth/Supabase/network/provider/deploy, Blender/A-C/motion-lane work or canonical promotion.
+Eligibility: BLOCKED pending Relay Architecture adjudication consumed by General.
+Existing required corrections remain: Feedback hover geometry; Dusk interaction; edit-only label/colour controls; restrained card colour/hover; resolve undo; instructor-only navigation/surfaces.
+New material owner requirements are in the exact architecture packet and must not be guessed or independently implemented before General republishes the reconciled scope.
 
-Q-B17 — SLICE 3: SET-UP ONCE / ASSESSMENT AUTOFILL / HUMAN TIMING + SEAM CLEANUP
-Eligibility: BLOCKED until Q-B17R independently passes Stuart acceptance AND Nathan reviews the corrected owner-visible HTML and General explicitly releases Slice 3.
-Purpose once released: implement owner-approved Q-B12 A2+A3+A4 using completed Q-B16P and bounded frontend-safe Claude seam corrections.
-
-Q-B18P — SLICE 4 LARGE-ROSTER + LOCAL ENROLMENT PREP
-Eligibility: BLOCKED until Q-B17 is released and terminal; may become feeder prep only if no higher-priority build/correction is available.
-
-Q-B3 — APPLY OWNER-SELECTED HINGE VARIANT
-Eligibility: BLOCKED until Nathan selects A or C and General publishes the exact selected-candidate pointer.
+Q-B17 — SLICE 3
+Eligibility: BLOCKED until Q-B17R is independently accepted and Nathan reviews the corrected HTML.
 
 STOP CONDITION
-Execute Q-B17R now. Do not start Slice 3 visible expansion until the refinement is independently accepted and Nathan sees the resulting HTML. No filler.
+Do not start product mutation until General releases a post-Architecture reconciled Q-B17R contract. No filler.
