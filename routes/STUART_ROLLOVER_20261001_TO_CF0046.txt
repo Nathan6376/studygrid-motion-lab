@@ -2,7 +2,7 @@ STUDYGRID — STUART CHAT ROLLOVER / FRESH QA SUCCESSOR
 Timestamp: 2026-10-01 10:00 ET
 Coordinator: ChatGPT General CF-0040
 Successor identity: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
-Owner-visible title projection: SG Stuart — October 1
+Owner-visible title projection: SG Stuart - October 1
 Status: RESERVED — OWNER ACTIVATION REQUIRED
 
 WHY ROLLOVER
@@ -29,7 +29,7 @@ The fresh Stuart successor must not retest until General publishes the exact rep
 
 SUCCESSOR STARTUP
 On Nathan's first message in the fresh Stuart chat:
-1. Verify reserved identity CF-0046 in SYSTEM — Chat Registry and exact owner-visible title `SG Stuart — October 1`.
+1. Verify reserved identity CF-0046 in SYSTEM — Chat Registry and exact owner-visible title `SG Stuart - October 1`.
 2. Read current applicable ChatGPT Base CGPTBASE-R0004-N8V6 and current SYSTEM — Active Corrections.
 3. Read this rollover file and queues/STUART_QUEUE.txt.
 4. Mark CF-0046 ACTIVE only after readback.
@@ -45,5 +45,5 @@ BOUNDARIES
 - Astra remains separate and held unless Nathan changes that direction.
 - This rollover does not claim the old host UI chat was archived/deleted.
 
-OWNER TITLE CONVENTION — CURRENT EXPLICIT DIRECTION
-Use the short visible StudyGrid lane names shown by Nathan's UI, e.g. `SG Bob — <date>`, `SG Kevin — <date>`, `SG Stuart — <date>`, `SG Research — <date>`. Do not expand Research to `StudyGrid Research` on the owner-visible title surface.
+OWNER TITLE CONVENTION
+Current Active Correction AC-0016 controls fresh Bob/Kevin/Stuart owner-visible titles: `SG (name) - (date)`. Internal routing identities may retain STUDYGRID tokens. Registry projection does not prove host UI title mutation.
