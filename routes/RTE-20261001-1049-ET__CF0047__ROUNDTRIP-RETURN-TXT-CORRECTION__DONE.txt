@@ -1,0 +1,11 @@
+STATUS: DONE
+Timestamp: 2026-10-01 10:49 ET
+Actor: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+
+RESULT
+- Existing exact bug family confirmed: RELAY-BUG-0007.
+- Oct 1 CF-0047→Stuart recurrence appended to RELAY-BUG-0007 and provider-read back.
+- AC-0017 deferred-continuation exception retired under Nathan's current correction; provider readback confirmed. AC-0008 again controls expected-return worker round trips: activation reply includes a labelled return/continuation TXT in the same response.
+- Stuart Q-S13R2 terminal DONE/PASS consumed from routes/STUART_20261001_1043_QS13R2_QB17R2_REACCEPTANCE_PASS.txt @ ea93ac75f634df4569b5d48adce04c8d2d70d272.
+- Exact corrected HTML remains StudyGrid-CF0042-QB17R2-stuart-defect-repair.html / Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46 / 1,063,586 bytes / SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab.
+- User-visible raw HTML file staged for Nathan's owner review; Slice 3 remains held pending that review.
