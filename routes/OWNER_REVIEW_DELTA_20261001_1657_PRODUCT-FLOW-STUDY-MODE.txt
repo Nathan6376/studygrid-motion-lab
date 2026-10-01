@@ -1,0 +1,79 @@
+STUDYGRID — OWNER REVIEW DELTA — PRODUCT FLOW / STUDY MODE / NAVIGATION / DEVELOPMENT METHOD
+Captured by: General CF-0047
+Owner source: Nathan direct, 2026-10-01 ~16:57 ET
+Status: DURABLE OWNER REVIEW INPUT / IMPLEMENTATION HELD
+Exact current base: StudyGrid-CF0042-QB17R2-stuart-defect-repair.html | Drive 1k0d69ZOrgs4NRRORKBmIwOR1Q0mE46 | SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab | v7.20-cf0042-qb17r2-stuart-defect-repair
+
+A. OWNER PRODUCT-DEVELOPMENT METHOD — CONTROLLING FOR THIS REVIEW
+Nathan explicitly rejects build-first UI work. For a material product/UI change:
+1. THINK / DEFINE PURPOSE — What is this feature/surface/control supposed to accomplish? What user problem or task does it serve? What should the person understand/do next?
+2. RESEARCH — Evidence on the user problem, information architecture, interaction pattern, accessibility, motion/transition pattern and implementation constraints. Research both how to convey the purpose and how to implement it correctly.
+3. DIVERGE / DESIGN — Produce multiple materially different design concepts/options, not one immediate patch.
+4. COMPARE / SELECT — Evaluate the alternatives against the purpose, evidence, owner design philosophy and technical/accessibility constraints; pick/reconcile the strongest direction.
+5. IMPLEMENT — Only after the design direction is selected; smallest coherent bounded implementation rather than accumulated local patches.
+6. INDEPENDENT QA / ACCEPTANCE — Verify behaviour, regressions, accessibility, motion/route continuity and exact acceptance criteria before owner review/release.
+Nathan explicitly directed General to use four available agents in parallel on distinct feeder work instead of serially using one worker for everything.
+
+B. BRAND / WELCOME COPY + LOOP
+- Owner likes: “Your class, easy to learn.” Keep it high-value rather than repeating similar slogans everywhere.
+- Owner likes: “One common path from class material to useful practice.”
+- “Show next step” / the landing step sequence must automatically cycle continuously with a polished, purposeful animation. Research which transition best communicates the sequence and how to implement it. Do not choose an animation by taste alone; connect motion to hierarchy/continuity and preserve reduced-motion behaviour.
+- Prior owner delta remains: 1 → 2 → 3 cycles continuously; StudyGrid loop under the relevant middle visual; exact visual referred to by prior speech ambiguity remains pending visual reconciliation.
+
+C. SIGNED-IN ROOT / NAVIGATION / GENERAL-STUDY SCOPE
+- Once signed in, the user should not have a Back control that walks them out through “Your Classes” → “How do you want to add your first class?” → public/first-start. Signed-in root should use a meaningful home/current-workspace model; where account exit is needed use Sign out, not a pseudo-Back to onboarding.
+- “Your Classes” currently feels empty/unnecessary as a destination. Reconsider whether it is a true home/root, a transition page, or should be merged into a more useful signed-in Home.
+- StudyGrid remains class-centred, but the product should retain a path to study general material without requiring a formal class. Research the information architecture/product model for “class-based study” + “general/self-directed study” without making the first-start experience confusing.
+- Current duplicated/global navigation feels excessive in places (e.g. Courses/Study/Profile at top plus large course context/left rail). Reduce persistent chrome and reclaim space while retaining orientation.
+- The product must provide a chronological/understandable next step. Nathan repeatedly reports not knowing where to start studying or what the next action is.
+
+D. NAV CHROME / LABELS / VISUAL TREATMENT
+- Feedback navigation treatment is visually inconsistent: square highlight/count treatment feels strange. The count is not important enough to dominate. Reconsider/remove the zero-count badge unless it conveys genuinely useful state.
+- “Professor Home” should be “Home.”
+- Hover gloss is liked, but should stay near/across the coloured edges rather than washing across the whole component; current full-surface gloss can be excessive.
+- Remove nonessential controls. Do not expose every possible action just because it exists.
+- “More study settings” should not hide ordinary settings merely to reduce surface count; settings should be directly discoverable where expected.
+- Class-code click currently produces an unattractive sharp green square/focus treatment. Do NOT remove keyboard focus visibility; redesign it into a consistent, on-brand visible focus treatment and use pointer-vs-keyboard focus behaviour appropriately.
+- Repeated sharp white/green square/border artifacts are disliked and should be audited as a family, not fixed one by one.
+
+E. INSTRUCTOR / STUDY WORKSPACE COHERENCE
+- Instructor area currently lets Nathan fall into Study in a way that makes role/context unclear. Research and redesign cross-role/cross-mode transitions so the user knows whether they are acting as instructor, learner, or simply studying the selected material.
+- Current class top navigation and instructor tabs have good pieces, but the collection (“Overview, Students, Study sets, Announcements, Sources, Achievements…” etc.) may be overfull. Research which destinations are primary, which should be contextual/secondary, and which can be removed.
+- “Class contribution / recognise meaningful progress” intent is not rejected, but the current presentation can be improved and should be researched against its actual job.
+
+F. STUDY-SET REVIEW QUEUE
+- 15-question review concept is liked.
+- “Approve and next” is liked as a fast workflow, but its target/button position must remain stable; Nathan should not have to chase a moving button after each approval.
+- At the last item, “Approve and next” currently appears to do nothing. It needs an explicit terminal/finalisation state/page that communicates completion and the next meaningful action.
+- Draft / Ready / Published / Held / All need clearer, faster status recognition and filtering. The status model must be understandable at a glance and tied to real state, not decorative badges.
+
+G. LEARN / COURSE OVERVIEW / CONTROL STABILITY
+- The course overview with “how to study”/Scenario Lab on the left and course context is liked, but the persistent left area currently consumes too much space and needs purpose-based reduction.
+- Different mode buttons (Learn/Test/Support etc.) cause major page/layout movement. This is explicitly frustrating. Same-level mode switching should preserve anchor/layout and keep persistent controls stable; do not move the user’s target around unnecessarily.
+- Schedule/filter controls and other surface shifts contribute to the sense that the interface is physically unstable.
+- “Continue learning” is liked.
+- “Quick review / Focus session / Deep session” currently lack clear purpose. Nathan cannot tell what each is for, how a session unfolds, why one should be chosen, or how it differs from Learn/Notes/Questions. Do not keep these as labels first and invent explanations later. Define the study-session jobs first, then name/design them—or remove them if they do not serve a distinct job.
+- “Browse lessons”, Learn, Notes, Questions and other adjacent choices create too many starting points. Redesign around a clear recommended next step plus secondary exploration.
+
+H. LESSON / REVIEW STATE
+- Lesson pages can feel thin; “Mark as reviewed” currently adds only a tiny green border and does not create a meaningful progression state. Research what “reviewed” should actually mean, whether it belongs in the model, what it changes, and what useful next step it unlocks.
+- “Jump to next section” simply scrolling can be acceptable only if the overall session model makes that progression obvious; current behaviour is not enough to solve orientation.
+- Different class tabs across the top are liked; preserve the easy class switching while avoiding duplicated course identity/chrome.
+
+I. PRACTICE / QUESTION EXPERIENCE
+- “Practice this class” / source-context practice direction is promising, but the current experience often feels like an unexplained quiz rather than teaching.
+- Nathan wants a learning experience that teaches first/along the way, not a dump of quiz questions with dense after-the-fact metadata.
+- Current post-answer block is overloaded/confusing: “Your answer / Correct answer / Confidence / …” and related steps are too much and not clearly prioritised.
+- Confidence treatment is visually poor (e.g. whole control going green); redesign state representation.
+- Multi-select question observed: “Choose all three parts…” could not actually select multiple answers. Treat as a functional defect requiring source reproduction before implementation.
+- Question example containing “McCue” effectively gives away an answer that references R v McCue. Audit question wording for answer leakage.
+- Another observed source/wording phrase from speech was “Canascape”; exact intended legal term is not assumed here. Verify against the actual question/source before correcting anything.
+- Seeds/reward should collect automatically when earned; do not require a separate collect action. Current “Could not save seeds, nothing was collected” shows the disconnected/runtime state and should not be treated as a successful reward path.
+- Reward animation/state must not become the learning task; it is feedback after evidence-based progress.
+
+J. COMPLETION / DIRECTIONAL FLOW
+- End-of-session actions such as “Review missed questions / View learning progress / Back to course” currently feel like retreating/backtracking. Completion should feel like forward progress: clear accomplishment, what changed, then a recommended next step, with return/navigation still available but not framed as undoing progress.
+- The entire learner experience should answer: Where am I? What am I doing? Why am I doing it? What happens next? What have I completed?
+
+K. IMPLEMENTATION HOLD
+Nathan is still reviewing and explicitly expects this to take time. Do not mutate the accepted frontend candidate from this tranche yet. Research, architecture, design alternatives and exact-source feasibility work may proceed in parallel. General synthesises only after the feeder returns and after Nathan finishes/pauses the current owner review batch enough to define the next bounded release.
