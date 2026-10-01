@@ -1,0 +1,827 @@
+STUDYGRID ENGINE V1 — FIRST PRINCIPLES DRAFT 1
+Owner: Nathan
+Prepared by: ChatGPT General CF-0047
+Timestamp: 2026-10-01 19:31 ET
+Status: SYNTHESIZED DESIGN CANDIDATE / NOT IMPLEMENTED / PENDING CLAUDE ENGINEERING ATTACK + OWNER REVIEW
+
+INPUTS RECONCILED
+- Draft 0: design/STUDYGRID_ENGINE_V1_FIRST_PRINCIPLES_DRAFT_0.txt @ e980050f5d73dc0ef189288f11dc9ff1d1337689
+- Research CF-0044 adversarial review @ 93dbc55c00579128a2b96cbb44c8094c5ff9b007
+- Sol Q-SOL3 product-design synthesis / divergence gate, completed 2026-10-01
+- Gemini creative adaptive UX return, preserved at routes/GEMINI_20261001_1918_STUDYGRID_ENGINE_V1_CREATIVE_ADAPTIVE_UX_RETURN.txt and General reconciliation @ d09ee92ab06afbe57e3207eebe2ac69a375ddfc4
+- Current owner direction: first-principles design, domain-neutral engine, research-first, non-timer-centric adaptation, one clear next action, learner override, non-shaming assistance, multiple agents used adversarially, no implementation yet.
+
+CORE DRAFT-1 CHANGE
+Draft 0 collapsed too many different kinds of things into clean-sounding primitives.
+
+Draft 1 separates them:
+
+OBSERVATION = what actually happened.
+EVIDENCE INTERPRETATION = what that observation may mean for a particular claim.
+LEARNER ESTIMATE = a derived, uncertain model output.
+PEDAGOGICAL NEED = a hypothesis about what may help next.
+POLICY DECISION = the action StudyGrid chooses under explicit constraints.
+
+These layers MUST remain distinguishable in data, code, explanation and audit.
+
+======================================================================
+0. PRODUCT PURPOSE
+======================================================================
+
+StudyGrid is a constrained learning decision system.
+
+Its job is NOT to pretend it knows a mathematically unique “best” action.
+Its job is to select a DEFENSIBLE NEXT LEARNING ACTION from eligible options using:
+- the actual course/material structure;
+- what the learner has actually done;
+- explicit evidence interpretations;
+- uncertainty;
+- prerequisite/readiness relations;
+- retention evidence where valid;
+- assessment/deadline context;
+- current activity/assessment rules;
+- learner-declared goals or constraints;
+- anti-repetition and learner-agency rules.
+
+The system then:
+1. shows one primary next action;
+2. gives a simple reason;
+3. allows an appropriate override;
+4. records exactly why the decision happened;
+5. observes what happens next;
+6. updates derived estimates without rewriting history.
+
+CORE QUESTION
+“What is a defensible next action for this learner, in this course context, under these rules, based on this evidence — and why?”
+
+This is more honest and more testable than claiming “the best thing to learn next.”
+
+======================================================================
+1. COURSE / KNOWLEDGE MODEL — DO NOT FORCE ONE UNIVERSAL ATOM
+======================================================================
+
+Draft 0’s single Learning Target primitive is SPLIT.
+
+1A. SOURCE ARTIFACT
+A versioned source document/material used by the course or learner.
+Examples: syllabus, textbook chapter, lecture material, instructor handout, policy, worked solution, personal uploaded notes.
+
+1B. CONTENT ASSERTION / PROCEDURE
+A versioned proposition, rule, step, definition, relationship or procedure supported by one or more source spans.
+It records:
+- source/version;
+- source span or provenance;
+- authority class;
+- course/jurisdiction/scope where relevant;
+- effective/supersession state;
+- approval status.
+
+“Course truth” means canonical-for-this-course/version, not universal truth.
+
+1C. CURRICULUM OUTCOME / COMPETENCY
+An official or instructor-approved expectation about what the learner should know or be able to do.
+Use stable identifiers; CASE-style interoperability may be useful later.
+
+1D. LEARNING CLAIM
+A StudyGrid-operational statement that can be supported or challenged by evidence.
+Example shapes:
+- distinguish X from Y under condition Z;
+- solve this class of equation;
+- explain principle Q;
+- sequence procedure P;
+- apply rule R to a novel scenario.
+
+1E. KNOWLEDGE COMPONENT (OPTIONAL)
+A model-level hypothesis used only when a learner model benefits from a finer cognitive decomposition.
+A KC is NOT automatically identical to a curriculum outcome or learning claim.
+It may change as evidence shows the original decomposition was poor.
+
+1F. RELATION EDGE
+Typed, versioned many-to-many relation between objects.
+Possible relation types:
+- supports;
+- assesses;
+- requires/prerequisite;
+- part-of;
+- related-to;
+- supersedes;
+- derived-from.
+
+Prerequisite relation status must distinguish at least:
+- hard/explicitly required;
+- soft/hypothesized;
+- informational.
+
+No single bad inferred edge may silently become an absolute learner block.
+
+PRODUCT LANGUAGE
+“Learning Target” may remain useful in editor/UI language as an umbrella term. It is NOT the one backend atom.
+
+======================================================================
+2. TASK / ASSESSMENT CONTRACT
+======================================================================
+
+A TASK/ITEM is a versioned thing a learner is asked to do.
+It carries:
+- interaction type;
+- response schema;
+- scoring/rubric definition;
+- source/content provenance;
+- mapped learning claim(s)/optional KC(s);
+- intended evidence role;
+- task family/variant identity;
+- support/feedback rules;
+- assessment purpose/stakes policy references.
+
+DOMAIN-NEUTRAL INTERACTION FAMILIES
+At minimum the internal design must allow:
+- single select;
+- unordered multi-select;
+- explicit sequence/order;
+- match/pair;
+- categorize;
+- short/constructed response;
+- numeric/formula where supported;
+- hotspot/diagram where supported later.
+
+Unsupported constructs MUST NOT silently fall back to ordinary multiple choice.
+
+ORDERING
+If order is the construct, say so explicitly and provide a clear sequencing interaction. Drag may be optional, but equivalent move-up/down/direct-position controls are required.
+
+======================================================================
+3. CLAIM → EVIDENCE → TASK CONTRACT
+======================================================================
+
+Every learning claim needs an explicit EVIDENCE CONTRACT.
+
+Minimum contract:
+- claim ID + version;
+- task/item ID + version;
+- intended evidence role: direct / partial / supporting / diagnostic-only;
+- observed response/artifact;
+- scoring/rubric + scorer/version;
+- response conditions: attempt, delay, hints, examples, feedback/support already received;
+- relevant accommodation/accessibility context only where necessary for validity;
+- source/course version;
+- task→claim/KC mapping version and rationale;
+- known validity/confound flags;
+- learner-estimator/inference-rule version.
+
+WHY
+A correct recognition item is not automatically evidence of application.
+A coached success is not identical to unaided retrieval.
+A repeated identical item can measure prompt memory rather than transferable knowledge.
+
+======================================================================
+4. IMMUTABLE OBSERVATION LEDGER
+======================================================================
+
+An OBSERVATION / ATTEMPT stores what happened, not what StudyGrid wishes it meant.
+
+Examples:
+- task presented;
+- response committed;
+- raw/scored result;
+- rubric output;
+- support/hints/examples used;
+- confidence supplied before feedback, if enabled;
+- teaching intervention shown;
+- delayed retrieval attempt;
+- instructor/assessor external observation where appropriate.
+
+OBSERVATIONS MUST NOT CONTAIN AN INTRINSIC “MASTERY WEIGHT.”
+
+A later model may reinterpret an old observation without rewriting the historical event.
+
+NOT MASTERY EVIDENCE BY ITSELF
+- page opened;
+- lesson viewed;
+- completion checkbox;
+- dwell time;
+- scrolling;
+- streak;
+- override;
+- non-response.
+
+======================================================================
+5. VERSIONED EVIDENCE INTERPRETATION
+======================================================================
+
+An EVIDENCE INTERPRETATION links one or more observations to one or more learning claims/KCs.
+
+It records:
+- inference rule/model version;
+- mapping version;
+- evidence channel/construct;
+- validity/confound status;
+- support conditions;
+- whether evidence is comparable with other evidence channels;
+- uncertainty/quality reason.
+
+CONFLICT RULE
+Do not arbitrarily average contradictory observations.
+
+If recognition is strong but application is weak, preserve the difference.
+If evidence conflicts, uncertainty widens or the state becomes CONFLICTING EVIDENCE.
+Only an explicit versioned inference model may combine channels.
+
+======================================================================
+6. LEARNER ESTIMATE — DERIVED, TIME-BOUND, UNCERTAIN
+======================================================================
+
+StudyGrid does not store “learner truth.”
+It computes DERIVED LEARNER ESTIMATES for learning claims/KCs.
+
+Minimum V1 estimate should be simple and inspectable:
+- evidence history by channel;
+- current/delayed performance summaries;
+- recency;
+- task-family diversity;
+- support/coaching context;
+- contradiction state;
+- uncertainty reason;
+- model/version/time.
+
+DO NOT START V1 WITH BKT + PFA + IRT + CDM + FSRS + deep KT + bandits.
+
+V1 should begin with a conservative, channel-aware estimate and optionally ONE interpretable baseline model where the data structure genuinely fits.
+
+UNCERTAINTY REASON CODES
+At minimum:
+- UNMEASURED;
+- SPARSE;
+- CONFLICTING;
+- INVALID_OR_LOW_QUALITY;
+- MAPPING_OR_SOURCE_UNCERTAIN;
+- MODEL_UNSUPPORTED_OR_OUT_OF_DOMAIN.
+
+NO FAKE PRECISION
+Do not expose “83% mastered” merely because a model can output 0.83.
+
+======================================================================
+7. EXPOSED / DEMONSTRATED / MEMORY
+======================================================================
+
+Keep the semantic distinction, change the data model.
+
+EXPOSED
+Derived from observed instructional exposure. Exposure is NOT competence.
+
+DEMONSTRATED
+A bounded claim:
+“Learner demonstrated X under Y conditions at time T, based on evidence E, with uncertainty U.”
+
+RETENTION / MEMORY
+There is NO universal durable `retained=true` field.
+
+Where the construct supports a memory model, StudyGrid may maintain a time-indexed retrievability/stability estimate informed by delayed evidence.
+For procedural, transfer-heavy or physical skills, delayed authentic performance may matter more than a recall curve.
+
+If the model does not fit the construct, abstain from pretending it does.
+
+======================================================================
+8. MISCONCEPTION HYPOTHESES
+======================================================================
+
+A suspected misconception is its own versioned hypothesis, not a learner fact.
+
+It must record:
+- supporting observations;
+- competing explanations;
+- confidence/uncertainty;
+- source/rubric/version;
+- whether deterministic rubric evidence or AI-assisted classification produced it.
+
+A misconception hypothesis may influence candidate actions, but it must not create a self-confirming loop.
+
+======================================================================
+9. CONTEXT AND POLICY ARE SEPARATE FROM LEARNER STATE
+======================================================================
+
+CONTEXT FACTS
+- course/syllabus position;
+- source/content versions;
+- actual assessment/deadline facts;
+- learner-declared goal/priority;
+- recent study/recommendation history;
+- optional current time/effort constraint;
+- available content/tasks.
+
+Time is OPTIONAL CONTEXT, not the center of the product.
+
+ASSESSMENT / ASSISTANCE POLICY
+Do not use one overloaded “activity mode” enum.
+Track independent dimensions:
+- assessment purpose;
+- stakes/consequence;
+- assistance policy;
+- feedback timing/policy;
+- scoring policy;
+- accessibility/accommodation policy.
+
+PRACTICE
+Adaptive teaching/help can be allowed.
+
+DIAGNOSTIC
+Assistance may be restricted/delayed to preserve measurement.
+
+GRADED / PROTECTED ASSESSMENT
+No coaching that invalidates the assessment. Authorized accessibility/accommodation support remains separate from generic tutoring help.
+
+======================================================================
+10. PEDAGOGICAL ACTION MODEL
+======================================================================
+
+StudyGrid chooses among pedagogical actions, not just questions.
+
+Core action families:
+- TEACH;
+- EXPLAIN;
+- WORKED_EXAMPLE;
+- GUIDED_PRACTICE;
+- RETRIEVE;
+- REVIEW;
+- REMEDIATE;
+- ASSESS;
+- ADVANCE;
+- PAUSE / COMPLETE.
+
+These are PEDAGOGICAL ACTION TYPES.
+They are separate from:
+- the exact task/content instance;
+- navigation/session control;
+- scoring state;
+- UI presentation.
+
+======================================================================
+11. NEXT-ACTION POLICY — PROPRIETARY CENTER
+======================================================================
+
+The proprietary center is not one magic model.
+It is the versioned decision policy that combines the course model, learner evidence, uncertainty, retention, policy constraints and current context into a defensible next action.
+
+V1 SHOULD NOT USE A FAKE-PRECISE “EXPECTED LEARNING VALUE” NUMBER.
+
+V1 POLICY SHAPE
+
+STEP 1 — GENERATE CANDIDATES
+Produce possible actions that are actually available for the learner/course/context.
+
+STEP 2 — APPLY HARD CONSTRAINTS
+Examples:
+- protected assessment forbids coaching actions not allowed by policy;
+- unavailable/inaccessible content cannot be recommended;
+- generated/unapproved course assertions cannot silently support canonical instruction;
+- item/task must have an explicit current claim mapping;
+- hard prerequisite rule applies only when its authority/status justifies it;
+- avoid immediate identical-item repetition used merely to inflate evidence;
+- learner privacy/opt-out/access rules must be respected.
+
+STEP 3 — APPLY SMALL TRANSPARENT PRIORITY RULES
+The exact order is a V1 hypothesis and must be testable. Candidate factors may include:
+- required prerequisite/readiness gap;
+- whether material has actually been introduced;
+- repeated valid misconception/error evidence;
+- evidence uncertainty/undercoverage;
+- delayed review/retention risk where valid;
+- real assessment/course relevance/urgency;
+- learner-declared goal;
+- recent repetition/diversity;
+- optional effort/time as a tie-breaker/constraint.
+
+Do NOT call these factors causal benefits unless evidence supports that claim.
+
+STEP 4 — SELECT ONE PRIMARY ACTION
+If one action is clearly preferred under the current rules, select it.
+If several are similarly defensible, use transparent tie-breakers rather than pretending certainty.
+
+STEP 5 — PRODUCE REASON TRACE
+Record:
+- candidate actions;
+- exclusions and reasons;
+- learner-estimate snapshot/version;
+- relevant evidence references;
+- context/policy facts;
+- rule/model/config versions;
+- selected action;
+- uncertainty reason;
+- alternatives if applicable.
+
+STEP 6 — ALLOW LEARNER OVERRIDE
+Override is agency, not evidence of mastery, motivation, laziness or disengagement.
+
+STEP 7 — OBSERVE OUTCOME
+The resulting learner interaction enters the observation ledger. It does not retroactively prove the original recommendation was causally optimal.
+
+======================================================================
+12. LOW-STAKES STRUGGLE / NUDGE CONTRACT
+======================================================================
+
+OWNER INTENT
+During low-stakes practice/quiz work, StudyGrid may notice a real pattern of struggle and quietly offer a way out or a better learning action without making the learner feel bad.
+
+DRAFT-1 PRODUCT CONTRACT
+- non-blocking;
+- inline where possible;
+- easy to ignore;
+- neutral, non-shaming language;
+- no “you failed” framing;
+- one useful offer, not repeated nagging;
+- learner can keep going;
+- support action is explicit: example, explanation, guided practice, prerequisite review, later review, etc.
+
+POSSIBLE SURFACE
+“This looks worth another angle.”
+[Show an example] [Break it down] [Keep going]
+
+Exact copy is not approved; this demonstrates the interaction contract.
+
+DO NOT TRIGGER CORE ADAPTATION FROM
+- hover time alone;
+- rapid deletion/retyping alone;
+- dwell time alone;
+- pointer movement;
+- generic “took too long” thresholds.
+
+Those signals are too confounded for learner-state authority in V1.
+
+ASSESSMENT SHIELD
+When policy says the activity is protected/graded, coaching actions disappear or are disabled according to policy. The UI can make this contract visually obvious, but backend policy is authoritative.
+
+======================================================================
+13. LEARNER AGENCY — HARD PRODUCT/POLICY INVARIANT
+======================================================================
+
+StudyGrid should normally show:
+- ONE strongest recommended action;
+- a short reason;
+- low-emphasis alternatives where useful;
+- a simple escape/override.
+
+The learner should not have to design the whole study plan.
+But they must be able to escape a misguided or repetitive recommendation.
+
+OVERRIDE RULE
+An override does NOT directly update mastery, motivation, engagement or instructor risk state.
+Optional override reason, if collected, is user-declared context and purpose-limited.
+
+======================================================================
+14. PRODUCT SHELL IMPLICATION — SOL + GEMINI RECONCILIATION
+======================================================================
+
+Engine v1 does not dictate all navigation, but the strongest current product synthesis is:
+
+PRODUCT SKELETON
+- durable signed-in Home/current workspace;
+- class and personal study are both supported contexts;
+- one selected context strip/selector;
+- shallow context destinations such as Study / Materials / Progress;
+- bounded guided study journey inside Study;
+- optional source/material drawer rather than a second permanent rail;
+- one recommended next action with observable reason;
+- stable task/action geometry;
+- explicit Study vs Teach context where roles differ.
+
+ADAPTIVE HELP VISUAL DIRECTION
+Use quiet inline assistance by default.
+Selective premium/spatial elements may add delight, but must not slow long study sessions or become the engine metaphor itself.
+Full-chat/co-pilot UI is a bounded tutoring/explanation option, not the entire StudyGrid identity.
+
+======================================================================
+15. INSTRUCTOR EVIDENCE CONTRACT
+======================================================================
+
+Instructor output uses three layers:
+
+1. OBSERVATION
+What happened? How many learners/items? Which task families? What time/context? What source/version?
+
+2. INTERPRETATION / HYPOTHESIS
+What might explain it? How uncertain is that interpretation? What competing explanation exists, including bad item/content quality?
+
+3. POSSIBLE ACTION
+What could the instructor inspect or choose to do?
+
+Do not automatically claim:
+- this lecture caused weakness;
+- this content is ineffective;
+- a student is lazy/disengaged;
+- a prerequisite caused downstream errors;
+- the instructor caused an outcome.
+
+With a small beta cohort, instructor analytics are descriptive and inspectable, not population inference.
+
+PRODUCT HYPOTHESIS
+If StudyGrid surfaces a defensible class issue, an optional instructor-controlled action bridge can be useful (for example inspect examples, open relevant material, draft an announcement). This must be validated with real instructors before broad build-out.
+
+======================================================================
+16. GENERATIVE AI BOUNDARY
+======================================================================
+
+Generative AI can assist with:
+- proposed source parsing;
+- proposed assertion/claim/KC mapping;
+- draft explanations/examples/items;
+- rubric-grounded constructed-response assistance;
+- accessibility/wording variants;
+- instructor evidence summaries.
+
+Generative AI cannot silently become:
+- canonical course truth;
+- permanent learner truth;
+- hidden prerequisite authority;
+- sole high-stakes scorer without validated process;
+- undocumented recommendation authority.
+
+Any AI-generated/scored artifact that affects learner evidence must preserve:
+- provider/model/version;
+- relevant prompt/config or artifact hash/version;
+- source/rubric references;
+- validation/approval state;
+- safe fallback when service is unavailable.
+
+======================================================================
+17. DATA DOMAINS / PRIVACY
+======================================================================
+
+Do not throw everything into one generic event stream.
+
+A. LEARNING EVIDENCE
+Purpose-limited educational record; provenance-rich; used for learner estimates and decision support.
+
+B. OPERATIONAL / DEBUG TELEMETRY
+Shorter retention/access-separated; used to diagnose software/accessibility failures; not learner-model evidence by default.
+
+C. ACCESSIBILITY / ACCOMMODATION DECLARATIONS
+Explicit user/institution-provided information where needed; restricted access; never inferred from interaction behavior.
+
+D. OPTIONAL RESEARCH TELEMETRY
+Separate governance/consent/purpose. It never silently becomes production learner state.
+
+CORE ENGINE MUST STILL WORK IF OPTIONAL TELEMETRY IS DISABLED.
+
+======================================================================
+18. EXTERNAL / PHYSICAL EVIDENCE PATH
+======================================================================
+
+StudyGrid must not infer real-world procedural competence merely because a learner sequenced steps correctly on-screen.
+
+V1 needs either:
+- an explicit instructor/assessor external evidence pathway; or
+- an abstention/insufficient-evidence state.
+
+Screen-only proxies cannot silently become claims about physical execution or field performance.
+
+======================================================================
+19. REPLAYABILITY / VERSIONING
+======================================================================
+
+A material recommendation must be reconstructable later.
+
+Version at minimum:
+- source artifact;
+- assertion/procedure;
+- curriculum outcome/claim/KC;
+- relation edge;
+- task/item;
+- scoring/rubric;
+- task→claim mapping;
+- evidence interpretation schema/model;
+- learner-estimator model/config;
+- next-action policy/config;
+- generative/scoring model where relevant.
+
+SOURCE REVISION CASCADE
+When source/course truth changes, StudyGrid must be able to identify affected:
+- assertions;
+- tasks;
+- mappings;
+- evidence interpretations;
+- learner estimates;
+- prior recommendation explanations.
+
+Historical observations remain historical facts. Derived interpretations may be invalidated/recomputed.
+
+======================================================================
+20. HARD INVARIANTS
+======================================================================
+
+Engine v1 should treat these as hard contracts unless explicitly revised:
+
+1. Observations are immutable; interpretations are separate/versioned.
+2. Source/assertion provenance and versions are preserved.
+3. Generated AI output never silently becomes canonical course truth.
+4. No task is evidence for a claim without an explicit versioned mapping.
+5. Assessment/assistance policy is explicit; accessibility support is not generic tutoring.
+6. Learner override is not mastery/motivation/disengagement evidence.
+7. No behavior-based inference of disability, health, emotion, personality, intelligence or laziness.
+8. Optional high-intrusion telemetry is not required for core adaptation and does not silently enter learner state.
+9. Every material next-action decision records candidates/exclusions, selected action and policy/model/config versions.
+10. Course/source/model/policy changes are versioned.
+11. Insufficient/invalid/conflicting evidence can block a strong claim.
+12. Exposure/completion is never mastery by itself.
+13. Coached success is distinguishable from unaided evidence.
+14. Repeated identical-item success is not automatically transfer.
+15. Protected assessment cannot receive unauthorized coaching.
+
+======================================================================
+21. THINGS STUDYGRID SHOULD INTENTIONALLY REFUSE TO INFER
+======================================================================
+
+Absent explicit validated need + proper governance, do not infer:
+- broad intelligence/aptitude/ability traits from ordinary course interactions;
+- motivation/laziness/diligence/engagement from clicks, latency, overrides or absence;
+- disability/health/emotion/personality/mental state from behavior;
+- cheating from response time alone;
+- durable competence from one correct answer;
+- lack of competence from non-use/non-response;
+- causal content effectiveness from cohort correlation;
+- causal prerequisite bottlenecks from co-occurring errors;
+- instructor quality from learner outcomes;
+- demographic/sensitive traits from behavioral traces;
+- offline learning state unless learner/instructor supplies evidence;
+- physical/procedural competence from screen-only proxies without validated transfer evidence.
+
+======================================================================
+22. SMALLEST HONEST BETA ENGINE
+======================================================================
+
+For the first ~20-student + professor beta, build/design toward ONLY this coherent surface:
+
+1. versioned sources + assertions;
+2. curriculum outcomes / learning claims + typed relations;
+3. domain-neutral task/item + scoring model;
+4. explicit task→claim mappings;
+5. immutable attempt/observation ledger;
+6. versioned evidence interpretation;
+7. simple transparent learner estimate with uncertainty;
+8. explicit course/assessment/assistance policy;
+9. small rule-based/lexicographic next-action policy;
+10. recommendation reason trace/replay;
+11. quiet adaptive-help UX in practice;
+12. minimal instructor observation/hypothesis/action view;
+13. sparse pedagogically meaningful instrumentation.
+
+DO NOT BUILD YET JUST BECAUSE RESEARCH NAMED IT
+- deep/transformer KT authority;
+- reinforcement learning;
+- contextual bandit policy optimization;
+- generalized IRT/CDM stack everywhere;
+- elaborate psychometric dashboards;
+- microservices for model families;
+- vector database solely because “AI”; 
+- invasive behavior telemetry;
+- giant instructor dashboard;
+- full conversational shell as the product;
+- fake AI-generated personalized course plans without evidence.
+
+======================================================================
+23. BETA PURPOSE / ACCEPTANCE
+======================================================================
+
+THE BETA CAN TEST
+- whether the course/claim structure makes sense;
+- whether item→claim mappings are believable;
+- whether interaction types work;
+- whether learner estimates avoid obvious nonsense;
+- whether “Why this next?” explanations make sense;
+- whether students trust/override recommendations appropriately;
+- whether quiet remediation helps rather than annoys;
+- whether StudyGrid can distinguish software/item problems from learner weakness;
+- whether instructor summaries match real instructor decisions;
+- whether data collection feels understandable and proportionate;
+- whether replay/versioning works.
+
+THE BETA CANNOT PROVE
+- broad efficacy;
+- long-term retention superiority;
+- fairness across populations;
+- one learner-model family is universally best;
+- causal value of the full adaptive policy;
+- institutional-scale reliability.
+
+STOP / REVISIT CONDITIONS SHOULD BE PREDECLARED BEFORE BETA
+Examples:
+- repeated source/claim mapping errors;
+- recommendations that contradict explicit course policy;
+- inability to reconstruct why a recommendation happened;
+- systematic conflation of UI/input failure with learner weakness;
+- professor judges surfaced analytics misleading/unactionable;
+- learners cannot understand why StudyGrid chose an action;
+- privacy/telemetry surprises users;
+- model becomes more confident when evidence becomes more contradictory.
+
+Numeric thresholds are NOT set in Draft 1; they require beta protocol design.
+
+======================================================================
+24. MODEL CHALLENGER GATE
+======================================================================
+
+Any future more-complex learner model or learned ranking policy must compete against the simple interpretable baseline.
+
+A challenger does NOT win merely because it has better next-response AUC/accuracy.
+
+It must show incremental value on relevant dimensions such as:
+- calibration;
+- robustness across courses/cohorts;
+- useful decision changes;
+- delayed/transfer learning outcomes where measurable;
+- fairness/accessibility behavior;
+- interpretability/audit cost;
+- operational reliability.
+
+If complexity does not materially improve the learning decision, do not add it.
+
+======================================================================
+25. FALSIFICATION SUITE — FIRST TESTS TO WRITE BEFORE IMPLEMENTATION RELEASE
+======================================================================
+
+A. ONE CORRECT ANSWER
+One easy correct answer must not create a durable competence claim.
+
+B. RECOGNITION VS APPLICATION
+Strong MCQ recognition + weak novel application must remain conflicting/channel-specific evidence.
+
+C. COACHED VS UNAIDED
+Correct after a worked example must not be treated identically to delayed unaided retrieval.
+
+D. OLD SOURCE VERSION
+A changed source assertion must allow affected tasks/mappings/interpretations to be identified without rewriting raw attempts.
+
+E. BAD ITEM MAPPING
+One deliberately wrong item→claim mapping must be detectable/reversible without rewriting learner history.
+
+F. BAD PREREQUISITE EDGE
+A soft/hypothesized edge must not permanently trap the learner as if it were an explicit hard prerequisite.
+
+G. OVERRIDE
+Ten learner overrides must not lower mastery or mark disengagement.
+
+H. ACCESSIBILITY / LATENCY
+Slow response under assistive-tech conditions must not automatically reduce learner competence.
+
+I. LOW-STAKES NUDGE
+Repeated valid struggle in practice may surface quiet help; learner can ignore it and continue.
+
+J. PROTECTED TEST
+Same evidence/context in a protected graded assessment must suppress unauthorized coaching.
+
+K. CONFLICT
+Conflicting high-quality evidence must increase uncertainty rather than average to a fake middle certainty.
+
+L. SMALL-N INSTRUCTOR SIGNAL
+One flawed item causing many misses should surface item-quality as a competing explanation, not automatically “class weakness.”
+
+M. AI SCORER VERSION CHANGE
+Historical scores must identify which scorer/model/version created them.
+
+N. GENERATIVE AI OUTAGE
+Core course truth, evidence history and next-action policy must remain operable with a safe degraded path.
+
+O. OPTIONAL TELEMETRY OFF
+Core adaptation must still function without hover/pointer/keystroke/research telemetry.
+
+======================================================================
+26. WHAT MAKES STUDYGRID STUDYGRID — DRAFT 1 FORMULATION
+======================================================================
+
+StudyGrid turns real learning material into a versioned map of what a learner may need to know or do, records what the learner actually does, interprets that evidence conservatively, and uses an inspectable policy to choose a defensible next teaching/practice/review action — while remembering uncertainty, course rules and what happened before.
+
+The moat is not a quiz generator, one knowledge-tracing model, or an AI chat interface.
+
+The core product loop is:
+SOURCE/COURSE → CLAIMS/RELATIONS → TASK → OBSERVATION → EVIDENCE INTERPRETATION → LEARNER ESTIMATE → ELIGIBLE ACTIONS → POLICY DECISION → TEACH/PRACTICE/REVIEW → NEW OBSERVATION.
+
+The user-facing experience should remain much simpler:
+“Here’s what matters next. Here’s why. Let’s do it.”
+
+======================================================================
+27. OPEN QUESTIONS BEFORE IMPLEMENTATION
+======================================================================
+
+1. Exact minimal learner-estimate representation for beta: transparent rule/count/history model alone, or one conservative BKT/PFA-style comparator behind it?
+2. Exact evidence-sufficiency rules per claim family.
+3. How curriculum outcomes, claims and optional KCs are authored/reviewed without overwhelming instructors.
+4. How hard vs soft prerequisite edges are approved and corrected.
+5. Exact minimum metadata required for accommodations without over-collection.
+6. Exact constructed-response scoring path in low-stakes vs graded contexts.
+7. Exact V1 priority order/tie-breakers for candidate actions.
+8. Which learner-facing uncertainty language is understandable without feeling clinical.
+9. What instructor insight format Caroline/other professors actually trust and act on.
+10. Beta stop thresholds and privacy/consent protocol.
+11. How much of the product shell should expose source material during practice without leaking answers.
+12. Engineering representation of versioning/replay without over-building event sourcing or ML infrastructure — explicitly reserved for Claude engineering-integrity review.
+
+======================================================================
+TERMINAL DRAFT-1 DISPOSITION
+======================================================================
+
+Draft 1 is a stronger design candidate than Draft 0 because it removes false ontological certainty and cleanly separates facts, interpretations, estimates, hypotheses and decisions.
+
+It is NOT implementation approval.
+
+Next required gate:
+- Claude engineering-integrity attack against this exact Draft 1 once Claude's current C-F static-repair lane is terminal;
+- then General reconciliation / owner review;
+- only after that should an Engine v1 implementation specification be considered for release.
