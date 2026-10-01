@@ -1,0 +1,60 @@
+STUDYGRID — OWNER REVIEW DELTA — ORDERED INTERACTION + DOMAIN-AGNOSTIC ASSESSMENT FOUNDATION
+Captured by: ChatGPT General / CF-0047
+Owner source: Nathan direct, 2026-10-01 17:55 ET
+Status: EFFECTIVE OWNER DELTA / NO PRODUCT MUTATION
+
+OWNER REQUIREMENTS
+1. The current rendered question that is supposed to permit multiple answers does not permit the owner to select multiple answers reliably; keep this as an owner-observed browser/UI defect even though Sol's isolated source test previously reproduced multi-selection logic.
+2. The question is conceptually wrong if order matters. A prompt requiring an ordered procedure should not be represented as ordinary unordered multi-select just because the underlying choices are multiple.
+3. Make the expected operation obvious. If the learner must put steps in order, the interface must show how to construct and inspect that order.
+4. The assessment system must not be police-specific. It must support law, forensics, engineering and other domains from the same underlying interaction/assessment foundation.
+5. Domain/course content should plug into a general assessment model rather than hard-coding policing assumptions into question logic, feedback, session flow or UI.
+
+RESEARCH FINDINGS — EXTERNAL EVIDENCE
+A. 1EdTech QTI defines portable assessment interactions and explicitly supports distinct interaction families, including ordering rather than forcing every question into multiple choice. QTI is intended to move assessment content/results across authoring, item-bank, delivery and analytics systems and supports technology-enhanced interactions. Source: https://www.1edtech.org/standards/qti/index
+B. OASIS DITA learning interactions distinguishes lcMultipleSelect from lcSequencing: multiple-select means choosing two or more correct responses; sequencing means arranging choices into a predefined order. Source: https://docs.oasis-open.org/dita/v1.2/cs01/spec/common/lc_spec_interactionBase_domain.html
+C. WCAG 2.2 SC 2.5.7 requires an alternative to dragging movements. W3C examples for reordering include click/tap up/down controls or entering position numbers; drag may be offered as an enhancement but cannot be the only practical input method. Sources: https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements and https://www.w3.org/WAI/WCAG21/Techniques/general/G219
+D. W3C focus-order guidance requires sequential keyboard navigation to preserve meaning and operability, which matters directly for ordered-response interfaces. Source: https://www.w3.org/WAI/WCAG21/Understanding/focus-order
+E. Assessment-design research describes useful response formats between conventional multiple-choice and open essay and supports selecting an interaction that matches the evidence/skill being assessed rather than defaulting to MCQ. Source: Scalise & Gifford (2006), Journal of Technology, Learning and Assessment, https://ejournals.bc.edu/index.php/jtla/article/view/1653
+
+DESIGN JUDGEMENT / FOUNDATION CONTRACT
+A. INTERACTION TYPE IS FIRST-CLASS DATA
+Each assessment item should declare an interaction type independent from subject matter, e.g.:
+- single_select
+- multi_select_unordered
+- sequence_order
+- match/pair
+- categorize
+- short_text / constructed_response
+- numeric / formula where applicable
+- hotspot/diagram where applicable
+The domain content supplies prompt, choices/items, expected response/rubric, explanation, sources and metadata.
+
+B. ORDERED PROCEDURE QUESTION — PREFERRED INTERACTION
+For a strict ordered procedure, use a sequence/order interaction, not checkbox-style multi-select.
+Preferred UI concept:
+- prompt explicitly says `Put these steps in order` or equivalent;
+- all candidate steps appear as readable cards/rows;
+- selected/current sequence is visibly numbered 1, 2, 3...;
+- learner can reorder via drag as an optional enhancement;
+- every item also has accessible single-pointer/keyboard alternatives such as Move up / Move down and/or Choose position;
+- order is visible before submission and remains inspectable after submission;
+- feedback compares the learner sequence to the correct sequence and explains consequential ordering errors rather than dumping raw indexes.
+If the learning objective is merely 'select all applicable parts' and order is irrelevant, use ordinary multi-select instead. Do not conflate the two constructs.
+
+C. DOMAIN-AGNOSTIC ASSESSMENT ENGINE
+The engine should reason about learning/assessment constructs, not professions. Examples:
+- law: order procedural elements or stages of an analysis;
+- forensics: sequence evidence-handling or analytical steps;
+- engineering: order process/diagnostic steps;
+- policing: sequence a lawful/procedural workflow when the course source genuinely defines an order.
+The same renderer, scoring contract, accessibility behavior, attempt provenance and feedback-state machine should serve all of them.
+
+D. CONTENT / LOGIC SEPARATION
+Keep subject-specific terms, legal rules, formulas, facts and examples in course/item data. Keep interaction behavior, scoring primitives, confidence handling, feedback presentation, provenance, progress and accessibility in reusable domain-neutral components. A new course should primarily add content/configuration, not require rewriting core interaction logic.
+
+E. CURRENT STUDYGRID IMPLICATION
+The current q4m-like item should be reviewed at the construct level before repair. If the source material defines an ordered sequence, redesign it as sequence_order. If it only asks for three required components without order, retain multi_select_unordered and repair the rendered/native interaction. Do not infer the underlying course rule from the owner's speech alone; preserve source terminology and verify against the course source before changing content/scoring.
+
+NO IMPLEMENTATION RELEASE
+This delta is input to the pending product-design synthesis. Exact HTML remains unchanged.
