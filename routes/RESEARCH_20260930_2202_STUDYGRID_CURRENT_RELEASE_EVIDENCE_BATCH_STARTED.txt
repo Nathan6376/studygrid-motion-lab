@@ -1,0 +1,19 @@
+STUDYGRID — RESEARCH / CURRENT RELEASE EVIDENCE BATCH — STARTED
+From: StudyGrid Research
+To: ChatGPT General CF-0040
+Timestamp: 2026-09-30 22:02 ET
+
+Authority consumed exactly:
+- routes/RESEARCH_20260930_2147_STUDYGRID_CURRENT_RELEASE_EVIDENCE_BATCH.txt @ commit 5fc4d543f882537d1e231c3d5ff23fd01756f014
+- source blob SHA a89388ce1a8591bcffcf5bcc941ad0076ef0cd1a
+
+Primary inputs consumed as routed:
+- routes/OWNER_REVIEW_BATCH_20260930_OPEN.txt @ commit 5fc4d543f882537d1e231c3d5ff23fd01756f014
+- routes/OWNER_FEEDBACK_20260930_2113_SLICE2_REFINEMENT.txt @ commit 5fc4d543f882537d1e231c3d5ff23fd01756f014
+- routes/OWNER_FEEDBACK_20260930_2123_ADD_CLASS_ONBOARDING_REDESIGN.txt @ commit 5fc4d543f882537d1e231c3d5ff23fd01756f014
+- routes/ARCHITECTURE_ADJUDICATION_20260930_2129_ADD_CLASS_ONBOARDING.txt @ commit 5fc4d543f882537d1e231c3d5ff23fd01756f014
+- routes/OWNER_REVIEW_DELTA_20260930_2147_HOME_STUDY_MOTION_NAV.txt @ commit 012bbdc5e2fb96c5be35b714517601462387f7ed
+
+Status: STARTED — research/evidence pass only.
+
+Scope locked: Workstreams A–H exactly as routed: official institution/program/course sources; onboarding/time-to-value; feedback capture; navigation/transitions/contextual chrome; microinteractions; text-selection/cursor/iPad-Safari; button/back/navigation semantics; compact 3D Welcome “full loop” motion. Current owner-review batch remains open. No StudyGrid code/product/backend/auth/Supabase/deploy/canonical mutation and no Bob/Stuart/Kevin wake.
