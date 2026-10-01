@@ -1,0 +1,110 @@
+STUDYGRID — OWNER REVIEW DELTA / INSTRUCTOR TOUR + ALIVE UI + MOTION PASS
+Timestamp: 2026-09-30 23:24 ET
+From: Nathan direct owner feedback via General CF-0040
+Status: OWNER REQUIREMENTS — ADD TO OPEN REVIEW BATCH / NO IMPLEMENTATION RELEASE YET
+Target: turn this tranche into one coherent implementation package after specialist evidence/creative-direction + Sol source audit are reconciled. Nathan wants the animations and tutorial direction settled ASAP and wants a reviewable teacher-facing build ready for Monday 2026-10-05 if feasible; this is a planning target, not a completion guarantee.
+
+PROCESS / OWNER INTENT
+- Nathan wants this whole pass handled as one coherent batch, not 20 tiny Bob/Stuart/Kevin activations.
+- Use specialist lanes properly: Research for evidence, Gemini for motion/creative direction, Architecture for role/IA/system boundaries, Sol for exact-source audit. General coordinates/reconciles.
+- Astra remains held until Nathan explicitly releases it near his reported reset window.
+- Do not wake Bob/Stuart/Kevin from this delta alone. Once this pass is sufficiently specified and Nathan's review tranche is ready to build, General should release one batched implementation/QA round.
+
+EXACT OWNER FEEDBACK — CURRENT REVIEW BUILD
+1. FOCUS / RANDOM LINES / CIRCLES
+- `Preview instructor course` shows an unexpected blue line/outline around it. Owner dislikes unexplained blue-line chrome.
+- There are additional unexplained lines/circles in instructor/student tour visuals (including around the Jordan Brooks / Elias-area type content). Audit exact source before changing.
+- Accessibility focus indication must NOT simply be removed. Replace any generic/ugly browser-looking focus treatment with a deliberate StudyGrid-consistent focus state that remains clearly keyboard-visible.
+- Remove decorative separators/dots/circles that do not communicate useful state. Preserve only progress/navigation indicators with an obvious purpose.
+
+SOURCE NOTE FROM GENERAL INSPECTION
+- Current build has a global `:focus-visible { outline:3px solid var(--focus); outline-offset:3px }`, which is a plausible source of the blue outline on focused controls. Treat as source clue, not final diagnosis.
+- Current student tour uses progress-dot controls and several border/divider treatments; Sol must map exact selectors/components before implementation.
+
+2. INSTRUCTOR REQUEST-TO-REVIEW / ADAPTIVE RESPONSE ANIMATION
+- The instructor `Get a request to review` / repeated-question concept needs an animated demonstration.
+- Desired concept: show an example student question changing; the instructor/auto-reply or suggested response updates to match it; only the words/phrases that materially changed should momentarily turn StudyGrid green so the viewer understands the response adapted to the student's wording/context.
+- Could reuse a coherent motion language from the three-step Selectric/full-loop animation, but it must not feel like a copy-paste gimmick.
+- Goal is to communicate *adaptation* and *context preservation*, not merely decorate text.
+- Gemini should propose exact choreography and Research should validate accessible/usable patterns.
+
+3. PRACTICE / CORRECT-ANSWER CLARITY
+- Current `What is 25% of 80?` / `Correct answer: 20` demo is confusing visually.
+- Make it immediately obvious what the learner answered versus what the correct answer is.
+- `20` shown in green currently feels visually awkward and does not make the state obvious enough.
+- Confidence controls (`Guessing`, `Fairly sure`, `Very sure`, `Skip`) are too squished and visually weak. Redesign for readability/touch targets/clear hierarchy.
+- The `How sure were you?` label + question-mark help also needs a cleaner composition.
+- Keep student-facing copy simple, direct, plain English. Do not dumb it down, but avoid unnecessarily academic/technical language.
+
+4. INSTRUCTOR DEMO MUST BE A TRUE INSTRUCTOR EXPERIENCE
+- `Open instructor demo` should open a coherent fake instructor workspace with the existing example classes and a short guided walkthrough.
+- The walkthrough should point to meaningful instructor controls and explain roughly what to do: choose/open class, identify student needing help, review questions, practice/content review, class signals, etc.
+- Use fake/demo data only.
+- Include a clearly available Skip control. Do not make the tutorial long.
+- After tutorial, transition naturally to sign-up/setup rather than trapping the user in a demo.
+- Learner `Study` / learner-only surfaces must not remain in instructor mode. Instructor mode should feel like a distinct instructor product shell, not the student site with extra tabs.
+- Owner/admin capability can coexist on Nathan's account but must not contaminate ordinary learner/instructor chrome; explicit context/role switching is preferred.
+
+5. INSTRUCTOR CLASS DISCOVERY
+- Keep searchable fake classes such as Police Powers / Criminology in the demo.
+- Add/consider a `Find current class` action that uses already-known institution/program/term/section context to surface the most likely current class without asking the user to manually re-enter information.
+- Any auto-match must show why it thinks the class is current and allow correction; no fabricated certainty.
+
+6. HELP / POLICIES
+- Help must include access to Privacy Policy and other policies/terms/notices the product actually requires.
+- Do not invent legal completeness. Architecture/Research should identify the appropriate help/policy information architecture and what must remain a legal/product-owner dependency.
+
+7. STUDENT TOUR — HOW THIS WORKS / NO JARRING REFLOW
+- `How this works` currently appears by abruptly pushing/reflowing surrounding copy upward/downward. Owner dislikes this.
+- General rule from owner: activating contextual help/details should not make unrelated nearby text visibly jump unless movement is semantically necessary.
+- Reveal should feel integrated: anchored overlay/popover/sidecar/reveal region or another motion-safe pattern that preserves spatial orientation.
+- Add a deliberate open/close animation. Motion should communicate reveal/relationship, not flourish.
+
+8. STUDENT TOUR — GHOST CURSOR / SELECTION DEMO
+- Current `select the underlined words` approach is wrong for the intended demonstration.
+- Target text should read like normal content. The words to try may have a very subtle/lighter cue, but avoid permanent underline that makes them look like links.
+- Add a faint ghost cursor/pointer that periodically demonstrates selecting/highlighting the intended words, then resets/fades.
+- As soon as the real user begins interacting/selecting, ghost guidance disappears and does not fight the user.
+- Demo should use actual selection/highlight semantics closely matching the app.
+- `Explain`, `Highlight`, `Ask teacher` in the tour should behave like the real product preview:
+  * Explain: show an actual contextual explanation.
+  * Highlight: visibly highlights; pressing Highlight again reverses/removes it.
+  * Ask teacher: open the same style of small question composer/prompt used in product; demo may rotate plausible example questions every ~4s via gentle text transition; user need not actually send live data.
+- This is part of the desired `alive` quality: subtle contextual nudges that teach by showing, then get out of the way.
+
+9. STUDENT TOUR — NEXT BUTTON / SPACING / SIMPLE ENGLISH
+- Owner still dislikes excess space around/before Next in the current tour. Exact source mapping needed before patch.
+- Make student-facing text easy to scan/read. Preserve necessary context but use plain, concrete language.
+- Every interactive control must be audited so visible label, action, destination and Back/Next semantics match.
+
+10. APPEARANCE / DUSK DEMO — ONE-TIME THEATRICAL TRANSFORMATION
+- Dusk is still not reliably clickable in the tour; treat as a real interaction defect until tested/fixed.
+- Owner wants a one-time showcase animation when the appearance step is reached:
+  * page briefly transforms from Paper into Dusk in a deliberately theatrical but controlled sequence;
+  * individual words/components may switch in staggered sequence;
+  * buttons can compress/settle as their appearance changes;
+  * the StudyGrid orb/ball can rotate/morph as the theme changes;
+  * overall effect can feel slightly eerie/flickery (owner compared to Halloween/broken-light energy), but it must remain intentional, legible, and not seizure-like;
+  * after demonstrating Dusk, the page transitions smoothly back to Paper and stays there;
+  * animation runs once per relevant tour/demo session, not continuously.
+- Reduced-motion / photosensitivity-safe path is mandatory: no flicker/strobe; use a static or minimal transition.
+- Do not use rapid luminance flashes or unsafe flashing frequencies.
+
+11. EXISTING THINGS OWNER LIKES — PRESERVE
+- Student tour Next transition is liked.
+- The StudyGrid orb/ball visual is liked; preserve/refine it rather than replacing it casually.
+- `Pick up where you left off` direction remains liked subject to previous novice-decay rule.
+- Existing professor/instructor visual direction and class cards are generally liked; this pass should refine the experience rather than fork into a different design language.
+
+12. DELIVERY / ACCEPTANCE
+- Animations should be implemented as a coherent motion system, not isolated one-off effects.
+- Every animation must have reduced-motion behavior and must not break focus, history, layout stability, clickability, keyboard/touch behavior or iPad/Safari readability.
+- Exact physical iPad/Safari verification remains required for cursor, transformed text crispness, Dusk clickability, AutoFill and pointer behavior.
+- Stuart acceptance later must include no unexplained blue focus line, no mystery decorative line/circle, no instructor learner-mode leakage, no layout jump from contextual help, ghost guidance teardown on real interaction, confidence layout readability, correct-answer clarity, deterministic theme demo, and route/button semantic audit.
+
+DEPENDENCIES / CURRENT LANES
+- Research CF-0044 prior Q-R1 is DONE/consumed. General is routing a new bounded evidence task for guided tutorials/plain-language/contextual-help/policy placement/accessibility/flicker safety.
+- Gemini 3.1 Pro cannot consume shared routing; General will give Nathan a self-contained prompt for this motion tranche.
+- Sol CF-0043 remains active on Q-SOL1 exact-source audit; consume terminal result when available.
+- Architecture receives this as material peer-coordinator context/adjudication input.
+- Astra HOLD remains in force.
