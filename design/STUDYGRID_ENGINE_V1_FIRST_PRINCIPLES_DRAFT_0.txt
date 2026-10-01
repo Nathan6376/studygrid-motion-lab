@@ -1,0 +1,481 @@
+STUDYGRID ENGINE V1 — FIRST PRINCIPLES DRAFT 0
+Owner: Nathan
+Prepared by: ChatGPT General CF-0047
+Timestamp: 2026-10-01 19:07 ET
+Status: DESIGN HYPOTHESIS / NOT APPROVED / NO IMPLEMENTATION
+Research basis: Research CF-0044 learning-engine dossier @ 948933a381288af503589d39612e101c4e1e9502 plus current owner deltas.
+
+METHOD
+Every primitive below is provisional. For each: CLAIM -> WHY -> EVIDENCE/REASON -> STRONGEST ATTACK -> FAILURE CASE -> REVISED RULE -> TEST.
+The engine should prefer explicit uncertainty over false precision. Prediction quality is not equivalent to teaching quality.
+
+======================================================================
+0. PRODUCT PURPOSE
+======================================================================
+CLAIM
+StudyGrid exists to help a learner make better learning progress by choosing and delivering the next pedagogically useful action from their actual course/context, while preserving inspectable evidence and teacher usefulness.
+
+WHY
+A collection of notes, quizzes, flashcards or AI chat is replaceable. The durable system is the loop that interprets course structure + learner evidence and decides what to do next.
+
+STRONGEST ATTACK
+“Next best action” can become paternalistic, overconfident or optimized for the wrong metric.
+
+REVISED RULE
+StudyGrid recommends one primary next action with a reason, preserves learner override, and records uncertainty. It must not equate engagement, completion, streaks or short-term accuracy with durable learning.
+
+TEST
+Can the system explain what it recommended, why, what evidence it used, what uncertainty remains, and what would have changed the recommendation?
+
+======================================================================
+1. PRIMITIVE: LEARNING TARGET
+======================================================================
+CLAIM
+The atomic thing StudyGrid reasons about should be a LEARNING TARGET, not merely a chapter/topic/concept label.
+
+DEFINITION
+A Learning Target is a versioned, source-grounded statement of something a learner may need to know, understand, distinguish, explain, recall, perform, calculate, sequence, diagnose or apply.
+
+EXAMPLES
+- “Distinguish X from Y under condition Z.”
+- “Apply formula F to solve this class of problem.”
+- “Sequence the steps of procedure P.”
+- “Explain principle Q in plain language.”
+
+WHY
+“Concept” is too narrow for procedures, calculations, discrimination, explanation and applied skills. “Chapter 4” is too broad to support evidence or next-action decisions.
+
+STRONGEST ATTACK
+Over-atomizing knowledge creates a brittle graph with thousands of tiny targets and fake precision.
+
+FAILURE CASE
+A system splits every sentence into a target and then claims mastery of micro-fragments that do not transfer to real performance.
+
+REVISED RULE
+A Learning Target must be small enough to support a meaningful evidence claim but large enough to represent a coherent educational capability. Targets may have subtargets and multiple forms of evidence. Granularity must be validated by teaching/assessment usefulness, not token count.
+
+TEST
+For a proposed target, can we answer: (a) what would count as evidence, (b) what would not count, (c) what downstream action changes if this target is weak/strong, and (d) can an instructor recognize it as pedagogically meaningful?
+
+======================================================================
+2. PRIMITIVE: SOURCE / COURSE TRUTH
+======================================================================
+CLAIM
+Every Learning Target and every material teaching/assessment claim should trace to versioned authoritative source material or an explicitly approved instructor/course assertion.
+
+WHY
+The engine cannot be trustworthy if generated content silently becomes course truth.
+
+STRONGEST ATTACK
+Some learning targets are implicit across multiple sources, inferred from assessment patterns, or represent general prerequisite knowledge not stated verbatim.
+
+REVISED RULE
+StudyGrid distinguishes AUTHORITATIVE SOURCE, INSTRUCTOR-APPROVED ASSERTION, SYSTEM-INFERRED CANDIDATE, and EXTERNAL REFERENCE. Inferred candidates may help authoring but do not silently become canonical.
+
+TEST
+For any target/question/explanation, can the system show its provenance and version, or clearly state that it is an unapproved candidate?
+
+======================================================================
+3. PRIMITIVE: EVIDENCE EVENT
+======================================================================
+CLAIM
+StudyGrid should never update learner state from “activity” in the abstract. It updates from typed EVIDENCE EVENTS.
+
+DEFINITION
+An Evidence Event is an observed learner interaction that may say something about one or more Learning Targets, with explicit provenance, interaction type, scoring/result, evidence quality and context.
+
+CORE EXAMPLES
+- answer committed + score/partial score
+- misconception/rubric category when valid
+- confidence supplied before feedback (optional)
+- retrieval after a delay
+- guided step completed with/without support
+- learner requested explanation/hint (context only, not automatic mastery penalty)
+
+NOT MASTERY EVIDENCE BY ITSELF
+- page viewed
+- lesson opened
+- time on page
+- scrolling
+- streak
+- completion checkbox
+
+WHY
+Exposure and engagement are not the same as learning.
+
+STRONGEST ATTACK
+Even correctness is noisy: guessing, bad questions, repeated item memorization, accessibility/device issues, ambiguous wording.
+
+REVISED RULE
+Every Evidence Event carries an evidence-quality/diagnostic-weight concept. No single event equals “learned.” The engine may mark evidence as weak, contradictory, low-quality or insufficient rather than forcing a state update.
+
+TEST
+Can a reviewer see why a particular event changed learner state, by how much/what direction, and what confounds were considered?
+
+======================================================================
+4. PRIMITIVE: LEARNER STATE IS AN ESTIMATE, NOT TRUTH
+======================================================================
+CLAIM
+StudyGrid should maintain an evidence-based estimate for each Learning Target, with uncertainty and instructional state, rather than a single fake mastery percentage.
+
+MINIMUM DIMENSIONS / STATES TO EXPLORE
+- exposure/introduction state: not introduced vs introduced
+- current performance evidence
+- retention/stability evidence over time
+- uncertainty / amount-quality of evidence
+- misconception suspicion / competing explanations
+- instructional state: needs teaching, guided practice, retrieval, review, remediation, or ready to advance
+
+WHY
+A learner can understand now but not retain later; can answer correctly with weak confidence; can have sparse evidence; can show a specific misconception rather than generic weakness.
+
+STRONGEST ATTACK
+Too many state dimensions create complexity that is impossible to calibrate or explain.
+
+REVISED RULE
+Separate only dimensions that can change a pedagogical decision. If two state fields never change what StudyGrid does, merge/remove them.
+
+TEST
+For each state field: name at least one decision that changes because of it and one observed event that validly updates it.
+
+======================================================================
+5. DISTINCTION: LEARNED VS RETAINED VS EXPOSED
+======================================================================
+CLAIM
+StudyGrid must distinguish at least:
+- EXPOSED: learner encountered the material;
+- LEARNED/CURRENTLY DEMONSTRATED: enough current evidence supports competent performance on the intended construct;
+- RETAINED: later/delayed evidence supports that the learning remains retrievable/usable over time.
+
+WHY
+A correct answer immediately after instruction is not evidence of durable retention. A page view is not evidence of understanding.
+
+STRONGEST ATTACK
+“Learned” is construct-dependent; there is no universal threshold across recalling a definition, solving an equation and applying judgment in a scenario.
+
+REVISED RULE
+“Learned” is not one global threshold. Each Learning Target has an EVIDENCE CONTRACT describing what forms/coverage of evidence can support the claim. Retention requires temporally separated evidence appropriate to the target.
+
+TEST
+Can two targets use different evidence contracts without changing the engine core? Can the system refuse to claim learned/retained when the contract is unmet?
+
+======================================================================
+6. PRIMITIVE: EVIDENCE CONTRACT / CONSTRUCT ALIGNMENT
+======================================================================
+CLAIM
+Each Learning Target needs an Evidence Contract specifying what kind of performance actually demonstrates it.
+
+POSSIBLE CONSTRUCT TYPES
+- recognition / discrimination
+- recall
+- sequence/order
+- calculation
+- explanation
+- application/scenario
+- diagnosis/classification
+- procedure/performance
+- synthesis/constructed response
+
+WHY
+Multiple choice may test recognition when the course requires production or application. The interaction must match the capability.
+
+STRONGEST ATTACK
+Real competencies often require several constructs and cannot be captured by one interaction.
+
+REVISED RULE
+Evidence Contracts may require a portfolio of evidence types and can map one event to multiple targets with explicit weights/roles.
+
+TEST
+Would passing the Evidence Contract convince a knowledgeable instructor that the learner can do what the target claims? If not, the contract is invalid.
+
+======================================================================
+7. PRIMITIVE: ACTIVITY / INTERVENTION
+======================================================================
+CLAIM
+StudyGrid chooses among pedagogical actions, not just questions.
+
+ACTION FAMILIES
+TEACH, EXPLAIN, WORKED_EXAMPLE, GUIDED_PRACTICE, RETRIEVE, REVIEW, REMEDIATE, ASSESS, ADVANCE, PAUSE/COMPLETE.
+
+WHY
+When evidence suggests missing prerequisite knowledge or misunderstanding, another quiz item may be the wrong intervention.
+
+STRONGEST ATTACK
+A rules engine can overreact to one wrong answer and constantly interrupt the learner.
+
+REVISED RULE
+Interventions are selected using evidence quality, pattern/history, uncertainty and activity mode. The system should generally prefer low-friction support and allow learner control unless a bounded flow requires otherwise.
+
+TEST
+Construct cases where the same wrong answer leads to different actions because context differs: first exposure, repeated error, high-confidence misconception, graded assessment, practice session, retention review.
+
+======================================================================
+8. PRIMITIVE: ACTIVITY MODE / INTERVENTION PERMISSION
+======================================================================
+CLAIM
+The engine must know what kind of activity is occurring before it decides whether intervention is allowed.
+
+MINIMUM MODES TO DESIGN
+- LEARNING/PRACTICE: adaptive teaching/nudges allowed.
+- DIAGNOSTIC: support may be delayed/restricted to preserve measurement.
+- GRADED/HIGH-STAKES ASSESSMENT: no coaching that invalidates assessment; only permitted accessibility/operational help.
+- REVIEW/SELF-TEST: configurable balance between authentic testing and teach-on-error.
+
+OWNER EXAMPLE
+During a low-stakes quiz, if repeated evidence indicates struggle, StudyGrid may offer a non-shaming option such as “This topic looks shaky. Review it now / keep going,” while a real graded test may forbid that intervention.
+
+WHY
+An intervention useful in practice can invalidate an assessment.
+
+STRONGEST ATTACK
+Mode labels can be wrong or instructor policy can differ.
+
+REVISED RULE
+Mode is explicit and policy-governed. Instructor/course policy can further constrain assistance. The engine never silently downgrades assessment integrity for adaptivity.
+
+TEST
+For the same learner state and same item, verify the engine produces different allowable action sets in practice vs diagnostic vs graded modes.
+
+======================================================================
+9. PRIMITIVE: CONTEXT
+======================================================================
+CLAIM
+Next-action decisions require context beyond learner state.
+
+CORE CONTEXT
+- course/syllabus position
+- explicit course outcomes and source versions
+- upcoming assessment/deadline relevance
+- prerequisite graph
+- learner goal if explicitly supplied
+- available/allowed activity types
+- recent recommendation/activity history
+- optional time/effort constraint
+
+WHY
+A weak peripheral concept due in three months should not always outrank a foundational prerequisite blocking tomorrow’s assessment.
+
+STRONGEST ATTACK
+Urgency can turn StudyGrid into a cramming optimizer and distort long-term learning.
+
+REVISED RULE
+Assessment urgency is a priority signal, not sole authority. Policy should balance readiness, foundational importance, retention and near-term relevance.
+
+TEST
+Create conflicting cases (urgent-but-foundationally-blocked, weak-but-low-value, due-for-review-but-new-prerequisite) and require an inspectable rationale.
+
+======================================================================
+10. PRIMITIVE: NEXT-ACTION POLICY
+======================================================================
+CLAIM
+The proprietary center is a policy that generates eligible actions, applies hard constraints, ranks them with interpretable factors, returns one primary recommendation plus optional alternatives, and records a reason trace.
+
+V1 FACTOR FAMILIES TO TEST
+- prerequisite/readiness eligibility
+- expected learning value
+- evidence weakness/uncertainty
+- repeated misconception severity
+- retention risk
+- assessment/course importance/urgency
+- undercoverage
+- learner/course position
+- anti-repetition/diversity
+- instructional-state constraint
+- optional effort/time cost
+
+WHY
+This is where StudyGrid combines otherwise-available components into a coherent learning system.
+
+STRONGEST ATTACK
+Hand-designed weights can encode arbitrary assumptions and look scientific without causal proof.
+
+REVISED RULE
+V1 weights/thresholds are explicit hypotheses, versioned and testable. Hard semantic/safety rules are separated from tunable ranking. Learned ranking is introduced only when data can validate it against an interpretable baseline and learning outcomes.
+
+TEST
+For every recommendation, store eligible candidates, excluded candidates/reasons, factor values, policy version, winner and uncertainty. Replay should reproduce the decision.
+
+======================================================================
+11. PRIMITIVE: REASON TRACE / REPLAYABILITY
+======================================================================
+CLAIM
+Every material adaptive decision must be replayable and explainable internally.
+
+MINIMUM TRACE
+- learner-state snapshot/version
+- relevant evidence window
+- source/course version
+- candidate actions
+- hard constraints applied
+- policy/model versions
+- reason factors
+- selected action
+- uncertainty/abstention state
+
+WHY
+Without this, StudyGrid cannot debug, scientifically improve, defend institutional claims or investigate harmful recommendations.
+
+STRONGEST ATTACK
+Full traces can become privacy-heavy and expensive.
+
+REVISED RULE
+Store the minimum structured reason trace needed for reproducibility; do not store invasive raw telemetry merely because it might help explain behavior.
+
+TEST
+Take a historical recommendation and reproduce why it happened without relying on an LLM’s memory or undocumented code path.
+
+======================================================================
+12. PRIMITIVE: ABSTAIN / INSUFFICIENT EVIDENCE
+======================================================================
+CLAIM
+“Insufficient evidence” is a valid engine output.
+
+WHY
+Cold start and noisy evidence make forced personalization dangerous.
+
+STRONGEST ATTACK
+Too much abstention makes StudyGrid feel dumb.
+
+REVISED RULE
+When uncertainty is high, choose actions that are useful under many plausible learner states and have information value without turning the learner into a test subject. The UI need not say “algorithm uncertain” every time, but the engine must preserve that state.
+
+TEST
+On a brand-new learner/course, verify that the system does not fabricate precise mastery and can still recommend useful introductory/diagnostic actions.
+
+======================================================================
+13. PRIMITIVE: LEARNER AGENCY
+======================================================================
+CLAIM
+The recommendation is strong guidance, not absolute control.
+
+WHY
+The learner may know context StudyGrid cannot observe (offline studying, instructor hints, personal priorities), and over-control can create algorithmic traps.
+
+STRONGEST ATTACK
+Too many overrides recreate the original problem of forcing the learner to design the study plan.
+
+REVISED RULE
+Show one clear default next action. Offer low-emphasis alternatives/override when useful. Learn from override reasons cautiously; do not treat override as evidence of mastery or disengagement.
+
+TEST
+Can learners escape a repetitive/misguided recommendation without navigating a settings maze? Does the engine avoid punishing the override?
+
+======================================================================
+14. PRIMITIVE: INSTRUCTOR EVIDENCE, NOT SURVEILLANCE
+======================================================================
+CLAIM
+Instructor analytics should summarize learning evidence and decision-relevant uncertainty, not behavioral surveillance.
+
+POTENTIAL SIGNALS
+- concepts with repeated error after sufficient exposure
+- common misconception categories
+- prerequisite bottlenecks
+- unusual item/content confusion
+- coverage gaps
+- insufficient-evidence students/concepts
+- retention review candidates
+
+WHY
+Professors need useful decisions, not another dashboard full of clicks and dwell time.
+
+STRONGEST ATTACK
+Aggregates can imply causality or stigmatize learners.
+
+REVISED RULE
+Every surfaced instructor insight separates observation from interpretation/recommendation, includes sample/uncertainty, and allows inspection of underlying pedagogical evidence. Do not infer motivation, laziness, intelligence, disability or personality.
+
+TEST
+For each insight ask: What exactly was observed? How many learners/items? What uncertainty? What action could an instructor reasonably consider? What claim would be an overreach?
+
+======================================================================
+15. AI BOUNDARY
+======================================================================
+CLAIM
+Generative AI assists content understanding/generation/explanation but does not own course truth, learner truth or core decision state.
+
+SAFE CANDIDATE ROLES
+- propose target extraction/tagging from sources
+- draft explanations/examples/question variants
+- rubric-grounded free-text assistance
+- summarize instructor evidence with provenance
+- create accessibility/wording variants
+
+NOT SOLE AUTHORITY FOR
+- canonical course facts
+- silent graph mutations
+- permanent mastery updates
+- high-stakes instructor conclusions
+- unlogged next-action decisions
+
+WHY
+LLMs are probabilistic and can hallucinate or drift; core state requires reproducibility and auditability.
+
+TEST
+Can the engine continue operating deterministically with generative AI unavailable, albeit with fewer generated materials? Can all AI outputs be traced to source/model/version and approval status?
+
+======================================================================
+16. DATA MINIMIZATION
+======================================================================
+CLAIM
+StudyGrid should collect pedagogically meaningful events, not everything technically observable.
+
+DEFAULT AVOID
+raw cursor paths, keystroke dynamics, continuous screen recording, background-window surveillance, inferred emotion/personality/health/disability.
+
+WHY
+These signals are noisy, accessibility-confounded and privacy-expensive.
+
+STRONGEST ATTACK
+Some fine-grained telemetry may improve prediction.
+
+REVISED RULE
+Prediction gain alone is insufficient. A new signal must demonstrate incremental pedagogical value, acceptable privacy/fairness cost, and a legitimate use purpose before adoption.
+
+TEST
+For every proposed signal, require: intended decision improved, evidence it helps, confounds, privacy cost, retention policy, user/institution value, and lower-intrusion alternatives.
+
+======================================================================
+17. V1 SUCCESS DEFINITION
+======================================================================
+CLAIM
+Engine v1 succeeds if it is coherent, inspectable, useful and falsifiable—not if it appears maximally “AI.”
+
+EARLY SUCCESS CRITERIA
+- course/target/source model is internally consistent and reviewable;
+- learner state never claims more certainty than evidence supports;
+- recommendation reason traces are complete/replayable;
+- teaching vs testing interventions follow mode/construct rules;
+- students can understand Up Next and recover from wrong recommendations;
+- instructor evidence is actionable enough to validate with real professors;
+- baseline model can be compared against future statistical/deep challengers;
+- beta exposes wrong assumptions without corrupting durable truth.
+
+NON-GOALS FOR ~20-PERSON BETA
+- proving broad efficacy
+- training a deep adaptive model
+- proving fairness across populations
+- proving institutional-scale reliability
+- declaring one learner-state model universally best
+
+======================================================================
+18. REQUIRED ADVERSARIAL REVIEW QUESTIONS
+======================================================================
+A reviewer must actively try to disprove this draft:
+1. Is “Learning Target” actually the right atomic primitive, or is another ontology better?
+2. Which distinctions above are redundant or falsely precise?
+3. Which required evidence would be impossible to validate across domains?
+4. What breaks in mathematics/engineering vs law/forensics vs memorization-heavy material?
+5. Where could an instructor-authored bad graph poison the engine?
+6. How could a learner game the evidence model?
+7. Which state labels risk becoming circular (“needs teaching because state says needs teaching”)?
+8. Can the next-action policy accidentally optimize short-term accuracy over durable learning?
+9. How should conflicting evidence be represented without arbitrary averaging?
+10. Which rules need hard invariants vs tunable hypotheses?
+11. What is missing for accessibility, accommodations, language, or alternative response modalities?
+12. What should StudyGrid intentionally NOT infer?
+13. What would make this architecture expensive/impossible to operate at institutional scale?
+14. Which parts duplicate proven standards/libraries unnecessarily?
+15. What is the smallest coherent Engine v1 that could be beta-tested without pretending to be more intelligent than it is?
+
+TERMINAL NOTE
+This is Draft 0. It is intentionally attackable. No implementation authority is granted by this document.
