@@ -1,6 +1,6 @@
 STUDYGRID — KEVIN WORK QUEUE
 Coordinator: ChatGPT General CF-0040
-Updated: 2026-10-01 00:30 ET
+Updated: 2026-10-01 08:33 ET
 Queue owner: General
 Worker: Kevin
 
@@ -8,21 +8,20 @@ PULL RULE
 When Nathan tells Kevin to check routing, refresh lifecycle and this queue, then execute the first eligible unclaimed item. Persist lifecycle and return durable technical results directly to General. Do not invent filler or pull peer work.
 
 CURRENT CONTEXT
-- Q-K1E evidence recovery/publish: TERMINAL BLOCKED. Recovered real Q-K1R state is FAILED; no valid source-stable full-context A+C proof artifact exists yet.
-- Existing Q-K1 branch: kevin-qk1-v4a-full-context-dual-preview @ a14459b1bd3f8b353eaa8e4f78aae3341b96cfef.
-- Owner review pass closed at 2026-10-01 00:30 ET.
-- Closure: routes/OWNER_REVIEW_BATCH_20260930_CLOSED.txt @ 707194c337ea4eafd15b12e433c90ed45bc690ba.
-- Parallel release: routes/GENERAL_RELEASE_20261001_0030_OWNER_REVIEW_BUILD.txt @ a4033b973d3efd19f2bd7f362a7af5cd769fb173.
+- Q-K1E evidence recovery/publish previously terminal BLOCKED; prior Q-K1R state FAILED.
+- Recovery branch: kevin-qk1-v4a-full-context-dual-preview @ a14459b1bd3f8b353eaa8e4f78aae3341b96cfef.
+- Q-K1F STARTED durably at routes/RTE-20261001-0042-ET__FROM-STUDYGRID-WORKER-KEVIN__TO-CGPT-GENERAL-CF0040__Q-K1F-OWNER-REVIEW-RENDER-COMPLETION__STARTED.txt @ e2a00830216842fbf7ed80c9b625ed5c7357860d.
+- Current branch still points at the prior head and current Actions history still shows only failed run 36734968949. No terminal Q-K1F proof return is yet verified by General.
 
 Q-K1F — BOUNDED VERIFIER RECOVERY + SOURCE-STABLE A/C PROOF PUBLICATION
-Eligibility: AVAILABLE NOW.
-Recover/fix the failed verifier path and publish a valid source-stable full-context A+C proof artifact for the locked Blender intro contract. Preserve exact A/C semantics. Do not choose A or C for Nathan. Do not modify Bob's StudyGrid HTML/CSS/WAAPI scope. Return durable proof metadata directly to General.
+Status: STARTED / TERMINAL RETURN PENDING.
+Finish the already-started bounded verifier/evidence recovery. Preserve A/C mechanics; do not choose A or C.
 
 Q-K2 — DUAL-CANDIDATE GLB EXPORT SMOKE
-Eligibility: BLOCKED until General verifies the valid Q-K1F full-context A+C proof.
+Eligibility: BLOCKED until General verifies a valid Q-K1F source-stable full-context A+C proof artifact.
 
 Q-K3 — SELECTED-CANDIDATE FINAL RENDER / ROUND-TRIP
 Eligibility: BLOCKED until Nathan selects A or C after independent full-context acceptance and General publishes the selected integration source.
 
 STOP CONDITION
-Do Q-K1F only unless a newer General release explicitly advances the dependency chain.
+Complete Q-K1F and return durable terminal proof metadata to General. Do not start Q-K2/Q-K3 without a newer General release.
