@@ -1,0 +1,63 @@
+STUDYGRID — GEMINI 3.1 PRO RETURN / SELECTRIC-TYPEBALL WELCOME MOTION
+Recorded by General: 2026-09-30 22:09 ET
+Source: Nathan pasted Gemini 3.1 Pro response into General
+Status: EXTERNAL SPECIALIST INPUT / NOT FINAL CONTRACT
+Parent owner-review batch: routes/OWNER_REVIEW_BATCH_20260930_OPEN.txt
+
+GOOGLE DRIVE CAPABILITY RESULT
+Gemini reported that in that specific environment it could not directly access/read/retrieve Google Drive files or IDs and therefore proceeded from the self-contained brief. Treat Gemini as self-contained-copy-box only unless a later environment proves direct shared-source access.
+
+GEMINI RECOMMENDED CONCEPT
+- Implied spherical mechanism using compound CSS 3D rotation.
+- One coherent invisible spherical/Selectric-like object; three phrases conceptually occupy positions around it.
+- Compound X/Y rotation instead of pure X (slot-machine feel) or pure Y (carousel feel).
+- No drawn sphere; geometry inferred from motion.
+- Outgoing text moves away/depth-fades; incoming text rotates to dead-center/front and returns to crisp readable state.
+
+MOTION DIRECTION PROPOSED BY GEMINI
+- Combined X/Y rotation; example approximately -35deg X and 120deg Y between positions.
+- Shortest physical path; roughly 90–120deg combined rotation, no gratuitous 360 spins.
+- Scene perspective with phrases fixed around an implied radius/rotor.
+- Suggested 600–800ms transition, 4.5–5s dwell.
+- Autoplay with pause on hover/focus/touch; manual advancement supported.
+- Suggested deliberate mechanical easing; examples included slight overshoot spring or asymmetric snap-and-settle easing.
+
+IMPLEMENTATION DIRECTION PROPOSED BY GEMINI
+- Prefer CSS 3D transforms orchestrated by JS or Web Animations API.
+- Avoid Three.js/WebGL/Canvas for this small native-text UI element because of unnecessary complexity and text/accessibility tradeoffs.
+- Conceptual DOM: perspective scene -> transform-style:preserve-3d rotor -> three native text phrase elements positioned around the rotor with rotate/translateZ transforms.
+- Rotate rotor to bring each phrase to the front.
+
+ACCESSIBILITY PROPOSED BY GEMINI
+- prefers-reduced-motion disables 3D rotation; use an intentional simpler/static alternative.
+- Do not repeatedly announce autoplayed text to screen readers.
+- Keep a static semantic ordered list for assistive technology if the visual rotor is decorative.
+- Keyboard-focusable manual controls if present; entering/focusing component pauses autoplay.
+
+VISUAL DIRECTION PROPOSED BY GEMINI
+- No visible ball/wireframe.
+- Restrained depth treatment; inactive phrases lower-opacity/possibly slight blur.
+- No fake text lighting/shadow gimmicks.
+- Active phrase front-facing, crisp, deep green/charcoal on current paper/cream language.
+- Incoming/outgoing labels may be glimpsed during transition but should not compete with active phrase.
+
+REJECT CONDITIONS PROPOSED BY GEMINI
+- pure vertical slot-machine motion;
+- pure horizontal carousel motion;
+- text blurry at rest;
+- excessive spin;
+- motion-sickness-inducing continuous/slow rotation;
+- inconsistent spatial anchoring/random floating;
+- animation becomes the focus instead of supporting the product.
+
+OPTIONAL FALLBACK FROM GEMINI
+- Angled triangular prism / three-face rotor tilted back, rotating 120deg per step. Simpler responsive math while retaining a deliberate mechanical feel.
+
+LANDING HIERARCHY NOTES FROM GEMINI
+- animation must not demote or push Sign In below the fold;
+- hero copy remains primary, rotor supports it;
+- returning/recognized users may eventually see a more direct continue/pick-up state instead of novice full-loop explanation;
+- onboarding itself should start after sign-in and use focused progressive school/program setup rather than public-page class creation.
+
+GENERAL NOTE
+This file preserves Gemini's substantive direction as external input. General's separate adjudication file determines what is provisionally accepted/amended pending dedicated Research return and final owner review.
