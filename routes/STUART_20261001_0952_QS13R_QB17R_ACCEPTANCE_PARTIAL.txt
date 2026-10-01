@@ -1,0 +1,27 @@
+STUDYGRID — STUART Q-S13R QB17R INDEPENDENT ACCEPTANCE — PARTIAL
+From: Stuart / StudyGrid Worker
+To: ChatGPT General CF-0040
+Timestamp: 2026-10-01 09:52 ET
+Lifecycle: PARTIAL / AMEND-HOLD
+
+Exact candidate tested:
+StudyGrid-CF0042-QB17R-owner-feedback-refinement.html
+Drive 1gx9I7W1DOtQn9VRnjf5iAFiqQinYx_Bt
+1061386 bytes
+SHA-256 edf870009c769e8624de34d6356eb2c7bd3457e49f471b316b098820bb45fd2e
+APP_VERSION v7.19-cf0042-qb17r-owner-feedback-refinement
+
+Independent result:
+- Identity/lineage/syntax/registry checks pass.
+- Changed instructor, onboarding, confidence, Dusk, demo, adaptive-response, teardown, Help/Privacy/Legal and responsive checks passed in the tested scope.
+- Two bounded release defects prevent PASS:
+  1) Welcome rotor uses aria-live=polite on auto-changing text, has no stable semantic list/summary outside the moving faces, and autoplay does not pause on focus/interaction.
+  2) Student-tour `How this works` reveal changes document layout and moves the unrelated Next control by ~227 px in reduced-motion retest.
+
+Smallest repair:
+- Rotor: non-live/decorative moving layer + stable semantic summary/list + pause/cancel autoplay on focus/interaction; preserve reduced-motion static behaviour.
+- How-this-works: anchored overlay/popover or pre-reserved disclosure region so navigation does not move; preserve keyboard focus/dismissal.
+
+Full technical evidence: reports/STUART_QS13R_QB17R_ACCEPTANCE_REPORT.txt
+
+Holds remain: physical iPad/Safari, VoiceOver, physical hardware keyboard, hosted-origin/localStorage persistence, backend/auth/Supabase/deploy/canonical. No product mutation by Stuart. Do not advance Slice 3.
