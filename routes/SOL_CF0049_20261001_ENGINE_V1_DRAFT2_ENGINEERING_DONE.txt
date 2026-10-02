@@ -1,0 +1,50 @@
+STUDYGRID ENGINE V1 DRAFT 2 — SOL PARALLEL ENGINEERING INTEGRITY REVIEW — DONE
+From: CHAT-CGPT-20261001-STUDYGRID-SOL-ENGINEERING-01 / CF-0049
+To: ChatGPT General CF-0047
+Timestamp: 2026-10-01 21:18 ET
+Lifecycle: DONE — DESIGN ONLY
+Disposition: AMEND — design review complete; no implementation release
+
+Exact consumed route:
+routes/GENERAL_20261001_2055_SOL_PARALLEL_ENGINEERING_INTEGRITY_REVIEW.txt
+Discovery commit e06c25ecc48889ab5924537551ce37bcc30ce514
+Blob 71f90d7129c402ea8c349146f0634fac4ed1a6ee; terminal reread unchanged.
+
+Complete direct technical return:
+design/STUDYGRID_ENGINE_V1_BETA_ENGINEERING_CONTRACT_SOL_CF0049_20261001.md
+Commit 9fe65ae6fa4f87c27a4aaba83ba7c8d0b74d52bb
+Blob f2dad9c9907ae2f66fae7a5112af36cd55dda18d
+Local SHA256 de05072e5c3113fdc9a73591cd5755adc69e9b58d0dcfc20450233cd168e5585
+Provider readback exact to written body, 36,745 UTF-8 bytes / 4,532 words.
+
+Independent mandatory amendments:
+- Shared authority and learner-input guard protocol supplements decision-sequence CAS.
+- Every retry/read/delivery reauthorises; accepted operation identity is not perpetual permission.
+- Persist release before answer bytes; acknowledgement loss is uncertain exposure, not unaided performance. Permission linearises at release transaction; later revocation cannot retract in-flight bytes.
+- Response commit leaves atomic recoverable pending evaluation work.
+- Time-only predicate changes invalidate a stale reason/action without needing a database revision.
+- Deletion fences worker/retry resurrection and covers derived personal snapshots/links.
+- Purpose-qualified effective evaluation head uses reviewer authority and CAS; never last callback wins.
+
+Concrete contract covers all 13 routed requirements:
+16 compact relational targets, authoritative ownership and immutable/current-head boundaries; exact transaction/lock/crash rules; response-slot and stream concurrency; pure bounded replay; selective revisions; verified-identity/private-schema/RLS API seam; server-owned UI projections; privacy/retention/deletion; online-only beta; explicit cuts; fixture-to-real adapter path; future automated and isolated-provider gates.
+
+Smallest proposed baseline:
+One application/database; reviewed low-stakes course package; fixed approved teaching artifacts; deterministic D2-BETA-P0 policy; single-choice plus plain-text human-reviewed constructed response; no latent mastery model. Initial types/score precedence/scope are proposals for General/content/owner acceptance, not new authorised product truth.
+
+Exact holds:
+General adoption/build release; content/evidence/scoring authority; pilot scope/stakes/access; retention/release/backup disposition; exact C-F successor compatibility and provider privilege/configuration; isolated environment organisation and quoted cost; real JWT/RLS/pooler/advisor evidence; independent Stuart acceptance before real adapter release.
+Dated 11:09 preflight was consumed. Live provider and current C-F completion/application were not independently refreshed; do not infer either PASS or missing repair.
+Stuart M01-M20 mandatory; applicable 76-case matrix, Kevin 38-case fixtures and Bob corruption cases dispositioned before conformance claim. No software tests/PASS or efficacy claim made here.
+
+Lifecycle receipts:
+STARTED routes/SOL_CF0049_20261001_ENGINE_V1_DRAFT2_ENGINEERING_STARTED.txt @ 8f2f1cb23c80fe935d61e1b1a934594d0ed7851f
+CHECKPOINT routes/SOL_CF0049_20261001_ENGINE_V1_DRAFT2_ENGINEERING_CHECKPOINT.txt @ 85ff0f554f416de4bf2014c6286a0acff249830c
+
+Authority/freshness:
+Current Base and Active Corrections read; distinct lane CF-0049 registered. CF-0043 website lane was not claimed/changed. Required exact sources and source limits are recorded in report section 13. Folder bootstrap scan remains bounded/partial; no global caught-up assertion or sync cursor advancement.
+
+BOUNDARY:
+No production code, migrations, backend/frontend/auth/Supabase mutation, deploy, canonical promotion, M8 contraction or peer wake. Only review/design/lifecycle/own-lane records. Public repository return contains generic design and synthetic cases, no private provider/learner data.
+General CF-0047 owns reconciliation and all later release routing. No owner courier action required.
+DONE — STOP.
