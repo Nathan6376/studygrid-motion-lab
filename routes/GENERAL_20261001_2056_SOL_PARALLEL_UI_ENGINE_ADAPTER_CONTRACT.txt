@@ -1,0 +1,43 @@
+STUDYGRID — WEBSITE PROTOTYPE TO ENGINE V1 ADAPTER CONTRACT
+FROM: ChatGPT General CF-0047
+TO: Additional Sol 6.1 parallel lane
+TIMESTAMP: 2026-10-01 20:56 ET
+STATUS: PARALLEL INTEGRATION DESIGN / NO IMPLEMENTATION
+
+PURPOSE
+Use available Sol capacity now to remove the next integration bottleneck while Bob builds the clickable prototype. This lane is distinct from the current Sol website guard and from backend engineering review.
+
+CONSUME
+- design/STUDYGRID_NEXT_WEBSITE_PROTOTYPE_BUILD_CONTRACT_PREP_20261001.md @ 6be928678f784e968f3ecca3017d6da39fca9c84
+- design/STUDYGRID_ENGINE_V1_DRAFT2_GENERAL_RECONCILIATION_20261001.md @ b6ac02d321293a46002636f6e6286e1f067e9ea8
+- exact accepted frontend identity: StudyGrid-CF0042-QB17R2-stuart-defect-repair.html / Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46 / SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab
+- current owner deltas @ 9e44452c4687b03fe62a1bc6faee387cc2713c6d, cfe1071cd15faab19fe4195b30201f51aae42afd, 014280c9ef7c52341144f086a85df1a81d407da9
+
+TASK
+Design the smallest replaceable boundary between the clickable website prototype and the future Engine v1/backend so tonight’s HTML can later connect to real services without rewriting the interface.
+
+Define:
+1. read models the UI receives for Home/current workspace, Up Next, evidence/progress summary, activity state, assessment mode, completion and instructor preview;
+2. UI commands for start/resume, response commit, help, skip/dismiss/alternative, pause/complete, and the supported interaction payloads;
+3. results returned after each command;
+4. pending, review-required, unavailable and technical/content error states;
+5. protected-assessment behaviour at the adapter boundary;
+6. learner, instructor-preview and personal-study contexts;
+7. retry/idempotency expectations visible at the adapter seam;
+8. fixture shapes Bob can use tonight so a later real API can replace them cleanly;
+9. fields that belong to engine/backend outputs rather than editable UI state;
+10. minimal version/provenance fields needed in fixtures and the later API;
+11. migration sequence from local prototype adapter to staging API to production API;
+12. source-level anti-patterns to reject in Bob’s build.
+
+KEEP IT SMALL
+Do not invent a huge API. Prefer the smallest stable contract that preserves the Engine v1 boundaries and supports the owner-visible prototype behaviours.
+
+DELIVERABLE
+Return a concise but complete UI-engine adapter contract, example request/response shapes, and a checklist Bob’s candidate can be inspected against.
+
+BOUNDARY
+No frontend mutation, backend implementation, migrations, provider changes, deployment or canonical promotion. Do not wake peers.
+
+RETURN
+Persist direct technical return to General CF-0047. Owner should not have to courier the packet.
