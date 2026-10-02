@@ -1,0 +1,69 @@
+STUDYGRID — SEQ477 AMENDED H1/H2 QA — TERMINAL RETURN
+FROM: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+TO: ChatGPT General / CF-0051
+TIMESTAMP: 2026-10-02 18:49 ET
+TASK STATUS: DONE
+BOUNDARY: QA / ADJUDICATION ONLY — NO CANDIDATE MUTATION
+
+AUTHORITY / CURRENTNESS
+- CENTRAL ROUTING seq477 consumed as currently amended.
+- Route: Drive 16Zjknc9UcIxxAtHrqVbk3uX6mwcSg_iY2B_5ey5Q0aQ, current revision ANLCKQlkwPfhNZGxvEIvfNFLMneD08FfF_pzS7SdGHtepJ3Fqnrw0mOL7r5mRsBRYtrpox2MMiDRJOWRhADl1sD0T0EldO52bEF2uMylbKc.
+- Sol seq471: Drive 1VWkv__jNOvIAb-q_uDx99bl88wUZC7xj.
+- Repaired baseline: 82a3591b4495dd40f1ed182048aef67092fb64e9 / current-equivalent 4965df037cac2e147c154f6a78b172dd9acf3c04.
+- GitHub issue #4 starting candidate: a09f3af1ceadefedd2750b5ed2758291114d0718 on codex/studygrid-rejuvenation-issue-3.
+
+INDEPENDENT INHERITANCE CHECK
+`web/src/learning/store.ts` is blob f0b49b86380ba1214feefe2f21efca3232ac792f on both repaired baseline 82a3591 and issue #4 starting candidate a09f3af. The two residuals are therefore inherited unchanged before the issue #4 repair.
+
+REPRODUCTION VERDICTS
+H2 — REPRODUCED / P1 CONFIRMED.
+- create() snapshots previouslySeen at plan creation.
+- later markShown() in another instance updates live exposure but does not update the old run.
+- submit() uses stale run.previouslySeen, so READY→NEW show→READY answer can still be classified fresh/clean.
+- This can overstate feedback, completion and Progress; P1 is correct.
+
+H1 — REPRODUCED / P2 CONFIRMED FOR CURRENT IA.
+- submit() captures one global envelopeRevision and enters checking/pending.
+- unrelated eligibility setters advance that global revision while the active session can remain eligible.
+- a later provider resolve/reject fails matches() on revision mismatch and can return stale without clearing checking/pending.
+- Current IA limits ordinary incidence, so P2 remains appropriate; a reachable transaction dead-end remains a release blocker.
+
+FULL QA ARTIFACT
+- reports/STUART_20261002_SEQ477_AMENDED_H1_H2_ISSUE4_ACCEPTANCE_FREEZE.txt
+- commit c94b793a11eeb3b245af5a31af49577e3c1346f0
+- provider-read after publication.
+
+FROZEN ISSUE #4 ACCEPTANCE
+H2:
+1. READY→NEW shown shared task→READY resumed answer => nonfresh/practice.
+2. Reverse NEW→READY→NEW => nonfresh/practice.
+3. Current-instance first display alone remains clean/fresh-eligible.
+4. Queued-but-never-shown other plan does not count as exposure.
+5. Prior accepted same-task receipt in another instance prevents fresh evidence.
+6. Same-instance remount is idempotent and does not create false prior exposure.
+7. hint/reveal/another-way/retry semantics stay nonfresh.
+8. History/receipts/exposure cannot be deleted to manufacture freshness.
+9–10. SET↔APPLY both directions use a synthetic/injected shared-task fixture unless later integrated content has real shared IDs. Current catalog has none: SET uses set-1..set-4 while APPLY uses distinct game IDs.
+
+H1:
+1. unrelated checkpoint mutation, resolve + reject;
+2. unrelated source mutation;
+3. unrelated module release mutation;
+4. unrelated Study Set share mutation;
+5. no-op checkpoint/source/release/share setters;
+6. relevant source/module/checkpoint/share revocations still invalidate/block old work;
+7. retired op settling after newer resubmit cannot clobber current state;
+8. repeated unrelated revisions cannot strand checking;
+9. pause/restart/reset stale-safety remains intact.
+
+For unrelated revision, either is acceptable:
+A. pending operation remains valid and settles normally; or
+B. operation is retired to locked/recoverable, pendingOp cleared, committed answer/confidence retained.
+Never acceptable: settled checking forever, stale pendingOp, lost committed state, duplicate receipt, stale-op clobber or acceptance after relevant revocation.
+
+PRESERVATION
+Seq470 remains terminal and was not rerun. Existing issue #2 repair R1–R5, browser R1/R2/R3/R6/R7, Settings-focus, Stuck→Source and games Add-to-list assertions remain mandatory and unweakened, along with seq470 device/AT/hosted/owner holds.
+
+No implementation, dependency installation, candidate mutation, merge, deployment, backend/auth/Supabase/AI connection or peer wake occurred.
+
+DONE — DIRECT RETURN TO GENERAL CF-0051.
