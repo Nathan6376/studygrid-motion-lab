@@ -1,0 +1,73 @@
+STUDYGRID — POST-BUILD INDEPENDENT QA — TERMINAL RETURN
+FROM: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+TO: ChatGPT General / CF-0051
+TIMESTAMP: 2026-10-02 14:36 ET
+TASK STATUS: DONE
+CANDIDATE GATE: BLOCKED FOR REPAIR
+BOUNDARY: QA / ADJUDICATION ONLY — NO MUTATION
+
+AUTHORITY / IDENTITY
+- CENTRAL ROUTING seq453 + linked General route consumed.
+- Exact application source reviewed: e4e166cd090c537870c0c79f43a93a9a6854bd28 on claude/nifty-volta-wdicyt.
+- Current branch head remains 254c4eb9506cc7dde6739c795ba2b3273b13d284; independent compare confirms no web/ source mutation after e4.
+- PR1 recovery baseline: e887a8a569babee941c0574d2c432fb2b6417211.
+
+FULL REPORT
+- reports/STUART_20261002_STUDYGRID_POSTBUILD_INDEPENDENT_QA_REPORT.txt
+- commit a0ff10667f6fd0805ae0ee25356ace420e29dc36
+- provider-read after publication.
+
+ADJUDICATION
+BLOCKED FOR REPAIR. No P0 demonstrated.
+
+All five Sol P1 findings were independently corroborated from exact candidate source; none was falsified:
+1. Draft learner-source leakage: learner session/source paths do not enforce approvedSourceIds, and SourceSheet can render a Draft excerpt while saying it is not shown to students.
+2. Paused/current eligibility bypass: unfinished sessions resume without re-plan/current release-checkpoint-share validation and Teaching eligibility changes do not invalidate session generation.
+3. “Say it another way” help can still be graded clean/on-your-own because support.anotherWay is recorded but omitted from the provider helped predicate.
+4. Restart can erase unanswered help/exposure because fresh/seen state is receipt-derived; a helped-but-unsubmitted item can return as unseen/fresh.
+5. Completed-session reuse breaks stable REVIEW and Play-again promises: start() returns existing completed session; Practice REVIEW and game Play again routes can land on old completion instead of a new eligible instance.
+
+LOWER FINDINGS
+- Sol F6–F12 are source-supported at their bounded P2/P3 severity: retry fresh-metadata contradiction; stale-help rejection generation gap; under-bounded topic Done projection; provider opId multi-controller collision seam; welcome no hidden/offscreen pause; General Add/direct-learn inconsistency; root-only receipt freeze.
+- Stuart adds two P3 focus regression gaps:
+  A. Settings jump prevents native anchor behaviour and tries to focus an h2 that has no focusability mechanism; no browser test covers destination focus.
+  B. Stuck? → Show source replaces the single modal state and carries no durable focus-return target across modal replacement; direct source focus return is tested, this chained path is not.
+
+PASS SURFACES TO PRESERVE
+- coherent School/General/Teaching shared React/TS spine and focused session architecture;
+- Check locks answer → optional confidence/Skip → feedback; confidence hover/focus is visual only;
+- provider-owned evaluation and stable-ID ordering;
+- stale submit/double-submit guards;
+- pointer/touch/pen ordering with visible Move controls, announcements and cancellation;
+- direct Settings/local truth and native foreground dialog base;
+- continuous welcome loop + reduced-motion/manual equivalent;
+- truthful preview Sign in / no real backend-auth claims;
+- Teaching Ready→Share separation and sample-data labelling;
+- three game families use the ordinary learning provider, source debrief and Simple view; no motor-speed scoring or second learning engine;
+- warm green/cream/material and shared-element structure remain in source.
+
+REPAIR ACCEPTANCE FLOOR
+Freeze a new application SHA and run fresh evidence. Required negatives include:
+- Draft source blocks NEW/REVIEW/READY/APPLY/SET learner delivery + Show source/debrief leakage.
+- paused/direct/recent routes obey current release/source/checkpoint/share eligibility; late submit/help cannot credit after revocation.
+- another-way before correct answer => helped, never on-your-own; restart preserves actual exposure; retry is never fresh independent evidence.
+- second REVIEW after new learning opens a new fresh plan; Play again starts a new APPLY instance; READY/SET repeat semantics audited.
+- whole-topic Done requires bounded coverage, not one clean partial task.
+- stale help reject/resolve ignored; controller operation identities cannot collide; receipt identity validated.
+- welcome intentionally pauses hidden/offscreen.
+- Settings jump and Stuck→Source close have deterministic keyboard focus outcomes.
+- preserve confidence, evaluator, ordering, Teaching, games and local-truth regressions.
+
+SEPARATE HOLDS
+- physical iPad/Safari/touch/Pencil;
+- VoiceOver/physical AT;
+- hosted origin/deep-link/reload/history/delivered-preview identity;
+- real backend/auth/Supabase/AI/grades/durable records remain deferred;
+- Nathan/Stuart rendered visual/product acceptance and suitable content review remain open.
+
+METHOD LIMIT
+Claude-reported build/99 unit/87 browser+6 skip/2 offline results were treated as builder evidence, not independently rerun. This lane installed no dependencies and had no pre-materialized runnable private checkout. The P1 block is independently established from exact candidate source and does not depend on physical-device access.
+
+No implementation, dependency installation, merge, deployment, backend/auth/Supabase/AI connection, candidate mutation or peer wake occurred.
+
+DONE — DIRECT RETURN TO GENERAL CF-0051 / CANDIDATE BLOCKED FOR REPAIR.
