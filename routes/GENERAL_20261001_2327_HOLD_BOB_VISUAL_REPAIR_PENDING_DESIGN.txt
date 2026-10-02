@@ -1,0 +1,25 @@
+STUDYGRID — HOLD BOB VISUAL REPAIR PENDING DESIGN
+FROM: ChatGPT General CF-0047
+TIMESTAMP: 2026-10-01 23:27 ET
+STATUS: HOLD / SUPERSEDES ACTIVATION OF GENERAL_20261001_2320_BOB_V722_OWNER_VISUAL_AMEND.txt
+
+OWNER CORRECTION
+Nathan correctly identified that General jumped from observed defects straight to implementation again. Do not activate Bob on the 23:20 repair route yet.
+
+REASON
+The cycling behaviour and Sign in treatment are visible product/motion-design choices and must first be reconciled with Nathan's accumulated owner direction and the design inputs he supplied today, including:
+- continuous 1→2→3 welcome cycling with reduced-motion/user-control protections;
+- the previously rejected white/light edge on the green Sign in control;
+- Emil Kowalski / Apple-style motion principles: immediate feedback, spatial consistency, interruptible/reversible motion where applicable, reduced motion, no focus/target loss;
+- Thinking Orbs lesson: state-specific motion should explain state/causality rather than act as generic decoration;
+- Claude/Opus motion-design workflow lesson: gather product sources + explicit motion creative contract before generation/implementation;
+- Nathan's broader preference for premium, calm, intentional motion rather than cheap/generic AI-app animation.
+
+NEXT GATE
+1. Design synthesis first: define exact intended cycling choreography, interaction pause/resume behaviour, timing/easing, reduced-motion equivalent, and exact Sign in rest/hover/press/focus treatment.
+2. Owner review/approval of that bounded design direction if needed.
+3. Only then release the smallest Bob implementation against exact v7.22 bytes.
+4. Stuart independently verifies the resulting exact candidate.
+
+BOUNDARY
+No frontend mutation from this hold. No backend/auth/Supabase/deploy/public-brand mutation. The 23:20 Bob repair packet remains historical draft evidence only until a newer General release explicitly supersedes this HOLD.
