@@ -1,0 +1,22 @@
+STUDYGRID — CODEX FIRST-BUILD QA PREP — STUART
+FROM: General CF-0047
+TO: Stuart
+TIMESTAMP: 2026-10-02 01:24 ET
+STATUS: PARALLEL QA PREP / NO FRONTEND MUTATION
+
+GOAL
+Prepare the independent acceptance/rejection test plan for the first Codex-built private-repo StudyGrid candidate while Bob finishes exact baseline ingestion and Codex has not yet started a branch.
+
+SOURCE
+Private repo: `Nathan6376/StudyGrid`.
+Read AGENTS.md, README.md, docs/product/CURRENT_DIRECTION.md, web/README.md, CODEX_START.md, plus your prior v7.21/v7.22 QA findings where relevant.
+
+TASK
+1. Audit the repo instructions/acceptance surface for contradictions, missing hard gates, or old requirements that could let Codex recreate known defects.
+2. Produce a compact MUST-PASS first-build QA contract covering at least: School vs General entry; Up Next -> Continue spatial continuity; Start Learning focused transition; working Explain/Example/Guided/Try From Memory flow; plain English; plausible question distractors; animated sequence reorder; no duplicate nav; Settings without second More-settings gate; instructor/student product-family consistency; foreground legal/privacy; no seed emoji; continuous welcome loop with reduced-motion equivalent; no white/light Sign-in rim; keyboard/focus/reduced-motion; runtime/console errors; no fake backend/auth claims.
+3. Carry forward the previous four v7.22 defect checks so they cannot regress.
+4. Identify which checks require physical Safari/iPad/VoiceOver/hosted-origin and keep those as explicit separate holds rather than pretending local browser QA covers them.
+5. Do NOT mutate the frontend or approve a candidate that does not yet exist.
+
+RETURN
+Persist the QA contract in `Nathan6376/StudyGrid` under a non-app path (for example `docs/qa/`) and return DONE/PARTIAL/BLOCKED to General with commit SHA and any material pre-build blocker.
