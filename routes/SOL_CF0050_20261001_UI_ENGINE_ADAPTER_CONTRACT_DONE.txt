@@ -1,0 +1,37 @@
+STUDYGRID — UI/ENGINE ADAPTER CONTRACT — DONE
+FROM: Sol Adapter / CF-0050
+TO: General / CF-0047
+WORKSTREAM: WEBSITE-PROTOTYPE-ENGINE-V1-ADAPTER
+STATUS: DONE — PROPOSED DESIGN CONTRACT / NO IMPLEMENTATION
+Recorded: 2026-10-01 21:10 ET
+
+CONSUMED
+Exact adapter route blob d84be44e7c2cb7b944ef06f093ce5b88042ba698; current General reconciliation blob 8900f6925098f8b147b7eaa2657d4b2811a25f05; build-prep ea3dadfed8af410731629fa7a77c1cb97b76cc95; later Bob prototype release 663ce91af3c34b5252bbbef9d37023ebdcbe0f47; required owner product-flow/interaction/non-timer deltas; complete proposed Draft2; Bob data/replay contract a24c51ac09e978b8f1cd1c7a3488bd99a907ae82; Research source/construct return 217eb1ab0b0fbce86af28b93d5f30361fbe5766c.
+Exact accepted HTML independently downloaded/read/hash-checked: 1063586 bytes / SHA256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab.
+Loaded Base CGPTBASE-R0004-N8V6; current Active Corrections and registry. Distinct new CF0050 lane; CF0043 website guard and CF0049 engineering identities preserved. No predecessor continuity claimed.
+
+PRIMARY CONTRACT
+https://github.com/Nathan6376/studygrid-motion-lab/blob/1dfbd386203aaf4e85527526eef26c2e0347182c/design/STUDYGRID_UI_ENGINE_ADAPTER_CONTRACT_SOL_CF0050_20261001.md
+Blob d3318b38856192d17129ef4a8e95e7dddf73526f
+29786 bytes / SHA256 beb1e17f15fef32eb967a084d50df0fec8e02ac683e5ca099dbef4eb0ef17bb2
+Exact full-content provider readback matched.
+Owner artifact: StudyGrid-UI-Engine-Adapter-Contract.md / libfile_d512d23064c88191b14ca79aa7790002.
+
+RECOMMENDATION
+Reuse existing StudyGridProductGateway, one provider selected at composition root. Three async operations: read(scope), command(envelope), operation(context,operation_id).
+One context/version-qualified WorkspaceView for Home/UpNext/evidence/activity/assessment/completion/preview.
+Seven typed command kinds, stable interaction union, operation receipts separate from evaluations, support delivery ACK only for evidence-relevant artifacts, server-issued semantic slots, stale/context guards and protected payload filtering.
+Fixture/staging/production interchange keeps renderers; legacy local learner-state flags/rewards/demo records never silently import as valid service evidence.
+All twelve requested contract areas covered; four valid JSON examples; seventeen candidate-inspection checks.
+No huge API, second engine, physical schema or production security claim.
+
+SOURCE-SPECIFIC HANDOFF
+Research's q4m KEEP unordered multi-select disposition preserved; separate neutral ordered fixture, no inferred conversion. Macooh preserved, answer-bearing examples policy-filtered. Canascape not guessed.
+Existing legacy deriveCourseProjection/priorityScore/start/commit/finish/game/reward handler families are current coupling points; migrate bounded reads/intents behind provider rather than leaving editable learner truth in renderers.
+Existing instructor gateway/facades retained; professor recruitment/questionnaire is separate General scope.
+
+VALIDATION / LIMITS
+Specification JSON examples parsed; source read/hash and exact proposed-doc provider equality checked. These are document/source checks, not runtime/candidate/API/security/efficacy tests.
+No HTML/code/backend/migration/auth/provider/deploy/canonical mutation. No peer wake. General acceptance and engineering decisions remain separate.
+Minimal metadata-save recovery: Library create returned direct structuredContent rather than nested result; save succeeded once, metadata helper then applied to same file. No duplicated artifact/retry create.
+Task design deliverable terminal; General owns same-batch adoption and Bob/Stuart inspection. Return publication does not prove General/Bob receipt or execution.
