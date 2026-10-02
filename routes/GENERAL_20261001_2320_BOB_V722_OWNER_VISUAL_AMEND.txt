@@ -1,0 +1,44 @@
+STUDYGRID — v7.22 OWNER VISUAL AMEND — BOB
+FROM: ChatGPT General CF-0047
+TO: StudyGrid Bob CF-0042
+TIMESTAMP: 2026-10-01 23:20 ET
+STATUS: OWNER CORRECTION / BOUNDED FRONTEND REPAIR / NO BACKEND MUTATION
+
+OWNER CORRECTION
+Nathan is reviewing the actual v7.22 HTML and has identified two previously supplied owner requirements that are still visibly wrong:
+1. The welcome StudyGrid loop — Bring in the class → Learn and practise → Return with a reason — must keep cycling continuously. It must not stop after one finite 1→2→3 run. Preserve reduced-motion behaviour and accessible user control. Interaction pause/restart must not permanently kill the loop unless reduced motion / explicit user preference requires that.
+2. The green Sign in button must not show the white/beige edge, inset highlight, hole or white focus-gap effect Nathan previously rejected. Preserve an obvious accessible keyboard focus state, but make it visually connected to the green control rather than a white/light edge.
+
+WHY THIS IS A CORRECTION, NOT NEW SCOPE
+- Durable owner delta routes/OWNER_DELTA_20261001_1109_QB17R_FRONTEND_REVIEW_HOLD.txt explicitly said the landing 1→2→3 sequence must keep cycling continuously in the next frontend pass.
+- General’s 20:47 v7.21 build release failed to include that durable delta in the MUST CONSUME list. This omission is General’s routing miss, not a product decision.
+- Nathan had also previously rejected the white/beige edge around the green Sign in control. The current v7.22 CSS still contains a white primary-button inset highlight and a white-mixed primary focus treatment, so the visible issue remains/recurred.
+
+EXACT BASE — DO NOT SUBSTITUTE
+Filename: StudyGrid-CF0042-Website-Prototype-v7.22-stuart-amend-repair.html
+Drive ID: 1_xjvGuLOHDpGcak9elvH6QcudSiW4M1d
+Version: v7.22-cf0042-v721-stuart-amend-repair
+Bytes: 1,101,587
+SHA-256: 95869b3b61b33b993a02ace37744f051c1b4358e776ab510eae53e04394f686b
+Bob v7.22 terminal: a5e93a314ec47a1930cafa4090c2b5a2e80178e1
+
+CURRENT SOURCE EVIDENCE
+- Current welcome timer clears itself once ++runs > 2, so it performs a finite run and stops.
+- Current primary button styling includes `inset 0 1px 0 rgba(255,255,255,.18)` and primary focus styling mixes the outline with white. Do not remove focus visibility; remove the rejected light edge/gap appearance.
+
+REPAIR BOUNDARY
+- Change only these two owner-visible behaviours plus necessary version/build metadata.
+- Preserve the four v7.22 Stuart-AMEND repairs and all other currently passing flows.
+- No redesign, public-brand rename, backend, auth, Supabase, provider, network, deploy, canonical promotion, or unrelated cleanup.
+- Produce a NEW non-canonical exact-byte candidate. Do not overwrite v7.22.
+
+VERIFICATION FLOOR
+A. Normal motion: observe at least two complete 1→2→3→1 cycles without manual input; loop continues rather than self-terminating.
+B. Reduced motion / less-motion: no unwanted autoplay animation; preserve readable static/manual equivalent.
+C. Pointer/keyboard interaction must not create a permanent dead state accidentally; document exact pause/resume rule used.
+D. Sign in at rest: no white/beige edge, inset highlight or hole around the green control.
+E. Sign in keyboard focus: clearly visible focus remains, but no white/light gap or edge around the green control.
+F. Quick smoke on G04/G12/G21/R64 plus welcome/start navigation and no console/page errors.
+
+RETURN
+Persist DONE/PARTIAL/BLOCKED directly to General CF-0047 with exact filename/version/Drive ID/bytes/SHA-256, diff scope, verification evidence, and any remaining visual caveat. Do not wake Stuart; General will release the repaired exact candidate for independent retest.
