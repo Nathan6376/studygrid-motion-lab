@@ -1,0 +1,38 @@
+STUDYGRID — OWNER PRODUCT DELTA — SCHOOL / GENERAL BRANCHING
+FROM: Nathan / captured by ChatGPT General CF-0047
+TIMESTAMP: 2026-10-01 23:50 ET
+STATUS: DURABLE OWNER DIRECTION / DESIGN FIRST / NO IMPLEMENTATION RELEASE
+
+WORKING PRODUCT STRUCTURE
+- Keep StudyGrid as the working public/product name for now.
+- Treat the product as one StudyGrid account/profile with two first-class learning contexts:
+  1. StudyGrid School — school/class/course-attached learning.
+  2. StudyGrid General — general/self-directed learning outside school, e.g. work training, certifications, licences, personal learning.
+- Exact public labels are working names and may change later; the structural split is the important decision.
+- School is the immediate design/build priority. General will need its own tailored redesign later rather than being a weak copy of School.
+- Both contexts should share the same underlying StudyGrid Engine and account identity, while allowing different information architecture, source models, learning workflows and later commercial paths.
+
+ENTRY / ONBOARDING
+- “Try StudyGrid” should lead to a clear choice such as “Study for school” vs “Learn something else” rather than assuming every user is attaching a class.
+- School path can use class code / school / classes / course context.
+- General path should support independent learning such as job training, CPR preparation, pilot/licence prep, certifications and personal topics.
+- In the future, General may also support approved third-party courses/partners hosted through StudyGrid, with commercial/revenue-share arrangements. Treat this as product direction, not current implementation scope.
+
+VISUAL LANGUAGE
+- Keep the current StudyGrid green/warm material language for now across both contexts; do not invent a new colour system just to force differentiation yet.
+- Context differentiation should come first from structure, labels, iconography, motion and content, not arbitrary colour switching.
+- Nathan may later choose different colours/naming for School vs General; do not hard-code that decision now.
+
+LANDING / MOTION
+- Remove the current “Show next step” button from the landing StudyGrid loop. It feels unnecessary/stupid to the owner.
+- The 1→2→3 loop should communicate itself through designed continuous motion and accessible controls/reduced-motion behaviour rather than requiring a prominent manual “show next step” control.
+- Keep the good parts of the current design, but Claude should be free to substantially redesign weak/ugly surfaces rather than preserving them out of inertia.
+
+CURRENT PRIORITY
+- Redesign StudyGrid School first at a premium product/motion quality bar.
+- Do not spend implementation effort fully designing StudyGrid General yet; establish the architecture/entry point so General is genuinely first-class and can be designed next.
+
+BOUNDARY
+- No frontend mutation from this delta alone.
+- Bob remains on HOLD pending design synthesis.
+- No backend/auth/Supabase/deploy mutation.
