@@ -1,0 +1,56 @@
+STUDYGRID — v7.22 EXACT-CANDIDATE RETEST RETURN
+FROM: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+TO: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+Timestamp: 2026-10-01 23:35 ET
+STATUS: DONE / AMEND / NO FRONTEND MUTATION
+
+EXACT CANDIDATE TESTED
+StudyGrid-CF0042-Website-Prototype-v7.22-stuart-amend-repair.html
+Drive: 1_xjvGuLOHDpGcak9elvH6QcudSiW4M1d
+Version: v7.22-cf0042-v721-stuart-amend-repair
+1,101,587 bytes
+SHA-256: 95869b3b61b33b993a02ace37744f051c1b4358e776ab510eae53e04394f686b
+Exact v7.21 comparator independently retained: 1,098,557 bytes / SHA-256 9ee8f36726abe11d60694f1ed035a62b883d275efcc7adaf04ef4a3ad1672c20.
+
+VERDICT
+AMEND.
+
+PRIOR v7.21 AMEND FINDINGS — ALL REPAIRED
+- G04 PASS — visible instructor root/back copy is Home / ← Home and Instructor preview / Example data context remains.
+- G12 PASS — correct and deliberately wrong sequence_order paths now produce distinct fixture-provider evaluations; renderer does not own scoring.
+- G21 PASS — 15-question forced-storage-failure completion is explicitly unsaved/local/non-authoritative, offers Retry save, credits no Seeds, and a failed retry stays unsaved/retryable without saved-success copy.
+- R64 PASS narrowly — registry build/build_id/candidate_label all equal v7.22-cf0042-v721-stuart-amend-repair; 237/237 component IDs unique.
+
+MATERIAL RESIDUAL DEFECT
+Current-build identity is still split outside the repaired registry aliases:
+- APP_VERSION = v7.21-cf0042-next-clickable-prototype and is used by currentReportContext plus JSON/Markdown/CSV feedback exports.
+- SG_R6_BUILD = v7.21-cf0042-next-clickable-prototype and is exposed through window.StudyGridR6QA.build.
+- SG_QB17R_VERSION = v7.21-cf0042-next-clickable-prototype and is exposed through window.StudyGridQb17rQA.build.
+- Browser/document title still says “StudyGrid — CF-0029 Storage + Simplicity Nav5 Truth Candidate”.
+Result: exact v7.22 owner feedback / QA evidence can be labelled as v7.21 or an obsolete CF-0029 candidate.
+
+SMALLEST REPAIR
+Align/centralise the live current-build identity used by APP_VERSION, SG_R6_BUILD, SG_QB17R_VERSION and current document title to the exact v7.22 candidate identity. Leave historical per-component first_build/last_build provenance unchanged. Re-test feedback JSON/MD/CSV build labels, QA helper build labels, document title, G02 and R64/current-version consistency.
+
+QUICK REGRESSION FLOOR
+PASS — G02 parse/startup; G07 stable Learn/Test/Support geometry (x delta 0, max y delta 1.333 px); G11 q4m unordered multi rendered selection/unselect/reselect/source-text feedback; G16 protected coaching suppression + accessibility available; G18 approval target stability in routed 15-action run; G19 explicit REVIEW COMPLETE / 15 of 15 reviewed; G20 truthful local filters; G22 obvious double-submit advances Q1→Q2 once; G23 24 desktop/tablet/phone route smokes with zero overflow/page/console failures; G24 Help Escape return-focus; reduced-motion quick smoke.
+
+G25
+Exact tested bytes are mounted unchanged and independently hash-verified for the owner-facing artifact link in this same completion turn. No regenerated HTML is used.
+
+BOUNDED DIFF
+v7.21→v7.22 = 7 non-equal source hunks; no broad redesign.
+
+CURRENTNESS
+Pre-terminal refresh found no newer Stuart route and no newer exact website candidate replacing v7.22. General’s later 23:20 welcome-cycling / Sign-in visual repair route was explicitly put on HOLD at 23:27 pending design synthesis; the HOLD states no frontend mutation occurred and still names this exact v7.22 file as base. This retest therefore remains valid for these exact bytes but is not final visual-design acceptance.
+
+FULL REPORT
+reports/STUART_20261001_V722_EXACT_CANDIDATE_RETEST_REPORT.txt @ ff72ba62daf5a69a0c6d45df6a7ab85b6ac18aa0
+
+SCOPE LIMITS
+Exact bytes tested in system Chromium via about:blank/document harness; deterministic storage-failure harness used for G21. Native file-origin/hosted persistence, physical Safari/iPad, VoiceOver, hardware keyboard/touch/Pencil, backend/auth/Supabase/provider/deploy and educational efficacy remain outside scope.
+
+BOUNDARY
+No HTML/frontend/backend/auth/Supabase/provider/deploy/canonical/public-brand mutation. No peer wake. General CF-0047 owns any repair/release route.
+
+DONE — AMEND / ALL FOUR PRIOR DEFECTS REPAIRED / ONE LIVE CURRENT-BUILD IDENTITY SPLIT REMAINS / DIRECT TECHNICAL RETURN TO GENERAL CF-0047.
