@@ -1,0 +1,62 @@
+STUDYGRID KEVIN — PRIVATE REPO CODEX FIXTURE / CONTENT FEED — DONE
+Timestamp: 2026-10-02 01:36 ET
+From: StudyGrid Worker Kevin
+To: ChatGPT General CF-0047
+Lifecycle: DONE — PARALLEL FIXTURE FEED / NO APP MUTATION
+
+OWNER ACTIVATION
+Nathan: “Check routing. Consume General CF-0047’s current StudyGrid private-repo parallel route for your worker identity and execute it now. Return directly to General when done.”
+
+EXACT ROUTE
+routes/GENERAL_20261002_0124_KEVIN_CODEX_FIXTURE_FEED.txt @ 67fe78f5d6ab4eb5e70b8cc859b53a68d0fca197
+
+CURRENT PRIVATE-REPO AUTHORITY CONSUMED
+Private repo: Nathan6376/StudyGrid.
+Main advanced during preflight from aeec6a99126cfe6716c78e5aaaa52d1558bfee5d to 6f355481ca9824f8bf2b52918c0d5b81f8b17872 (“Unblock Codex from legacy archive ingestion”). Kevin re-read the required repo direction at the newer head before branching:
+- AGENTS.md @ main 6f355481ca9824f8bf2b52918c0d5b81f8b17872
+- docs/product/CURRENT_DIRECTION.md @ same head
+- CODEX_START.md @ same head was also checked to avoid blocking Codex on legacy archive recovery.
+
+SOURCE FEEDERS CONSUMED
+- Kevin website acceptance fixtures @ 1e2932366d0d6e82955cab963bd4a457316445ff.
+- Research exact website source/construct audit @ 8a0b00b1f8119f5e2701494f0da12c6892f0e9eb.
+- Exact source decisions preserved: q4m = unordered multi-select with Identify as police / State the purpose / Request entry; R. v. Macooh remains the supported hot-pursuit case and its answer-bearing example is post-answer only in retrieval/assessment; “Canascape” remains unsupported/HOLD.
+
+PRIVATE-REPO RESULT
+Isolated branch: kevin/codex-fixture-feed-20261002
+Base: 6f355481ca9824f8bf2b52918c0d5b81f8b17872
+Terminal branch head: 34bfe72a62a43e2a2b5836df6d901bdf56651e65
+
+Commits:
+1. 738f0feb584d41f2adb62d4728ec5daaa1b05b4a — Add Codex source-grounded fixture feed notes.
+2. 34bfe72a62a43e2a2b5836df6d901bdf56651e65 — Add structured Codex School fixture feed.
+
+Provider-read files:
+- docs/fixtures/README.md
+  blob 945218ce28139df79e62e2eff3318267327c5df4
+  size 4948 bytes
+- docs/fixtures/codex_school_fixture_feed.json
+  blob 97627737ec54a2656eae56f134d936ad2960f1e8
+  size 14290 bytes
+
+COMPARE VERIFICATION
+Compare base 6f355481ca9824f8bf2b52918c0d5b81f8b17872 → head 34bfe72a62a43e2a2b5836df6d901bdf56651e65:
+- ahead_by: 2
+- behind_by: 0
+- exactly two files changed, both added under docs/fixtures/
+- no application/frontend/backend/auth/Supabase/deployment/product-architecture file changed.
+
+CODEX-CONSUMABLE INVENTORY
+- 14 compact fixture entries.
+- All intended interaction families represented: single_select, multi_select_unordered, sequence_order, match_pair, categorize, short_text_constructed_response, numeric_formula, hotspot_diagram/no-action.
+- High-value behaviour states represented: cold start/no evidence, protected assessment with accessibility preserved, explicit help, answer-exposed repeat success, recommendation rejection/switch to General, stale recommendation refresh, multi-claim component feedback, unsupported/no-valid-action.
+- Course-source-verified PFP 207 q4m and q14 content included.
+- Synthetic UI-only content is explicitly labelled so it cannot silently become course truth.
+- Learner-facing copy is plain English; internal state labels are marked non-display.
+- Distractor/reveal rules included: plausible nearby alternatives, no joke/giveaway answers, no pre-answer answer leakage in evidence-producing contexts.
+- Canascape remains a non-rendering unsupported hold rather than a guessed normalization.
+
+BOUNDARY VERIFIED
+No app code, frontend, backend, auth, Supabase, deployment, main-branch product code, product architecture or canonical promotion was mutated. No peer worker was woken. This branch is a fixture/content feeder for General/Codex to consume, not an implementation release or software PASS.
+
+DONE — direct technical return persisted for General CF-0047. Nathan is not the technical courier.
