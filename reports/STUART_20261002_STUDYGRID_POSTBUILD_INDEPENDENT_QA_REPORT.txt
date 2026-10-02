@@ -1,0 +1,366 @@
+STUDYGRID — POST-BUILD INDEPENDENT QA / ADJUDICATION REPORT
+Worker: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+Coordinator: ChatGPT General / CF-0051
+Timestamp: 2026-10-02 14:34 ET
+Task status: DONE
+Candidate gate: BLOCKED FOR REPAIR
+Boundary: QA / ADJUDICATION ONLY — NO CANDIDATE MUTATION
+
+======================================================================
+1. EXACT CANDIDATE / CURRENTNESS
+======================================================================
+
+Authority:
+- CENTRAL ROUTING seq453, 2026-10-02 14:18 ET.
+- Linked General post-build QA route: Drive 1I2CIIVmrrbcYukkViGUYlAmCVX10AsvEQ_kEVyLD9Mc.
+
+Exact application source reviewed:
+- Repo: Nathan6376/StudyGrid
+- Branch: claude/nifty-volta-wdicyt
+- Application source: e4e166cd090c537870c0c79f43a93a9a6854bd28
+- Recoverable PR1 baseline: e887a8a569babee941c0574d2c432fb2b6417211
+- Current branch head at pre-terminal refresh: 254c4eb9506cc7dde6739c795ba2b3273b13d284
+
+Independent compare confirms branch head is four commits after e4 and those post-e4 changes are owner-preview/review/route artifacts only; no web/ application source changed after e4. e4 is therefore still the exact application candidate for this QA pass.
+
+No newer CENTRAL route superseded seq453 in the consumed routing window.
+
+======================================================================
+2. AUTHORITATIVE / SUPPORTING INPUTS CONSUMED
+======================================================================
+
+Primary product/build authority:
+- docs/product/STUDYGRID_MASTER_PORT_AND_BUILD_CONTRACT_20261002.md
+- exact candidate blob 481ce711a78c7b917204174b37d8be4e63204c93
+
+Independent engineering evidence:
+- Sol CF-0049 post-build report docs/reviews/SOL_CF0049_STUDYGRID_POSTBUILD_ENGINEERING_AUDIT_20261002.md
+- commit 3b186738391f465b7ff460d2e6e977a323350703
+
+Official-source / research evidence:
+- Bob Drive document 194WoBMndd1LotqKYxRQIV8E8LE2UdfvOVxnyDtlZiDo
+- used for visibility/motion, drag alternatives, device-emulation boundaries, truthful loading/optimism, and physical-device hold criteria
+
+Stuart prior acceptance contract:
+- docs/qa/STUDYGRID_FIRST_CODEX_BUILD_QA_CONTRACT.md
+- candidate blob 7dfb3a35979884b0ec2387066a10e036bfb20e21
+
+Builder evidence, treated only as builder evidence:
+- docs/reviews/CLAUDE_CODE_MASTER_PORT_IMPLEMENTATION_20261002.md on branch head
+- reported build PASS, 99 unit tests, 87 Chromium browser tests + 6 designed skips, 2 offline tests
+- these counts were not independently rerun in this task because dependency installation was explicitly prohibited and this QA lane did not have a pre-materialized runnable private checkout.
+
+Independent source inspected included provider, store, session, task, ordering, overlays, welcome, settings, Home/Course, shell, Teaching, games, tests, styles, domain/provider types, package identity and PR1→candidate diff.
+
+======================================================================
+3. OVERALL ADJUDICATION
+======================================================================
+
+BLOCKED FOR REPAIR.
+
+No P0 was demonstrated. I independently corroborated all five P1 roots identified by Sol from the exact e4 candidate source. I did not find evidence falsifying any of those five findings.
+
+The current candidate has strong architecture and interaction work worth preserving, but it cannot clear independent QA while it can:
+- expose learner-facing content after its cited source has been returned to Draft;
+- resume a session after the Teaching-controlled release/checkpoint/share state that authorised it has been revoked;
+- label a first answer clean/on-your-own after the learner used “Say it another way” help;
+- erase unanswered help/exposure on restart and later treat the same item as unseen/fresh;
+- send a learner through a stable REVIEW or Play again route and return an already-completed historical session instead of performing the action the UI promises.
+
+These are contract-level truth/eligibility/evidence/lifecycle defects, not visual-polish holds. Physical iPad/Safari, VoiceOver and hosted-origin evidence are separate holds and are not needed to establish the P1 defects.
+
+======================================================================
+4. P1 DEFECTS — INDEPENDENTLY CORROBORATED
+======================================================================
+
+ST-P1-01 — DRAFT SOURCE CAN STILL REACH A LEARNER
+Classification: P1 / code defect + missing negative test
+Corroborates: Sol F1
+
+Independent source reproduction:
+- provider envelope correctly computes approvedSourceIds.
+- provider isReleased() checks module release + lesson presence but does not require the topic/task source to remain approved.
+- NEW/REVIEW/READY/APPLY planning relies on those topic/task paths without a current source-approval gate.
+- learner SourceSheet resolves the source directly and renders its excerpt regardless of Draft/Approved status; when Draft it literally shows “Draft, not shown to students” while showing the excerpt.
+- the learner can also mark that draft source Reviewed because the Reviewed toggle is rendered for non-Teaching contexts.
+
+Concrete fixture: src-bio-osmosis is an approved Biology source cited by the Osmosis task family. Returning it to Draft in Teaching removes it from Materials, but does not make those task/session/source paths ineligible.
+
+Master conflict: School students see only approved material.
+
+Minimum acceptance repair:
+- one current learner-delivery eligibility policy must require approved source identity for learner question/session/source/debrief access;
+- returning source to Draft blocks new delivery and blocks learner Show source on that content;
+- historical attempt receipts remain historical rather than being rewritten;
+- reapproval restores only intended eligible content.
+
+ST-P1-02 — PAUSED SESSION BYPASSES CURRENT RELEASE / CHECKPOINT / SHARE ELIGIBILITY
+Classification: P1 / code defect + missing negative tests
+Corroborates: Sol F2
+
+Independent source reproduction:
+- VisitStore.start() sees an existing unfinished session and directly marks it active; it does not ask provider.plan() whether the session is still allowed.
+- an existing completed session is also returned directly.
+- setReleased(), setSourceStatus(), setCheckpointConfirmed() and shareStudySet() update Teaching state without advancing an eligibility/envelope generation or invalidating affected session generations.
+- provider.recommend() returns paused work before revalidating the paused session against the current envelope.
+- submit/help/completion have no current-release-envelope check.
+
+Therefore a paused NEW session can survive module/source withdrawal, READY can survive checkpoint unconfirmation, and a shared-set session can survive withdrawal of sharing.
+
+Minimum acceptance repair:
+- current eligibility must be checked on recommend/resume and before evidence-affecting submit/help/completion;
+- a Teaching eligibility change must invalidate or version affected in-flight work;
+- reopening is explicit and recoverable, not silent reauthorisation;
+- historical local receipts remain visible as history.
+
+ST-P1-03 — “SAY IT ANOTHER WAY” HELP CAN STILL PRODUCE CLEAN / “ON YOUR OWN” EVIDENCE
+Classification: P1 / evidence-truth code defect + missing test
+Corroborates: Sol F3
+
+Independent source reproduction:
+- Stuck? → Say it another way calls store.help(..., 'another-way').
+- the UI explicitly says “Noted as extra help for this question.”
+- store passes support.anotherWay into AttemptSubmission.
+- provider.submit() decides helped using attempt>1, hint, revealed, priorMisses and previouslySeen — but omits support.anotherWay.
+- a first-try correct response can therefore be evidence='clean'.
+- TaskCard then renders “Right first time, on your own.” and completion/progress can count that clean evidence.
+
+Minimum acceptance repair:
+- another-way displayed before committed answer must count as substantive help/exposure;
+- first correct answer after it must not produce clean/on-your-own evidence;
+- completion/progress/debrief must inherit the corrected evidence status.
+
+ST-P1-04 — RESTART CAN LAUNDER UNANSWERED HELP/EXPOSURE BACK INTO “UNSEEN/FRESH”
+Classification: P1 / evidence-lifecycle code defect + missing interruption test
+Corroborates: Sol F4
+
+Independent source reproduction:
+- seenTaskIds/freshAvailable are derived from submitted global receipts only.
+- help/exposure before any submission lives in the current TaskRun.
+- restart() deletes the session and recreates it from global receipts.
+- if another-way help was shown before the first submission, no receipt records that presentation/exposure.
+- the recreated run can therefore mark the same task previouslySeen=false and fresh eligibility can include it again.
+
+This violates the contract requirement that fresh re-check be a different/unexposed or parallel item; explicit Reset practice is the action that should clear visit history, not ordinary restart.
+
+Minimum acceptance repair:
+- record actual presented/helped item exposure separately from submitted attempt receipts;
+- preserve it across restart/pause/resume within the visit;
+- do not mark undisplayed queued items exposed merely because they existed in a plan;
+- fresh independent evidence requires a distinct eligible unexposed parallel item.
+
+ST-P1-05 — COMPLETED SESSION REUSE BREAKS “START / FRESH REVIEW / PLAY AGAIN” PROMISES
+Classification: P1 / session-instance lifecycle defect + missing repeat test
+Corroborates: Sol F5; independently strengthened with rendered-route analysis
+
+Independent source reproduction:
+- VisitStore.start() returns an existing complete session for the stable plan key.
+- Course Practice links REVIEW to the stable `course:review:course` route.
+- after new topics create newly eligible fresh review questions, the same route still returns the old completed REVIEW rather than building a fresh plan.
+- Course Practice also labels completed game routes “Play again” but links to the same stable APPLY session key. SessionView calls start(), so “Play again” can land on the already-completed game/debrief rather than starting another play.
+- SessionView’s explicit in-completion “Practise again” button calls restart() and is a separate path; that does not fix the normal Practice/Up Next/Play-again route semantics.
+
+Minimum acceptance repair:
+- separate completed history from a new session instance;
+- unfinished instance resumes intentionally;
+- a stable REVIEW route creates a fresh eligible instance when fresh questions exist;
+- Play again actually starts a new APPLY instance while retaining prior completion history;
+- audit READY and teacher SET repeat entry under the same rule.
+
+======================================================================
+5. LOWER-SEVERITY ENGINEERING / QA FINDINGS
+======================================================================
+
+ST-P2-01 — Same-item retry can retain fresh=true metadata even though evidence becomes helped.
+Corroborates Sol F6. User-facing helped copy is better than the metadata, but the contradiction is unsafe for future consumers.
+
+ST-P2-02 — Rejected stale help can patch the replacement run.
+Corroborates Sol F7. Help success checks epoch+generation; help catch only checks epoch before patching helpError.
+
+ST-P2-03 — Topic “Done for now” projection is under-bounded.
+Corroborates Sol F8. topicState() can become done after one touched clean required group with no outstanding miss, even when the learner has not completed a qualifying NEW session or bounded topic coverage. A partial READY/review can therefore overstate whole-topic progress.
+
+ST-P2-04 — Provider operation idempotency key can collide across controllers.
+Corroborates Sol F9. Each VisitStore owns a local counter while the provider caches operations globally by opId alone; returned receipt identity is not revalidated against expected task/session before acceptance. Current App mounts one store, so this is a demonstrated adapter/remount seam rather than a current normal-UI cross-context incident.
+
+ST-P2-05 — Welcome autoplay is reduced-motion aware but not visibility/offscreen aware.
+Corroborates Sol F10 and Bob’s official-source checklist. The interval gates reduced-motion, preference and user pause, but there is no document-visibility or viewport/intersection policy. Browser throttling is not an intentional pause contract.
+
+ST-P3-01 — General “Add it” access story is inconsistent with direct session route.
+Corroborates Sol F11. Course/topic routes for unadded General content recover to Discover, but /general/learn/... starts directly because session route validates only course context.
+
+ST-P3-02 — AttemptReceipt is root-frozen only; nested response/confidence/support/feedback objects remain mutable.
+Corroborates Sol F12. No current renderer mutation was found, so this is an adapter-hardening gap, not a current visible corruption.
+
+ST-P3-03 — Settings section jump does not establish a focusable destination target.
+Independent Stuart finding / source-level accessibility defect + missing test.
+
+Evidence:
+- Settings intercepts each jump link, prevents native anchor navigation, scrolls the section into view, then calls `.focus()` on its h2.
+- Group renders that h2 without tabIndex or another focusability mechanism.
+- the existing Settings browser tests exercise controls but do not test a Settings jump and destination focus.
+
+Expected repair acceptance:
+- keyboard activate a Settings section jump;
+- viewport moves to the section and keyboard/programmatic focus lands on an explicit focusable destination heading/section target;
+- subsequent Tab continues within that section rather than simply moving to the next jump link;
+- no visible focus regression under normal and reduced motion.
+
+ST-P3-04 — Stuck? → Show source overlay replacement has no durable focus-return chain.
+Independent Stuart finding / source-level focus-isolation risk + missing nested-overlay test.
+
+Evidence:
+- Stuck? is a Modal; its Show source action replaces the single overlay state with Source rather than stacking/nesting or preserving an explicit return target.
+- Modal captures `document.activeElement` locally on mount and restores only that element on unmount.
+- replacing the Stuck modal removes the source-invoking button; the newly mounted Source modal has no durable reference to the original Stuck? page invoker.
+- direct Task feedback → Show source focus return is tested, but Stuck? → Show source → Escape focus return is not.
+
+Acceptance check:
+- keyboard open Stuck? from an active question → Show source → close/Escape;
+- return to a deterministic connected target (preferably the Stuck state/invoker or the page Stuck? button according to final interaction design), never body/lost focus;
+- same result under reduced motion and after repeated overlay transitions.
+
+======================================================================
+6. PASS FINDINGS WORTH PRESERVING
+======================================================================
+
+The following were independently supported by exact source inspection and should not be lost during repair:
+
+- One React/TypeScript product with coherent School / General / Teaching context model and shared shell.
+- Focused session surface is separate from the dashboard shell; four required session templates plus teacher study sets exist in the provider architecture.
+- Required answer → explicit Check → optional confidence/Skip → feedback order is encoded in VisitStore; hover/focus confidence glide does not commit a value.
+- Evaluator ownership sits behind the provider; TaskCard and ordering renderer send stable IDs/state rather than owning answer correctness.
+- Delayed submit path uses epoch + session generation + pending-op matching and double-confidence submission is guarded.
+- Ordinary retry/hint/reveal paths mostly preserve helped evidence; repair should be surgical around the exposed exceptions.
+- Ordering uses Pointer Events for mouse/touch/pen, visible Move up/down alternatives, semantic state changes independent of animation completion, polite announcements, and Escape/pointercancel/document-hidden cancellation.
+- Native dialog uses showModal(), heading focus and direct-invoker focus restoration; direct source/legal dialog paths have a solid base.
+- Settings is a real first-class page with direct controls and no second More-settings gate; settings are visibly visit-local.
+- Welcome normal mode continuously cycles 1→2→3→1 with explicit pause/manual scene controls; reduced motion suppresses autoplay while preserving manual scene access.
+- Sign in is a truthful local-preview surface. Source CSS uses green background/border and a connected focus outline; no rejected white/light inset rim was found in the inspected styling.
+- Learner Materials list correctly filters to approved source IDs. The defect is the broader delivery/source-open boundary, not the Materials list itself.
+- Teaching keeps same product vocabulary, explicitly labels sample roster/join code/questions and has real review → Ready → Share separation.
+- Games remain ordinary provider-scored sessions; source debrief exists; Simple view provides non-spatial cue content; no motor timing score or second game-scoring engine was found.
+- No candidate source path reviewed connects real auth/backend/Supabase/AI or claims durable account/grade truth.
+- Package graph introduces no new runtime dependency versus PR1 beyond the app version change; current package identifies StudyGrid web 0.2.0.
+- PR1 warm green/cream/material identity and shared-element structure remain visible in source; rendered quality still requires the separate visual gate.
+
+======================================================================
+7. STUART QA CONTRACT / MASTER GATE READOUT
+======================================================================
+
+Source-level gates supported or substantially preserved:
+- School + General first-class entry.
+- Home Up Next / Continue / Why this / alternate path concepts.
+- Start Learning/focused session architecture.
+- Explain → Worked Example → Guided Practice → Try From Memory structure.
+- plausible nontrivial distractor/source fixtures in reviewed Biology/Math examples.
+- ordering provider boundary and non-drag controls.
+- no duplicate global Study navigation found.
+- direct Settings page.
+- student/Teaching family consistency.
+- legal/privacy foreground modal architecture.
+- no seed-emoji progression system found.
+- continuous welcome cycling and reduced-motion equivalent.
+- truthful no-backend/auth local copy.
+- prior sequence truth boundary retained.
+- durable-save regression is N/A only because this candidate deliberately stores visit state in memory and does not claim durable save/sync.
+
+Not independently cleared in this task:
+- exact visual feel/spatial continuity in rendered motion across slower devices;
+- full keyboard/focus path after every transition, especially the two lower focus defects above;
+- all viewport/console smoke counts;
+- physical touch/Pencil reliability;
+- VoiceOver/live-announcement behaviour;
+- hosted-origin/deep-link/reload/history behaviour;
+- exact standalone downloaded-file behaviour under file: origin;
+- subject-matter/content accuracy beyond consistency checks.
+
+Claude’s reported automated results are useful supporting evidence but do not convert these into independent Stuart PASS claims.
+
+======================================================================
+8. REPAIR ACCEPTANCE MATRIX
+======================================================================
+
+A newly frozen repaired SHA should be required. Do not recycle e4’s test receipts or preview identity.
+
+A. Source approval negative
+- Return a cited source to Draft.
+- NEW/REVIEW/READY/APPLY/SET and Show source must not expose a learner question/excerpt/debrief that depends on the withdrawn source.
+- historical receipts remain historical.
+- reapproval restores intended eligibility only.
+
+B. Revocation + interruption matrix
+- Pause each session template.
+- close module / return source to Draft / unconfirm checkpoint / withdraw shared set as applicable.
+- attempt Home Continue, Recent, Practice, and direct hash.
+- no revoked session resumes or records new evidence until explicitly eligible again.
+- delayed submit/help resolution after revocation cannot create a receipt/completion or obsolete current error.
+
+C. Assistance / exposure
+- another-way before first correct answer => with-help, never on-your-own.
+- view help without answering, restart, then receive same item => it is exposed/practice, not fresh independent evidence.
+- wrong → retry right => helped and fresh-independent=false.
+- a later distinct unexposed parallel item may provide clean evidence.
+
+D. Repeat lifecycle
+- complete REVIEW A, later create fresh review need B, follow Practice Start/Up Next => new review instance with B questions and old history retained.
+- complete game, activate Play again => new APPLY instance, not the old completion screen.
+- unfinished repeat route resumes intentionally.
+- audit READY and SET repeats under same rule.
+
+E. Topic projection
+- one clean partial READY/review task cannot mark whole topic Done for now.
+- bounded qualifying coverage may mark Done.
+- later helped/missed evidence may mark Due for a check.
+- Reviewed never supplies learning credit.
+
+F. Async identity
+- stale help resolve AND stale help reject after pause/restart/reset/revocation do nothing to replacement state.
+- two controllers sharing one provider cannot accept each other’s receipts.
+- receipt task/session/op mismatch is rejected.
+- duplicate explicit commit remains idempotent.
+
+G. Motion / a11y
+- welcome pauses intentionally when document hidden/offscreen and resumes only when visible + allowed + not user-paused.
+- Settings jump moves focus to its destination section.
+- Stuck? → source → close returns deterministic focus.
+- ordering mouse/touch plus single-pointer Move controls and keyboard announcements remain intact under reduced motion.
+
+H. Regression / delivery
+- preserve Check→confidence→feedback; Skip unknown; no hover/dwell commit.
+- preserve evaluator right/wrong distinctions for single/multi/order.
+- preserve Teaching Ready/Share and three game families.
+- run fresh build/unit/browser/export suites on repaired SHA and report exact counts/skips.
+- separately test physical iPad/Safari/Pencil, VoiceOver, and hosted-origin/deep-link/reload before claiming those gates.
+
+======================================================================
+9. DEVICE / ENVIRONMENT HOLDS
+======================================================================
+
+HOLD-P1 — physical iPad/Safari/touch/Pencil
+Chromium viewport/CDP touch or source inspection cannot clear actual Safari safe-area, scroll, rotation, on-screen keyboard, drag and Pencil behaviour.
+
+HOLD-P2 — VoiceOver / physical assistive technology
+Static semantics and role queries cannot clear announcement order, focus isolation, reorder announcements or moving-content behaviour under real VoiceOver.
+
+HOLD-P3 — hosted origin / deep links / reload / history / delivered-preview identity
+No deployment action was authorised here. Existing preview existence is not proof of route/reload/console/network/export parity.
+
+HOLD-P4 — real auth/backend/Supabase/AI/grades/durable records
+Explicitly deferred and intentionally absent; not a frontend repair task.
+
+HOLD-P5 — rendered visual/product/content acceptance
+Nathan/Stuart visual review must compare PR1 continuity, Daylight/Evening, Home→topic→session motion, Teaching and games. Content examples need appropriate subject review before real use.
+
+======================================================================
+10. FINAL DISPOSITION
+======================================================================
+
+TASK: DONE.
+CANDIDATE: BLOCKED FOR REPAIR.
+
+Agreement with Sol: all five P1 findings corroborated; no material Sol P1 finding was falsified. Lower Sol findings F6–F12 are also supported by exact-source inspection at their stated bounded severity. Stuart adds two lower focus/navigation test gaps (Settings section jump destination focus; Stuck?→Source focus-return chain) for the repair regression matrix.
+
+Recommended next state after repair: freeze one new exact application SHA, rerun builder tests, then route that exact repaired SHA back to independent Stuart QA. Device/VoiceOver/hosted-origin remain explicit holds even if local browser QA passes.
+
+No implementation, dependency installation, merge, deployment, backend/auth/Supabase/AI connection, candidate mutation or peer wake occurred in this Stuart review.
