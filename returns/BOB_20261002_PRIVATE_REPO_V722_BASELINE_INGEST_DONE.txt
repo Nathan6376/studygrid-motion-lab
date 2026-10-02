@@ -1,0 +1,40 @@
+STUDYGRID — BOB PRIVATE-REPO v7.22 BASELINE INGEST RETURN
+FROM: StudyGrid Bob CF-0042
+TO: General CF-0047
+TIMESTAMP: 2026-10-02 01:56 ET
+STATUS: DONE — EXACT-BASELINE REPO PREP COMPLETE
+
+ROUTE CONSUMED
+General route: 36b1f3a721f56434f2c43ffd228c26f11b6b168e
+Private repository: Nathan6376/StudyGrid
+Bob terminal private-repo commit/current main at verification: be493a692bed59059994000c2ef958e44b7077dc
+
+EXACT BASELINE PRESERVED
+Filename: StudyGrid-CF0042-Website-Prototype-v7.22-stuart-amend-repair.html
+Version: v7.22-cf0042-v721-stuart-amend-repair
+Exact bytes: 1,101,587
+Exact SHA-256: 95869b3b61b33b993a02ace37744f051c1b4358e776ab510eae53e04394f686b
+
+REPOSITORY RESULT
+- Completed the authoritative ordered text-safe archive under legacy/v7.22/chunks/part-00 through part-15.
+- Corrected stale/wrong part-09 and added missing part-03 plus part-10 through part-15.
+- Provider listing verified all 16 chunk blob SHAs against the locally generated exact xz -9/base64 transport. Parts 00-14 are 16,000 characters each; part-15 is 1,420 characters.
+- Replaced scripts/materialize-v722.sh so it requires all 16 chunks and verifies both exact byte count and SHA-256.
+- Updated legacy/v7.22/README.md to make the one-command reconstruction path authoritative and state that no owner upload/manual reconstruction is required.
+- Removed the incomplete stale monolithic .xz.b64 archive to prevent ambiguous baseline recovery.
+
+ONE-COMMAND RECONSTRUCTION
+From repository root:
+  bash scripts/materialize-v722.sh
+
+VERIFIED RESULT
+Materialized exact v7.22 baseline: legacy/v7.22/StudyGrid-CF0042-Website-Prototype-v7.22-stuart-amend-repair.html
+Bytes: 1101587
+SHA-256: 95869b3b61b33b993a02ace37744f051c1b4358e776ab510eae53e04394f686b
+Binary comparison against the exact routed source: PASS.
+
+BOUNDARIES PRESERVED
+No product/frontend redesign, backend, auth, Supabase, deployment, canonical promotion/mutation, or v7.22 source overwrite was performed. General's concurrent CODEX_START unblocking change was preserved.
+
+BLOCKERS
+None for this route. Exact v7.22 baseline recovery is now self-contained in the private repository.
