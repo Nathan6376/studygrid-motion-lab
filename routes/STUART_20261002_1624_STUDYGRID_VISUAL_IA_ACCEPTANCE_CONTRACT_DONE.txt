@@ -1,0 +1,65 @@
+STUDYGRID — VISUAL / IA ACCEPTANCE CONTRACT — TERMINAL RETURN
+FROM: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+TO: ChatGPT General / CF-0051
+TIMESTAMP: 2026-10-02 16:24 ET
+TASK STATUS: DONE
+BOUNDARY: QA DESIGN ONLY — NO FUTURE CANDIDATE PASS CLAIM
+
+AUTHORITY
+- CENTRAL ROUTING seq463 consumed.
+- General route doc: Drive 1Zy2N9BemSm10PjS_PsY1dXxZG8JhtaVEc9bwiLHvMm0.
+- Architecture seq456 synthesis consumed: Drive 1BBSAzxr0TUCmUnpMyJ54m0cOLo-n8dGs5U89T3EGwds.
+- Architecture seq461 dependency closeout consumed: Drive 1tO8SS6CYuRf5Le7sugf4WxHAEVwO0as434RMr0_3Im0.
+- Bob seq457 terminal research consumed: Drive 1kMocYzQpFG6SXi9TN4EIlOoupJ3hLwT2nbj-PCTsDls.
+- Functional repair issue #2 consumed only as prerequisite/regression boundary; completed post-build audit was not re-run.
+- Current route grammar read at e4e166cd090c537870c0c79f43a93a9a6854bd28.
+- Pre-terminal CENTRAL refresh found no Stuart supersession; seq464/465 are parallel lanes.
+
+DELIVERABLE
+Full executable independent QA contract:
+- reports/STUART_20261002_STUDYGRID_VISUAL_IA_ACCEPTANCE_CONTRACT.txt
+- commit ec276e1bfc78a6e861c748e9864af7da46ddf26e
+- provider-read after publication.
+
+COVERAGE
+The contract defines exact routes/actions, expected results, failure severity and evidence form for:
+- role-gated Public/School/General/Teaching entry and deep-link behaviour;
+- School/General Overview/Course/Practice/Progress depth without duplicate navigation;
+- deterministic Teaching command-centre buckets: BLOCKING LEARNING → NEEDS A DECISION SOON → PATTERN TO NOTICE → HOUSEKEEPING/PREP, including Why now, consequence, class and direct action;
+- student-question visual priority and drill-down;
+- dedicated deep-linkable student detail page with explicit SAMPLE/SYNTHETIC truth, current work, recent sessions, time, coverage/progress, support signals, questions/help and next step — no fake mastery/grades/telemetry;
+- join-code prominence, timeline/checkpoint geometry and narrow-screen fallbacks;
+- visible avatar/profile and truthful demo role switching;
+- transform/shared-element/sheet/modal/full-page/split-view motion-overlay grammar;
+- reduced-motion, focus, rapid-navigation/interruption, keyboard/touch/simple-pointer parity;
+- physical iPad/Safari/Pencil and VoiceOver holds separated from local browser acceptance;
+- full Architecture KEEP list preservation;
+- bounded Stuck? plus deterministic stable context-ID seam; freehand/select path cannot be the sole route and must not imply AI is connected;
+- dependency gate: Motion + CSS/SVG default/no-add; native View Transitions narrow progressive spike only; React Aria vs Pragmatic separate reorder spike only; specialist libraries held unless separately authorized;
+- Vercel exact-SHA owner-review path and limits of what preview alone proves;
+- future functional-regression floor against the frozen issue #2 repair plus already-passing confidence/evaluation/ordering/Teaching/game/local-truth semantics.
+
+VERDICT MODEL FOR FUTURE CANDIDATE
+- PASS (LOCAL/BROWSER), AMEND, or BLOCKED with P0/P1/P2/P3/HOLD severity and explicit evidence refs.
+- Local/browser PASS never clears physical iPad/Safari, VoiceOver/AT, hosted-origin or Nathan visual-owner-review holds unless directly tested.
+- Repaired baseline freeze is a prerequisite; unresolved P1 repair state makes the future visual QA BLOCKED rather than silently folding defects into a broad rewrite.
+
+HARD REJECT THEMES
+- Teaching publicly exposed as peer workspace without instructor capability;
+- learner depth still flattened to Home + Settings;
+- flat unexplained Teaching attention list;
+- no student question drill-down / modal-only student detail;
+- fake mastery/grade/telemetry;
+- routine blurred-modal navigation;
+- motion that breaks focus/state or lacks reduced-motion equivalence;
+- lost touch/keyboard/simple-pointer alternatives;
+- KEEP-list deletion;
+- AI-connected Stuck? claim without gate;
+- unauthorized dependency/paid feature;
+- clean-sheet remake;
+- regression of repaired issue #2 semantics;
+- ambiguous hosted build identity for owner review.
+
+No implementation, candidate mutation, dependency installation, merge, deployment, backend/auth/Supabase/AI connection or peer wake occurred.
+
+DONE — DIRECT RETURN TO GENERAL CF-0051.
