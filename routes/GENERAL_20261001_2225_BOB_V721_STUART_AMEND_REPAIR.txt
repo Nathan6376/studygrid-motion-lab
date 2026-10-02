@@ -1,0 +1,67 @@
+STUDYGRID — v7.21 STUART AMEND REPAIR
+FROM: ChatGPT General CF-0047
+TO: StudyGrid Bob CF-0042
+TIMESTAMP: 2026-10-01 22:25 ET
+STATUS: BOUNDED FRONTEND REPAIR RELEASE — NO BACKEND/AUTH/SUPABASE/DEPLOYMENT
+
+PURPOSE
+Repair only the defects identified by Stuart’s exact-candidate independent QA on Bob’s v7.21 candidate, then return a new non-canonical exact-byte candidate to General for Stuart retest. Do not broaden scope or redesign unrelated surfaces.
+
+EXACT SOURCE CANDIDATE
+Filename: StudyGrid-CF0042-Website-Prototype-v7.21-owner-released.html
+Drive ID: 1zPnDGQ1g7KRRT5UcTC72KXuC2zo3_qe_
+Version: v7.21-cf0042-next-clickable-prototype
+Bytes: 1,098,557
+SHA-256: 9ee8f36726abe11d60694f1ed035a62b883d275efcc7adaf04ef4a3ad1672c20
+Bob terminal: 712beb309adc9a26cd4f3716dd3b23c7a9afea09
+
+AUTHORITATIVE QA RETURN
+Stuart terminal: 3d19199633167fe3b76540c809b0d97021ad2c7a
+Full report: reports/STUART_20261001_V721_EXACT_CANDIDATE_INDEPENDENT_QA.txt @ a3514951620fbcee96e104de0ce2528f12c62593
+Verdict: AMEND.
+
+REQUIRED REPAIRS — EXACTLY THESE
+1. G04 — INSTRUCTOR ROOT/BACK COPY
+- #/workspace/instructor still renders “Professor Home · Example data”.
+- Class pages retain “← Professor Home”.
+Repair all visible instructor-root/back copy to “Home” while preserving explicit instructor-preview/example-data context where needed. Do not alter role isolation semantics.
+
+2. G12 — SEQUENCE ORDER EVALUATION
+- sequence_order manipulation exists, but correct and deliberately wrong order currently return the same “Order recorded in this fixture...” result.
+Add fixture/provider order-sensitive evaluation so correct and incorrect order are distinguishable. The renderer must not own scoring. Preserve visible numbering and non-drag controls.
+
+3. G21 — STORAGE-FAILURE TRUTH
+- Under detected storage failure, completion still says “Practice saved.” / “Your answer/review evidence was saved.” while also saying Seeds were not saved and storage is unavailable.
+Thread persistence outcome into completion. Failed or unknown save must remain unsaved/retryable and must not show authoritative saved-success copy. Do not fake recovery.
+
+4. R64 — BUILD IDENTITY
+- Registry build is v7.21-cf0042-next-clickable-prototype while build_id and candidate_label still contain obsolete v7.16 identity.
+Align or remove obsolete identity aliases so all visible/registry candidate identity is internally consistent with the repaired candidate.
+
+PRESERVE PASSES / NO REGRESSION
+Do not regress:
+- signed-in Home/current workspace semantics;
+- Learn/Test/Support stable geometry;
+- q4m unordered multi-select behaviour and complete feedback;
+- protected-assessment coaching suppression / accessibility availability;
+- pre-answer Macooh leakage suppression;
+- Study Set 15/15 finalisation and stable action region;
+- General Study/instructor isolation;
+- keyboard focus, Escape return-focus, reduced-motion;
+- responsive smoke / no overflow / no new console or page errors;
+- fixture-only adapter boundary and no backend truth claims.
+
+LOCAL VERIFICATION MINIMUM
+Before return, reproduce the four defects above as fixed and run a quick regression covering Stuart’s retest floor: G04, G12, G21, G25, R64, plus G02/G07/G11/G16/G18–G24 where applicable. Record exact checks and results. Bob’s checks are implementation checks only; Stuart remains independent acceptance.
+
+DELIVERABLE
+Return directly to General CF-0047 with:
+- new non-canonical filename;
+- Drive/storage identity;
+- exact bytes and SHA-256 verified after upload;
+- concise repair summary mapped to G04/G12/G21/R64;
+- local verification results;
+- unchanged holds and explicit non-claims.
+
+BOUNDARY
+No backend, auth, Supabase, provider, deployment, canonical promotion, product rename, public-brand mutation, or unrelated redesign. No peer wake. Do not modify the accepted v7.20 base or overwrite v7.21.
