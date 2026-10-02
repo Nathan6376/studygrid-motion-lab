@@ -1,0 +1,57 @@
+STUDYGRID — POST-BUILD INDEPENDENT QA — CHECKPOINT
+FROM: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+TO: ChatGPT General / CF-0051
+TIMESTAMP: 2026-10-02 14:29 ET
+STATUS: CHECKPOINT / WORKING BLOCKED-FOR-REPAIR / QA ONLY
+
+CURRENTNESS / IDENTITY
+- CENTRAL ROUTING seq453 and linked General route consumed.
+- Exact application source remains e4e166cd090c537870c0c79f43a93a9a6854bd28 on claude/nifty-volta-wdicyt.
+- Current branch head 254c4eb9506cc7dde6739c795ba2b3273b13d284 is four commits after e4; compare confirms only owner-preview/review/route artifacts changed after e4, with no web/ source mutation.
+- PR1 recovery baseline e887a8a569babee941c0574d2c432fb2b6417211 remains the comparison baseline.
+
+SOURCES CONSUMED
+- Exact master port/build contract at e4.
+- Sol CF-0049 terminal engineering report @ 3b186738391f465b7ff460d2e6e977a323350703.
+- Bob official-source evidence Drive 194WoBMndd1LotqKYxRQIV8E8LE2UdfvOVxnyDtlZiDo.
+- Stuart existing QA contract blob 7dfb3a35979884b0ec2387066a10e036bfb20e21.
+- Claude builder implementation report at branch head (builder evidence only).
+- Exact candidate provider/store/help/session/ordering/welcome/settings source inspected independently.
+
+INDEPENDENT REPRODUCTION STATUS
+Working gate: BLOCKED FOR REPAIR. No P0 demonstrated.
+
+Five Sol P1 roots are independently corroborated from exact candidate source, not accepted by citation alone:
+1. Draft-source learner leakage: provider computes approved-source IDs but isReleased/plan eligibility do not use them; learner SourceSheet directly renders a draft source excerpt while saying it is not shown to students.
+2. Paused-session eligibility bypass: start() reactivates an unfinished session without re-planning/current eligibility; Teaching release/source/checkpoint/share setters do not invalidate session generation; paused recommendation is returned before a fresh eligibility check.
+3. “Say it another way” help can be graded clean: store records support.anotherWay and UI explicitly says it is extra help, but provider's helped predicate omits anotherWay, allowing clean evidence and “Right first time, on your own.”
+4. Restart erases unanswered helped exposure: seen state is derived from submitted global receipts; restart deletes the run/session and recreates against receipts only, so pre-submit another-way/hint exposure can be lost and the same item reused as unseen/fresh.
+5. Completed REVIEW reuse: start() returns an existing completed session rather than making a new eligible instance; later fresh questions can therefore be bypassed by the stable review route.
+
+Additional lower-risk roots independently confirmed for terminal adjudication:
+- same-item retry can retain fresh=true metadata even when evidence is helped;
+- stale rejected help checks epoch but not session generation in catch path;
+- topic Done-for-now projection can follow one touched clean group without bounded topic coverage;
+- provider operation cache is keyed only by local opId while each VisitStore starts its own counter, creating a multi-controller/remount collision seam;
+- Welcome autoplay has reduced-motion/manual controls but no explicit hidden/offscreen pause;
+- General direct session route and Add-to-list copy/access semantics are inconsistent;
+- attempt receipt is root-frozen only; nested evidence objects remain mutable.
+
+PASS SURFACES WORTH PRESERVING (SOURCE-LEVEL)
+- answer → explicit Check → optional confidence/Skip → feedback ordering;
+- hover/focus confidence motion is visual only;
+- provider owns evaluation; renderer uses stable IDs;
+- stale submit guard on epoch/generation/pending op and double-submit guard;
+- reorder has pointer/touch/pen path, visible Move Up/Down alternative, semantic state-first movement, announcements, Escape/pointercancel/hidden-document cancellation;
+- native dialog focus entry/return; direct Settings groups; honest local account/data copy;
+- three game families remain on ordinary provider semantics with Simple-view path in the inspected architecture;
+- no real backend/auth/Supabase/AI connection discovered in reviewed source.
+
+OPEN BEFORE TERMINAL
+- Finish targeted product/interaction/source audit of Course/Practice repeat entry, games/debrief, shell/routes, Teaching and browser test coverage.
+- Check for independent Stuart-only regressions beyond Sol, especially focus/navigation and QA-contract carry-forwards.
+- Classify device/VoiceOver/hosted-origin as explicit holds, not local PASS/FAIL.
+- Persist full terminal report and direct General return with exact repair acceptance checks.
+
+BOUNDARY
+No implementation, dependency installation, merge, deploy, backend/auth/Supabase/AI connection, candidate mutation or peer wake.
