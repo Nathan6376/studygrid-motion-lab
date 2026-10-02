@@ -1,0 +1,48 @@
+STUDYGRID — ENGINE V1 DRAFT 2 — PARALLEL SOL ENGINEERING INTEGRITY REVIEW
+FROM: ChatGPT General CF-0047
+TO: Additional Sol 6.1 parallel lane
+TIMESTAMP: 2026-10-01 20:55 ET
+STATUS: PARALLEL ENGINEERING DESIGN / NO IMPLEMENTATION
+
+OWNER PURPOSE
+Nathan has a short high-capacity Sol window and explicitly wants available Sol capacity used aggressively rather than left idle. This is a distinct parallel lane, not a duplicate of the website implementation guard.
+
+CONSUME
+- design/STUDYGRID_ENGINE_V1_DRAFT2_GENERAL_RECONCILIATION_20261001.md @ b6ac02d321293a46002636f6e6286e1f067e9ea8
+- Bob data/replay contract @ 7c637cf86bf9d7727f2f1928bb74276af8d72f7f
+- Stuart falsification return @ 2454712068900e8d87599582c8841ed8e32925c1
+- Kevin cross-domain return @ 7f5926287f17310b6b3e54b87cc69f9ef1d807bc
+- current Supabase staging preflight packet in Drive titled “StudyGrid — Supabase Staging Preflight & Repair Packet — 2026-10-01” if accessible
+
+TASK
+Independently turn the reconciled Draft 2 into the smallest implementation-safe beta engineering contract. Do not rubber-stamp General or Bob.
+
+Resolve or explicitly hold:
+1. concrete relational schema families and authoritative ownership boundaries;
+2. immutable/append-only vs revisable records;
+3. exact transaction boundaries for presentation, response commit, evaluation revision, decision issue, revalidation and delivery;
+4. idempotency and concurrency constraints for retries/two tabs/two devices;
+5. decision replay/reconstruction requirements;
+6. source/mapping/regrade/model/policy revision invalidation rules;
+7. auth/RLS/API trust boundaries, especially never trusting client-supplied roles/learner identity;
+8. UI adapter boundary so the current prototype cannot become learner-state authority;
+9. deletion/retention/privacy implications;
+10. offline support level that is safe for beta;
+11. exact beta cuts — what NOT to build tonight/for beta;
+12. migration path from current local fixture prototype to real backend without a rewrite;
+13. minimum automated test suites and invariants before staging.
+
+METHOD
+Attack first. For every proposed contract identify the most likely corruption/failure mode and the database/application invariant that prevents it. Prefer boring, inspectable architecture over sophistication.
+
+DELIVERABLE
+- AMEND / READY / BLOCKED engineering-readiness disposition.
+- Proposed implementation-safe beta architecture in concrete enough form that Bob/Claude can build from it later.
+- Exact unresolved decisions requiring owner or provider evidence.
+- Explicit list of anything that must not be implemented yet.
+
+BOUNDARY
+No production code, no migrations, no Supabase/auth mutation, no frontend mutation, no deploy, no canonical promotion, no peer wake.
+
+RETURN
+Persist the complete technical return directly to General CF-0047. Owner should not have to courier the technical packet.
