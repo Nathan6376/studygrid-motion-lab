@@ -1,0 +1,809 @@
+STUDYGRID — VISUAL / IA REJUVENATION INDEPENDENT QA CONTRACT
+Prepared by: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+For: ChatGPT General / CF-0051
+Prepared: 2026-10-02 16:20 ET
+Status: QA DESIGN COMPLETE — NO FUTURE CANDIDATE HAS BEEN PASSED
+Boundary: QA / ACCEPTANCE DESIGN ONLY — NO IMPLEMENTATION / NO CANDIDATE MUTATION
+
+======================================================================
+0. AUTHORITY, PURPOSE, AND NON-OVERLAP
+======================================================================
+
+This contract implements CENTRAL ROUTING seq463 and its linked General route.
+
+Consumed authorities / evidence:
+- General seq463 visual/IA acceptance-contract route (Drive 1Zy2N9BemSm10PjS_PsY1dXxZG8JhtaVEc9bwiLHvMm0).
+- Architecture seq456 synthesis (Drive 1BBSAzxr0TUCmUnpMyJ54m0cOLo-n8dGs5U89T3EGwds).
+- Architecture seq461 dependency closeout (Drive 1tO8SS6CYuRf5Le7sugf4WxHAEVwO0as434RMr0_3Im0).
+- Bob seq457 visual/motion/library research (Drive 1kMocYzQpFG6SXi9TN4EIlOoupJ3hLwT2nbj-PCTsDls).
+- Current consolidated functional repair packet GitHub issue #2. That packet remains a separate prerequisite/regression boundary and is NOT re-audited here.
+- Current route grammar from web/src/routes.ts at application source e4e166cd090c537870c0c79f43a93a9a6854bd28.
+
+Hard product principle: REJUVENATE, DO NOT REMAKE.
+
+This artifact is executable QA design for a future repaired + rejuvenated candidate. It does not declare that candidate PASS because that candidate does not yet exist.
+
+======================================================================
+1. VERDICT AND SEVERITY SEMANTICS
+======================================================================
+
+Future QA disposition:
+- PASS (LOCAL/BROWSER): every applicable P1/MUST gate below passes on one exact frozen rejuvenated SHA, required regression suites pass, and no unauthorized dependency/scope change exists. Any physical-device/VoiceOver/hosted-owner-review hold not actually tested remains explicitly open.
+- AMEND: candidate is identifiable/runnable/testable, but one or more repairable P1/P2 contract gates fail.
+- BLOCKED: exact candidate/repaired baseline cannot be identified; functional repair freeze is unresolved; candidate cannot be meaningfully exercised; test evidence is unavailable; or a structural failure prevents the required QA paths.
+
+Severity:
+- P0: security/privacy/authority failure or real-system mutation outside scope. Immediate stop/escalation.
+- P1: hard product/IA/truth/accessibility/function acceptance failure. Candidate cannot pass the visual/IA gate.
+- P2: material quality/clarity/motion/focus defect requiring amendment before owner acceptance, but does not by itself prove corrupt learning truth.
+- P3: polish/consistency issue; record, but it does not block a bounded local acceptance unless it accumulates into a material usability failure.
+- HOLD: evidence cannot be cleared in the current environment (physical iPad/Safari/Pencil, VoiceOver/AT, hosted-origin or Nathan visual judgement).
+
+Evidence forms:
+- SRC = source/diff inspection.
+- AUTO = unit/component/provider automated test.
+- BROW = browser test with route/action/assertion + console/network capture.
+- REC = screenshot/video/trace showing motion/visual sequence.
+- HOST = exact Vercel/hosted-preview evidence tied to commit/build identity.
+- PHYS = physical iPad/Safari/touch/Pencil evidence.
+- AT = physical VoiceOver/assistive-technology evidence.
+- OWNER = Nathan visual/product acceptance notes on exact hosted SHA.
+
+No single screenshot clears semantic, focus, reduced-motion, provider, regression or physical-device gates.
+
+======================================================================
+2. ROUTE BASELINE / TEST ALIASES
+======================================================================
+
+Existing hash-route grammar to preserve unless General explicitly changes it:
+- PUBLIC: #/
+- SCHOOL HOME: #/school/home
+- SCHOOL SETTINGS: #/school/settings
+- SCHOOL COURSE OVERVIEW: #/school/course/bio-11
+- SCHOOL COURSE MAP: #/school/course/bio-11/course
+- SCHOOL PRACTICE: #/school/course/bio-11/practice
+- SCHOOL PROGRESS: #/school/course/bio-11/progress
+- SCHOOL TOPIC: #/school/course/bio-11/topic/diffusion
+- SCHOOL SESSION: #/school/learn/bio-11/new/diffusion
+- GENERAL HOME: #/general/home
+- GENERAL DISCOVER: #/general/discover
+- GENERAL COURSE OVERVIEW: #/general/course/{courseId}
+- GENERAL COURSE/PRACTICE/PROGRESS: same local-tab grammar as School.
+- TEACHING HOME: #/teaching/home
+- TEACHING COURSE OVERVIEW: #/teaching/course/bio-11
+- TEACHING COURSE: #/teaching/course/bio-11/course
+- TEACHING STUDENTS: #/teaching/course/bio-11/students
+- TEACHING STUDY SETS: #/teaching/course/bio-11/study-sets
+- TEACHING PREVIEW AS STUDENT: #/teaching/preview/bio-11
+
+NEW STUDENT DETAIL ROUTE REQUIREMENT:
+- Selecting a student from TEACHING STUDENTS MUST land on a stable, dedicated, deep-linkable full-page route.
+- Exact literal hash/path is implementation-defined by the rejuvenation worker and MUST be recorded in the QA manifest before testing.
+- Reject a modal-only learner detail implementation or a non-deep-linkable transient overlay as the final architecture.
+
+For all route tests: record exact literal URL/hash, exact tested commit/build identity, viewport, role fixture and any relevant local fixture state.
+
+======================================================================
+3. PRECONDITION GATE — FUNCTIONAL REPAIR FREEZE
+======================================================================
+
+VIS-PREREQ-01 — repaired baseline exists
+Action:
+1. Identify the exact frozen application SHA produced by the bounded issue #2 repair.
+2. Confirm rejuvenation candidate descends from that frozen repaired baseline, or General has explicitly approved an equivalent reconciliation.
+Expected:
+- No unresolved P1 repair packet is silently absorbed into a broad visual rewrite.
+- Repair and visual/IA diffs are separately attributable.
+Failure severity: BLOCKED.
+Evidence: Git ancestry/diff + repair terminal + rejuvenation base SHA.
+
+VIS-PREREQ-02 — no clean-sheet replacement
+Action:
+- Compare repaired baseline → rejuvenated candidate at route/component/product-surface level.
+Expected:
+- Current React/TypeScript product spine and KEEP surfaces survive recognizably; changes are targeted rejuvenation/restoration/enhancement.
+Reject if:
+- application is wholesale replaced in a way that discards approved flows/history merely to recreate look/feel.
+Severity: P1.
+Evidence: SRC + route inventory + owner-visible before/after captures.
+
+======================================================================
+4. ROLE GATING / SHELL ACCEPTANCE
+======================================================================
+
+VIS-ROLE-01 — public learner entry does not expose Teaching as peer workspace
+Route/action:
+1. Open PUBLIC #/ in a learner-only/new-visitor fixture.
+2. Inspect primary entry choices, footer links, context switchers and profile/account surfaces reachable without role change.
+Expected:
+- Primary learner choices are School and General.
+- Teaching is not presented as a normal peer public workspace/tile/context.
+- Local-preview/sign-in truth remains explicit.
+Reject if:
+- Teaching appears beside School/General as an unrestricted public workspace.
+Severity: P1.
+Evidence: BROW + REC + accessibility tree/role query.
+
+VIS-ROLE-02 — learner shells do not permanently expose Teaching
+Route/action:
+1. Open SCHOOL HOME then GENERAL HOME in learner-only role.
+2. Open primary navigation, context switcher and profile.
+Expected:
+- School/General switching is coherent.
+- Teaching does not appear as a constant primary learner context unless the simulated profile is instructor-capable.
+- Public entry may remain reachable as a secondary route.
+Severity: P1.
+Evidence: BROW.
+
+VIS-ROLE-03 — instructor-capable preview role can reach dedicated Teaching
+Route/action:
+1. From profile/account, select the clearly labelled instructor-capable SAMPLE/DEMO role state.
+2. Enter TEACHING HOME.
+Expected:
+- Teaching becomes available through account/profile role affordance.
+- Teaching shell is a dedicated instructor command workspace using the same StudyGrid product language.
+- Role switch is explicitly demo/local; no real-auth claim.
+Severity: P1.
+Evidence: BROW + SRC for role fixture truth.
+
+VIS-ROLE-04 — direct Teaching hash respects role gate
+Route/action:
+1. In learner-only role, deep-link directly to #/teaching/home and #/teaching/course/bio-11.
+2. Repeat in instructor-capable demo role.
+Expected:
+- learner-only role gets a truthful role recovery/gate, never silent Teaching access;
+- instructor-capable role reaches Teaching normally;
+- no fake server permission claim is made.
+Severity: P1.
+Evidence: BROW + route tests.
+
+VIS-ROLE-05 — instructor shell not dominated by learner context switch
+Route/action:
+- Open TEACHING HOME and one class route.
+Expected:
+- Teaching Home, classes, instructor profile/avatar, Preview as student and class-local Teaching tabs dominate the IA.
+- School/General, if available to the same demo profile, are lower-priority account switches rather than permanent peer primary navigation.
+Severity: P2 if merely visually weak; P1 if Teaching is effectively still the learner shell with peer contexts exposed.
+Evidence: REC + OWNER.
+
+======================================================================
+5. LEARNER NAVIGATION DEPTH / FINDABILITY
+======================================================================
+
+VIS-NAV-01 — School class depth is first-class and nonduplicative
+Route/action:
+1. SCHOOL HOME → open Biology 11.
+2. Exercise Overview → Course → Practice → Progress.
+3. Return Home.
+Expected:
+- Home remains cross-class.
+- Overview is class/course-scoped.
+- Overview/Course/Practice/Progress are obvious local class destinations.
+- no duplicate global navigation exposes a second competing set of the same destinations.
+- current tab is semantically and visually clear.
+Severity: P1.
+Evidence: BROW at 1024×900, 820×900, 390×844 + keyboard path.
+
+VIS-NAV-02 — General preserves the same product language with Discover
+Route/action:
+1. GENERAL HOME → GENERAL DISCOVER → open a General course/topic-space.
+2. Exercise Overview/Course/Practice/Progress locally.
+Expected:
+- Discover is General-only and first-class.
+- local tab grammar matches School without turning General into School copy.
+- no dead/coming-soon first-class route where Architecture requires usable depth.
+Severity: P1.
+Evidence: BROW.
+
+VIS-NAV-03 — mobile/narrow local navigation remains findable
+Route/action:
+- Repeat School and Teaching local-tab navigation at 390×844 and 320px floor.
+Expected:
+- tabs or equivalent control remain reachable without horizontal page overflow;
+- current location is announced/understandable;
+- no hidden-only-hover navigation.
+Severity: P1 if destination unreachable; P2 if awkward but functional.
+Evidence: BROW + REC.
+
+======================================================================
+6. TEACHING COMMAND CENTRE / PRIORITY MODEL
+======================================================================
+
+VIS-TEACH-01 — deterministic priority buckets
+Route/action:
+Use a QA fixture that contains at least one item in each explicit Architecture bucket:
+1. BLOCKING LEARNING.
+2. NEEDS A DECISION SOON.
+3. PATTERN TO NOTICE.
+4. HOUSEKEEPING / PREP.
+Open TEACHING HOME.
+Expected:
+- bucket order is exactly the above order;
+- within a bucket: earliest confirmed date first, then fixture-supported breadth/reach, then stable deterministic order;
+- no hidden pseudo-risk score or unexplained source-loop ordering.
+Severity: P1.
+Evidence: AUTO provider/selector test + BROW.
+
+VIS-TEACH-02 — each attention item explains itself
+Action:
+- Inspect at least one item in every populated bucket.
+Expected each item shows:
+- plain-language WHY NOW;
+- class/course;
+- upcoming event or learner-facing consequence where known;
+- calm state/severity label;
+- direct action.
+Reject if:
+- priority is communicated only through colour/order with no reason.
+Severity: P1.
+Evidence: BROW + screenshot.
+
+VIS-TEACH-03 — command centre avoids KPI wall
+Action:
+- Inspect TEACHING HOME at desktop/tablet/mobile.
+Expected:
+- current week/topic per class, next confirmed checkpoint, student-question clusters, content/release work and study-set state are surfaced without fake enterprise analytics/mastery scores.
+Severity: P1 if fake analytics/grades; P2 if hierarchy becomes a flat card pile.
+Evidence: BROW + OWNER.
+
+======================================================================
+7. STUDENT QUESTIONS / DRILL-DOWN
+======================================================================
+
+VIS-Q-01 — question clusters have real visual priority
+Route/action:
+- Open TEACHING HOME with synthetic question-cluster fixture.
+Expected:
+- question clusters receive materially stronger prominence than low-priority housekeeping when Architecture bucket logic puts them above it;
+- concept/question count and SAMPLE/SYNTHETIC truth are explicit.
+Severity: P2 for insufficient prominence; P1 if treated as verified mastery/deficit.
+Evidence: REC + OWNER.
+
+VIS-Q-02 — cluster drill-down is useful and truthful
+Action:
+- Activate a question cluster using pointer and keyboard.
+Expected:
+- drill-down exposes concept, class/course, sample count/context and an actionable route to relevant student/topic/source context;
+- on larger screens a split/expandable contextual view is allowed; on narrow screens it becomes sequential/full-width;
+- no diagnosis, grade or hidden analytics claim.
+Severity: P1 for false inference or inaccessible drill-down; P2 for weak hierarchy.
+Evidence: BROW + keyboard + 390px flow.
+
+======================================================================
+8. DEDICATED STUDENT DETAIL PAGE
+======================================================================
+
+VIS-STU-01 — student row opens full dedicated route
+Route/action:
+1. TEACHING STUDENTS.
+2. Activate sample learner “Alex Morgan” (or the stable equivalent fixture row) by pointer and keyboard.
+Expected:
+- full dedicated route/page opens;
+- route is deep-linkable/reloadable in local hash-router semantics;
+- student row/avatar → detail header may use shared-element continuity;
+- no tiny modal-only final detail.
+Severity: P1.
+Evidence: BROW + route capture + REC.
+
+VIS-STU-02 — header truth
+Expected header contains:
+- learner avatar/name;
+- class/course;
+- explicit SAMPLE / SYNTHETIC DEMO label;
+- current next step in plain language.
+Severity: P1 if synthetic truth omitted or real-student implication created.
+Evidence: BROW.
+
+VIS-STU-03 — required detail sections
+Inspect exact student detail page.
+Must contain truthful demo-capable sections for:
+1. CURRENTLY WORKING ON — course/module/topic/session fixture state.
+2. RECENT SESSIONS — synthetic timeline; template/type/topic; help/retry where useful; honest completion labels.
+3. TIME IN STUDYGRID — only fixture-supplied sample totals/breakdown, explicitly sample/not telemetry.
+4. COVERAGE / PROGRESS — Not started / In progress / Done for now / Due for a check / Reviewed; no percent mastery unless separately authorized later.
+5. MAY NEED SUPPORT WITH — observable sample signals from questions/help/retries/instructor notes, not diagnosis.
+6. QUESTIONS / HELP — recent synthetic events with topic/source context.
+7. NEXT USEFUL STEP — deterministic recommendation inside released/approved scope.
+8. OPTIONAL TEACHER NOTE / ACTION — local-demo only if present; no fake message/durable record.
+Severity: P1 if any shown section falsifies data authority or claims mastery/grade/real telemetry; P2 if an approved section is missing/undiscoverable.
+Evidence: BROW + fixture/source mapping.
+
+VIS-STU-04 — no overclaim labels
+Search rendered student detail for mastery, grade, readiness, risk score, diagnosis or production telemetry claims.
+Expected:
+- none unless independently authorized and evidenced.
+Severity: P1.
+Evidence: BROW text scan + SRC.
+
+======================================================================
+9. JOIN CODE / TIMELINE / COURSE-CHECKPOINT CLARITY
+======================================================================
+
+VIS-CLASS-01 — join code is prominent but truthful
+Route/action:
+- Open TEACHING COURSE and TEACHING STUDENTS.
+Expected:
+- sample join code is easy to locate without digging through unrelated cards/overlays;
+- “sample” / “joining not active” truth remains explicit;
+- if copy control exists, it is keyboard/touch operable and does not imply a real join service.
+Severity: P1 for fake active join; P2 for poor prominence.
+Evidence: BROW + OWNER.
+
+VIS-CLASS-02 — timeline geometry communicates sequence/state
+Route/action:
+- Open TEACHING COURSE OVERVIEW with modules/weeks and checkpoint fixture.
+Expected:
+- order, current position, open/closed state and confirmed-vs-draft checkpoint status are understandable from text/semantics as well as geometry/colour;
+- checkpoint relation is clearer than a generic card list;
+- interaction does not depend on animation.
+Severity: P1 if semantic state is inaccessible/wrong; P2 if geometry is visually shallow/confusing.
+Evidence: BROW + REC + accessibility tree.
+
+VIS-CLASS-03 — timeline narrow-screen fallback
+Route/action:
+- 390×844 and orientation change/emulation.
+Expected:
+- no clipped offscreen checkpoints;
+- readable sequential layout or horizontal control with explicit accessible semantics;
+- focused checkpoint stays visible.
+Severity: P1 if content/action unreachable.
+Evidence: BROW.
+
+======================================================================
+10. AVATAR / PROFILE / ACCOUNT ROLE SURFACE
+======================================================================
+
+VIS-PROFILE-01 — visible identity affordance
+Routes:
+- SCHOOL HOME, GENERAL HOME, TEACHING HOME.
+Expected:
+- visible avatar/profile affordance in each appropriate shell;
+- not merely a hidden Settings shortcut;
+- accessible name and focus target.
+Severity: P2 unless role access is also lost, then P1.
+Evidence: BROW + OWNER.
+
+VIS-PROFILE-02 — role/account switching is sensible and truthful
+Action:
+- Open profile/account from learner and instructor-capable fixtures.
+Expected:
+- role/capability switch is clearly SAMPLE/DEMO/local;
+- learner-only role does not gain Teaching until explicitly switched to instructor-capable fixture;
+- switch back is obvious;
+- no password form or “signed in” state implies real auth.
+Severity: P1.
+Evidence: BROW.
+
+======================================================================
+11. MOTION / OVERLAY GRAMMAR
+======================================================================
+
+VIS-MOT-01 — Up Next spatial continuity
+Route/action:
+1. SCHOOL HOME, capture Up Next card/title/art.
+2. Activate Continue to SCHOOL TOPIC or direct session path as designed.
+3. Activate Start Learning into SCHOOL SESSION.
+Expected:
+- identifiable topic/course/title relationship visually persists/recomposes;
+- target does not jump away before activation;
+- focus lands on semantic destination independent of animation completion;
+- rapid repeat/back navigation does not leave ghost/duplicate elements.
+Severity: P1 for state/focus corruption; P2 for generic unrelated page swap or weak continuity.
+Evidence: BROW + REC normal motion + reduced motion.
+
+VIS-MOT-02 — Teaching object continuity
+Action:
+- Teaching attention item → detail/context action; student row/avatar → student detail; Study Set card → review workspace.
+Expected:
+- transform-in-place/shared-element transition used where object continuity is meaningful, or an equally clear accessible static transition under reduced motion;
+- no animation becomes required for correctness.
+Severity: P2 if continuity is absent but semantics work; P1 if state/focus breaks.
+Evidence: REC + BROW.
+
+VIS-MOT-03 — overlay type matches job
+Inspect:
+- Source detail.
+- Stuck? response/context.
+- Student detail.
+- Settings.
+- release/open/close confirmation.
+Expected:
+- source/Stuck small context work uses drawer/sheet/expandable panel or comparable non-disruptive foreground treatment;
+- student detail/Settings/Teaching command centre use full-page durable destinations;
+- modal/blur reserved for real interruption/confirmation/sign-in-role choice/destructive action;
+- routine navigation does not default to blurred modal/green haze.
+Severity: P1 if student detail remains modal-only; P2 for routine modal overuse.
+Evidence: BROW + OWNER.
+
+VIS-MOT-04 — split view collapse
+If roster+learner, cluster+context or timeline+checkpoint uses split view:
+- desktop/tablet may show split relationship;
+- 390px must collapse to logical sequential full-width flow;
+- focus order follows reading order.
+Severity: P1 if inaccessible/unreachable; P2 if cramped/confusing.
+Evidence: BROW.
+
+VIS-MOT-05 — semantic particles/orbs only
+Expected:
+- particle/orb/path motion communicates progress, relation, release, focus or a learning concept;
+- no decorative motion obscures hierarchy or runs gratuitously.
+Severity: P2; P1 if motion blocks/reorders/encodes essential state with no static equivalent.
+Evidence: REC + OWNER.
+
+======================================================================
+12. REDUCED MOTION / FOCUS / INTERRUPTION
+======================================================================
+
+VIS-A11Y-01 — system reduced motion
+Action:
+- run representative public, learner, Teaching, student-detail, source/Stuck and Study Set flows with prefers-reduced-motion: reduce.
+Expected:
+- same route/state outcome and focus result;
+- no required autoplay/shared-element travel;
+- semantic continuity remains understandable with instant/static change;
+- no state update waits for animation completion.
+Severity: P1.
+Evidence: BROW.
+
+VIS-A11Y-02 — product less-motion preference respects system floor
+Action:
+- toggle StudyGrid less-motion on/off; change system media query dynamically where harness permits.
+Expected:
+- system reduction always wins;
+- controls remain usable/manual;
+- setting copy matches behaviour.
+Severity: P1.
+Evidence: BROW.
+
+VIS-A11Y-03 — focus follows semantic destination
+Keyboard-only paths:
+- Up Next → topic/session;
+- Teaching Home attention → target;
+- Students → student detail;
+- Source sheet open/close;
+- Stuck? open/context/close;
+- profile role switch;
+- timeline/checkpoint detail;
+- Study Set review.
+Expected:
+- destination heading/control gets logical focus;
+- close/back restores focus to a connected invoker/current context;
+- no focus left on removed shared element or body.
+Severity: P1.
+Evidence: BROW focus assertions + AT later.
+
+VIS-A11Y-04 — rapid navigation/interruption
+Action:
+- start transitions, then immediately Back/Forward/reopen/select another item; repeat with reduced motion.
+Expected:
+- no duplicate shells, trapped overlays, stale focus, wrong route, stale visual snapshot or animation-completion state mutation.
+Severity: P1 for state/focus corruption; P2 for cosmetic flash only.
+Evidence: BROW trace/video.
+
+======================================================================
+13. TOUCH / POINTER / IPAD / SAFARI / VOICEOVER GATES
+======================================================================
+
+Local Chromium/WebKit emulation is useful but MUST NOT be represented as physical proof.
+
+HOLD-P1 — physical iPad/Safari/touch/Pencil
+Required physical matrix before full device claim:
+- landscape + portrait;
+- safe-area/viewport/zoom/scroll behaviour;
+- one-handed tap targets and primary navigation;
+- shell/local tabs/profile/Teaching drill-down;
+- any drag/reorder interaction plus visible non-drag single-pointer alternative;
+- pointercancel/touchcancel/scroll conflict;
+- Pencil where product retains Pencil-specific behaviour;
+- source/Stuck sheet gestures;
+- shared-element/2.5D compositing/clipping/text legibility;
+- rapid Back/Forward and route interruption;
+- on-screen keyboard where inputs exist;
+- 200% zoom/readability where practical.
+Expected:
+- no unreachable action, accidental drag-scroll lock, clipped essential content, focus disappearance or severe frame/compositing failure.
+Evidence: PHYS video + device/OS/Safari version + exact hosted SHA.
+
+HOLD-P2 — VoiceOver / physical AT
+Required:
+- shell/landmarks/headings;
+- local tabs and role/profile access;
+- priority item labels + why-now/consequence;
+- student-detail section order;
+- question drill-down;
+- timeline/checkpoint semantics;
+- source/Stuck foreground focus;
+- reorder announcements and non-drag controls where applicable;
+- no motion/live-region spam.
+Evidence: AT notes/recording on exact SHA.
+
+HOLD-P3 — hosted-origin behaviour
+Required after candidate preview exists:
+- direct/deep-link load and reload;
+- Back/Forward;
+- asset loading;
+- console/network errors;
+- build identity;
+- local-only truth/persistence behaviour under real preview origin.
+Evidence: HOST.
+
+======================================================================
+14. KEEP-LIST PRESERVATION
+======================================================================
+
+Each item below is a preservation gate, not permission to freeze its current visual implementation.
+
+VIS-KEEP-01 — Up Next remains a primary learner next action.
+VIS-KEEP-02 — “one good step at a time” flow remains recognisable.
+VIS-KEEP-03 — Continue / Why this? / Choose another path remain coherent.
+VIS-KEEP-04 — particle spread visual language remains recognisable where it serves learning/continuity.
+VIS-KEEP-05 — Study Set review keeps stable review action region and terminal Ready → separate Share concept.
+VIS-KEEP-06 — bounded Stuck? jobs remain: Say it another way / Why am I doing this? / Show the source / Help me get unstuck.
+VIS-KEEP-07 — announcements remain available in Teaching/class context.
+VIS-KEEP-08 — Preview as student remains obvious, reversible and truthfully demo-scoped.
+VIS-KEEP-09 — course/week timeline concept remains.
+VIS-KEEP-10 — warm green/cream/material language remains recognisable; rejuvenation must not collapse into generic dashboard/AI-gradient styling.
+VIS-KEEP-11 — local-demo truth/no fake backend-auth remains.
+VIS-KEEP-12 — repaired confidence/retry/source/session semantics stay intact.
+
+Failure severity:
+- P1 when a KEEP item is removed/broken or truth boundary is regressed.
+- P2 when item exists but loses owner-approved visual/product identity materially.
+Evidence:
+- BROW + before/after REC; OWNER for visual-language judgement.
+
+======================================================================
+15. STUCK? CONTEXT SEAM / FUTURE SELECT-CIRCLE CONTRACT
+======================================================================
+
+VIS-STUCK-01 — bounded help remains deterministic now
+Action:
+- exercise all four existing jobs inside a task and outside a task.
+Expected:
+- authored/deterministic help only; no free-form AI claim; source/task/route context is correct.
+Severity: P1.
+Evidence: BROW + SRC.
+
+VIS-STUCK-02 — stable semantic context identity
+Expected architecture seam:
+- eligible help targets expose stable semantic target/context IDs;
+- help request can be represented as bounded route + target ID + accessible label + task/source identifiers/approved metadata where relevant;
+- do not pass arbitrary neighbouring DOM or screenshots by default.
+Severity: P1 if UI claims contextual targeting but cannot deterministically identify the target; P2 if seam exists but metadata is weak.
+Evidence: SRC + AUTO.
+
+VIS-STUCK-03 — select/circle, if included, has simple alternatives
+Action:
+- try pointer/touch freehand circle/select path if implemented;
+- repeat with tap/click “Select something to ask about” and keyboard focus selection.
+Expected:
+- path gesture is never sole route;
+- target selection resolves to the same stable semantic ID;
+- sensitive/password/hidden/inert content excluded;
+- no AI/backend connection implied.
+Severity: P1.
+Evidence: BROW + PHYS for touch/Pencil if claimed.
+
+If circle/select drawing is NOT implemented in the rejuvenation candidate, that is not itself a failure so long as the bounded Stuck? core and deterministic future context seam are preserved; provider/AI connection remains deferred.
+
+======================================================================
+16. DEPENDENCY / PLUGIN GATE
+======================================================================
+
+Current authorized default for rejuvenation:
+- Motion for React + CSS/SVG + native browser primitives.
+- No broad new dependency authorized.
+
+VIS-DEP-01 — package graph diff
+Action:
+- compare repaired baseline package.json/package-lock to rejuvenated candidate.
+Expected:
+- no new runtime/package dependency unless a separate explicit General/owner authorization artifact exists.
+Severity: P1.
+Evidence: SRC/diff + authorization reference.
+
+VIS-DEP-02 — current dispositions
+Acceptable without package adoption:
+- Motion/CSS/SVG as default.
+- Native View Transitions only as a narrow progressive zero-package enhancement/spike; unsupported browsers must degrade correctly.
+Separate evidence-spike only, not adopted by default:
+- React Aria DnD vs Pragmatic Drag and Drop for genuine semantic reordering; visible non-drag single-pointer controls remain mandatory.
+Held unless separately authorized after a named unmet requirement:
+- GSAP specialist use;
+- Rive authored-vector use;
+- visx for real scale/axis complexity;
+- perfect-freehand for stroke polish;
+- Konva/Fabric; full/core 3D/Spline.
+Rejected for current bounded context selector:
+- tldraw.
+Severity: P1 if candidate casually imports a held/rejected/new package without gate evidence.
+Evidence: lockfile/package graph + authorization refs.
+
+VIS-DEP-03 — Motion+ / paid feature truth
+Expected:
+- no assumption that Motion+ paid components are included merely because Motion package is present.
+Severity: P1 if unauthorized paid feature/runtime is introduced.
+Evidence: dependency/source/license audit.
+
+======================================================================
+17. VERCEL / OWNER VISUAL REVIEW GATE
+======================================================================
+
+No deploy is authorized by this contract. Once General supplies an existing/new preview:
+
+VIS-HOST-01 — exact owner-review identity
+Required evidence:
+- Vercel URL;
+- exact Git commit/build identity shown by product/About and deployment metadata;
+- no stale preview artifact;
+- timestamp of review.
+Failure: BLOCKED if owner cannot know which SHA is being reviewed.
+
+VIS-HOST-02 — owner visual review path
+Nathan should review, on the exact Vercel candidate:
+1. PUBLIC entry.
+2. SCHOOL HOME Up Next and class entry.
+3. class Overview/Course/Practice/Progress depth.
+4. Up Next → topic → focused session continuity.
+5. GENERAL Home/Discover/course depth.
+6. profile/avatar + role switch.
+7. TEACHING HOME priority hierarchy.
+8. student-question cluster/drill-down.
+9. Students → dedicated student detail.
+10. join code + timeline/checkpoint presentation.
+11. Study Set review/Ready/Share.
+12. Preview as student.
+13. Source + Stuck? treatment.
+14. representative scenario/game presentation.
+15. Daylight/Evening and reduced-motion presentation.
+
+Owner acceptance questions:
+- Does it feel rejuvenated rather than remade?
+- Is it less dashboard-like and more spatial/alive without becoming noisy?
+- Are important objects/relationships visually continuous?
+- Does Teaching feel like a command centre rather than an admin card pile?
+- Are learner/question/detail hierarchies obvious?
+- Does the warm material identity still feel like StudyGrid?
+
+Evidence: OWNER notes + screenshots/video tied to SHA.
+
+What Vercel owner review CAN establish:
+- rendered visual hierarchy/taste;
+- route discoverability;
+- perceived motion pacing/continuity on the reviewed device/browser;
+- copy clarity;
+- obvious responsive problems;
+- whether KEEP identity survived.
+
+What Vercel owner review CANNOT by itself establish:
+- source/provider truth or repaired issue #2 semantics;
+- full keyboard/VoiceOver correctness;
+- physical iPad/Pencil behaviour unless actually reviewed there;
+- absence of hidden console/network errors without capture;
+- package/dependency authorization;
+- production auth/backend/Supabase/AI readiness;
+- durable persistence/grades/real roster correctness;
+- cross-browser parity.
+
+======================================================================
+18. FUNCTIONAL REGRESSION FLOOR AFTER REPAIR FREEZE
+======================================================================
+
+This is NOT a re-run of the completed post-build audit now. It is the required future regression floor for the visual candidate.
+
+VIS-FR-01 — issue #2 repair invariants remain green
+On rejuvenated SHA rerun the repaired tests for:
+- current source/module/checkpoint/study-set eligibility;
+- another-way/help exposure truth and fresh-evidence semantics;
+- completed-history vs new REVIEW/APPLY/READY/SET session instances;
+- bounded topic Done state;
+- stale help / controller operation identity / nested evidence immutability;
+- hidden/offscreen Welcome motion;
+- General direct-route consistency;
+- Settings jump and Stuck→Source focus repairs if reproduced/fixed.
+Severity: P1 / BLOCKED if repaired baseline itself is not available.
+Evidence: automated/browser results on rejuvenated SHA.
+
+VIS-FR-02 — preserve previously passing learning semantics
+Required checks:
+- choose answer → Check commits → optional confidence/Skip → feedback;
+- hover/dwell/focus does not submit confidence/answer;
+- same-item retry/help never becomes clean independent evidence;
+- provider owns evaluation;
+- wrong/right multi-select and ordering remain distinct;
+- delayed submissions cannot mutate stale/reset/navigated session;
+- ordering keeps pointer/touch enhancement + visible Move controls + cancel/announcement path;
+- Settings controls still change actual local behaviour;
+- source/revision/Reviewed separation remains truthful;
+- Teaching review reaches Ready then separate Share;
+- games use ordinary provider receipts/debrief, not motor scoring/second engine;
+- no fake auth/save/backend/persistence claim;
+- standalone/export path remains deliberately handled as required by the repaired baseline.
+Severity: P1.
+Evidence: AUTO + BROW.
+
+VIS-FR-03 — no visual-pass scope creep
+Scan candidate for:
+- backend/auth/Supabase/AI network integration;
+- real roster/grade/persistence claims;
+- production analytics/telemetry/mastery scoring;
+- paid runtime or package additions without gate;
+- new game engine/full 3D runtime.
+Expected: none unless separately authorized by a newer General route.
+Severity: P0/P1 depending on mutation.
+Evidence: SRC + network trace.
+
+======================================================================
+19. AUTOMATED / BROWSER / PHYSICAL / OWNER MATRIX
+======================================================================
+
+Automated/source required before local PASS:
+- role-capability route gating;
+- deterministic Teaching priority selector;
+- stable student-detail route parsing/deep-link;
+- Stuck semantic context IDs;
+- package/dependency diff;
+- functional regression suite.
+
+Browser required before local PASS:
+- all role/IA routes at 1024×900, 820×900, 390×844 and 320px floor;
+- keyboard-only route/action paths;
+- reduced-motion path;
+- rapid navigation/interruption;
+- focus return/isolation;
+- no unexplained console errors/horizontal overflow;
+- build identity.
+
+Physical holds:
+- iPad/Safari/touch/Pencil;
+- VoiceOver/AT.
+
+Hosted/owner holds:
+- exact Vercel SHA/deep-link/history/network smoke;
+- Nathan rendered visual/product acceptance.
+
+Local browser PASS must never be phrased as clearing physical/AT/hosted/owner gates.
+
+======================================================================
+20. HARD REJECT CONDITIONS
+======================================================================
+
+Future rejuvenated candidate MUST NOT receive PASS if any of the following remain:
+1. Public/learner role can enter Teaching as unrestricted peer workspace.
+2. School/General still feel effectively Home + Settings with learner local depth undiscoverable.
+3. Teaching Home remains an unexplained flat source-loop attention list.
+4. Student-question clusters have no meaningful drill-down.
+5. student detail remains modal-only or falsifies synthetic truth.
+6. learner/student progress implies mastery, grades, risk or real telemetry without authority.
+7. join/timeline/checkpoint states are materially unclear or inaccessible.
+8. avatar/profile/role switching is absent or misleading.
+9. routine navigation/help/student detail still defaults to blurred modal/green haze contrary to grammar.
+10. shared/spatial motion breaks focus/state, has no reduced-motion semantic equivalent, or relies on animation completion for correctness.
+11. touch/keyboard/simple-pointer alternatives are removed from interactions that need them.
+12. any KEEP item is deleted/broken in the name of visual polish.
+13. Stuck? claims AI/Relay connection or captures arbitrary context without the deferred provider/privacy gate.
+14. unauthorized dependency/package/paid feature is introduced.
+15. the candidate is a clean-sheet remake rather than a rejuvenation of the approved product spine.
+16. repaired issue #2 semantics regress.
+17. exact hosted/candidate identity is ambiguous for owner review.
+
+======================================================================
+21. FUTURE QA RETURN TEMPLATE
+======================================================================
+
+When the rejuvenated candidate exists, independent QA should return:
+- exact repaired baseline SHA;
+- exact rejuvenated candidate SHA/branch;
+- hosted preview URL/build identity if available;
+- PASS / AMEND / BLOCKED;
+- table of every VIS-* gate: PASS / FAIL / HOLD / N/A with evidence ref;
+- exact failing route/action + observed result + severity;
+- automated/browser command counts/skips;
+- physical iPad/Safari/VoiceOver holds separately;
+- dependency graph diff + authorization refs;
+- KEEP-list result;
+- issue #2 regression result;
+- Nathan owner-review status separately;
+- explicit statement of whether any merge/deploy/backend/auth/Supabase/AI action occurred.
+
+END OF CONTRACT
