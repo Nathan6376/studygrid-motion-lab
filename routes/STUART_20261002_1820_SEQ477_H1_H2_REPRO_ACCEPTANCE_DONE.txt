@@ -1,0 +1,60 @@
+STUDYGRID — SEQ477 H1/H2 INDEPENDENT REPRODUCTION + ACCEPTANCE — TERMINAL RETURN
+FROM: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+TO: ChatGPT General / CF-0051
+TIMESTAMP: 2026-10-02 18:20 ET
+TASK STATUS: DONE
+BOUNDARY: QA / ADJUDICATION ONLY — NO CANDIDATE MUTATION
+
+AUTHORITY / CURRENTNESS
+- CENTRAL ROUTING seq477 consumed; no newer Stuart supersession was present in the pre-terminal refresh.
+- Route: Drive 16Zjknc9UcIxxAtHrqVbk3uX6mwcSg_iY2B_5ey5Q0aQ.
+- Sol seq471: Drive 1VWkv__jNOvIAb-q_uDx99bl88wUZC7xj.
+- Repaired baseline: 82a3591b4495dd40f1ed182048aef67092fb64e9 / app c020c3c9defe2425139184d0328effeb0f2ea040.
+- Original Claude repair branch still resolves to 4965df037cac2e147c154f6a78b172dd9acf3c04.
+
+FULL QA ARTIFACT
+- reports/STUART_20261002_SEQ477_H1_H2_REPRO_ACCEPTANCE_FREEZE.txt
+- commit 7da6ac589caaaa1755defb4ddea18f569e57e393
+- provider-read after publication.
+
+INDEPENDENT REPRODUCTION
+H2 — REPRODUCED / P1 CONFIRMED.
+Exact source witness: an already-created run snapshots previouslySeen at create-time; a later other-instance markShown updates live exposure but not that run; submit reads the stale run.previouslySeen. READY→NEW exposure→READY answer therefore can still produce support.previouslySeen=false, fresh=true and evidence=clean. This can overstate completion/Progress, so P1 is correct.
+
+H1 — REPRODUCED / P2 CONFIRMED ON CURRENT REPAIRED IA.
+Exact source witness: submit captures one global envelopeRevision and enters checking/pending; any Teaching eligibility setter increments that global revision, even if the active Biology session is unrelated and remains eligible. When the provider later resolves or rejects, matches() fails on revision mismatch and returns stale without clearing checking/pending. Current full-page Teaching navigation usually pauses first, limiting ordinary current-UI incidence; P2 is therefore appropriate now. If the integrated UI makes this an ordinary reachable dead-end, it is release-blocking regardless of label.
+
+CURRENT-FIXTURE LIMIT
+Current production catalog has no SET↔APPLY shared task IDs: the only Study Set uses set-1..set-4, while APPLY uses separate game task IDs. A generic patch test must therefore use a synthetic/injected shared-ID fixture or report SET/APPLY as N/A-current-catalog. Do not claim production-fixture PASS where no overlap exists.
+
+FROZEN ACCEPTANCE CONTRACT
+H2 minimum:
+- READY plan first → NEW shows shared task → READY resumed answer = nonfresh/practice;
+- reverse NEW plan first → READY exposure → NEW resumed answer = nonfresh/practice;
+- current-instance first display alone remains eligible for clean/fresh;
+- task merely queued in another plan is NOT exposure;
+- an accepted same-task receipt from another instance also prevents fresh evidence;
+- same-instance remount alone does not create cross-instance previouslySeen;
+- existing hint/reveal/another-way/retry nonfresh semantics remain intact;
+- SET↔APPLY both directions via synthetic shared-ID fixture, or explicit N/A-current-catalog.
+
+H1 minimum:
+- delayed Biology submit across unrelated Math checkpoint/source/release changes and unrelated Study Set share changes;
+- resolve and reject variants;
+- no-op release/source/checkpoint/share setters;
+- relevant Biology revocation still blocks and rejects the old result;
+- old retired op settling after a newer resubmit cannot clobber the new op;
+- repeated unrelated revisions cannot strand the run;
+- pause/restart/reset stale-safety remains intact.
+
+For an unrelated revision, either implementation is acceptable:
+A. pending operation remains valid and settles normally; or
+B. it is retired to locked/recoverable with pendingOp cleared and committed answer/confidence preserved.
+Never acceptable: settled checking forever, stale pendingOp, lost committed answer/confidence, duplicate receipt, stale op clobber, or accepting an operation after relevant revocation.
+
+PRESERVATION
+Seq470 remains terminal and authoritative; this task did not rerun unrelated QA. All existing `repair.test.ts` R1–R5, `browser/repair.spec.ts` R1/R2/R3/R6/R7, Settings-focus, Stuck→Source and the games Add-to-list regression must remain present and unweakened.
+
+No implementation, dependency installation, candidate mutation, merge, deployment, backend/auth/Supabase/AI connection or peer wake occurred.
+
+DONE — DIRECT RETURN TO GENERAL CF-0051.
