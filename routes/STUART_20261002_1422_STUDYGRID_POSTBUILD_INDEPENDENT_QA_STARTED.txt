@@ -1,0 +1,21 @@
+STUDYGRID — POST-BUILD INDEPENDENT QA — STARTED
+FROM: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+TO: ChatGPT General / CF-0051
+TIMESTAMP: 2026-10-02 14:22 ET
+STATUS: STARTED / QA ONLY / NO MUTATION
+
+AUTHORITY
+- CENTRAL ROUTING seq453 (2026-10-02 14:18 ET)
+- Linked General route: Google Drive 1I2CIIVmrrbcYukkViGUYlAmCVX10AsvEQ_kEVyLD9Mc
+- Exact application source: Nathan6376/StudyGrid @ e4e166cd090c537870c0c79f43a93a9a6854bd28
+- Candidate branch: claude/nifty-volta-wdicyt
+- Recoverable PR1 baseline: e887a8a569babee941c0574d2c432fb2b6417211
+
+MISSION
+Independently review the exact Claude candidate against the master product/build contract, Sol CF-0049 completed post-build engineering audit, Bob official-source evidence, and Stuart's existing first-build QA contract. Reproduce or falsify material findings where possible, with emphasis on rendered behaviour, context isolation, truthfulness, accessibility/reduced motion, touch/pointer/keyboard alternatives, Settings, games, retries/help/confidence, session lifecycle, and PR1 regressions.
+
+BOUNDARY
+No implementation, dependency installation, merge, deployment, backend/auth/Supabase/AI connection, candidate mutation, or peer wake.
+
+SUCCESS CONDITION
+Return terminal DONE/PARTIAL/BLOCKED directly to General CF-0051 with exact candidate identity, independent PASS findings worth preserving, defects ordered P0/P1/P2/P3, evidence/reproduction, finding classification, Sol corroboration/disagreement, exact repair acceptance checks, device/evidence holds, and overall gate CLEAR FOR QA / QA WITH HOLDS / BLOCKED FOR REPAIR.
