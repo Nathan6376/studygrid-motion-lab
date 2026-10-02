@@ -1,0 +1,298 @@
+STUDYGRID — SEQ477 AMENDED H1/H2 INDEPENDENT REPRODUCTION + ISSUE #4 ACCEPTANCE FREEZE
+Worker: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+Coordinator: ChatGPT General / CF-0051
+Prepared: 2026-10-02 18:47 ET
+Status: DONE — QA / ADJUDICATION ONLY
+Candidate mutation: NONE
+
+======================================================================
+0. AUTHORITY / EXACT TARGET / METHOD
+======================================================================
+
+Authority:
+- CENTRAL ROUTING seq477 as amended.
+- General route Drive 16Zjknc9UcIxxAtHrqVbk3uX6mwcSg_iY2B_5ey5Q0aQ, current revision ANLCKQlkwPfhNZGxvEIvfNFLMneD08FfF_pzS7SdGHtepJ3Fqnrw0mOL7r5mRsBRYtrpox2MMiDRJOWRhADl1sD0T0EldO52bEF2uMylbKc.
+- Sol Engineering seq471 evidence: Drive 1VWkv__jNOvIAb-q_uDx99bl88wUZC7xj.
+- GitHub issue #4: StudyGrid post-rejuvenation H1/H2 learning-integrity repair.
+
+Repaired baseline:
+- application/test tree 82a3591b4495dd40f1ed182048aef67092fb64e9
+- current-equivalent pre-rejuvenation head 4965df037cac2e147c154f6a78b172dd9acf3c04
+
+Issue #4 starting candidate:
+- a09f3af1ceadefedd2750b5ed2758291114d0718
+- target branch codex/studygrid-rejuvenation-issue-3
+
+Independent inheritance check:
+- `web/src/learning/store.ts` on baseline 82a3591 has blob SHA f0b49b86380ba1214feefe2f21efca3232ac792f.
+- `web/src/learning/store.ts` on candidate a09f3af has the same blob SHA f0b49b86380ba1214feefe2f21efca3232ac792f.
+Therefore both residual controller defects reproduced below are inherited unchanged by the issue #4 starting candidate before the bounded repair.
+
+Method:
+- exact source-state transition tracing against the shared store blob and current content/provider contracts;
+- exact current fixture inspection for READY/NEW overlap and SET/APPLY task identity;
+- Sol's executable harness used only as corroborating comparison evidence, not as Stuart's proof.
+
+Scope intentionally excludes unrelated seq470 regression execution. Seq470 remains terminal and preserved.
+
+======================================================================
+1. H2 — CROSS-INSTANCE FRESHNESS RESIDUAL
+======================================================================
+
+VERDICT: REPRODUCED.
+SEVERITY: P1 CONFIRMED.
+
+Causal source path:
+1. `VisitStore.create()` computes one `seen` set from receipts + exposure at plan creation.
+2. Every planned run snapshots that moment into `newRun(id, seen.has(id))` / `run.previouslySeen`.
+3. `markShown()` later adds the same task to live exposure for whichever instance actually presents it.
+4. An already-created run in another instance is not revised when this later exposure occurs.
+5. `submit()` reads live hint/reveal/anotherWay flags but sets `support.previouslySeen` from stale `run.previouslySeen`.
+6. `fresh` is then allowed when attempt===1, support.previouslySeen===false and no other help exists.
+7. Provider evaluation can therefore emit `evidence=clean` / `fresh=true` after the task was already shown in another instance.
+
+Ordinary current-fixture witness:
+- Biology checkpoint `bio-u2-quiz` covers diffusion + osmosis.
+- NEW Osmosis memory includes `osm-m1` and `osm-o1`.
+- READY planning draws from those learning groups and can include `osm-m1`.
+Sequence:
+A. Create READY and pause before `osm-m1` is shown; its run has previouslySeen=false.
+B. Create NEW Osmosis, reach memory, present `osm-m1`, do not answer, pause.
+C. Resume READY, reach `osm-m1`, answer correctly first try without help.
+At C, live exposure records another instance but READY's snapshot remains false, so baseline source permits false clean/fresh independent evidence.
+
+Impact:
+Clean/fresh receipts feed feedback wording, completion counts, bounded coverage/Progress and future recommendations. This is a learning-integrity overclaim, so P1 is correct.
+
+H2 invariant after issue #4:
+At submit/evidence boundary, prior exposure must be computed from accepted receipts and actual presentation/help history across OTHER instances up to that moment. The current instance's own first display must not make its first attempt nonfresh. Plan creation must not freeze a claim that later exposure can invalidate. No receipt/history/exposure may be erased to manufacture freshness.
+
+======================================================================
+2. H2 EXACT ACCEPTANCE CASES
+======================================================================
+
+H2-01 READY→NEW→READY ordinary witness
+- Create READY; pause before shared task is shown.
+- NEW later shows same task without answer; pause.
+- Resume READY and answer correctly first try.
+PASS: prior cross-instance exposure true/equivalent; fresh=false; evidence not clean; UI/completion/Progress never count as independent clean evidence.
+FAIL: fresh=true or clean independent evidence.
+
+H2-02 Reverse direction NEW→READY→NEW
+- Create NEW first; pause before memory task display.
+- READY later presents same task without answer; pause.
+- Resume NEW and answer.
+PASS: nonfresh/practice.
+
+H2-03 Current-instance first display control
+- Create one session; task has never been seen elsewhere.
+- Show it once in that same instance and answer first try unaided.
+PASS: current-instance presentation alone does NOT set cross-instance previouslySeen; clean/fresh remains possible where stage policy permits.
+
+H2-04 Queued-but-never-shown control
+- Create instance B containing task T but never render/markShown T.
+- Answer T first try in instance A.
+PASS: mere plan membership in B is not exposure; B does not poison freshness.
+
+H2-05 Prior accepted receipt control
+- Answer T in instance B.
+- Later create/resume A containing T.
+PASS: A treats T as previously seen/nonfresh even if presentation ledger is incomplete.
+
+H2-06 Same-instance remount control
+- Show T; remount/re-render same instance; markShown again.
+PASS: duplicate same-instance presentation bookkeeping is idempotent and does not by itself convert first attempt into cross-instance practice.
+
+H2-07 Help semantics preservation
+- hint / reveal / another-way / retry paths in current instance remain nonfresh regardless of cross-instance logic.
+PASS: existing issue #2 assistance truth remains unchanged.
+
+H2-08 History preservation
+- Complete/pause/restart around overlapping sessions.
+PASS: repair never deletes history, accepted receipts or exposure to recover freshness.
+
+H2-09 SET↔APPLY generic overlap — forward
+Current catalog limitation: Study Set uses `set-1..set-4`; APPLY episodes use distinct game IDs (`gl-*`, `gp-*`, `gb-*`, etc.), so no production SET/APPLY shared task currently exists.
+Required issue #4 test: use a synthetic/injected fixture where SET and APPLY share task T.
+- Create SET with T, pause before T display.
+- APPLY later displays T; pause.
+- Resume SET, answer T.
+PASS: nonfresh/practice.
+
+H2-10 SET↔APPLY generic overlap — reverse
+Synthetic/injected shared-ID fixture in reverse order.
+PASS: nonfresh/practice.
+If later integrated content introduces real shared IDs, both H2-09/H2-10 must run against real fixture too.
+
+======================================================================
+3. H1 — UNRELATED ELIGIBILITY REVISION STRANDS SETTLED CHECK
+======================================================================
+
+VERDICT: REPRODUCED.
+SEVERITY: P2 CONFIRMED ON CURRENT IA.
+
+Causal source path:
+1. `submit()` captures global `envelopeRevision`, sets run `phase='checking'`, stores `pendingOp` and awaits provider result.
+2. Every `setReleased`, `setSourceStatus`, `setCheckpointConfirmed` and successful `shareStudySet` calls `reviseEnvelope()`.
+3. `reviseEnvelope()` increments the one global revision even when the changed scope is unrelated to the active session and that session remains eligible.
+4. It only calls `block()` for sessions that are now ineligible. An unrelated still-eligible session stays `checking` with the old pendingOp.
+5. When provider resolve/reject settles, `matches()` rejects it solely because captured revision != current revision.
+6. submit catch/success then returns `stale` without clearing the still-current run's `checking` phase or `pendingOp`.
+7. `resubmit()` requires `phase='locked'`, so there is no truthful in-place retry until some separate lifecycle action such as pause occurs.
+
+Concrete current-fixture witness:
+- Begin a delayed Biology answer after response/confidence are committed.
+- While provider is pending, confirm unrelated Math checkpoint `math-eq-check` or make another unrelated eligibility mutation.
+- Biology remains eligible, but global revision changes.
+- Provider settles.
+Baseline source returns stale and can leave `phase=checking`, original pendingOp, blocked=false, zero receipt.
+
+Impact/severity:
+The defect strands a controller transaction but does not itself accept false learning evidence. Current IA limits ordinary incidence because many workspace transitions pause the active session. P2 is correct for the present candidate. If later integration makes this dead-end routinely reachable, it remains release-blocking even if severity label stays P2.
+
+H1 invariant after issue #4:
+Stale-safety must remain. An unrelated eligibility change may either (A) leave the pending operation valid so it settles normally, or (B) explicitly retire that operation to a truthful recoverable state. It must never leave a settled current run permanently `checking` with stale pendingOp. Recovery must preserve committed response/confidence and must not accept obsolete work after a relevant revocation.
+
+======================================================================
+4. H1 EXACT ACCEPTANCE CASES
+======================================================================
+
+H1-01 Unrelated checkpoint mutation — resolve
+- Delay Biology submit after answer/confidence committed.
+- Toggle unrelated Math `math-eq-check`.
+- Resolve Biology provider call.
+PASS A: Biology result applies normally because mutation is proven unrelated.
+PASS B: operation was proactively retired to locked/recoverable; pendingOp cleared; committed answer/confidence preserved; old resolve ignored.
+FAIL: checking forever / stale pendingOp / lost committed state / duplicate receipt.
+
+H1-02 Unrelated checkpoint mutation — reject
+Same as H1-01 but provider rejects.
+PASS A: current valid op returns locked + truthful error.
+PASS B: retired op cannot publish stale error and run is already locked/recoverable.
+FAIL: checking forever or stale error clobber.
+
+H1-03 Unrelated source mutation
+- Delay Biology submit.
+- Change Math source approved↔draft.
+PASS: Biology either settles normally or is retired recoverably; never stranded.
+
+H1-04 Unrelated module release mutation
+- Delay Biology submit.
+- Change Math module release state.
+PASS: same invariant.
+
+H1-05 Unrelated Study Set share mutation
+- Prepare a valid shareable Study Set state that does not affect the active Biology NEW task eligibility.
+- Delay Biology submit; toggle share state.
+PASS: same invariant.
+
+H1-06 No-op checkpoint setter
+- Delay submit.
+- Call checkpoint setter with its already-current value.
+PASS: no semantic invalidation. Preferred: revision unchanged. If implementation still advances revision, pending op must remain valid or be retired recoverably.
+
+H1-07 No-op source setter
+Same contract for already-current source status.
+
+H1-08 No-op release setter
+Same contract for already-current module release state.
+
+H1-09 No-op share setter
+When setter call is otherwise valid but resulting share state is unchanged, no deadlock/strand is permitted.
+
+H1-10 Relevant source revocation
+- Delay Biology submit.
+- Revoke source used by that Biology session.
+PASS: active session becomes blocked/paused as intended; pending op is invalidated/retired; old result never creates receipt or feedback. Reapproval may restore only allowed work; stale result stays dead.
+
+H1-11 Relevant module revocation
+Same as H1-10 for active Biology module release.
+
+H1-12 Relevant checkpoint/share revocation
+For READY or SET pending checks, revoke the exact checkpoint/share authority.
+PASS: block current scope; old result never applies; no lost prior history.
+
+H1-13 Old-op resolve after newer resubmit
+- Force retirement of op1 to locked/recoverable.
+- resubmit as op2.
+- settle op2, then settle op1 (and reverse settlement order in a second variant).
+PASS: at most one current receipt; op1 cannot clear/overwrite op2 phase/error/receipt.
+
+H1-14 Repeated unrelated revisions
+- Keep one delayed pending op while applying 2+ unrelated policy revisions.
+PASS: operation either remains valid or is retired once; no permanent checking/pending state.
+
+H1-15 Pause/restart/reset preservation
+Existing stale-safety remains: pause/restart/reset invalidates old operations and preserves the established recovery/history semantics.
+
+======================================================================
+5. ISSUE #4 PATCH ACCEPTANCE / REJECTION RULES
+======================================================================
+
+Issue #4 PASS requires, on one exact candidate SHA:
+1. H2-01..H2-08 pass; H2-09/10 pass with a synthetic shared-ID fixture unless real integrated overlap exists.
+2. H1-01..H1-15 pass for both provider resolve/reject paths where applicable.
+3. Existing issue #2 repair tests remain present and unweakened.
+4. Existing rejuvenation tests remain present and unweakened.
+5. No package/lockfile expansion and no unrelated visual/IA rewrite.
+6. Exact changed files and test evidence identify the smallest controller/test seam.
+7. Build/unit/browser/offline/diff-check results are recorded by the writer on the exact issue #4 SHA.
+
+Automatic rejection:
+- any H2 false clean/fresh receipt;
+- current-instance first display incorrectly treated as prior exposure;
+- queued-but-unshown plan item treated as exposure;
+- history/receipt/exposure deletion to regain freshness;
+- settled current operation stranded in checking/pending;
+- relevant revocation allowed to apply obsolete receipt;
+- stale old op clobbers a newer operation;
+- existing assistance/retry/source/release/share safety weakened;
+- broad redesign or package graph change mixed into the bounded patch.
+
+======================================================================
+6. PRESERVATION FROM SEQ470 — DO NOT RERUN HERE, DO NOT WEAKEN
+======================================================================
+
+This task does not rerun unrelated QA. The following remain mandatory preservation assertions for issue #4 and the later integrated candidate:
+- `repair.test.ts` R1–R5;
+- browser repair R1/R2/R3/R6/R7;
+- Settings destination-focus regression;
+- Stuck→Source focus regression/real-AT hold;
+- games General Add-to-list regression;
+- seq470 visual/IA acceptance matrix, physical-device, AT, hosted and owner-review holds.
+
+H1/H2 patch validation may add focused tests but must not delete, weaken or reinterpret those prior gates.
+
+======================================================================
+7. SMALL POST-FIX RETEST CHECKLIST
+======================================================================
+
+For issue #4 patch:
+[ ] exact SHA and store/test diff recorded
+[ ] H2 ordinary READY↔NEW both directions
+[ ] H2 positive controls: same-instance first display remains fresh-eligible; queued-unshown does not count
+[ ] H2 prior-receipt + assistance/history preservation
+[ ] H2 synthetic SET↔APPLY shared-ID both directions (or real integrated overlap)
+[ ] H1 unrelated checkpoint/source/release/share resolve + reject
+[ ] H1 no-op setter matrix
+[ ] H1 relevant revocation remains stale-safe
+[ ] H1 old-op/new-op anti-clobber + repeated revisions
+[ ] existing issue #2 + rejuvenation suites preserved
+[ ] writer records build/unit/browser/offline/diff-check results on exact SHA
+
+For later integrated rejuvenation/hardening candidate:
+Run the same list again against the integrated SHA, then continue with seq470's broader acceptance matrix. Do not inherit an issue #4 PASS merely by merge ancestry.
+
+======================================================================
+8. TERMINAL DISPOSITION
+======================================================================
+
+Task status: DONE.
+- H2 independently reproduced; P1 confirmed.
+- H1 independently reproduced; P2 confirmed for current IA.
+- issue #4 starting candidate is proven to inherit both because its store blob exactly matches the repaired baseline.
+- Exact acceptance/rejection cases are frozen for the bounded issue #4 patch and later integrated candidate.
+- Current catalog has no SET/APPLY shared IDs, so synthetic shared-ID coverage is required unless later integrated fixtures introduce a real overlap.
+- Seq470 remains preserved and was not rerun.
+
+No implementation, dependency installation, candidate mutation, merge, deployment, backend/auth/Supabase/AI connection or peer wake occurred.
