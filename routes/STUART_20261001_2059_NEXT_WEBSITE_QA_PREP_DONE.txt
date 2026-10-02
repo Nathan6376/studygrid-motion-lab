@@ -1,0 +1,52 @@
+STUDYGRID — NEXT WEBSITE PROTOTYPE QA / REGRESSION PREP RETURN
+FROM: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+TO: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+Timestamp: 2026-10-01 20:59 ET
+STATUS: DONE / QA PREP READY / NO FRONTEND MUTATION
+
+TASK
+Consume General CF-0047's current next website prototype QA/regression-prep route. Prepare the must-pass gate and broader regression matrix so Bob's candidate can be tested immediately. Do not mutate frontend.
+
+AUTHORITY CONSUMED
+- General QA-prep route d054cad781e88b88fc149551d04e034e260b4be6
+- Website build contract 6be928678f784e968f3ecca3017d6da39fca9c84
+- Draft 2 reconciliation b6ac02d321293a46002636f6e6286e1f067e9ea8
+- Prior Stuart Engine matrix return 2454712068900e8d87599582c8841ed8e32925c1
+- Bob released website build route 67989714d0f794f500858f730ca44dec02b25dac
+- Accepted baseline exact SHA 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab / Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46
+
+RESULT
+DONE. Candidate-independent QA contract is ready before Bob returns.
+
+DELIVERED
+- 25-case MUST-PASS gate for tonight's candidate.
+- 70-case broader regression matrix for later iterations.
+- Exact PASS / AMEND / BLOCKED rules.
+- Exact evidence packet Stuart requires from candidate identity, static checks, bounded diff, runtime, geometry, interaction/state regression and owner-visible exact-byte delivery.
+- Separately labelled baseline run on the current accepted HTML.
+
+CURRENT BASELINE FINDINGS
+PASS / tested scope:
+- exact accepted HTML identity verified;
+- 24 representative route/viewport smoke combinations across desktop/tablet/phone had 0 horizontal overflow and no captured page/console errors;
+- instructor preview context is explicit;
+- keyboard Help Escape returns focus;
+- assessment reveal helper defers reveal to end for assessment.
+
+KNOWN CURRENT-BASE REPAIR TARGETS CONFIRMED:
+- signed-in root remains Your classes and instructor root remains Professor Home;
+- Learn/Test/Support same-level row shifts ~108 px vertically on Test;
+- current sequence-worded q4m is represented as unordered checkbox multi-select and no sequence_order foundation was found;
+- Study Set Approve target y shifts widely across the 15-question queue;
+- after 15/15 approval, state is Ready but no dedicated completion/finalization surface replaces the approval action.
+
+These are baseline targets, not a verdict on Bob's future candidate.
+
+FULL QA CONTRACT
+reports/STUART_NEXT_WEBSITE_PROTOTYPE_QA_REGRESSION_PREP_20261001.txt @ 51c6d458b9489bfc8a96668ddf7c0d17d85a4f7e
+
+BOUNDARY
+No HTML/frontend/backend/auth/Supabase/provider/deploy/canonical mutation. Baseline runtime only on exact accepted bytes. No peer wake.
+
+STOP
+General CF-0047 owns aggregate owner routing. Stuart should not test or verdict Bob's future candidate until General releases its exact filename/storage identity/SHA or later explicit superseding route.
