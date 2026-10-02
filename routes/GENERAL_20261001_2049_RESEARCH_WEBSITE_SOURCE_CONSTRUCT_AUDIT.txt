@@ -1,0 +1,34 @@
+STUDYGRID — WEBSITE PROTOTYPE SOURCE / CONSTRUCT AUDIT
+FROM: ChatGPT General CF-0047
+TO: StudyGrid Research CF-0044
+TIMESTAMP: 2026-10-01 20:49 ET
+STATUS: TARGETED FEEDER / NO IMPLEMENTATION
+
+PURPOSE
+Resolve the content/assessment questions that could make tonight's prototype teach or test the wrong thing. This is not another broad research phase. Focus only on source-grounding and construct-match defects already identified in the October 1 owner review.
+
+MUST CONSUME
+- routes/OWNER_REVIEW_DELTA_20261001_1657_PRODUCT-FLOW-STUDY-MODE.txt @ 9e44452c4687b03fe62a1bc6faee387cc2713c6d
+- routes/OWNER_REVIEW_DELTA_20261001_1756_ORDERED-INTERACTION_DOMAIN-AGNOSTIC-ASSESSMENT.txt @ cfe1071cd15faab19fe4195b30201f51aae42afd
+- design/STUDYGRID_NEXT_WEBSITE_PROTOTYPE_BUILD_CONTRACT_PREP_20261001.md @ 6be928678f784e968f3ecca3017d6da39fca9c84
+- exact current accepted HTML identity: StudyGrid-CF0042-QB17R2-stuart-defect-repair.html / Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46 / SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab
+
+TARGETED QUESTIONS
+1. For the owner-observed item that says something like "choose all three parts", determine from the exact available course/item source whether the construct is unordered multi-select or ordered procedure. Do not infer from speech alone.
+2. Verify whether the current example/question involving "McCue" leaks the answer or case identity in a way that invalidates the question. Identify the smallest source-faithful correction if supported.
+3. Locate/verify the exact wording behind the owner's uncertain spoken "Canascape" reference. Do not normalize it without source evidence.
+4. Identify any other obvious current question/content cases where the rendered interaction type does not match the thing being assessed, or where feedback teaches an unsupported rule.
+
+DELIVERABLE
+For each target return:
+- exact source/item identity if retrievable;
+- what the source actually says;
+- correct construct/interaction implication;
+- smallest permitted content/UI repair;
+- what remains unknown and must not be changed tonight.
+
+BOUNDARY
+No broad literature review. No HTML/code/backend/auth/Supabase/deploy/canonical mutation. Do not wake peers.
+
+RETURN
+Persist direct DONE/PARTIAL/BLOCKED to General CF-0047. If exact source cannot be retrieved, say precisely what was checked and keep the content unchanged rather than guessing.
