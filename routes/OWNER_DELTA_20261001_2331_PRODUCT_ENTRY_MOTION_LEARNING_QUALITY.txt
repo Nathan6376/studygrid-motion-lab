@@ -1,0 +1,71 @@
+STUDYGRID — OWNER PRODUCT/DESIGN DELTA — ENTRY, MOTION, LEARNING QUALITY
+FROM: Nathan / captured by ChatGPT General CF-0047
+TIMESTAMP: 2026-10-01 23:31 ET
+STATUS: DURABLE OWNER DIRECTION / DESIGN FIRST / NO IMPLEMENTATION RELEASE
+
+OWNER INTENT
+Nathan is not asking for another cosmetic patch. He wants the next frontend pass redesigned as a coherent premium product experience before Bob mutates code.
+
+1. TWO FIRST-CLASS LEARNING CONTEXTS
+- StudyGrid must support both:
+  A. class/course learning; and
+  B. general/self-directed learning outside a class, e.g. learning something for work or personal development.
+- These are distinct contexts sharing the same underlying StudyGrid learning engine.
+- Public/onboarding copy cannot imply the entire product is only for classes.
+- “Your class, easier to learn” may remain useful inside the class-specific branch, but it should not be the universal product promise on the top-level public entry.
+- Entry/onboarding should make the choice understandable without making the product feel split into two unrelated apps.
+- Class flow still needs strong class-code / classes / course context and should feel intentionally designed, not like a form page.
+
+2. MOTION / VISUAL QUALITY BAR
+- Preserve the current warm StudyGrid design language; do not replace it with generic purple/blue AI gradients.
+- Raise the visual system from “nicely designed modern website” to premium, futuristic, motion-rich product experience.
+- Current owner perception: present site feels closer to 2016-modern / pencil-and-paper UI than a 2026 premium AI-assisted learning product.
+- Motion must be meaningful, responsive and integrated into state changes, not decorative gimmicks.
+- Reuse already supplied design inputs: Apple/Emil principles, Thinking Orbs state-motion lesson, Claude/Opus source-first motion workflow, calm/premium/intentional motion, reduced-motion support, interruptible/reversible interaction where relevant, no target/focus loss.
+- Hover/press reactions Nathan already likes should be retained and expanded into a coherent motion system.
+- Landing 1→2→3 StudyGrid loop still needs continuous cycling as previously directed, but exact choreography is a design decision first.
+
+3. LEARNING COPY — SIMPLE ENGLISH
+- Remove internal learning-science jargon from learner-facing copy.
+- Nathan explicitly rejects phrases like “Start retrieval” and “before retrieving it.”
+- Use natural language such as “Try it from memory”, “Test yourself”, “Try it on your own”, “See what you remember”, etc., based on context.
+- “Retrieval” may remain an internal engine/analytics term, not normal learner UI copy.
+- Buttons must say plainly what will actually happen.
+
+4. LEARN FLOW MUST FEEL ALIVE AND ACTUALLY WORK
+- “Start learning” cannot appear to do nothing or merely light/highlight a card with no obvious content transition.
+- Starting learning should create a clear, meaningful transition into the actual explanation/lesson experience.
+- Explanation, example, guided practice and independent practice must be genuinely usable and visibly open/advance, not static card labels.
+- General Study must also be a real first-class flow, not a fixture/toast placeholder.
+
+5. QUESTION QUALITY / DIFFICULTY
+- StudyGrid questions must test understanding, not the learner’s ability to spot one serious answer among obviously absurd distractors.
+- Example owner complaint: hot-pursuit/residence multiple choice is too obvious when one answer is plainly correct and others are obviously unrelated/wrong.
+- Guided-practice example with “What grade will I receive?” as the wrong option is especially unacceptable because it gives away the answer rather than testing the concept.
+- Distractors should be plausible confusions a learner could realistically make, source-grounded when possible, and close enough in form/semantic category that the learner must actually understand the concept.
+- Avoid giveaway wording, joke/irrelevant distractors, wildly different answer length/structure, or choices that can be eliminated without subject knowledge.
+- Difficulty should come from discriminating between nearby concepts, applying rules to facts, sequencing/conditions/exceptions, and explaining why — not from trick wording.
+- The engine should own/question-generation quality rules rather than relying on generic “AI makes a quiz” behaviour.
+
+6. CURRENT v7.22 SOURCE OBSERVATIONS CONFIRMING THE DELTA
+- Public welcome copy is still class-only: “Your class, easier to learn” / “Learn the class. Be ready for the test.”
+- General Study exists after sign-in but its Continue button only displays a fixture toast saying a future adapter would provide real material/action.
+- Current Learn copy includes “Understand home-entry authority before retrieving it” and “Start retrieval”.
+- “Start learning” is wired only to open the explanation panel in-place; this is technically functional but visually weak enough to read as no-op to the owner.
+- Guided practice currently uses “What grade will I receive?” as a distractor.
+- Current hot-pursuit multiple choice includes distractors that are obviously non-hot-pursuit scenarios, so the item can be solved by elimination without strong domain understanding.
+
+DESIGN GATE BEFORE BUILD
+Before any new Bob implementation:
+A. Redesign top-level product entry and context-selection model (class vs general learning).
+B. Define the visual/motion system and exact landing choreography at a premium 2026 quality bar while preserving current warm identity.
+C. Rewrite learner-facing language into simple English.
+D. Define the Learn interaction flow so primary actions visibly advance/transform content.
+E. Define a question-quality contract for the StudyGrid Engine: plausible distractors, difficulty calibration, source grounding, no obvious giveaways, interaction-type fit, and review checks.
+F. Review the resulting design direction with Nathan before implementation if the visual/product choices are still material.
+
+BOUNDARY
+- No frontend mutation from this delta alone.
+- No backend/auth/Supabase/deploy/public-brand mutation.
+- Existing v7.22 remains review evidence, not the target design.
+- Bob stays on HOLD for these owner-visible product changes until a newer design-approved implementation route exists.
