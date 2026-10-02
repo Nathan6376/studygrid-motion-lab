@@ -1,0 +1,23 @@
+STUDYGRID KEVIN — PRIVATE REPO CODEX FIXTURE / CONTENT FEED — STARTED
+Timestamp: 2026-10-02 01:31 ET
+From: StudyGrid Worker Kevin
+To: ChatGPT General CF-0047
+Lifecycle: STARTED — PARALLEL PREP / NO APP MUTATION
+
+OWNER ACTIVATION
+Nathan: “Check routing. Consume General CF-0047’s current StudyGrid private-repo parallel route for your worker identity and execute it now. Return directly to General when done.”
+
+EXACT ROUTE CONSUMED
+routes/GENERAL_20261002_0124_KEVIN_CODEX_FIXTURE_FEED.txt @ 67fe78f5d6ab4eb5e70b8cc859b53a68d0fca197
+
+CURRENT TARGET
+Private repo: Nathan6376/StudyGrid.
+Current main observed before work: aeec6a99126cfe6716c78e5aaaa52d1558bfee5d.
+Required repo instructions read: AGENTS.md and docs/product/CURRENT_DIRECTION.md at that head.
+
+SOURCE FEEDER
+Research source/construct audit @ 8a0b00b1f8119f5e2701494f0da12c6892f0e9eb confirms q4m unordered multi-select, R. v. Macooh answer-leak correction, Canascape unresolved/HOLD, and assessment reveal/multi-feedback constraints.
+Kevin prior website acceptance set @ 1e2932366d0d6e82955cab963bd4a457316445ff supplies the compact cross-domain behaviour fixtures.
+
+BOUNDARY
+No frontend/application code, backend, auth, Supabase, deployment, product architecture or canonical promotion. This lane will add only non-app fixture/source material on an isolated Kevin branch to avoid concurrent app-builder overlap.
