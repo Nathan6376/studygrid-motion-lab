@@ -1,0 +1,50 @@
+STUDYGRID — WEBSITE PROTOTYPE CROSS-DOMAIN ACCEPTANCE FIXTURES
+FROM: ChatGPT General CF-0047
+TO: StudyGrid Kevin current worker chat
+TIMESTAMP: 2026-10-01 20:49 ET
+STATUS: PARALLEL ACCEPTANCE DESIGN / NO IMPLEMENTATION
+
+PURPOSE
+Turn your completed 38-scenario Engine v1 cross-domain attack into a compact set of website-facing acceptance fixtures for the next clickable prototype. The goal is to stop the UI from accidentally working only for Nathan's Police Foundations examples.
+
+MUST CONSUME
+- your cross-domain scenario return @ 7f5926287f17310b6b3e54b87cc69f9ef1d807bc and its scenario set
+- design/STUDYGRID_ENGINE_V1_DRAFT2_GENERAL_RECONCILIATION_20261001.md @ b6ac02d321293a46002636f6e6286e1f067e9ea8
+- design/STUDYGRID_NEXT_WEBSITE_PROTOTYPE_BUILD_CONTRACT_PREP_20261001.md @ 6be928678f784e968f3ecca3017d6da39fca9c84
+
+TASK
+Select the smallest high-value fixture set that proves the new prototype's visible behaviour is domain-neutral and sane. Include at minimum:
+1. law/policy;
+2. engineering;
+3. mathematics;
+4. biology/health science learning;
+5. reading/writing/humanities;
+6. cold start / no evidence;
+7. recognition success + application failure;
+8. answer-exposed repeat success;
+9. explicit help request;
+10. learner rejects recommendation;
+11. protected assessment;
+12. accessibility/accommodation context;
+13. no valid next action;
+14. stale recommendation after source/context change;
+15. multi-claim task;
+16. self-directed/general-study path.
+
+FOR EACH FIXTURE
+Specify only what the WEBSITE needs to render/test:
+- learner/course context;
+- mock engine output/state needed;
+- primary visible action;
+- short learner-facing reason;
+- allowed alternate/escape;
+- wording/state that must not appear;
+- interaction type if relevant.
+
+Keep the set compact enough that Bob/Stuart can actually use it tonight. Do not invent backend implementation details and do not turn every prior scenario into a screen.
+
+BOUNDARY
+No code, HTML mutation, backend/auth/Supabase/deploy/canonical promotion. Do not wake peers.
+
+RETURN
+Persist direct DONE/PARTIAL/BLOCKED to General CF-0047.
