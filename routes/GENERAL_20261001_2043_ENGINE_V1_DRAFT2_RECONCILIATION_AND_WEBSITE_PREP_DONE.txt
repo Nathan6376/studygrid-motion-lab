@@ -1,0 +1,40 @@
+STUDYGRID — GENERAL CF-0047 — ENGINE V1 DRAFT 2 RECONCILIATION + WEBSITE PREP DONE
+Timestamp: 2026-10-01 20:43 ET
+Status: DONE / DESIGN GATE ADVANCED / NO IMPLEMENTATION
+
+CONSUMED
+- Research Draft 1 measurement/validity attack @ 265b0c644382563bc99042bef79b9a261b4c8009
+- Sol independent architecture attack @ 1e5c05892101d566ae316f4eb34c3f5a477ba8fa
+- Sol proposed Draft 2 provider artifact Drive 1Ap0p-ua7L-lrR53EjEnx4JxqBuK7vfwR (provider text states design complete, pending General reconciliation/engineering review/owner approval)
+- Bob Draft 1 contradiction attack @ 4b2849f6fda9e75205cb4cad516a550080cdfa7d
+- Bob data/replay contract @ 7c637cf86bf9d7727f2f1928bb74276af8d72f7f
+- Stuart falsification matrix return @ 2454712068900e8d87599582c8841ed8e32925c1
+- Kevin cross-domain scenario return @ 7f5926287f17310b6b3e54b87cc69f9ef1d807bc
+- Owner review/deltas @ 9e44452c4687b03fe62a1bc6faee387cc2713c6d, 18c3f30159717dfe971fb0ae8c4cf63756ba0adb, cfe1071cd15faab19fe4195b30201f51aae42afd, 014280c9ef7c52341144f086a85df1a81d407da9
+
+OUTPUT 1
+General Draft 2 reconciliation:
+- design/STUDYGRID_ENGINE_V1_DRAFT2_GENERAL_RECONCILIATION_20261001.md
+- commit b6ac02d321293a46002636f6e6286e1f067e9ea8
+- readback verified
+- status: READY FOR ENGINEERING REVIEW AND WEBSITE-PROTOTYPE CONTRACTING; not backend implementation release
+
+OUTPUT 2
+Next website prototype build-contract preparation:
+- design/STUDYGRID_NEXT_WEBSITE_PROTOTYPE_BUILD_CONTRACT_PREP_20261001.md
+- commit 6be928678f784e968f3ecca3017d6da39fca9c84
+- readback verified
+- exact frontend base unchanged: StudyGrid-CF0042-QB17R2-stuart-defect-repair.html / Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46 / SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab
+
+QA BASIS
+- Stuart produced 76 adversarial scenarios, 20-case MUST-PASS beta subset, and 16 Draft-1 fail cases.
+- Kevin produced 38 cross-domain scenarios covering all routed scenario types and required domains.
+- Bob produced 36 concrete data/replay corruption scenarios/invariants.
+
+CURRENT HARD DEPENDENCY
+Before real backend implementation: engineering-integrity review of the reconciled Draft 2 and remaining physical choices (schema/transactions/auth/RLS/offline/scorer precedence/retention/API adapter boundary).
+
+CURRENT NON-BLOCKED WORK
+Website prototype contract is prepared. Once engineering-integrity review and owner/General implementation release occur, implementation can begin from the exact current HTML and bounded contract without another discovery cycle.
+
+NO PRODUCT/BACKEND/AUTH/SUPABASE/DEPLOY/CANONICAL MUTATION OCCURRED IN THIS GENERAL PASS.
