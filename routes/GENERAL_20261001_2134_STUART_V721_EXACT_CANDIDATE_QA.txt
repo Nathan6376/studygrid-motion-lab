@@ -1,0 +1,72 @@
+STUDYGRID — EXACT CANDIDATE QA RELEASE — v7.21
+FROM: ChatGPT General CF-0047
+TO: StudyGrid Stuart CF-0046
+TIMESTAMP: 2026-10-01 21:34 ET
+STATUS: OWNER-RELEASED INDEPENDENT QA / NO MUTATION
+
+PURPOSE
+Run the prepared independent QA gate against Bob's exact new non-canonical website candidate. Return PASS / AMEND / BLOCKED with concrete reproducible findings. Do not mutate the frontend.
+
+EXACT CANDIDATE — DO NOT SUBSTITUTE
+Filename: StudyGrid-CF0042-Website-Prototype-v7.21-owner-released.html
+Drive ID: 1zPnDGQ1g7KRRT5UcTC72KXuC2zo3_qe_
+Version: v7.21-cf0042-next-clickable-prototype
+Bytes: 1,098,557
+SHA-256: 9ee8f36726abe11d60694f1ed035a62b883d275efcc7adaf04ef4a3ad1672c20
+Bob terminal return: 712beb309adc9a26cd4f3716dd3b23c7a9afea09
+Accepted base remains unchanged: StudyGrid-CF0042-QB17R2-stuart-defect-repair.html / Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46 / SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab.
+
+MANDATORY INPUTS
+- Stuart QA prep terminal: e06c25ecc48889ab5924537551ce37bcc30ce514
+- Full QA contract: reports/STUART_NEXT_WEBSITE_PROTOTYPE_QA_REGRESSION_PREP_20261001.txt @ 51c6d458b9489bfc8a96668ddf7c0d17d85a4f7e
+- General website build contract: 6be928678f784e968f3ecca3017d6da39fca9c84
+- General Engine v1 Draft2 reconciliation: b6ac02d321293a46002636f6e6286e1f067e9ea8
+- Sol website implementation guard: 69f8943ff169df50f0224904c4747ea467c70adc
+- Sol UI↔Engine adapter proposal: 99db872d11c66b8b0e12fce96d48e9585f6762b7 / primary contract 1dfbd386203aaf4e85527526eef26c2e0347182c
+- Sol engineering integrity review: c018077fba28c13233572e7f80bcd063c7c8bc85 / primary contract 9fe65ae6fa4f87c27a4aaba83ba7c8d0b74d52bb
+- Research source/construct audit: 8a0b00b1f8119f5e2701494f0da12c6892f0e9eb
+- Kevin cross-domain fixtures: 1e2932366d0d6e82955cab963bd4a457316445ff / fixture set e3a849c1bf821eea377977be966950d91c9c5a0f
+
+REQUIRED QA
+1. Execute the 25-case MUST-PASS gate against the exact candidate.
+2. Run the relevant broader regression subset needed to establish whether the bounded release regressed accepted flows.
+3. Reproduce the repaired areas directly, especially:
+   - signed-in Home/root and no onboarding Back leakage;
+   - stable Learn/Test/Support geometry;
+   - q4m actual rendered multi-select selection, unselect/reselect, feedback and restore behaviour;
+   - sequence_order visible numbering and non-drag controls;
+   - pre-answer example suppression and Macooh leakage prevention;
+   - protected-assessment coaching suppression while accessibility remains available;
+   - Study Set 15/15 completion/finalisation and stable action region;
+   - General Study and instructor preview isolation;
+   - keyboard focus, Escape/return-focus, reduced-motion;
+   - no duplicate response/reward/decision from obvious UI retries;
+   - desktop/tablet/phone overflow/smoke and no new page/console failures.
+4. Check the candidate's local prototype adapter boundary against the Sol guard/adapter proposal sufficiently to confirm it is fixture-only and not silently presenting page state as backend learner truth. This is source/runtime inspection, not production-backend certification.
+5. Cross-check Kevin's compact website fixtures where the candidate exposes the relevant surface. Do not require 38 separate screens.
+
+MOTION / INTERACTION POLISH ADDENDUM — NON-BLOCKING UNLESS IT CREATES A REAL USABILITY/ACCESSIBILITY DEFECT
+Use the principles behind Emil Kowalski's public `apple-design` skill as an additional craft lens, not as StudyGrid visual authority and not as a mandate to copy Apple's look. Specifically inspect:
+- immediate press feedback rather than dead-feeling delayed feedback;
+- direct-manipulation controls staying visually attached to pointer/finger where applicable;
+- interruptible/reversible motion where the candidate has gesture-driven transitions;
+- spatially consistent enter/exit origins;
+- reduced-motion preserving meaning and control;
+- motion not causing target movement, lost focus or interaction lockout.
+Do not fail the candidate merely because it does not look like Apple or use springs everywhere. StudyGrid's own design contract remains controlling.
+
+VERDICT RULE
+PASS only if the 25 MUST-PASS cases pass and no material regression/construct/accessibility defect remains in the bounded release. AMEND for concrete repairable defects. BLOCKED only when evidence needed to test the exact candidate is unavailable or a material failure makes the candidate unsafe/unusable to release for owner review.
+
+DELIVERABLE
+Persist a direct terminal return to General CF-0047 with:
+- exact candidate identity/hash tested;
+- PASS / AMEND / BLOCKED;
+- must-pass case results;
+- only the material broader-regression findings;
+- exact reproducible defects if any;
+- smallest repair instructions for Bob if AMEND;
+- explicit statement of what remains outside the tested scope.
+
+BOUNDARY
+No HTML mutation, no backend/auth/Supabase/provider/deploy/canonical promotion, no peer wake. General owns any repair/release route after your verdict.
