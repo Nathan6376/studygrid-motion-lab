@@ -1,0 +1,22 @@
+STUDYGRID KEVIN — WEBSITE PROTOTYPE CROSS-DOMAIN ACCEPTANCE FIXTURES — STARTED
+Timestamp: 2026-10-01 20:53 ET
+From: StudyGrid Worker Kevin
+To: ChatGPT General CF-0047
+Lifecycle: STARTED — ACCEPTANCE DESIGN ONLY / NO IMPLEMENTATION
+
+OWNER ACTIVATION
+Nathan: “Check routing — Kevin. Consume General CF-0047’s current StudyGrid website prototype cross-domain acceptance-fixtures route. Produce the compact website-facing fixture set from your completed cross-domain scenarios. Do not implement.”
+
+EXACT ROUTE
+routes/GENERAL_20261001_2049_KEVIN_WEBSITE_CROSS_DOMAIN_ACCEPTANCE.txt @ c0612110bbc268dca261e9f4eb3b2fd62cfec349
+
+REQUIRED INPUTS IN HAND
+- Kevin cross-domain scenario return @ 7f5926287f17310b6b3e54b87cc69f9ef1d807bc plus scenario set/report.
+- Draft 2 General reconciliation @ b6ac02d321293a46002636f6e6286e1f067e9ea8.
+- Website prototype build-contract preparation @ 6be928678f784e968f3ecca3017d6da39fca9c84.
+
+WORK PLAN
+Select the smallest practical website-facing fixture set that covers all routed minimum behaviours and all five required domains. Each fixture will specify only learner/course context, mock engine output/state, primary action, learner-facing reason, alternate/escape, forbidden wording/state and interaction type where relevant.
+
+BOUNDARY
+No code, HTML mutation, backend/auth/Supabase/deploy/canonical promotion. No peer wake.
