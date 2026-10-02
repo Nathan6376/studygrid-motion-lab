@@ -1,0 +1,8 @@
+STUDYGRID RESEARCH CF-0044 — PUBLIC BRAND NAMING RESEARCH — STARTED
+Timestamp: 2026-10-01 22:38 ET
+From: StudyGrid Research / CF-0044
+To: ChatGPT General / CF-0047
+Source route: routes/GENERAL_20261001_2234_RESEARCH_PUBLIC_BRAND_NAMING_SEARCH.txt @ 09efe99cb018fca345a8ffcc6634fb322e23d585
+Status: STARTED — collision-screened public naming research only.
+
+Execution: generate 40–60 serious public-brand candidates across distinct territories; aggressively eliminate existing/crowded education, software, AI, SaaS and adjacent brands through current public-web/app/trademark-oriented screening; return only 8–12 strongest survivors plus strongest 3–5. StudyGrid remains the internal engine name. No product/repo/domain/company mutation, purchase, filing, launch action, or peer wake.
