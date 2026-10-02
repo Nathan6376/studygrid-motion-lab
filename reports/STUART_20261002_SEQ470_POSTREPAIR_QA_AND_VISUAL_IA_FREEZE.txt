@@ -1,0 +1,628 @@
+STUDYGRID — SEQ470 POST-REPAIR INDEPENDENT QA + VISUAL/IA ACCEPTANCE FREEZE
+Worker: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+Coordinator: ChatGPT General / CF-0051
+Prepared: 2026-10-02 17:47 ET
+Status: DONE — QA / ADJUDICATION ONLY
+Candidate mutation: NONE
+
+======================================================================
+0. AUTHORITY / EXACT BASELINE / METHOD
+======================================================================
+
+Authority:
+- CENTRAL ROUTING seq470 and General route Drive 1-nzz12EP2vcFK482EXqkECUAgk25Yb2Ia5Osvub5wXY.
+- Seq470 supersedes the earlier visual-only seq463 route.
+
+Exact repaired baseline:
+- repo: Nathan6376/StudyGrid
+- branch: claude/nifty-volta-wdicyt
+- frozen validated repaired application/test tree: 82a3591b4495dd40f1ed182048aef67092fb64e9
+- repaired application source commit: c020c3c9defe2425139184d0328effeb0f2ea040
+- current branch head checked during this pass: 4965df037cac2e147c154f6a78b172dd9acf3c04
+- independent compare 82a3591 → 4965df0 shows only routes/CLAUDE_CODE_20261002_1635_POSTBUILD_REPAIR_DONE.txt changed after the freeze; no application or test file changed. Therefore 82a3591 is the current-equivalent repaired app/test tree.
+
+Repair packet consumed:
+- routes/CLAUDE_CODE_20261002_1635_POSTBUILD_REPAIR_DONE.txt at current head.
+- issue #2 repair contract as the original F1–F12 + Stuart focus acceptance boundary.
+
+Visual/IA inputs consumed:
+- Bob seq469 product archaeology: Drive 1jPPVuCmeIzNmoUN-0zcfBU5ffn0rTeNIbBXLHbUDmrw.
+- Sol Engineering seq462 code-surface + role/identity map: Drive file 13pvPF3Fr1bT62UDXx9fDUZQQJE98X69q.
+- Kevin seq467 premium motion / creative-direction contract: Drive 1dmB2v9d-7cFo8knDuMJlPclMaPvZ9Hg7swaN_hVNLus.
+- Codex execution contract / GitHub issue #3.
+
+Independent method:
+- inspected the exact repaired source and committed regression tests at 82a3591;
+- re-ran the original defect reasoning against the repaired state transitions, provider policy, route gates, focus lifecycle and evidence semantics;
+- checked current-head ancestry to ensure no post-freeze app drift;
+- treated Claude's reported 116 unit / 106 browser + 8 designed skips / 2 offline results as builder evidence only, not as an independent rerun.
+
+Independent runtime limitation:
+This Stuart lane does not have a provider-published runnable copy of the repaired 82a3591 preview mounted locally. The repair return explicitly says the rebuilt 82a preview was not committed, while the committed owner-preview artifact still contains the old e4 candidate. Dependency installation is prohibited by seq470. Therefore this pass does NOT claim a fresh independent Playwright/Vitest execution. Findings below are independent exact-source adjudication plus inspection of committed regression definitions. Fresh browser execution remains mandatory on the Codex candidate.
+
+Overall repaired-baseline disposition:
+- NO SOURCE-LEVEL BLOCKER FOUND.
+- F1–F12: PASS-SRC independently corroborated against the exact repaired tree.
+- Settings-focus gap: PASS-SRC; repair is direct and regression-defined.
+- Stuck→Source focus gap: NOT REPRODUCED on the repaired/current component lifecycle; current behaviour is source-consistent with return-to-original Stuck? opener and is regression-defined. Keep an explicit keyboard/AT regression in future QA.
+- Runtime/device/AT/hosted evidence: HOLD where not independently exercised here.
+
+The repaired freeze is accepted as the mandatory regression floor for the Codex rejuvenation. This is not merge/deploy/release approval.
+
+======================================================================
+1. PART A — F1–F12 + STUART FOCUS RETEST
+======================================================================
+
+Evidence codes:
+SRC = independent exact-source inspection.
+TESTDEF = committed test-definition inspection; test existence is not independent execution.
+BROW = fresh independent browser execution (not available in this lane).
+PHYS = physical iPad/Safari/Pencil.
+AT = physical VoiceOver/assistive technology.
+HOST = exact hosted-origin evidence.
+
+F1 — Draft source learner leakage
+Result: PASS-SRC.
+Independent repair evidence:
+- provider envelope derives approvedSourceIds;
+- topic delivery requires released module + lesson + every topic source approved;
+- task delivery additionally requires its cited source approved;
+- NEW/REVIEW/READY/APPLY/SET planning uses that current eligibility;
+- learner SourceSheet calls sourceVisible and refuses unapproved material.
+Original failure can no longer follow its prior path without violating the common eligibility predicate.
+Future executable regression:
+1. Teaching Course → return src-bio-osmosis to Draft.
+2. Attempt NEW osmosis, APPLY limp-salad, eligible REVIEW/READY/SET variants and learner Show source.
+3. Expect no draft task/excerpt/intro/debrief leakage; exact unavailable/recovery copy is visible.
+4. Reapprove; only intended content becomes eligible again.
+Severity on regression: P1 / reject.
+Evidence required: AUTO + BROW.
+
+F2 — Paused/current eligibility bypass after release/source/checkpoint/share revocation
+Result: PASS-SRC.
+Independent repair evidence:
+- VisitStore.start rechecks provider.sessionEligibility before resuming;
+- commit/help/complete call current eligibility;
+- Teaching release/source/checkpoint/share changes increment envelopeRevision and re-evaluate unfinished sessions;
+- blocked sessions are removed from Continue/paused projections; generation is advanced;
+- late submit/help acceptance requires unchanged epoch + envelopeRevision + generation + pending request and !blocked.
+Future executable regression:
+For NEW/APPLY/READY/SET/REVIEW, start and pause; revoke the relevant release/source/checkpoint/share state; then try Home Continue, Recent and direct hash. Also hold one submit and one help promise across revocation. Expect unavailable/recovery, zero new receipt/completion/obsolete help error. Restore eligibility and confirm explicit recoverability without erased history.
+Severity: P1 / reject.
+Evidence: AUTO + BROW.
+
+F3 — “Say it another way” could still earn clean/on-your-own evidence
+Result: PASS-SRC.
+Independent repair evidence:
+- support.anotherWay participates in store unassisted/fresh calculation;
+- provider helped predicate explicitly includes anotherWay;
+- provider forces fresh=false when helped;
+- TaskCard clean copy is emitted only when evidence=clean; otherwise helped copy is shown.
+Future executable regression:
+SCHOOL session → Try From Memory → Stuck? → Say it another way → close → first-try correct answer. Expect evidence=helped, fresh=false, “You got there with help”, never “on your own”; completion count reflects helped.
+Severity: P1 / reject.
+Evidence: AUTO + BROW.
+
+F4 — Restart could launder unanswered help/exposure back into unseen/fresh
+Result: PASS-SRC.
+Independent repair evidence:
+- visit-level exposure ledger is separate from receipts;
+- TaskCard marks only an item actually rendered as shown;
+- help records hint/reveal/anotherWay exposure;
+- create/restart computes seen from receipts + exposure;
+- freshAvailable excludes exposed IDs; restart creates a new instance while preserving exposure/history.
+Future executable regression:
+Show one memory item, use another-way before submitting, restart. Expect that exact item excluded from fresh pool when alternatives exist; if pool exhaustion reuses it, previouslySeen=true and any success is helped/fresh=false. Confirm queued-but-never-rendered items are not automatically exposed.
+Severity: P1 / reject.
+Evidence: AUTO + BROW.
+
+F5 — Completed stable REVIEW / Play again reused historical completion
+Result: PASS-SRC.
+Independent repair evidence:
+- start returns unfinished instance only; completed stable route creates a new instance/plan;
+- prior instance is moved to history rather than deleted;
+- generic lifecycle applies across templates; APPLY/READY repeats are covered in committed repair tests.
+Future executable regression:
+Complete Osmosis + REVIEW; complete new Diffusion learning; activate REVIEW again from Practice and direct stable route. Expect new instanceId and newly eligible questions, not prior completion. Repeat completed APPLY/READY and teacher SET entry: advertised Start/Play again opens a new active instance while history remains.
+Severity: P1 / reject.
+Evidence: AUTO + BROW.
+
+F6 — Same-item retry could remain fresh=true
+Result: PASS-SRC.
+Independent repair evidence:
+- fresh requires attempt===1, no previous exposure, no support, and an eligible evidence context;
+- provider additionally forces fresh=false whenever helped;
+- attempt>1 is always helped.
+Future executable regression:
+Wrong → retry same item → right. Expect attempt history preserved; second receipt evidence=helped and fresh=false. A later distinct unexposed parallel item may be clean/fresh.
+Severity: P1 if rejuvenation reintroduces false fresh evidence; otherwise P2 metadata regression.
+Evidence: AUTO + BROW copy.
+
+F7 — Obsolete help rejection could patch replacement run
+Result: PASS-SRC.
+Independent repair evidence:
+- help success AND catch share one current() predicate requiring epoch, envelopeRevision, session generation and current helpOp;
+- restart/revocation invalidates those anchors.
+Future executable regression:
+Delay a help request, then restart / revoke / navigate away as separately applicable; reject the original request. Expect no helpError/support mutation on the replacement/current run.
+Severity: P2; P1 if it changes learner evidence or blocks work incorrectly.
+Evidence: AUTO.
+
+F8 — Topic “Done for now” was under-bounded
+Result: PASS-SRC.
+Independent repair evidence:
+- uncoveredGroups requires at least one clean receipt in every required learning group;
+- topicState remains in-progress while uncovered groups exist;
+- a later non-clean result after the last clean makes the group due;
+- Reviewed remains separate from topic evidence.
+Future executable regression:
+Answer one READY item clean while the topic has uncovered required groups. Expect In progress, not Done for now. Complete clean required-group coverage → Done for now. Later helped/missed check → Due for a check. Toggling Reviewed alone never grants learning credit.
+Severity: P1 if whole-topic truth overclaims; otherwise P2.
+Evidence: AUTO + BROW Progress.
+
+F9 — Operation id collision across controllers
+Result: PASS-SRC.
+Independent repair evidence:
+- each VisitStore owns a random/unique namespace;
+- op IDs are namespaced;
+- provider idempotency cache binds opId to sessionKey|instanceId|taskId|attempt identity;
+- store independently validates returned op/session/instance/task/attempt before accepting a receipt.
+Future executable regression:
+Create two VisitStores sharing one provider; submit distinct tasks. Expect distinct op IDs and correct task receipts. Reuse A's opId with B's identity → rejection; exact duplicate logical operation remains idempotent.
+Severity: P2 / adapter hardening; P1 if wrong learner evidence can be accepted.
+Evidence: AUTO.
+
+F10 — Welcome autoplay ignored hidden/offscreen state
+Result: PASS-SRC.
+Independent repair evidence:
+- document visibility listener drives pageVisible;
+- IntersectionObserver drives onScreen;
+- autoplay state explicitly distinguishes off/paused/hidden/offscreen/running;
+- interval exists only while running;
+- reduced motion, preference and manual pause remain gates.
+Future executable regression:
+PUBLIC → confirm running; hide document → hidden and no scene advance; show → running; manual pause survives hide/show; make visual offscreen → offscreen/no advance; return onscreen → running only if not manually paused. Reduced motion => no autoplay, manual scene controls remain.
+Severity: P2; P1 if reduced-motion equivalence breaks.
+Evidence: BROW; PHYS for iPad background/foreground behaviour.
+
+F11 — General direct session bypassed Add-to-list rule
+Result: PASS-SRC.
+Independent repair evidence:
+- App Routes checks non-default course enrolment before rendering any session route and sends the user through Discover recovery.
+Future executable regression:
+Fresh GENERAL visit → direct `#/general/learn/digital-safety/apply/after-hours`. Expect Discover recovery / “not on your list”; Add Digital confidence; retry exact direct hash → session opens. Hiding from Home remains separate from access.
+Severity: P3 normally; P1 if role/access truth becomes inconsistent during rejuvenation.
+Evidence: BROW.
+
+F12 — Receipt only root-frozen / nested evidence mutable
+Result: PASS-SRC.
+Independent repair evidence:
+- AttemptReceipt is DeepReadonly in the type contract;
+- provider recursively deepFreeze()s nested receipt state;
+- submission is structured-cloned before evaluation.
+Future executable regression:
+After accepted receipt, attempt external mutation of response/confidence/support/feedback/source nested objects. Expect TypeError/failure and unchanged historical evidence. Also mutate original response object after Check; receipt remains the committed clone.
+Severity: P2; P1 if mutable state can alter learner evidence after acceptance.
+Evidence: AUTO.
+
+STUART GAP 1 — Settings section jump focus
+Result: PASS-SRC.
+Independent repair evidence:
+- every Settings group destination h2 has tabIndex=-1;
+- jump activation scrolls target and focuses that h2;
+- hash route itself is preserved.
+Future executable regression:
+`#/school/settings` → keyboard focus “Privacy & data” jump → Enter. Expect destination H2 focused; next Tab proceeds into that section; URL remains the StudyGrid settings route. Repeat Teaching Settings and reduced motion.
+Severity: P2; P1 if keyboard user loses access/location.
+Evidence: BROW + AT.
+
+STUART GAP 2 — Stuck? → Source return focus
+Result: NOT REPRODUCED / current path source-consistent PASS; KEEP REGRESSION.
+Independent disposition:
+- Stuck? and Source are alternate content branches rendered through the same Modal component type at the same overlay position;
+- Modal captures the original page opener once in an empty-dependency effect, focuses its heading, and restores that original connected opener on final unmount;
+- replacing Stuck content with Source therefore preserves the Modal instance/opener rather than creating a second nested modal lifecycle;
+- this explains the builder's non-reproduction at desktop/mobile and the committed browser regression expecting focus back on the page Stuck? button after Source closes.
+Future executable regression:
+In an active question, keyboard-focus Stuck? → Enter → keyboard-focus Show source → Enter. Expect Source heading focused. Escape once: overlay fully closes and focus returns deterministically to the page Stuck? button (or, if Codex intentionally changes the overlay grammar, to an equally explicit documented initiating target). Repeat reduced motion, narrow viewport and the new sheet implementation. Physical VoiceOver remains HOLD.
+Severity: P2; P1 if focus is lost/trapped or content becomes unreachable.
+Evidence: BROW + AT.
+
+======================================================================
+2. REPAIRED-BASELINE PRESERVATION GUARD FOR CODEX
+======================================================================
+
+The rejuvenation candidate MUST descend from current repaired head 4965df0 / validated app tree 82a3591, or General must provide an explicit reconciled equivalent. Any visual implementation that regresses F1–F12 or either accepted focus behaviour is a P1 rejection even if the new visual/IA goals otherwise pass.
+
+DO NOT TOUCH SEMANTICS without equivalent proof:
+- LearningProvider eligibility/sourceVisible + provider-owned evaluation.
+- VisitStore envelopeRevision, instanceId/history, exposure ledger, namespaced op IDs, submit/help stale guards and identity validation.
+- confidence order: answer → Check locks → optional confidence/Skip → feedback.
+- retry/help/reveal/fresh evidence semantics.
+- topic coverage / Done-Due-Reviewed separation.
+- General Add-to-list route recovery.
+- Welcome visibility/reduced/manual gates.
+- nested immutable attempt receipts.
+- Study Set Ready/share flow and source approval truth.
+
+Codex may move components, redesign surfaces and add role/profile/Teaching/demo-fixture state around these anchors, but it must not bypass or duplicate the repaired authority paths.
+
+======================================================================
+3. PART B — EXECUTABLE VISUAL / IA ACCEPTANCE & REJECTION MATRIX
+======================================================================
+
+Future candidate dispositions:
+- PASS-LOCAL/BROWSER: all applicable P1 gates below pass on one exact Codex SHA and repaired-regression floor passes. Physical/AT/HOST/OWNER holds remain explicit until directly tested.
+- AMEND: candidate is runnable/identifiable but one or more repairable P1/P2 gates fail.
+- BLOCKED: exact candidate/baseline ancestry is unknown, repaired floor is unresolved, or required routes cannot be meaningfully exercised.
+
+Evidence codes for matrix:
+SRC source/diff; AUTO unit/component/provider; BROW automated browser; REC trace/video/screenshots; HOST exact Vercel build; PHYS physical iPad/Safari/Pencil; AT VoiceOver/assistive tech; OWNER Nathan visual/product review.
+
+A. EXACT IDENTITY / ANCESTRY
+
+VA-01 — repaired ancestry
+Action: record Codex branch + exact SHA; compare against 4965df0/82a3591.
+PASS: candidate descends from the repaired baseline or an explicit General-authorized equivalent reconciliation; issue #2 anchors remain attributable.
+REJECT: unresolved repair is silently folded into a broad rewrite.
+Severity: BLOCKED/P1.
+Evidence: SRC + commit ancestry.
+
+VA-02 — no package/dependency creep
+Action: diff package.json + lockfile from repaired baseline.
+PASS: existing Motion + CSS/SVG stack; no broad new runtime. Any authorized isolated spike is separately documented and gated.
+REJECT: unapproved GSAP/Rive/chart/canvas/DnD/3D/paid Motion feature or auth/backend SDK appears.
+Severity: P1.
+Evidence: SRC.
+
+B. ROLE / IDENTITY GATING
+
+VA-03 — public entry is learner-first
+Route: `#/` as anonymous/new demo visitor.
+Action: inspect entry, context/account surfaces and keyboard nav.
+PASS: School + General are public learner paths; Teaching is not an unrestricted peer tile/link. Demo/local truth is explicit.
+REJECT: public/learner UI exposes Teaching as a normal peer workspace.
+Severity: P1.
+Evidence: BROW + REC.
+
+VA-04 — direct Teaching hashes obey capability
+Routes: `#/teaching/home`, `#/teaching/course/bio-11`, student-detail route, Teaching preview.
+Action: inject/test anonymous, learner-only, instructor-only, dual-role, loading/unknown/error/revoked snapshots.
+PASS: only canTeach reaches Teaching; non-ready/revoked never flashes instructor content; truthful recovery; URL/name/email never grants capability.
+REJECT: menu is gated but direct hash is not, or privileged content flashes during loading/revocation.
+Severity: P1.
+Evidence: AUTO + BROW.
+
+VA-05 — role/account switching is provider-neutral demo truth
+Action: switch learner↔Teaching via profile/account under dual-role fixture; test rapid switch and stale revision.
+PASS: selected workspace derives from capabilities; same-account switch preserves valid visit state while obsolete work is suppressed; account identity remains separate from roster/student fixtures; demo reset/reload truth is explicit.
+REJECT: fake auth, URL/email/name permission inference, sample learner impersonation, or hidden persistence claim.
+Severity: P1.
+Evidence: AUTO + BROW + SRC.
+
+C. LEARNER DEPTH / PROFILE
+
+VA-06 — School depth is first-class but not duplicated
+Route: `#/school/home` → Biology → Overview/Course/Practice/Progress.
+PASS: Home remains cross-class; course object clearly promises depth; local four-tab level is obvious and singular; target path remains Home→course in 1 deliberate action and Practice/Progress within 2.
+REJECT: product still reads as Home + Settings, or tabs are duplicated globally into competing nav.
+Severity: P1.
+Evidence: BROW desktop/tablet/mobile + OWNER.
+
+VA-07 — General depth preserves Discover and same local language
+Route: `#/general/home` → Discover → added course → local tabs.
+PASS: Discover remains General-only; local Overview/Course/Practice/Progress grammar matches School; repaired Add-to-list rule survives.
+REJECT: duplicate navigation or direct-session bypass reappears.
+Severity: P1.
+Evidence: BROW.
+
+VA-08 — avatar/Profile is a first-class human anchor
+Action: inspect learner and Teaching shell; activate avatar by pointer/keyboard/touch.
+PASS: visible identity/profile affordance in 1 action; account/Profile destination gives truthful local/demo identity/activity/progress context and a distinct Settings path; instructor capability, when present, is lower-priority here rather than a permanent peer context switch.
+REJECT: avatar absent, merely a Settings shortcut, or role identity buried/incoherent.
+Severity: P1/P2 depending on reachability.
+Evidence: BROW + REC + OWNER.
+
+VA-09 — cross-course Profile progress is truthful
+PASS: lightweight aggregate links into per-course Progress; uses existing explicit states/visit evidence; no mastery percentage, grade, risk score or persistent-record claim.
+Severity: P1 if false truth; P2 if hierarchy weak.
+Evidence: BROW + SRC fixture mapping.
+
+D. TEACHING COMMAND CENTRE / CLASS-AT-A-GLANCE
+
+VA-10 — deterministic priority order
+Route: Teaching Home with fixture containing all buckets.
+PASS order: Blocking learning → Needs decision soon → Pattern to notice → Housekeeping/prep. Within bucket: earliest confirmed date, then fixture-backed breadth/reach, then stable deterministic order. No hidden risk score.
+REJECT: source-loop/flat/equal-card ordering or opaque ranking.
+Severity: P1.
+Evidence: AUTO selector + BROW.
+
+VA-11 — every attention item explains “Why now”
+PASS item includes bucket/state, plain Why now, class/course, consequence/upcoming event when known, direct action and explicit synthetic/demo provenance where applicable.
+REJECT: colour/order alone conveys urgency.
+Severity: P1.
+Evidence: BROW.
+
+VA-12 — class-at-a-glance without KPI wall
+PASS: current week/topic, next confirmed checkpoint, question clusters, content/release work, Study Set state and Preview as student form one coherent operational picture.
+REJECT: enterprise metric wall, invented performance analytics or loss of Preview/Study Set semantics.
+Severity: P1 false-truth; P2 composition.
+Evidence: BROW + OWNER.
+
+E. STUDENT QUESTIONS / DETAIL / FEEDBACK LOOP
+
+VA-13 — question cluster prominence + drill-down
+Action: Teaching Home → synthetic question cluster by pointer and keyboard.
+PASS: cluster receives appropriate priority over housekeeping; drill-down exposes concept, originals/summary, class, exact source/topic context and related learners; unsupported exceptions remain unresolved.
+REJECT: questions remain counts only, are visually buried contrary to fixture priority, or imply verified deficit/mastery.
+Severity: P1 truth/access; P2 hierarchy.
+Evidence: BROW + REC.
+
+VA-14 — dedicated student detail route
+Route: Teaching Students → sample learner; then direct deep link/reload/back.
+PASS: committed student detail is a typed, deep-linkable full-page route tied to course+student IDs; mismatched/unknown IDs recover safely; learner row/avatar carries identity where motion is enabled; Back restores roster/question context and focus.
+REJECT: one-note modal remains final detail or route leaks mismatched fixture identity.
+Severity: P1.
+Evidence: AUTO route parser + BROW + REC.
+
+VA-15 — student-detail information truth
+PASS sections support: current work; recent sessions; fixture-supplied sample time only; Coverage/Progress using Not started/In progress/Done for now/Due for a check/Reviewed; observable support concepts; questions/help; deterministic next useful step within released/approved scope; optional local teacher action. SAMPLE/SYNTHETIC DEMO is explicit.
+REJECT: mastery %, grades, risk/diagnosis, real telemetry, real messaging, durable record or unsupported time/activity is invented.
+Severity: P1.
+Evidence: SRC fixture→render mapping + BROW.
+
+VA-16 — explicit fixture feedback loop
+Action: instructor review/question workflow → fixture “answered” then “still need help” path.
+PASS: local synthetic signal can resolve/reopen teacher attention deterministically; source/question context is preserved; no live messaging/AI implication.
+REJECT: status becomes grade/mastery or claims a real student reply/network event.
+Severity: P1.
+Evidence: AUTO + BROW.
+
+F. JOIN CODE / TIMELINE / CLASS OBJECTS
+
+VA-17 — join code prominence and truth
+Route: Teaching Home/class workspace/Students as implemented.
+PASS: sample code is findable at a glance for active class; sample/inactive truth explicit; copy/reveal is local, keyboard/touch operable, and uses in-place feedback rather than a routine modal.
+REJECT: buried utility, modal-only copy, or implication of real enrolment service.
+Severity: P1 truth; P2 prominence.
+Evidence: BROW + OWNER + PHYS touch.
+
+VA-18 — timeline geometry and semantics
+PASS: one intentional axis/relationship; draft vs confirmed and current/upcoming states are readable in text/shape, not colour/motion alone; selecting checkpoint retains spatial relation into detail where applicable.
+REJECT: crooked/arbitrary geometry, detached popup, hidden semantic state, or animation-authoritative timeline.
+Severity: P1 semantics; P2 visual quality.
+Evidence: BROW + REC + OWNER.
+
+VA-19 — responsive timeline
+At 820, 390 and 320px floor, no page overflow, clipped nodes or precision-only interaction. Narrow layout may become sequential but preserves order/state.
+Severity: P1 if inaccessible; P2 polish.
+Evidence: BROW + PHYS.
+
+G. SHARED-ELEMENT / MOTION / SEMANTIC PARTICLES
+
+VA-20 — Home/Up Next → course/session continuity
+Action: School Home → Continue/Up Next → destination; then Back.
+PASS: selected course/topic identity visibly persists/recomposes where practical; shell stays stable; route/state commits independently of animation; Back restores sensible origin/focus/scroll.
+REJECT: generic fade→blank/blur→unrelated fade for a clear persistent entity, or transition blocks interaction.
+Severity: P2 visual; P1 if navigation/focus/state breaks.
+Evidence: BROW + REC + OWNER.
+
+VA-21 — course local tabs are lateral siblings
+Action: Overview↔Course↔Practice↔Progress quickly, with Back/Forward and reduced motion.
+PASS: course identity stays anchored; one local navigation level; no full-screen blur/modal; rapid interruption is safe.
+Severity: P1 function/focus; P2 choreography.
+Evidence: BROW + REC.
+
+VA-22 — learner row/avatar → student detail continuity
+PASS: avatar/name/class are the dominant carried entity; reduced motion uses immediate/static identity continuity; Back returns to same roster position and focus target.
+Severity: P1 focus/context; P2 motion.
+Evidence: BROW + REC + AT.
+
+VA-23 — semantic particles/orbs only
+PASS: every moving orb/particle has a declared referent (course/topic/checkpoint/question/focus) or low-amplitude subordinate ambience; essential meaning is also explicit in text/state; reduced motion freezes/substantially simplifies ambient movement.
+REJECT: speed/size/colour silently encode mastery/urgency/progress, random universal orbit drift, overlays touch/scroll targets, or multiple competing hero motion fields.
+Severity: P1 false semantic; P2 visual/performance.
+Evidence: SRC semantic mapping + REC + OWNER + PHYS performance.
+
+H. OVERLAY / SURFACE GRAMMAR + STUCK?
+
+VA-24 — surface grammar
+Audit normal course navigation, Why this?, source, Stuck?, student detail, question drill-down, profile/account, consequential release confirmation.
+PASS:
+- inline transform = same object/more detail;
+- split view = contextual comparison on wide screens;
+- sheet/drawer = secondary source/help/account work;
+- full page = durable student/course/Progress/Settings/command-centre work;
+- modal = consequential confirmation only;
+- popover/menu = tiny anchored choices.
+REJECT: routine navigation/help/student detail defaults to stacked/full green-blur modal.
+Severity: P1 if usability/focus broken; P2 product grammar.
+Evidence: BROW + REC + OWNER.
+
+VA-25 — bounded Stuck? jobs survive
+Across Home/topic/session where applicable, preserve Say it another way / Why am I doing this? / Show source / Help me get unstuck and written-help/no-chat truth.
+REJECT: job removed, free-form AI substituted, or source approval/evidence semantics bypassed.
+Severity: P1.
+Evidence: BROW + repaired F3/F1 regressions.
+
+VA-26 — future context-selection seam is deterministic and accessible
+If Codex implements the seam:
+- eligible targets have stable semantic IDs + accessible labels;
+- provider-free context payload is route + target ID + bounded metadata only;
+- no arbitrary DOM/screenshot/sensitive-field capture;
+- tap/click/focus selection works; freehand circle is optional only;
+- exit restores focus to Stuck? or selected target;
+- no AI/provider connection claim.
+REJECT: drawing-only path, arbitrary page capture, sensitive target eligibility, or connected-AI implication.
+Severity: P1.
+Evidence: AUTO target registry + BROW keyboard/touch + SRC privacy boundary + AT.
+
+I. REDUCED MOTION / FOCUS / BACK / SCROLL / INTERRUPTION
+
+VA-27 — reduced-motion semantic equivalence
+Repeat VA-20/21/22/24/26 with OS/user reduced motion.
+PASS: same destination, selected state, content, focus and capability; travel/parallax/orbit removed or reduced; no animation-complete callback needed for routing/state/focus.
+Severity: P1.
+Evidence: BROW + AT + PHYS.
+
+VA-28 — rapid navigation / Back / Forward
+During each major shared transition, trigger rapid re-selection, browser Back/Forward and escape/close where valid.
+PASS: no stuck overlay, duplicate route state, lost content, stale role surface, double-submit or focus loss.
+Severity: P1.
+Evidence: BROW trace + console.
+
+VA-29 — focus destination / return
+Keyboard exercise: course entry/back, profile open/close, Teaching attention→detail/back, roster→student/back, source/help close, Settings jumps.
+PASS: focus follows semantic destination; returning restores initiating/selected object when connected; never body/unrelated control.
+Severity: P1 if keyboard path lost; P2 isolated polish.
+Evidence: BROW + AT.
+
+VA-30 — scroll restoration
+On long Home/Teaching roster/question/timeline pages, enter detail from below fold and return.
+PASS: originating context/selection remains understandable; no dump-to-top that destroys task continuity unless route semantics explicitly require it.
+Severity: P2; P1 if it prevents continuing the task.
+Evidence: BROW + REC.
+
+J. TOUCH / MOBILE / IPAD / VOICEOVER
+
+VA-31 — viewport floor
+Run priority routes at 1024×900, 820×900, 390×844 and 320px floor.
+PASS: no unintended horizontal page overflow; first-class destinations remain reachable; split views collapse; touch targets remain practical; no hover-only meaning.
+Severity: P1 reachability; P2 layout.
+Evidence: BROW.
+
+VA-32 — physical iPad/Safari/Pencil HOLD
+Required before device acceptance: real iPad Safari landscape/portrait, orientation change, scrolling during motion, tap targets, keyboard where available, reorder/direct-manipulation paths, Pencil where retained, animation interruption, safe areas, frame pacing and text clipping.
+Playwright Chromium touch emulation does NOT clear this hold.
+Severity: HOLD; any actual functional/device failure => P1/P2 by impact.
+Evidence: PHYS.
+
+VA-33 — VoiceOver/real AT HOLD
+Required: shell landmarks/location, role-gated recovery, course tabs, attention reasons, question drill-down, student detail, timeline states, sheets/dialogs, reorder announcements, Stuck target selection, focus return.
+Static ARIA/source review does NOT clear this hold.
+Severity: HOLD.
+Evidence: AT.
+
+K. KEEP / REJUVENATE-NOT-REMAKE
+
+VA-34 — learner spine preservation
+PASS: Up Next, “one good step at a time”, Continue, Why this?, Choose another path and focused session model remain materially intact.
+REJECT: removed/recast merely for dashboard aesthetic.
+Severity: P1.
+Evidence: BROW + Bob archaeology + OWNER.
+
+VA-35 — current taxonomies preserved
+PASS learner Overview/Course/Practice/Progress and Teaching Overview/Course/Students/Study sets remain the first-class local structures; no resurrection of legacy parallel nav.
+Severity: P1.
+Evidence: route inventory + BROW.
+
+VA-36 — Study Set / announcements / Preview / timeline / Settings / Stuck preserved
+PASS existing functional meanings survive; Study Set reaches All reviewed — Ready, explicit share, Preview as student; Settings remains direct; announcements and timeline truth remain.
+Severity: P1.
+Evidence: BROW + existing suite.
+
+VA-37 — do-not-restore guard
+REJECT Seeds/points/shop pressure economy, fake 3D Tree/avatar promises, old six-tab Teaching topology, Achievements as first-order Teaching, legacy course nav taxonomy as parallel system, hidden More-settings layer, fake auth/roster/telemetry/mastery/grades/live messaging, free-form AI, wholesale legacy annotation subsystem, or wholesale v7.22 port.
+Severity: P1.
+Evidence: SRC + BROW.
+
+L. FUNCTIONAL REGRESSION FLOOR AFTER VISUAL REJUVENATION
+
+VA-38 — issue #2 repaired semantics
+On exact Codex SHA rerun the F1–F12 + two focus matrix in Part A. ANY F1–F5 regression is automatic P1 rejection; F6–F12/focus severity follows Part A but no candidate may be declared PASS with a material unresolved defect.
+Evidence: AUTO + BROW.
+
+VA-39 — core learning regression
+Preserve:
+- answer → Check locks → optional confidence/Skip → feedback;
+- hover/dwell/focus never submits confidence/answer;
+- provider-owned correct/wrong evaluation for single/multi/order;
+- hint/reveal/retry escalation and fresh re-check semantics;
+- pause/resume/completion/local reset truth;
+- ordering Pointer Events + visible non-drag controls + cancellation/announcements;
+- all game families use the ordinary learning provider and debrief; no motor-speed knowledge scoring;
+- no fake saved/synced/auth/grade claim.
+Severity: P1.
+Evidence: existing suites + focused BROW.
+
+VA-40 — Teaching/source regression
+Preserve Draft/Approved learner visibility, release/checkpoint/study-set eligibility, Preview-as-student truth, sample roster labelling and Study Set terminal Ready/share behaviour.
+Severity: P1.
+Evidence: AUTO + BROW.
+
+M. HOSTED VERCEL / OWNER REVIEW
+
+VA-41 — exact hosted identity
+Before Nathan review, record Vercel URL, exact candidate SHA/build identity and whether source map/About identity matches it. Direct hashes/reload/history must refer to the same build.
+REJECT owner-review claim if hosted bytes cannot be tied to the candidate under review.
+Severity: BLOCKED for owner visual acceptance.
+Evidence: HOST + About/build identity.
+
+VA-42 — what Nathan can judge on Vercel
+OWNER review may judge: rejuvenate-vs-remake feel; warm material identity; depth discoverability; command-centre hierarchy; question/join/profile prominence; student-detail depth; timeline geometry; shared-element continuity; overlay/modal restraint; motion tempo; semantic orb/particle feel; KEEP-list survival.
+Owner visual approval is REQUIRED before release/merge decision but is not a runtime/a11y/device proof.
+Evidence: OWNER + exact HOST.
+
+VA-43 — what Vercel alone cannot clear
+Vercel appearance alone does NOT prove: repaired F1–F12 semantics, route capability guards, stale async correctness, Back/focus/scroll restoration, reduced-motion equivalence, VoiceOver, physical iPad/Pencil, package authorization, performance/CPU/memory, or absence of backend/auth scope creep. Those need the explicit evidence types above.
+
+======================================================================
+4. BINARY REJECT SET FOR CODEX CANDIDATE
+======================================================================
+
+Reject the rejuvenation candidate if ANY is true:
+1. It is not traceably based on the repaired freeze or regresses issue #2 semantics.
+2. Public/learner surfaces expose Teaching without instructor capability or direct Teaching hashes bypass the gate.
+3. Learner or Teaching depth is absent/duplicated, or the product still reads as Home + Settings.
+4. Avatar/Profile remains absent/buried as a Settings afterthought.
+5. Teaching Home is still a flat source-order/equal-card list without deterministic Why-now priority.
+6. Student questions are only counts, have no useful drill-down, or are buried below lower-priority fixture work.
+7. Student detail remains a one-note modal/transient overlay rather than a dedicated deep-linkable destination.
+8. Join code remains buried or implies live enrolment.
+9. Timeline geometry is arbitrary/detached or its meaning depends on colour/motion.
+10. Candidate invents mastery, grades, risk scores, diagnoses, real telemetry, live messaging, real auth or durable backend truth.
+11. Routine navigation/help/student detail still defaults to full green-blur modals.
+12. Shared motion is spectacle/decorative drift, blocks interaction, breaks Back/focus or lacks reduced-motion equivalence.
+13. Orbs/particles encode unstated progress/urgency/mastery or interfere with content/touch/scroll.
+14. A core path requires hover, drag precision or freehand circle input without simple touch/keyboard alternative.
+15. Stuck? removes its four bounded jobs, captures arbitrary/sensitive DOM/screenshots, or implies AI/provider connection.
+16. Up Next / one-good-step / Continue / Why this? / Choose another path / Study Set Ready/share / announcements / Preview as student / timeline / Settings / repaired learning semantics are materially erased.
+17. Legacy v7.22 taxonomy/economy is ported wholesale or preserved current flows are rebuilt from scratch.
+18. A broad new dependency/runtime/paid feature appears without separate authority.
+19. Mobile/iPad is compressed desktop that hides first-class destinations or visibly breaks input/scroll/performance.
+20. Hosted owner-review build identity is ambiguous.
+
+======================================================================
+5. REQUIRED FUTURE QA RUN ORDER
+======================================================================
+
+1. Freeze exact Codex SHA; prove ancestry/package diff.
+2. Run build + unit/provider suites.
+3. Run Part A repaired-regression matrix before judging visuals.
+4. Run role/direct-hash + Profile/student-detail/Teaching priority automated/browser tests.
+5. Run keyboard/focus/Back/Forward/reduced-motion/rapid-interruption matrix.
+6. Run desktop/tablet/mobile viewports and standalone/export parity if still part of delivery contract.
+7. Inspect console/network for scope creep and runtime errors.
+8. Publish an exact hosted Vercel build tied to the tested SHA for Nathan visual/product review.
+9. Separately clear physical iPad/Safari/Pencil and VoiceOver holds; do not substitute emulation.
+10. Return PASS / AMEND / BLOCKED with per-gate evidence; do not collapse HOLD into PASS.
+
+======================================================================
+6. TERMINAL DISPOSITION TO GENERAL CF-0051
+======================================================================
+
+Task status: DONE.
+
+Repaired baseline verdict:
+- Independently source-adjudicated PASS for F1–F12.
+- Settings-focus: PASS-SRC.
+- Stuck→Source: NOT REPRODUCED; current same-Modal lifecycle is consistent with deterministic return to the original Stuck? opener; preserve browser + AT regression.
+- No new source-level blocker found.
+- Fresh independent runtime execution was not possible in this lane without violating the no-install boundary and because the repaired owner-preview artifact is not provider-published/committed. Builder suite counts remain corroborating only.
+
+Visual/IA acceptance freeze:
+- executable matrix above is frozen for the Codex rejuvenation and reconciles Bob seq469 archaeology, Sol seq462 code/identity map, Kevin seq467 motion contract and issue #3.
+- repaired F1–F12 behaviour is a hard preservation floor.
+- physical iPad/Safari/Pencil, real VoiceOver/AT, exact hosted-origin performance/identity and Nathan visual/product acceptance remain separate holds.
+
+No implementation, dependency installation, candidate mutation, merge, deployment, backend/auth/Supabase/AI connection or peer wake occurred.
