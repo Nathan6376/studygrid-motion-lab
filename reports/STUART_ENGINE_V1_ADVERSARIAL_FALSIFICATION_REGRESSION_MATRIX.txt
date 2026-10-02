@@ -1,0 +1,629 @@
+STUDYGRID ENGINE V1 — ADVERSARIAL FALSIFICATION / REGRESSION MATRIX
+Timestamp: 2026-10-01 20:14 ET
+Worker: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+Coordinator: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+Disposition: AMEND
+Scope: REUSABLE SPECIFICATION / QA CONTRACT ONLY — NO IMPLEMENTATION
+
+EXACT AUTHORITY CONSUMED
+- General route: routes/GENERAL_20261001_2006_STUART_ENGINE_V1_FALSIFICATION_MATRIX.txt @ 82f35ad99f4f759d9185ef76f6ece9891b207024
+- Draft 1: design/STUDYGRID_ENGINE_V1_FIRST_PRINCIPLES_DRAFT_1.txt @ bc1a346cf6c6a95d081804e2d60d980533d16d61
+- Research adversarial return: routes/RESEARCH_CF0044_20261001_1917_ENGINE_V1_PRIMITIVES_ADVERSARIAL_REVIEW_DONE.txt @ 93dbc55c00579128a2b96cbb44c8094c5ff9b007
+- Sol independent architecture attack: reports/SOL_20261001_ENGINE_V1_DRAFT1_ARCHITECTURE_ATTACK/REPORT.md @ 1e5c05892101d566ae316f4eb34c3f5a477ba8fa
+- Bob implementation contradiction return: routes/BOB_20261001_1947_ENGINE_V1_DRAFT1_IMPLEMENTATION_CONTRADICTION_ATTACK_DONE.txt @ 4b2849f6fda9e75205cb4cad516a550080cdfa7d
+
+VERDICT
+AMEND.
+
+The current architecture is a viable specification target, not a blocked architecture. Keep the central epistemic separation:
+OBSERVATION != EVIDENCE INTERPRETATION != LEARNER ESTIMATE != PEDAGOGICAL NEED/HYPOTHESIS != POLICY DECISION.
+
+However, Draft 1 cannot yet pass this reusable matrix deterministically. The smallest Draft-2 repair package is:
+1. split immutable response/presentation facts from append-only scoring/evaluation revisions;
+2. define evidence sufficiency, channel comparability, family diversity and attribution per claim contract;
+3. add mapping validity + retroactivity/quarantine semantics;
+4. add semantic source-impact + derived-state freshness/stale barriers;
+5. split administrative/policy sequence from cognitive prerequisite hypotheses;
+6. define a complete policy branch order, tie rule, bounded repair/probe budgets and first-class no-action/blocked outputs;
+7. represent learner override/offline declaration as bounded decision context, never competence evidence;
+8. add issue→revalidate→deliver→respond/evaluate lifecycle, idempotency and concurrency rules;
+9. define deletion-aware reconstruction with FULL/PARTIAL/UNAVAILABLE status and no hidden data duplication;
+10. define instructor denominators, small-cohort/privacy release rules and content-quality alternatives;
+11. bind UI labels to backend evidence strength so product language cannot overstate evidence;
+12. keep accessibility/accommodation capability authorization independent from generic tutoring while recording construct-validity effects where needed.
+
+The matrix below tests behaviour and invariants, not schema/table/service choices.
+
+======================================================================
+A. EPISTEMIC SEPARATION / NON-INFERENCE
+======================================================================
+
+S01 — PAGE VIEW IS NOT COMPETENCE
+Input: learner opens a lesson, scrolls to bottom, answers nothing.
+Permissible: exposure/completion observation; optional session progress.
+Forbidden: demonstrated/learned/retained; readiness increase; instructor weakness/strength inference.
+Invariant: exposure/completion never becomes mastery evidence by itself.
+
+S02 — UI/INPUT FAILURE IS NOT LEARNER WEAKNESS
+Input: answer control fails to submit; telemetry shows client error; no valid response committed.
+Permissible: invalid/missing evidence; operational error; retry/recovery action.
+Forbidden: incorrect-answer evidence; remediation; competence decrease.
+Invariant: software/input failure remains separate from learner evidence.
+
+S03 — POLICY OUTPUT CANNOT BECOME EVIDENCE
+Input: policy recommends prerequisite review because estimate is sparse.
+Permissible: decision/history record showing recommendation and reason.
+Forbidden: feeding “review recommended” back as proof the prerequisite is weak.
+Invariant: policy decisions never become learner evidence merely because they occurred.
+
+S04 — MISCONCEPTION HYPOTHESIS CANNOT SELF-AUTHOR EVIDENCE
+Input: two errors create hypothesis H; next task is selected because of H.
+Permissible: H remains hypothesis with competing explanations and selection context.
+Forbidden: treating H or task selection as independent supporting evidence for H.
+Invariant: derived hypotheses are not observation facts.
+
+S05 — SESSION COMPLETE IS NOT LEARNED
+Input: learner finishes all assigned session tasks with mixed results.
+Permissible: session/control completion; evidence remains claim/channel-specific.
+Forbidden: “course/topic learned” solely from completion.
+Invariant: navigation/control state cannot collapse into learner state.
+
+S06 — NON-RESPONSE IS UNKNOWN, NOT FAILURE
+Input: learner leaves before answering a task.
+Permissible: no-response event; unknown/missing evidence; session recovery.
+Forbidden: incompetence, laziness, disengagement or wrong-answer inference.
+Invariant: missing-not-at-random data is not silently scored as low ability.
+
+======================================================================
+B. EVIDENCE SUFFICIENCY / CHANNELS / EXPOSURE
+======================================================================
+
+S07 — ONE CORRECT RECOGNITION ITEM
+Input: one easy multiple-choice recognition item answered correctly.
+Permissible: bounded correct observation in recognition channel; SPARSE/insufficient state.
+Forbidden: durable competence, application competence, retention, transfer.
+Invariant: one response cannot satisfy a stronger claim unless an explicit approved contract says so.
+
+S08 — RECOGNITION VS APPLICATION DIVERGENCE
+Input: recognition items strong; novel application task weak.
+Permissible: separate channel profiles; divergence/conflict only if comparability rule declares it.
+Forbidden: arbitrary average into one mastery score; stronger label than either channel warrants.
+Invariant: channel-specific evidence is preserved when constructs/conditions differ.
+
+S09 — ANSWER EXPOSURE THEN REPEAT
+Input: answer shown after attempt 1; same item reappears in another tab/session and is correct.
+Permissible: repeated/exposed performance; practice memory observation.
+Forbidden: relabelling second result “unaided transfer” because hintCount=0 on second attempt.
+Invariant: answer/support exposure lineage follows the relevant item/family/episode.
+
+S10 — COACHED SUCCESS
+Input: worked example or answer-bearing hint precedes correct solution.
+Permissible: supported/coached success; evidence for supported performance if contract allows.
+Forbidden: treating as equivalent to delayed unaided retrieval.
+Invariant: support conditions travel with evidence and affect permissible inference.
+
+S11 — FALSE TASK-FAMILY DIVERSITY
+Input: five cosmetic variants share identical solution template but are labelled five families.
+Permissible: repeated/correlated practice evidence; mapping/family review.
+Forbidden: counting them as five independent transfer observations.
+Invariant: family diversity reflects construct variation, not author-assigned IDs alone.
+
+S12 — SPARSE MIXED EVIDENCE
+Input: one correct, one incorrect, both valid but low coverage.
+Permissible: OBSERVED_INSUFFICIENT/SPARSE; bounded descriptive history.
+Forbidden: strong competence/weakness label from count alone.
+Invariant: claim-specific sufficiency predicate controls strong claims.
+
+S13 — INVALID ITEM
+Input: item wording is later found ambiguous; many learners missed it.
+Permissible: invalidate/quarantine interpretation; route item/content to review; preserve attempts.
+Forbidden: learner remediation or competence decrease from invalid item.
+Invariant: invalid evidence cannot become learner weakness.
+
+S14 — UNKNOWN OFFLINE HELP
+Input: learner completes task at home; system cannot know whether outside help was used.
+Permissible: observed response under unknown-help condition; explicit limitation.
+Forbidden: forensic certainty that result was unaided.
+Invariant: absence of logged support is not proof of no external support.
+
+S15 — TRANSFER CLAIM NEEDS TRANSFER EVIDENCE
+Input: learner succeeds on repeated near-transfer templates only.
+Permissible: performance on practiced family.
+Forbidden: “can transfer to novel contexts” without approved novel/transfer evidence.
+Invariant: transfer is a distinct inference contract, not a synonym for high correctness.
+
+======================================================================
+C. MULTI-CLAIM TASKS / SCORING / CONSTRUCTED RESPONSE
+======================================================================
+
+S16 — MULTI-CLAIM WRONG ANSWER WITHOUT ATTRIBUTION
+Input: one scenario maps to claims A/B/C; total answer is wrong; rubric has no component isolation.
+Permissible: joint/conjunctive evidence; diagnostic uncertainty.
+Forbidden: lowering A, B and C independently as if each failure were isolated.
+Invariant: per-claim negative evidence requires attributable scoring/observation.
+
+S17 — PARTIAL RUBRIC ATTRIBUTION
+Input: constructed response meets reasoning criterion A but fails unit/format criterion B.
+Permissible: A positive, B negative if rubric/mapping explicitly isolates them.
+Forbidden: copying total score to every mapped claim.
+Invariant: evidence follows rubric components actually linked to claims.
+
+S18 — CONSTRUCTED RESPONSE PENDING HUMAN SCORE
+Input: response committed; no score yet; scorer service unavailable.
+Permissible: response observation + PENDING/UNSCORED status; alternative valid action or wait.
+Forbidden: treating pending as wrong or as zero competence.
+Invariant: response existence and evaluation result are separate states.
+
+S19 — LATE REGRADE
+Input: scorer v1 gives 0.4; authorized regrade v2 gives 0.8.
+Permissible: append-only score/evaluation revision; one effective current lineage; old decision replay under v1.
+Forbidden: rewriting raw response, erasing v1, or counting both as independent evidence.
+Invariant: immutable response + versioned evaluation revisions.
+
+S20 — TWO SCORERS DISAGREE
+Input: two valid scorers disagree on an essential criterion.
+Permissible: scorer disagreement/REVIEW_REQUIRED; human/adjudication path; uncertainty.
+Forbidden: arbitrary average presented as factual mastery.
+Invariant: scorer disagreement is explicit, not hidden inside one scalar.
+
+S21 — LATE CALLBACK AFTER MANUAL OVERRIDE
+Input: human reviewer sets final score; old AI callback arrives later.
+Permissible: precedence rule keeps authorized final evaluation; late callback preserved/rejected as stale.
+Forbidden: late callback silently replacing reviewer decision.
+Invariant: scoring lineage has explicit authority/precedence and idempotency.
+
+======================================================================
+D. REMAP / SOURCE / MODEL / POLICY REVISION AND FRESHNESS
+======================================================================
+
+S22 — ITEM REMAP A→B
+Input: item originally mapped to A; mapping corrected to B after attempts.
+Permissible: explicit retroactivity state: future-only, retroactive-safe, invalidate-old, or review-required; raw attempts unchanged.
+Forbidden: counting one attempt for A and B simultaneously without approved interpretation; silently moving competence.
+Invariant: mapping revision controls interpretation lineage, not observation history.
+
+S23 — WRONG-BUT-CURRENT MAPPING CHALLENGED
+Input: mapping is current/versioned but later flagged invalid.
+Permissible: mapping UNDER_REVIEW/INVALID; affected interpretations stale/quarantined; diagnostic for claim.
+Forbidden: ADVANCE or strong claim based on quarantined mapping.
+Invariant: explicit mapping existence is insufficient; validity/approval state gates evidence authority.
+
+S24 — COSMETIC SOURCE REVISION
+Input: formatting/typo-only source revision; meaning unchanged.
+Permissible: preserve comparable evidence; record source revision and impact classification.
+Forbidden: global invalidation of tasks/estimates merely because version number changed.
+Invariant: source impact is semantic/dependency-scoped, not version-number panic.
+
+S25 — SEMANTIC SOURCE REVISION
+Input: authoritative rule changes materially from v1 to v2.
+Permissible: old performance remains historical-under-v1; affected interpretations/tasks/mappings identified; current state recomputed/quarantined as required.
+Forbidden: treating v1 evidence automatically as current-v2 competence without comparability rule.
+Invariant: versioned authority + selective impact cascade.
+
+S26 — MODEL REVISION M1→M2
+Input: same observations interpreted under new estimator/model config.
+Permissible: new derived estimate; old decision remains reconstructable under M1.
+Forbidden: overwriting historical decision explanation as if M2 was used then.
+Invariant: derived models can change without rewriting history.
+
+S27 — POLICY REVISION AFTER RECOMMENDATION ISSUE
+Input: recommendation issued under practice; policy switches to protected before open/delivery.
+Permissible: revalidate and suppress prohibited content; create new decision/recovery outcome.
+Forbidden: delivering cached answer-bearing help because original decision was valid when issued.
+Invariant: execution revalidates material policy/access before delivery.
+
+S28 — DEADLINE CORRECTED AFTER CACHED URGENCY DECISION
+Input: due date changes; cached action reason says “exam tomorrow.”
+Permissible: stale reason/decision invalidated and recomputed from current trusted deadline.
+Forbidden: delivering obsolete urgency rationale.
+Invariant: decision-relevant context has freshness/version semantics.
+
+S29 — ESTIMATE STALE AFTER NEW SCORE
+Input: learner estimate computed before later valid score arrives.
+Permissible: stale marker/recompute before material recommendation.
+Forbidden: ranking on stale estimate while claiming current evidence.
+Invariant: estimate carries evidence cutoff/watermark and dependency versions.
+
+S30 — CANDIDATE GENERATOR REVISION
+Input: generator v2 adds an eligible task omitted by v1.
+Permissible: new current decision may differ; historical decision retains generator/pool revision.
+Forbidden: claiming old candidate list was complete under v2.
+Invariant: candidate-pool/generator identity is part of decision reconstruction.
+
+======================================================================
+E. PREREQUISITES / GRAPH FAILURE MODES
+======================================================================
+
+S31 — HARD PREREQUISITE UNKNOWN
+Input: no evidence about prerequisite A; downstream B is otherwise available.
+Permissible: bounded probe/introduction/review if authorized; UNKNOWN state.
+Forbidden: treating unknown as failed or permanently blocking learner as incompetent.
+Invariant: unknown != failed.
+
+S32 — SOFT PREREQUISITE CYCLE A↔B
+Input: soft/hypothesized edges create cycle.
+Permissible: quarantine/review edges; continue with non-cyclic valid actions/probes.
+Forbidden: infinite remediation loop or absolute block.
+Invariant: inferred soft edges cannot deadlock the learner.
+
+S33 — BROKEN HARD EDGE
+Input: declared hard edge is later found wrong; learner has valid direct evidence for downstream competence.
+Permissible: edge correction/review; preserve downstream evidence.
+Forbidden: deleting/discounting downstream competence solely because old edge existed.
+Invariant: graph correction does not rewrite observations or manufacture learner weakness.
+
+S34 — POLICY SEQUENCE VS COGNITIVE PREREQUISITE
+Input: course requires module A before B administratively, but learner already demonstrates B.
+Permissible: enforce availability sequence as policy if authoritative; separately avoid saying learner is cognitively unable.
+Forbidden: using administrative order as causal evidence of cognitive dependence.
+Invariant: POLICY_SEQUENCE_REQUIRED is distinct from LEARNING_PREREQUISITE_HYPOTHESIS.
+
+S35 — PREREQUISITE CORRELATION IS NOT CAUSAL BOTTLENECK
+Input: A and B errors co-occur in cohort.
+Permissible: descriptive association/hypothesis; targeted inspection/probe.
+Forbidden: “A caused B weakness” without validated dependency evidence.
+Invariant: causal prerequisite claims need more than correlated errors.
+
+======================================================================
+F. AGENCY / ASSESSMENT / ACCESSIBILITY / OFFLINE CONTEXT
+======================================================================
+
+S36 — LEARNER OVERRIDE
+Input: learner overrides recommended review for another eligible action.
+Permissible: decision-history/context change; bounded suppression/deprioritization rule where policy allows.
+Forbidden: mastery, motivation, disengagement or risk-state change from override alone.
+Invariant: override is agency/context, not competence evidence.
+
+S37 — REPEATED OVERRIDES MUST NOT CREATE NAG LOOP
+Input: learner rejects same recommendation repeatedly.
+Permissible: bounded recommendation-history effect, alternative eligible action, optional reason.
+Forbidden: same unsolicited recommendation regenerating indefinitely; learner penalty.
+Invariant: anti-nag policy is separate from learner estimate.
+
+S38 — PROTECTED ASSESSMENT SHIELD
+Input: same learner evidence that would trigger help in practice, but task is protected.
+Permissible: suppress unauthorized tutoring; preserve permitted assessment flow.
+Forbidden: worked example/hint that violates assessment policy.
+Invariant: protected assessment constraints dominate generic adaptive-help preference.
+
+S39 — AUTHORIZED ACCOMMODATION DURING PROTECTED ASSESSMENT
+Input: protected task; approved read-aloud/alternate input is authorized and construct-preserving.
+Permissible: accommodation capability remains available; minimal validity-relevant context recorded.
+Forbidden: blocking all support because “high stakes”; treating accommodation as incompetence.
+Invariant: accessibility authorization is independent from tutoring prohibition.
+
+S40 — ACCOMMODATION CHANGES CONSTRUCT INTERPRETATION
+Input: read-aloud is authorized but task’s intended construct is reading decoding.
+Permissible: allow access if authorized while marking comparability/construct interpretation according to contract.
+Forbidden: treating evidence as equivalent without construct-validity rule; inferring disability.
+Invariant: accommodation metadata affects validity only where necessary, not learner worth.
+
+S41 — OFFLINE STUDY SELF-REPORT
+Input: learner says “I already studied this elsewhere”; no validated external artifact.
+Permissible: user-declared context; bounded repetition avoidance; offer quick check/alternative.
+Forbidden: direct demonstrated/mastery increase from self-report alone.
+Invariant: self-report context is separate from validated evidence.
+
+S42 — VALIDATED EXTERNAL INSTRUCTOR EVIDENCE
+Input: authorized assessor records physical/procedural performance under a defined claim contract.
+Permissible: external evidence channel with provenance/conditions.
+Forbidden: treating an unauthenticated learner note as equivalent assessor evidence.
+Invariant: external evidence authority is explicit.
+
+S43 — GENERATIVE AI OUTAGE
+Input: explanation generator unavailable; core package and fixed tasks remain.
+Permissible: safe degraded path, fixed approved content, pending AI-dependent operation.
+Forbidden: inventing scores/content or blocking all core adaptation if AI is optional.
+Invariant: AI is not hidden authority or single point of core truth.
+
+======================================================================
+G. EXECUTION / CONCURRENCY / IDEMPOTENCY / EVENT ORDER
+======================================================================
+
+S44 — DOUBLE SUBMIT
+Input: same committed response sent five times due retry/double click.
+Permissible: one logical response/evidence unit; retries return existing identity.
+Forbidden: five observations or five confidence increments.
+Invariant: response commit is idempotent.
+
+S45 — TWO TABS REQUEST NEXT SIMULTANEOUSLY
+Input: tab A and B request next action from same decision sequence.
+Permissible: one accepted current decision; stale request returns accepted result or recomputes against new sequence.
+Forbidden: two conflicting accepted decisions both claiming same prior state.
+Invariant: material decision creation has concurrency/version guard.
+
+S46 — STALE TAB SUBMITS OLD TASK REVISION
+Input: task was revised while stale tab remained open; learner submits old version.
+Permissible: observation bound to old presentation/task version; interpretation per old/current comparability policy.
+Forbidden: pretending response was to new task text.
+Invariant: presentation version is immutable provenance.
+
+S47 — SCORE CALLBACK RETRY
+Input: scorer callback duplicated after timeout.
+Permissible: one score artifact per scorer operation/idempotency identity; retry deduplicated.
+Forbidden: duplicate score/evidence contributions.
+Invariant: scoring operations are idempotent/versioned.
+
+S48 — CLIENT CLOCK SKEW / OFFLINE SYNC
+Input: device clock is wrong; offline attempt syncs later.
+Permissible: client occurrence time + authoritative receive/server sequence; model uses declared chronology semantics.
+Forbidden: silently ordering evidence solely by untrusted client clock.
+Invariant: event ordering authority is explicit.
+
+S49 — SUPPORT DELIVERED BUT RESPONSE COMMIT CRASHES
+Input: answer-bearing hint displayed; app crashes before response; learner resumes.
+Permissible: support/exposure fact persists and follows resumed episode.
+Forbidden: resumed attempt treated unaided because response was never committed.
+Invariant: support delivery is its own recorded event/condition.
+
+S50 — CONSUMED RECOMMENDATION REFRESH
+Input: learner dismisses/completes action; page refresh retries decision request.
+Permissible: decision history prevents silent duplicate; new action only under policy.
+Forbidden: same consumed action recreated as if unseen, unless explicit repeat rule permits.
+Invariant: recommendation execution state and idempotency prevent loops.
+
+======================================================================
+H. ANTI-LOOP / POLICY COMPLETENESS / NO-ACTION / OPTIMIZATION PROXIES
+======================================================================
+
+S51 — MISCONCEPTION SELF-CONFIRMATION LOOP
+Input: suspected misconception selects only confirming probes.
+Permissible: competing explanations, disconfirming probe, hypothesis expiry/review.
+Forbidden: strengthening hypothesis merely because policy chose evidence likely to confirm it.
+Invariant: adaptive selection bias is visible and bounded.
+
+S52 — REPAIR BUDGET EXHAUSTED
+Input: same error pattern already triggered one automatic repair this episode.
+Permissible: independent probe, learner choice, pause/scope change, explicit help if requested.
+Forbidden: endless automatic remediation chain.
+Invariant: remediation/help loops have bounded policy budgets.
+
+S53 — DISCONFIRMING PROBE
+Input: hypothesis H suggests error cause; an eligible task can distinguish H from competing explanation J.
+Permissible: probe that can disconfirm H; trace records purpose.
+Forbidden: only selecting confirmatory tasks.
+Invariant: diagnostic policy must support falsification, not only confirmation.
+
+S54 — ALL CANDIDATES EXCLUDED
+Input: unavailable content, invalid mappings and policy restrictions eliminate all candidates.
+Permissible: NO_ELIGIBLE_ACTION / POLICY_ABSTAIN with dominant reasons and safe escape/setup option.
+Forbidden: fabricated “best next action” or false “session complete.”
+Invariant: no-action is a legitimate policy output.
+
+S55 — BLOCKED CONFIGURATION
+Input: required assessment policy/role/package authority is missing or contradictory.
+Permissible: BLOCKED_CONFIGURATION / NEED_MORE_CONTEXT; source/setup review.
+Forbidden: defaulting to coaching or guessing permissions.
+Invariant: unknown authorization fails closed for consequential help, not into invented policy.
+
+S56 — EASY-CORRECTNESS OPTIMIZER
+Input: policy A selects easy recognition tasks and increases next-item accuracy; policy B includes harder delayed transfer tasks.
+Permissible: call A better only for the measured proxy; require delayed/transfer evidence for learning-benefit claim.
+Forbidden: “A improves learning” from immediate accuracy/acceptance alone.
+Invariant: predictive proxy performance is not causal learning utility.
+
+S57 — TIE BETWEEN DEFENSIBLE ACTIONS
+Input: two actions survive same branch/priority.
+Permissible: explicit deterministic tie rule (authored order/recency/stable ID) or recorded randomized seed if allowed.
+Forbidden: unspecified implementation-dependent choice presented as principled certainty.
+Invariant: tie semantics are part of policy config/replay.
+
+S58 — CANDIDATE GENERATOR OMITS VALID ACTION
+Input: eligible task exists in package but generator does not emit it.
+Permissible: test detects pool coverage failure; decision trace records generator/pool revision.
+Forbidden: claiming policy chose best among all eligible actions merely because it chose best among emitted candidates.
+Invariant: candidate-generation completeness is independently testable.
+
+======================================================================
+I. INSTRUCTOR ANALYTICS / PRIVACY / REPLAY / UI EVIDENCE BINDING
+======================================================================
+
+S59 — SMALL COHORT AGGREGATE
+Input: 2 of 3 learners miss one task.
+Permissible: bounded raw observation if authorized, or “insufficient class evidence”; item-quality alternative.
+Forbidden: confident “class is struggling” claim without sufficiency/privacy release rule.
+Invariant: small-n analytics require evidence sufficiency + privacy release conditions.
+
+S60 — WRONG DENOMINATOR
+Input: roster=20, presented=8, evaluated=6, misses=4.
+Permissible: explicitly report 4/6 evaluated, plus presented/roster context.
+Forbidden: “4 of 20 failed” or “67% of class” without correct denominator meaning.
+Invariant: instructor aggregates preserve roster/presented/responded/evaluated denominators.
+
+S61 — FLAWED ITEM CAUSES COHORT MISSES
+Input: one bad item creates class-wide error spike.
+Permissible: item/content-quality hypothesis alongside learner-pattern hypothesis; review item.
+Forbidden: single-cause “class weakness” diagnosis.
+Invariant: content/scorer invalidity routes to content review, not automatic learner blame.
+
+S62 — INSTRUCTOR QUALITY INFERENCE
+Input: one class has lower learner scores than another.
+Permissible: descriptive learner/task observations within authorized scope.
+Forbidden: instructor-quality ranking/causal blame.
+Invariant: learner outcomes do not authorize instructor-quality inference.
+
+S63 — PRIVACY DELETE BREAKS FULL REPLAY
+Input: retention policy deletes raw response/accommodation/debug records referenced by old decision.
+Permissible: trace becomes PARTIAL/UNAVAILABLE with missing category; no hidden duplicate retained.
+Forbidden: preserving forbidden raw copies solely for replay or falsely claiming FULL reconstruction.
+Invariant: replayability is subordinate to authorized retention/deletion.
+
+S64 — OPTIONAL TELEMETRY OFF
+Input: hover/pointer/keystroke research telemetry disabled.
+Permissible: core adaptation from learning evidence/policy still works.
+Forbidden: lower competence or blocked core engine because optional telemetry absent.
+Invariant: high-intrusion telemetry is not required learner-state authority.
+
+S65 — UI “LEARNED” FROM SPARSE EVIDENCE
+Input: backend state is SPARSE after one correct answer.
+Permissible: “one correct response,” “evidence still limited,” or contract-approved bounded wording.
+Forbidden: categorical “Learned/Mastered.”
+Invariant: UI_EVIDENCE_BINDING cannot exceed backend-authorized inference strength.
+
+S66 — UI “RETAINED” WITHOUT VALID MEMORY MODEL
+Input: delayed evidence exists but no construct-valid retention model/threshold.
+Permissible: “correct on delayed check at T,” “review scheduled,” or bounded delayed-evidence wording.
+Forbidden: durable “Retained” badge/state.
+Invariant: product copy cannot create a universal retention truth absent model/contract authority.
+
+S67 — UI “STRUGGLING” FROM HYPOTHESIS
+Input: mixed evidence + possible item flaw; policy proposes guided practice.
+Permissible: “worth another angle,” evidence/reason with uncertainty; optional action.
+Forbidden: learner fact “You are struggling with X” or instructor risk label unless separately validated/authorized.
+Invariant: pedagogical need/remediation is an action hypothesis, not learner identity.
+
+S68 — “UP NEXT” MUST REMAIN A RECOMMENDATION
+Input: selected action arises from policy tie-break under uncertainty.
+Permissible: Up Next + concise reason + override/alternative.
+Forbidden: framing it as objective truth or inevitable best action.
+Invariant: UI preserves policy/uncertainty semantics.
+
+======================================================================
+J. CROSS-DOMAIN PORTABILITY / DOMAIN-SPECIFIC COUNTERCASES
+======================================================================
+
+S69 — LAW / POLICY EFFECTIVE-DATE CHANGE
+Input: rule v1 correct for old term; v2 changes legal/policy answer.
+Permissible: old performance remains scoped to v1; current learning uses v2; affected content/interpretation review.
+Forbidden: global incompetence inference or silent current use of superseded rule.
+Invariant: source scope/effective date is part of evidence authority.
+
+S70 — ENGINEERING MULTI-SKILL + UNITS
+Input: correct numeric answer reached with unit error/algebra issue; task maps multiple claims.
+Permissible: criterion-specific/joint evidence according to rubric.
+Forbidden: full success for every claim from final number alone.
+Invariant: multi-claim engineering evidence is attributable only where scoring supports it.
+
+S71 — BIOLOGY/MEDICINE LEARNING: MEMORY VS PROCEDURAL REASONING
+Input: learner recalls facts but performs poorly on case application.
+Permissible: separate recall/application evidence; targeted action.
+Forbidden: broad “mastered topic” from factual recall alone.
+Invariant: domain labels do not collapse distinct constructs.
+
+S72 — MATHEMATICS ALTERNATE VALID METHOD
+Input: learner uses different valid derivation than exemplar; final and reasoning are correct.
+Permissible: accept under rubric allowing equivalent solution paths.
+Forbidden: marking wrong solely for not matching one canonical sequence unless sequence is the construct.
+Invariant: task/scoring contract defines what is being assessed, not surface imitation.
+
+S73 — LANGUAGE/HUMANITIES MULTIPLE DEFENSIBLE INTERPRETATIONS
+Input: constructed response makes a defensible evidence-backed interpretation different from exemplar.
+Permissible: rubric-grounded scoring with uncertainty/human review where needed.
+Forbidden: forcing single-answer MCQ semantics or one canonical “truth” when construct permits multiple arguments.
+Invariant: unsupported constructs do not silently fall back to ordinary multiple choice.
+
+S74 — PHYSICAL/PROCEDURAL COMPETENCE
+Input: perfect screen sequencing; poor supervised real-world execution.
+Permissible: screen-sequence evidence separate from physical-performance evidence; explicit gap/abstention.
+Forbidden: physical competence claim from screen proxy alone.
+Invariant: authentic performance channels remain distinct when transfer is unvalidated.
+
+S75 — SCIENCE/FORENSICS COMPETING EXPLANATIONS
+Input: learner selects one plausible cause but omits another; evidence quality is ambiguous.
+Permissible: partial/joint reasoning evidence; competing explanation hypothesis.
+Forbidden: simple binary misconception fact without rubric/construct support.
+Invariant: complex diagnostic reasoning is not forced into one latent truth label.
+
+S76 — DOMAIN SWAP
+Input: same engine contract applied to law, mathematics and language tasks with different content labels.
+Permissible: same generic decision/evidence primitives; domain-specific task/rubric contracts differ.
+Forbidden: hidden law-only branch in recommendation/scoring semantics.
+Invariant: portability is contract-level, not identical interaction/rubric implementation.
+
+======================================================================
+K. MUST-PASS BETA RELEASE SUBSET
+======================================================================
+
+The following 20 scenarios are release-critical integrity gates for any Engine-v1 beta implementation. They do NOT prove educational efficacy.
+
+M01 S01 — page/exposure cannot create competence.
+M02 S02 — software/input failure cannot become learner weakness.
+M03 S07 — one correct recognition item cannot create durable competence.
+M04 S09 — answer exposure/repeat cannot become unaided transfer.
+M05 S10 — coached vs unaided evidence stays distinct.
+M06 S16 — multi-claim wrong answer cannot penalize every claim without attribution.
+M07 S18/S19 — response and scoring revisions are separate; late score/regrade preserves lineage.
+M08 S22/S23 — remap validity/retroactivity cannot double-count or silently move competence.
+M09 S25/S29 — semantic source change and stale derived state cannot leak into a current decision.
+M10 S31/S34 — unknown prerequisite and policy sequence cannot masquerade as cognitive failure.
+M11 S36 — override changes no competence/motivation/risk state by itself.
+M12 S38/S39 — protected shield blocks tutoring while authorized accommodation remains independently governed.
+M13 S44 — duplicate response retry produces one logical observation/evidence unit.
+M14 S45 — concurrent next-action requests cannot both commit stale conflicting decisions.
+M15 S49 — support exposure survives crash/resume and prevents false “unaided” evidence.
+M16 S51/S52 — adaptation cannot create self-confirming or endless remediation loops.
+M17 S54/S55 — no valid action/configuration produces truthful abstain/block, not fabricated recommendation.
+M18 S59/S60/S61 — instructor aggregates preserve denominator, small-n/privacy and item-quality alternatives.
+M19 S63 — lawful deletion causes explicit replay degradation with no hidden raw duplication.
+M20 S65/S66/S67 — UI labels cannot overstate sparse/retention/hypothesis evidence.
+
+HARD STOP conditions for beta should include any observed violation of M12 (unauthorized protected-assessment coaching), cross-context evidence leakage, duplicate evidence corruption, destructive history rewrite, or UI/backend evidence-strength inversion on consequential states.
+
+======================================================================
+L. EXPLICIT TESTS DRAFT 1 SHOULD FAIL TODAY
+======================================================================
+
+These are expected specification failures, not software failures, because Draft 1 does not yet define enough normative behavior to determine one compliant outcome:
+
+F-D1-01 — S19 LATE REGRADE: Draft 1 calls observations immutable while including scored result/rubric output inside the observation. It lacks append-only score-event semantics.
+F-D1-02 — S22 ITEM REMAP: Draft 1 lacks explicit mapping retroactivity/effective-interpretation semantics.
+F-D1-03 — S23 WRONG-BUT-CURRENT MAPPING: “explicit current mapping” can still be invalid; no mapping approval/quarantine state is mandatory.
+F-D1-04 — S25/S29 STALE BARRIER: revision cascade exists, but no atomic rule bars an affected stale estimate during recomputation.
+F-D1-05 — S31 PREREQUISITE UNKNOWN: Draft 1 does not deterministically distinguish unknown readiness from failed readiness in hard-constraint behavior.
+F-D1-06 — S34 PREREQUISITE SEMANTICS: administrative sequence and cognitive prerequisite hypothesis remain one relation family.
+F-D1-07 — S36 OVERRIDE POLICY EFFECT: override is correctly “not evidence” but its bounded anti-repeat decision effect/expiry is undefined.
+F-D1-08 — S39/S40 ASSESSMENT × ACCOMMODATION: independent dimensions are named, but capability-precedence/construct-impact acceptance behavior is under-specified.
+F-D1-09 — S44/S45 CONCURRENCY/IDEMPOTENCY: Draft 1 has no normative duplicate-submit or concurrent-decision contract.
+F-D1-10 — S54 GENERAL ABSTAIN: physical evidence has abstention, but the next-action policy still pressures one primary action and lacks a first-class all-invalid/no-action output.
+F-D1-11 — S59 SMALL-COHORT PRIVACY: “descriptive and inspectable” lacks an operational sufficiency/privacy-release condition.
+F-D1-12 — S63 DELETION-AWARE REPLAY: replayability is required, but FULL/PARTIAL/UNAVAILABLE semantics after retention deletion are not defined.
+F-D1-13 — S65/S66/S67 UI EVIDENCE BINDING: backend caution does not normatively cap product labels learned/retained/struggling/remediation.
+F-D1-14 — S41 OFFLINE SELF-REPORT: Draft 1 refuses unobserved offline state but does not define learner self-report as context vs validated competence evidence.
+F-D1-15 — S58 CANDIDATE COMPLETENESS: recording emitted candidates/exclusions does not prove the candidate generator covered the selected package scope.
+F-D1-16 — S57 POLICY TIES: Draft 1 says transparent tie-breakers but does not specify branch order/tie behavior sufficiently for deterministic acceptance.
+
+Draft 1 therefore cannot receive PASS against this matrix as a testable specification. The failures are bounded and repairable in Draft 2.
+
+======================================================================
+M. EVIDENCE REQUIRED LATER TO CLAIM SOFTWARE CONFORMANCE
+======================================================================
+
+A future software PASS must be tied to exact implemented bytes/build + exact seeded fixtures. Minimum evidence:
+1. exact build/revision/hash and policy/catalog/model configuration identities;
+2. versioned fixture package containing source/task/claim/mapping/scorer/policy states used by each scenario;
+3. authoritative response/score/decision IDs proving idempotency and effective lineage;
+4. before/after state assertions showing raw observations did not mutate across remap/regrade/model changes;
+5. decision records with evidence cutoff/watermark, candidate generator/pool revision, branch/tie path, selected/excluded IDs/reasons and execution/revalidation status;
+6. controlled concurrency traces for two-tab, retry and late-callback fixtures;
+7. policy/access traces proving protected-assessment denial and accommodation authorization at delivery time;
+8. deletion/retention test proving no prohibited duplicate raw data remains in decision traces/caches and reconstruction status degrades truthfully;
+9. instructor aggregate fixtures showing exact denominators, suppression/release decision and item-quality alternative;
+10. UI snapshot/semantic assertions proving sparse/conflicting/stale/model-unsupported states cannot render stronger evidence labels;
+11. accessibility checks for supported interaction families, including non-drag equivalent ordering controls where applicable;
+12. negative tests for unsupported interaction/scorer types: system must refuse/pending/abstain, never silently substitute MCQ or mark wrong;
+13. replay/reconstruction test under pinned historical versions and a separate current-state recomputation test; these must not be conflated;
+14. test evidence must distinguish specification conformance from empirical validity: a green fixture only proves the programmed rule executed as specified.
+
+Software conformance DOES NOT establish:
+- that evidence contracts are psychometrically valid;
+- that the policy improves learning;
+- that retention estimates are calibrated;
+- fairness across populations;
+- causal effectiveness of remediation or recommendation order;
+- institutional-scale reliability.
+
+Those require separate predeclared empirical evidence such as delayed/transfer outcomes, appropriate comparators, scorer/rater validity evidence, instructor/learner studies, accessibility/fairness evaluation and a defined population. Do not convert synthetic regression PASS counts into learning-efficacy claims.
+
+======================================================================
+N. TERMINAL DISPOSITION
+======================================================================
+
+AMEND — current architecture is a viable Draft-2 specification target, but Draft 1 is not yet sufficiently operationalized to pass this matrix.
+
+KEEP the epistemic split, versioned authority, assessment integrity, learner agency, conservative non-inference and transparent decision philosophy.
+AMEND the bounded contracts listed in the repair package above.
+
+This report defines 76 adversarial scenarios, a 20-case MUST-PASS beta integrity subset, 16 explicit Draft-1 expected failures and the minimum evidence needed for future software conformance without confusing it with real learning efficacy.
+
+BOUNDARY
+No code or product/backend/auth/Supabase/provider/deploy/canonical mutation was performed. No peer worker was woken. General CF-0047 owns Draft-2 reconciliation and any later implementation/release authority.
