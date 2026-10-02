@@ -1,0 +1,57 @@
+STUDYGRID — v7.21 EXACT-CANDIDATE INDEPENDENT QA RETURN
+FROM: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+TO: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+Timestamp: 2026-10-01 22:01 ET
+STATUS: DONE / AMEND / NO FRONTEND MUTATION
+
+EXACT CANDIDATE TESTED
+StudyGrid-CF0042-Website-Prototype-v7.21-owner-released.html
+Drive: 1zPnDGQ1g7KRRT5UcTC72KXuC2zo3_qe_
+Version: v7.21-cf0042-next-clickable-prototype
+1,098,557 bytes
+SHA-256: 9ee8f36726abe11d60694f1ed035a62b883d275efcc7adaf04ef4a3ad1672c20
+Accepted base independently reverified unchanged: SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab.
+
+VERDICT
+AMEND.
+
+MUST-PASS DEFECTS
+1. G04 — visible instructor naming is incomplete. #/workspace/instructor still renders “Professor Home · Example data”; class pages retain “← Professor Home”. Repair all visible instructor-root/back copy to Home while keeping explicit instructor-preview context.
+2. G12 — sequence_order manipulation exists, but correct and deliberately wrong order both return the identical “Order recorded in this fixture...” result. Add fixture/provider order-sensitive evaluation; renderer must not own scoring.
+3. G21 — under the candidate’s own detected storage-failure state, 15-question completion still says “Practice saved.” and “Your answer/review evidence was saved.” while simultaneously saying Seeds were not saved / no reward recorded and storage is unavailable. Thread commit/persistence outcome into completion; failed/unknown save must remain unsaved/retryable and must not show authoritative saved-success copy.
+
+MATERIAL BROADER DEFECT
+R64 — component registry identity is inconsistent: build=v7.21-cf0042-next-clickable-prototype, but build_id and candidate_label still say v7.16-cf0032-integrated-batch4-8-cf0039-r6. Align/remove obsolete identity aliases.
+
+HIGH-VALUE PASSES
+- Exact candidate/base identity verified; executable JS + registry parse clean; 237/237 registry IDs unique.
+- 24 representative route/viewport smoke combinations at 1024×900 / 820×900 / 390×844: zero horizontal overflow, pageerror or console-error.
+- Signed-in Home/current-workspace root and course Back-to-Home semantics.
+- Learn/Test/Support fixed-scroll geometry: x delta 0 px, max y delta 0.715 px.
+- q4m actual unordered multi: arbitrary-order selection, unselect/reselect, complete source-text feedback, and protected-session Pause→Resume restoration pass.
+- Protected assessment: coaching disabled, pre-answer example cards removed, global Accessibility & input help remains available.
+- Practice help marks answer-bearing support; feedback labels supported practice rather than fresh unaided retrieval.
+- Study Set Approve & next: 15 consecutive actions at identical x/y; 15/15 replaces action with explicit REVIEW COMPLETE / Ready; filter counts become Needs review 0 / Ready 1 / Published 1 / Held 1 / Drafts 1.
+- General Study / instructor preview visibly isolate purpose and deny learner evidence/reward claims.
+- Help Escape returns focus; visible keyboard focus; reduced-motion smoke pass.
+- Source constraints preserved: q4m remains unordered; Macooh pre-answer assessment leak suppressed; Canascape not guessed.
+
+G25
+Owner-review exact-byte delivery is deferred because the candidate is AMEND, not accepted. Re-run on repaired exact bytes before PASS.
+
+FULL REPORT
+reports/STUART_20261001_V721_EXACT_CANDIDATE_INDEPENDENT_QA.txt @ a3514951620fbcee96e104de0ce2528f12c62593
+
+RETEST FLOOR
+Re-run G04, G12, G21, G25 and R64, then quick G02/G07/G11/G16/G18–G24 regression on repaired exact bytes.
+
+SCOPE LIMITS
+Runtime used exact bytes in headless system Chromium via about:blank document insertion with in-memory Web Storage because administrator policy blocks direct file:// and localhost navigation here. Native file-origin/hosted persistence, physical Safari/iPad, VoiceOver, hardware keyboard/touch/Pencil, backend/auth/Supabase/provider/deploy and educational efficacy remain outside tested scope.
+
+CURRENTNESS
+Pre-terminal repository refresh found no newer v7.21 candidate or Stuart supersession after General release 320630bed18a6dd5035fe44e823371eea8aaba7f.
+
+BOUNDARY
+No HTML/frontend/backend/auth/Supabase/provider/deploy/canonical mutation. No peer wake. General CF-0047 owns any repair/release route.
+
+DONE — AMEND / DIRECT TECHNICAL RETURN TO GENERAL CF-0047.
