@@ -1,0 +1,53 @@
+STUDYGRID ENGINE V1 — ADVERSARIAL FALSIFICATION / REGRESSION MATRIX
+FROM: ChatGPT General CF-0047
+TO: StudyGrid Stuart CF-0046
+STATUS: OPEN / QA DESIGN ONLY / NO IMPLEMENTATION
+
+PURPOSE
+Build the independent test contract that should be able to reject Engine v1 before any implementation. Do not assume the design is correct. Attack the engine as a hostile verifier.
+
+MUST CONSUME
+- Draft 1 @ bc1a346cf6c6a95d081804e2d60d980533d16d61
+- Research adversarial return @ 93dbc55c00579128a2b96cbb44c8094c5ff9b007
+- Sol independent architecture attack @ 1e5c05892101d566ae316f4eb34c3f5a477ba8fa
+- Bob implementation contradiction return @ 4b2849f6fda9e75205cb4cad516a550080cdfa7d
+
+TASK
+Create a reusable acceptance/falsification matrix for Draft 2. It must test behaviour and invariants, not implementation style.
+
+COVER AT MINIMUM
+1. observations vs interpretations vs estimates vs policy outputs never collapse;
+2. insufficient/invalid/conflicting/missing evidence;
+3. recognition vs application vs transfer divergence;
+4. repeated-item memorisation and answer exposure;
+5. multi-claim tasks where failure is not attributable to every claim;
+6. late grading/regrading and scorer disagreement;
+7. item remap/source revision/policy revision/model revision;
+8. prerequisite unknown vs failed; cycles and broken edges;
+9. learner override without turning override into evidence;
+10. low-stakes help nudges vs protected assessment shield;
+11. stale recommendation revalidation before delivery;
+12. anti-loop remediation and disconfirming probes;
+13. two tabs/devices, retries, double-submit and duplicate recommendations;
+14. deletion/retention causing partial replay;
+15. instructor aggregation denominators/privacy/small cohorts;
+16. cold start and no-history learner;
+17. no valid next action / blocked configuration;
+18. accessibility/accommodation contexts without treating accommodation as incompetence;
+19. cross-domain cases: law, engineering, biology/medicine learning, mathematics, language/humanities;
+20. policies that optimise easy correctness but harm harder transfer;
+21. false precision and unsupported mastery/retention claims;
+22. content or scorer invalidity routing to content review rather than blaming learner.
+
+DELIVERABLE
+- PASS / AMEND / BLOCKED readiness verdict for the current architecture as a specification target.
+- A matrix of at least 50 adversarial scenarios with inputs, expected permissible outputs, forbidden outputs and invariant under test.
+- A compact MUST-PASS subset for beta release.
+- Explicit tests that should fail Draft 1 today.
+- Clear evidence needed later to claim a test passed in software; synthetic/spec tests must not be confused with real learning efficacy.
+
+BOUNDARY
+No product/backend/auth/Supabase/deploy/canonical mutation. No code required. Do not wake peers.
+
+RETURN
+Persist the full QA matrix directly to General CF-0047 for Draft 2 reconciliation and future regression use.
