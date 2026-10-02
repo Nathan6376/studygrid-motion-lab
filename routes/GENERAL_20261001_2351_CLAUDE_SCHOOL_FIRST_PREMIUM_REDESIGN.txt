@@ -1,0 +1,71 @@
+STUDYGRID — CLAUDE / OPUS SCHOOL-FIRST PREMIUM REDESIGN
+FROM: ChatGPT General CF-0047
+TO: Claude Code / Opus design lane
+TIMESTAMP: 2026-10-01 23:51 ET
+STATUS: DESIGN SYNTHESIS ONLY / SUPERSEDES PRIOR CLAUDE DESIGN INTAKE WHERE CONFLICTING / NO CANONICAL MUTATION
+
+PURPOSE
+Redesign the current StudyGrid v7.22 experience as a coherent premium motion-first product, with StudyGrid School as the immediate design priority and a first-class architectural entry for StudyGrid General. Nathan should not have to specify every animation manually.
+
+MUST CONSUME
+- routes/GENERAL_20261001_2344_CLAUDE_V722_PRODUCT_MOTION_DESIGN_REVIEW.txt @ 5a56e7626047f00fe8e5e1bbd4d86f4aff31d622
+- routes/OWNER_DELTA_20261001_2331_PRODUCT_ENTRY_MOTION_LEARNING_QUALITY.txt @ 97b723520e26bb4c135e6364f0750b1bf08b590a
+- routes/OWNER_DELTA_20261001_2343_V722_FULL_REVIEW_CONTINUATION.txt @ bb9225d6c82d187897106344e72b6887fd34f84f
+- routes/OWNER_DELTA_20261001_2350_STUDYGRID_SCHOOL_GENERAL_BRANCHING.txt @ b7a424fb3fccedde65628916b80fca7f4b32989f
+- routes/GENERAL_20261001_2327_HOLD_BOB_VISUAL_REPAIR_PENDING_DESIGN.txt @ 24c29d1bc2ea09edb1aa6ddfd0cc4fdf368a0d78
+- exact current source: StudyGrid-CF0042-Website-Prototype-v7.22-stuart-amend-repair.html / Drive 1_xjvGuLOHDpGcak9elvH6QcudSiW4M1d / SHA-256 95869b3b61b33b993a02ace37744f051c1b4358e776ab510eae53e04394f686b
+
+OWNER PRODUCT MODEL
+- Working umbrella brand remains StudyGrid for now.
+- One account/profile, two learning contexts:
+  A. StudyGrid School — immediate redesign priority; classes, class code, course material, instructor context, assessments, school-linked learning.
+  B. StudyGrid General — general/self-directed learning such as job training, certification/licence prep and personal topics. Establish first-class entry/architecture now; full bespoke General redesign can follow later.
+- “Try StudyGrid” should present an elegant context choice such as “Study for school” / “Learn something else”, not assume school.
+- Do NOT solve differentiation by forcing separate colours yet. Keep current warm green/cream material language for now; use structure/motion/content/context.
+- Remove the current prominent “Show next step” landing control. The StudyGrid loop should explain itself through continuous designed motion, with reduced-motion/accessibility equivalents.
+
+QUALITY BAR
+- Keep the identity Nathan likes; remove the 2016-dashboard/form feeling.
+- Premium 2026 motion/UI: spatial continuity, shared-element transforms, meaningful depth, responsive press/hover, clear causal transitions, interruptible/reversible where appropriate, reduced motion, no focus/target loss.
+- No generic purple/blue AI gradients, no decorative motion soup, no developer/fixture language.
+- Redesign weak surfaces rather than merely polishing them.
+
+HIGH-PRIORITY PRODUCT FAILURES TO SOLVE
+1. Up Next is conceptually strong, but current “StudyGrid is recommending it, not calling it mastered” copy is unacceptable. Keep Continue / Choose another path / Why this, rewrite like a human.
+2. Continue should feel like entering the recommended path, not simply dumping the user onto a page they could have navigated to manually. Define the exact shared-element/state transition.
+3. Start Learning should transform the interface into a focused learning experience; secondary cards/options recede and the active learning step becomes primary.
+4. Explain / Example / Guided Practice / Try From Memory should be usable, visibly open/advance and feel like one flow, not buttons dumping content into a box underneath.
+5. “Retrieval”, “evidence profile”, “mastered”, fixture language and similar engine/developer terms stay internal.
+6. Question quality must avoid obvious distractors and increase/adapt difficulty as knowledge improves; current examples are too easy to eliminate without domain knowledge.
+7. Sequence ordering must visibly animate item movement so the eye can track position changes, with accessible non-drag controls.
+8. Current duplicate navigation (global Courses/Study/Profile plus class Overview/Study/Tree/Class/Scenario etc.) must be rationalized into one understandable hierarchy.
+9. Settings should not hide most settings behind “More study settings” after entering Settings.
+10. Student and instructor shells must feel like the same product. Instructor copy such as “fixture clock”, “Inspect proof”, internal workflow explanations etc. must be replaced or hidden.
+11. Legal/privacy/settings overlays must actually open in a readable foreground surface rather than changing content behind an apparently closed page.
+12. Seeds/rewards need a deliberate product visual system or removal; no pasted emoji feel.
+13. Preserve good current concepts: Up Next, Why this, Continue, Choose another path, Pause quiz, approved class material/source transparency, “A little guidance when you need it”, current warm design language, good hover reactions.
+
+DELIVERABLE
+Produce one concrete STUDYGRID SCHOOL REDESIGN CONTRACT with:
+- public entry and School/General branching;
+- School signed-in information architecture;
+- exact Home/Up Next transition choreography;
+- exact Start Learning / learning-step choreography;
+- nav hierarchy and what gets removed/merged;
+- motion tokens/rules and reduced-motion equivalents;
+- interaction patterns including reorder animation;
+- copy replacement table for bad current language;
+- settings/instructor/legal/rewards redesign;
+- question experience rules and adaptive-difficulty presentation;
+- page-by-page KEEP / REWORK / REMOVE;
+- next implementation slices in dependency order;
+- explicit reject conditions for anything that still feels like a 2016 dashboard, generic AI template, static card pile, or developer prototype.
+
+DO NOT
+- Do not mutate canonical HTML/backend/auth/Supabase/deploy.
+- Do not rename StudyGrid in this task.
+- Do not fully design StudyGrid General beyond entry/architecture unless needed to prevent School from being structurally wrong.
+- Do not make Nathan specify each animation individually.
+
+RETURN
+Persist terminal design return to General CF-0047. General will reconcile with Nathan before any Bob implementation release.
