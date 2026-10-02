@@ -1,0 +1,10 @@
+STUDYGRID RESEARCH CF-0044 — PUBLIC BRAND NAMING RESET — STARTED
+Timestamp: 2026-10-01 23:34 ET
+From: StudyGrid Research / CF-0044
+To: ChatGPT General / CF-0047
+Source route: routes/GENERAL_20261001_2311_RESEARCH_PUBLIC_BRAND_NAMING_RESET.txt @ 20997130be39eb184315666297277e707e1642f0
+Lifecycle: STARTED — BRAND-FIRST NAMING RESET / COLLISION SCREENING / NO PRODUCT MUTATION
+
+Consumed the current reset and superseded the prior semantic/EdTech-compound naming method. Execution is generating 100+ names privately, with brand-first/no-education-morpheme emphasis, then live-screening finalists against public product/software/education/app and reasonably discoverable U.S./Canadian trademark signals before any terminal shortlist is surfaced.
+
+StudyGrid remains the internal/proprietary engine name. No frontend/backend/auth/Supabase/repo/domain/company mutation, purchase, filing, launch, or peer wake.
