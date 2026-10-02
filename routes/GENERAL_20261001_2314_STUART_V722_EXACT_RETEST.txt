@@ -1,0 +1,43 @@
+STUDYGRID — v7.22 EXACT-CANDIDATE STUART RETEST
+FROM: ChatGPT General CF-0047
+TO: StudyGrid Stuart CF-0046
+TIMESTAMP: 2026-10-01 23:14 ET
+STATUS: OWNER-RELEASED INDEPENDENT RETEST / NO MUTATION
+
+PURPOSE
+Re-test Bob's bounded repair of the four defects from your v7.21 AMEND return. Return PASS / AMEND / BLOCKED against the exact v7.22 bytes. Do not mutate the frontend.
+
+EXACT CANDIDATE — DO NOT SUBSTITUTE
+Filename: StudyGrid-CF0042-Website-Prototype-v7.22-stuart-amend-repair.html
+Drive ID: 1_xjvGuLOHDpGcak9elvH6QcudSiW4M1d
+Version: v7.22-cf0042-v721-stuart-amend-repair
+Bytes: 1,101,587
+SHA-256: 95869b3b61b33b993a02ace37744f051c1b4358e776ab510eae53e04394f686b
+Bob repair terminal: a5e93a314ec47a1930cafa4090c2b5a2e80178e1
+
+AUTHORITY
+- Your v7.21 exact-candidate QA AMEND terminal: 3d19199633167fe3b76540c809b0d97021ad2c7a
+- Full AMEND report: a3514951620fbcee96e104de0ce2528f12c62593
+- General repair route to Bob: 5b0cc12e5e396374fc00fda5f32dc24e54039125
+- Bob v7.22 repair return: a5e93a314ec47a1930cafa4090c2b5a2e80178e1
+
+RETEST FLOOR
+Re-run the exact defects and acceptance floor you specified:
+1. G04 — all visible instructor root/back naming should be Home / ← Home while explicit Instructor preview / Example data context remains.
+2. G12 — sequence_order correct and deliberately wrong order must produce distinct provider/fixture evaluation; renderer must not own scoring.
+3. G21 — forced storage failure must never show authoritative Practice saved / evidence saved / progress saved success copy; remain unsaved/retryable.
+4. R64 — build/build_id/candidate_label must all identify v7.22-cf0042-v721-stuart-amend-repair; no stale current-build alias.
+5. G25 — exact-byte owner-review delivery acceptance on this repaired candidate.
+6. Quick regression on G02/G07/G11/G16/G18–G24, with special attention to Study Set finalization/target stability, q4m unordered multi, protected coaching/accessibility separation, Help Escape/focus, reduced motion, and viewport/console smoke.
+
+BOB'S CLAIMED BOUNDED CHANGE
+Bob reports only seven non-equal hunks from v7.21 to v7.22, confined to session persistence/result handling, neutral sequence fixture evaluation, instructor-copy polish, candidate version metadata and registry current-build aliases. Treat this as a worker claim to verify, not acceptance evidence.
+
+VERDICT
+PASS only if the v7.21 AMEND defects are actually repaired on the exact v7.22 bytes and the quick regression floor has no material new regression. AMEND for concrete repairable defects. BLOCKED only if required evidence/candidate access is unavailable or a material failure prevents safe owner-review release.
+
+DELIVERABLE
+Persist a direct terminal return to General CF-0047 with exact candidate identity/hash tested, PASS / AMEND / BLOCKED, retest results, only material regression findings, exact defects if any, and scope limits.
+
+BOUNDARY
+No HTML/frontend/backend/auth/Supabase/provider/deploy/canonical mutation, no public-brand mutation, no peer wake. General owns any next route or owner release.
