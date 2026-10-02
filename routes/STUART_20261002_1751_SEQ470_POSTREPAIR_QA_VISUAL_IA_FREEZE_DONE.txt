@@ -1,0 +1,76 @@
+STUDYGRID — SEQ470 POST-REPAIR QA + VISUAL/IA ACCEPTANCE FREEZE — TERMINAL RETURN
+FROM: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+TO: ChatGPT General / CF-0051
+TIMESTAMP: 2026-10-02 17:51 ET
+TASK STATUS: DONE
+BOUNDARY: QA / ADJUDICATION ONLY — NO CANDIDATE MUTATION
+
+AUTHORITY / CURRENTNESS
+- CENTRAL ROUTING seq470 consumed; no newer Stuart supersession found in the pre-terminal refresh.
+- General route: Drive 1-nzz12EP2vcFK482EXqkECUAgk25Yb2Ia5Osvub5wXY.
+- Exact repaired tree: 82a3591b4495dd40f1ed182048aef67092fb64e9.
+- Repaired app source: c020c3c9defe2425139184d0328effeb0f2ea040.
+- Current branch head: 4965df037cac2e147c154f6a78b172dd9acf3c04.
+- Independent 82a3591→4965df0 compare found only repair-DONE route metadata changed after the freeze; no app/test drift.
+
+FULL ARTIFACT
+- reports/STUART_20261002_SEQ470_POSTREPAIR_QA_AND_VISUAL_IA_FREEZE.txt
+- commit 99079e0c5393985783cb67c45c28e0d2e44cab7e
+- provider-read after publication.
+
+PART A — REPAIRED BASELINE VERDICT
+NO SOURCE-LEVEL BLOCKER FOUND.
+
+Independent exact-source adjudication:
+- F1 PASS-SRC — one current eligibility policy now gates approved source/module delivery and learner source visibility.
+- F2 PASS-SRC — resume/commit/help/complete re-check eligibility; Teaching changes advance envelopeRevision and invalidate obsolete async/session scope.
+- F3 PASS-SRC — another-way is substantive help; clean/on-your-own is no longer possible after it.
+- F4 PASS-SRC — actual presentation/help exposure survives restart and excludes false fresh evidence.
+- F5 PASS-SRC — completed stable routes create new instances while retaining history; unfinished instances resume.
+- F6 PASS-SRC — retry/assisted/previously shown attempts cannot be fresh independent evidence.
+- F7 PASS-SRC — help resolve and reject share epoch/envelope/generation/request freshness guards.
+- F8 PASS-SRC — Done for now requires clean coverage of every required learning group; partial remains In progress; later non-clean can make Due.
+- F9 PASS-SRC — operation IDs are controller-namespaced; provider binds idempotency to session/instance/task/attempt; store validates returned identity.
+- F10 PASS-SRC — Welcome autoplay now gates document visibility + on-screen intersection + reduced/preference/manual pause.
+- F11 PASS-SRC — direct General session hashes use the same Add-to-list recovery.
+- F12 PASS-SRC — AttemptReceipt is DeepReadonly and recursively deep-frozen; provider clones input before evaluation.
+- Settings-focus: PASS-SRC — destination H2 is programmatically focusable and jump code focuses it.
+- Stuck→Source focus: NOT REPRODUCED / current path source-consistent PASS. Stuck and Source swap content through the same Modal instance, whose mount captures the original page opener; closing the final overlay restores that opener. Keep the committed keyboard regression and real-AT hold.
+
+IMPORTANT EVIDENCE LIMIT
+This lane did NOT claim a fresh independent Playwright/Vitest execution. The repaired 82a owner preview was reported rebuilt but not committed/provider-published, while the committed preview still represents e4; dependency installation is prohibited. Claude's 116 unit / 106 browser + 8 designed skips / 2 offline results are corroborating builder evidence only. Fresh browser execution is mandatory on the Codex rejuvenation SHA.
+
+PART B — VISUAL/IA ACCEPTANCE FREEZE
+The report freezes an executable route/action/expected-result/severity/evidence matrix reconciled from:
+- Bob seq469 product archaeology;
+- Sol seq462 code-surface + provider-neutral role/identity plan;
+- Kevin seq467 motion/creative contract;
+- issue #3 Codex execution packet.
+
+The matrix covers:
+- repaired ancestry + no dependency creep;
+- capability-gated Public/School/General/Teaching including direct hashes/loading/revocation;
+- learner Overview/Course/Practice/Progress discoverability without duplicate nav;
+- visible one-action Profile/avatar + truthful cross-course progress;
+- deterministic Teaching buckets/Why-now + class-at-a-glance;
+- question-cluster drill-down, dedicated typed student-detail route and fixture feedback loop;
+- join-code prominence and timeline geometry;
+- shared-element course/student/attention continuity;
+- semantic particles/orbs only;
+- inline/split/sheet/full-page/modal/popover grammar;
+- bounded Stuck? + stable context IDs/simple-pointer/keyboard alternative/no AI;
+- reduced motion, focus, Back/Forward, scroll restoration, rapid interruption;
+- mobile/tablet floors; physical iPad/Safari/Pencil and VoiceOver as separate holds;
+- complete KEEP / rejuvenate-not-remake guard;
+- issue #2 repaired semantics and core learning/Teaching regression floor;
+- exact Vercel build identity + limits of owner preview evidence.
+
+HARD DISPOSITION
+- The repaired freeze is the mandatory regression floor for Codex.
+- Any F1–F5 regression is an automatic P1 rejection.
+- Public Teaching exposure, Home+Settings shallowness, flat Teaching attention, modal-only student detail, fake analytics/auth/backend truth, routine blur-modal navigation, broken reduced motion/focus/touch, KEEP-list loss, unauthorized dependencies or clean-sheet remake are binary reject themes.
+- Local/browser PASS never clears physical iPad/Safari/Pencil, real VoiceOver/AT, exact hosted-origin performance/identity or Nathan visual/product acceptance unless directly evidenced.
+
+No implementation, dependency installation, candidate mutation, merge, deployment, backend/auth/Supabase/AI connection or peer wake occurred.
+
+DONE — DIRECT RETURN TO GENERAL CF-0051.
