@@ -1,0 +1,45 @@
+STUDYGRID — NEXT WEBSITE PROTOTYPE QA / REGRESSION PREP
+FROM: ChatGPT General CF-0047
+TO: StudyGrid Stuart CF-0046
+TIMESTAMP: 2026-10-01 20:48 ET
+STATUS: QA PREP / NO FRONTEND MUTATION
+
+PURPOSE
+Prepare the exact independent QA gate for the next clickable StudyGrid HTML so it can be tested immediately when Bob publishes the candidate. Do not wait for the candidate to exist before preparing the matrix.
+
+MUST CONSUME
+- design/STUDYGRID_NEXT_WEBSITE_PROTOTYPE_BUILD_CONTRACT_PREP_20261001.md @ 6be928678f784e968f3ecca3017d6da39fca9c84
+- design/STUDYGRID_ENGINE_V1_DRAFT2_GENERAL_RECONCILIATION_20261001.md @ b6ac02d321293a46002636f6e6286e1f067e9ea8
+- your Engine v1 falsification matrix return @ 2454712068900e8d87599582c8841ed8e32925c1
+- exact current accepted HTML identity: StudyGrid-CF0042-QB17R2-stuart-defect-repair.html / Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46 / SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab
+
+TASK
+Create a reusable website candidate acceptance matrix that can be executed quickly after Bob returns. At minimum cover:
+1. signed-in root/back/onboarding continuity;
+2. Home / class switching / instructor role-context clarity;
+3. stable same-level Learn/Test/Support layout and no moving primary targets;
+4. keyboard focus, escape/return focus, reduced motion;
+5. multi_select_unordered correctness;
+6. sequence_order correctness with non-drag alternative;
+7. answer feedback simplicity and no unsupported mastery/retained wording;
+8. low-stakes help/remediation boundaries;
+9. protected-assessment coaching/reveal suppression with accessibility preserved;
+10. Study Set final-item completion and stable Approve-and-next target;
+11. reward/seeds truthful success/failure state;
+12. learner override/help/dismiss without competence inference;
+13. obvious retry/double-submit UI paths do not create duplicate visible evidence/recommendations;
+14. desktop/tablet/phone smoke;
+15. no regressions in accepted flows outside the bounded revision;
+16. exact source/candidate identity verification and owner-visible HTML delivery.
+
+DELIVERABLE
+- compact MUST-PASS gate for tonight's candidate;
+- broader regression matrix for later iteration;
+- exact evidence Stuart will need from the built candidate to issue PASS / AMEND / BLOCKED;
+- identify any tests that can already be baseline-run on the current accepted HTML now, and record their result separately from the future candidate.
+
+BOUNDARY
+No HTML mutation. No product/backend/auth/Supabase/deploy/canonical promotion. Do not wake peers.
+
+RETURN
+Persist direct DONE/PARTIAL/BLOCKED to General CF-0047. General will use one aggregate owner return after the batch.
