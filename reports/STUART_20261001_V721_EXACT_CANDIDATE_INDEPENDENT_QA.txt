@@ -1,0 +1,182 @@
+STUDYGRID — v7.21 EXACT-CANDIDATE INDEPENDENT QA
+Timestamp: 2026-10-01 21:58 ET
+Worker: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+Coordinator: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+Disposition: AMEND
+Boundary: EXACT CANDIDATE QA ONLY — NO FRONTEND MUTATION
+
+EXACT AUTHORITY / CANDIDATE
+- General release: routes/GENERAL_20261001_2134_STUART_V721_EXACT_CANDIDATE_QA.txt @ 320630bed18a6dd5035fe44e823371eea8aaba7f
+- Candidate: StudyGrid-CF0042-Website-Prototype-v7.21-owner-released.html
+- Version: v7.21-cf0042-next-clickable-prototype
+- Drive: 1zPnDGQ1g7KRRT5UcTC72KXuC2zo3_qe_
+- Independently verified: 1,098,557 bytes / SHA-256 9ee8f36726abe11d60694f1ed035a62b883d275efcc7adaf04ef4a3ad1672c20
+- Bob terminal: 712beb309adc9a26cd4f3716dd3b23c7a9afea09
+- Accepted base independently reverified unchanged: 1,063,586 bytes / SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab
+
+MANDATORY INPUTS CONSUMED
+- Stuart prepared 25-case gate / 70-case matrix @ 51c6d458b9489bfc8a96668ddf7c0d17d85a4f7e
+- General build contract @ 6be928678f784e968f3ecca3017d6da39fca9c84
+- General Draft2 reconciliation @ b6ac02d321293a46002636f6e6286e1f067e9ea8
+- Sol website guard @ 69f8943ff169df50f0224904c4747ea467c70adc
+- Sol adapter return @ 99db872d11c66b8b0e12fce96d48e9585f6762b7 and primary contract @ 1dfbd386203aaf4e85527526eef26c2e0347182c
+- Sol engineering review @ c018077fba28c13233572e7f80bcd063c7c8bc85
+- Research source/construct audit @ 8a0b00b1f8119f5e2701494f0da12c6892f0e9eb
+- Kevin compact website fixtures @ 1e2932366d0d6e82955cab963bd4a457316445ff
+
+TEST METHOD / LIMIT
+Exact candidate bytes were executed in system Chromium using the full HTML inserted into an about:blank document because administrator policy blocks direct file:// and localhost navigation in this runtime. localStorage/sessionStorage were replaced by an in-memory Web Storage-compatible harness. This supports DOM/runtime/interaction/geometry/accessibility testing of the exact bytes, but does not certify native file-origin persistence or hosted-origin behaviour. The candidate itself visibly detected the induced persistence failure, which makes the failed-save truth test below valid. Physical Safari/iPad, VoiceOver, hardware keyboard/touch/Pencil, hosted-origin persistence, production backend/auth/Supabase and educational efficacy remain outside this run.
+
+STATIC / IDENTITY RESULTS
+PASS — exact candidate hash/size and exact base hash/size.
+PASS — all 4 executable inline JS blocks pass node --check; component registry JSON parses.
+PASS — 237/237 component IDs unique.
+PASS — no fetch/XMLHttpRequest/WebSocket/sendBeacon calls found; no external script.
+BOUNDED DIFF — candidate vs accepted base is 7 non-equal line hunks: 5 replaced base lines plus 84 candidate lines, dominated by the appended v7.21 layer/shared registry metadata.
+BROADER FAIL R64 — registry top-level build is v7.21-cf0042-next-clickable-prototype, but retained build_id and candidate_label still say v7.16-cf0032-integrated-batch4-8-cf0039-r6. Exact candidate identity is therefore internally inconsistent in the retained registry.
+
+======================================================================
+MUST-PASS GATE G01–G25
+======================================================================
+
+G01 EXACT IDENTITY — PASS
+Exact filename/Drive/version/size/SHA independently matched release. Accepted base remains byte-identical.
+
+G02 PARSE / STARTUP HEALTH — PASS
+4 executable inline JS blocks parse; registry JSON parses. Representative runtime routes produced zero captured pageerror/console-error events.
+
+G03 SIGNED-IN ROOT / BACK CONTINUITY — PASS
+#/courses renders HOME/current workspace, no Your classes dead-end, and course back semantics return to Home/courses rather than onboarding. No signed-in Home onboarding-back surface found.
+
+G04 HOME / INSTRUCTOR NAMING + ROLE CONTEXT — FAIL
+Role/context clarity passes, but the required Professor Home -> Home rename is incomplete. Exact instructor root still visibly renders “Professor Home · Example data”; instructor class pages still expose “← Professor Home”.
+Smallest repair: normalize every visible instructor-root/back label to Home while preserving explicit Instructor preview / no learner evidence messaging. Do not change route identity merely to fix copy.
+
+G05 CLASS SWITCHING / ORIENTATION — PASS
+Direct instructor class context switch to #/workspace/instructor/class/pfp156-b/overview resolves Provincial Statutes / PFP 156 correctly; selected-role preview markers remain explicit.
+
+G06 ONE STRONG NEXT ACTION — PASS
+Home presents Up next, a short Why this reason, Continue, and Choose another path. Text explicitly says the recommendation is not a mastery verdict.
+
+G07 STABLE SAME-LEVEL STUDY SHELL — PASS
+At fixed scroll=0, .sg-v21-study-tabs x delta = 0 px and max y delta = 0.715 px across Learn/Test/Support at 1024×900, within <=2 px gate. Sticky shell remains the same DOM-level target.
+
+G08 KEYBOARD FOCUS — PASS for tested changed surfaces
+New interaction-lab controls are keyboard focusable and render a visible 3 px focus outline; no trap observed in changed flows.
+
+G09 DIALOG / POPOVER ESCAPE + RETURN FOCUS — PASS
+Global Help opened from #vtHelp; Escape closed it and document.activeElement returned to #vtHelp.
+
+G10 REDUCED MOTION — PASS
+prefers-reduced-motion: reduce is honored in Chromium; welcome content remained stable during the sampled autoplay interval and manual progression remained available. Existing accepted welcome semantics preserved.
+
+G11 MULTI_SELECT_UNORDERED — PASS
+q4m remains source-correct unordered multi-select. Interaction lab accepted correct set selected in 2→0→1 order; unselect/reselect works; feedback names all source-text selections/correct components rather than indexes. Actual protected 15-question session reached q4m; three selected answers survived Pause→Resume with aria-pressed state restored and submitted as one response.
+
+G12 SEQUENCE_ORDER + NON-DRAG ALTERNATIVE — FAIL
+Visible numbering and Move up/down controls exist and work. But order-sensitive evaluation does not exist in the fixture: deliberately wrong order (swap first two items) and untouched correct order both return exactly “Order recorded in this fixture. Production scoring would come from the task rubric, not the UI.”
+Reproduction:
+1. #/course/pfp207/study/test → Sequence/order.
+2. Move “Inspect the current condition” down once, producing Isolate → Inspect → Verify.
+3. Check order → generic recorded message.
+4. Reset to original Inspect → Isolate → Verify and Check order → identical message.
+This fails the gate requiring incorrect order not be accepted equivalently to correct order.
+Smallest repair: keep scoring authority out of the renderer, but have the fixture adapter provide an explicit sequence_order evaluation contract/result for this neutral fixture. Render distinct correct/incorrect outcomes from that provider/fixture result. Preserve numbering and non-drag controls.
+
+G13 ANSWER FEEDBACK SEMANTICS — PASS
+Practice feedback is split into What happened / What to learn / What next. Confidence is optional pre-feedback self-report. After explicit help, feedback correctly states the attempt followed answer-bearing support and is supported practice rather than fresh unaided retrieval.
+
+G14 INVALID/BROKEN ITEM OR SCORER — PASS for exposed prototype scope
+Unsupported interaction families are scaffolded without silently becoming MCQ/wrong-answer evidence, and no tested technical/input failure was rendered as learner weakness. No production scorer service exists in this candidate, so live scorer-outage/regrade behavior is outside scope.
+
+G15 LOW-STAKES HELP / REMEDIATION — PASS
+Practice exposes explicit Show help with neutral wording. Help content is not trait language; using it marks the attempt as supported. No unsolicited repeating remediation loop was observed in the exposed surface.
+
+G16 PROTECTED ASSESSMENT SHIELD + ACCESSIBILITY — PASS
+Protected assessment renders Coaching unavailable with the help button disabled; pre-answer scenario/example cards are absent. Global Help remains usable and exposes Accessibility & input help. Protected response feedback stays hidden until assessment rules permit it.
+
+G17 AGENCY WITHOUT COMPETENCE INFERENCE — PASS
+General Study is visibly self-directed and says no course claim is inferred. Fixture adapter evidence stays bounded; tested help/scope transitions do not visibly change competence/motivation labels.
+
+G18 STUDY SET APPROVE-AND-NEXT TARGET STABILITY — PASS
+15 consecutive approvals at 1024×900: Approve & next x delta = 0 px, y delta = 0 px.
+
+G19 STUDY SET FINAL ITEM COMPLETION — PASS
+After item 15, Approve & next disappears and an explicit REVIEW COMPLETE / 15 of 15 reviewed / Ready surface replaces it; publication is separately stated.
+
+G20 STUDY SET STATE TRUTH — PASS
+After the 15 approvals, rerendered filters report Needs review 0, Ready 1, Published 1, Held 1, Drafts 1. Ready completion and publication remain distinct.
+
+G21 REWARD / SEED + SAVE TRUTHFULNESS — FAIL
+Reward rollback itself is correct, but the session completion surface lies about persistence after an acknowledged save failure.
+Reproduction:
+1. Run a 15-question practice session in the exact candidate while its own storage-failure banner is active (“Answers are not saved in this preview because device storage is unavailable.”).
+2. Finish the session.
+3. Summary simultaneously displays “Practice saved.” and “Your answer/review evidence was saved.” plus “Seeds were not saved.” / “Could not save Seeds. No reward was recorded.” and the global storage-unavailable warning.
+The candidate therefore emits authoritative save-success copy after its own persistence layer has failed. This violates the guard that failed/disconnected persistence must remain retryable/unsaved and must not show saved/success credit.
+Smallest repair: carry persistence/operation outcome into session completion. If evidence/session persistence failed or is unknown, do not render “Practice saved” / “evidence was saved”; render a bounded unsaved/retry state and keep any reward/evidence completion non-authoritative until confirmed. Preserve the existing Seeds rollback.
+
+G22 RETRY / DOUBLE-SUBMIT / DUPLICATE RECOMMENDATION — PASS for tested UI/source boundary
+Rapid answer re-entry produced one feedback/next surface; commit path guards an already committed event; Study Set approval rerenders away the consumed action. No duplicate visible response/reward/recommendation observed in tested paths.
+
+G23 DESKTOP / TABLET / PHONE SMOKE — PASS
+24 route/viewport combinations across 1024×900, 820×900, 390×844 for Home, course overview, Learn/Test/Support, instructor Home, instructor Study Sets and profile/settings: 0 horizontal page overflow, 0 captured pageerror, 0 captured console-error.
+
+G24 UNCHANGED ACCEPTED FLOWS — PASS for tested regression surface
+Welcome reduced-motion/manual controls, global Help/Escape, course routes, feedback shell, profile/settings and representative instructor flows remained functional. Candidate did not alter accepted base bytes.
+
+G25 OWNER-VISIBLE EXACT HTML DELIVERY — DEFERRED AFTER AMEND, NOT A SEPARATE CANDIDATE DEFECT
+Exact tested bytes are retrievable and verified, but the candidate should not be promoted to owner-review release as accepted while G04/G12/G21 remain open. General owns the repaired-candidate release/delivery. This gate must be re-run on repaired exact bytes before PASS.
+
+MUST-PASS SUMMARY
+PASS: G01–G03, G05–G11, G13–G20, G22–G24.
+FAIL: G04, G12, G21.
+DEFERRED UNTIL REPAIR RELEASE: G25.
+Therefore PASS is not available.
+
+======================================================================
+MATERIAL BROADER REGRESSION / SOURCE FINDINGS
+======================================================================
+
+R64 — FAIL: retained registry identity is internally stale.
+- build = v7.21-cf0042-next-clickable-prototype
+- build_id = v7.16-cf0032-integrated-batch4-8-cf0039-r6
+- candidate_label = v7.16-cf0032-integrated-batch4-8-cf0039-r6
+Smallest repair: make all retained registry candidate/build identity fields agree with v7.21, or remove obsolete aliases if no consumer requires them. Re-parse 237/237 unique registry afterward.
+
+SOURCE / CONSTRUCT — PASS
+Research constraints are preserved in the tested candidate:
+- q4m prompt is “Choose all three parts of a proper announcement before entry.” and remains unordered multi-select.
+- q4m source-text feedback is complete.
+- protected/retrieval question rendering removes pre-answer example cards, preventing the Macooh answer leak before commitment in the tested assessment path.
+- no Canascape normalization was introduced.
+
+ADAPTER / FIXTURE BOUNDARY — PASS FOR PROTOTYPE DISCLOSURE, NOT PRODUCTION COMPLIANCE
+Candidate exposes StudyGridPrototypeMeta version v7.21, nonCanonical=true, backendConnected=false; Home calls the replaceable local prototype adapter and visibly discloses fixture/local state. General Study and Instructor preview are visibly isolated, and preview states say no learner evidence/rewards. Legacy monolithic local state/projection machinery still exists, matching Bob’s declared hold; this QA does not certify it as the future Engine implementation. No backend/auth/Supabase/provider is connected.
+
+KEVIN FIXTURE CROSS-CHECK — BOUNDED PASS FOR EXPOSED SURFACES
+Exposed equivalents preserve: cold/sparse evidence without weakness language; explicit help without trait inference; General Study isolation; protected coaching suppression plus accessibility help; no strong retention/mastery claim after thin evidence. No backend stale-decision, no-eligible-action or constructed-response scorer service exists to fully exercise those service-side fixtures in this standalone candidate.
+
+MOTION / INTERACTION POLISH ADDENDUM
+No blocking motion defect identified in tested scope. Reduced motion preserves meaning/manual control; keyboard focus is visible; stable study/review targets pass. No gesture-driven/direct-manipulation motion in the bounded release required a separate spatial-motion failure. Subjective press/motion polish remains owner/design review, not a QA blocker.
+
+======================================================================
+FINAL VERDICT
+======================================================================
+
+AMEND.
+
+The v7.21 candidate is runnable, substantially improves the prior accepted baseline, and passes the high-value q4m, protected-assessment, Study Set finalization/stability, responsive-smoke and adapter-disclosure checks. It is not ready for a PASS because three MUST-PASS defects remain:
+1. incomplete Professor Home → Home rename;
+2. sequence_order fixture has manipulation but no order-sensitive provider/fixture evaluation;
+3. failed persistence can still produce “Practice saved” / “evidence was saved” success copy.
+
+Additionally, repair the stale v7.16 build_id/candidate_label in the retained v7.21 component registry before re-acceptance.
+
+No architecture restart is required. These are bounded frontend/fixture-contract repairs. Re-run G04, G12, G21, G25 and R64 plus a quick G02/G07/G11/G16/G18–G24 regression on the repaired exact bytes.
+
+CURRENTNESS
+Pre-terminal repository refresh found no newer v7.21 candidate or Stuart QA supersession after General release 320630bed18a6dd5035fe44e823371eea8aaba7f.
+
+NO MUTATION
+No HTML/frontend/backend/auth/Supabase/provider/deploy/canonical mutation occurred. No peer wake occurred. General CF-0047 owns repair/release routing.
