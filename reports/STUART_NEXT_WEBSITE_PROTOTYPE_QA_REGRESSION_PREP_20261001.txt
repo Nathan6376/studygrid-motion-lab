@@ -1,0 +1,295 @@
+STUDYGRID — NEXT WEBSITE PROTOTYPE QA / REGRESSION PREP
+Prepared: 2026-10-01 20:58 ET
+Worker: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+Coordinator: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+Status: DONE — QA PREP READY FOR BOB CANDIDATE / NO FRONTEND MUTATION
+
+AUTHORITY CONSUMED
+- General QA-prep route: routes/GENERAL_20261001_2048_STUART_WEBSITE_QA_PREP.txt @ d054cad781e88b88fc149551d04e034e260b4be6
+- Website build contract: design/STUDYGRID_NEXT_WEBSITE_PROTOTYPE_BUILD_CONTRACT_PREP_20261001.md @ 6be928678f784e968f3ecca3017d6da39fca9c84
+- Engine v1 Draft 2 reconciliation: design/STUDYGRID_ENGINE_V1_DRAFT2_GENERAL_RECONCILIATION_20261001.md @ b6ac02d321293a46002636f6e6286e1f067e9ea8
+- Stuart Engine-v1 falsification matrix return @ 2454712068900e8d87599582c8841ed8e32925c1
+- Bob owner-released website build route @ 67989714d0f794f500858f730ca44dec02b25dac
+- Exact accepted baseline: StudyGrid-CF0042-QB17R2-stuart-defect-repair.html / Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46 / SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab / 1,063,586 bytes / v7.20-cf0042-qb17r2-stuart-defect-repair.
+
+PURPOSE
+This contract is designed so Stuart can begin acceptance immediately when Bob returns a new HTML candidate. It tests user-visible behaviour and engine/UI boundaries; it does not prescribe implementation style.
+
+======================================================================
+A. TONIGHT MUST-PASS GATE — ALL REQUIRED FOR PASS
+======================================================================
+
+G01 EXACT IDENTITY
+Candidate filename, version, Drive/storage pointer, byte size and SHA-256 are supplied and independently verified. Candidate must be a new non-canonical artifact built from the exact accepted baseline above.
+FAIL: source identity uncertain, hash mismatch, overwritten accepted base, or candidate bytes not retrievable.
+
+G02 PARSE / STARTUP HEALTH
+All executable inline JS parses; page renders without pageerror/console error on first load and representative routes.
+FAIL: parse/runtime exception affecting product flow.
+
+G03 SIGNED-IN ROOT / BACK CONTINUITY
+Signed-in root is Home/current workspace. Back from signed-in product pages must not walk into onboarding/public flow. Empty Your Classes dead-end is removed/merged into a useful Home/current-workspace model.
+FAIL: signed-in root still acts as onboarding/class-setup root or Back exposes public/start flow unexpectedly.
+
+G04 HOME / INSTRUCTOR NAMING + ROLE CONTEXT
+Professor Home is Home. Instructor, instructor-preview, learner-personal-study and class context are explicit at transitions.
+FAIL: user can reasonably lose whether they are instructor, previewing, or studying personally.
+
+G05 CLASS SWITCHING / ORIENTATION
+Switching class is easy and does not duplicate course identity/chrome excessively. Selected class remains explicit after switch.
+FAIL: wrong class content, ambiguous class, lost role/context, or stale class action.
+
+G06 ONE STRONG NEXT ACTION
+Continue / Up next is visually primary, gives a short honest reason, and offers an escape/secondary route where appropriate. It must read as a recommendation, not mastery truth.
+FAIL: multiple equal primaries, unsupported mastery wording, no reason, or no appropriate escape.
+
+G07 STABLE SAME-LEVEL STUDY SHELL
+Learn/Test/Support (or equivalent same-level modes) preserve primary shell anchors. Main same-level targets do not jump materially between modes.
+PASS evidence: bounding-box delta for the mode row / primary target <= 2 px in x/y unless a documented responsive breakpoint intentionally changes layout.
+FAIL: moving primary targets comparable to accepted-baseline Test shift.
+
+G08 KEYBOARD FOCUS
+All new/changed controls are keyboard reachable with visible, consistent on-brand focus. No keyboard trap.
+FAIL: missing focus, hidden focus, unreachable control, or focus artifact obscuring content.
+
+G09 DIALOG / POPOVER ESCAPE + RETURN FOCUS
+Escape closes applicable overlays and returns focus to the invoking control. Explicit close does the same.
+FAIL: focus loss to body/top-of-page, trapped overlay, or closed overlay retaining focus.
+
+G10 REDUCED MOTION
+Welcome/rotor and any new transition respect prefers-reduced-motion. Meaning and manual controls remain available without autoplay-dependent comprehension.
+FAIL: essential information depends on motion; reduced-motion still auto-animates materially; controls disappear.
+
+G11 MULTI_SELECT_UNORDERED
+True unordered multi-select allows required selections in any order; correctness is set-based; order does not affect score; minimum/maximum/required count is clear.
+FAIL: [A,B,C] correct but [C,A,B] wrong; checkbox order treated as sequence; accidental single-select fallback.
+
+G12 SEQUENCE_ORDER + NON-DRAG ALTERNATIVE
+Ordered constructs use visible numbered order and actual order-sensitive scoring. Drag is optional; Move up/down or Choose position (keyboard/single-pointer usable) is available.
+FAIL: ordered construct represented as ordinary checkboxes; drag-only operation; incorrect order accepted as correct.
+
+G13 ANSWER FEEDBACK SEMANTICS
+After answer: clearly separate what happened, what to learn, what next. Confidence remains optional self-report and cannot visually/semantically become competence.
+FAIL: dense metadata dump; answer-exposed repeat treated as fresh competence; confidence drives success/mastery wording.
+
+G14 INVALID/BROKEN ITEM OR SCORER
+Broken content/interaction/scorer state surfaces neutral technical/content-review state and does not record learner failure.
+FAIL: software/content failure shown as wrong answer or competence decrease.
+
+G15 LOW-STAKES HELP / REMEDIATION
+Explicit help is available when policy permits. Unsolicited help is non-shaming, bounded per episode, and does not loop indefinitely.
+FAIL: repeated nagging, trait labels, forced remediation, or help request interpreted as weakness evidence.
+
+G16 PROTECTED ASSESSMENT SHIELD + ACCESSIBILITY
+Protected assessment suppresses coaching/reveal according to policy, including stale/cached practice help. Authorized accessibility/accommodation support remains independently available.
+FAIL: answer/explanation leak; generic assistance switch disables valid accessibility; learner override bypasses assessment rules.
+
+G17 AGENCY WITHOUT COMPETENCE INFERENCE
+Skip/dismiss/choose another/help/pause/continue may alter the next decision only. It must not directly change mastery, weakness, motivation or engagement presentation.
+FAIL: override/help/dismiss changes competence/progress label by itself.
+
+G18 STUDY SET APPROVE-AND-NEXT TARGET STABILITY
+Across the 15-question review queue, Approve and next stays physically stable enough for repeated review.
+PASS evidence: button x/y delta <= 2 px for same viewport after initial canvas settles, or equivalent fixed action bar whose target remains stable.
+FAIL: target jumps with question text/rationale height.
+
+G19 STUDY SET FINAL ITEM COMPLETION
+Approving final required item transitions to explicit finalization/completion state; it must not cycle back to an already-approved question as though review is unfinished.
+FAIL: Approve and next remains active with no clear completed/finalized state after 15/15.
+
+G20 STUDY SET STATE TRUTH
+Draft / Ready / Published / Held / All correspond to real local prototype state changes and filters, not decorative labels.
+FAIL: label disagrees with question review state or publication/hold status.
+
+G21 REWARD / SEED TRUTHFULNESS
+Reward/seeds auto-collect only on a successfully committed qualifying action. Failure/disconnected save cannot render success/reward.
+FAIL: reward appears after failed/aborted action or preview/demo creates learner reward.
+
+G22 RETRY / DOUBLE-SUBMIT / DUPLICATE RECOMMENDATION UI PATHS
+Rapid double click, retry and obvious re-entry do not create two visible attempts/evidence units/rewards/recommendations for one logical action.
+FAIL: duplicate visible history, duplicated progress, doubled reward, or two accepted next actions from one semantic action.
+
+G23 DESKTOP / TABLET / PHONE SMOKE
+Representative signed-in Home, class overview, Learn/Test/Support, instructor Home/class Study Set, settings and completion surfaces render without horizontal overflow or inaccessible primary controls at 1024x900, 820x900 and 390x844.
+FAIL: clipped/offscreen primary action, horizontal page overflow, or route crash.
+
+G24 UNCHANGED ACCEPTED FLOWS
+Outside the bounded revision, previously accepted welcome accessibility, current routes, feedback/help shell and representative instructor/course flows remain functional.
+FAIL: unrelated regression in accepted flow.
+
+G25 OWNER-VISIBLE EXACT HTML DELIVERY
+Exact verified candidate bytes are published through a chat-accessible owner artifact path. Delivery byte identity must match tested candidate SHA/size.
+FAIL: only a mounted/container path or Drive ID is offered, delivered bytes differ, or tested candidate identity cannot be tied to owner artifact.
+
+PASS / AMEND / BLOCKED RULE
+PASS: all G01-G25 pass on exact candidate bytes; no material broader regression blocker.
+AMEND: exact candidate is verifiable/runnable but one or more must-pass behaviours or material broader regressions fail with a bounded repair path.
+BLOCKED: exact candidate/source identity cannot be verified/retrieved; candidate cannot run sufficiently to test; or a critical assessment-integrity / destructive-state / owner-delivery verification boundary prevents a defensible verdict.
+
+======================================================================
+B. BROADER REGRESSION MATRIX — FUTURE ITERATIONS
+======================================================================
+
+R01 Root route resolves to signed-in Home for signed-in fixture.
+R02 Browser/local Back from Home does not enter onboarding/public route.
+R03 Signed-out/new-user flow can still intentionally reach onboarding.
+R04 Home shows current context and one primary next action.
+R05 General/self-directed study path remains distinct from class study.
+R06 Class switching preserves selected class after route change.
+R07 Instructor class switch clears stale class-specific Study Set selection.
+R08 Instructor preview clearly says preview/demo and creates no learner progress/reward.
+R09 Instructor -> learner/personal study transition declares the new role/context.
+R10 Global/course chrome is not duplicated enough to obscure primary study area.
+R11 Learn/Test/Support row remains stable across all three same-level modes.
+R12 Mode change preserves scroll/focus reasonably or moves focus intentionally to new main content.
+R13 Quick/Focus/Deep, if present, correspond to distinct jobs rather than only timer duration.
+R14 Learn contains actual instruction/explanation before any required assessment jump.
+R15 Worked example is distinguishable from assessment evidence.
+R16 Guided practice/support use is carried into feedback/evidence presentation.
+R17 Retrieval/performance practice is distinct from rereading/reviewed state.
+R18 Mark as reviewed is removed or has an explicit non-mastery semantic job.
+R19 Unordered multi-select order invariance.
+R20 Unordered multi-select count constraints announced and keyboard operable.
+R21 Sequence order is order-sensitive and visibly numbered.
+R22 Sequence non-drag controls work by keyboard and single pointer.
+R23 Match/pair scaffolding does not silently fall back to ordinary MCQ.
+R24 Categorize scaffolding preserves category semantics.
+R25 Constructed response unsupported/pending scorer state is neutral, not wrong.
+R26 Numeric/formula unavailable capability reports unsupported cleanly.
+R27 Hotspot/diagram unavailable capability reports unsupported cleanly.
+R28 Answer feedback does not emit mastered/retained from thin evidence.
+R29 Answer-exposed repeat is labelled as supported/repeated context where relevant.
+R30 Confidence input is captured before feedback when enabled and remains self-report.
+R31 Broken scorer/content state has a visible recovery/review route.
+R32 Explicit help is available in practice.
+R33 Unsolicited help is bounded and dismissible.
+R34 Dismissed help does not immediately regenerate without new evidence/context.
+R35 Protected assessment removes coaching/reveal surfaces.
+R36 Protected assessment keeps approved accessibility controls.
+R37 Practice recommendation revalidated after transition to protected assessment.
+R38 Cached explanation cannot be reopened after policy becomes protected if prohibited.
+R39 Skip/override changes recommendation context but not competence/progress truth.
+R40 Non-response/quit does not present learner failure.
+R41 Study Set 15-item queue shows position/status correctly.
+R42 Approve-and-next stable target across short/long questions and rationale lengths.
+R43 Edit creates a new review-needed revision rather than silently preserving approval.
+R44 Hold/request changes update state and filter truthfully.
+R45 Final approval produces explicit completion/finalization surface.
+R46 Completion shows accomplishment + bounded evidence/progress language + useful next action.
+R47 Rewards only after qualifying committed success.
+R48 Preview/demo/instructor actions produce zero learner reward/progress.
+R49 Double-click answer commit produces one visible logical result.
+R50 Double-click Study Set approval produces one effective approval transition.
+R51 Reopen/resume does not duplicate current recommendation/action card.
+R52 Reload/hash navigation preserves intended fixture state or clearly reports non-persistence.
+R53 Help dialog Escape returns focus.
+R54 Feedback modal Escape/close returns focus where applicable.
+R55 Focus order follows visual/task order.
+R56 Focus remains visible in light/dark themes and at 200% browser zoom smoke.
+R57 Reduced motion suppresses non-essential autoplay/large transitions.
+R58 Welcome automatic sequence retains semantic summary/manual control under reduced motion.
+R59 1024 desktop representative-route overflow smoke.
+R60 820 tablet representative-route overflow smoke.
+R61 390 phone representative-route overflow smoke.
+R62 No pageerror/console-error across representative route batch.
+R63 No unexpected network requests from standalone prototype fixture unless explicitly declared.
+R64 Component registry, if retained, parses and has unique IDs/build identity matching candidate.
+R65 UI fixture state does not encode permanent mastery/retained flags as authority.
+R66 Instructor evidence surfaces observations/denominators/item-content alternatives rather than causal learner labels.
+R67 Sensitive behavioural telemetry is not introduced into competence/adaptation path.
+R68 New source/content wording changes are traceable to exact source review; uncertain legal wording is not silently normalized.
+R69 Candidate diff against accepted base is bounded to released revision areas plus necessary shared infrastructure.
+R70 Accepted baseline file remains byte-identical and unmodified.
+
+======================================================================
+C. EXACT EVIDENCE REQUIRED WHEN BOB RETURNS
+======================================================================
+
+1. Candidate identity packet: filename, version/build ID, Drive/storage ID, byte size, SHA-256, exact accepted base SHA, source commit(s).
+2. Exact bytes independently fetched; SHA/size recomputed by Stuart before testing.
+3. Static integrity: executable JS parse results; component registry/build identity if present; no duplicate component IDs; route handlers parse.
+4. Bounded diff summary versus accepted SHA 874e4a74: changed regions/files/functions mapped to released revision areas; unrelated large rewrites called out.
+5. Runtime evidence on exact bytes:
+   - Chromium normal motion and reduced motion;
+   - desktop 1024x900, tablet 820x900, phone 390x844;
+   - pageerror/console-error capture;
+   - unexpected network request capture.
+6. Geometry evidence:
+   - Learn/Test/Support same-level target boxes across modes;
+   - Approve-and-next box across all 15 questions;
+   - key primary target visibility on phone/tablet.
+7. Interaction evidence:
+   - unordered multi-select permutations;
+   - sequence correct/wrong permutations + non-drag controls;
+   - keyboard tab/focus/Escape/return-focus;
+   - low-stakes help dismiss/reoffer boundary;
+   - protected assessment reveal suppression + accessibility control preservation;
+   - override/help/dismiss with zero competence-state delta;
+   - double-submit/retry one-logical-result behaviour.
+8. State evidence:
+   - Study Set 15/15 finalization;
+   - Draft/Ready/Published/Held filter truth;
+   - reward success versus simulated/available failure path;
+   - preview/demo zero learner progress/reward.
+9. Regression evidence: representative accepted flows outside changed surface compared against current accepted baseline.
+10. Owner-delivery evidence: user-visible attached HTML exact SHA/size match after QA. Do not infer owner opened it.
+
+A software PASS establishes conformance of the tested prototype to this contract only. It does not establish educational efficacy, fairness, retention superiority, or production/backend reliability.
+
+======================================================================
+D. BASELINE RUN — CURRENT ACCEPTED HTML ONLY, NOT THE FUTURE CANDIDATE
+======================================================================
+
+Baseline exact identity: PASS.
+- Drive metadata re-read: StudyGrid-CF0042-QB17R2-stuart-defect-repair.html, 1,063,586 bytes.
+- Local exact bytes independently SHA-256 verified: 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab.
+
+B01 RESPONSIVE/ROUTE SMOKE — PASS for tested baseline scope.
+- 24 route/viewport combinations across 1024x900, 820x900, 390x844.
+- Routes included Courses, course Overview, Learn/Test/Support, instructor Home, instructor class Study Sets, Settings.
+- 0 horizontal overflow in all tested combinations.
+- 0 captured pageerror / console-error events.
+
+B02 INSTRUCTOR ROLE/CONTEXT CLARITY — PASS for current preview surface.
+- Instructor class Study Set route visibly states Instructor preview / Example data / Local prototype only and selected class.
+- Baseline still uses old Professor Home naming; that is a target for the new candidate.
+
+B03 KEYBOARD HELP ESCAPE / RETURN FOCUS — PASS.
+- Help invoked from keyboard focus; close target receives focus; Escape returns focus to Help trigger in normal and reduced-motion browser contexts.
+
+B04 ASSESSMENT REVEAL HELPER — PARTIAL PASS, NOT FULL G16.
+- Baseline helper returns reveal=end for assessment and immediate for practice with immediate review enabled.
+- Baseline does not expose an explicit accommodation-policy path in source, so protected-assessment x accessibility preservation is NOT VERIFIED.
+
+B05 SIGNED-IN ROOT / NAMING — BASELINE FAIL AGAINST NEW CONTRACT.
+- #/ resolves to Your classes, not Home/current workspace.
+- Instructor root still renders Professor Home.
+- Existing Courses surface includes a Back to start choices path, which the new signed-in continuity contract is intended to remove from normal signed-in Back behaviour.
+
+B06 SAME-LEVEL STUDY LAYOUT — BASELINE FAIL AGAINST NEW CONTRACT.
+At 1024x900, Learn/Test/Support controls retain x positions but the row moves vertically:
+- Learn route ~ y 440 px;
+- Test route ~ y 548 px;
+- Support route ~ y 439 px.
+Approximate Test shift: 108 px. This is the regression target G07 must eliminate.
+
+B07 ORDERED-CONSTRUCT REPRESENTATION — BASELINE FAIL / SOURCE-LEVEL DEFECT CONFIRMED.
+Current q4m text: Choose all three parts of the normal home-entry announcement sequence.
+Current representation: selectionMode='multi', correctAnswers=[0,1,2], requiredChoices=3.
+The accepted baseline therefore represents a sequence-worded construct as unordered checkbox multi-select. New candidate must source-verify whether strict order is intended and, if so, implement sequence_order rather than merely preserving checkbox multi-select.
+No sequence_order foundation was found in the accepted baseline.
+
+B08 STUDY SET APPROVE TARGET — BASELINE FAIL AGAINST NEW CONTRACT.
+Across the 15-question Quiz 1 Study Set at 1200x900, Approve & next x remained ~640 px but y moved roughly from 190 px to 657 px depending on question/rationale height. The repeated-action target is not physically stable.
+
+B09 STUDY SET FINAL ITEM — BASELINE FAIL AGAINST NEW CONTRACT.
+After approving all 15 questions, set state became Ready / 15 of 15 approved, but the question review canvas still retained an Approve control and did not transition to a dedicated completion/finalization surface.
+
+B10 CURRENT ACCEPTED SHA REMAINS THE BASELINE ONLY.
+No baseline defect above is a new regression claim against Bob's future candidate. These observations define explicit repair targets and regression anchors. The future candidate receives its own independent exact-byte verdict.
+
+BOUNDARY
+No HTML/frontend/backend/auth/Supabase/deploy/canonical mutation performed. Baseline tests used exact accepted bytes locally. No peer wake performed.
+
+TERMINAL PREP DISPOSITION
+DONE — immediate candidate QA gate prepared. General CF-0047 owns consumption; Stuart waits for a separately released exact Bob candidate before issuing candidate PASS / AMEND / BLOCKED.
