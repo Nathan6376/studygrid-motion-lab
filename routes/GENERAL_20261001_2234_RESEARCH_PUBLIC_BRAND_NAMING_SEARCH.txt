@@ -1,0 +1,75 @@
+STUDYGRID — PUBLIC BRAND NAMING RESEARCH / RESEARCH OFFICE
+FROM: ChatGPT General CF-0047
+TO: StudyGrid Research / current Research lane
+TIMESTAMP: 2026-10-01 22:34 ET
+STATUS: HIGH-PRIORITY NAMING RESEARCH — NO PRODUCT MUTATION
+
+OWNER NEED
+Nathan needs a public-facing product name before he starts handing the app to classmates and talking about it publicly. He is frustrated by repeated collisions: StudyGrid already exists in education; Asterly/Astirly has existing uses; Vellum collided with adjacent learning/AI products; Northline is commercially crowded and may read cold/corporate. He wants real names now, not another abstract naming discussion.
+
+ARCHITECTURE DECISION
+“StudyGrid” may remain the internal/proprietary engine name. Public branding can use the form:
+[PUBLIC BRAND]
+Your class, easy to learn.
+Powered by the StudyGrid Engine.
+Do not rename internal code or engine artifacts in this task.
+
+PRODUCT CORE
+This is not just an LMS, planner, flashcard generator, quiz app, or chatbot. Core loop:
+course/class material → determine what needs learning → determine what the learner has actually demonstrated → choose the best next learning action → teach/practice/test appropriately → update evidence → choose again.
+Product principle: the UI should feel stupidly simple because the system underneath is smart.
+Current line: “Your class, easy to learn.”
+
+OWNER BRAND PREFERENCES
+Nathan liked the direction of “Relay” and “Northline”: short, mature, memorable, easy to say, not literally “Study____”, and meaningfully connected to direction/continuity/what-next. Relay itself is unsuitable because it is crowded and already used internally. Northline remains conceptually useful but is not preferred as final without stronger evidence. Nathan also responded positively to the idea of a proprietary StudyGrid Engine underneath a separate public brand.
+He does NOT want a childish, mascot-first, cheesy EdTech name, “AI” suffix/prefix, or generic startup sludge.
+He wants a name that sounds natural in both:
+1. “Yo, I built _____. I’ll send you the link.”
+2. “Humber is piloting _____ with students.”
+
+RESEARCH BASIS TO APPLY
+Use current evidence on brand naming where supported, especially pronounceability/processing fluency, hear→spell fidelity, written→spoken pronunciation, distinctiveness/memorability, semantic fit, sound symbolism, warmth/competence impressions, and risks of overly descriptive/generic names. Do not invent scientific certainty. Distinguish robust findings from weaker naming folklore.
+
+TASK — FIND NAMES, NOT JUST PRINCIPLES
+1. Generate 40–60 serious candidate names across 5–8 distinct naming territories. Avoid simply remixing prior ChatGPT/Gemini suggestions.
+2. Before presenting a final shortlist, collision-screen every serious finalist. Search live web, major education/software/app products, obvious App Store/Play Store presence, domains/brand presence where visible, and major Canadian/U.S. trademark/public-brand conflicts where reasonably searchable. This is screening, not legal clearance.
+3. Aggressively reject:
+   - exact/near-exact education or adaptive-learning collisions;
+   - active AI tutor/LMS/study-tool collisions;
+   - names that are already crowded across SaaS/education;
+   - names that are difficult to pronounce or spell after hearing;
+   - names that sound childish, gimmicky, medical, financial, logistics-heavy, or generic AI-generated.
+4. Keep only candidates that plausibly work for both students and institutional buyers.
+5. Include a mix of:
+   - real-word / compound names;
+   - lightly invented names that still sound human and credible;
+   - direction/orientation/continuity names;
+   - clarity/precision names;
+   - warmer academic/tactile names if they survive collision checks.
+6. Test each finalist against these practical questions:
+   - Can an English speaker pronounce it on first sight?
+   - After hearing it once, could they probably spell/search it?
+   - Does it sound credible in a school or procurement meeting?
+   - Does it still sound natural between students?
+   - Can it grow beyond one subject, quiz mode, or school type?
+   - Does it avoid implying fake AI magic or surveillance?
+   - Does it pair naturally with “Powered by the StudyGrid Engine”?
+7. Return 8–12 collision-screened finalists, not 50 raw names, with a short rationale, pronunciation, likely spelling ambiguity, semantic territory, warmth/competence read, and collision status.
+8. From those, identify the strongest 3–5 for Nathan to react to. Do NOT claim legal clearance or invent domain availability.
+9. If no candidate is genuinely strong, say so and produce a second-generation invented-name set rather than forcing a weak recommendation.
+
+IMPORTANT PRIOR COLLISIONS / AVOID RECYCLING WITHOUT NEW EVIDENCE
+StudyGrid, Relay, Vellum, Trellis, Folio, Arbor, Axiom, Tenet, Morrow, Kivo, Waypoint, CourseCraft, StudyNext, StudyCompass, StudySignal, StudyPilot, StudyFlow, ClassPilot, CoursePilot, LearnPath, LearnCue, Syllora, CourseLoop, Aven, Margin, Cadence, Cairn, Veyra. Asterly/Astirly is not clean enough to assume available. Northline may be evaluated but must not be favoured.
+
+DELIVERABLE
+Persist a direct terminal return to General CF-0047 containing:
+- research-backed naming criteria actually used;
+- naming territories;
+- screened finalist table;
+- strongest 3–5 names with plain-English rationale;
+- collision evidence and uncertainty;
+- names rejected and why;
+- a simple proposed blind human test for the finalists before final commitment.
+
+BOUNDARY
+Research/naming only. No frontend/backend/auth/Supabase mutation, no repo/domain/company rename, no domain purchase, no trademark filing, no public launch action. Do not wake other workers. General owns synthesis and owner presentation.
