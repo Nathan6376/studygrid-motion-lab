@@ -1,0 +1,60 @@
+STUDYGRID — CLAUDE / OPUS PRODUCT + MOTION DESIGN REVIEW
+FROM: ChatGPT General CF-0047
+TO: Claude Code / Opus design lane
+TIMESTAMP: 2026-10-01 23:44 ET
+STATUS: DESIGN SYNTHESIS ONLY / NO CANONICAL MUTATION
+
+PURPOSE
+Nathan wants a materially better product/motion design pass before any further Bob implementation. Treat the current v7.22 HTML as a source/prototype to critique, not a design to preserve blindly. Produce a coherent premium redesign direction that Nathan can review without requiring him to specify every animation one by one.
+
+MUST CONSUME
+- routes/OWNER_DELTA_20261001_2331_PRODUCT_ENTRY_MOTION_LEARNING_QUALITY.txt @ 97b723520e26bb4c135e6364f0750b1bf08b590a
+- routes/OWNER_DELTA_20261001_2343_V722_FULL_REVIEW_CONTINUATION.txt @ bb9225d6c82d187897106344e72b6887fd34f84f
+- routes/GENERAL_20261001_2327_HOLD_BOB_VISUAL_REPAIR_PENDING_DESIGN.txt @ 24c29d1bc2ea09edb1aa6ddfd0cc4fdf368a0d78
+- exact current HTML if available to you: StudyGrid-CF0042-Website-Prototype-v7.22-stuart-amend-repair.html / Drive 1_xjvGuLOHDpGcak9elvH6QcudSiW4M1d / SHA-256 95869b3b61b33b993a02ace37744f051c1b4358e776ab510eae53e04394f686b
+
+OWNER QUALITY BAR
+- Keep warm green/cream/material StudyGrid identity; no generic purple/blue AI-site restyle.
+- Make it feel premium, futuristic and alive, not 2016-modern dashboard/forms.
+- Motion must communicate state, hierarchy and causality, not decorate.
+- Preserve accessibility/reduced motion/focus.
+- Student language must be natural/simple English; internal engine terms stay internal.
+- General/self-directed learning and class learning are both first-class contexts using the same engine.
+- Up next / Continue / Choose another path / Why this are strong concepts worth preserving, but current explanatory copy and transition are poor.
+- Learn flow must visibly transform into focused learning; Start Learning cannot feel like a no-op.
+- Sequence reordering must visibly animate positions so the eye can follow movement.
+- Reduce duplicate global/class navigation and settings layering.
+- Instructor/student shells should feel related.
+- Remove fixture/developer language and awkward labels.
+- Rewards/seeds need a custom visual language or removal; no emoji-pasted feel.
+
+OPEN-SOURCE / WEB PATTERN REFERENCES
+General has verified public GitHub projects worth studying as implementation-pattern references after design is settled:
+- motiondivision/motion — mature web motion library; useful for spring/layout/shared-state choreography.
+- formkit/auto-animate — useful reference for automatically animating DOM reordering/insertion/removal, especially sequence-order eye tracking.
+- Computerized adaptive testing / IRT repositories exist on GitHub; use only as architecture/research references, not as authority or copy-paste production code.
+Also consume the previously supplied Emil Kowalski Apple-design principles and Thinking Orbs lesson if present in your working context: immediate response, spatial consistency, interruptible/reversible motion where appropriate, reduced motion, state-specific motion.
+
+DELIVERABLE
+Return a concrete DESIGN CONTRACT, not generic critique:
+1. Top-level public entry architecture: how class learning vs learn-anything/general learning is introduced without splitting the product.
+2. Signed-in information architecture: exact recommended global nav + class-context nav + instructor-context nav; identify what is removed/merged.
+3. Up Next choreography: exact visual transition from Home -> recommended learning path; what transforms, what recedes, what persists.
+4. Start Learning choreography: exact behaviour of Explain / Example / Guided Practice / Try From Memory, including spatial transition and back/next model.
+5. Motion system: press/hover/shared-element/reorder/loading/progress/completion rules, timing/easing principles, depth/material changes, reduced-motion equivalents and reject conditions.
+6. Sequence-order interaction choreography with visible spatial movement and accessible non-drag controls.
+7. Copy replacement table for the worst current phrases: “before retrieving it”, “Start retrieval”, “evidence profile”, “mastered”, “fixture clock”, “Inspect proof”, “0 later memory changes”, and similar.
+8. Settings/instructor/legal/rewards cleanup recommendations.
+9. Question-experience design implications: how escalating/adaptive difficulty and plausible distractors should appear to the learner without exposing engine jargon.
+10. A page-by-page priority order for the next visual build so implementation is coherent rather than patchwork.
+11. Explicit KEEP / REWORK / REMOVE decisions for current v7.22 major surfaces.
+
+DO NOT
+- Do not mutate canonical HTML or backend.
+- Do not invent a new public brand/name in this task.
+- Do not apply a generic AI visual theme.
+- Do not require Nathan to specify each animation manually.
+- Do not treat prototype fixture copy as product copy.
+
+RETURN
+Persist your terminal design return to General CF-0047. General will reconcile it with owner feedback before any implementation release.
