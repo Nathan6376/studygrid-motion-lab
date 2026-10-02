@@ -1,0 +1,68 @@
+STUDYGRID ENGINE V1 — COMPLETE PROPOSED DRAFT 2 SYNTHESIS — DONE
+From: CHAT-CGPT-20260930-STUDYGRID-SOL-01 / CF-0043
+To: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+Timestamp: 2026-10-01 20:35 ET
+Lifecycle: DONE — COMPLETE DESIGN PROPOSAL / NO IMPLEMENTATION
+
+Exact current route consumed:
+routes/GENERAL_20261001_2006_SOL_ENGINE_V1_DRAFT2_SYNTHESIS.txt
+@ 5e7d22ed3b1ba8082faea93c22c4952be73083a0
+blob 17f63cedbc7d4edd7935265626ec3c1bc0fadd56.
+Same route blob verified unchanged at pre-publication main 7f5926287f17310b6b3e54b87cc69f9ef1d807bc.
+
+COMPLETE PROPOSED DRAFT 2
+design/STUDYGRID_ENGINE_V1_FIRST_PRINCIPLES_DRAFT_2_PROPOSED.md
+on branch sol/cf0043-engine-v1-draft2-synthesis.
+Exact source register and all18 required contracts are inside the document.
+Shared exact-byte copy:
+https://drive.google.com/file/d/1Ap0p-ua7L-lrR53EjEnx4JxqBuK7vfwR/view
+79729 bytes; SHA256 184a36633cfe65caa5ac62b3c383a830c525f7a5638b22fa05623e7f8392b271.
+Artifact validation:
+reports/SOL_20261001_ENGINE_V1_DRAFT2_SYNTHESIS/ARTIFACT_VALIDATION.json.
+
+RESULT
+Complete coherent proposal, not concatenated review notes:
+18 contracts; each reason/strongest counterexample/smallest repair/falsification.
+25 falsification specifications (not executed software tests).
+26 explicit disagreement decisions.
+Five primary logical record families; durable/derived/transient split.
+Claim/use/warrant/rebuttal/sufficiency plus response/scoring/interpretation separation.
+Deterministic lexicographic policy with full bounded pool, ties, no-action, unknowns, agency budgets and proposed typed defaults.
+Protected assessment + task-scoped authorised accommodation resolver.
+Semantic response-slot uniqueness plus transport idempotency; effective score-purpose lineage.
+Historical/current reconstruction separation, FULL/PARTIAL/UNAVAILABLE, acceptance/delivery barriers.
+Selective source/remap/rescore/delete semantics; privacy-bounded retained references.
+No universal mastery/retention/physical-competence claim.
+Instructor denominators/privacy/release/alternatives and evidence-capped reason projections.
+Anti-loop, discriminating probe, selection provenance and future research/model purpose gates.
+Bounded ~20-learner course-local beta proposal; explicit cuts, stop conditions,12 hypotheses and4 owner decisions.
+
+READ / RECONCILED
+Required exact Draft1 bc1a346, Research1917 93dbc55, Bob1947 4b2849f6, Sol attack1e5c0589 plus fullownreport.
+Additional terminal Research1956 and Stuart1948 fullreport.
+Pre-publication completed follow-ons consumed in full: Bob data/replay contract (a24c51ac), Stuart full76-case matrix (5dd981a8), Kevin report + both38-scenario files (8c8bede8/b946e2f8/01074848).
+These inputs have not reviewed this new Draft2; no peer agreement/adoption claimed.
+
+KEY ADJUDICATIONS / SMALLEST OWNER DECISIONS
+Preserve proprietary policy/integration value per currentowner direction, without proprietary-science or efficacy claims.
+Probe-first is an approved option; no universal introduction-first rule.
+Source approval and currentvalidity are independent; invalidity quarantines currentuses.
+Accessibility is task-scopedauthorisation, not a blanketOR or generic coaching bypass.
+Complete scopedcandidategeneration; overflowabstain, never hidden shortlist.
+No beta soft-policy TTL exemption: material used-input changes revalidate/recompute before delivery.
+Privacy failure never falls back automatically to rawdata.
+General: reconcile/accept this proposal and recover already-decidedchoices before any ownerask.
+Smallest pre-beta decisions: boundedpilot/course/reviewer/types; assessmentstakes/protection/scoring/accessauthority; privacy/release/retention/purposes; descriptivebeta success/stop protocol/defaults.
+Physicalschema/storage/identifierencoding remainsengineeringreview; no implementation authority.
+
+CURRENT-RUN LIFECYCLE
+TX-0274; WORKER row71.
+STARTED EVT-0277/WR-0266; immutable STARTtrace445.
+Material checkpoint EVT-0278/WR-0267; Drive1iUNc0eDDdJ5oGirIHXcZwW5x2Lrl13DS.
+Terminal exact frozencommit/trace/event/receipt references are recorded on WORKER71 and TX0274 after publication/readback.
+Old SOL_QUEUE17:57 is a priorQ-SOL3 projection; this addressedcurrentroute controlled, no prior task repeated.
+
+BOUNDARY
+No engine/product code, migrations, frontend/backend/auth/Supabase/network product work, install, deployment, release, canonical promotion, external UXresearch or peerwake.
+Documentation-only proposed branch. General owns reconciliation and any next owner action.
+DONE — direct technical return available to General; no owner courier required.

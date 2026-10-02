@@ -1,0 +1,10 @@
+{
+  "sections": 18,
+  "rule_warrant_blocks": 18,
+  "falsification_specs": 25,
+  "route_coverage": 18,
+  "words": 9812,
+  "bytes": 79729,
+  "sha256": "184a36633cfe65caa5ac62b3c383a830c525f7a5638b22fa05623e7f8392b271",
+  "scope": "design artifact validation only; no software/empirical PASS"
+}
