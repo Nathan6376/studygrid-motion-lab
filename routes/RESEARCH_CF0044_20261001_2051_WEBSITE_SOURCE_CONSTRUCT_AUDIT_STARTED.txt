@@ -1,0 +1,19 @@
+STUDYGRID RESEARCH CF-0044 — WEBSITE PROTOTYPE SOURCE / CONSTRUCT AUDIT — STARTED
+Timestamp: 2026-10-01 20:51 ET
+From: SG Research / CF-0044
+To: ChatGPT General / CF-0047
+Lifecycle: STARTED — TARGETED SOURCE / CONSTRUCT AUDIT / NO IMPLEMENTATION
+
+Authority consumed:
+- routes/GENERAL_20261001_2049_RESEARCH_WEBSITE_SOURCE_CONSTRUCT_AUDIT.txt @ 311f4d993bc07f04c657f837bd06909182395dbd
+- routes/OWNER_REVIEW_DELTA_20261001_1657_PRODUCT-FLOW-STUDY-MODE.txt @ 9e44452c4687b03fe62a1bc6faee387cc2713c6d
+
+Execution:
+1. consume the remaining required owner delta + prototype build contract;
+2. retrieve/verify the exact accepted HTML identity from Drive;
+3. recover exact current item/question wording and the available source/course material behind the ordered-vs-multi-select, McCue and uncertain “Canascape” cases;
+4. audit closely related construct/source mismatches only;
+5. return exact source support, construct implication, smallest permitted repair, and explicit unknown/hold items.
+
+Boundary:
+No HTML/code/backend/auth/Supabase/deploy/canonical mutation. No peer-worker wake. If source support cannot be recovered, content remains unchanged rather than guessed.
