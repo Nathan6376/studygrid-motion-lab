@@ -1,0 +1,70 @@
+STUDYGRID — PUBLIC BRAND NAMING RESET / RESEARCH OFFICE
+FROM: ChatGPT General CF-0047
+TO: StudyGrid Research / current Research lane
+TIMESTAMP: 2026-10-01 23:11 ET
+STATUS: NAMING RESET — BRAND-FIRST GENERATION — NO PRODUCT MUTATION
+
+OWNER REJECTION
+Nathan strongly rejected the previous naming family. Examples he specifically hated: Senseward, Classforth, Plainforth, Coursestead, Lessonforth. His criticism is correct and is now an explicit constraint: these are not meaningfully new brands; they are semantic rephrasings of StudyGrid/class/course/study with synthetic suffixes.
+
+RESET THE METHOD
+Do not start from the product nouns and build compounds. Do not optimize for explanatory meaning first. Do not generate names by attaching -forth, -stead, -ward, -path, -line, -grid, -class, -course, -study, -learn, -lesson, -sense, -smart, -AI, -ly, or similar startup suffixes to product concepts.
+
+The public brand does NOT need to explain the product. It only needs to be memorable, pronounceable, credible, ownable enough to investigate, and capable of acquiring meaning from the product over time. Think brand-first, not descriptor-first.
+
+PUBLIC / TECHNICAL ARCHITECTURE
+Public brand can be abstract.
+Internal/proprietary technology remains StudyGrid / StudyGrid Engine.
+Possible presentation:
+[PUBLIC BRAND]
+Your class, easy to learn.
+Powered by the StudyGrid Engine.
+
+PRODUCT CORE — CONTEXT ONLY, NOT A MORPHEME SOURCE
+course material → determine what needs learning → determine what learner has demonstrated → choose best next learning action → teach/practice/test appropriately → update evidence → choose again.
+The UI should feel simple because the system underneath is smart.
+
+NEW GENERATION RULES
+1. Generate at least 100 names privately before surfacing any.
+2. At least 70% must be brand-first names with NO literal education/study/course/class/learning morpheme.
+3. Use multiple techniques:
+   - short existing words from unrelated but emotionally useful semantic fields;
+   - uncommon but pronounceable words;
+   - lightly invented 2–3 syllable names with simple English phonotactics;
+   - altered roots that do not transparently describe studying;
+   - names inspired by sound/shape/memory rather than product function;
+   - occasional human-name-like or place-like constructions if credible.
+4. Avoid pseudo-medical, pseudo-fintech, crypto, logistics, B2B-infrastructure, and obvious AI-startup sound.
+5. Avoid names whose meaning has to be explained in a paragraph to become tolerable.
+6. Prioritize spoken naturalness. Nathan must be able to say: “Yo, I built _____. I’ll send you the link.” without sounding ridiculous.
+7. Also test: “Humber is piloting _____ with students.”
+8. Prefer names that are easy to pronounce on first sight and likely spellable after hearing once.
+9. Do not recycle prior rejected/crowded candidates merely because they score semantically.
+
+COLLISION POLICY
+Do NOT waste owner attention on names that already have obvious active education/adaptive-learning/AI tutor/LMS/study-app collisions.
+For every finalist, do a live collision screen before surfacing it:
+- exact web/product name;
+- education/software/app usage;
+- obvious App Store / Play / SaaS collision;
+- major Canadian/U.S. trademark/public-brand conflicts where reasonably discoverable.
+This is screening, not legal clearance.
+
+OUTPUT RULE — CRITICAL
+Do not give Nathan another giant table of mediocre names.
+Return only:
+A. 12 genuinely distinct collision-screened finalists from the private 100+ pool.
+B. For each: pronunciation, one-sentence feel/brand rationale, spelling risk, collision status.
+C. Then a top 5 based on NAME QUALITY FIRST, not semantic descriptiveness.
+D. Include 3 deliberately weird/out-of-box survivors if they still sound credible.
+E. Explicitly list any pattern you rejected because it repeated the prior failure mode.
+
+PRIOR FAILURES / DO NOT RETURN
+StudyGrid, Senseward, Classforth, Plainforth, Coursestead, Lessonforth, Relay, Vellum, Trellis, Folio, Arbor, Axiom, Tenet, Morrow, Kivo, Waypoint, CourseCraft, StudyNext, StudyCompass, StudySignal, StudyPilot, StudyFlow, ClassPilot, CoursePilot, LearnPath, LearnCue, Syllora, CourseLoop, Aven, Margin, Cadence, Cairn, Veyra. Asterly/Astirly is not clean enough to assume available. Northline may be used only as a comparison anchor, not resurfaced as the answer.
+
+QUALITY BAR
+If the surviving names still sound like generated EdTech compounds, STOP and generate a second private pool before returning anything.
+A good result should feel more like a standalone brand that can gain meaning over time, not a synonym for StudyGrid.
+
+BOUNDARY
+Research/naming only. No frontend/backend/auth/Supabase mutation, repo rename, domain purchase, trademark filing, public launch action, or peer wake. General owns owner presentation and final selection.
