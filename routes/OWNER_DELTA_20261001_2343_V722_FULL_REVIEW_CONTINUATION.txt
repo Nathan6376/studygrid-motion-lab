@@ -1,0 +1,72 @@
+STUDYGRID — OWNER FULL V7.22 REVIEW CONTINUATION
+FROM: Nathan / captured by ChatGPT General CF-0047
+TIMESTAMP: 2026-10-01 23:43 ET
+STATUS: DURABLE OWNER DIRECTION / DESIGN FIRST / NO IMPLEMENTATION RELEASE
+
+SOURCE UNDER REVIEW
+StudyGrid-CF0042-Website-Prototype-v7.22-stuart-amend-repair.html
+Drive ID 1_xjvGuLOHDpGcak9elvH6QcudSiW4M1d
+Version v7.22-cf0042-v721-stuart-amend-repair
+SHA-256 95869b3b61b33b993a02ace37744f051c1b4358e776ab510eae53e04394f686b
+
+KEEP / LIKES
+- “Pick up where you left off” / Up next concept is strong.
+- Continue + Choose another path is strong.
+- “Why this” is strong as a pattern, but current explanation copy is unacceptable.
+- Recommended next-learning concept is strong.
+- Current class/top navigation direction can be good when coherent.
+- Pause quiz is liked.
+- Approved class material concept is liked.
+- “A little guidance when you need it” is liked.
+- Hover/reaction behaviour on class cards and controls is liked; build a coherent motion system around that quality.
+
+PRODUCT / FLOW CORRECTIONS
+1. Up next must be the doorway into a focused learning experience, not a link that simply lands the learner on a page they could have navigated to manually.
+2. Continue should transition spatially/visually into the active learning context so the learner understands they have entered the recommended path.
+3. Start Learning should visibly transform the page: other learning jobs can recede/fade/shift into the background while the current job expands/comes forward. The owner should not have to specify every animation; design system must infer coherent, premium choreography from the product intent.
+4. Explain / Worked example / Guided practice / Try from memory must visibly open/transform into usable content, not only highlight a card and inject small content below where it feels disconnected.
+5. Sequence ordering must animate item movement so a learner can follow one item moving from position 1 to 2 etc.; changing labels/numbers without spatial motion is insufficient.
+6. The interaction lab currently exposes only part of the intended interaction foundation in an understandable way. All supported interaction families must be discoverable/usable when relevant without feeling like developer fixture controls.
+7. Remove duplicated/conflicting navigation. Current class workspace has a nice inner nav (Overview / Study / Tree / Class / Scenario Lab) but global chrome also exposes Courses / Study / Profile, causing two “Study” destinations and a duplicated-help/menu feeling. One clear information architecture is required.
+8. Student and instructor navigation/chrome should come from one coherent design system; do not arbitrarily use a visibly different bar for instructor mode unless the role context requires it.
+9. Settings should open the actual settings. Do not make the user open Settings and then open “More study settings” to reach most settings; flatten or structure them coherently.
+10. Legal/privacy/data links must actually open their content in front of the user; do not update background content while leaving an obstructing/unchanged foreground layer.
+11. Remove prototype/developer language from owner/user-facing UI: fixture clock, fixture schedule, evidence-profile jargon, local history implementation wording, build terms, etc.
+12. Replace awkward instructor language such as “Inspect proof” with natural language like “View source details” / “View source” based on context.
+13. Remove or redesign the current seed/reward emoji/icon treatment. Owner strongly dislikes the current seed visual and says it feels out of place and makes rewards less desirable. If rewards remain, they need a custom visual language integrated with the product, not an emoji pasted into the UI.
+14. Tiny Settings affordance and scattered controls need a coherent hierarchy.
+
+COPY / HUMAN LANGUAGE
+- Current reason copy such as “This is the next unfinished part of the current course sequence. StudyGrid is recommending it, not calling it mastered.” is unacceptable learner-facing language.
+- “Why this” should sound human and useful, e.g. “You were working on home-entry rules last time. Pick up here.” Exact copy is a design/copy decision, but must be simple, direct and human.
+- Remove “retrieval”, “evidence profile”, “mastered”, “later memory changes”, and similar internal engine/learning-science terms from normal learner UI unless absolutely necessary and explained.
+- Internal engine may retain precise terms, but public/student/instructor surfaces use natural English.
+- “0 later memory changes in later session” is unintelligible and must be replaced with a human concept such as “Not checked again yet” / “No follow-up check yet” if that metric is useful at all.
+
+QUESTION / ADAPTIVE ENGINE DIRECTION
+- Questions must not be static repeated quiz items.
+- Early questions may be easier while StudyGrid establishes what the learner understands.
+- As learner evidence improves, questions should get harder and require finer discrimination/application.
+- Questions should vary/adapt based on the source material, prior responses, misconceptions, support/hints used and demonstrated performance; do not simply recycle the same prompt/options.
+- Strong multiple choice often means A/B/C/D all look plausible without domain knowledge; distractors are nearby concepts, conditions, exceptions or realistic misconceptions.
+- Do not use absurd/irrelevant distractors.
+- Build this as StudyGrid Engine behaviour/quality contract, not “ask generic AI to make another quiz”.
+- Beta can start with bounded deterministic item families/difficulty/misconception tags before more advanced psychometrics if needed, but architecture must not prevent later adaptive testing/item-response approaches.
+
+GENERAL / NON-CLASS LEARNING BUSINESS DIRECTION
+- General/self-directed learning is first-class, not a hidden fallback.
+- Examples: job training, CPR, pilot licence/certification, professional learning, personal topics.
+- Longer-term opportunity: external training/course providers could host/approve course material on StudyGrid and offer StudyGrid as a learning-support layer; commercial structure could include revenue sharing. Treat this as product/business direction, not approved implementation scope yet.
+
+DESIGN QUALITY BAR
+- Preserve warm green/cream/material StudyGrid identity. Do NOT default to generic purple/blue AI gradients.
+- Make it feel like a premium 2026 product, not a 2016 modern form/dashboard.
+- Motion should explain hierarchy, state and causality: shared-element transitions, cards becoming active surfaces, spatial continuity, item reordering that can be followed by the eye, press feedback, depth/material changes, meaningful reveal, interruptible/reversible behaviour where relevant, reduced-motion equivalents, no focus loss.
+- Owner should be able to state intent once and receive a coherent design system; do not require him to manually specify every animation.
+
+NAME / BRAND QUESTION
+- Nathan still likes “StudyGrid” and asks whether the Australian StudyGrid actually forces a name change for a Canada-first product, especially because studygrid.ca appears available by owner report.
+- This requires separate Canadian trademark/brand clearance research. Domain availability alone is not clearance. Do not rename the product solely from the existence of an Australian business without evaluating Canadian rights/confusion risk.
+
+BOUNDARY
+No Bob/frontend mutation from this packet. Design synthesis first. Backend/auth/Supabase/deploy remain held. Public brand not changed yet.
