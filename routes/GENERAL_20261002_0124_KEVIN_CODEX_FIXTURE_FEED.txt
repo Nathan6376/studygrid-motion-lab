@@ -1,0 +1,25 @@
+STUDYGRID — CODEX FIXTURE / CONTENT FEED — KEVIN
+FROM: General CF-0047
+TO: Kevin
+TIMESTAMP: 2026-10-02 01:24 ET
+STATUS: PARALLEL PREP / NO APP MUTATION
+
+GOAL
+Prepare the smallest source-grounded fixture/content package Codex will need for the first real repo-backed StudyGrid School frontend candidate, without mutating the application.
+
+AUTHORITATIVE PRODUCT TARGET
+Private repo: `Nathan6376/StudyGrid`.
+Read AGENTS.md and docs/product/CURRENT_DIRECTION.md there.
+
+TASK
+1. Reconcile the already accepted website fixture/source work into a compact repo-ready fixture package for Codex.
+2. Preserve the exact q4m finding: unordered multi-select, not sequence; components are Identify as police / State purpose / Request entry.
+3. Preserve MACOOH correction and suppress answer-leaking pre-answer examples.
+4. Keep Canascape unsupported/HOLD unless a source now establishes it.
+5. Include representative fixtures across the intended interaction families and the useful cold-start/protected/help/stale/no-action cases already developed.
+6. Improve question quality where fixture examples are obviously giveaway questions: distractors should be plausible nearby misconceptions/conditions, not joke answers. Do not invent unsupported doctrine.
+7. Use simple learner-facing language; keep internal engine jargon out of displayed copy.
+8. Do NOT change the frontend, backend, auth, Supabase, deployment, or product architecture.
+
+RETURN
+Persist the fixture package in an appropriate non-app-mutation path in `Nathan6376/StudyGrid` (for example `fixtures/` or `docs/fixtures/`) and return DONE/PARTIAL/BLOCKED to General with commit SHA and a short inventory of what Codex can consume.
