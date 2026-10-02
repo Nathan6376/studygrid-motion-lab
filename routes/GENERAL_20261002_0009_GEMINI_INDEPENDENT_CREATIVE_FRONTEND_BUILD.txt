@@ -1,0 +1,99 @@
+STUDYGRID — GEMINI INDEPENDENT CREATIVE FRONTEND BUILD
+FROM: ChatGPT General CF-0047
+TO: Gemini
+TIMESTAMP: 2026-10-02 00:09 ET
+STATUS: INDEPENDENT CREATIVE BUILD / NON-CANONICAL / NO BACKEND MUTATION
+
+PURPOSE
+Nathan wants an independent creative frontend build from Gemini so he can compare what a different model does with the same product direction. This is not a critique-only or design-memo task. Build something Nathan can actually open and use.
+
+INPUT
+Nathan will upload the exact current frontend:
+StudyGrid-CF0042-Website-Prototype-v7.22-stuart-amend-repair.html
+Version: v7.22-cf0042-v721-stuart-amend-repair
+SHA-256: 95869b3b61b33b993a02ace37744f051c1b4358e776ab510eae53e04394f686b
+
+CREATIVE FREEDOM
+Do NOT merely imitate Claude’s proposed redesign. Treat the current product and owner requirements as the source, then make your own strong creative decisions. Nathan is explicitly testing what a different model can invent visually and interaction-wise.
+
+HARD PRODUCT REQUIREMENTS
+- Umbrella brand remains StudyGrid for now.
+- One account, two contexts: StudyGrid School and a first-class general/self-directed learning path (e.g. work training, certifications, licence prep, personal topics). School is the polished priority in this build; General can be bounded but must feel intentional, not like a dead toast.
+- Keep the warm green/cream/material identity. Do not default to generic purple/blue AI-SaaS aesthetics.
+- The site should feel premium, futuristic, alive, and materially beyond a 2016-style dashboard/card pile.
+- Motion must explain state, hierarchy and causality, not just decorate.
+- Reduced-motion, keyboard focus, and accessibility remain.
+- Landing StudyGrid loop should animate continuously without a prominent “Show next step” button; provide a subtle accessible pause/reduced-motion equivalent.
+- Sign in control must not have the rejected white/light rim, inset highlight or detached white focus gap.
+
+HOME / UP NEXT
+Keep the strong concepts Nathan likes:
+- Up Next
+- Continue
+- Choose another path
+- Why this
+But rewrite the bad explanatory copy. Do not say things like “StudyGrid is recommending it, not calling it mastered.”
+Continue should feel like entering the recommendation itself. Use spatial continuity/shared-element transformation or an equally strong original idea so the user perceives the next action becoming the learning experience.
+
+LEARNING EXPERIENCE
+- Start Learning must visibly transform the interface into a focused learning state.
+- Explain, Worked Example, Guided Practice and Try From Memory should behave as one coherent sequence, not four static cards dumping content below.
+- Use plain learner language. Do not expose terms like retrieval, evidence profile, mastered, fixture, operation receipt, or engine jargon.
+- Primary buttons must visibly do what they promise.
+- The experience should support increasing challenge as the learner improves.
+
+QUESTION / INTERACTION QUALITY
+- Replace giveaway sample distractors with plausible nearby confusions.
+- Avoid joke/irrelevant distractors such as “What grade will I receive?”
+- Show a believable progression from easier concept checks to harder application/exception/discrimination questions.
+- Vary examples/facts rather than repeating the same exact question where feasible in a local prototype.
+- Sequence-order interactions must visibly animate actual item movement so the eye can track changes, while retaining accessible non-drag controls.
+- Preserve/represent the existing interaction families where useful: single select, multi-select, sequence order, match/pair, categorize, short text, numeric/formula, hotspot/diagram.
+
+INFORMATION ARCHITECTURE / SURFACES
+- Remove duplicate navigation and duplicate Study concepts.
+- Student and instructor experiences should look like the same product family.
+- Settings should not hide most options behind a second “More study settings” layer after entering Settings.
+- Legal/privacy/data surfaces must open visibly in the foreground and be readable.
+- Replace/hide developer/fixture language such as fixture clock, Inspect proof, internal evidence wording, etc.
+- Remove pasted emoji/seed reward visuals. If progress has a visual metaphor, make it deliberate and integrated (for example class-tree growth), or omit rewards entirely.
+- Preserve “A little guidance when you need it” and source transparency concepts Nathan likes.
+
+VISUAL / MOTION REFERENCES TO LEARN FROM, NOT COPY
+- Premium Apple-like principles: immediate press feedback, direct manipulation, spatial consistency, interruptible/reversible motion where relevant, restrained depth/material, reduced motion.
+- Thinking Orbs principle: different system states can have distinct motion language so motion communicates what the system is doing.
+- Modern shared-element transitions, layout animation and spring-based motion are welcome if they improve comprehension.
+- Nathan likes hover/press reactions that feel responsive and premium.
+
+BUILD FREEDOM
+You may substantially refactor the frontend or rebuild the presentation layer from scratch if that is the fastest path to a much better result. Do not preserve weak structure merely because it exists.
+
+BOUNDARIES
+- No real backend/auth/Supabase/network/provider/deploy mutation.
+- Fixture/local prototype data only.
+- No public brand rename.
+- Do not overwrite v7.22; produce a new non-canonical candidate.
+- A single self-contained HTML is acceptable if it can genuinely deliver the visual/motion quality. A multi-file project/ZIP is also acceptable and may be preferable. Nathan cares more about the result than the packaging.
+
+VERIFY BEFORE RETURN
+If your environment permits, run/preview the result and exercise:
+landing -> School -> Home -> Up Next -> Continue -> Start Learning -> explanation/example/guided/independent practice;
+sequence reorder;
+Settings;
+instructor surface;
+legal/privacy surface;
+General entry;
+keyboard focus and reduced-motion basic behavior.
+Check for obvious broken/no-op primary controls and console/page errors if available.
+
+RETURN
+Return the ACTUAL RUNNABLE WEBSITE ARTIFACT FIRST, not another design memo.
+Then briefly state:
+- file/project name
+- how Nathan opens it
+- what you rebuilt
+- what you intentionally did differently from the source
+- any genuinely blocked functionality
+- whether you personally ran/previewed it
+
+This is an independent creative candidate. Do not optimize for matching Claude. Optimize for making StudyGrid feel like a genuinely excellent product while respecting Nathan’s hard requirements.
