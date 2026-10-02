@@ -1,0 +1,72 @@
+STUDYGRID — CODEX FIRST-BUILD QA PREP RETURN
+FROM: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+TO: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+TIMESTAMP: 2026-10-02 01:35 ET
+STATUS: DONE / QA CONTRACT PERSISTED / NO FRONTEND MUTATION
+
+AUTHORITY
+- General route: routes/GENERAL_20261002_0124_STUART_CODEX_QA_PREP.txt @ 714e16c0cf866467eb1df953fb9710f5067efa88
+- Private repo: Nathan6376/StudyGrid
+- Current private-repo execution correction consumed: CODEX_START.md after commit 6f355481ca9824f8bf2b52918c0d5b81f8b17872
+- Prior Stuart v7.22 regression report consumed: ff72ba62daf5a69a0c6d45df6a7ab85b6ac18aa0
+
+RESULT
+DONE.
+
+QA CONTRACT
+- File: docs/qa/STUDYGRID_FIRST_CODEX_BUILD_QA_CONTRACT.md
+- Repo: Nathan6376/StudyGrid
+- Commit: 23cfe7c14f6669aac4112ea2ed88e8bde7f21939
+- Provider-read from main after commit.
+
+PRE-BUILD AUDIT
+The current repo instructions are broadly aligned and do not block Codex from starting.
+
+One instruction seam required explicit reconciliation:
+- web/README.md says Codex should inspect the exact v7.22 baseline plus current contracts;
+- current CODEX_START.md now explicitly says legacy reconstruction must not block the first build and Codex should proceed from current product direction if the archive is incomplete.
+The QA contract treats exact legacy inspection as useful-if-available, never as a first-build blocker. Legacy parity is not the target.
+
+MISSING HARD GATES ADDED TO THE QA CONTRACT
+The repo source set did not already make every known owner-visible regression executable as an acceptance gate. The contract now explicitly covers:
+- continuous welcome 1→2→3→1 cycling under normal motion;
+- reduced-motion/static/manual equivalent;
+- no rejected white/light Sign-in rim while retaining visible keyboard focus;
+- School vs General first-class entry;
+- Up Next→Continue spatial continuity;
+- Start Learning focused-state transition;
+- working Explain→Worked Example→Guided Practice→Try From Memory sequence;
+- plain English / no engine jargon in ordinary UI;
+- plausible question distractors;
+- animated sequence reorder plus accessible non-drag controls;
+- no duplicate navigation / duplicate Study concept;
+- Settings without a second More-settings gate hiding the primary settings;
+- instructor/student product-family consistency;
+- foreground legal/privacy/data surfaces;
+- no pasted seed emoji/sticker reward treatment;
+- keyboard/focus/reduced-motion and viewport/runtime/console floors;
+- no fake production auth/backend/durable-evidence claims;
+- prior G04/G12/G21/R64 regressions;
+- the v7.22 residual live-current-build identity split, strengthened into one-current-identity acceptance across package/title/QA/debug/report/export surfaces.
+
+SEPARATE HOLDS
+The contract keeps the following explicitly outside local-browser clearance:
+1. physical iPad/Safari/touch/Pencil;
+2. VoiceOver/physical assistive technology;
+3. hosted-origin/reload/deep-link/persistence;
+4. real auth/backend/Supabase/provider/deployment.
+Local Chromium/device emulation cannot clear those holds.
+
+VERDICT RULE FOR FUTURE CANDIDATE
+- PASS only if all applicable local/browser MUST-PASS gates pass on the exact candidate commit.
+- AMEND for concrete repairable failures.
+- BLOCKED only when the exact candidate cannot be identified/run or required local evidence cannot be obtained.
+- Physical/origin holds remain explicit HOLDs rather than being falsely treated as local PASS or local BLOCKED.
+
+CURRENTNESS
+Pre-terminal refresh found no newer Stuart route superseding 714e16c0. Private repo main currently has the Stuart QA contract commit 23cfe7c as HEAD after the CODEX_START execution correction 6f355481. No runnable Codex frontend candidate exists on main yet; web/ contains README only at the audited point.
+
+BOUNDARY
+No application/frontend/backend/auth/Supabase/provider/deployment/canonical mutation. Only a non-app QA specification file was added to the private repository. No candidate approval was issued. No peer wake.
+
+DONE — QA PREP COMPLETE / CONTRACT PROVIDER-READ / NO MATERIAL PRE-BUILD BLOCKER / DIRECT RETURN TO GENERAL CF-0047.
