@@ -1,0 +1,192 @@
+STUDYGRID RESEARCH CF-0044 — PUBLIC BRAND NAMING RESET — DONE
+Timestamp: 2026-10-01 23:45 ET
+From: StudyGrid Research / CF-0044
+To: ChatGPT General / CF-0047
+Source route: routes/GENERAL_20261001_2311_RESEARCH_PUBLIC_BRAND_NAMING_RESET.txt @ 20997130be39eb184315666297277e707e1642f0
+Lifecycle: DONE — BRAND-FIRST NAMING RESET / COLLISION SCREENING / NO PRODUCT MUTATION
+STARTED: routes/RESEARCH_CF0044_20261001_2334_PUBLIC_BRAND_NAMING_RESET_STARTED.txt @ cb1154bf8abdf09c1fac9621653be33aa26c9cd6
+
+OWNER REJECTION APPLIED
+The prior family was discarded rather than iterated. No Study/Class/Course/Learn/Lesson/Sense + synthetic directional/home suffix construction was allowed into this return. StudyGrid remains the internal/proprietary engine name; the public brand is treated as an independent brand that can acquire meaning over time.
+
+METHOD
+- Generated >150 names privately across two generations. The second generation was required because the first broad pool still contained too much generated-startup cadence.
+- More than 70% of generation avoided literal education/study/course/class/learning morphemes.
+- Generation methods included unrelated real words, rare human/place-like forms, lightly invented 2–3 syllable forms, altered roots, and sound/shape-first names.
+- Before surfacing finalists, ran current public-web collision screens against exact/near-exact product and company usage, education/software/AI/SaaS, visible App Store / Play Store results, and reasonably discoverable U.S./Canadian trademark/public-brand evidence. Current exact conflicts were treated aggressively; absence from public search is only a bounded screen, not clearance.
+- A late recheck also killed provisional survivors rather than grandfathering them. Example: FORELAND was removed after current custom-software, AI-real-estate, and App Store uses surfaced.
+
+IMPORTANT BOUNDARY
+This is collision screening only. It is NOT legal trademark clearance, NOT domain availability, and NOT a recommendation to file/purchase/launch. A professional clearance search is still required before commitment.
+
+======================================================================
+12 BRAND-FIRST FINALISTS
+======================================================================
+
+1. PENVOR
+Pronunciation: PEN-vor.
+Feel: place-like, compact, adult; feels like a name before it feels like a product description.
+Spelling risk: low.
+Collision status: strongest clean-looking screen in this set. Targeted exact/current searches surfaced historical/dissolved UK/Dutch entity/property uses and an isolated slang entry, but no material current adjacent education/software/app product and no material exact U.S./Canadian public trademark conflict in the bounded screen.
+Watch-out: invented/place-like; meaning is intentionally not self-explanatory.
+
+2. PERRICK
+Pronunciation: PERR-ik.
+Feel: surname-like and established; credible in both casual and institutional speech without sounding like EdTech.
+Spelling risk: low-to-moderate (one R vs two R can be queried in human testing).
+Collision status: targeted current searches surfaced people/surname use and an old Perrick Industries listing; no material exact current adjacent education/software/app public brand surfaced and no exact U.S./Canadian word-mark conflict surfaced in the bounded screen.
+Watch-out: active people with Perrick surname exist, so searchability is not blank-slate.
+
+3. PERRAN
+Pronunciation: PEH-ran / PERR-an.
+Feel: warm, human/place-like, mature; could plausibly become a consumer or institutional brand without explaining itself.
+Spelling risk: moderate because some listeners may hear Perrin/Peren.
+Collision status: current name/place use and a modified-name automotive consultancy surfaced, but no material exact standalone adjacent education/software/app product or material exact U.S./Canadian public mark surfaced in the bounded screen.
+Watch-out: Cornish/place-name associations are real; not a blank dictionary invention.
+
+4. VERRAN
+Pronunciation: VEH-ran or VAIR-an.
+Feel: crisp, neutral, serious; sounds like an existing surname/brand rather than generated education software.
+Spelling risk: moderate due first-vowel pronunciation.
+Collision status: surname/personal use plus a historical dead U.S. glassware mark surfaced; no material current exact adjacent education/software/app product surfaced in the bounded screen.
+Watch-out: pronunciation must be tested because two readings are plausible.
+
+5. PELRO  [OUT-OF-BOX]
+Pronunciation: PELL-roh.
+Feel: compact invented brand with a hard-soft rhythm; does not encode the product category.
+Spelling risk: low after hearing once, but can be misheard as Pedro/pero.
+Collision status: an old expired U.S. mark and botanical/taxonomy usage surfaced; no material current adjacent education/software/app product surfaced in the bounded screen.
+Watch-out: deliberately more invented than the first four; blind reaction matters.
+
+6. LAROA  [OUT-OF-BOX]
+Pronunciation: luh-ROH-ah / la-ROH-ah.
+Feel: warmer and more fluid; reads like a place or surname rather than a SaaS feature.
+Spelling risk: moderate because stress/vowel interpretation varies.
+Collision status: personal/surname use surfaced; no material current exact adjacent education/software/app brand or material exact U.S./Canadian public mark surfaced in the bounded screen.
+Watch-out: pronunciation consistency is the main gate.
+
+7. DOVELL
+Pronunciation: duh-VELL / DOH-vell.
+Feel: human/surname-like, mature and neutral; visually simple.
+Spelling risk: moderate because listeners may hear Dover/Duvall/Dovel.
+Collision status: surname/person and unrelated historical/business uses exist; targeted screening did not surface a material exact current education/software/app product using DOVELL as the product brand.
+Watch-out: not a pristine namespace; keep below the top tier unless human testing is unusually strong.
+
+8. SELWICK
+Pronunciation: SELL-wick.
+Feel: place-like, grounded, credible; unusual without looking algorithmically generated.
+Spelling risk: low-to-moderate.
+Collision status: surname/place-style usage, a dissolved UK company, and a current furniture model surfaced; no material current adjacent education/software/app public brand surfaced in the bounded screen.
+Watch-out: existing furniture/product usage lowers ownability versus Penvor/Perrick/Perran.
+
+9. TALREN  [OUT-OF-BOX]
+Pronunciation: TAL-ren.
+Feel: sharp and memorable, with a slightly speculative/fictional edge.
+Spelling risk: low.
+Collision status: current personal/username use surfaced; no material exact adjacent education/software/app product or material exact U.S./Canadian public mark surfaced in the bounded screen.
+Watch-out: can drift fantasy/game-like; only advance if blind respondents read it as a credible product/company name.
+
+10. DORREN
+Pronunciation: DOR-en.
+Feel: human-name-like and calm; easy to place in speech.
+Spelling risk: moderate (Doran/Dorran/Doren).
+Collision status: personal/name use and a historical dead lighting mark surfaced; no material current exact adjacent education/software/app brand surfaced in the bounded screen.
+Watch-out: spelling ambiguity is material.
+
+11. DERRAN
+Pronunciation: DER-an.
+Feel: familiar enough to say immediately but rare enough to investigate.
+Spelling risk: high relative to the set because Darren is the obvious hearing substitution.
+Collision status: name use surfaced; no material current exact adjacent education/software/app brand surfaced in the bounded screen.
+Watch-out: hear→spell performance may kill it despite collision cleanliness.
+
+12. KERRAN
+Pronunciation: KEH-ran / KERR-an.
+Feel: human-name-like, approachable, broad enough for any subject or institution.
+Spelling risk: moderate-to-high (Kieran/Keren/Kerrin).
+Collision status: personal/address/name usage surfaced; no material exact current adjacent education/software/app product surfaced in the bounded screen.
+Watch-out: common-name ambiguity reduces distinctiveness, so this is a back-half finalist only.
+
+======================================================================
+TOP 5 — NAME QUALITY FIRST
+======================================================================
+
+1. PENVOR — best combination of independent-brand feel, spoken simplicity, visual distinctiveness, and bounded collision cleanliness.
+2. PERRICK — strongest natural/surname-like option; sounds credible immediately in both peer and institutional sentences.
+3. PERRAN — warmer and more human than Penvor while still capable of carrying a standalone brand.
+4. VERRAN — clean and serious; only held below the top three because pronunciation is less deterministic.
+5. PELRO — strongest genuinely invented/out-of-box option; short, category-free, and much less like generated EdTech than the rejected family.
+
+Do NOT interpret this ordering as legal clearance. It is an owner-reaction order after a bounded public collision screen.
+
+======================================================================
+THREE DELIBERATELY WEIRD SURVIVORS
+======================================================================
+
+- PELRO — compact invented form; the clearest break from semantic product naming.
+- LAROA — warmer, place/name-like, more expressive vowel shape.
+- TALREN — harder, stranger, more speculative; retained only because it still works syntactically as a real brand and did not surface an adjacent public collision in the bounded screen.
+
+======================================================================
+PATTERNS EXPLICITLY REJECTED
+======================================================================
+
+1. Product noun + synthetic direction/home suffix:
+   Study/Class/Course/Lesson/Learn/Sense + -forth/-ward/-stead/-path/-line/etc.
+   This is the exact failure mode that produced Senseward/Classforth/Plainforth/Coursestead/Lessonforth.
+
+2. Semantic rewrites of StudyGrid:
+   anything whose value proposition is effectively “study direction,” “class path,” “learning signal,” “course map,” or “what next” compressed into a name.
+
+3. Generated EdTech cadence without literal education words:
+   smooth vowel-heavy pseudo-Latin names, obvious AI-startup morphology, or repeated -ora/-ira/-iva/-ely/-ly families that look machine-generated even when category-neutral.
+
+4. Fake ownability through obscure spelling:
+   names that become unique only by violating normal English spelling or requiring a pronunciation explanation.
+
+5. Names carrying the wrong category signal:
+   pseudo-medical, fintech, crypto, logistics, enterprise-infrastructure, or children’s-app sound.
+
+======================================================================
+REPRESENTATIVE COLLISION REJECTS FROM THIS RESET
+======================================================================
+
+The private pool was aggressively cut. Representative kills include:
+- SOVRA — current AI education platform/app plus Canadian SaaS mark evidence.
+- MIORA — current language-education and health/AI uses.
+- MAVEL — current AI product explicitly serving Education/EdTech.
+- TAVREN — current AI/SAP toolkit business and current app-development company.
+- CORVEN — multiple current AI/software businesses, including procurement and business OS products.
+- SOVEL — multiple current software/AI product-platform businesses.
+- BIELD — current multi-app software company and Android mental-wellness app.
+- PURL — current AI personal-knowledge-base product plus established software identifier usage.
+- PELDOR — current 2026 App Store social-networking app.
+- LINTEL — current 2026 inspection software/app brand (Lintel/LintelHub).
+- FORELAND — current custom software business, ForeLand AI product, and Foreland Marine app; removed after late recheck.
+- PEVER — active consulting/company uses including Pever LLC; rejected rather than treating lack of EdTech collision as enough.
+- PELDON — active Peldon Rose business created too much brand-root crowding.
+- LORVEN / TERVAN / PEVAN — current software/AI/education collisions.
+
+This is why the surviving set is intentionally more name-like/place-like and less semantically explanatory.
+
+======================================================================
+HUMAN TEST BEFORE OWNER COMMITMENT
+======================================================================
+
+Blind-test the TOP 5 in randomized order without product explanation:
+Penvor / Perrick / Perran / Verran / Pelro.
+
+For each:
+1. Show it for 3 seconds; ask for pronunciation.
+2. Say it once without showing it; ask for spelling.
+3. Put it into both exact sentences:
+   “Yo, I built _____. I’ll send you the link.”
+   “Humber is piloting _____ with students.”
+4. Ask what category they assume it belongs to before giving context.
+5. Ask for immediate unwanted associations.
+6. After a delay, ask which names they remember unaided.
+
+Advance only names with strong pronounceability + hear→spell + recall + no bad category association. Do not turn these into one averaged preference score; preserve exact errors and associations.
+
+TERMINAL STATUS
+DONE — current General CF-0047 naming reset consumed / >150 names generated privately across two generations / semantic EdTech-compound method discarded / current public collision screening performed before surfacing / 12 brand-first finalists returned / top 5 and 3 out-of-box survivors identified / representative collisions documented / no legal/domain-clearance claim / StudyGrid retained as internal engine / no implementation, rename, purchase, filing, launch, or peer wake.
