@@ -1,0 +1,126 @@
+STUDYGRID — BOB NEXT CLICKABLE WEBSITE PROTOTYPE BUILD — DONE
+From: StudyGrid Bob / CF-0042
+To: ChatGPT General CF-0047
+Timestamp: 2026-10-01 21:27 ET
+Lifecycle: DONE — NEW NON-CANONICAL FRONTEND CANDIDATE / INDEPENDENT QA STILL SEPARATE
+
+OWNER ACTIVATION
+Nathan: “Check routing — Bob. Consume General CF-0047’s current owner-released StudyGrid next clickable website prototype build route. Build the new non-canonical HTML candidate from the exact accepted base. Backend/auth/Supabase remain held.”
+
+AUTHORITY / EXACT BASE
+- General owner-released build route: routes/GENERAL_20261001_2047_BOB_WEBSITE_PROTOTYPE_BUILD.txt @ 67989714d0f794f500858f730ca44dec02b25dac.
+- Exact accepted base: StudyGrid-CF0042-QB17R2-stuart-defect-repair.html / Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46 / SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab / 1,063,586 bytes / v7.20-cf0042-qb17r2-stuart-defect-repair.
+- Base was provider-retrieved and locally rehashed before mutation. Accepted base remains unchanged.
+- Required Draft 2 reconciliation: b6ac02d321293a46002636f6e6286e1f067e9ea8.
+- Website build-contract prep: 6be928678f784e968f3ecca3017d6da39fca9c84.
+- Owner deltas consumed: 9e44452c4687b03fe62a1bc6faee387cc2713c6d; 18c3f30159717dfe971fb0ae8c4cf63756ba0adb; cfe1071cd15faab19fe4195b30201f51aae42afd; 014280c9ef7c52341144f086a85df1a81d407da9.
+
+SAME-BATCH FEEDERS CONSUMED BEFORE FINALIZATION
+- Research exact source/construct audit: routes/RESEARCH_CF0044_20261001_2056_WEBSITE_SOURCE_CONSTRUCT_AUDIT_DONE.txt @ 8a0b00b1f8119f5e2701494f0da12c6892f0e9eb.
+  - q4m remains multi_select_unordered; source components are Identify as police / State the purpose / Request entry.
+  - remove order-implying “sequence” wording; do not convert q4m to sequence_order.
+  - R. v. Macooh remains source answer; answer-bearing examples are withheld pre-commit in evidence-producing use.
+  - “Canascape” remains unresolved/HOLD; no guessed content rewrite.
+- Kevin cross-domain website fixtures: 1e2932366d0d6e82955cab963bd4a457316445ff.
+- Stuart candidate-independent QA prep: e06c25ecc48889ab5924537551ce37bcc30ce514.
+- Sol implementation guard: 69f8943ff169df50f0224904c4747ea467c70adc.
+- Sol CF-0050 proposed UI↔Engine adapter contract: 1dfbd386203aaf4e85527526eef26c2e0347182c. It is a proposed integration contract owned by General for acceptance; this candidate does not claim it was adopted as production authority.
+
+NEW CANDIDATE — PROVIDER VISIBLE / NON-CANONICAL
+Filename: StudyGrid-CF0042-Website-Prototype-v7.21-owner-released.html
+Drive ID: 1zPnDGQ1g7KRRT5UcTC72KXuC2zo3_qe_
+Parent folder: 1sD2Mj-eJlUpj2va_LnL-saZDqA77M4zf
+Version: v7.21-cf0042-next-clickable-prototype
+Bytes: 1,098,557
+SHA-256: 9ee8f36726abe11d60694f1ed035a62b883d275efcc7adaf04ef4a3ad1672c20
+Provider raw readback: exact 1,098,557 bytes and exact SHA-256 reproduced after upload.
+
+WHAT CHANGED
+1. SIGNED-IN HOME / CURRENT WORKSPACE
+- /courses becomes a useful Home with one strong Up next recommendation, short Why this reason, explicit Continue action and lower-emphasis alternative.
+- No signed-in Home Back control routes into /start onboarding.
+- Current classes plus separate General Study and Instructor preview entry points remain visible.
+- Instructor visible root wording is normalized from Professor Home to Home where rendered by the current shell.
+
+2. STUDY NAVIGATION / STABILITY
+- Learn / Test / Support live in one stable study shell with a persistent tab row and bounded content pane.
+- Same-level switches use partial rendering rather than a full route-shell rebuild and preserve scroll/focus behaviour.
+- Local runtime geometry after layout settle held the study-tab row at the same y coordinate across Learn→Test→Support in representative viewports.
+
+3. LEARN TEACHES
+- Learn exposes four explicit learning operations: Explain, Worked example, Guided practice and Retrieve.
+- “Continue” remains the primary progression path; teaching is available before/alongside testing rather than only in dense after-answer receipts.
+
+4. NON-TIMER-CENTRIC STUDY
+- The primary prototype path does not require choosing a time budget first.
+- Recommendation/context drives the next learning operation; estimated effort is not used as the product’s governing model in this candidate.
+
+5. DOMAIN-NEUTRAL INTERACTION FOUNDATION
+- Clickable fixture lab exposes: single_select, multi_select_unordered, sequence_order, match/pair, categorize, constructed response, numeric/formula and hotspot/diagram contract surfaces.
+- q4m is explicitly kept as multi_select_unordered and supports multiple simultaneous selected states.
+- q4m prompt is source-faithfully repaired to “Choose all three parts of a proper announcement before entry.”
+- q4m feedback resolves all selected/correct source text; no 0,1,2 index receipt and no scalar-only correct-answer fallback in this fixture path.
+- Separate neutral sequence_order demo shows visible 1/2/3 order plus Move up / Move down controls; drag is not required.
+
+6. REVEAL / HELP / PROTECTED ASSESSMENT
+- Evidence-producing question sessions remove the old unconditional pre-answer scenario/example card.
+- Low-stakes practice offers explicit quiet help; using answer-bearing help records supported/exposed practice semantics in the prototype attempt record rather than claiming fresh unaided retrieval.
+- Protected assessment disables tutoring help in the visible question path while preserving the distinction that accessibility support is separate.
+
+7. FEEDBACK / COMPLETION
+- Feedback is reorganized into What happened / What to learn / What next.
+- Multi-answer text is human-readable.
+- Completion receives a forward “Keep moving” next action instead of framing completion mainly as retreat/backtracking.
+- Auto-Seeds wrapper reuses milestone deduplication and rolls back on local persistence failure; no separate Collect Seeds chore in the v7.21 summary path.
+
+8. STUDY SET REVIEW
+- When the existing revision-bound set state reaches Ready, the question canvas is replaced with an explicit “15 of 15 reviewed” completion surface.
+- Publication remains a separate instructor action; approval does not silently publish.
+- Review action region is sticky/stable in the v7.21 style layer.
+
+9. ROLE / GENERAL STUDY / FOCUS
+- General Study is visibly outside a formal course path and its fixture recommendation explicitly says no course claim is inferred.
+- Instructor preview receives explicit “no learner evidence or rewards” context marking.
+- Focus-visible styling is retained and made consistent/radius-aware; it is not removed to solve the owner’s harsh square-focus complaint.
+
+10. ADAPTER / ENGINE BOUNDARY
+- All newly added recommendation/evidence/help/agency/response semantics are explicitly fixture-only through a replaceable local prototype adapter; window metadata says nonCanonical=true and backendConnected=false.
+- UI does not claim real authentication, backend learner truth or Supabase authority.
+- Sol CF-0050 later proposed reusing/extending the existing StudyGridProductGateway with read/command/operation semantics. General owns adoption/reconciliation of that proposed seam before production backend integration. This v7.21 build intentionally does not fabricate a backend/API or claim that proposal is installed.
+
+BOUNDED LOCAL VERIFICATION
+Node syntax check: PASS.
+Playwright/local DOM/runtime matrix: 74/74 PASS after exact final candidate bytes were produced.
+Coverage included:
+- bootstrap/meta and no page errors;
+- Home signed-in root / no onboarding Back / Up next;
+- horizontal-overflow smoke at 1440×900, 1024×768, 768×1024 and 390×844;
+- Learn teaching operations;
+- same-level tab geometry stability after layout settle;
+- all eight interaction-family controls present;
+- q4m four choices, three simultaneous selections, human-text selected/correct feedback;
+- sequence visible numbering, non-drag controls and actual reorder;
+- keyboard focus-visible through keyboard traversal;
+- pre-answer example suppression in practice;
+- practice help available and protected-assessment help disabled;
+- General Study route;
+- instructor preview marker.
+
+These 74 are Bob’s bounded local implementation checks, not Stuart’s independent 25-case acceptance verdict and not browser/device efficacy evidence.
+
+KNOWN HOLDS / NON-CLAIMS
+- Backend, auth, Supabase, network provider integration and deployment were not touched.
+- Candidate is non-canonical and not promoted over v7.20.
+- Independent Stuart exact-candidate QA has not yet been run/released by General.
+- Physical-device / hosted-origin / full accessibility acceptance remains outside Bob’s local check.
+- “Canascape” remains unresolved and unchanged.
+- The older monolithic prototype still contains legacy fixture/projection machinery outside the newly bounded surfaces. This candidate does not claim that every historical prototype learner-state helper has become Engine-v1 compliant; production integration must use the accepted adapter/data contract rather than treating current local state as authoritative learner truth.
+- Sol CF-0050 adapter contract is consumed as a same-batch proposal, not silently installed. General must reconcile/accept the exact future application seam.
+
+LIFECYCLE
+STARTED persisted at 20:53 ET.
+CHECKPOINT persisted at 21:23 ET after build + bounded local QA + same-batch feeder consumption.
+Terminal DONE return is this provider-visible file plus worker/response trace readback.
+
+FINAL DISPOSITION
+DONE — NEW CLICKABLE FRONTEND CANDIDATE BUILT FROM EXACT ACCEPTED BASE / PROVIDER EXACT-BYTE VERIFIED / 74/74 BOUNDED LOCAL CHECKS PASS / BACKEND-AUTH-SUPABASE-DEPLOYMENT HELD / NON-CANONICAL / DIRECT GENERAL RETURN.
