@@ -1,0 +1,327 @@
+STUDYGRID — SEQ477 H1/H2 INDEPENDENT REPRODUCTION + ACCEPTANCE FREEZE
+Worker: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+Coordinator: ChatGPT General / CF-0051
+Prepared: 2026-10-02 18:18 ET
+Status: DONE — QA / ADJUDICATION ONLY
+Candidate mutation: NONE
+
+======================================================================
+0. AUTHORITY / SCOPE
+======================================================================
+
+Authority:
+- CENTRAL ROUTING seq477.
+- General route: Drive 16Zjknc9UcIxxAtHrqVbk3uX6mwcSg_iY2B_5ey5Q0aQ.
+- Sol seq471 evidence: Drive 1VWkv__jNOvIAb-q_uDx99bl88wUZC7xj.
+
+Exact repaired baseline:
+- repo Nathan6376/StudyGrid
+- repaired application/test tree 82a3591b4495dd40f1ed182048aef67092fb64e9
+- repaired app source c020c3c9defe2425139184d0328effeb0f2ea040
+- original Claude repair branch still resolves to 4965df037cac2e147c154f6a78b172dd9acf3c04 during this pass.
+
+Scope is intentionally narrow. Seq470 remains terminal and preserved. This pass does not rerun unrelated F1–F12, visual/IA, device, AT or hosted QA.
+
+Method:
+- independent deterministic state-transition reproduction from exact 82a3591 source;
+- source loci checked in VisitStore create/markShown/reviseEnvelope/submit/matches/Teaching setters, provider READY/SET/APPLY planning and exact catalog fixtures;
+- Sol's executable harness results were treated as comparison evidence, not adopted as the proof.
+
+======================================================================
+1. H2 — CROSS-INSTANCE FRESHNESS RESIDUAL
+======================================================================
+
+VERDICT: REPRODUCED-SRC.
+SEVERITY: P1 CONFIRMED.
+
+Why the baseline fails:
+1. VisitStore.create builds every run with `previouslySeen = seen.has(taskId)` using receipts/exposure as they exist at plan-creation time.
+2. markShown later records actual presentation in `state.exposure[taskId].shownIn` without revising already-created run.previouslySeen.
+3. submit reads live help flags from exposure, but sets `support.previouslySeen` from the stale run.previouslySeen snapshot.
+4. attempt 1 + no help + stale previouslySeen=false can therefore satisfy the `fresh` predicate.
+5. provider submit treats support.previouslySeen=false as unhelped and can return evidence=clean/fresh=true.
+
+Concrete ordinary witness on current content:
+- Default READY `bio-u2-quiz` includes `osm-m1` because the checkpoint covers diffusion+osmosis and standard READY round-robins fresh task groups.
+- Start READY, advance to first question and pause. Its later `osm-m1` run exists with previouslySeen=false but has not yet been shown.
+- Start NEW Osmosis. Its authored memory tasks include `osm-m1` and `osm-o1`. Reach Try From Memory, show `osm-m1`, do not answer it, then pause.
+- Resume the original READY instance, complete the preceding READY question, reach `osm-m1` and answer it correctly first try.
+- By then exposure for `osm-m1` contains the NEW instance and then the resumed READY instance, but the READY run still carries previouslySeen=false from creation.
+- Baseline submit therefore permits support.previouslySeen=false, fresh=true and provider evidence=clean even though the same task was already presented in another instance.
+
+Impact:
+This is not cosmetic metadata. Clean/fresh receipts feed learner feedback, completion summaries, group coverage and Progress. A cross-instance presentation can be misrepresented as independent evidence. P1 is the correct classification.
+
+H2 FIX CONTRACT / INVARIANT
+At the evidence boundary, `previouslySeen` must reflect any presentation or accepted answer of the same task in a DIFFERENT session instance that occurred before this submit, including events after this plan was created. The current instance's own first display must not by itself make the first attempt nonfresh. History/receipts/exposure must never be cleared to manufacture freshness.
+
+======================================================================
+2. H2 EXACT POST-FIX ACCEPTANCE CASES
+======================================================================
+
+H2-A — READY plan first, NEW exposure later, READY answer
+Precondition: fresh visit; default Biology checkpoint confirmed/open.
+Steps:
+1. Start READY bio-u2-quiz; verify plan contains osm-m1 and READY run previouslySeen initially false.
+2. Advance far enough to preserve/pause READY before osm-m1 is shown.
+3. Start NEW osmosis; reach memory; mark/show osm-m1; do not answer; pause.
+4. Resume original READY; reach osm-m1; answer correctly first try without help.
+PASS:
+- receipt support.previouslySeen=true or equivalent evidence-boundary prior-exposure signal;
+- fresh=false;
+- evidence is practice/helped, never clean;
+- feedback never says on your own;
+- completion/Progress does not count this receipt as clean independent coverage.
+FAIL: any clean/fresh independent receipt.
+
+H2-B — reverse direction: NEW plan first, READY exposure later, NEW answer
+Steps:
+1. Start NEW osmosis and pause after preserving the plan but before memory osm-m1 is shown.
+2. Start READY bio-u2-quiz; reach/show osm-m1 without answering; pause.
+3. Resume original NEW; reach osm-m1; answer correctly first try.
+PASS: same nonfresh/practice result as H2-A.
+Purpose: proves fix is evidence-boundary generic, not READY-specific.
+
+H2-C — positive control: current-instance first display stays fresh
+Steps: fresh visit → NEW osmosis → first display of osm-m1 → correct first try, no help, no other-instance exposure.
+PASS: previouslySeen=false, fresh=true, evidence=clean.
+FAIL: patch treats the current instance's own markShown as prior exposure.
+
+H2-D — queued/unmounted task is NOT exposure
+Steps:
+1. Create READY plan containing osm-m1 but never render/reach osm-m1.
+2. In another NEW instance, show and answer osm-m1 first try with no prior actual presentation.
+PASS: READY plan membership alone does not downgrade the NEW answer; freshness follows actual presentation/receipt history only.
+FAIL: merely appearing in another plan counts as seen.
+
+H2-E — other-instance accepted answer after plan creation
+Steps:
+1. Create/pause plan A with shared task unshown.
+2. In instance B, actually answer the same task.
+3. Resume A and answer same task.
+PASS: A cannot produce clean/fresh independent evidence. An accepted receipt from B is itself proof of prior presentation.
+
+H2-F — multiple current-instance renders without another instance
+Steps: show the same unanswered task, navigate within the same instance so it remounts, then answer first try; no help, no prior other-instance presentation.
+PASS: same-instance remount does not by itself set cross-instance previouslySeen; first attempt may remain fresh.
+
+H2-G — existing help/retry semantics remain additive
+- another-way/hint/reveal still force nonfresh under existing F3/F4 rules;
+- attempt >1 still forces nonfresh under F6;
+- patch must not weaken these while fixing cross-instance exposure.
+
+H2-H — SET/APPLY generic overlap coverage
+Current-catalog fact:
+- only current Study Set is `set-bio-u2`, whose task IDs are set-1/set-2/set-3/set-4;
+- APPLY episodes use separate game task IDs such as gl-*, gp-*, gb-* (and other game families);
+- current catalog therefore has NO SET↔APPLY shared task ID to exercise naturally.
+
+Acceptance requirement:
+- Assert the current intersection is empty so nobody claims a production-fixture SET/APPLY reproduction that does not exist.
+- To prove the patch is generic, add a synthetic/injected test fixture or plan seam with one stable task ID shared between SET and APPLY, without changing production demo content merely to create the test.
+- Test both directions: paused SET plan → APPLY exposes shared task → SET answer; and paused APPLY plan → SET exposes shared task → APPLY answer.
+PASS: later resumed answer is nonfresh/practice in both directions.
+If no synthetic shared-ID fixture is added, report SET/APPLY as N/A-current-catalog, not PASS.
+
+======================================================================
+3. H1 — UNRELATED ELIGIBILITY-REVISION STRANDED CHECK
+======================================================================
+
+VERDICT: REPRODUCED-SRC.
+SEVERITY: P2 CONFIRMED ON CURRENT REPAIRED IA.
+
+Why the baseline fails:
+1. submit captures the current global `envelopeRevision`, then sets the run to phase=checking with pendingOp.
+2. Every Teaching eligibility setter calls reviseEnvelope, which increments ONE global envelopeRevision before checking whether an unfinished session is actually affected.
+3. For an unrelated Teaching change, the Biology session remains eligible/unblocked and its generation/pendingOp are untouched.
+4. When the provider later resolves OR rejects, matches() fails solely because global envelopeRevision changed.
+5. Both the try and catch branches return stale immediately on that mismatch. Neither branch clears pendingOp nor restores phase=locked.
+6. Result: eligible session, blocked=false, zero new receipt, but run remains checking with pendingOp; resubmit cannot run because resubmit requires locked.
+
+Concrete witness:
+- Start a Biology learning session and commit a valid guided answer; choose confidence so provider submit is pending.
+- While pending, call an unrelated Math Teaching mutation such as confirming `math-eq-check`.
+- Biology eligibility remains valid, but global envelopeRevision advances.
+- Settle the original Biology provider submission.
+- Baseline matches() rejects it as stale and returns without cleanup, leaving checking/pendingOp stranded.
+
+No-op amplification:
+The current Teaching setters do not compare effective old/new values before revising. Calling setReleased/math-w5=true, setSourceStatus/src-math-balance=approved, setCheckpointConfirmed/math-eq-check=false, or shareStudySet(..., false) can still advance the global revision even when the effective value is unchanged, so a semantically no-op call can trigger the same stranded state.
+
+Why P2, not P1, on the current repaired product:
+Current ordinary full-page Teaching navigation generally pauses an active learning session before a teacher mutation, and pause already retires a checking run to locked. So the controller bug is real but its direct current-UI incidence is narrower than H2. P2 is appropriate for this baseline. If an integrated Codex/hardening UI makes Teaching/role mutations reachable alongside an active check and reproduces the dead-end in an ordinary path, that integrated functional defect becomes release-blocking regardless of the historical label.
+
+H1 FIX CONTRACT / INVARIANT
+A policy/version change may never leave a settled operation permanently in checking. Two implementation families are acceptable:
+A. scope policy invalidation so unrelated changes do not invalidate the pending operation; or
+B. keep broader invalidation but retire invalidated pending work to a truthful recoverable locked state.
+
+Do NOT simply remove stale/version fencing. Relevant revocation/reset/restart/pause must still prevent obsolete results from being applied.
+
+======================================================================
+4. H1 EXACT POST-FIX ACCEPTANCE CASES
+======================================================================
+
+For cases below, begin with a valid Biology answer committed + confidence recorded + delayed provider submit pending.
+
+Permitted final outcomes for an UNRELATED mutation:
+PATH VALID — operation remains current:
+- resolve → exactly one receipt, feedback phase, pendingOp cleared;
+- reject → locked phase, pendingOp cleared, committed answer/confidence preserved, truthful error, resubmit available.
+PATH RETIRED — operation is intentionally invalidated:
+- phase becomes locked, pendingOp cleared, committed answer/confidence preserved;
+- old late resolve/reject cannot append a receipt or mutate the newer/current run;
+- resubmit can create a new operation and complete normally.
+
+Never permitted:
+- settled run still phase=checking;
+- stale pendingOp left behind;
+- committed locked answer/confidence lost;
+- duplicate receipt;
+- old settle overwrites a newer resubmission;
+- relevant revoked content still accepting the old result.
+
+H1-A — unrelated checkpoint change, resolve
+Mutation: setCheckpointConfirmed('math-eq-check', true).
+PASS: PATH VALID or PATH RETIRED invariants above; Biology remains unblocked/recoverable.
+
+H1-B — unrelated checkpoint change, reject
+Same setup, provider rejects.
+PASS: either current rejection becomes a truthful recoverable error (VALID), or an already-retired old operation stays inert (RETIRED). Never checking forever.
+
+H1-C — unrelated source change
+Mutation: setSourceStatus('src-math-balance','draft') during Biology pending submit.
+PASS: Biology result valid or recoverably retired; no stranded state.
+
+H1-D — unrelated release change
+Mutation: setReleased('math-w5', false).
+PASS: same invariant.
+
+H1-E — unrelated Study Set share change
+Setup the Biology Unit 2 Study Set so it is shared before starting the pending NEW Biology answer; while that NEW answer is pending, unshare `set-bio-u2`.
+PASS: NEW session stays eligible; pending result is valid or recoverably retired, never stranded.
+Note: set sharing is unrelated to a NEW lesson even though it is in the same course.
+
+H1-F — no-op release setter
+Mutation: setReleased('math-w5', true) when effective value is already true.
+PASS: no semantic dead-end. Ideally no revision is emitted; if implementation still revises, pending check must remain valid or recoverably locked.
+
+H1-G — no-op source setter
+Mutation: setSourceStatus('src-math-balance','approved') when already effectively approved.
+PASS: same invariant.
+
+H1-H — no-op checkpoint setter
+Mutation: setCheckpointConfirmed('math-eq-check', false) when already effectively false.
+PASS: same invariant.
+
+H1-I — no-op share setter
+Mutation: shareStudySet('set-bio-u2', false) while already unshared.
+PASS: same invariant; no checking dead-end.
+
+H1-J — relevant revocation remains stale-safe
+Pending Osmosis answer → setSourceStatus('src-bio-osmosis','draft') or close bio-u2.
+PASS:
+- session becomes blocked/paused as appropriate;
+- pending old operation is cleared/retired;
+- late resolve/reject appends no receipt/completion/help/error to revoked scope;
+- locked answer/confidence/history are preserved where current F2 requires;
+- after reapproval/reopen, recovery/resubmit is explicit and no old result reappears.
+FAIL: H1 fix accepts a result that F2 correctly invalidated.
+
+H1-K — old settle after a NEW resubmit
+Only applicable if patch proactively retires broad-invalidated operations:
+1. unrelated revision retires op1 to locked;
+2. user resubmits, creating op2 checking;
+3. op1 resolves/rejects after op2 exists.
+PASS: op1 is inert and MUST NOT clear/lock/overwrite op2; only op2 may determine current result.
+This is the key anti-clobber guard for any cleanup implementation.
+
+H1-L — repeated unrelated revisions
+Apply two or more unrelated/no-op Teaching revisions while op1 is pending, then settle.
+PASS: same final invariant; no accumulated stranded op or duplicate recovery.
+
+H1-M — pause/restart/reset preservation guard
+Existing stale-safety semantics remain unchanged:
+- pause of checking → locked/pending cleared;
+- restart/generation change rejects old result;
+- reset/epoch change rejects old result.
+No H1 patch may weaken these fences.
+
+======================================================================
+5. EXISTING REPAIR TESTS THAT MUST REMAIN PRESERVED
+======================================================================
+
+Do not delete, relax or replace the existing issue #2 regressions merely because H1/H2 add new cases.
+
+Preserve `web/tests/repair.test.ts` coverage:
+- R1 one current eligibility policy / revocation across templates (F1/F2);
+- R2 truthful help/exposure + restart + retry freshness (F3/F4/F6);
+- R3 completed history/new instances (F5);
+- R4 bounded topic coverage (F8);
+- R5 async rejection/operation identity/deep immutability (F7/F9/F12).
+
+Preserve `web/tests/browser/repair.spec.ts` coverage:
+- R1 draft source/direct route/Continue/Recent/source sheet/reapproval;
+- R2 another-way before Check is help;
+- R3 completed review opens a new instance;
+- R6 Welcome hidden/offscreen/manual gating (F10);
+- R7 General direct session Add-to-list recovery (F11);
+- Stuart gap 1 Settings jump focus;
+- Stuart gap 2 Stuck?→Source focus return.
+
+Also preserve the existing games Add-to-list regression changed in the repair freeze. Seq470's broader acceptance matrix remains authoritative and is not superseded by this narrow report.
+
+======================================================================
+6. CLAUDE BOUNDED PATCH ACCEPTANCE GATE
+======================================================================
+
+Claude patch can be accepted for integration only when:
+1. exact branch/commit and 4965df0 ancestry are recorded;
+2. H2-A through H2-G pass; H2-H is either covered by a synthetic shared-ID fixture or explicitly N/A-current-catalog with no false PASS claim;
+3. H1-A through H1-M pass under one documented VALID/RETIRED policy;
+4. H2 false-clean receipt no longer exists;
+5. no H1 settle path ends checking/pending forever;
+6. relevant F2/F7 stale-safety remains intact;
+7. all pre-existing repair tests above remain present and pass;
+8. no package/lockfile/dependency change;
+9. changed files are bounded to the controller/provider/test seams actually needed;
+10. no merge/deploy/backend/auth/Supabase/AI occurs in the repair task.
+
+Any H2 false-clean/fresh receipt = automatic P1 rejection.
+Any relevant revocation result accepted after the patch = automatic P1 rejection.
+Any ordinary settled check left permanently checking/pending = reject the patch.
+
+======================================================================
+7. LATER CODEX / HARDENING INTEGRATED ACCEPTANCE
+======================================================================
+
+On the final integrated Codex/hardening SHA, rerun ONLY this narrow H1/H2 matrix plus seq470's existing required regression floor. Integration adds these extra guards:
+
+- same VisitStore must remain stable across same-account role/workspace transitions unless explicit account isolation requires a new store;
+- visual shared-element ghosts/outgoing mounted copies must not call markShown and fabricate H2 exposure;
+- role/Teaching mutations, split views or account transitions must not create a new ordinary H1 stranded-check path;
+- identity revision stays separate from learning eligibility revision; neither may silently clear evidence/history;
+- animations must not control when submit cleanup, exposure recording, route mutation or stale-operation retirement occurs;
+- Stuck/sheet conversions remain independent from this controller fix and keep seq470 focus/evidence expectations.
+
+Integrated rejection conditions:
+- H2 returns under any cross-instance route/order;
+- any pending check can strand due to unrelated/no-op identity/Teaching change;
+- stale op cleanup clobbers a newer op;
+- patch weakens affected-scope revocation safety;
+- Codex duplicates freshness/eligibility logic in UI selectors instead of preserving controller/provider authority.
+
+======================================================================
+8. TERMINAL DISPOSITION TO GENERAL CF-0051
+======================================================================
+
+Task status: DONE.
+
+Independent adjudication:
+- H2 reproduced; P1 classification confirmed.
+- H1 reproduced; P2 classification confirmed for the current repaired IA, with ordinary integrated reachability treated as a release-blocking functional regression if Codex exposes it.
+- Current SET/APPLY production fixtures do not share task IDs; generic coverage must use a synthetic shared-ID test or be reported N/A, not falsely passed.
+
+Acceptance artifacts above are frozen for both Claude's bounded H1/H2 repair and the later integrated Codex/hardening candidate.
+
+No implementation, dependency installation, candidate mutation, merge, deployment, backend/auth/Supabase/AI connection or peer wake occurred.
