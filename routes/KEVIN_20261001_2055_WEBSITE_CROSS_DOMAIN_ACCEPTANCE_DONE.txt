@@ -1,0 +1,62 @@
+STUDYGRID KEVIN — WEBSITE PROTOTYPE CROSS-DOMAIN ACCEPTANCE FIXTURES — DONE
+Timestamp: 2026-10-01 20:55 ET
+From: StudyGrid Worker Kevin
+To: ChatGPT General CF-0047
+Lifecycle: DONE — ACCEPTANCE DESIGN ONLY / NO IMPLEMENTATION
+
+EXACT ROUTE CONSUMED
+routes/GENERAL_20261001_2049_KEVIN_WEBSITE_CROSS_DOMAIN_ACCEPTANCE.txt @ c0612110bbc268dca261e9f4eb3b2fd62cfec349
+
+REQUIRED INPUTS CONSUMED
+- Kevin cross-domain scenario return @ 7f5926287f17310b6b3e54b87cc69f9ef1d807bc plus scenario report/set.
+- Draft 2 General reconciliation @ b6ac02d321293a46002636f6e6286e1f067e9ea8.
+- Website prototype build-contract prep @ 6be928678f784e968f3ecca3017d6da39fca9c84.
+
+STARTED
+routes/KEVIN_20261001_2053_WEBSITE_CROSS_DOMAIN_ACCEPTANCE_STARTED.txt @ 5dae98a16055caebfaad144b530e2b6bbf061633
+
+DIRECT TECHNICAL RETURN
+reports/KEVIN_20261001_WEBSITE_CROSS_DOMAIN_ACCEPTANCE/FIXTURE_SET.md @ e3a849c1bf821eea377977be966950d91c9c5a0f
+Provider readback completed.
+
+DELIVERABLE
+A compact 10-fixture website-facing acceptance set, not 38 screens.
+Coverage includes every route minimum:
+- law/policy;
+- engineering;
+- mathematics;
+- biology/health science;
+- reading/writing/humanities;
+- cold start/no evidence;
+- recognition success + application failure;
+- answer-exposed repeat success;
+- explicit help request;
+- learner rejects recommendation;
+- protected assessment;
+- accessibility/accommodation;
+- no valid next action;
+- stale recommendation after source/context change;
+- multi-claim task;
+- self-directed/general-study path.
+
+Each fixture contains only website-facing fields requested by General: learner/course context; mock engine output/state; primary visible action; short learner-facing reason; allowed alternate/escape; wording/state that must not appear; interaction type where relevant.
+
+HIGH-VALUE FIXTURES
+W01 law cold start — UNMEASURED is not weakness.
+W02 law recognition/application divergence — no fake scalar mastery.
+W03 protected health-science assessment + accommodation/help request — coaching suppressed, access preserved.
+W04 engineering multi-claim task — component evidence stays targeted.
+W05 mathematics answer-exposed repeat success — practice is not transfer/retention proof.
+W06 mathematics explicit help — allowed help without shame or trait inference.
+W07 reject recommendation → General Study — agency/context switch without disengagement inference or course-authority leakage.
+W08 no eligible action — honest unsupported state and escape, no MCQ fallback.
+W09 biology stale recommendation — refresh before delivery, no stale answer leakage.
+W10 humanities constructed response — defensible alternate interpretation scored by rubric, not model-answer match.
+
+CROSS-FIXTURE PASS FLOOR
+One primary next action + short reason; graceful escape where allowed; cold/missing/unsupported/stale/learner-error states remain distinct; help/dismissal/latency/accommodation/self-directed choice never become ability/motivation evidence; protected coaching suppression stays separate from accessibility; exposed repeats never become fresh transfer proof; multi-claim feedback stays component-specific; stale recommendations revalidate; General Study stays visibly separate from consequential course authority; unsupported interaction types do not silently degrade to a different construct.
+
+BOUNDARY VERIFIED
+No code, HTML mutation, backend/auth/Supabase/deploy/canonical promotion or peer wake. No software PASS or efficacy claim is made. General/Bob/Stuart may consume this as fixture expectations against the exact website candidate.
+
+DONE — direct technical return persisted for General CF-0047. Nathan is not the technical courier.
