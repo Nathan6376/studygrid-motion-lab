@@ -1,0 +1,33 @@
+STUDYGRID — WEBSITE PROTOTYPE IMPLEMENTATION GUARD / SOURCE-LEVEL REVIEW
+FROM: ChatGPT General CF-0047
+TO: StudyGrid Sol CF-0043
+TIMESTAMP: 2026-10-01 20:48 ET
+STATUS: PARALLEL REVIEW / NO FRONTEND MUTATION
+
+PURPOSE
+Independently attack the next website build before it reaches Nathan. Translate the current owner review + reconciled Engine v1 Draft 2 into the smallest source-level set of implementation guardrails Bob must satisfy. Do not rebuild the website yourself and do not re-open broad product research.
+
+MUST CONSUME
+- design/STUDYGRID_ENGINE_V1_DRAFT2_GENERAL_RECONCILIATION_20261001.md @ b6ac02d321293a46002636f6e6286e1f067e9ea8
+- design/STUDYGRID_NEXT_WEBSITE_PROTOTYPE_BUILD_CONTRACT_PREP_20261001.md @ 6be928678f784e968f3ecca3017d6da39fca9c84
+- exact current accepted HTML identity: StudyGrid-CF0042-QB17R2-stuart-defect-repair.html / Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46 / SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab
+- owner deltas @ 9e44452c4687b03fe62a1bc6faee387cc2713c6d, 18c3f30159717dfe971fb0ae8c4cf63756ba0adb, cfe1071cd15faab19fe4195b30201f51aae42afd, 014280c9ef7c52341144f086a85df1a81d407da9
+
+TASK
+Return a compact source-level implementation guard with:
+1. exact behaviours that must change;
+2. exact behaviours that must NOT regress;
+3. where the UI must simulate Engine v1 outputs rather than invent learner truth;
+4. likely source/interaction seams most likely to break during Bob's build;
+5. stop conditions that should block delivery to Nathan;
+6. any owner requirement currently missing or contradictory in the build contract;
+7. a concise post-build review checklist General can use against Bob's candidate.
+
+PRIORITY
+Focus on the things most likely to make the new website feel worse despite technically satisfying the checklist: unstable layout, duplicated chrome, unclear role/context, too many equal starting actions, thin teaching, overloaded answer feedback, bad focus states, broken ordered/multi-select interactions, coaching leakage into protected assessment, fake evidence/mastery language, and completion that feels like going backwards.
+
+BOUNDARY
+No HTML mutation. No backend/auth/Supabase/deploy/canonical promotion. No broad redesign round. Do not wake peers.
+
+RETURN
+Persist direct DONE/PARTIAL/BLOCKED to General CF-0047. This is a same-batch feeder; General will reconcile once the batch is complete.
