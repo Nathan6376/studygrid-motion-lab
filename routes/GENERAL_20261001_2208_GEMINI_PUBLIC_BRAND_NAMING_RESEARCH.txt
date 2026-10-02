@@ -1,0 +1,63 @@
+STUDYGRID — PUBLIC BRAND NAMING RESEARCH / GEMINI
+FROM: ChatGPT General CF-0047
+TO: Gemini
+TIMESTAMP: 2026-10-01 22:08 ET
+STATUS: NAMING / BRAND RESEARCH ONLY — NO PRODUCT MUTATION
+
+OWNER CONTEXT
+Nathan needs a public-facing brand name before wider beta/social introduction. “StudyGrid” will remain the internal/technical engine name and may appear as “Powered by the StudyGrid Engine.” The public brand should be distinct.
+
+WHY THIS IS NEEDED
+“StudyGrid” is already used by multiple education products, including school/LMS/tutoring products. The current product is different at its core, but the education-market naming collision is material enough that Nathan does not want to launch publicly under that name.
+
+PRODUCT CORE
+This product is not just a study planner, flashcard app, quiz generator, LMS, or chatbot.
+Its core loop is:
+course/class material → determine what needs learning → determine what the learner has actually demonstrated → choose the best next learning action → teach/practice/test appropriately → update evidence → choose again.
+The user-facing experience should feel simple because the intelligence underneath is doing the hard work.
+Current product line/idea: “Your class, easy to learn.”
+Internal technical line can be: “Powered by the StudyGrid Engine.”
+
+BRAND DIRECTION
+Nathan liked “Relay” as a naming direction because it is short, mature, memorable, real-word-ish, and connected to the product without literally saying “study.” Relay itself is not preferred because it is crowded and already used internally in Nathan’s system.
+Nathan also responded positively to “Northline.” Rationale: North = direction/orientation; Line = continuity/path. It fits “the product keeps you pointed in the right direction through a class.” Northline is only a candidate, not a decision.
+
+NAMING CONSTRAINTS
+Prefer:
+- 1 short word or very compact 2-part word;
+- easy to say aloud and easy to spell after hearing it;
+- mature enough for institutions/professors but natural enough for students;
+- not childish, mascot-first, or cheesy;
+- not “Study____”, “Learn____”, “Class____”, “Course____”, “____AI”, or generic startup sludge unless there is an exceptional reason;
+- should not lock the company into quizzes, tutoring, one subject, one school type, or one interface;
+- should have some conceptual relationship to direction, continuity, progress, signal, path, orientation, clarity, momentum, or “what next” without being painfully literal;
+- should sound good in both of these sentences:
+  1. “Yo, I built _____. I’ll send you the link.”
+  2. “Humber is piloting _____ with students.”
+
+TASK
+Independently attack the naming problem. Do not simply remix ChatGPT’s candidates.
+
+1. Generate several distinct naming territories first, not just a giant random list.
+2. Produce 20–30 serious candidates across those territories.
+3. For each candidate give a one-line rationale and obvious weakness.
+4. Narrow to a strongest shortlist of 5–8 based on memorability, sound, institutional credibility, student friendliness, extensibility, and likely ownability.
+5. Do a live collision scan for the shortlist across obvious education/software products, app stores/web presence, and major trademark/public-brand conflicts where reasonably discoverable. Distinguish exact collision, adjacent collision, common-word crowding, and no obvious collision found. Do not call anything legally cleared.
+6. Include Northline in the evaluation, but do not favour it merely because Nathan already likes it.
+7. If every good dictionary-word name is too crowded, propose a few invented names that still sound human and credible rather than “AI startup generated.”
+8. Recommend the next naming step after this pass, but do not rename code, product files, domains, or public assets.
+
+OUTPUT
+Return:
+- naming territories;
+- candidate set;
+- collision-aware shortlist;
+- independent recommendation with reasons;
+- red flags / names to avoid;
+- explicit statement that trademark/domain availability remains a separate formal clearance step.
+
+BOUNDARY
+Naming/brand research only. No frontend mutation, backend mutation, repo rename, domain purchase, trademark filing, or public launch action.
+
+RETURN
+Persist the complete technical return directly to General CF-0047 if shared routing is available. Nathan should not have to courier a long technical packet back manually.
