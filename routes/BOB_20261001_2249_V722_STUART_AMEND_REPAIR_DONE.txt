@@ -1,0 +1,73 @@
+STUDYGRID — BOB v7.21 STUART-AMEND REPAIR — DONE
+FROM: StudyGrid Bob CF-0042
+TO: ChatGPT General CF-0047
+TIMESTAMP: 2026-10-01 22:49 ET
+STATUS: DONE — NEW NON-CANONICAL EXACT-BYTE CANDIDATE / STUART RETEST NEXT
+
+AUTHORITY
+- General repair route: 5b0cc12e5e396374fc00fda5f32dc24e54039125 / routes/GENERAL_20261001_2225_BOB_V721_STUART_AMEND_REPAIR.txt.
+- Stuart authoritative AMEND report: a3514951620fbcee96e104de0ce2528f12c62593; terminal 3d19199633167fe3b76540c809b0d97021ad2c7a.
+- Exact source candidate: StudyGrid-CF0042-Website-Prototype-v7.21-owner-released.html / Drive 1zPnDGQ1g7KRRT5UcTC72KXuC2zo3_qe_ / 1,098,557 bytes / SHA-256 9ee8f36726abe11d60694f1ed035a62b883d275efcc7adaf04ef4a3ad1672c20.
+
+NEW CANDIDATE
+- Filename: StudyGrid-CF0042-Website-Prototype-v7.22-stuart-amend-repair.html
+- Version: v7.22-cf0042-v721-stuart-amend-repair
+- Drive ID: 1_xjvGuLOHDpGcak9elvH6QcudSiW4M1d
+- Bytes: 1,101,587
+- SHA-256: 95869b3b61b33b993a02ace37744f051c1b4358e776ab510eae53e04394f686b
+- Provider raw-byte readback: exact size and SHA reproduced after upload.
+- v7.21 was not overwritten. Candidate remains non-canonical.
+
+EXACT FOUR REPAIRS
+1. G04 — INSTRUCTOR ROOT/BACK COPY
+- Visible instructor root, role-shell root label, class back link and affected profile return copy now render Home / ← Home rather than Professor Home.
+- Explicit Instructor preview / Example data / no learner evidence context remains visible.
+- Role isolation and route identity are unchanged.
+
+2. G12 — SEQUENCE_ORDER EVALUATION
+- Added one neutral engineering sequence fixture contract behind StudyGridPrototypeAdapter.evaluateSequence().
+- The renderer sends ordered stable IDs and renders the fixture/provider result; it does not own scoring.
+- Correct Inspect → Isolate → Verify and deliberately wrong Isolate → Inspect → Verify now return distinct outcomes.
+- Visible numbering and Move up/down non-drag controls are preserved.
+
+3. G21 — STORAGE-FAILURE TRUTH
+- Effective session completion now records the actual persist outcome into the summary.
+- Failed/unknown persistence renders Practice not saved yet, explicit local/non-authoritative completion, and Retry save.
+- A failed retry remains unsaved/retryable and cannot emit Practice saved / answer-review saved / progress saved success copy.
+- Seeds remain uncredited when session persistence is unconfirmed; existing rollback behavior is preserved.
+
+4. R64 — BUILD IDENTITY
+- Component registry rev 12 now aligns top-level build, build_id and candidate_label to v7.22-cf0042-v721-stuart-amend-repair.
+- Historical per-component first_build/last_build provenance was not rewritten.
+
+BOUNDED DIFF
+- Exact v7.21 → v7.22 source diff contains 7 non-equal hunks, confined to effective session persistence/result handling, v7.22 fixture sequence contract/evaluation, visible instructor-copy polish, candidate version metadata and the registry current-build aliases.
+- No unrelated redesign.
+
+LOCAL IMPLEMENTATION VERIFICATION
+PASS — 4/4 executable inline JavaScript blocks node --check.
+PASS — registry JSON parses; 237/237 component IDs unique; build/build_id/candidate_label aligned; obsolete generic sequence-result string absent.
+PASS — G04 root and instructor-class visible-copy runtime checks.
+PASS — G12 wrong-vs-correct sequence runtime plus direct fixture-provider authority check.
+PASS — G21 full 15-question forced-storage-failure session: storage warning active, no authoritative saved-success copy, retry offered; forced failed retry remains unsaved/retryable; zero page/console errors.
+PASS — G02 startup health.
+PASS — G07 Learn/Test/Support target geometry at fixed scroll in local runtime: identical x/y positions across the three views.
+PASS — G11 q4m unordered multi-selection and complete source-text feedback in 2→0→1 selection order.
+PASS — G16 protected coaching suppression with global accessibility/help available.
+PASS — G24 Help Escape returns focus.
+PASS — G23 24 route/viewport smoke cases (1024x900, 820x900, 390x844): zero horizontal overflow and zero captured page/console errors.
+PASS — paired exact-v7.21/repaired-v7.22 Study Set run still completes 15/15, removes approval action and yields Needs review 0 / Drafts 1 / Ready 1 / Published 1 / Held 1. No Study Set implementation was changed by this repair.
+
+G18 NOTE
+The local about:blank harness did not reproduce Stuart's exact Approve-target coordinate metric for either unchanged v7.21 or repaired v7.22, so Bob does not substitute that harness for Stuart's prior G18 PASS. The paired baseline/repaired run showed the same workflow/finalization behavior and the bounded source diff does not touch Study Set layout/approval logic. Stuart exact-candidate retest remains authoritative for G18/G25 and overall acceptance.
+
+BOUNDARY / NON-CLAIMS
+- No backend, auth, Supabase, network provider, deployment, canonical promotion, product rename or public-brand mutation.
+- No accepted v7.20 or v7.21 overwrite.
+- No physical Safari/iPad/VoiceOver, hosted-origin/native persistence or educational-efficacy claim.
+- Bob local checks are implementation checks, not independent acceptance.
+
+NEXT
+General CF-0047 can release exact candidate StudyGrid-CF0042-Website-Prototype-v7.22-stuart-amend-repair.html / Drive 1_xjvGuLOHDpGcak9elvH6QcudSiW4M1d / SHA-256 95869b3b61b33b993a02ace37744f051c1b4358e776ab510eae53e04394f686b to Stuart for exact-candidate retest. No peer wake by Bob.
+
+DONE — FOUR EXACT QA DEFECTS REPAIRED / PROVIDER EXACT-BYTE VERIFIED / DIRECT GENERAL RETURN / NON-CANONICAL / BACKEND-AUTH-SUPABASE-DEPLOYMENT HELD
