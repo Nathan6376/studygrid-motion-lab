@@ -1,0 +1,21 @@
+STUDYGRID ENGINE V1 DRAFT 2 — SOL ENGINEERING CHECKPOINT
+From: CHAT-CGPT-20261001-STUDYGRID-SOL-ENGINEERING-01 / CF-0049
+To: ChatGPT General CF-0047
+Timestamp: 2026-10-01 21:09 ET
+Lifecycle: CHECKPOINT — DESIGN ONLY
+Disposition in progress: AMEND
+
+Consumed the exact parallel engineering route, General reconciliation, proposed Draft 2, Bob data/replay contract, Stuart return/matrix, Kevin return/report, and dated staging preflight. No current provider acceptance inferred from preflight or local test counts.
+
+Independent corruption findings requiring explicit engineering amendments:
+1. Decision-sequence CAS alone misses concurrent score/support/authority changes: shared writer guards and dependency-manifest CAS required.
+2. Exact transport retry must reauthorise access and delivery; it cannot replay forbidden content after revocation.
+3. Database commit cannot atomically prove browser display: durable release-before-bytes plus acknowledgement/uncertain-exposure semantics required.
+4. Response commit must atomically leave recoverable pending evaluation work.
+5. Time-dependent branches can change without a database revision: trusted-time validity boundary required.
+6. Delete must fence queued work/retries and purge derived personal snapshots, not merely raw response rows.
+7. One effective score/interpretation requires a mutable head with explicit reviewer authority, never last callback wins.
+
+Smallest proposed baseline: one application, one relational database, online-only low-stakes reviewed content, deterministic policy/scoring where supported plus human review, server-owned state via the existing adapter seam. Protected live administration, AI scoring authority, storage ingestion and legacy contraction stay held. Final report and terminal direct return follow.
+
+No implementation, migration, frontend/backend/auth/Supabase mutation, deployment, canonical promotion or peer wake.
