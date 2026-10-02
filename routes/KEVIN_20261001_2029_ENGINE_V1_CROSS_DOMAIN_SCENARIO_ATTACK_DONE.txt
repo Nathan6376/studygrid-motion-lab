@@ -1,0 +1,68 @@
+STUDYGRID KEVIN — ENGINE V1 CROSS-DOMAIN SCENARIO / BEHAVIOUR ATTACK — DONE
+Timestamp: 2026-10-01 20:29 ET
+From: StudyGrid Worker Kevin
+To: ChatGPT General CF-0047
+Lifecycle: DONE — INDEPENDENT QA DESIGN / NO IMPLEMENTATION
+
+OWNER ACTIVATION
+Nathan: “Check routing — Kevin. Consume General CF-0047’s current StudyGrid Engine v1 cross-domain scenario/behaviour attack route. Do not implement.”
+
+EXACT ROUTE CONSUMED
+routes/GENERAL_20261001_2006_KEVIN_ENGINE_V1_CROSS_DOMAIN_SCENARIO_ATTACK.txt @ 5e7d22ed3b1ba8082faea93c22c4952be73083a0
+
+MANDATORY INPUTS CONSUMED
+- Draft 1 @ bc1a346cf6c6a95d081804e2d60d980533d16d61
+- Research adversarial return @ 93dbc55c00579128a2b96cbb44c8094c5ff9b007
+- Sol independent architecture attack @ 1e5c05892101d566ae316f4eb34c3f5a477ba8fa
+- Bob implementation contradiction return @ 4b2849f6fda9e75205cb4cad516a550080cdfa7d
+
+STARTED LIFECYCLE
+routes/KEVIN_20261001_2020_ENGINE_V1_CROSS_DOMAIN_SCENARIO_ATTACK_STARTED.txt @ 6c6276e5683990964f81925176bca74618cf91c4
+
+DIRECT TECHNICAL RETURN
+Summary/report:
+- reports/KEVIN_20261001_ENGINE_V1_CROSS_DOMAIN_SCENARIO_ATTACK/REPORT.md
+- commit 0aa96f5f832744f9bf051ab9bcb663c00398571e
+- blob 8c8bede84f386d2a982ebecefd3087d853195cbe
+
+Scenario set:
+- reports/KEVIN_20261001_ENGINE_V1_CROSS_DOMAIN_SCENARIO_ATTACK/SCENARIOS_A_K01_K20.md
+  blob b946e2f8bbdea26b8a77ca0584dd24ea788555a1
+- reports/KEVIN_20261001_ENGINE_V1_CROSS_DOMAIN_SCENARIO_ATTACK/SCENARIOS_B_K21_K38.md
+  blob 01074848da1ad57321a9be13f6060d41b495b146
+
+DELIVERABLE COMPLETENESS
+- 38 synthetic learner/course scenarios completed.
+- Required domains covered: law/policy, engineering, mathematics, biology/health science, reading/writing/humanities, plus cross-domain feedback-loop cases.
+- Every scenario contains all eight routed fields: facts known; tempting unsupported inference; candidates; allowed action; forbidden actions; learner-facing reason; internal debugging reason; and evidence that would change the decision.
+- Every routed scenario type is mapped in REPORT.md, including cold start, recognition/application divergence, answer exposure, outlier miss, repeated errors, invalid item, regrade, prerequisite unknown/cycle, imminent assessment, help/rejection/keep-going, protected assessment, low-stakes assistance, stale recommendation, tie, no-action, accommodation, missing telemetry, offline sync, long gap, source conflict/supersession, multi-claim task and self-directed topic.
+
+TERMINAL DESIGN DISPOSITION
+REVISE / AMEND Draft 1 before implementation specification.
+
+Strong Draft-1 principles that survive the attack: observation is not learner truth; missing/override/latency are not weakness/engagement evidence; protected assessment and accessibility are distinct; source/version authority matters; coached/repeated success is not automatically transfer; no universal retained/mastery truth is justified.
+
+Remaining behaviour defects found:
+1. policy precedence/tie behaviour is not normative enough;
+2. no-action outcomes need to be first-class;
+3. evidence-state reasons need to distinguish unknown, pending, invalid, divergent/incomparable, comparable conflict, stale and unsupported;
+4. author-time sufficiency/condition contracts need to be explicit;
+5. answer exposure/task-family lineage must survive attempt/UI boundaries;
+6. multi-claim component vs joint evidence semantics are needed;
+7. immutable response must be separated from revisable score/evaluation lineage;
+8. unknown prerequisites and graph cycles must not become learner failure;
+9. unsolicited help/remediation requires episode budgets while explicit help remains available;
+10. recommendation issue and delivery need a staleness revalidation boundary;
+11. authoritative chronology is required for offline/recency use;
+12. content/software/scoring defects need non-learner review paths;
+13. source revision must selectively change authority, not globally regress competence;
+14. adaptive policy-selected evidence must not validate its own prior recommendation;
+15. personal/provisional study authority must remain separate from course-approved consequential authority.
+
+SMALLEST DRAFT-2 DIRECTION
+Keep the conservative epistemic model. Make the runtime contract smaller and more explicit: ordered decision grammar + ties/no-action; richer evidence-status/sufficiency + exposure/component lineage; issue-to-delivery/regrade/remap/chronology lifecycle; bounded agency/help semantics. Do not respond to these failures by adding opaque learner-model sophistication.
+
+BOUNDARY VERIFIED
+No code, frontend, backend, auth, Supabase, deploy, canonical product state or peer-worker state was changed. These are design fixtures/recommendations, not executed software PASS results and not educational-efficacy evidence.
+
+DONE — direct technical return persisted for General CF-0047. No owner courier action required.
