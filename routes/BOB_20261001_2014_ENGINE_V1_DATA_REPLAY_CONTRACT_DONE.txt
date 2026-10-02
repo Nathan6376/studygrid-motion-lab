@@ -1,0 +1,1360 @@
+STUDYGRID ENGINE V1 — IMPLEMENTATION-SAFE DATA / REPLAY CONTRACT — DONE
+From: StudyGrid Bob / CF-0042
+To: ChatGPT General CF-0047
+Timestamp: 2026-10-01 20:14 ET
+Lifecycle: DONE — DESIGN CONTRACT ONLY / NO IMPLEMENTATION
+
+AUTHORITY / REQUIRED INPUTS CONSUMED
+- Owner activation: “Check routing — Bob. Consume General CF-0047’s current StudyGrid Engine v1 implementation-safe data/replay contract route. Do not implement.”
+- Exact General route: routes/GENERAL_20261001_2006_BOB_ENGINE_V1_DATA_REPLAY_CONTRACT.txt @ 5d4cfd61f359318b144722a1d32cda53f36d6b19.
+- Exact Draft 1: design/STUDYGRID_ENGINE_V1_FIRST_PRINCIPLES_DRAFT_1.txt @ bc1a346cf6c6a95d081804e2d60d980533d16d61 / blob 6d0560091b587220609740970154e64541f4b7c4.
+- Bob implementation-contradiction attack: routes/BOB_20261001_1947_ENGINE_V1_DRAFT1_IMPLEMENTATION_CONTRADICTION_ATTACK_DONE.txt @ 4b2849f6fda9e75205cb4cad516a550080cdfa7d / blob 59cc9556ecc1b856ff87540642ba57e886ee8a57.
+- Sol independent architecture attack: reports/SOL_20261001_ENGINE_V1_DRAFT1_ARCHITECTURE_ATTACK/REPORT.md @ 1e5c05892101d566ae316f4eb34c3f5a477ba8fa / blob 8d116679e646a89e63fe3b32356015b86c97b75b.
+- Research adversarial return: routes/RESEARCH_CF0044_20261001_1917_ENGINE_V1_PRIMITIVES_ADVERSARIAL_REVIEW_DONE.txt @ 93dbc55c00579128a2b96cbb44c8094c5ff9b007 / blob b4077d8d0331e75158856ef632925910f7903bb6.
+
+BOUNDARY
+No code, migration, backend, auth, Supabase, frontend/product, deployment, canonical promotion or peer wake was performed. This is a logical implementation contract, not a physical database schema and not implementation approval.
+
+======================================================================
+1. BOTTOM LINE
+======================================================================
+
+The smallest implementation-safe Engine v1 should have FEW durable facts, MANY derived views, and VERY LITTLE duplicated authority.
+
+The central rule is:
+
+A semantic fact has exactly one authoritative home.
+Everything else either references that home, derives from it, or is transient execution state.
+
+The minimum safe split is:
+1. AUTHORITATIVE CATALOGUE / DEFINITIONS — versioned definitions and authority only.
+2. PRESENTATION / OBSERVATION HISTORY — what StudyGrid presented/delivered and what the learner committed.
+3. SCORE / EVALUATION LINEAGE — append-only evaluation revisions separate from the learner response.
+4. DERIVED INFERENCE — replaceable interpretations/learner evidence profiles keyed to exact input revisions/cursors.
+5. DECISION — a pure calculation over a frozen logical input snapshot, followed by one durable DecisionRecord.
+6. EXECUTION — revalidate the selected action before delivery, then record what was actually delivered.
+7. OUTCOME — link later response/support/evaluation records to the execution that caused the opportunity to observe.
+
+Do NOT implement Draft 1 as one table/service per noun. Do NOT use a universal graph as a substitute for explicit contracts. Do NOT put mappings, scores, mastery-like labels or policy outputs inside raw response observations.
+
+A first beta can be one deployable application and one relational store with transactions, uniqueness constraints and derived views/caches. The logical distinctions below do not imply microservices, event buses, full event sourcing or a graph database.
+
+======================================================================
+2. GLOBAL INVARIANTS
+======================================================================
+
+I01 — SINGLE AUTHORITY
+Each semantic fact has one authoritative record family. Examples: task→claim evidence authority lives only in TaskClaimMappingVersion; version lineage lives only in version metadata; score authority lives only in ScoreEvaluationRevision lineage. A generic relation edge may not duplicate those meanings.
+
+I02 — VERSIONED DEFINITIONS DO NOT SEMANTICALLY MUTATE IN PLACE
+Once a definition version has been referenced by learner evidence or a material decision, semantic fields are frozen. Corrections create a new version or explicit supersession/revocation record. Administrative display metadata may change only if it cannot alter historical meaning.
+
+I03 — OBSERVATION IS NOT INTERPRETATION
+ResponseObservation stores the committed learner artifact and provenance. It does not store claim weight, mastery, misconception, readiness, task→claim mapping truth or pedagogical need.
+
+I04 — RESPONSE SLOT UNIQUENESS
+Each actual answer opportunity has a semantic response slot. At most one committed ResponseObservation may occupy that slot. Transport retries cannot create another observation.
+
+I05 — TRANSPORT IDEMPOTENCY IS NOT ENOUGH
+A client operation idempotency key deduplicates retries, but semantic uniqueness also prevents two independently generated retry keys or double clicks from creating two accepted responses for the same slot.
+
+I06 — SCORE IS SEPARATE FROM RESPONSE
+A score, rubric judgement or AI/human evaluation is never inserted into or rewritten inside ResponseObservation. It belongs to an append-only ScoreEvaluationRevision lineage.
+
+I07 — ONE EFFECTIVE SCORE PER PURPOSE
+For a given response and scoring purpose, multiple revisions may exist, but the current inference view resolves exactly one effective VALID evaluation under an explicit precedence/supersession rule. PENDING, INVALID, REVOKED and superseded outputs contribute no active score evidence.
+
+I08 — MAPPING IS EXTERNAL TO OBSERVATION
+Historical responses reference the task version actually presented. They do not embed a current claim/KC/objective mapping as learner truth. Mapping changes do not rewrite the response.
+
+I09 — ONE EFFECTIVE INTERPRETATION LINEAGE PER MAPPING PURPOSE
+When mappings are revised, current derived evidence cannot count both the old and new interpretation unless an explicit approved multi-claim contract says both are independently justified.
+
+I10 — MULTI-CLAIM NEGATIVE EVIDENCE REQUIRES ATTRIBUTION
+A wrong answer to a multi-claim task does not automatically decrement every linked claim. Negative evidence requires a component/rubric outcome that isolates the claim or an explicit joint-evidence contract.
+
+I11 — DERIVED STATE IS RECOMPUTABLE
+EvidenceInterpretation, LearnerEvidenceProfile, uncertainty/readiness labels, misconception hypotheses and instructor aggregates are not learner truth. If cached, they are keyed by exact input cursor + configuration/version and may be discarded/rebuilt.
+
+I12 — POLICY OUTPUT NEVER BECOMES ITS OWN EVIDENCE
+A recommendation, pedagogical need, misconception hypothesis, override pattern or prior estimate may affect what the policy chooses, but its existence cannot independently strengthen the same learner hypothesis.
+
+I13 — DECISIONS HAVE A FROZEN AS-OF INPUT CONTRACT
+Every material DecisionRecord identifies the observation/evaluation high-water mark, authority/package revisions, mapping/config versions, policy versions, evaluation instant/trusted clock inputs and the decisive rule path needed to explain what the engine knew then.
+
+I14 — DECISION RECORDS ARE NEVER REWRITTEN TO MATCH CURRENT MODELS
+A later model/policy/source/mapping change may produce a different current estimate or recommendation. It does not change the historical DecisionRecord.
+
+I15 — DECISION REQUESTS ARE IDEMPOTENT
+Retrying the same decision request key on the same learner/context decision stream returns the existing accepted DecisionRecord instead of creating another recommendation event.
+
+I16 — OPTIMISTIC DECISION SEQUENCING
+Each learner + bounded context/package decision stream has a monotonically increasing accepted decision sequence. A request carries expected_decision_seq. If it is stale, the request must return the already-accepted decision or recompute against the new sequence; it cannot silently append a second stale decision.
+
+I17 — CURRENT HARD POLICY IS REVALIDATED AT DELIVERY
+A recommendation issued under one assessment/access/support state cannot be delivered later if current hard policy makes it forbidden. Delivery either proceeds under a still-valid execution token or expires and requests a new decision.
+
+I18 — SUPPORT/ANSWER EXPOSURE IS RECORDED WHEN DELIVERED
+Support state is not inferred only from the response object. Answer-bearing explanation, hint, worked example, feedback and relevant prior exposure are separate presentation/support facts. If the system cannot verify exposure status, it must not label the response unaided.
+
+I19 — AUTHORITATIVE CHRONOLOGY DOES NOT TRUST CLIENT CLOCK ALONE
+Store client_occurred_at when useful, but establish server_received_at and/or monotonic server sequence for authoritative ordering. Retention/recency logic states which clock it uses. Offline/client skew cannot silently reorder authoritative evidence.
+
+I20 — MISSING IS NOT WRONG
+Skipped, aborted, not reached, unavailable, scorer pending, technical failure and offline-unsynced are not incorrect learner answers and cannot directly lower evidence profiles.
+
+I21 — SOURCE REVISION IS SELECTIVE, NOT A GLOBAL INVALIDATION STORM
+A new source version does not automatically invalidate every descendant. Downstream validity changes only through explicit semantic-impact/revalidation rules. Historical decisions retain old-version references.
+
+I22 — CURRENT HARD AUTHORITY CANNOT SILENTLY USE A SUPERSEDED SOURCE
+If a semantic source change makes a dependent task/assertion/mapping uncertain for current consequential use, that dependent is quarantined/review-required until revalidated. Historical observations remain historical.
+
+I23 — PRIVACY DELETION OVERRIDES “IMMUTABILITY”
+“Immutable” means no silent historical rewrite while a record is retained. Lawful deletion/redaction/retention expiry may remove or irreversibly redact retained content. The system must not preserve hidden copies merely to maintain replay.
+
+I24 — TRACE REFERENCES, NOT RAW DUPLICATION
+Decision/reason traces store stable identifiers, bounded derived inputs and digests needed for reconstruction. They do not copy raw response text, source bodies, accommodation declarations or full candidate payloads unless that exact artifact itself must be retained under its own authority.
+
+I25 — CONTEXT/TENANCY IS PART OF IDENTITY
+Course-approved, personal provisional, preview/demo and instructor contexts are isolated in authoritative identifiers and cache keys. No evidence silently crosses context merely because claim names look similar.
+
+I26 — PREVIEW/DEMO DOES NOT CREATE LEARNER EVIDENCE
+Instructor preview, QA/demo and synthetic fixtures use non-production evidence contexts and cannot increment learner evidence, progress, rewards or decision history.
+
+I27 — UNSUPPORTED/INVALID EVALUATORS CANNOT FABRICATE FAILURE
+If response type, scorer capability or evaluator output is unsupported/invalid, the score stays pending/invalid. The system cannot convert evaluator failure into learner incorrectness or fall back to another interaction/scoring mode silently.
+
+I28 — BOUNDED RECONSTRUCTION
+Material decisions have explicit reconstruction status FULL / PARTIAL / UNAVAILABLE. The engine never claims exact replay when required inputs/artifacts have been deleted, redacted, corrupted or were never retained.
+
+======================================================================
+3. MINIMAL LOGICAL OBJECT CONTRACT
+======================================================================
+
+The names below are semantic contracts, not mandatory SQL table names.
+
+---------------------------------------------------------------------
+A. AUTHORITATIVE CATALOGUE / DEFINITIONS
+---------------------------------------------------------------------
+
+A1. LearningPackageVersion — DURABLE
+Purpose:
+- bounded approved/provisional package that groups the source/claim/task/policy revisions available in one learning context.
+Identity key:
+- immutable package_version_id; stable package_id + monotonically/version-owned revision identifier.
+Version owner:
+- authorised package/course owner. Personal package versions have explicit personal/provisional authority scope.
+Allowed mutation/supersession:
+- semantic contents do not edit in place after use; a new package version supersedes the old one. Approval/revocation is explicit and auditable.
+Must never be copied into it:
+- learner responses, learner estimates, recommendation history, UI navigation state, current mastery-like labels.
+Beta note:
+- one bounded course package can be enough. This does not require a universal ontology.
+
+A2. SourceVersion — DURABLE
+Purpose:
+- exact source artifact revision/provenance used by authoritative content.
+Identity key:
+- source_version_id; stable source_id + revision; content hash/locator where practical.
+Version owner:
+- source/course authority or user for a personal source.
+Allowed mutation/supersession:
+- source bytes/semantic authority frozen per version; new version supersedes or coexists. Authority/effective scope changes are separately versioned/recorded.
+Must never be copied into it:
+- learner state, scores, interpretation weights, recommendation decisions.
+
+A3. ContentUnitVersion / AssertionVersion — DURABLE, OPTIONAL/SPARSE
+Purpose:
+- only reify a source-derived proposition/procedure when it needs stable authority/dependency identity because teaching, claims, tasks or revisions depend on it.
+Identity key:
+- content_unit_version_id.
+Version owner:
+- authorised content/package editor.
+Allowed mutation/supersession:
+- semantic content frozen when referenced; corrections create new version.
+Must never be copied into it:
+- every sentence by default, learner evidence, estimator output, inferred difficulty.
+Beta note:
+- do NOT atomize entire documents. Source pointer alone is valid when no stable assertion object is needed.
+
+A4. LearningClaimVersion — DURABLE
+Purpose:
+- bounded operational claim that evidence may support under named conditions.
+Identity key:
+- claim_version_id; stable claim_id + revision.
+Version owner:
+- authorised package/course author.
+Allowed mutation/supersession:
+- claim scope/construct/conditions/sufficiency semantics frozen once used; changes create new version.
+Must never be copied into it:
+- current learner mastery, current evidence counts, misconception state, recommendation priority.
+Beta minimum:
+- construct/capability, allowed conditions/support, intended use, evidence sufficiency reference/contract, known limits.
+
+A5. TaskVersion — DURABLE
+Purpose:
+- exact task/resource interaction definition presented to the learner.
+Identity key:
+- task_version_id; stable task_id + revision.
+Version owner:
+- authorised content/package editor.
+Allowed mutation/supersession:
+- prompt/stimulus/response schema/semantic scoring inputs frozen per used version; new version for material correction.
+Must never be copied into it:
+- learner answer, current score, current claim evidence interpretation, session completion state.
+Beta minimum:
+- implement only response types actually supported. Unsupported types fail before presentation; no silent MCQ fallback.
+
+A6. EvaluationDefinitionVersion — DURABLE
+Purpose:
+- rubric/scoring definition and scorer contract used to evaluate a response.
+Identity key:
+- evaluation_definition_version_id.
+Version owner:
+- authorised content/assessment owner; scorer implementation/model identity is referenced here or in the resulting evaluation artifact as appropriate.
+Allowed mutation/supersession:
+- material rubric/scoring semantics create new version.
+Must never be copied into it:
+- one learner’s score/result, learner estimate, AI judgement output.
+
+A7. TaskClaimMappingVersion — DURABLE
+Purpose:
+- sole authority that says how a specific task version may contribute evidence to a claim version.
+Identity key:
+- mapping_version_id, with explicit task_version_id + claim_version_id + mapping role.
+Version owner:
+- authorised evidence/content reviewer.
+Allowed mutation/supersession:
+- new mapping revision; old mapping remains historical. Revision carries retrospective applicability semantics.
+Must never be copied into it:
+- learner response, learner score, current evidence count, estimator output.
+Required semantics:
+- evidence role: direct / partial / supporting / diagnostic-only;
+- attribution: component / joint-conjunctive / other explicit form;
+- conditions/support validity;
+- independence/family grouping where relevant;
+- retrospective policy: FUTURE_ONLY / REINTERPRET_PRIOR_SAFE / INVALIDATE_PRIOR_INTERPRETATION / REVIEW_REQUIRED.
+
+A8. LimitedRelationVersion — DURABLE ONLY WHEN POLICY USES IT
+Purpose:
+- bounded relation families not already owned by another contract, e.g. claim→claim prerequisite or curriculum alignment.
+Identity key:
+- relation_version_id + typed endpoints.
+Version owner:
+- named authority; normative/course prerequisite must be distinguishable from empirical/hypothesized relation.
+Allowed mutation/supersession:
+- versioned replacement/revocation.
+Must never be copied into it:
+- task→claim “assesses” if TaskClaimMappingVersion already owns it; version supersession; provenance; learner readiness result.
+Hard prohibition:
+- no universal relation-edge god graph that duplicates mapping/version/provenance authority.
+
+A9. AssessmentAssistancePolicyVersion — DURABLE
+Purpose:
+- assessment purpose, stakes/consequence, assistance/reveal, feedback/scoring and accessibility/accommodation handling relevant to execution.
+Identity key:
+- policy_version_id + bounded scope/context.
+Version owner:
+- authorised course/assessment authority.
+Allowed mutation/supersession:
+- new version; historical decisions retain prior ref; delivery revalidates current hard policy.
+Must never be copied into it:
+- learner disability/health inference, learner estimate, response timing interpretation, UI mode state.
+
+A10. NextActionPolicyVersion — DURABLE
+Purpose:
+- exact ordered decision rules/tie-breaks/budgets/config used by the beta policy.
+Identity key:
+- next_action_policy_version_id.
+Version owner:
+- authorised StudyGrid policy owner under beta governance.
+Allowed mutation/supersession:
+- new version only; old decisions keep old version.
+Must never be copied into it:
+- one learner’s current evidence, candidate payloads, recommendation outcome, hidden “expected learning value” truth.
+
+---------------------------------------------------------------------
+B. OPPORTUNITY / OBSERVATION / EVALUATION HISTORY
+---------------------------------------------------------------------
+
+B1. PresentationOpportunityRecord — DURABLE WHEN IT CAN AFFECT EVIDENCE OR RECONSTRUCTION
+Purpose:
+- records that a concrete task/resource/action was actually offered/presented under a specific decision, package and policy snapshot.
+Identity key:
+- presentation_id; one actual presentation opportunity.
+Version owner:
+- runtime system; append-only fact while retained.
+Allowed mutation/supersession:
+- no semantic rewrite; later events may mark aborted/expired/technical-failure. Retention/delete rules still apply.
+Must never be copied into it:
+- mastery weight, current learner estimate, current mapping truth, current policy output beyond refs to the issued decision/policy.
+Important fields at logical level:
+- learner/context/package refs;
+- task/resource version;
+- decision/execution ref;
+- server sequence/time;
+- relevant policy/support/reveal snapshot refs;
+- family/episode identity where evidence validity depends on exposure.
+
+B2. SupportDeliveryRecord — DURABLE WHEN SUPPORT MAY AFFECT EVIDENCE VALIDITY
+Purpose:
+- records that hint/example/explanation/answer-bearing feedback/support was actually delivered, not merely requested.
+Identity key:
+- support_delivery_id + presentation/episode ref.
+Version owner:
+- runtime system.
+Allowed mutation/supersession:
+- append-only while retained; erroneous record corrected by explicit revocation/correction record.
+Must never be copied into it:
+- inference that learner needed help, learner motivation, mastery decrement.
+
+B3. ResponseObservation — DURABLE
+Purpose:
+- committed learner response/artifact fact.
+Identity key:
+- response_observation_id plus semantic response_slot_id.
+Semantic slot:
+- at minimum learner/context + presentation_id + attempt_ordinal or equivalent stable attempt identity.
+Transport idempotency:
+- client_operation_id/request_id is separate and unique for retry handling.
+Version owner:
+- runtime system; learner artifact is append-only while retained.
+Allowed mutation/supersession:
+- no score/mapping/mastery edits. If learner is explicitly allowed to revise before final commit, those drafts are transient; final commit produces one observation. A later allowed reattempt gets a new presentation/attempt identity.
+Must never be copied into it:
+- score/rubric judgement;
+- task→claim mapping;
+- current claim/objective/KC interpretation;
+- mastery weight;
+- current learner estimate;
+- misconception label;
+- recommendation rationale.
+Clock contract:
+- may store client_occurred_at; must also have server_received_at/sequence or equivalent authoritative ordering.
+
+B4. ScoreEvaluationRevision — DURABLE
+Purpose:
+- one scorer/rater/rubric evaluation of a ResponseObservation.
+Identity key:
+- evaluation_revision_id; belongs to evaluation_lineage_id scoped to response + scoring purpose.
+Version owner:
+- scorer/rater/adjudicator under EvaluationDefinitionVersion and named authority.
+Allowed mutation/supersession:
+- append new revision; do not rewrite prior result. A new result may supersede/revoke prior result under explicit precedence/adjudication policy.
+Must never be copied into it:
+- learner mastery, recommendation, claim mapping, current profile.
+Required logical status:
+- PENDING / VALID / INVALID / REVOKED/SUPERSEDED or equivalent explicit states.
+Invalid scorer output:
+- produces no active evidence contribution.
+Regrade:
+- creates another revision; historical decisions retain the evaluation revision/ref that was effective then.
+
+B5. AuthorityReviewRecord — DURABLE WHEN A HUMAN/OWNER ACTION CHANGES AUTHORITY
+Purpose:
+- approval, revocation, adjudication or revalidation that confers/changes authority for source/task/mapping/evaluation usage.
+Identity key:
+- authority_review_id + target version/ref.
+Version owner:
+- named authorised reviewer.
+Allowed mutation/supersession:
+- append new review/revocation; do not overwrite historical reviewer action.
+Must never be copied into it:
+- learner estimate, causal efficacy claim, inferred instructor intent.
+
+B6. LearnerOverrideRecord — DURABLE ONLY IF IT AFFECTS FUTURE DECISION HISTORY
+Purpose:
+- records that learner rejected/switched an otherwise eligible recommendation, with optional purpose-limited declared reason.
+Identity key:
+- override_id + decision_id.
+Version owner:
+- learner action/runtime.
+Allowed mutation/supersession:
+- append-only while retained; optional reason may be redacted under privacy rules.
+Must never be copied into it:
+- mastery penalty, disengagement, laziness, motivation trait, instructor risk label.
+
+---------------------------------------------------------------------
+C. DERIVED / RECOMPUTABLE STATE
+---------------------------------------------------------------------
+
+C1. EvidenceInterpretation — DERIVED
+Purpose:
+- applies one MappingVersion + effective EvaluationRevision + conditions/support/exposure to a claim evidence contribution.
+Identity key:
+- deterministic derivation identity such as (response/evaluation, mapping_version, inference_rule_version) or derivation_run_id.
+Version owner:
+- inference logic/config, not human learner truth.
+Allowed mutation/supersession:
+- may be discarded/recomputed. If persisted for audit/performance, old derivation versions remain distinguishable and are not primary facts.
+Must never be copied into it:
+- raw response payload duplications, policy decision, instructor causal diagnosis.
+
+C2. LearnerEvidenceProfile / LearnerEstimate — DERIVED
+Purpose:
+- claim/condition/channel-specific summary of active eligible evidence as-of an exact cursor/config.
+Identity key:
+- learner + context/package + claim_version + observation/evaluation cursor + estimator_config_version.
+Version owner:
+- estimator/inference config.
+Allowed mutation/supersession:
+- cache replacement/recompute only; never historical truth. Different model/config produces a different keyed profile.
+Must never be copied into it:
+- raw source documents, duplicate raw responses, policy decision labels, “needs teaching” as durable truth.
+Beta representation:
+- channel-aware history/status such as UNMEASURED / OBSERVED_INSUFFICIENT / CONTRACT_MET_UNDER_CONDITIONS / REVIEW_REQUIRED plus independent validity/conflict/freshness flags. No mandatory latent probability.
+
+C3. MisconceptionHypothesis — DERIVED
+Purpose:
+- bounded hypothesis from evidence, with competing explanations and expiry/review semantics.
+Identity key:
+- learner/context + hypothesis_type/claim + derivation config/cursor.
+Version owner:
+- inference rule/model or explicit reviewer.
+Allowed mutation/supersession:
+- recompute/expire/revoke. Persist durably only if materially used in a decision or explicitly reviewed, and still mark as hypothesis.
+Must never be copied into it:
+- policy’s own prior choice as evidence supporting itself; personality/motivation/ability trait.
+
+C4. InstructorAggregate / InstructorInsightProjection — DERIVED
+Purpose:
+- authorised descriptive aggregation over retained source/task/evidence data.
+Identity key:
+- scope + input cursor/config.
+Version owner:
+- projection rules.
+Allowed mutation/supersession:
+- recompute.
+Must never be copied into it:
+- hidden duplicated raw learner responses beyond authorised view; causal “lecture caused weakness” truth; learner trait labels.
+
+C5. HumanReadableReasonProjection — DERIVED
+Purpose:
+- learner/instructor/debug wording derived from actual DecisionRecord reason codes and authorised evidence scope.
+Identity key:
+- decision_id + audience/template version.
+Version owner:
+- presentation/template layer.
+Allowed mutation/supersession:
+- can be re-rendered without changing decision history.
+Must never be copied into it:
+- new factual rationale not present in DecisionRecord; deleted raw evidence merely to preserve wording.
+Exception:
+- if a nondeterministic generated explanation/artifact itself was delivered and materially affects evidence/support, retain the actual approved delivered artifact under its own durable content/artifact record and reference it from execution.
+
+---------------------------------------------------------------------
+D. DECISION / EXECUTION
+---------------------------------------------------------------------
+
+D1. DecisionRequest — TRANSIENT
+Purpose:
+- request to compute next action.
+Identity key:
+- decision_request_key / client request idempotency key, scoped to learner + context decision stream.
+Version owner:
+- caller/runtime.
+Allowed mutation/supersession:
+- request itself is transient. Accepted result is DecisionRecord.
+Must never be copied into it:
+- raw evidence history snapshots or authoritative policy changes.
+Required concurrency input:
+- expected_decision_seq.
+
+D2. CandidateSet — TRANSIENT
+Purpose:
+- generated available action candidates before selection.
+Identity key:
+- evaluation-local candidate generator run.
+Version owner:
+- candidate generator version + package snapshot.
+Allowed mutation/supersession:
+- ephemeral. DecisionRecord stores only bounded reconstruction metadata: generator/pool version, shortlist/action IDs, decisive exclusions/reasons, not full duplicated payloads.
+Must never be copied into it:
+- learner truth labels, unbounded source bodies.
+
+D3. DecisionInputSnapshot — LOGICALLY FROZEN INPUT; MOSTLY REFERENCES, NOT A NEW RAW-DATA STORE
+Classification:
+- the durable part is represented inside DecisionRecord as references/cursors/bounded feature values; a giant duplicate snapshot object is NOT required.
+Purpose:
+- define exactly what the decision calculation considered.
+Minimum logical contents:
+- learner/context/package identity;
+- observation/evaluation high-water mark/cursor;
+- active mapping/authority revisions;
+- learner profile/estimator config ref and decisive bounded feature values/statuses;
+- assessment/assistance/access policy version;
+- next-action policy version;
+- candidate generator/pool version and scope;
+- learner-declared goal/constraint ref if used;
+- trusted evaluation time + relevant versioned deadlines;
+- expected decision sequence.
+Must never contain:
+- duplicated full response/source/accommodation payloads merely for replay.
+
+D4. DecisionRecord — DURABLE
+Purpose:
+- authoritative historical record of one accepted material next-action decision.
+Identity key:
+- decision_id plus monotonically accepted decision_seq within learner/context decision_stream_id.
+Version owner:
+- next-action policy execution under pinned versions.
+Allowed mutation/supersession:
+- no semantic rewrite. Later decision supersedes operationally but does not replace history. Execution events may say the decision expired/not delivered.
+Must record at minimum:
+- request idempotency key;
+- decision stream + sequence;
+- input cursor/revision/config refs;
+- selected action ref/version;
+- bounded shortlist/action IDs or reconstructable candidate manifest;
+- exclusion/reason codes and decisive ordered rule path;
+- tie-break input/seed when relevant;
+- reconstruction manifest/status inputs;
+- issued_at authoritative time;
+- expiry/revalidation token criteria.
+Must never be copied into it:
+- full raw learner responses;
+- entire source documents;
+- accommodation declarations;
+- “mastery truth” frozen just for convenience;
+- full unbounded candidate payloads.
+
+D5. ActionExecutionRecord — DURABLE WHEN A MATERIAL ACTION IS ACTUALLY OPENED/DELIVERED
+Purpose:
+- records whether/how the selected decision action was revalidated and delivered.
+Identity key:
+- action_execution_id; scoped to decision_id + execution slot/idempotency key.
+Version owner:
+- runtime execution boundary.
+Allowed mutation/supersession:
+- append execution state/events; do not rewrite decision. A stale/forbidden decision may have an EXPIRED/REJECTED execution outcome and trigger a new decision.
+Must never be copied into it:
+- learner competence inference, new reason not in decision, raw evidence payload.
+Required delivery revalidation:
+- current assessment/access/assistance hard policy;
+- task/resource availability;
+- relevant current source/authority status;
+- identity/context authorization;
+- decision expiry/material-input invalidation.
+
+D6. OutcomeLink — DURABLE AS REFERENCES, NOT A SECOND EVIDENCE COPY
+Purpose:
+- connect ActionExecutionRecord to later PresentationOpportunity, SupportDelivery, ResponseObservation and Evaluation revisions.
+Identity key:
+- execution_id + referenced outcome IDs.
+Version owner:
+- runtime.
+Allowed mutation/supersession:
+- append links to newly arriving score/evaluation results; historical refs remain.
+Must never be copied into it:
+- raw response text, duplicate scores, learner estimate.
+
+D7. IdempotencyReceipt — DURABLE FOR A BOUNDED OPERATIONAL RETENTION WINDOW
+Purpose:
+- remember accepted operation keys for response commits, decision requests, action executions and scorer callbacks.
+Identity key:
+- operation_scope + idempotency_key.
+Version owner:
+- runtime transaction boundary.
+Allowed mutation/supersession:
+- immutable accepted result pointer until retention expiry. Retention must be long enough to cover supported retry/offline windows.
+Must never be copied into it:
+- raw evidence payloads beyond minimal request fingerprint needed to detect key misuse.
+
+---------------------------------------------------------------------
+E. TRANSIENT / UI-ONLY
+---------------------------------------------------------------------
+
+E1. UI route/tab/focus/open-drawer state — TRANSIENT/UI ONLY.
+E2. Draft learner response before explicit commit — TRANSIENT unless product explicitly promises saved drafts; if persisted, it is still not evidence.
+E3. Candidate-generation working objects — TRANSIENT.
+E4. Spinner/loading/retry state — TRANSIENT.
+E5. “Up Next”, “Ready”, “Needs teaching”, “Due for review”, “Progress” visual labels — DERIVED/UI projections, never authoritative learner facts.
+E6. Session NEXT/BACK/PAUSE/COMPLETE controls — product/session state, not pedagogical action evidence.
+
+======================================================================
+4. TRANSACTION / SEQUENCE CONTRACTS
+======================================================================
+
+These are logical atomicity requirements, not mandates for a specific database technology.
+
+---------------------------------------------------------------------
+T1. RESPONSE COMMIT
+---------------------------------------------------------------------
+
+Inputs:
+- presentation_id;
+- semantic response_slot_id / attempt identity;
+- client operation idempotency key;
+- learner/context authorization;
+- task_version_id;
+- committed response payload/reference;
+- client_occurred_at if available.
+
+Required behaviour:
+1. Validate the presentation/attempt belongs to the learner/context and is in a response-accepting state.
+2. Look up idempotency receipt.
+   - same key + same semantic request fingerprint → return original accepted ResponseObservation;
+   - same key + materially different payload → reject key reuse; never overwrite prior response.
+3. Enforce unique semantic response_slot_id.
+   - if a response already exists for the slot, return that response or a conflict requiring explicit new attempt; never create a second evidence unit.
+4. Assign authoritative server_received_at/server sequence.
+5. Insert ResponseObservation exactly once.
+6. Ensure any support already delivered is linked by presentation/episode lineage. If support history is uncertain because a support write failed, mark validity/exposure UNKNOWN rather than “unaided.”
+7. Create/recover evaluation-pending work if scoring is required. Failure to enqueue/execute scoring must not roll back the committed learner response and must not fabricate incorrectness.
+
+No score or mapping is written into ResponseObservation.
+
+---------------------------------------------------------------------
+T2. SCORE / EVALUATION CALLBACK
+---------------------------------------------------------------------
+
+Inputs:
+- response_observation_id;
+- scoring purpose;
+- evaluation definition/rubric version;
+- scorer/rater/model identity/version;
+- scorer callback idempotency key;
+- result/output + validation status.
+
+Required behaviour:
+1. Duplicate callback idempotency returns existing revision.
+2. Validate response/task/scorer contract compatibility.
+3. Invalid/malformed/out-of-contract output becomes INVALID or PENDING_REVIEW, never learner incorrectness.
+4. Valid evaluation appends a ScoreEvaluationRevision.
+5. If this is a regrade/correction, explicit lineage identifies what it supersedes/challenges.
+6. A versioned precedence/adjudication rule resolves the one effective score for current inference.
+7. Historical DecisionRecords keep the exact effective evaluation refs/cursor they used.
+
+UNRESOLVED BETA CHOICE:
+- exact authority precedence among automated scorer, human rater and instructor adjudication must be named in the beta assessment policy. This contract does not invent a universal precedence.
+
+---------------------------------------------------------------------
+T3. DECISION REQUEST / ACCEPT
+---------------------------------------------------------------------
+
+Inputs:
+- decision_request_key;
+- learner/context decision_stream_id;
+- expected_decision_seq;
+- current package/authority snapshot;
+- trusted evaluation time;
+- learner goal/constraint refs used;
+- current evidence cursor/config.
+
+Required behaviour:
+1. Duplicate request key returns the existing accepted DecisionRecord if request fingerprint matches.
+2. Resolve a consistent logical as-of input set: authority/package refs, active evaluation/mapping state, derived profile keyed to exact cursor/config, policy versions, trusted clock/deadlines.
+3. Generate/filter candidates under the pinned generator/package/policy snapshot.
+4. Compute ordered policy result.
+5. Atomically accept only if expected_decision_seq is still current.
+6. If another tab/device already advanced the sequence:
+   - return the accepted current decision when semantically equivalent/appropriate, or
+   - recompute against the new sequence;
+   - never append a second stale accepted decision.
+7. Persist immutable DecisionRecord with next sequence.
+
+Decision calculation is conceptually pure over the frozen input contract. It does not mutate learner evidence.
+
+---------------------------------------------------------------------
+T4. ACTION EXECUTION / DELIVERY
+---------------------------------------------------------------------
+
+Inputs:
+- decision_id;
+- action execution idempotency key;
+- current user/context authorization;
+- current hard assessment/access/support policy;
+- selected task/resource availability/status.
+
+Required behaviour:
+1. Duplicate execution key returns the same execution record.
+2. Revalidate current hard policy and selected content/task authority before delivery.
+3. If material hard policy/source/access state changed:
+   - record stale/expired/non-executed outcome;
+   - do not leak cached prohibited content/support;
+   - request a new decision under current inputs.
+4. If still valid, create ActionExecutionRecord and PresentationOpportunityRecord.
+5. Record answer-bearing support when actually delivered.
+6. Later ResponseObservation references the presentation/execution.
+
+Pedagogical ranking does not override current assessment integrity or access rules.
+
+---------------------------------------------------------------------
+T5. OFFLINE SYNC
+---------------------------------------------------------------------
+
+Minimum safe beta semantics:
+- an offline response may carry client_occurred_at and a stable presentation/response slot/idempotency key;
+- server assigns authoritative received sequence when synced;
+- if the semantic response slot is already occupied, sync does not append a second response;
+- if the package/task/policy changed after the offline presentation, the historical response remains a fact under its original presentation snapshot, but current evidence applicability is resolved by current mapping/source comparability rules;
+- client clock never solely decides authoritative ordering.
+
+UNRESOLVED BETA CHOICE:
+- whether beta officially supports true offline creation/commit at all. If not, simplify the transport path, but keep identity/clock semantics so delayed retries cannot corrupt chronology.
+
+======================================================================
+5. SOURCE REVISION / ITEM REMAP / RESCORING / MODEL-POLICY CHANGE
+======================================================================
+
+---------------------------------------------------------------------
+S1. SOURCE REVISION
+---------------------------------------------------------------------
+
+A SourceVersion never silently “updates” existing historical records.
+
+When a new source version appears, the authority workflow classifies impact for relevant dependents:
+- NON_SEMANTIC / NO MATERIAL IMPACT: historical and current dependent semantics may remain valid; no mass invalidation.
+- SEMANTIC_IMPACT_KNOWN: explicitly identify affected content units/tasks/mappings/claims needing a new version or revalidation.
+- IMPACT_UNKNOWN / REVIEW_REQUIRED: current consequential use of dependent artifacts is quarantined until reviewed; historical evidence stays historical.
+
+Historical DecisionRecords continue to reference the exact source/package versions they used.
+Current estimates may continue using old evidence only if the active mapping/source comparability rule allows it.
+
+Never invalidate every learner estimate simply because a document revision number changed.
+Never silently treat a materially superseded source as current course authority.
+
+---------------------------------------------------------------------
+S2. TASK→CLAIM REMAP
+---------------------------------------------------------------------
+
+A new TaskClaimMappingVersion declares one retrospective policy:
+1. FUTURE_ONLY — old observations keep old interpretation history; new mapping applies only to presentations/responses at/after new authority point for current evidence.
+2. REINTERPRET_PRIOR_SAFE — authorised reviewer asserts prior observations are validly interpretable under the new mapping; derived interpretations/profiles recompute, but observations remain untouched.
+3. INVALIDATE_PRIOR_INTERPRETATION — old interpretations become inactive for current evidence; raw observations remain inspectable.
+4. REVIEW_REQUIRED — prior applicability is ambiguous; current profile marks mapping/source uncertainty until human review.
+
+Exactly one active interpretation lineage is selected per response + claim/mapping purpose.
+A correction A→B cannot leave the same response active as evidence for both A and B unless an explicit approved multi-claim mapping states that both are justified.
+
+---------------------------------------------------------------------
+S3. RESCORING / REGRADE
+---------------------------------------------------------------------
+
+- ResponseObservation is unchanged.
+- New ScoreEvaluationRevision is appended.
+- Prior score remains historical.
+- Explicit precedence/adjudication chooses one effective score for current inference.
+- Derived interpretations/profile recompute from the effective score.
+- Historical decisions retain old effective evaluation reference/input cursor.
+- A late stale scorer callback cannot override a later authorised adjudication unless precedence policy explicitly permits it.
+
+---------------------------------------------------------------------
+S4. ESTIMATOR / MODEL CHANGE
+---------------------------------------------------------------------
+
+- New estimator/model config gets a new version.
+- Derived profiles are keyed by model config + input cursor and may differ.
+- Do not rewrite prior DecisionRecords or old model outputs to look as though M2 existed when M1 made the decision.
+- A model challenger may become current only through separate approval; historical reconstruction still uses the old version where retained.
+
+---------------------------------------------------------------------
+S5. NEXT-ACTION POLICY CHANGE
+---------------------------------------------------------------------
+
+- New policy config/version applies to new decisions.
+- Issued but not yet delivered decisions are revalidated at execution.
+- Current hard constraints always win at delivery.
+- Whether a still-permitted old pedagogical ranking may remain deliverable within a short decision TTL is a beta policy choice. The safe default is to recompute on material policy/package change.
+- Historical decision reason remains the old policy reason.
+
+---------------------------------------------------------------------
+S6. DEADLINE / CONTEXT FACT CHANGE
+---------------------------------------------------------------------
+
+- Context facts used in a decision are versioned/referenced.
+- Current decision recomputation uses fresh trusted facts.
+- Old DecisionRecord retains the earlier fact/version.
+- Absence of deadline/goal/time estimate is UNKNOWN, not zero/none by inference.
+
+======================================================================
+6. DELETION / REDACTION / RETENTION CONTRACT
+======================================================================
+
+“Append-only” and “immutable” are logical history protections, not promises to retain personal data forever.
+
+R1. Retention ownership
+Each durable record family has an explicit retention owner/policy. The beta must decide actual periods separately. This contract does not invent them.
+
+R2. Deletion/redaction semantics
+Permitted mechanisms may include:
+- hard delete;
+- field-level redaction;
+- identity unlinking where lawful/valid;
+- tombstone stating a record existed but payload is no longer retained;
+- cryptographic erasure where infrastructure later supports it.
+
+R3. Derived deletion propagation
+When an authoritative retained input is deleted/redacted:
+- derived caches/profiles/summaries that contain or depend on deleted personal content are invalidated/recomputed/deleted;
+- traces do not preserve hidden payload copies;
+- reconstruction state degrades honestly.
+
+R4. Decision trace minimum after deletion
+Where retention policy allows, a DecisionRecord may retain non-sensitive operational metadata such as decision ID, policy version, selected action identifier/reason code and a marker that referenced evidence was deleted. It may not retain deleted raw learner content or identity-bearing copies solely to protect replay.
+
+R5. Hashes are not magic anonymity
+Do not retain a raw-content hash if it is still effectively identifying/sensitive and the purpose is merely to defeat deletion. Artifact hashes are retained only when authorised and needed to identify an independently retained artifact/version.
+
+R6. Accommodation declarations
+Sensitive accommodation/accessibility declarations belong in a restricted purpose-specific domain. Observation/decision records reference only the minimum validity/policy code required; they do not copy the declaration itself.
+
+======================================================================
+7. REPLAY / RECONSTRUCTION STATES
+======================================================================
+
+Engine v1 should promise reconstruction, not magical deterministic reenactment.
+
+FULL
+Meaning:
+- the DecisionRecord exists;
+- all authoritative package/source/task/mapping/policy versions materially used are retained;
+- required effective evaluation/profile inputs or enough retained evidence to recompute them are available;
+- candidate generator/pool version and bounded candidate/reason manifest are retained;
+- trusted evaluation time/context refs are retained;
+- if stochastic/non-deterministic material affected the decision/delivery, the actual seed/output/artifact reference needed to reproduce the material result is retained;
+- the system can reconstruct the selected action and decisive reason path without inventing missing evidence.
+
+FULL does NOT require:
+- byte-identical re-render of UI animation;
+- old CSS/browser state;
+- regenerating deleted optional debug telemetry;
+- pretending an external AI API will return identical text later.
+
+PARTIAL
+Meaning:
+- the DecisionRecord and selected action/reason path are still known,
+- but one or more supporting inputs/artifacts were lawfully deleted/redacted, expired, or an external non-deterministic artifact was not retained.
+Required behaviour:
+- identify which categories are missing;
+- show what remains provable (e.g. policy version + selected task + reason code);
+- do not recompute a fake FULL result from current state.
+
+UNAVAILABLE
+Meaning:
+- decision record itself is absent/deleted/corrupt, or essential version lineage is missing such that the system cannot defensibly identify the historical selected action/reason/input contract.
+Required behaviour:
+- report reconstruction unavailable;
+- do not substitute current policy/current learner profile as historical truth.
+
+RECONSTRUCTION STATUS IS DERIVED
+It may change from FULL→PARTIAL→UNAVAILABLE as authorised retention/deletion removes required inputs. That degradation is expected and honest.
+
+======================================================================
+8. EXACT ANTI-DOUBLE-COUNT / STALE-MAPPING / SELF-CONFIRMATION RULES
+======================================================================
+
+DCOUNT-1
+One semantic response slot → at most one committed ResponseObservation.
+
+DCOUNT-2
+One response + scoring purpose → exactly one effective VALID score lineage at a time.
+
+DCOUNT-3
+One response + claim interpretation purpose → one effective mapping/interpretation lineage at a time, unless explicit approved component/multi-claim semantics create multiple distinct contributions.
+
+DCOUNT-4
+Retries/callbacks/reloads reuse operation idempotency keys; semantic uniqueness catches accidental new keys for the same slot.
+
+DCOUNT-5
+Repeated presentations are separate observations but carry family/episode/exposure lineage. They cannot be counted as independent sufficiency units merely because IDs differ.
+
+DCOUNT-6
+A multi-claim wrong answer yields joint/diagnostic evidence unless criterion-level scoring isolates which claim failed.
+
+STALE-1
+Every derived profile is keyed to an observation/evaluation cursor + mapping/model config. A source/mapping/model change cannot reuse an unlabeled stale cache.
+
+STALE-2
+Every DecisionRecord stores exact authority/policy/config refs. Current rendering cannot overwrite historical reason semantics.
+
+STALE-3
+Before delivery, current hard assessment/access/source-authority conditions are checked. An old practice recommendation cannot leak tutoring after the context becomes protected.
+
+STALE-4
+A remapped task cannot use the newest mapping merely because it is newest; retrospective policy determines which observations the mapping may reinterpret.
+
+SELFCONF-1
+A hypothesis/recommendation/pedagogical-need label is not an evidence input by itself.
+
+SELFCONF-2
+If the policy selects tasks because of hypothesis H, the resulting observations record that selection context. H may strengthen only from task/evaluation evidence that the mapping contract says is diagnostic, not because H caused the task to appear.
+
+SELFCONF-3
+Automatic remediation/help has a bounded episode budget and should provide a disconfirming/independent probe or scope escape before repeatedly reinforcing the same hypothesis.
+
+AUTH-1
+TaskClaimMappingVersion is the only task→claim evidence authority. A generic relation table cannot duplicate “assesses.”
+
+AUTH-2
+Version lineage/supersession is not a generic relation edge.
+
+AUTH-3
+Source provenance is not a generic derived-from edge if SourceVersion/content refs already own provenance.
+
+AUTH-4
+DecisionRecord references learner profile/config/cursor; it does not become a second learner-state store.
+
+======================================================================
+9. RED-TEAM CORRUPTION SCENARIOS
+======================================================================
+
+At least one invariant below must stop each failure. These are design scenarios, not executed software tests.
+
+C01 — NETWORK RETRY OF RESPONSE COMMIT
+Scenario: mobile connection times out after server accepted the answer; client retries identical commit five times.
+Corruption if naive: five observations, five evidence contributions.
+Catch: I04/I05 + T1 idempotency + semantic response-slot uniqueness.
+Required result: one ResponseObservation; retries return same ID.
+
+C02 — DOUBLE CLICK GENERATES TWO DIFFERENT CLIENT REQUEST IDS
+Scenario: UI bug sends two submit requests with different transport ids for the same presentation/attempt.
+Corruption if naive: transport idempotency alone misses duplicate.
+Catch: I04 semantic response-slot uniqueness.
+Required result: first accepted, second returns existing/conflict; no second evidence unit.
+
+C03 — TWO TABS ANSWER THE SAME PRESENTATION
+Scenario: learner duplicates tab; both commit different answers to same attempt.
+Corruption if naive: both are stored and estimator treats them as two attempts.
+Catch: I04 response-slot uniqueness + attempt identity.
+Required result: exactly one accepted committed response; second requires explicit new attempt/presentation.
+
+C04 — TWO TABS ASK “WHAT NEXT?” CONCURRENTLY
+Scenario: both tabs read decision_seq 12 and compute different next actions before either writes.
+Corruption if naive: decisions 13A and 13B both accepted from stale history.
+Catch: I15/I16 + T3 expected_decision_seq uniqueness.
+Required result: one seq 13 accepted; stale requester returns accepted decision or recomputes against seq 13.
+
+C05 — DUPLICATE RECOMMENDATION REQUEST RETRY
+Scenario: decision API response is lost; client retries same decision_request_key.
+Corruption if naive: recommendation history grows and anti-repetition changes.
+Catch: I15.
+Required result: return original DecisionRecord.
+
+C06 — OFFLINE ANSWER SYNCS AFTER A LATER ONLINE ACTION
+Scenario: offline response occurred at client 14:00 but syncs after another online response; client clock was also 12 minutes wrong.
+Corruption if naive: Date.now/client time reorders recency/retention evidence.
+Catch: I19 + T5 server sequence and explicit clock semantics.
+Required result: preserve client_occurred_at as provenance, but authoritative ordering uses server sequence/policy-defined clock rules.
+
+C07 — SCORER RETURNS AFTER RESPONSE COMMIT
+Scenario: constructed response stored now; score arrives 30 seconds later.
+Corruption if naive: immutable attempt row must mutate to add score.
+Catch: I06 + B4.
+Required result: ResponseObservation unchanged; ScoreEvaluationRevision appended.
+
+C08 — SCORER CALLBACK RETRIES THREE TIMES
+Scenario: provider retries same callback.
+Corruption if naive: three valid scores interpreted as three evidence events.
+Catch: I05/I07 + scorer callback idempotency.
+Required result: one evaluation revision.
+
+C09 — WRONG AUTO SCORE THEN HUMAN REGRADE
+Scenario: automatic scorer marks wrong; instructor later marks correct.
+Corruption if naive: response rewritten, or both scores counted.
+Catch: I06/I07 + S3.
+Required result: new revision supersedes/challenges old per authority policy; one effective score for current inference; historical old decision still reconstructable.
+
+C10 — TWO REGRADES ARRIVE OUT OF ORDER
+Scenario: authorised human adjudication arrives, then a stale automated callback arrives later.
+Corruption if naive: “latest timestamp wins” reverts to stale automatic score.
+Catch: I07 + explicit precedence/adjudication policy.
+Required result: stale callback cannot override higher-authority effective revision unless versioned policy explicitly says so.
+
+C11 — INVALID SCORER OUTPUT
+Scenario: numeric scorer returns NaN/schema mismatch/model error.
+Corruption if naive: parser defaults to zero/incorrect.
+Catch: I27.
+Required result: evaluation INVALID/PENDING_REVIEW; no learner failure evidence.
+
+C12 — TASK REMAPPED FROM CLAIM A TO CLAIM B
+Scenario: learner answered Q correctly under old A mapping; reviewer finds mapping wrong and maps Q to B.
+Corruption if naive: old A remains and B added, doubling competence; or history is destructively moved.
+Catch: I08/I09 + S2 retrospective policy.
+Required result: raw response unchanged; active interpretation follows explicit FUTURE_ONLY/REINTERPRET/INVALIDATE/REVIEW rule; old decision keeps old mapping ref.
+
+C13 — TASK LEGITIMATELY MAPS TO A AND B BUT ONE WRONG ANSWER
+Scenario: scenario exercise touches two skills; score only says total wrong.
+Corruption if naive: both A and B decrease.
+Catch: I10.
+Required result: joint/diagnostic evidence only unless rubric component isolates claim-specific failure.
+
+C14 — SOURCE FORMATTING CHANGE
+Scenario: instructor uploads same content with fixed pagination/typo.
+Corruption if naive: source version increment invalidates all tasks and learner profiles.
+Catch: I21 + S1 NON_SEMANTIC impact.
+Required result: no broad evidence invalidation.
+
+C15 — SOURCE SEMANTIC RULE CHANGE
+Scenario: policy/law/science proposition materially changes mid-term.
+Corruption if naive: old tasks continue as current authority or all history is erased.
+Catch: I21/I22 + S1.
+Required result: affected current dependents quarantined/reversioned; historical observations stay under old source version; current evidence comparability reviewed.
+
+C16 — SOURCE CHANGES BETWEEN DECISION AND DELIVERY
+Scenario: decision selects explanation E; source is superseded before user opens it.
+Corruption if naive: cached stale instruction is delivered.
+Catch: I17/I22 + T4 execution revalidation.
+Required result: stale execution rejected/expired; recompute or surface review-needed.
+
+C17 — PRACTICE BECOMES PROTECTED ASSESSMENT BEFORE OPEN
+Scenario: recommendation was issued with tutoring support; instructor flips current activity to protected.
+Corruption if naive: old explanation leaks answer.
+Catch: I17 + T4.
+Required result: current hard policy blocks support/delivery and triggers new compliant decision. Accessibility policy remains separately enforced.
+
+C18 — NEXT-ACTION POLICY VERSION CHANGES
+Scenario: policy priority order changes after decision 21.
+Corruption if naive: historical reason is re-rendered using new policy and appears to have been chosen for a reason that did not exist.
+Catch: I13/I14 + S5.
+Required result: historical DecisionRecord keeps old policy/rule path; new decisions use new policy.
+
+C19 — LEARNER MODEL / ESTIMATOR UPGRADE
+Scenario: M2 interprets old evidence differently from M1.
+Corruption if naive: cached learner_state row overwritten, making old decision unreconstructable.
+Catch: I11/I14 + S4.
+Required result: profiles keyed by model+cursor; old decision stays tied to M1 inputs; current profile may use M2.
+
+C20 — STALE DERIVED CACHE AFTER REMAP
+Scenario: mapping changes but cache key is only learner+claim.
+Corruption if naive: UI/policy still sees old profile.
+Catch: I11 + STALE-1.
+Required result: cache keyed/invalidation includes mapping/config/cursor; stale entry cannot masquerade current.
+
+C21 — MISCONCEPTION SELF-CONFIRMATION LOOP
+Scenario: two misses create H; policy selects only H-specific probes; system then treats “probe selected because H” and more H-targeted errors as independent proof.
+Corruption if naive: hypothesis ratchets itself upward and remediation loops forever.
+Catch: I12 + SELFCONF-1/2/3.
+Required result: only mapped observation/evaluation contributes; selection context recorded; bounded remediation and disconfirming path.
+
+C22 — SUPPORT DELIVERED BUT RESPONSE HAS hintCount=0
+Scenario: learner saw worked example, refreshed tab, then response object shows no hint click.
+Corruption if naive: response labelled unaided.
+Catch: I18 + B2.
+Required result: exposure lineage follows presentation/episode; unaided status is false/unknown.
+
+C23 — FIVE NEAR-IDENTICAL VARIANTS COUNT AS FIVE INDEPENDENT CONFIRMATIONS
+Scenario: template-shuffled items share same solution path.
+Corruption if naive: sufficiency contract is met from prompt memory.
+Catch: DCOUNT-5 + mapping/evidence-contract family grouping.
+Required result: practice history retained; independent coverage count does not inflate.
+
+C24 — CANDIDATE GENERATOR OMITS AN ELIGIBLE TASK
+Scenario: “Why this?” trace stores only generated candidates, so omission is invisible.
+Corruption if naive: trace falsely implies selected action was best among all eligible options.
+Catch: DecisionRecord retains generator/pool revision/scope plus bounded shortlist/exclusion manifest; reconstruction can identify generator version. Candidate completeness remains testable separately.
+Required result: explanation says what policy chose from generated eligible set; no claim that ungenerated tasks were considered.
+
+C25 — DECISION TRACE COPIES RAW RESPONSE TEXT
+Scenario: privacy deletion removes response record, but copied response remains inside every DecisionRecord.
+Corruption if naive: deletion is defeated and sensitive data multiplies.
+Catch: I23/I24 + R3/R4.
+Required result: raw response removed once; trace loses ref and reconstruction degrades PARTIAL/UNAVAILABLE.
+
+C26 — LAWFUL DELETION AFTER DECISION
+Scenario: old learner evidence expires under retention policy.
+Corruption if naive: system still claims FULL replay or secretly keeps hidden copies.
+Catch: I23/I28 + replay contract.
+Required result: status degrades FULL→PARTIAL/UNAVAILABLE with missing category stated.
+
+C27 — PERSONAL PACKAGE AND COURSE PACKAGE SHARE SAME CLAIM LABEL
+Scenario: “reasonable grounds” exists in personal notes and course-approved material.
+Corruption if naive: evidence flows across contexts by claim text/name.
+Catch: I25.
+Required result: context/package-qualified identities; no cross-context leakage without explicit approved alignment/migration rule.
+
+C28 — INSTRUCTOR PREVIEW ANSWERS A QUESTION
+Scenario: professor opens student preview and submits answer.
+Corruption if naive: class/learner evidence or rewards increment.
+Catch: I26.
+Required result: preview context is non-production; zero learner evidence/progression/reward.
+
+C29 — NON-RESPONSE TREATED AS FAILURE
+Scenario: learner closes laptop mid-task.
+Corruption if naive: missing response becomes 0 score.
+Catch: I20.
+Required result: ABORTED/NOT_REACHED; no competence decrement.
+
+C30 — EVALUATOR SERVICE OUTAGE
+Scenario: constructed-response scorer unavailable for hours.
+Corruption if naive: task marked wrong or decision engine loops on “failed” claim.
+Catch: I27.
+Required result: evaluation PENDING; safe alternative actions available if policy permits; no learner weakness claim.
+
+C31 — DUPLICATED AUTHORITY IN GENERIC RELATION GRAPH
+Scenario: Task→Claim says assesses A in generic edge table, while TaskClaimMappingVersion says B.
+Corruption if naive: different services choose different authority.
+Catch: I01 + AUTH-1.
+Required result: generic relation cannot express evidence mapping authority; one mapping source wins by contract.
+
+C32 — SOURCE SUPERSESSION DUPLICATED AS GENERIC EDGE AND VERSION POINTER
+Scenario: relation graph says S2 supersedes S1, while version lineage says S3 supersedes S1.
+Corruption if naive: current source authority depends on query path.
+Catch: AUTH-2.
+Required result: version lineage has one authority; graph cannot duplicate it.
+
+C33 — CLIENT CLOCK MANIPULATION
+Scenario: device clock moves backward 3 hours to gain “delayed review” status or accidentally due to timezone settings.
+Corruption if naive: recency/retention scheduling changes from client time.
+Catch: I19.
+Required result: trusted server/evaluation time controls authoritative rules; client time is provenance only unless explicitly validated.
+
+C34 — STALE OFFLINE RESPONSE AFTER TASK SEMANTICS CHANGED
+Scenario: learner answered offline under task v3; v4 changes the correct answer before sync.
+Corruption if naive: server scores old response against v4.
+Catch: B3 task_version binding + S1/S3.
+Required result: score against v3 evaluation definition/source context or mark review-required; never silently use v4.
+
+C35 — GENERATED EXPLANATION CANNOT BE RECREATED
+Scenario: LLM produced an explanation that materially shaped subsequent supported response; provider later changes model.
+Corruption if naive: replay calls current model and pretends new text is old delivered support.
+Catch: replay FULL requirement + C5 exception.
+Required result: retain actual approved delivered artifact/hash/ref if it materially matters; otherwise replay status cannot be FULL for that artifact.
+
+C36 — SAME RESPONSE COUNTED TWICE THROUGH TWO MAPPINGS AFTER MODEL MIGRATION
+Scenario: old interpretation row remains cached while new derivation run writes another active contribution.
+Corruption if naive: evidence doubles.
+Catch: I09 + DCOUNT-3 + derivation identity/current-view rule.
+Required result: only one effective interpretation lineage per purpose.
+
+======================================================================
+10. SMALLEST BETA REPRESENTATION
+======================================================================
+
+For the first bounded ~20-student + professor beta, the data/replay layer should need only:
+
+DURABLE DEFINITIONS
+- one bounded LearningPackageVersion;
+- SourceVersion refs actually used;
+- sparse LearningClaimVersion set;
+- TaskVersion set for supported interactions;
+- EvaluationDefinitionVersion / rubric refs actually needed;
+- explicit TaskClaimMappingVersion records;
+- only policy-relevant prerequisite/alignment relations;
+- AssessmentAssistancePolicyVersion;
+- NextActionPolicyVersion.
+
+DURABLE RUNTIME FACTS
+- PresentationOpportunityRecord for evidence-producing/material actions;
+- SupportDeliveryRecord when support affects evidence validity;
+- ResponseObservation;
+- ScoreEvaluationRevision where scoring result is not permanently trivial/implicit;
+- AuthorityReviewRecord where approvals/regrades/remaps occur;
+- material DecisionRecord;
+- ActionExecutionRecord + outcome refs;
+- bounded idempotency receipts.
+
+DERIVED
+- EvidenceInterpretation;
+- LearnerEvidenceProfile;
+- uncertainty/conflict/readiness projections;
+- misconception hypothesis, if used at all;
+- instructor descriptive views;
+- user-facing reason text.
+
+TRANSIENT
+- decision request;
+- candidate working set;
+- UI/session display state;
+- uncommitted answer draft unless product explicitly promises draft persistence;
+- loaders/retries/focus/route state.
+
+IMPLEMENTATION SHAPE THAT THIS CONTRACT PERMITS BUT DOES NOT MANDATE
+- one application;
+- one relational database;
+- ordinary transactions/unique constraints;
+- derived queries/materialized caches only where needed;
+- recoverable pending scoring work if asynchronous scoring exists.
+
+NOT REQUIRED FOR BETA
+- microservices;
+- event bus;
+- Kafka-like event platform;
+- universal graph database;
+- generalized event sourcing;
+- vector database;
+- BKT/PFA/IRT/CDM model stack;
+- required KC graph;
+- calibrated forgetting/memory service;
+- learned policy/bandit;
+- full QTI/CASE adapters;
+- generalized physical-assessment ingestion;
+- generalized AI scoring pipeline if chosen beta does not need it.
+
+======================================================================
+11. EXPLICIT THINGS NOT TO PERSIST AS AUTHORITATIVE LEARNER STATE
+======================================================================
+
+Do NOT persist these as primary learner truth fields:
+- mastery percentage simply because a model can emit one;
+- retained=true;
+- learned=true without bounded evidence conditions;
+- needs_teaching;
+- ready_to_advance;
+- weak_topic;
+- motivation, engagement, laziness, diligence, intelligence or aptitude inferred from ordinary interaction;
+- misconception as permanent fact;
+- learner “risk” inferred from overrides/nonresponse/latency;
+- dwell time/scroll/pointer/keystroke telemetry as mastery evidence;
+- page opened / lesson viewed / completion checkbox as competence;
+- current task→claim mapping copied into ResponseObservation;
+- current claim/objective/KC id as if it were a factual property of the learner response;
+- score inside the immutable response record;
+- recommendation reason prose as authority when stable reason codes/refs suffice;
+- full raw candidate payloads per decision;
+- full raw evidence snapshots per decision;
+- copied source documents per trace;
+- copied accommodation declarations per event/decision;
+- rendered UI state, route, tab, focus or animation state;
+- product labels such as Up Next / Progress / Due for review as engine facts.
+
+Conditional durable exception:
+- an actually delivered nondeterministic/generated artifact that materially affects support/evidence may need its exact approved artifact retained under content/artifact authority. That does not justify retaining arbitrary prompts/debug logs or regenerating it later and calling the new output historical truth.
+
+======================================================================
+12. UNRESOLVED CHOICES — DO NOT INVENT CERTAINTY
+======================================================================
+
+U01. Exact physical schema/storage technology.
+This contract allows one relational store and does not require a graph/event-sourcing architecture. Final schema comes after Draft 2/engineering gate.
+
+U02. Exact tenancy/context key design.
+Must guarantee course/personal/preview isolation. Whether IDs are globally unique UUIDs, composite keys or another form is implementation detail.
+
+U03. Exact score precedence/adjudication authority.
+Beta must declare whether instructor/human adjudication overrides automatic scorer, and under what scope. No universal precedence invented here.
+
+U04. Exact source semantic-impact review process.
+Need named authority/workflow for NON_SEMANTIC vs SEMANTIC vs REVIEW_REQUIRED. Automatic text diff alone is not sufficient semantic authority.
+
+U05. Exact retention/deletion periods.
+Governance/privacy decision required. Contract only defines behaviour once records are deleted/redacted.
+
+U06. Exact supported response types in beta.
+Must be declared before implementation. Unsupported types refuse presentation; no silent fallback.
+
+U07. Whether constructed-response automated scoring exists in beta.
+If absent, human/pending path is enough; do not build generalized AI scorer infrastructure.
+
+U08. Whether protected/graded assessment is actually in beta scope.
+If excluded, preserve the policy contract/interface but do not claim enforcement already proven.
+
+U09. Exact evidence sufficiency rules per claim family.
+These are pedagogical/measurement hypotheses requiring Research/General/owner protocol, not Bob storage authority.
+
+U10. Exact candidate shortlist/trace bound.
+Must be bounded enough to avoid payload explosion while preserving reconstructability; numeric limit belongs in implementation/protocol spec.
+
+U11. Exact decision TTL / what counts as material change requiring recompute before delivery.
+Hard access/assessment/source-authority change always revalidates. Soft pedagogical-policy freshness window remains a beta rule to specify.
+
+U12. Offline support level.
+If beta is online-only, simplify offline queueing. Still keep server ordering/idempotency because delayed retries and multiple tabs exist online.
+
+U13. Exact model/estimator representation.
+Storage contract supports simple channel-aware evidence profile first; any later BKT/PFA/etc challenger must use versioned config and cannot rewrite history.
+
+======================================================================
+13. ACCEPTANCE TEST CONTRACT FOR A FUTURE IMPLEMENTATION
+======================================================================
+
+Before implementation can be called Engine-v1 data/replay safe, independent QA should demonstrate at minimum:
+
+A. RESPONSE INTEGRITY
+- identical response retry x5 → one observation;
+- two different idempotency keys same response slot → one observation;
+- duplicated tab same attempt → one accepted response;
+- abort/nonresponse → no failure evidence.
+
+B. SCORING LINEAGE
+- response can exist before score;
+- duplicate scorer callback dedupes;
+- invalid scorer output contributes nothing;
+- regrade creates one new revision and one current effective score;
+- out-of-order stale callback cannot silently defeat higher-authority adjudication.
+
+C. MAPPING / SOURCE
+- A→B remap does not double count;
+- multi-claim failure does not lower every claim without attribution;
+- cosmetic source revision avoids mass invalidation;
+- semantic source revision selectively quarantines/revalidates dependents;
+- old decisions still point to old versions.
+
+D. DECISION / CONCURRENCY
+- concurrent next-action requests from same expected sequence yield one accepted next sequence;
+- retry returns same decision;
+- candidate generator version/pool scope/reason reconstruct;
+- policy/model changes create new current results without rewriting old decision.
+
+E. DELIVERY SAFETY
+- practice→protected transition before open blocks old tutoring support;
+- deleted/unavailable source/task refuses stale delivery;
+- preview role creates no learner evidence/reward.
+
+F. REPLAY / PRIVACY
+- FULL reconstruction on intact retained fixture;
+- deletion produces PARTIAL with explicit missing categories;
+- deletion of essential record yields UNAVAILABLE rather than fake replay;
+- raw response exists in one authorised evidence location, not copied into decisions/reasons/caches after deletion.
+
+G. CLOCK / OFFLINE
+- client clock skew cannot reorder authoritative evidence;
+- offline/delayed duplicate response cannot create second semantic observation;
+- old task version is evaluated under correct version or review-required, never newest-by-default.
+
+H. SELF-CONFIRMATION
+- misconception-guided selection does not itself raise misconception evidence;
+- repeated remediation budget stops automatic loop;
+- selection/presentation context remains inspectable.
+
+These tests are required future behaviours, not PASS claims in this report.
+
+======================================================================
+14. MINIMAL IMPLEMENTATION-SAFE SKELETON FOR GENERAL / DRAFT 2
+======================================================================
+
+A. AUTHORITY / PACKAGE
+Versioned package/source/claim/task/evaluation/mapping/policy definitions. One authority per meaning. Optional sparse content assertions and limited prerequisite/alignment relations only when used.
+
+B. PRESENT / OBSERVE
+Issue a version-bound presentation/opportunity. Record delivered support/exposure. Commit one idempotent response per semantic slot. Keep client provenance but assign authoritative server ordering.
+
+C. EVALUATE
+Append scorer/rater revisions separate from response. Resolve one current effective score under explicit authority. Invalid/pending is not wrong.
+
+D. DERIVE
+Interpret evidence under exact mapping/config. Build claim/channel profile as-of cursor. Derived state is replaceable and never policy evidence merely because policy created it.
+
+E. DECIDE
+Pure next-action calculation over a frozen logical input snapshot. Idempotent request + optimistic per-context decision sequence. Persist one immutable DecisionRecord with bounded reconstruction data.
+
+F. EXECUTE
+Revalidate current hard policy/source/access state before delivery. Persist execution/presentation. Later outcomes point back to it.
+
+G. RECONSTRUCT
+Historical decision uses historical refs/config/cursor. Current learner view uses current approved interpretation. FULL/PARTIAL/UNAVAILABLE status is explicit and privacy-aware.
+
+H. DELETE HONESTLY
+Retention can remove/redact primary evidence. Purge/recompute dependent caches and degrade reconstruction. Do not hide duplicate data in traces.
+
+======================================================================
+15. FINAL DISPOSITION TO GENERAL CF-0047
+======================================================================
+
+READY FOR DRAFT-2 / ENGINEERING SYNTHESIS, NOT READY FOR IMPLEMENTATION.
+
+The core contract is now concrete enough to prevent the corruption paths identified in Draft 1 without prematurely choosing a full schema:
+- authoritative definitions are versioned and non-duplicative;
+- raw response, scoring revision, mapping and inference are separate;
+- current derived state is cursor/config keyed and replaceable;
+- response and decision operations have both transport idempotency and semantic uniqueness;
+- two tabs/devices cannot silently accept two stale decisions on one stream;
+- source remap/rescore/model/policy changes never rewrite historical observations/decisions;
+- delivery revalidates hard current policy;
+- deletion is allowed and replay degrades honestly;
+- recommendations/hypotheses cannot feed back as their own learner evidence;
+- beta storage stays small and does not require microservices, event sourcing, universal graph tooling or multiple learner models.
+
+No implementation was performed.
+
+DONE — COMPLETE IMPLEMENTATION-SAFE DATA / REPLAY CONTRACT RETURNED DIRECTLY TO GENERAL CF-0047.
