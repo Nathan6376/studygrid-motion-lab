@@ -1,0 +1,149 @@
+STUDYGRID RESEARCH CF-0044 — WEBSITE PROTOTYPE SOURCE / CONSTRUCT AUDIT — DONE
+Timestamp: 2026-10-01 20:56 ET
+From: SG Research / CF-0044
+To: ChatGPT General / CF-0047
+Lifecycle: DONE — TARGETED SOURCE / CONSTRUCT AUDIT / NO IMPLEMENTATION
+
+AUTHORITY / EXACT INPUTS CONSUMED
+- Route: routes/GENERAL_20261001_2049_RESEARCH_WEBSITE_SOURCE_CONSTRUCT_AUDIT.txt @ 311f4d993bc07f04c657f837bd06909182395dbd.
+- Owner review delta: routes/OWNER_REVIEW_DELTA_20261001_1657_PRODUCT-FLOW-STUDY-MODE.txt @ 9e44452c4687b03fe62a1bc6faee387cc2713c6d.
+- Ordered/domain-neutral assessment delta: routes/OWNER_REVIEW_DELTA_20261001_1756_ORDERED-INTERACTION_DOMAIN-AGNOSTIC-ASSESSMENT.txt @ cfe1071cd15faab19fe4195b30201f51aae42afd.
+- Website build-contract prep: design/STUDYGRID_NEXT_WEBSITE_PROTOTYPE_BUILD_CONTRACT_PREP_20261001.md @ 6be928678f784e968f3ecca3017d6da39fca9c84.
+- Exact accepted HTML read live from Drive: StudyGrid-CF0042-QB17R2-stuart-defect-repair.html / Drive 1k0d69ZOrgs4NRRLRORKBmIwOR1Q0mE46 / expected SHA-256 874e4a743050d308759a9dcaefa9cc3296f8841c37b12e3acf5df2225ea49aab.
+- Prior exact-source implementation audit recovered: SOL-CF0043-20261001-interaction-source-audit-REPORT.md / Drive 1so83iqz97-Xckj4h13qSiPjPdJW6kssy.
+- Exact course source recovered from Library: PFP 207 Quiz 1 Study Guide(1).pdf / file_000000008bf081f598ad43baaceb76a3; duplicate source copy also indexed as PFP 207 Quiz 1 Study Guide.pdf / file_000000004d0481f5a29317264197b40e.
+- September 23 PFP 207 transcript intake also checked: Drive 1-Kw0GO8QrO1kr54HjuNWvEdGJEuDoJVZgC5oeoNtMHk. Its own source rule warns Minutes AI proper nouns may be garbled; the Quiz 1 Study Guide is the stronger exact source for the item wording resolved below.
+- STARTED persisted @ a1e1b721fbc7a5e1130311c56a09708731580483.
+- Pre-terminal recent-commit refresh found no newer exact Research supersession. Bob/Sol/Stuart/Kevin website work is parallel; it does not replace this source feeder.
+
+BOUNDARY
+No HTML/code/backend/auth/Supabase/provider/deploy/canonical mutation. No peer-worker wake. This return resolves source and construct only. Browser defect implementation remains for the build/QA lanes.
+
+======================================================================
+EXECUTIVE RESULT
+======================================================================
+
+1. The owner-observed “Choose all three parts...” item is, as currently worded and scored, an UNORDERED MULTI-SELECT item. The exact course source supports three announcement COMPONENTS — identity, purpose, request entry — but does not establish that this item is intended to measure the learner's ability to reconstruct their order. Do NOT convert this item to sequence_order tonight. Repair the multi-select renderer/browser behavior and remove the misleading word “sequence” from the prompt if the item remains a component-identification item.
+
+2. “McCue” is not the source term. The exact source and candidate use R. v. MACOOH. The answer-leak defect is real: q14 asks which case is the hot-pursuit case while its pre-answer example literally says “Macooh fled a traffic stop...”. Smallest source-faithful fix: suppress/move that example until after answer commitment when the item is being used as retrieval/assessment evidence. Do not rename or “correct” Macooh.
+
+3. Literal “Canascape” was not found in the accepted HTML or the exact Quiz 1 Study Guide. CanLII also has no exact match in that course source. No source-supported normalization has been identified. HOLD the wording unchanged/unknown rather than mapping it to Macooh, Mann, Feeney, Godoy, Landry, Evans, Silveira or any guessed legal term.
+
+4. Two closely related construct/source defects are confirmed: (a) pre-answer `example` content is a systemic leakage risk in assessment/retrieval contexts, not only q14; and (b) current multi-select feedback can render numeric indexes `0,1,2` and/or only the scalar fallback answer rather than the full source-text answer set. The feedback must show the selected/correct source text, not indexes or a truncated answer.
+
+======================================================================
+TARGET 1 — q4m “CHOOSE ALL THREE PARTS...”
+======================================================================
+
+EXACT CURRENT ITEM
+Accepted HTML defines:
+- base q4 objective: `announcement`.
+- q4 text: “Absent a lawful exception, what must police announce before entering a home?”
+- q4 correct composite answer: “Identify as police, state the purpose, and request entry”.
+- q4m override: “Choose all three parts of the normal home-entry announcement sequence.”
+- q4m choices: Identify as police / State the purpose / Request entry / Give a right-to-counsel caution before knocking.
+- q4m correctAnswers [0,1,2], selectionMode `multi`, requiredChoices 3.
+
+EXACT COURSE SOURCE
+PFP 207 Quiz 1 Study Guide:
+- p.16: “Proper announcement means: knock or ring, identify yourself as police, state the purpose (to arrest), and request entry. Forced entry only after being refused.”
+- p.20 checklist: “Have I properly announced (identity, purpose, request entry)?”
+- p.22 scenario answer: missed announcement = “identity, purpose, request entry”.
+- p.23: yelling only “Police!” supplies identity but lacks purpose and request to enter.
+- p.26 trap correction: proper announcement also needs purpose and request to enter.
+- p.31 summary: “Announce = identify, purpose, request entry.”
+
+CONSTRUCT ADJUDICATION
+KEEP as `multi_select_unordered` for THIS item.
+Reason: the observable task asks the learner to identify the three required components. Its scoring set is membership-based; source repeatedly summarizes the construct as three components. The source does narrate a normal procedure (“knock or ring, identify..., state..., request...”), but no evidence in this item/source establishes that success on q4m requires reproducing a strict order among the three selectable components. Converting the existing component-selection item to `sequence_order` would change the measured construct without a source-grounded scoring contract.
+
+SMALLEST PERMITTED CONTENT/UX REPAIR
+- Keep the three correct component choices.
+- Keep unordered multi-select scoring.
+- Replace ambiguous prompt wording such as “announcement sequence” with source-faithful component wording, e.g. “Choose all three parts of a proper announcement before entry.” Exact copy remains General/owner design authority, but it must not imply ordering if order is not scored.
+- Repair the rendered/browser multi-selection defect separately; the exact isolated JS retained multiple selections, so do not invent a source/scoring defect to explain the owner-observed browser failure.
+
+HOLD / DO NOT CHANGE TONIGHT
+- Do not create an ordered-procedure score from these three options merely because the source sentence has a natural order.
+- If a future item intentionally tests procedure order, author it as a separate `sequence_order` item with its own explicit evidence claim/source contract. That item should reconcile whether “knock or ring” itself belongs in the ordered response rather than silently omitting it.
+
+======================================================================
+TARGET 2 — “McCue” / MACOOH ANSWER LEAK
+======================================================================
+
+EXACT CURRENT ITEM
+q14:
+- objective `macooh`.
+- prompt: “Which case is associated with the common-law hot-pursuit exception?”
+- correct option: “R. v. Macooh”.
+- pre-answer example: “Macooh fled a traffic stop. The course point is that a suspect cannot escape an active arrest pursuit simply by crossing the threshold into a home.”
+- accepted session code renders `q.example` before question/answer commitment, including assessment use.
+
+EXACT COURSE SOURCE
+PFP 207 Quiz 1 Study Guide:
+- p.18: Hot pursuit / Common law / R. v. Macooh (1993); an actively chasing officer may follow inside; Macooh fled a traffic stop.
+- p.19: R. v. Macooh — can follow a suspect into a home during hot pursuit.
+- p.31: “Macooh hot pursuit (common law)”.
+The September 23 transcript intake separately records a verified correction from Minutes AI “Maku” to R. v. Macooh. Literal “McCue” is not the supported course name.
+
+CONSTRUCT ADJUDICATION
+CONFIRMED ANSWER LEAK for q14 whenever q14 is meant to produce fresh case-identification/retrieval evidence. The example contains the exact correct case name before the learner answers.
+
+SMALLEST SOURCE-FAITHFUL REPAIR
+- Do NOT change the legal/course answer `R. v. Macooh`.
+- Suppress/move q14's example to post-answer feedback/explanation in retrieval/assessment contexts.
+- Preserve the example as teaching material in a learn/explanation context if desired, but a subsequent case-name response after seeing it must not be described as fresh unaided retrieval evidence.
+
+CLOSELY RELATED LEAK
+q3's example also names R. v. Macooh while teaching hot pursuit. q3 itself asks for the correct SITUATION, so its example does not leak q3's own answer label. But if q3's pre-answer example is shown earlier in the same assessment that later asks q14 case identity, it contaminates q14 as prior answer exposure. Therefore the robust repair is reveal-policy level: assessment/retrieval mode must suppress pre-answer examples that contain an answer/case/rule identity later being tested, rather than patching only q14 copy.
+
+======================================================================
+TARGET 3 — UNCERTAIN “CANASCAPE” WORDING
+======================================================================
+
+CHECKED
+- exact accepted HTML: no literal `Canascape` found in the prior exact-source audit; current candidate preserves names such as Macooh, Mann, Feeney, Godoy, Landry, Evans and Silveira.
+- exact PFP 207 Quiz 1 Study Guide: literal `Canascape` = zero matches.
+- exact PFP 207 Quiz 1 Study Guide: literal `CanLII` = zero matches.
+- broad `scape` search only hit ordinary “escape” wording around Macooh/hot pursuit; it did not identify a named doctrine/case/term matching the owner's speech.
+
+ADJUDICATION
+UNRESOLVED / HOLD.
+There is no evidence basis to normalize “Canascape” to any current legal term or case. Do not alter course content from this speech fragment. If the owner later identifies the exact screen/question or supplies the source wording, re-run against that exact source.
+
+======================================================================
+TARGET 4 — CLOSELY RELATED SOURCE / CONSTRUCT MISMATCHES
+======================================================================
+
+A. PRE-ANSWER EXAMPLE REVEAL POLICY — REVISE
+Current candidate can render q.example before commitment in assessment sessions. q14 proves this can destroy the intended retrieval construct. The contract must distinguish teaching context from evidence-producing retrieval/assessment context. Teaching can reveal; a fresh retrieval probe cannot reveal the tested identity first and then count success as independent evidence.
+
+B. MULTI-SELECT FEEDBACK RECEIPT — REVISE
+Prior exact-source isolated audit reproduced:
+- correct multi answer [0,1,2] can be displayed as literal `0,1,2`;
+- on an incorrect multi selection, “Correct answer” can fall back to scalar `q.answer` and omit other correct choices.
+This is a construct/result representation defect. Repair feedback so both learner selection and correct set resolve through the same multi-select answer-set function and render human/source text for ALL selected/correct choices.
+
+C. MULTI-SELECT CONFIDENCE-OFF DEFECT — IMPLEMENTATION FEEDER, NOT SOURCE CHANGE
+The same audit found multi-select ignores the global confidence-off setting even though single-answer respects it. This is not a content/construct correction, but it is adjacent to the same interaction path and should not be lost during repair.
+
+D. q11 “FIRST OF SIX STEPS” — NO CONSTRUCT CHANGE REQUIRED
+q11 asks only for the FIRST step and uses single-select. The source/course layer describes the six-step arrest sequence. A single-select first-step recognition item is internally consistent with its stated claim. Do not convert it to sequence_order unless the intended claim changes to reproducing the whole sequence.
+
+E. q13 “TWO GROUNDS” COMPOSITE SINGLE-SELECT — NOT AN INVALIDITY BY ITSELF
+q13 asks what two grounds are required and presents one composite option containing both. That is a recognition item for the correct pair. It is less diagnostic than separately selecting/producing both grounds, but the interaction is not source-inconsistent. Do not change it tonight absent a product decision to measure independent recall/component selection.
+
+======================================================================
+IMPLEMENTATION / QA FEEDER CONTRACT
+======================================================================
+
+For the next prototype build/QA lanes, the source audit supports these exact requirements:
+1. q4m remains unordered multi-select; fix rendered multi-selection and remove order-implying copy if order is not scored.
+2. feedback for q4m must name all selected/correct choices, not indexes/truncated scalar answer.
+3. q14 answer remains R. v. Macooh; hide its answer-bearing example until after commitment in retrieval/assessment mode.
+4. apply the reveal contract across assessment items, including earlier examples that can cue later questions.
+5. leave “Canascape” untouched/unresolved.
+6. do not broaden into legal-content rewrites not supported by the exact course source.
+
+TERMINAL STATUS
+DONE — EXACT ACCEPTED HTML + EXACT COURSE SOURCE + PRIOR SOURCE AUDIT RECONCILED / q4m CONSTRUCT RESOLVED AS UNORDERED MULTI-SELECT / MACOOH ANSWER LEAK RESOLVED / CANASCAPE HELD UNRESOLVED WITHOUT GUESSING / CLOSELY RELATED REVEAL + MULTI-FEEDBACK DEFECTS RETURNED / NO IMPLEMENTATION.
