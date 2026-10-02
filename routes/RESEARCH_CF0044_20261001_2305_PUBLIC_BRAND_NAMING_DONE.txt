@@ -1,0 +1,146 @@
+STUDYGRID RESEARCH CF-0044 — COLLISION-SCREENED PUBLIC BRAND NAMING — DONE
+Timestamp: 2026-10-01 23:05 ET
+From: StudyGrid Research / CF-0044
+To: ChatGPT General / CF-0047
+Source route: routes/GENERAL_20261001_2234_RESEARCH_PUBLIC_BRAND_NAMING_SEARCH.txt @ 09efe99cb018fca345a8ffcc6634fb322e23d585
+Lifecycle: DONE — RESEARCH / SCREENING ONLY / NO PRODUCT MUTATION
+
+OWNER REQUIREMENT RESOLVED
+Return actual public-product names, not naming theory. StudyGrid remains the internal engine name.
+
+METHOD / SCREEN BOUNDARY
+- Generated and culled a broad multi-territory candidate pool: direction/continuity, sense-making, class/course home, forward motion, calm/simple product philosophy, lightly invented compounds, and warmer academic language.
+- Aggressively screened exact-name and close-adjacent usage against current public web, education products, software/SaaS/AI, app-store-visible products, public company/brand usage, and web-indexed U.S./Canadian trademark-oriented sources where reasonably searchable.
+- Applied pronunciation/hear-to-spell, memorability, semantic suggestiveness, peer naturalness, institutional naturalness, warmth, competence, and future breadth as qualitative gates.
+- Research basis for keeping sound/meaning fit in the screen rather than treating names as arbitrary strings: Klink, “Creating Meaningful New Brand Names: A Study of Semantics and Sound Symbolism,” Journal of Marketing Theory and Practice 9(2), DOI 10.1080/10696679.2001.11501889; Yorkston & Menon, “A Sound Idea: Phonetic Effects of Brand Names on Consumer Judgments,” Journal of Consumer Research 31(1), DOI 10.1086/383422; Lee & Ang, “Brand name suggestiveness: a Chinese language perspective,” International Journal of Research in Marketing 20(4), DOI 10.1016/j.ijresmar.2003.03.002.
+- This is collision screening, NOT legal trademark clearance and NOT a domain-availability determination. Absence from targeted searches means only that no material exact public conflict surfaced in this pass.
+
+======================================================================
+STRONGEST 5 — OWNER-TEST FIRST
+======================================================================
+
+1. SENSEWARD
+Pronunciation: SENSE-ward.
+Hear→spell: strong.
+Territory: sense-making + direction; “toward understanding.”
+Warmth / competence: warm but adult; intelligent without sounding AI-branded.
+Peer test: “Yo, I built Senseward. I’ll send you the link.” — natural.
+Institution test: “Humber is piloting Senseward with students.” — natural.
+Collision screen: strongest clean result in this pass. Exact/current searches surfaced rare ordinary/literary uses of “senseward” as a word, but no material current education/software/SaaS/app public brand and no material exact web-indexed trademark conflict in the screened categories. Because it is a real directional construction, it carries meaning without sounding like a generic EdTech compound.
+Watch-out: the rare pre-existing English usage can mean “toward the senses”; blind testing should verify people naturally infer sense-making/direction rather than something medical/spiritual.
+
+2. CLASSFORTH
+Pronunciation: CLASS-forth.
+Hear→spell: excellent.
+Territory: class-centred forward motion.
+Warmth / competence: competent, mature, slightly more functional than Senseward.
+Peer test: natural.
+Institution test: very natural.
+Collision screen: exact/current education/software/app/trademark-oriented searches did not surface a material exact public product/brand conflict. Search noise is mostly accidental text concatenation such as “class for the...” rather than an entity.
+Watch-out: “Class” clearly anchors the product to formal classes; good for present architecture, less broad if the public product later expands far beyond courses/classes.
+
+3. PLAINFORTH
+Pronunciation: PLAIN-forth.
+Hear→spell: excellent.
+Territory: simple surface + forward motion; directly fits “UI is simple because the system underneath is smart.”
+Warmth / competence: calm, mature, non-EdTech.
+Peer test: natural.
+Institution test: natural.
+Collision screen: targeted exact/current software/education/app/trademark searches surfaced no material public product conflict. The visible exact-name noise was historical surname/property material rather than an active adjacent brand.
+Watch-out: “plain” can signal clarity/simplicity, but can also be heard as ordinary/boring. Blind human reaction matters before promotion.
+
+4. COURSESTEAD
+Pronunciation: COURSE-sted.
+Hear→spell: strong; “stead” may need one repeat for some listeners.
+Territory: stable home/base for a course.
+Warmth / competence: calm and grounded; more academic than startup-like.
+Peer test: acceptable.
+Institution test: strong.
+Collision screen: targeted exact/current searches did not surface a material education/software/app brand or web-indexed trademark conflict. One low-quality unrelated web scrape used the string in running text, not as a product identity.
+Watch-out: “stead” has an old/rustic undertone and “course” narrows the brand to formal learning contexts.
+
+5. LESSONFORTH
+Pronunciation: LES-son-forth.
+Hear→spell: excellent.
+Territory: learning progression / next lesson forward.
+Warmth / competence: warm, understandable, less technical.
+Peer test: natural enough.
+Institution test: natural.
+Collision screen: targeted exact/current searches did not surface a material exact education/software/app public brand or web-indexed trademark conflict.
+Watch-out: “lesson” can skew K–12/teacher-led and is narrower than Senseward or Plainforth.
+
+======================================================================
+ADDITIONAL FINALISTS — SURVIVED SCREEN, LOWER PRIORITY
+======================================================================
+
+6. LESSONWARD
+Pronunciation: LES-son-ward.
+Hear→spell: excellent.
+Territory: direction toward the next learning step.
+Warmth / competence: warm; slightly softer than Classforth.
+Collision screen: no material active education/software/app public brand surfaced. One academic document contains the lowercase phrase “lessonward strategy”; that is text usage, not a surfaced public product identity.
+Watch-out: same K–12 / teacher-led narrowing as Lessonforth; “ward” may sound a little coined until heard in context.
+
+7. COURSEKIND
+Pronunciation: COURSE-kind.
+Hear→spell: excellent.
+Territory: humane course learning; “kind” implies gentler support without mascot language.
+Warmth / competence: warm; moderate institutional credibility.
+Collision screen: no material current consumer education/software/app brand surfaced in targeted exact searches. Exact search noise comes from `courseKind` schema/code/database fields in unrelated software.
+Watch-out: weaker distinctiveness/searchability because “course kind” is a natural descriptor and code-field phrase; can be parsed as “type of course.”
+
+8. CLASSSTEAD
+Pronunciation: CLASS-sted.
+Hear→spell: good.
+Territory: stable home/base for a class.
+Warmth / competence: calm, grounded.
+Collision screen: targeted exact/current searches surfaced no material active education/software/app brand or web-indexed trademark conflict; visible exact-name noise was an isolated forum portmanteau rather than a product.
+Watch-out: weakest semantic elegance of the eight; “stead” is somewhat archaic and the name can momentarily sound like “classed.” Keep only for blind testing, not as a presumptive winner.
+
+======================================================================
+WHY THE LIST IS SHORT
+======================================================================
+The education/software namespace is far more crowded than first-glance naming exercises imply. Aggressive current screening eliminated a large number of otherwise plausible names, including direct or materially adjacent 2025–2026 products/marks. Representative rejects:
+- CourseLane — current education course/college discovery platform (`courselane.in`).
+- LessonLane — current driving-school lesson-management software (`lessonlane.app`).
+- ClassQuill — current tutoring-management + learning platform (`classquill.com`).
+- LessonQuill — current AI teacher lesson/quiz platform (`lessonsquill.com`).
+- CourseBridge — registered U.S. education/software mark and current course-learning service (USPTO Reg. 7638165).
+- Learnstead — 2026 live/pending U.S. education + SaaS mark (Serial 99842296), plus a current learning repository.
+- Senseforth — live U.S. software/AI SaaS registration (Reg. 5644416) and current software identity.
+- Trueforth — current higher-education/exam-mentorship + AI-training brand.
+- ClassBridge — multiple current education/school-management apps in 2026.
+- CourseLeaf — established higher-ed curriculum/catalog/scheduling platform.
+- Coursewise, Coursewell, Coursebound, CourseArc, Classwise, LessonWise, ClassCue, LessonCue, LearnPath, CoursePilot/ClassPilot/StudyPilot-style families — direct/current adjacent education or software collisions/crowding.
+- Many otherwise attractive directional names (Relay, Northline, Waypoint, Nextward, Trueward, Wayframe, ClearFrame, Brightfold, Northfold, SensePath, Pathmark, Threadmark, Guidewell, Wayline, Northset, CuePoint, etc.) were likewise eliminated for current brand/product/mark crowding or strong adjacent use.
+
+This is why the terminal set contains some coined compounds: cleaner semantic real-word names were disproportionately occupied.
+
+======================================================================
+RECOMMENDED BLIND HUMAN TEST
+======================================================================
+Run the strongest five first, RANDOMIZED, with no rationale shown:
+Senseward / Classforth / Plainforth / Coursestead / Lessonforth.
+
+For each participant:
+1. Show the written name for 3–5 seconds; ask them to pronounce it.
+2. Say the name aloud without showing it; ask them to spell it.
+3. Put it into both exact contexts:
+   - “Yo, I built _____. I’ll send you the link.”
+   - “Humber is piloting _____ with students.”
+4. Ask: “What do you think this product does?” before giving a description.
+5. Ask for immediate unwanted associations: childish, medical, finance, logistics, K–12-only, corporate-software, AI-startup, religious/spiritual, or other.
+6. Record exact mispronunciations/misspellings and first associations; do not collapse them into a single preference score.
+
+A candidate should advance only if people can say it, spell it, remember it, and place it naturally in both peer and institutional speech without explanation.
+
+RECOMMENDED CURRENT OWNER TEST ORDER
+1. Senseward
+2. Classforth
+3. Plainforth
+4. Coursestead
+5. Lessonforth
+Then use Lessonward / Coursekind / Classstead only if the first five fail human reaction.
+
+TERMINAL STATUS
+DONE — broad generation completed / aggressive public collision screen completed / crowded/directly conflicting education+software names eliminated / eight survivors returned / strongest five identified / no legal-clearance or domain-availability claim / StudyGrid preserved as internal engine name / no implementation, repo rename, domain purchase, filing, product mutation or peer wake.
