@@ -1,0 +1,155 @@
+STUDYGRID — v7.22 EXACT-CANDIDATE RETEST REPORT
+Timestamp: 2026-10-01 23:34 ET
+Worker: CHAT-CGPT-20261001-STUDYGRID-STUART-01 / CF-0046
+Coordinator: CHAT-CGPT-20261001-GENERAL-01 / CF-0047
+Disposition: AMEND
+Boundary: INDEPENDENT EXACT-CANDIDATE RETEST ONLY — NO FRONTEND MUTATION
+
+AUTHORITY / EXACT CANDIDATE
+- General retest release: routes/GENERAL_20261001_2314_STUART_V722_EXACT_RETEST.txt @ 7e983ddc2d4fa28a7d5fbd7d6657f726efacc7c3
+- Candidate: StudyGrid-CF0042-Website-Prototype-v7.22-stuart-amend-repair.html
+- Drive: 1_xjvGuLOHDpGcak9elvH6QcudSiW4M1d
+- Version: v7.22-cf0042-v721-stuart-amend-repair
+- Independently verified: 1,101,587 bytes / SHA-256 95869b3b61b33b993a02ace37744f051c1b4358e776ab510eae53e04394f686b
+- Prior v7.21 candidate independently retained for comparison: 1,098,557 bytes / SHA-256 9ee8f36726abe11d60694f1ed035a62b883d275efcc7adaf04ef4a3ad1672c20
+- Bob repair return consumed: a5e93a314ec47a1930cafa4090c2b5a2e80178e1
+- Prior Stuart AMEND: report a3514951620fbcee96e104de0ce2528f12c62593 / terminal 3d19199633167fe3b76540c809b0d97021ad2c7a
+
+VERDICT
+AMEND.
+
+The four defects that caused the v7.21 AMEND are repaired on the exact v7.22 bytes. The quick routed regression floor also passes in the tested scope. However, Bob's claimed current-version metadata repair is incomplete outside the component-registry aliases: several live/runtime/owner-feedback identity paths still report v7.21, and the document title still reports an obsolete CF-0029 candidate. That leaves exact owner-review/debug feedback capable of being attributed to the wrong build. The repair is small and bounded; no architecture or frontend redesign is required.
+
+======================================================================
+1. EXACT PRIOR-AMEND RETEST
+======================================================================
+
+G04 — PASS
+- Instructor root no longer visibly renders “Professor Home”.
+- Instructor class surface renders “← Home”.
+- Explicit Instructor preview / Example data context remains visible.
+
+G12 — PASS
+- Neutral sequence fixture remains visibly numbered 1/2/3 with Move up/down controls.
+- Correct Inspect → Isolate → Verify returns:
+  “Order matches.” / “Order matches the fixture rubric.”
+- Deliberately wrong Isolate → Inspect → Verify returns:
+  “Review the order.” / “That order does not match the fixture rubric. Review the sequence and try again.”
+- Direct StudyGridPrototypeAdapter.evaluateSequence() returns correct=true versus correct=false with authority='fixture-provider'. The renderer is not the scorer.
+
+G21 — PASS
+Forced storage failure through the exact candidate flow completed all 15 practice questions and rendered:
+- “Practice not saved yet.”
+- explicit local/non-authoritative completion wording;
+- “Seeds were not saved.”
+- “Retry save”.
+It did NOT render “Practice saved.” or authoritative answer/review-evidence-saved success copy. A forced failed retry remained unsaved/retryable and still did not render saved-success copy. No captured page/console errors occurred in this run.
+
+R64 — PASS NARROWLY FOR THE EXACT ROUTED REGISTRY CHECK
+The component registry parses; 237/237 component IDs are unique; current top-level aliases all equal:
+- build = v7.22-cf0042-v721-stuart-amend-repair
+- build_id = v7.22-cf0042-v721-stuart-amend-repair
+- candidate_label = v7.22-cf0042-v721-stuart-amend-repair
+Historical per-component first_build/last_build provenance was correctly left historical.
+
+======================================================================
+2. MATERIAL RESIDUAL DEFECT — CURRENT-BUILD IDENTITY SPLIT
+======================================================================
+
+AMEND-01 — Bob’s claimed candidate-version metadata repair is incomplete.
+
+Exact current source still contains these live current-build identifiers:
+- line 1227: const APP_VERSION='v7.21-cf0042-next-clickable-prototype';
+- line 3240: const SG_R6_BUILD='v7.21-cf0042-next-clickable-prototype';
+- line 3462: const SG_QB17R_VERSION='v7.21-cf0042-next-clickable-prototype';
+- document <title>: “StudyGrid — CF-0029 Storage + Simplicity Nav5 Truth Candidate”.
+
+The stale values are not inert historical provenance:
+- currentReportContext() writes appVersion: APP_VERSION;
+- JSON feedback export writes appVersion: APP_VERSION;
+- Markdown feedback export writes “Build: ${APP_VERSION}”;
+- CSV feedback export writes APP_VERSION;
+- window.StudyGridR6QA.build exposes SG_R6_BUILD;
+- window.StudyGridQb17rQA.build exposes SG_QB17R_VERSION.
+
+REPRODUCTION
+1. Inspect exact v7.22 bytes at the constants above.
+2. Observe that the current registry says v7.22 while current owner-feedback/export and QA helper identities say v7.21, and the browser title still names an obsolete CF-0029 candidate.
+3. Therefore feedback/debug evidence produced while reviewing v7.22 can be labelled as a different build.
+
+SMALLEST REPAIR
+Use one exact current-version source for runtime/reporting/QA current-build identity and align:
+- APP_VERSION;
+- SG_R6_BUILD current QA alias;
+- SG_QB17R_VERSION current QA alias;
+- browser/document title current candidate label if it is intended to identify the current candidate;
+- component-registry current aliases already correct.
+Do NOT rewrite historical per-component first_build/last_build provenance.
+Then retest feedback capture/export identity, QA helper build identities, G02 parse/startup and R64/current-version identity consistency.
+
+======================================================================
+3. QUICK REGRESSION FLOOR
+======================================================================
+
+G02 — PASS
+- 4/4 executable inline JavaScript blocks pass node --check.
+- Registry JSON parses.
+
+G07 — PASS
+Direct fixed-scroll route retest of .sg-v21-study-tabs at 1024×900:
+- Learn x=250, y=272.534 px
+- Test x=250, y=273.867 px
+- Support x=250, y=272.534 px
+x delta=0 px; max y delta=1.333 px, within the ≤2 px acceptance floor.
+
+G11 — PASS
+q4m remains unordered multi-select. Actual rendered 2→0→1 selection, unselect/reselect, and complete source-text receipt passed. Receipt names Request entry / State the purpose / Identify as police; no numeric-index/scalar fallback.
+
+G16 — PASS
+Protected assessment disables coaching while global Accessibility & input help remains available.
+
+G18 — PASS
+Independent 15-action run recorded identical approval-target coordinates through the queue in the routed stability harness: x delta 0 px, y delta 0 px. The v7.22 bounded diff does not touch Study Set layout/approval logic.
+
+G19 — PASS
+With the All filter preserving the selected set after its status becomes Ready, final approval replaces the review action with explicit:
+“REVIEW COMPLETE / 15 of 15 reviewed. / This exact set revision is Ready. Approval is complete; publication is still a separate instructor action.”
+
+G20 — PASS
+After final approval, local filter truth is Needs review 0 / Drafts 1 / Ready 1 / Published 1 / Held 1.
+
+G22 — PASS
+Synchronous double activation of the first response confidence commit produced one feedback surface and one Next control; after Next the session advanced exactly Question 1 of 15 → Question 2 of 15, not Question 3. No page errors.
+
+G23 — PASS
+24 representative route/viewport smoke cases across 1024×900, 820×900 and 390×844 produced zero horizontal-overflow failures and zero captured page/console errors.
+
+G24 — PASS
+Help Escape returns focus to the invoking Help control.
+
+Reduced-motion quick smoke — PASS
+prefers-reduced-motion matched; manual control remained available; no captured runtime error. This is a quick regression check, not a full physical assistive-technology certification.
+
+G25 — PASS WHEN OWNER ARTIFACT IS SURFACED WITH THIS RETURN
+The exact tested file is retained unchanged at the chat-accessible mounted artifact path, and its SHA/size were independently reverified before the terminal return. The owner-facing completion must surface that exact HTML, not a regenerated copy.
+
+======================================================================
+4. BOUNDED-DIFF / CURRENTNESS
+======================================================================
+
+Exact v7.21→v7.22 source comparison contains 7 non-equal hunks. The changes are bounded around session persistence/result handling, sequence fixture evaluation, instructor-copy polish, candidate/version metadata and registry current aliases. No broad redesign was introduced by Bob’s repair.
+
+Pre-terminal repository refresh found no newer Stuart route and no newer exact website candidate replacing v7.22. General did publish a separate 23:20 owner-visual repair route for welcome cycling / Sign-in treatment, then explicitly HOLD that Bob activation at 23:27 pending design synthesis. That HOLD states no frontend mutation occurred and continues to use the same exact v7.22 bytes as its base. Therefore this report remains the bounded retest of the released exact v7.22 candidate; it is not final visual-design acceptance and it does not adjudicate the separately held design synthesis.
+
+======================================================================
+5. TEST METHOD / SCOPE LIMITS
+======================================================================
+
+- Exact candidate bytes were source-inspected and executed in system Chromium through an about:blank/document harness because direct file:// / localhost navigation is administrator-restricted in this runtime.
+- Forced-storage-failure behavior used a deterministic storage-failure harness; quick runtime checks otherwise used the exact page bytes without frontend mutation.
+- Native file-origin / hosted-origin persistence, physical Safari/iPad, VoiceOver, hardware keyboard/touch/Pencil, backend/auth/Supabase/provider/deploy and educational efficacy remain outside tested scope.
+- No HTML/frontend/backend/auth/Supabase/provider/deploy/canonical/public-brand mutation occurred.
+- No peer wake.
+
+TERMINAL DISPOSITION
+AMEND — THE FOUR v7.21 QA DEFECTS ARE REPAIRED; QUICK REGRESSION FLOOR PASSES; ONE BOUNDED CURRENT-BUILD IDENTITY SPLIT REMAINS IN LIVE OWNER-FEEDBACK / QA / DOCUMENT-TITLE PATHS. GENERAL CF-0047 OWNS REPAIR/RELEASE ROUTING.
