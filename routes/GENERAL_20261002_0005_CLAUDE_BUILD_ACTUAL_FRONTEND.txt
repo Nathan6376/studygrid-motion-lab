@@ -1,0 +1,97 @@
+STUDYGRID — CLAUDE ACTUAL FRONTEND BUILD RELEASE
+FROM: ChatGPT General CF-0047
+TO: Claude Chat / Opus
+TIMESTAMP: 2026-10-02 00:05 ET
+STATUS: BUILD THE ACTUAL FRONTEND PROTOTYPE / NON-CANONICAL / NO BACKEND MUTATION
+
+CORRECTION
+The previous Claude route was mistakenly framed as DESIGN ONLY. Nathan’s actual intent was for Claude to BUILD the redesigned website so he can open it and judge the result. The prior design work may be reused, but this task is now implementation, not another design memo.
+
+INPUTS TO USE
+1. Nathan will upload the exact current frontend file:
+   StudyGrid-CF0042-Website-Prototype-v7.22-stuart-amend-repair.html
+   Exact SHA-256: 95869b3b61b33b993a02ace37744f051c1b4358e776ab510eae53e04394f686b
+   Version: v7.22-cf0042-v721-stuart-amend-repair
+2. Consume the already-produced StudyGrid School redesign contract from your immediately prior turn/work.
+3. Consume these owner deltas from the shared repo if available:
+   - routes/OWNER_DELTA_20261001_2331_PRODUCT_ENTRY_MOTION_LEARNING_QUALITY.txt
+   - routes/OWNER_DELTA_20261001_2343_V722_FULL_REVIEW_CONTINUATION.txt
+   - routes/OWNER_DELTA_20261001_2350_STUDYGRID_SCHOOL_GENERAL_BRANCHING.txt
+4. Preserve good current concepts Nathan explicitly likes: Up Next, Why this, Continue, Choose another path, Pause quiz, approved class material/source transparency, “A little guidance when you need it”, current warm green/cream material identity, and good hover/press reactions.
+
+BUILD GOAL
+Produce a materially redesigned, working StudyGrid School frontend Nathan can actually open and use. This is not a critique, design contract, checklist, or code snippet response. Return a complete runnable artifact.
+
+MANDATORY PRODUCT DIRECTION
+- Umbrella brand stays StudyGrid for now.
+- First-class entry split: StudyGrid School / Learn something else (StudyGrid General architecture only for now).
+- School is the immediate polished experience.
+- Keep green/cream/material identity; do NOT turn it into generic purple/blue AI SaaS.
+- Premium 2026 motion/UI quality: spatial continuity, clear depth, smooth shared-element/state transitions, satisfying press/hover, visible reordering movement, meaningful motion rather than decoration.
+- Reduced-motion and keyboard/focus accessibility must remain.
+- No “Show next step” button on the landing loop; loop runs continuously with an accessible pause/reduced-motion equivalent.
+- Sign-in button: no white/light edge, inset highlight, or white focus-gap effect; accessible focus remains visually clear without the rejected light rim.
+
+HOME / UP NEXT
+- Home should present one strong next action.
+- Keep Continue, Choose another path, Why this.
+- Replace awful/internal wording like “StudyGrid is recommending it, not calling it mastered.”
+- Continue must feel like entering the recommended learning path, not dumping the user onto a page they could have navigated to directly.
+- Use a shared-element / expanding-surface transition so the Up Next card visually becomes the learning workspace.
+
+LEARNING FLOW
+- Start Learning must visibly transform the page into a focused learning state.
+- Explain / Worked Example / Guided Practice / Try From Memory must not remain as static cards with content dumped underneath.
+- Secondary options should recede while the current step becomes primary.
+- Back/next progression should feel continuous and spatially coherent.
+- Remove learner-facing jargon: no “retrieval”, “evidence profile”, “mastered”, “fixture”, or engine terminology in normal learner UI.
+- Use plain language such as “Try it from memory”, “Test yourself”, “See what you remember”, etc.
+- Starting learning and opening explanation/example/practice must actually work visibly.
+
+QUESTION QUALITY / INTERACTIONS
+- Replace obviously bad/giveaway sample questions and distractors where needed for the prototype experience.
+- Distractors should be plausible nearby confusions, not absurd throwaways like “What grade will I receive?”
+- Show the intended product behaviour: early questions can be simpler; later questions should become harder and more discriminating.
+- Do not keep repeating identical questions where the prototype can instead vary facts/examples.
+- Sequence-order interaction must animate the physical movement of items so the eye can track 1→2 changes; accessible non-drag controls must still work.
+- Keep all 8 interaction families available or clearly represented if already present.
+
+NAVIGATION / INFORMATION ARCHITECTURE
+- Remove duplicate navigation and duplicate “Study” concepts.
+- Use the redesign contract’s simplified hierarchy unless direct inspection of the HTML reveals a better equivalent consistent with Nathan’s intent.
+- Student and instructor shells should feel like the same product family.
+- Settings must not hide most settings behind “More study settings” after the user already entered Settings.
+- Legal/privacy/data surfaces must visibly open in the foreground and be readable.
+- Instructor-facing developer/fixture labels such as “fixture clock”, “Inspect proof”, internal workflow prose etc. must be replaced with natural human copy or hidden where only diagnostic.
+- Rewards/seeds: remove emoji-looking seed visuals. Prefer class-tree growth/progress if a reward/progression visual remains.
+
+GENERAL CONTEXT
+- Establish first-class public choice between school and general/self-directed learning.
+- General may remain a bounded placeholder/architecture in this build, but it must not feel like a fake toast-only dead-end if the user chooses it. Give it a coherent entry state that clearly communicates it is a different learning context under the same StudyGrid account/engine.
+
+IMPLEMENTATION EXPECTATION
+- You may substantially refactor the frontend if needed. Do not preserve bad structure merely because it already exists.
+- Preserve important existing working flows where compatible.
+- No real backend/auth/Supabase/provider/deploy mutation. Fixture/local prototype data only.
+- No public-brand rename.
+- Produce a NEW non-canonical candidate; do not overwrite v7.22.
+- If a single self-contained HTML can achieve the quality reliably, that is acceptable. If a multi-file project is materially better, return a ZIP/project plus clear run instructions. Nathan’s priority is seeing the website at full visual/motion quality, not keeping it single-file.
+
+VERIFICATION BEFORE RETURN
+- Open/run the result yourself if your environment permits.
+- Exercise landing → School → Home → Up Next → Continue → Start Learning → explanation/example/guided/independent practice.
+- Exercise sequence reorder and verify visible movement.
+- Check Settings, instructor shell, legal/privacy surface, and General entry.
+- Check no obvious broken buttons/no-op primary actions in the redesigned flow.
+- Check browser console/page errors if available.
+- Check reduced-motion behavior and keyboard focus at a basic level.
+
+RETURN REQUIREMENT
+Do NOT return another design summary as the deliverable. Return the actual runnable website artifact first, plus a concise note stating:
+- file/project name
+- how Nathan opens it
+- what was materially rebuilt
+- any genuinely blocked functionality
+- whether you personally ran/previewed it
+
+If the file is too large for one-chat artifact output, package it as a ZIP/project or another directly downloadable artifact. The owner must leave this turn with something he can open and use.
