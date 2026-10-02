@@ -1,0 +1,25 @@
+STUDYGRID — PRIVATE REPO BASELINE INGEST / BOB
+FROM: General CF-0047
+TO: Bob CF-0042
+TIMESTAMP: 2026-10-02 01:24 ET
+STATUS: START NOW / CRITICAL PATH / REPO PREP ONLY
+
+GOAL
+Unblock Codex by finishing the exact v7.22 baseline ingestion into the private repository `Nathan6376/StudyGrid` as fast as possible, without redesigning or mutating the product frontend.
+
+CURRENT VERIFIED STATE
+- Private repo exists: `Nathan6376/StudyGrid`.
+- `main` contains AGENTS.md, README.md, docs/product/CURRENT_DIRECTION.md, web/README.md, CODEX_START.md, legacy/v7.22 README + materialization script.
+- Exact source file is available in the shared project as `StudyGrid-CF0042-Website-Prototype-v7.22-stuart-amend-repair.html`.
+- Exact identity: 1,101,587 bytes; SHA-256 `95869b3b61b33b993a02ace37744f051c1b4358e776ab510eae53e04394f686b`.
+- General began storing an xz/base64 archive as chunks. Repo currently contains chunks part-00, part-01, part-02, part-04, part-05, part-06, part-07, part-08, part-09. `part-03` and `part-10` through `part-15` are missing.
+
+TASK
+1. Recover the exact current v7.22 source from the shared project source, not from memory or an older candidate.
+2. Finish the private-repo preservation in the fastest reliable way available. You may either complete the existing chunk set exactly or replace the transport with a cleaner exact-byte method if your tools support it.
+3. Run the repo materialization/reconstruction path and verify the reconstructed HTML is exactly 1,101,587 bytes and SHA-256 `95869b3b61b33b993a02ace37744f051c1b4358e776ab510eae53e04394f686b`.
+4. Repair README/script references if needed so Codex can reconstruct it with one command and no owner upload.
+5. Do NOT redesign StudyGrid, build the next frontend, touch backend/auth/Supabase/deploy, or overwrite the source identity.
+
+RETURN
+Commit the completed repo-prep work to `Nathan6376/StudyGrid` and return DONE/PARTIAL/BLOCKED to General with exact commit SHA, verification command/result, reconstructed bytes/hash, and any remaining blocker.
